@@ -683,18 +683,37 @@ async function loadEventBySearch() {
   try {
     const resp  = await fetch(DATA_BASE + 'index.json');
     const index = await resp.json();
-    const match = index.find(e =>
-      e.name.toLowerCase().includes(query.toLowerCase()) ||
-      e.slug.toLowerCase().includes(query.toLowerCase())
-    );
+
+    // Try multiple match strategies
+    const q = query.toLowerCase();
+    let match = index.find(e => e.name.toLowerCase() === q);
+    if (!match) match = index.find(e => e.slug.toLowerCase() === q.replace(/\s/g,'_'));
+    if (!match) match = index.find(e => e.name.toLowerCase().includes(q));
+    if (!match) match = index.find(e => e.slug.toLowerCase().includes(q.replace(/\s/g,'_')));
+
+    // Fuzzy — match any word in query against event name
+    if (!match) {
+      const words = q.split(/\s+/).filter(w => w.length > 2);
+      match = index.find(e =>
+        words.every(w => e.name.toLowerCase().includes(w))
+      );
+    }
+
     if (match) {
       loadEvent(match.slug);
       window.history.pushState({}, '', '?event=' + match.slug);
     } else {
-      showError('Event not found. Try the exact name e.g. "UFC Fight Night: Allen vs. Costa"');
+      showError(`
+        No predictions found for "${query}".<br><br>
+        Available events:<br>
+        ${index.map(e => `<strong>${e.name}</strong>`).join('<br>')}
+        <br><br>
+        To add a new event run:<br>
+        <code>python export_json.py "${query}"</code>
+      `);
     }
   } catch(e) {
-    showError('Search failed.');
+    showError('Search failed. Check console for details.');
   }
 }
 
@@ -924,7 +943,7 @@ function showError(msg) {
     <div style="text-align:center; padding:4rem 2rem; color:var(--gray-400)">
       <div style="font-size:32px; margin-bottom:1rem">🥊</div>
       <div style="font-size:15px; font-weight:600; color:var(--gray-600); margin-bottom:0.5rem">Event not found</div>
-      <div style="font-size:13px">${msg}</div>
+      <div style="font-size:13px; line-height:1.8; color:var(--gray-600)">${msg}</div>
     </div>
   `;
 }
