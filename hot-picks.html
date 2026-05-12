@@ -62,7 +62,7 @@
 
   .budget-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
   .budget-panel-title { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 14px; }
-  .budget-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: end; }
+  .budget-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 10px; align-items: end; }
   .budget-field { display: flex; flex-direction: column; gap: 5px; }
   .budget-label { font-size: 12px; color: var(--gray-600); font-weight: 500; }
   .budget-select, .budget-input { height: 42px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-md); padding: 0 12px; font-size: 14px; font-family: var(--font); outline: none; background: white; color: var(--gray-900); transition: border-color 0.15s; width: 100%; }
@@ -146,6 +146,7 @@
     .hero h1 { font-size: 24px; }
     .budget-row { grid-template-columns: 1fr 1fr; }
     .budget-btn { grid-column: span 2; width: 100%; }
+    #max-fights-select { grid-column: span 1; }
     .return-grid { grid-template-columns: 1fr 1fr; }
     .return-grid .return-card:last-child { grid-column: span 2; }
     .hot-metrics { grid-template-columns: 1fr 1fr; }
@@ -162,8 +163,8 @@
     .hamburger span { width: 22px; height: 2px; background: var(--gray-900); border-radius: 2px; display: block; }
     .accuracy-pill { display: none; }
     .stats-bar { grid-template-columns: 1fr 1fr; }
-    .budget-row { grid-template-columns: 1fr; }
-    .budget-btn { width: 100%; }
+    .budget-row { grid-template-columns: 1fr 1fr; }
+    .budget-btn { grid-column: span 2; width: 100%; }
     .return-grid { grid-template-columns: 1fr 1fr; }
     .return-grid .return-card:last-child { grid-column: span 2; }
     .alloc-row { grid-template-columns: 1fr auto; }
@@ -227,6 +228,18 @@
       <div class="budget-field">
         <label class="budget-label">Your budget ($)</label>
         <input class="budget-input" type="number" id="budget-input" placeholder="e.g. 500" min="1" />
+      </div>
+      <div class="budget-field">
+        <label class="budget-label">Max fights</label>
+        <select class="budget-select" id="max-fights-select">
+          <option value="all">All picks</option>
+          <option value="1">Top 1</option>
+          <option value="2">Top 2</option>
+          <option value="3">Top 3</option>
+          <option value="4">Top 4</option>
+          <option value="5">Top 5</option>
+          <option value="6">Top 6</option>
+        </select>
       </div>
       <button class="budget-btn" onclick="runAllocator()">Allocate</button>
     </div>
@@ -356,12 +369,14 @@ function kellyAllocation(picks, budget) {
 }
 
 function runAllocator() {
-  const slug   = document.getElementById('event-select').value;
-  const budget = parseFloat(document.getElementById('budget-input').value);
+  const slug      = document.getElementById('event-select').value;
+  const budget    = parseFloat(document.getElementById('budget-input').value);
+  const maxVal    = document.getElementById('max-fights-select').value;
   if (!slug || !budget || budget <= 0) { alert('Please select an event and enter a valid budget.'); return; }
   if (allPicks.length === 0) { alert('No qualifying picks for this event.'); return; }
-  const allocations = kellyAllocation(allPicks, budget);
-  renderAllocations(allPicks, allocations, budget);
+  const picks     = maxVal === 'all' ? allPicks : allPicks.slice(0, parseInt(maxVal));
+  const allocations = kellyAllocation(picks, budget);
+  renderAllocations(picks, allocations, budget);
   document.getElementById('alloc-panel').classList.add('visible');
   document.getElementById('alloc-panel').scrollIntoView({ behavior:'smooth', block:'start' });
 }
