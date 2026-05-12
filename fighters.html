@@ -54,7 +54,7 @@
     justify-content: center; color: white; font-size: 14px; font-weight: 700;
   }
 
-  .header-right { display: flex; align-items: center; gap: 1rem; }
+  .header-right { display: flex; align-items: center; gap: 0.6rem; }
 
   .hamburger { display: none; }
 
@@ -391,10 +391,10 @@
   </a>
   <div class="header-right" id="header-nav">
     <a class="nav-link" href="index.html">Predictions</a>
-    <a class="nav-link" href="index.html#events" onclick="sessionStorage.setItem('showEvents','1')">All events</a>
-    <a class="nav-link active" href="fighters.html">Fighters</a>
-    <a class="nav-link" href="accuracy.html">Accuracy</a>
-    <span class="accuracy-pill">83% accurate</span>
+    <a class="nav-link" href="index.html" onclick="sessionStorage.setItem('showEvents','1')">All events</a>
+    <a class="nav-link" href="fighters.html">Fighters</a>
+    <a class="nav-link active" href="accuracy.html">Accuracy</a>
+    <a class="nav-link" href="how-it-works.html">How it works</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
