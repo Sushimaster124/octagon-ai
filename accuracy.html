@@ -195,7 +195,7 @@
     <a class="nav-btn" href="index.html#events" onclick="sessionStorage.setItem('showEvents','1')">All events</a>
     <a class="nav-btn" href="fighters.html">Fighters</a>
     <a class="nav-btn active" href="accuracy.html">Accuracy</a>
-    <span class="accuracy-pill" id="live-accuracy">Loading...</span>
+    <span class="accuracy-pill">83% accurate</span>
   </div>
 </header>
 
@@ -252,8 +252,6 @@ function renderAccuracy(data) {
     .sort((a,b) => b.date.localeCompare(a.date));
 
   const acc = ov.accuracy;
-  document.getElementById('live-accuracy').textContent =
-    acc ? `${acc}% accurate` : 'No data';
 
   const high = confAcc(bc, 'high');
   const med  = confAcc(bc, 'medium');
