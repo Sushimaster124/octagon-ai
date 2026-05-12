@@ -881,10 +881,10 @@ function renderEvent(data) {
     const barHtml = `<div style="display:inline-flex;align-items:flex-end;gap:2px;height:16px;margin-left:6px;vertical-align:middle">${bars}</div>`;
 
     const confSub = conf==='high'
-      ? `95% hist. accuracy · chaos ${chaosScore}`
+      ? `Model 75%+ · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`
       : conf==='medium'
-      ? `67–81% hist. accuracy · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`
-      : `Treat as coin flip · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash detected' : ' · high chaos'}`;
+      ? `Model 60–74% · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`
+      : `Model below 60% · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`;
     const titleFlag = fight.title_fight ? '🏆 Title · ' : '';
     const wc        = fight.weight_class || `Fight ${i+1}`;
 
