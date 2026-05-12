@@ -471,6 +471,7 @@ function setStyle(style, btn) {
 }
 
 function applyFilters() {
+  if (allFighters.length === 0) return;
   const q = document.getElementById('fighter-search').value.toLowerCase().trim();
   filtered = allFighters.filter(f => {
     const matchStyle = currentStyle === 'all' ||
@@ -840,11 +841,14 @@ document.getElementById('h2h-opponent').addEventListener('keydown', e => {
 const params = new URLSearchParams(window.location.search);
 const initFighter = params.get('fighter');
 
-loadFighters().then(() => {
+async function init() {
+  await loadFighters();
   if (initFighter) {
     showProfile(decodeURIComponent(initFighter));
   }
-});
+}
+
+init();
 </script>
 </body>
 </html>
