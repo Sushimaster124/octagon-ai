@@ -56,6 +56,8 @@
 
   .header-right { display: flex; align-items: center; gap: 1rem; }
 
+  .hamburger { display: none; }
+
   .nav-link {
     font-size: 13px; color: var(--gray-600); text-decoration: none;
     padding: 6px 12px; border-radius: var(--radius-sm);
@@ -349,6 +351,34 @@
     .lb-style, .lb-record, .lb-elo-bar-wrap { display: none; }
     .main { padding: 1rem; }
   }
+
+  @media (max-width: 600px) {
+    body { overflow-x: hidden; }
+    header { padding: 0 1rem; }
+    .header-right {
+      display: none; flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: white; border-bottom: 1px solid var(--border);
+      padding: 12px 1rem; gap: 8px; z-index: 200;
+    }
+    .header-right.open { display: flex; }
+    .header-right .nav-link {
+      width: 100%; text-align: center; font-size: 14px; padding: 10px;
+      display: block;
+    }
+    .hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      width: 22px; height: 2px; background: var(--gray-900);
+      border-radius: 2px; display: block;
+    }
+    .accuracy-pill { display: none; }
+    .hero { padding: 1.5rem 1rem; }
+    .hero h1 { font-size: 22px; }
+    .filter-bar { padding: 10px 1rem; }
+  }
 </style>
 </head>
 <body>
@@ -358,13 +388,16 @@
     <div class="logo-icon">O</div>
     octagon.ai
   </a>
-  <div class="header-right">
+  <div class="header-right" id="header-nav">
     <a class="nav-link" href="index.html">Predictions</a>
     <a class="nav-link" href="index.html#events" onclick="sessionStorage.setItem('showEvents','1')">All events</a>
     <a class="nav-link active" href="fighters.html">Fighters</a>
     <a class="nav-link" href="accuracy.html">Accuracy</a>
-  <span class="accuracy-pill">83% accurate</span>
-</div>
+    <span class="accuracy-pill">83% accurate</span>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
 <div class="hero">
@@ -855,6 +888,15 @@ async function init() {
 }
 
 init();
+
+function toggleNav() {
+  document.getElementById('header-nav').classList.toggle('open');
+}
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) {
+    document.getElementById('header-nav').classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
