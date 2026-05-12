@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
   "event_date": "June 06, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T09:18:19.987547",
+  "generated_at": "2026-05-13T09:22:48.027500",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,

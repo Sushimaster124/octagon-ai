@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Fiziev_vs._Torres",
   "event_date": "June 27, 2026",
   "location": "Baku, Azerbaijan",
-  "generated_at": "2026-05-13T09:18:31.929548",
+  "generated_at": "2026-05-13T09:23:00.525457",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -11,9 +11,9 @@
     "overfit_gap": 0.026
   },
   "summary": {
-    "total_fights": 2,
+    "total_fights": 6,
     "high_conf": 0,
-    "medium_conf": 2,
+    "medium_conf": 6,
     "low_conf": 0,
     "not_found": 0,
     "ev_plays": 0
@@ -72,6 +72,114 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false
+    },
+    {
+      "fighter_a": "Ismail Naurdiev",
+      "fighter_b": "Marvin Vettori",
+      "prob_a": 82.3,
+      "prob_b": 17.7,
+      "winner": "Ismail Naurdiev",
+      "winner_prob": 82.3,
+      "confidence": "medium",
+      "elo_a": 1508.2,
+      "elo_b": 1530.8,
+      "elo_diff": -22.6,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.472,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Middleweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Ikram Aliskerov",
+      "fighter_b": "Brunno Ferreira",
+      "prob_a": 78.9,
+      "prob_b": 21.1,
+      "winner": "Ikram Aliskerov",
+      "winner_prob": 78.9,
+      "confidence": "medium",
+      "elo_a": 1540.8,
+      "elo_b": 1544.7,
+      "elo_diff": -3.9,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Middleweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Nursulton Ruziboev",
+      "fighter_b": "Andrey Pulyaev",
+      "prob_a": 79.5,
+      "prob_b": 20.5,
+      "winner": "Nursulton Ruziboev",
+      "winner_prob": 79.5,
+      "confidence": "medium",
+      "elo_a": 1547.0,
+      "elo_b": 1500.7,
+      "elo_diff": 46.3,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Middleweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Nazim Sadykhov",
+      "fighter_b": "Matheus Camilo",
+      "prob_a": 69.1,
+      "prob_b": 30.9,
+      "winner": "Nazim Sadykhov",
+      "winner_prob": 69.1,
+      "confidence": "medium",
+      "elo_a": 1546.2,
+      "elo_b": 1483.4,
+      "elo_diff": 62.8,
+      "style_a": "hybrid",
+      "style_b": "grappler",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Lightweight",
+      "not_found": false
     }
   ],
   "ev_plays": [],
@@ -90,10 +198,26 @@
         {
           "fighter": "Shara Magomedov",
           "prob": 83.0
+        },
+        {
+          "fighter": "Ismail Naurdiev",
+          "prob": 82.3
+        },
+        {
+          "fighter": "Ikram Aliskerov",
+          "prob": 78.9
+        },
+        {
+          "fighter": "Nursulton Ruziboev",
+          "prob": 79.5
+        },
+        {
+          "fighter": "Nazim Sadykhov",
+          "prob": 69.1
         }
       ],
-      "prob": 79.1,
-      "count": 2
+      "prob": 28.2,
+      "count": 6
     }
   }
 }
