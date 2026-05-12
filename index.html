@@ -869,6 +869,17 @@ function renderEvent(data) {
     const confLabel = conf==='high' ? 'High confidence' :
                       conf==='medium' ? 'Medium confidence' : 'Low confidence';
 
+    const chaosVal = fight.chaos || 0.5;
+    const clashPenalty = fight.elo_clash ? 1 : 0;
+    const rawBars = Math.round((1 - chaosVal) * 5) - clashPenalty;
+    const barCount = Math.max(1, Math.min(5, rawBars));
+    const barColor = conf==='high' ? '#1D9E75' : conf==='medium' ? '#BA7517' : '#E24B4A';
+    const barFade  = conf==='high' ? '#9FE1CB' : conf==='medium' ? '#FAC775' : '#F7C1C1';
+    const bars = Array.from({length:5}, (_,i) => 
+      `<div style="width:3px;height:${5+(i*3)}px;border-radius:1px;background:${i < barCount ? barColor : barFade};"></div>`
+    ).join('');
+    const barHtml = `<div style="display:inline-flex;align-items:flex-end;gap:2px;height:16px;margin-left:6px;vertical-align:middle">${bars}</div>`;
+
     const confSub = conf==='high'
       ? `95% hist. accuracy · chaos ${chaosScore}`
       : conf==='medium'
@@ -904,7 +915,7 @@ function renderEvent(data) {
     card.innerHTML = `
       <div class="fight-card-header">
         <span class="fight-meta">${titleFlag}${wc}</span>
-        <span class="conf-badge conf-${conf}">${confLabel}</span>
+        <span class="conf-badge conf-${conf}">${confLabel}</span>${barHtml}
         <span style="font-size:10px;color:var(--gray-400);margin-top:2px;display:block;text-align:right">${confSub}</span>
       </div>
       <div class="fight-card-body">

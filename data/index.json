@@ -1,5 +1,35 @@
 [
   {
+    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
+    "name": "UFC Fight Night: Song vs. Figueiredo",
+    "date": "May 30, 2026",
+    "location": "Macau, China",
+    "generated_at": "2026-05-13T09:09:22.046860",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 8,
+      "low_conf": 1,
+      "not_found": 4,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Allen_vs._Costa",
+    "name": "UFC Fight Night: Allen vs. Costa",
+    "date": "May 16, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-13T09:09:18.325146",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 10,
+      "low_conf": 1,
+      "not_found": 2,
+      "ev_plays": 10
+    }
+  },
+  {
     "slug": "UFC_Fight_Night_Oliveira_vs._Gamrot",
     "name": "UFC Fight Night: Oliveira vs. Gamrot",
     "date": "October 11, 2025",
@@ -300,21 +330,6 @@
     }
   },
   {
-    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
-    "name": "UFC Fight Night: Song vs. Figueiredo",
-    "date": "May 30, 2026",
-    "location": "Macau, China",
-    "generated_at": "2026-05-13T08:41:20.541125",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 1,
-      "not_found": 4,
-      "ev_plays": 0
-    }
-  },
-  {
     "slug": "UFC_323_Dvalishvili_vs._Yan_2",
     "name": "UFC 323: Dvalishvili vs. Yan 2",
     "date": "December 06, 2025",
@@ -402,21 +417,6 @@
       "low_conf": 1,
       "not_found": 1,
       "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Allen_vs._Costa",
-    "name": "UFC Fight Night: Allen vs. Costa",
-    "date": "May 16, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-12T09:24:49.710184",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 10,
-      "low_conf": 1,
-      "not_found": 1,
-      "ev_plays": 12
     }
   }
 ]
