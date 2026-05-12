@@ -233,12 +233,6 @@
         <label class="budget-label">Max fights</label>
         <select class="budget-select" id="max-fights-select">
           <option value="all">All picks</option>
-          <option value="1">Top 1</option>
-          <option value="2">Top 2</option>
-          <option value="3">Top 3</option>
-          <option value="4">Top 4</option>
-          <option value="5">Top 5</option>
-          <option value="6">Top 6</option>
         </select>
       </div>
       <button class="budget-btn" onclick="runAllocator()">Allocate</button>
@@ -434,6 +428,14 @@ function renderStats() {
   document.getElementById('stat-plays').textContent = allPicks.length || '—';
   document.getElementById('stat-best').textContent  = bestEV ? `+$${bestEV.toFixed(0)}` : '—';
   document.getElementById('stat-high').textContent  = highCount || '—';
+
+  const sel = document.getElementById('max-fights-select');
+  const prev = sel.value;
+  sel.innerHTML = '<option value="all">All picks</option>' +
+    Array.from({length: allPicks.length}, (_,i) =>
+      `<option value="${i+1}">Top ${i+1}</option>`
+    ).join('');
+  sel.value = prev && prev !== 'all' && parseInt(prev) <= allPicks.length ? prev : 'all';
 }
 
 function filterPicks(filter, btn) {
