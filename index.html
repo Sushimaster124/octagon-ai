@@ -8,28 +8,28 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --red:       #E24B4A;
-    --red-light: #FCEBEB;
-    --red-dark:  #A32D2D;
-    --blue:      #378ADD;
-    --blue-light:#E6F1FB;
-    --blue-dark: #185FA5;
-    --green:     #1D9E75;
+    --red:        #E24B4A;
+    --red-light:  #FCEBEB;
+    --red-dark:   #A32D2D;
+    --blue:       #378ADD;
+    --blue-light: #E6F1FB;
+    --blue-dark:  #185FA5;
+    --green:      #1D9E75;
     --green-light:#E1F5EE;
-    --amber:     #BA7517;
+    --amber:      #BA7517;
     --amber-light:#FAEEDA;
-    --gray-50:   #F9F9F8;
-    --gray-100:  #F1EFE8;
-    --gray-200:  #D3D1C7;
-    --gray-400:  #888780;
-    --gray-600:  #5F5E5A;
-    --gray-900:  #1A1A18;
-    --border:    rgba(0,0,0,0.08);
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
+    --gray-50:    #F9F9F8;
+    --gray-100:   #F1EFE8;
+    --gray-200:   #D3D1C7;
+    --gray-400:   #888780;
+    --gray-600:   #5F5E5A;
+    --gray-900:   #1A1A18;
+    --border:     rgba(0,0,0,0.08);
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
+    --radius-sm:  6px;
+    --radius-md:  10px;
+    --radius-lg:  14px;
     --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
@@ -62,6 +62,7 @@
     font-weight: 600;
     color: var(--gray-900);
     text-decoration: none;
+    cursor: pointer;
   }
 
   .logo-icon {
@@ -91,6 +92,25 @@
     padding: 4px 10px;
     border-radius: 20px;
   }
+
+  .nav-btn {
+    font-size: 13px;
+    color: var(--gray-600);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: white;
+    font-family: var(--font);
+    transition: background 0.15s;
+  }
+
+  .nav-btn:hover { background: var(--gray-50); }
+  .nav-btn.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
+
+  /* ── Pages ── */
+  .page { display: none; }
+  .page.active { display: block; }
 
   /* ── Hero ── */
   .hero {
@@ -123,10 +143,7 @@
     animation: pulse 1.5s infinite;
   }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
   .hero h1 {
     font-size: 36px;
@@ -195,21 +212,8 @@
   }
 
   .stat-item:last-child { border-right: none; }
-
-  .stat-value {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--gray-900);
-    letter-spacing: -0.02em;
-  }
-
-  .stat-label {
-    font-size: 12px;
-    color: var(--gray-400);
-    margin-top: 2px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
+  .stat-value { font-size: 28px; font-weight: 700; color: var(--gray-900); letter-spacing: -0.02em; }
+  .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
 
   /* ── Main layout ── */
   .main {
@@ -222,7 +226,6 @@
     align-items: start;
   }
 
-  /* ── Section headers ── */
   .section-label {
     font-size: 11px;
     font-weight: 600;
@@ -230,6 +233,115 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 1rem;
+  }
+
+  /* ── Events browser ── */
+  .events-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .events-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .events-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .events-count {
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .events-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: white;
+    font-size: 13px;
+    font-family: var(--font);
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .filter-btn.active {
+    background: var(--gray-900);
+    color: white;
+    border-color: var(--gray-900);
+  }
+
+  .event-row {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: box-shadow 0.15s, border-color 0.15s;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .event-row:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-200);
+  }
+
+  .event-row-left { flex: 1; }
+
+  .event-row-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+  }
+
+  .event-row-meta {
+    font-size: 12px;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .event-row-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .event-pill {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .pill-high   { background: var(--green-light);  color: var(--green); }
+  .pill-medium { background: var(--amber-light);  color: var(--amber); }
+  .pill-low    { background: var(--red-light);    color: var(--red-dark); }
+  .pill-ev     { background: var(--blue-light);   color: var(--blue-dark); }
+
+  .event-row-arrow {
+    color: var(--gray-400);
+    font-size: 18px;
+    margin-left: 12px;
   }
 
   /* ── Fight card ── */
@@ -254,13 +366,7 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .fight-meta {
-    font-size: 11px;
-    color: var(--gray-400);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
+  .fight-meta { font-size: 11px; color: var(--gray-400); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
 
   .conf-badge {
     font-size: 11px;
@@ -271,9 +377,9 @@
     letter-spacing: 0.04em;
   }
 
-  .conf-high { background: var(--green-light);  color: var(--green); }
-  .conf-medium { background: var(--amber-light); color: var(--amber); }
-  .conf-low  { background: var(--red-light);   color: var(--red-dark); }
+  .conf-high   { background: var(--green-light);  color: var(--green); }
+  .conf-medium { background: var(--amber-light);  color: var(--amber); }
+  .conf-low    { background: var(--red-light);    color: var(--red-dark); }
 
   .fight-card-body { padding: 16px; }
 
@@ -288,126 +394,60 @@
   .fighter-side { display: flex; flex-direction: column; }
   .fighter-side.right { align-items: flex-end; text-align: right; }
 
-  .fighter-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gray-900);
-    margin-bottom: 2px;
-  }
+  .fighter-name { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 2px; }
+  .fighter-detail { font-size: 12px; color: var(--gray-400); margin-bottom: 8px; }
 
-  .fighter-detail {
-    font-size: 12px;
-    color: var(--gray-400);
-    margin-bottom: 8px;
-  }
-
-  .prob-number {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
+  .prob-number { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
   .prob-red  { color: var(--red); }
   .prob-blue { color: var(--blue); }
 
   .vs-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 36px; height: 36px; border-radius: 50%;
     background: var(--gray-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--gray-400);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: var(--gray-400);
     flex-shrink: 0;
   }
 
-  /* Probability bar */
   .prob-bar-wrap {
-    position: relative;
-    height: 6px;
-    background: var(--gray-100);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 12px;
+    position: relative; height: 6px;
+    background: var(--gray-100); border-radius: 3px;
+    overflow: hidden; margin-bottom: 12px;
   }
 
   .prob-bar-red {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: var(--red);
-    border-radius: 3px;
-    transition: width 0.6s ease;
+    position: absolute; left: 0; top: 0; height: 100%;
+    background: var(--red); border-radius: 3px;
   }
 
   .prob-bar-blue {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    background: var(--blue);
-    border-radius: 3px;
-    transition: width 0.6s ease;
+    position: absolute; right: 0; top: 0; height: 100%;
+    background: var(--blue); border-radius: 3px;
   }
 
-  /* Winner row */
   .winner-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 12px; border-top: 1px solid var(--border);
   }
 
   .winner-label { font-size: 11px; color: var(--gray-400); }
 
   .winner-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gray-900);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--gray-900);
+    display: flex; align-items: center; gap: 6px;
   }
 
   .winner-check {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--green);
-    color: white;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--green); color: white;
+    font-size: 10px; display: flex; align-items: center; justify-content: center;
   }
 
-  .clash-flag {
-    font-size: 11px;
-    color: var(--amber);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+  .clash-flag { font-size: 11px; color: var(--amber); }
 
-  /* EV chips */
-  .ev-chips {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 10px;
-  }
+  .ev-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
 
-  .ev-chip {
-    padding: 8px 10px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-  }
-
+  .ev-chip { padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
   .ev-chip-pos { background: var(--green-light); border-color: transparent; }
   .ev-chip-neg { background: var(--gray-50); }
 
@@ -421,141 +461,95 @@
   .sidebar { position: sticky; top: 72px; }
 
   .sidebar-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 16px;
-    margin-bottom: 12px;
-    box-shadow: var(--shadow-sm);
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px;
+    margin-bottom: 12px; box-shadow: var(--shadow-sm);
   }
 
   .sidebar-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gray-900);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    font-size: 13px; font-weight: 600; color: var(--gray-900);
+    margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;
   }
 
-  /* EV plays */
   .ev-play {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
   }
 
   .ev-play:last-child { border-bottom: none; padding-bottom: 0; }
-
   .ev-play-name  { font-size: 13px; font-weight: 600; color: var(--gray-900); }
   .ev-play-line  { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
   .ev-play-value { font-size: 15px; font-weight: 700; color: var(--green); }
   .ev-play-edge  { font-size: 11px; color: var(--gray-400); text-align: right; }
 
   .hot-badge {
-    background: var(--red-light);
-    color: var(--red-dark);
-    font-size: 10px;
-    font-weight: 600;
-    padding: 1px 6px;
-    border-radius: 4px;
-    margin-left: 6px;
+    background: var(--red-light); color: var(--red-dark);
+    font-size: 10px; font-weight: 600; padding: 1px 6px;
+    border-radius: 4px; margin-left: 6px;
   }
 
-  /* Parlay */
-  .parlay-prob {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--green);
-    letter-spacing: -0.02em;
-  }
+  .parlay-prob { font-size: 28px; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
 
   .parlay-leg {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px;
   }
 
   .parlay-leg:last-child { border-bottom: none; }
-  .parlay-leg-name  { color: var(--gray-900); font-weight: 500; }
-  .parlay-leg-prob  { color: var(--gray-400); font-size: 12px; }
+  .parlay-leg-name { color: var(--gray-900); font-weight: 500; }
+  .parlay-leg-prob { color: var(--gray-400); font-size: 12px; }
 
   .parlay-rating {
-    margin-top: 10px;
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: var(--radius-sm);
-    text-align: center;
-    font-weight: 600;
+    margin-top: 10px; font-size: 12px; padding: 6px 10px;
+    border-radius: var(--radius-sm); text-align: center; font-weight: 600;
   }
 
-  .rating-strong   { background: var(--green-light);  color: var(--green); }
-  .rating-moderate { background: var(--amber-light);  color: var(--amber); }
-  .rating-risky    { background: var(--red-light);    color: var(--red-dark); }
+  .rating-strong   { background: var(--green-light); color: var(--green); }
+  .rating-moderate { background: var(--amber-light); color: var(--amber); }
+  .rating-risky    { background: var(--red-light);   color: var(--red-dark); }
 
-  /* Model stats */
   .model-stat {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px;
   }
 
   .model-stat:last-child { border-bottom: none; }
   .model-stat-label { color: var(--gray-600); }
   .model-stat-value { font-weight: 600; color: var(--gray-900); }
 
-  /* Event header card */
   .event-header-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 16px;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px;
+    margin-bottom: 1rem; box-shadow: var(--shadow-sm);
+    display: flex; align-items: center; justify-content: space-between;
   }
 
-  .event-name-big {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gray-900);
-  }
-
+  .event-name-big { font-size: 18px; font-weight: 700; color: var(--gray-900); }
   .event-meta-small { font-size: 12px; color: var(--gray-400); margin-top: 3px; }
 
-  .summary-pills {
-    display: flex;
-    gap: 8px;
+  .back-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; color: var(--gray-600); cursor: pointer;
+    margin-bottom: 1rem; padding: 6px 0;
+    background: none; border: none; font-family: var(--font);
   }
 
+  .back-btn:hover { color: var(--gray-900); }
+
+  .summary-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+
   .summary-pill {
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 4px 10px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
   }
 
   /* Loading */
-  #loading {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--gray-400);
+  .loading {
+    text-align: center; padding: 4rem 2rem; color: var(--gray-400);
   }
 
   .spinner {
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     border: 3px solid var(--gray-100);
     border-top-color: var(--red);
     border-radius: 50%;
@@ -565,77 +559,103 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--gray-400);
-    font-size: 12px;
-    border-top: 1px solid var(--border);
-    margin-top: 3rem;
+  .empty-state {
+    text-align: center; padding: 4rem 2rem; color: var(--gray-400);
   }
 
-  /* Responsive */
+  footer {
+    text-align: center; padding: 2rem;
+    color: var(--gray-400); font-size: 12px;
+    border-top: 1px solid var(--border); margin-top: 3rem;
+  }
+
   @media (max-width: 768px) {
     .main { grid-template-columns: 1fr; padding: 1rem; }
     .stats-bar { grid-template-columns: repeat(2,1fr); }
     .hero h1 { font-size: 26px; }
     .sidebar { position: static; }
+    .events-page { padding: 1rem; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <a class="logo" href="index.html">
+  <div class="logo" onclick="showHome()">
     <div class="logo-icon">O</div>
     octagon.ai
-  </a>
+  </div>
   <div class="header-right">
+    <button class="nav-btn active" id="btn-home" onclick="showHome()">Predictions</button>
+    <button class="nav-btn" id="btn-events" onclick="showEvents()">All events</button>
     <span class="accuracy-pill">83% accurate</span>
   </div>
 </header>
 
-<div class="hero">
-  <div class="hero-eyebrow">
-    <div class="live-dot"></div>
-    Live Vegas odds
-  </div>
-  <h1>UFC fight predictions</h1>
-  <p>XGBoost model trained on 8,337 fights · Real-time EV analysis</p>
-  <div class="search-wrap">
-    <input type="text" id="event-search" placeholder="Search event e.g. UFC 329" />
-    <button onclick="loadEventBySearch()">Predict</button>
-  </div>
-</div>
+<!-- ── HOME PAGE ── -->
+<div class="page active" id="page-home">
 
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-value">83%</div>
-    <div class="stat-label">Overall accuracy</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value">95%</div>
-    <div class="stat-label">High conf accuracy</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value">0.92</div>
-    <div class="stat-label">ROC-AUC score</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value" id="fights-count">—</div>
-    <div class="stat-label">Fights on card</div>
-  </div>
-</div>
-
-<div class="main">
-  <div id="fights-col">
-    <div id="loading">
-      <div class="spinner"></div>
-      Loading predictions...
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <div class="live-dot"></div>
+      Live Vegas odds
+    </div>
+    <h1>UFC fight predictions</h1>
+    <p>XGBoost model trained on 8,337 fights · Real-time EV analysis</p>
+    <div class="search-wrap">
+      <input type="text" id="event-search" placeholder="Search event e.g. UFC 328" />
+      <button onclick="loadEventBySearch()">Predict</button>
     </div>
   </div>
-  <div class="sidebar" id="sidebar">
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-value">83%</div>
+      <div class="stat-label">Overall accuracy</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">95%</div>
+      <div class="stat-label">High conf accuracy</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">0.92</div>
+      <div class="stat-label">ROC-AUC score</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="fights-count">—</div>
+      <div class="stat-label">Fights on card</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div id="fights-col">
+      <div class="loading">
+        <div class="spinner"></div>
+        Loading predictions...
+      </div>
+    </div>
+    <div class="sidebar" id="sidebar"></div>
+  </div>
+
+</div>
+
+<!-- ── EVENTS PAGE ── -->
+<div class="page" id="page-events">
+  <div class="events-page">
+    <div class="events-header">
+      <div>
+        <div class="events-title">All events</div>
+        <div class="events-count" id="events-count">Loading...</div>
+      </div>
+    </div>
+    <div class="events-filter">
+      <button class="filter-btn active" onclick="filterEvents('all', this)">All</button>
+      <button class="filter-btn" onclick="filterEvents('upcoming', this)">Upcoming</button>
+      <button class="filter-btn" onclick="filterEvents('past', this)">Past</button>
+    </div>
+    <div id="events-list">
+      <div class="loading"><div class="spinner"></div>Loading events...</div>
+    </div>
   </div>
 </div>
 
@@ -645,7 +665,116 @@
 
 <script>
 const DATA_BASE = 'data/';
+let allIndex = [];
+let currentFilter = 'all';
 
+// ── Navigation ────────────────────────────────────────────────────────────────
+function showHome() {
+  document.getElementById('page-home').classList.add('active');
+  document.getElementById('page-events').classList.remove('active');
+  document.getElementById('btn-home').classList.add('active');
+  document.getElementById('btn-events').classList.remove('active');
+}
+
+function showEvents() {
+  document.getElementById('page-home').classList.remove('active');
+  document.getElementById('page-events').classList.add('active');
+  document.getElementById('btn-home').classList.remove('active');
+  document.getElementById('btn-events').classList.add('active');
+  loadEventsList();
+}
+
+// ── Events list ───────────────────────────────────────────────────────────────
+async function loadEventsList() {
+  const list = document.getElementById('events-list');
+
+  try {
+    const resp = await fetch(DATA_BASE + 'index.json');
+    allIndex   = await resp.json();
+    document.getElementById('events-count').textContent =
+      `${allIndex.length} event${allIndex.length !== 1 ? 's' : ''} available`;
+    renderEventsList(allIndex);
+  } catch(e) {
+    list.innerHTML = `<div class="empty-state">Could not load events.</div>`;
+  }
+}
+
+function filterEvents(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const today = new Date().toISOString().slice(0,10);
+  let filtered = allIndex;
+
+  if (filter === 'upcoming') {
+    filtered = allIndex.filter(e => e.date >= today);
+  } else if (filter === 'past') {
+    filtered = allIndex.filter(e => e.date < today);
+  }
+
+  renderEventsList(filtered);
+}
+
+function renderEventsList(events) {
+  const list = document.getElementById('events-list');
+
+  if (events.length === 0) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <div style="font-size:32px; margin-bottom:1rem">🥊</div>
+        <div style="font-size:15px; font-weight:600; color:var(--gray-600)">No events found</div>
+      </div>
+    `;
+    return;
+  }
+
+  const today = new Date().toISOString().slice(0,10);
+
+  list.innerHTML = events.map(event => {
+    const isUpcoming = event.date >= today;
+    const s = event.summary || {};
+    const high = s.high_conf || 0;
+    const med  = s.medium_conf || 0;
+    const ev   = s.ev_plays || 0;
+    const total = s.total_fights || 0;
+
+    const dateStr = event.date
+      ? new Date(event.date + 'T12:00:00').toLocaleDateString('en-US',
+          { month: 'short', day: 'numeric', year: 'numeric' })
+      : '';
+
+    return `
+      <div class="event-row" onclick="loadEventFromBrowser('${event.slug}')">
+        <div class="event-row-left">
+          <div class="event-row-name">${event.name}</div>
+          <div class="event-row-meta">
+            <span>${dateStr}</span>
+            ${event.location ? `<span>${event.location}</span>` : ''}
+            <span>${total} fights</span>
+            ${isUpcoming
+              ? `<span style="color:var(--red); font-weight:600">Upcoming</span>`
+              : ''}
+          </div>
+        </div>
+        <div class="event-row-pills">
+          ${high > 0 ? `<span class="event-pill pill-high">${high} high</span>` : ''}
+          ${med  > 0 ? `<span class="event-pill pill-medium">${med} med</span>` : ''}
+          ${ev   > 0 ? `<span class="event-pill pill-ev">${ev} EV plays</span>` : ''}
+        </div>
+        <div class="event-row-arrow">›</div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function loadEventFromBrowser(slug) {
+  showHome();
+  await loadEvent(slug);
+  window.scrollTo(0, 0);
+}
+
+// ── Event loading ─────────────────────────────────────────────────────────────
 function getEventSlug() {
   const params = new URLSearchParams(window.location.search);
   return params.get('event') || null;
@@ -653,24 +782,26 @@ function getEventSlug() {
 
 async function loadLatestEvent() {
   try {
-    const resp = await fetch(DATA_BASE + 'index.json');
-    const index = await resp.json();
-    if (index.length === 0) {
-      showError('No events found.');
-      return;
-    }
-    const latest = index[0];
-    loadEvent(latest.slug);
+    const resp  = await fetch(DATA_BASE + 'index.json');
+    allIndex    = await resp.json();
+    if (allIndex.length === 0) { showError('No events found.'); return; }
+    loadEvent(allIndex[0].slug);
   } catch(e) {
     showError('Could not load event index.');
   }
 }
 
 async function loadEvent(slug) {
+  document.getElementById('fights-col').innerHTML =
+    `<div class="loading"><div class="spinner"></div>Loading...</div>`;
+  document.getElementById('sidebar').innerHTML = '';
+  document.getElementById('fights-count').textContent = '—';
+
   try {
     const resp = await fetch(DATA_BASE + slug + '.json');
     if (!resp.ok) throw new Error('Not found');
     const data = await resp.json();
+    window.history.pushState({}, '', '?event=' + slug);
     renderEvent(data);
   } catch(e) {
     showError('Event not found: ' + slug);
@@ -680,40 +811,26 @@ async function loadEvent(slug) {
 async function loadEventBySearch() {
   const query = document.getElementById('event-search').value.trim();
   if (!query) return;
+
   try {
     const resp  = await fetch(DATA_BASE + 'index.json');
-    const index = await resp.json();
+    allIndex    = await resp.json();
+    const q     = query.toLowerCase();
 
-    // Try multiple match strategies
-    const q = query.toLowerCase();
-    let match = index.find(e => e.name.toLowerCase() === q);
-    if (!match) match = index.find(e => e.slug.toLowerCase() === q.replace(/\s/g,'_'));
-    if (!match) match = index.find(e => e.name.toLowerCase().includes(q));
-    if (!match) match = index.find(e => e.slug.toLowerCase().includes(q.replace(/\s/g,'_')));
-
-    // Fuzzy — match any word in query against event name
+    let match = allIndex.find(e => e.name.toLowerCase() === q);
+    if (!match) match = allIndex.find(e => e.name.toLowerCase().includes(q));
     if (!match) {
       const words = q.split(/\s+/).filter(w => w.length > 2);
-      match = index.find(e =>
-        words.every(w => e.name.toLowerCase().includes(w))
-      );
+      match = allIndex.find(e => words.every(w => e.name.toLowerCase().includes(w)));
     }
 
     if (match) {
       loadEvent(match.slug);
-      window.history.pushState({}, '', '?event=' + match.slug);
     } else {
-      showError(`
-        No predictions found for "${query}".<br><br>
-        Available events:<br>
-        ${index.map(e => `<strong>${e.name}</strong>`).join('<br>')}
-        <br><br>
-        To add a new event run:<br>
-        <code>python export_json.py "${query}"</code>
-      `);
+      showSearchError(query, allIndex);
     }
   } catch(e) {
-    showError('Search failed. Check console for details.');
+    showError('Search failed.');
   }
 }
 
@@ -721,11 +838,18 @@ document.getElementById('event-search').addEventListener('keydown', e => {
   if (e.key === 'Enter') loadEventBySearch();
 });
 
+// ── Render event ──────────────────────────────────────────────────────────────
 function renderEvent(data) {
   document.getElementById('fights-count').textContent = data.summary.total_fights;
-
   const col = document.getElementById('fights-col');
   col.innerHTML = '';
+
+  // Back button
+  const back = document.createElement('button');
+  back.className = 'back-btn';
+  back.innerHTML = '← All events';
+  back.onclick = showEvents;
+  col.appendChild(back);
 
   // Event header
   const evCard = document.createElement('div');
@@ -759,7 +883,7 @@ function renderEvent(data) {
           <span class="fight-meta">Fight ${i+1}</span>
           <span class="conf-badge conf-low">Not found</span>
         </div>
-        <div class="fight-card-body" style="color:var(--gray-400); font-size:13px; padding:16px;">
+        <div class="fight-card-body" style="color:var(--gray-400);font-size:13px;">
           ${fight.fighter_a} vs ${fight.fighter_b} — not in dataset
         </div>
       `;
@@ -767,13 +891,11 @@ function renderEvent(data) {
       return;
     }
 
-    const conf = fight.confidence;
-    const confLabel = conf === 'high' ? 'High confidence' :
-                      conf === 'medium' ? 'Medium confidence' : 'Low confidence';
-    const confClass = `conf-${conf}`;
-
-    const titleFlag = fight.title_fight ? '🏆 Title fight · ' : '';
-    const weightClass = fight.weight_class || `Fight ${i+1}`;
+    const conf      = fight.confidence;
+    const confLabel = conf==='high' ? 'High confidence' :
+                      conf==='medium' ? 'Medium confidence' : 'Low confidence';
+    const titleFlag = fight.title_fight ? '🏆 Title · ' : '';
+    const wc        = fight.weight_class || `Fight ${i+1}`;
 
     let evHtml = '';
     if (fight.odds_a !== null && fight.odds_b !== null) {
@@ -783,26 +905,26 @@ function renderEvent(data) {
         <div class="ev-chips">
           <div class="ev-chip ${aPos ? 'ev-chip-pos' : 'ev-chip-neg'}">
             <div class="ev-chip-fighter">${fight.fighter_a.split(' ').pop()}</div>
-            <div class="ev-chip-value">${aPos ? '+' : ''}$${fight.ev_a.toFixed(0)} EV</div>
-            <div class="ev-chip-line">ML ${fight.odds_a > 0 ? '+' : ''}${fight.odds_a} · Vegas ${fight.vegas_prob_a}%</div>
+            <div class="ev-chip-value">${aPos?'+':''}$${fight.ev_a.toFixed(0)} EV</div>
+            <div class="ev-chip-line">ML ${fight.odds_a>0?'+':''}${fight.odds_a} · Vegas ${fight.vegas_prob_a}%</div>
           </div>
           <div class="ev-chip ${bPos ? 'ev-chip-pos' : 'ev-chip-neg'}">
             <div class="ev-chip-fighter">${fight.fighter_b.split(' ').pop()}</div>
-            <div class="ev-chip-value">${bPos ? '+' : ''}$${fight.ev_b.toFixed(0)} EV</div>
-            <div class="ev-chip-line">ML ${fight.odds_b > 0 ? '+' : ''}${fight.odds_b} · Vegas ${fight.vegas_prob_b}%</div>
+            <div class="ev-chip-value">${bPos?'+':''}$${fight.ev_b.toFixed(0)} EV</div>
+            <div class="ev-chip-line">ML ${fight.odds_b>0?'+':''}${fight.odds_b} · Vegas ${fight.vegas_prob_b}%</div>
           </div>
         </div>
       `;
     }
 
     const clashHtml = fight.elo_clash
-      ? `<span class="clash-flag">⚡ Elo clash — treat skeptically</span>`
-      : `<span style="font-size:11px; color:var(--gray-400)">Elo: ${fight.elo_a} vs ${fight.elo_b}</span>`;
+      ? `<span class="clash-flag">⚡ Elo clash</span>`
+      : `<span style="font-size:11px;color:var(--gray-400)">Elo diff: ${fight.elo_diff > 0 ? '+' : ''}${fight.elo_diff}</span>`;
 
     card.innerHTML = `
       <div class="fight-card-header">
-        <span class="fight-meta">${titleFlag}${weightClass}</span>
-        <span class="conf-badge ${confClass}">${confLabel}</span>
+        <span class="fight-meta">${titleFlag}${wc}</span>
+        <span class="conf-badge conf-${conf}">${confLabel}</span>
       </div>
       <div class="fight-card-body">
         <div class="fighters-grid">
@@ -841,28 +963,27 @@ function renderEvent(data) {
   renderSidebar(data);
 }
 
+// ── Sidebar ───────────────────────────────────────────────────────────────────
 function renderSidebar(data) {
   const sidebar = document.getElementById('sidebar');
   sidebar.innerHTML = '';
 
-  // EV plays
   if (data.ev_plays && data.ev_plays.length > 0) {
     const evCard = document.createElement('div');
     evCard.className = 'sidebar-card';
-    const plays = data.ev_plays.slice(0,5);
     evCard.innerHTML = `
       <div class="sidebar-title">
         Best value plays
-        <span style="font-size:11px; color:var(--gray-400)">per $100</span>
+        <span style="font-size:11px;color:var(--gray-400)">per $100</span>
       </div>
-      ${plays.map(p => `
+      ${data.ev_plays.slice(0,5).map(p => `
         <div class="ev-play">
           <div>
             <div class="ev-play-name">
               ${p.fighter}
               ${p.ev > 50 ? '<span class="hot-badge">hot</span>' : ''}
             </div>
-            <div class="ev-play-line">ML ${p.odds > 0 ? '+' : ''}${p.odds} · Vegas ${p.vegas_prob}% · Model ${p.prob}%</div>
+            <div class="ev-play-line">ML ${p.odds>0?'+':''}${p.odds} · Vegas ${p.vegas_prob}% · Model ${p.prob}%</div>
           </div>
           <div style="text-align:right">
             <div class="ev-play-value">+$${p.ev.toFixed(0)}</div>
@@ -874,23 +995,22 @@ function renderSidebar(data) {
     sidebar.appendChild(evCard);
   }
 
-  // Parlay
   const parlayData = data.parlays;
   if (parlayData) {
     const pCard = document.createElement('div');
     pCard.className = 'sidebar-card';
-    const legs = parlayData.high_only.legs;
-    const prob = parlayData.high_only.prob;
+    const legs   = parlayData.high_only.legs;
+    const prob   = parlayData.high_only.prob;
     const rating = prob >= 50 ? 'strong' : prob >= 30 ? 'moderate' : 'risky';
-    const ratingLabel = prob >= 50 ? 'Strong play' : prob >= 30 ? 'Moderate risk' : 'High risk';
+    const rLabel = prob >= 50 ? 'Strong play' : prob >= 30 ? 'Moderate risk' : 'High risk';
 
     pCard.innerHTML = `
       <div class="sidebar-title">
-        High confidence parlay
+        High conf parlay
         <span class="parlay-prob">${prob}%</span>
       </div>
       ${legs.length === 0
-        ? '<p style="font-size:13px; color:var(--gray-400)">No high confidence picks</p>'
+        ? '<p style="font-size:13px;color:var(--gray-400)">No high confidence picks</p>'
         : legs.map(l => `
           <div class="parlay-leg">
             <span class="parlay-leg-name">${l.fighter}</span>
@@ -898,57 +1018,67 @@ function renderSidebar(data) {
           </div>
         `).join('')
       }
-      ${legs.length > 0 ? `<div class="parlay-rating rating-${rating}">${ratingLabel} · ${legs.length} legs · ${prob}% combined</div>` : ''}
+      ${legs.length > 0
+        ? `<div class="parlay-rating rating-${rating}">${rLabel} · ${legs.length} legs</div>`
+        : ''}
     `;
     sidebar.appendChild(pCard);
   }
 
-  // Model stats
   const mCard = document.createElement('div');
   mCard.className = 'sidebar-card';
   mCard.innerHTML = `
     <div class="sidebar-title">Model stats</div>
-    <div class="model-stat">
-      <span class="model-stat-label">Overall accuracy</span>
-      <span class="model-stat-value">83.1%</span>
-    </div>
-    <div class="model-stat">
-      <span class="model-stat-label">High conf accuracy</span>
-      <span class="model-stat-value">94.8%</span>
-    </div>
-    <div class="model-stat">
-      <span class="model-stat-label">ROC-AUC</span>
-      <span class="model-stat-value">0.9229</span>
-    </div>
-    <div class="model-stat">
-      <span class="model-stat-label">Fights trained on</span>
-      <span class="model-stat-value">8,337</span>
-    </div>
-    <div class="model-stat">
-      <span class="model-stat-label">Overfit gap</span>
-      <span class="model-stat-value">0.026 ✓</span>
-    </div>
+    <div class="model-stat"><span class="model-stat-label">Overall accuracy</span><span class="model-stat-value">83.1%</span></div>
+    <div class="model-stat"><span class="model-stat-label">High conf accuracy</span><span class="model-stat-value">94.8%</span></div>
+    <div class="model-stat"><span class="model-stat-label">ROC-AUC</span><span class="model-stat-value">0.9229</span></div>
+    <div class="model-stat"><span class="model-stat-label">Fights trained on</span><span class="model-stat-value">8,337</span></div>
+    <div class="model-stat"><span class="model-stat-label">Overfit gap</span><span class="model-stat-value">0.026 ✓</span></div>
   `;
   sidebar.appendChild(mCard);
 
-  // Disclaimer
   const disc = document.createElement('div');
-  disc.style.cssText = 'font-size:11px; color:var(--gray-400); line-height:1.6; padding:0 4px;';
+  disc.style.cssText = 'font-size:11px;color:var(--gray-400);line-height:1.6;padding:0 4px;';
   disc.textContent = 'Positive EV does not guarantee a win. Manage bankroll responsibly. Not financial advice.';
   sidebar.appendChild(disc);
 }
 
+// ── Error states ──────────────────────────────────────────────────────────────
 function showError(msg) {
   document.getElementById('fights-col').innerHTML = `
-    <div style="text-align:center; padding:4rem 2rem; color:var(--gray-400)">
-      <div style="font-size:32px; margin-bottom:1rem">🥊</div>
-      <div style="font-size:15px; font-weight:600; color:var(--gray-600); margin-bottom:0.5rem">Event not found</div>
-      <div style="font-size:13px; line-height:1.8; color:var(--gray-600)">${msg}</div>
+    <div class="empty-state">
+      <div style="font-size:32px;margin-bottom:1rem">🥊</div>
+      <div style="font-size:15px;font-weight:600;color:var(--gray-600);margin-bottom:0.5rem">Not found</div>
+      <div style="font-size:13px">${msg}</div>
     </div>
   `;
 }
 
-// Init
+function showSearchError(query, index) {
+  const list = index.slice(0,8).map(e =>
+    `<div style="padding:6px 0;border-bottom:1px solid var(--border);cursor:pointer;color:var(--blue-dark)"
+      onclick="loadEvent('${e.slug}')">${e.name}</div>`
+  ).join('');
+
+  document.getElementById('fights-col').innerHTML = `
+    <div style="max-width:600px">
+      <div style="font-size:15px;font-weight:600;color:var(--gray-900);margin-bottom:0.5rem">
+        No results for "${query}"
+      </div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1rem">
+        Try clicking an event below or browse all events
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:8px 16px;">
+        ${list}
+      </div>
+      <button onclick="showEvents()" style="margin-top:1rem;padding:8px 16px;background:var(--gray-900);color:white;border:none;border-radius:var(--radius-md);cursor:pointer;font-family:var(--font);font-size:13px;">
+        Browse all events →
+      </button>
+    </div>
+  `;
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
 const slug = getEventSlug();
 if (slug) loadEvent(slug);
 else loadLatestEvent();
