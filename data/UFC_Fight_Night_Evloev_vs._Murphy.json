@@ -1,0 +1,224 @@
+{
+  "event_name": "UFC Fight Night: Evloev vs. Murphy",
+  "event_slug": "UFC_Fight_Night_Evloev_vs._Murphy",
+  "event_date": "March 21, 2026",
+  "location": "London, England, United Kingdom",
+  "generated_at": "2026-05-13T08:43:02.568737",
+  "model_stats": {
+    "accuracy": 83.1,
+    "roc_auc": 0.9229,
+    "high_conf_acc": 94.8,
+    "overfit_gap": 0.026
+  },
+  "summary": {
+    "total_fights": 13,
+    "high_conf": 0,
+    "medium_conf": 4,
+    "low_conf": 0,
+    "not_found": 9,
+    "ev_plays": 0
+  },
+  "fights": [
+    {
+      "fighter_a": "Movsar Evloev",
+      "fighter_b": "Lerone Murphy",
+      "prob_a": 10.8,
+      "prob_b": 89.2,
+      "winner": "Lerone Murphy",
+      "winner_prob": 89.2,
+      "confidence": "medium",
+      "elo_a": 1643.8,
+      "elo_b": 1646.1,
+      "elo_diff": -2.3,
+      "style_a": "wrestler",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Featherweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Luke Riley",
+      "fighter_b": "Michael Aswell Jr.",
+      "not_found": true,
+      "weight_class": "Featherweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Michael Page",
+      "fighter_b": "Sam Patterson",
+      "prob_a": 79.2,
+      "prob_b": 20.8,
+      "winner": "Michael Page",
+      "winner_prob": 79.2,
+      "confidence": "medium",
+      "elo_a": 1543.7,
+      "elo_b": 1548.0,
+      "elo_diff": -4.3,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Welterweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Iwo Baraniewski",
+      "fighter_b": "Austen Lane",
+      "not_found": true,
+      "weight_class": "Light Heavyweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Christian Leroy Duncan",
+      "fighter_b": "Roman Dolidze",
+      "prob_a": 75.8,
+      "prob_b": 24.2,
+      "winner": "Christian Leroy Duncan",
+      "winner_prob": 75.8,
+      "confidence": "medium",
+      "elo_a": 1545.4,
+      "elo_b": 1576.5,
+      "elo_diff": -31.2,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.53,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Middleweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Danny Silva",
+      "fighter_b": "Kurtis Campbell",
+      "not_found": true,
+      "weight_class": "Featherweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Mason Jones",
+      "fighter_b": "Axel Sola",
+      "prob_a": 9.5,
+      "prob_b": 90.5,
+      "winner": "Axel Sola",
+      "winner_prob": 90.5,
+      "confidence": "medium",
+      "elo_a": 1533.2,
+      "elo_b": 1514.2,
+      "elo_diff": 19.0,
+      "style_a": "wrestler",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Lightweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Nathaniel Wood",
+      "fighter_b": "Losene Keita",
+      "not_found": true,
+      "weight_class": "Featherweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Mario Pinto",
+      "fighter_b": "Felipe Franco",
+      "not_found": true,
+      "weight_class": "Heavyweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Mantas Kondratavicius",
+      "fighter_b": "Antonio Trocoli",
+      "not_found": true,
+      "weight_class": "Middleweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Brando Pericic",
+      "fighter_b": "Louie Sutherland",
+      "not_found": true,
+      "weight_class": "Heavyweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Abdul-Kareem Al-Selwady",
+      "fighter_b": "Shem Rock",
+      "not_found": true,
+      "weight_class": "Lightweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Shanelle Dyer",
+      "fighter_b": "Ravena Oliveira",
+      "not_found": true,
+      "weight_class": "Women's Strawweight",
+      "title_fight": false
+    }
+  ],
+  "ev_plays": [],
+  "parlays": {
+    "high_only": {
+      "legs": [],
+      "prob": 100.0,
+      "count": 0
+    },
+    "high_and_med": {
+      "legs": [
+        {
+          "fighter": "Lerone Murphy",
+          "prob": 89.2
+        },
+        {
+          "fighter": "Michael Page",
+          "prob": 79.2
+        },
+        {
+          "fighter": "Christian Leroy Duncan",
+          "prob": 75.8
+        },
+        {
+          "fighter": "Axel Sola",
+          "prob": 90.5
+        }
+      ],
+      "prob": 48.5,
+      "count": 4
+    }
+  }
+}

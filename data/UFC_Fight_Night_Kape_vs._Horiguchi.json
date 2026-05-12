@@ -1,0 +1,199 @@
+{
+  "event_name": "UFC Fight Night: Kape vs. Horiguchi",
+  "event_slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
+  "event_date": "June 20, 2026",
+  "location": "Las Vegas, Nevada, USA",
+  "generated_at": "2026-05-13T08:41:32.961314",
+  "model_stats": {
+    "accuracy": 83.1,
+    "roc_auc": 0.9229,
+    "high_conf_acc": 94.8,
+    "overfit_gap": 0.026
+  },
+  "summary": {
+    "total_fights": 6,
+    "high_conf": 0,
+    "medium_conf": 5,
+    "low_conf": 0,
+    "not_found": 1,
+    "ev_plays": 0
+  },
+  "fights": [
+    {
+      "fighter_a": "Manel Kape",
+      "fighter_b": "Kyoji Horiguchi",
+      "prob_a": 16.6,
+      "prob_b": 83.4,
+      "winner": "Kyoji Horiguchi",
+      "winner_prob": 83.4,
+      "confidence": "medium",
+      "elo_a": 1556.2,
+      "elo_b": 1580.9,
+      "elo_diff": -24.7,
+      "style_a": "striker",
+      "style_b": "hybrid",
+      "chaos": 0.431,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Flyweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Allan Nascimento",
+      "fighter_b": "Mitch Raposo",
+      "prob_a": 90.0,
+      "prob_b": 10.0,
+      "winner": "Allan Nascimento",
+      "winner_prob": 90.0,
+      "confidence": "medium",
+      "elo_a": 1534.1,
+      "elo_b": 1468.5,
+      "elo_diff": 65.6,
+      "style_a": "hybrid",
+      "style_b": "wrestler",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Flyweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Ion Cutelaba",
+      "fighter_b": "Navajo Stirling",
+      "prob_a": 29.6,
+      "prob_b": 70.4,
+      "winner": "Navajo Stirling",
+      "winner_prob": 70.4,
+      "confidence": "medium",
+      "elo_a": 1478.9,
+      "elo_b": 1529.7,
+      "elo_diff": -50.8,
+      "style_a": "wrestler",
+      "style_b": "hybrid",
+      "chaos": 0.551,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Light Heavyweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Andre Lima",
+      "fighter_b": "Kevin Borjas",
+      "prob_a": 98.4,
+      "prob_b": 1.6,
+      "winner": "Andre Lima",
+      "winner_prob": 98.4,
+      "confidence": "medium",
+      "elo_a": 1559.8,
+      "elo_b": 1471.9,
+      "elo_diff": 87.9,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Flyweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Hyder Amil",
+      "fighter_b": "Christian Rodriguez",
+      "prob_a": 17.3,
+      "prob_b": 82.7,
+      "winner": "Christian Rodriguez",
+      "winner_prob": 82.7,
+      "confidence": "medium",
+      "elo_a": 1531.0,
+      "elo_b": 1512.9,
+      "elo_diff": 18.1,
+      "style_a": "striker",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Featherweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Bia Mesquita",
+      "fighter_b": "Melissa Mullins",
+      "not_found": true,
+      "weight_class": "Women's Bantamweight",
+      "title_fight": false
+    }
+  ],
+  "ev_plays": [],
+  "parlays": {
+    "high_only": {
+      "legs": [],
+      "prob": 100.0,
+      "count": 0
+    },
+    "high_and_med": {
+      "legs": [
+        {
+          "fighter": "Kyoji Horiguchi",
+          "prob": 83.4
+        },
+        {
+          "fighter": "Allan Nascimento",
+          "prob": 90.0
+        },
+        {
+          "fighter": "Navajo Stirling",
+          "prob": 70.4
+        },
+        {
+          "fighter": "Andre Lima",
+          "prob": 98.4
+        },
+        {
+          "fighter": "Christian Rodriguez",
+          "prob": 82.7
+        }
+      ],
+      "prob": 43.0,
+      "count": 5
+    }
+  }
+}

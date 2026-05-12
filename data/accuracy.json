@@ -1,0 +1,24 @@
+{
+  "updated_at": "2026-05-12T22:45:23.329546+00:00",
+  "overall": {
+    "total": 0,
+    "correct": 0,
+    "wrong": 0,
+    "accuracy": null
+  },
+  "by_confidence": {
+    "high": {
+      "correct": 0,
+      "wrong": 0
+    },
+    "medium": {
+      "correct": 0,
+      "wrong": 0
+    },
+    "low": {
+      "correct": 0,
+      "wrong": 0
+    }
+  },
+  "events": {}
+}

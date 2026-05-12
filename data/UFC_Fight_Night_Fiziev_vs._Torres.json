@@ -1,0 +1,99 @@
+{
+  "event_name": "UFC Fight Night: Fiziev vs. Torres",
+  "event_slug": "UFC_Fight_Night_Fiziev_vs._Torres",
+  "event_date": "June 27, 2026",
+  "location": "Baku, Azerbaijan",
+  "generated_at": "2026-05-13T08:41:37.531479",
+  "model_stats": {
+    "accuracy": 83.1,
+    "roc_auc": 0.9229,
+    "high_conf_acc": 94.8,
+    "overfit_gap": 0.026
+  },
+  "summary": {
+    "total_fights": 2,
+    "high_conf": 0,
+    "medium_conf": 2,
+    "low_conf": 0,
+    "not_found": 0,
+    "ev_plays": 0
+  },
+  "fights": [
+    {
+      "fighter_a": "Rafael Fiziev",
+      "fighter_b": "Manuel Torres",
+      "prob_a": 4.7,
+      "prob_b": 95.3,
+      "winner": "Manuel Torres",
+      "winner_prob": 95.3,
+      "confidence": "medium",
+      "elo_a": 1557.4,
+      "elo_b": 1546.1,
+      "elo_diff": 11.3,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Lightweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Shara Magomedov",
+      "fighter_b": "Michel Pereira",
+      "prob_a": 83.0,
+      "prob_b": 17.0,
+      "winner": "Shara Magomedov",
+      "winner_prob": 83.0,
+      "confidence": "medium",
+      "elo_a": 1557.6,
+      "elo_b": 1554.4,
+      "elo_diff": 3.2,
+      "style_a": "striker",
+      "style_b": "hybrid",
+      "chaos": 0.558,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Middleweight",
+      "not_found": false
+    }
+  ],
+  "ev_plays": [],
+  "parlays": {
+    "high_only": {
+      "legs": [],
+      "prob": 100.0,
+      "count": 0
+    },
+    "high_and_med": {
+      "legs": [
+        {
+          "fighter": "Manuel Torres",
+          "prob": 95.3
+        },
+        {
+          "fighter": "Shara Magomedov",
+          "prob": 83.0
+        }
+      ],
+      "prob": 79.1,
+      "count": 2
+    }
+  }
+}

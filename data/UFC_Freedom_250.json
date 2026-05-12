@@ -1,0 +1,276 @@
+{
+  "event_name": "UFC Freedom 250",
+  "event_slug": "UFC_Freedom_250",
+  "event_date": "June 14, 2026",
+  "location": "Washington, DC, USA",
+  "generated_at": "2026-05-13T08:41:28.619015",
+  "model_stats": {
+    "accuracy": 83.1,
+    "roc_auc": 0.9229,
+    "high_conf_acc": 94.8,
+    "overfit_gap": 0.026
+  },
+  "summary": {
+    "total_fights": 7,
+    "high_conf": 0,
+    "medium_conf": 6,
+    "low_conf": 0,
+    "not_found": 1,
+    "ev_plays": 5
+  },
+  "fights": [
+    {
+      "fighter_a": "Ilia Topuria",
+      "fighter_b": "Justin Gaethje",
+      "prob_a": 80.9,
+      "prob_b": 19.1,
+      "winner": "Ilia Topuria",
+      "winner_prob": 80.9,
+      "confidence": "medium",
+      "elo_a": 1683.3,
+      "elo_b": 1613.1,
+      "elo_diff": 70.1,
+      "style_a": "hybrid",
+      "style_b": "striker",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": -510,
+      "odds_b": 515,
+      "ev_a": -3.2,
+      "ev_b": 17.5,
+      "edge_a": -2.7,
+      "edge_b": 2.8,
+      "vegas_prob_a": 83.6,
+      "vegas_prob_b": 16.3,
+      "weight_class": "Lightweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Alex Pereira",
+      "fighter_b": "Ciryl Gane",
+      "prob_a": 5.3,
+      "prob_b": 94.7,
+      "winner": "Ciryl Gane",
+      "winner_prob": 94.7,
+      "confidence": "medium",
+      "elo_a": 1644.0,
+      "elo_b": 1636.8,
+      "elo_diff": 7.2,
+      "style_a": "hybrid",
+      "style_b": "striker",
+      "chaos": 0.451,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": -104,
+      "odds_b": 18,
+      "ev_a": -89.6,
+      "ev_b": 11.7,
+      "edge_a": -45.7,
+      "edge_b": 10.0,
+      "vegas_prob_a": 51.0,
+      "vegas_prob_b": 84.7,
+      "weight_class": "Heavyweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Sean O'Malley",
+      "fighter_b": "Aiemann Zahabi",
+      "prob_a": 78.0,
+      "prob_b": 22.0,
+      "winner": "Sean O'Malley",
+      "winner_prob": 78.0,
+      "confidence": "medium",
+      "elo_a": 1619.8,
+      "elo_b": 1580.5,
+      "elo_diff": 39.3,
+      "style_a": "striker",
+      "style_b": "hybrid",
+      "chaos": 0.58,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": -406,
+      "odds_b": 309,
+      "ev_a": -2.8,
+      "ev_b": -10.0,
+      "edge_a": -2.2,
+      "edge_b": -2.4,
+      "vegas_prob_a": 80.2,
+      "vegas_prob_b": 24.4,
+      "weight_class": "Bantamweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Josh Hokit",
+      "fighter_b": "Derrick Lewis",
+      "not_found": true,
+      "weight_class": "Heavyweight",
+      "title_fight": false
+    },
+    {
+      "fighter_a": "Mauricio Ruffy",
+      "fighter_b": "Michael Chandler",
+      "prob_a": 94.5,
+      "prob_b": 5.5,
+      "winner": "Mauricio Ruffy",
+      "winner_prob": 94.5,
+      "confidence": "medium",
+      "elo_a": 1531.1,
+      "elo_b": 1485.6,
+      "elo_diff": 45.4,
+      "style_a": "hybrid",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": -616,
+      "odds_b": 325,
+      "ev_a": 9.8,
+      "ev_b": -76.6,
+      "edge_a": 8.5,
+      "edge_b": -18.0,
+      "vegas_prob_a": 86.0,
+      "vegas_prob_b": 23.5,
+      "weight_class": "Lightweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Bo Nickal",
+      "fighter_b": "Kyle Daukaus",
+      "prob_a": 21.9,
+      "prob_b": 78.1,
+      "winner": "Kyle Daukaus",
+      "winner_prob": 78.1,
+      "confidence": "medium",
+      "elo_a": 1543.1,
+      "elo_b": 1509.6,
+      "elo_diff": 33.4,
+      "style_a": "grappler",
+      "style_b": "hybrid",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": -306,
+      "odds_b": 242,
+      "ev_a": -70.9,
+      "ev_b": 167.1,
+      "edge_a": -53.5,
+      "edge_b": 48.9,
+      "vegas_prob_a": 75.4,
+      "vegas_prob_b": 29.2,
+      "weight_class": "Middleweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Diego Lopes",
+      "fighter_b": "Steve Garcia",
+      "prob_a": 93.8,
+      "prob_b": 6.2,
+      "winner": "Diego Lopes",
+      "winner_prob": 93.8,
+      "confidence": "medium",
+      "elo_a": 1558.8,
+      "elo_b": 1577.6,
+      "elo_diff": -18.8,
+      "style_a": "hybrid",
+      "style_b": "striker",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "odds_a": -190,
+      "odds_b": 156,
+      "ev_a": 43.2,
+      "ev_b": -84.1,
+      "edge_a": 28.3,
+      "edge_b": -32.9,
+      "vegas_prob_a": 65.5,
+      "vegas_prob_b": 39.1,
+      "weight_class": "Featherweight",
+      "not_found": false
+    }
+  ],
+  "ev_plays": [
+    {
+      "fighter": "Kyle Daukaus",
+      "prob": 78.1,
+      "ev": 167.1,
+      "edge": 48.9,
+      "odds": 242,
+      "vegas_prob": 29.2,
+      "confidence": "medium"
+    },
+    {
+      "fighter": "Diego Lopes",
+      "prob": 93.8,
+      "ev": 43.2,
+      "edge": 28.3,
+      "odds": -190,
+      "vegas_prob": 65.5,
+      "confidence": "medium"
+    },
+    {
+      "fighter": "Justin Gaethje",
+      "prob": 19.1,
+      "ev": 17.5,
+      "edge": 2.8,
+      "odds": 515,
+      "vegas_prob": 16.3,
+      "confidence": "medium"
+    },
+    {
+      "fighter": "Ciryl Gane",
+      "prob": 94.7,
+      "ev": 11.7,
+      "edge": 10.0,
+      "odds": 18,
+      "vegas_prob": 84.7,
+      "confidence": "medium"
+    },
+    {
+      "fighter": "Mauricio Ruffy",
+      "prob": 94.5,
+      "ev": 9.8,
+      "edge": 8.5,
+      "odds": -616,
+      "vegas_prob": 86.0,
+      "confidence": "medium"
+    }
+  ],
+  "parlays": {
+    "high_only": {
+      "legs": [],
+      "prob": 100.0,
+      "count": 0
+    },
+    "high_and_med": {
+      "legs": [
+        {
+          "fighter": "Ilia Topuria",
+          "prob": 80.9
+        },
+        {
+          "fighter": "Ciryl Gane",
+          "prob": 94.7
+        },
+        {
+          "fighter": "Sean O'Malley",
+          "prob": 78.0
+        },
+        {
+          "fighter": "Mauricio Ruffy",
+          "prob": 94.5
+        },
+        {
+          "fighter": "Kyle Daukaus",
+          "prob": 78.1
+        },
+        {
+          "fighter": "Diego Lopes",
+          "prob": 93.8
+        }
+      ],
+      "prob": 41.4,
+      "count": 6
+    }
+  }
+}
