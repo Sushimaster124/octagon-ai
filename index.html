@@ -508,8 +508,10 @@
       box-shadow: var(--shadow-md);
     }
     .header-right.open { display: flex; }
-    .header-right .nav-btn, .header-right a.nav-btn {
+    .header-right .nav-btn, .header-right a.nav-btn,
+    .header-right button.nav-btn {
       width: 100%; justify-content: center; font-size: 14px; padding: 10px;
+      display: flex;
     }
     .header-right {
     display: flex;
@@ -517,7 +519,7 @@
     gap: 1rem;
   }
 
-  .hamburger { display: none; flex-shrink: 0; }
+  .hamburger { display: none; flex-shrink: 0; z-index: 101; }
     .hamburger span {
       width: 22px; height: 2px; background: var(--gray-900);
       border-radius: 2px; display: block;
