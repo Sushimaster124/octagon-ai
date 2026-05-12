@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
   "event_date": "June 06, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T08:41:23.985595",
+  "generated_at": "2026-05-13T09:18:19.987547",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -54,19 +54,19 @@
       "title_fight": false
     },
     {
-      "fighter_a": "Daniel Rodriguez",
+      "fighter_a": "Manuel Rodriguez",
       "fighter_b": "Matt Schnell",
-      "prob_a": 59.1,
-      "prob_b": 40.9,
-      "winner": "Daniel Rodriguez",
-      "winner_prob": 59.1,
+      "prob_a": 68.3,
+      "prob_b": 31.7,
+      "winner": "Manuel Rodriguez",
+      "winner_prob": 68.3,
       "confidence": "medium",
-      "elo_a": 1592.9,
+      "elo_a": 1484.0,
       "elo_b": 1493.4,
-      "elo_diff": 99.5,
-      "style_a": "striker",
+      "elo_diff": -9.4,
+      "style_a": "wrestler",
       "style_b": "hybrid",
-      "chaos": 0.579,
+      "chaos": 0.532,
       "elo_clash": false,
       "title_fight": false,
       "odds_a": null,
@@ -294,6 +294,10 @@
     "high_and_med": {
       "legs": [
         {
+          "fighter": "Manuel Rodriguez",
+          "prob": 68.3
+        },
+        {
           "fighter": "Bruno Silva",
           "prob": 66.4
         },
@@ -318,8 +322,8 @@
           "prob": 94.3
         }
       ],
-      "prob": 21.6,
-      "count": 6
+      "prob": 14.7,
+      "count": 7
     }
   }
 }

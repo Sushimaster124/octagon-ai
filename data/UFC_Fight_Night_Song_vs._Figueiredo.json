@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Song_vs._Figueiredo",
   "event_date": "May 30, 2026",
   "location": "Macau, China",
-  "generated_at": "2026-05-13T09:09:22.046860",
+  "generated_at": "2026-05-13T09:18:14.875567",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,

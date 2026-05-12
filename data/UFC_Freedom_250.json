@@ -3,7 +3,7 @@
   "event_slug": "UFC_Freedom_250",
   "event_date": "June 14, 2026",
   "location": "Washington, DC, USA",
-  "generated_at": "2026-05-13T08:41:28.619015",
+  "generated_at": "2026-05-13T09:18:24.044455",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,

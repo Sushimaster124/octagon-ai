@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Allen_vs._Costa",
   "event_date": "May 16, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T09:09:18.325146",
+  "generated_at": "2026-05-13T09:18:10.035051",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,

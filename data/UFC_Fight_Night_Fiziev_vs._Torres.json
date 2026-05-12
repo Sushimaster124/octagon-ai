@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Fiziev_vs._Torres",
   "event_date": "June 27, 2026",
   "location": "Baku, Azerbaijan",
-  "generated_at": "2026-05-13T08:41:37.531479",
+  "generated_at": "2026-05-13T09:18:31.929548",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
