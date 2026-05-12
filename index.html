@@ -652,6 +652,7 @@ async function loadEventsList() {
   try {
     const resp = await fetch(DATA_BASE + 'index.json');
     allIndex   = await resp.json();
+    allIndex.sort((a,b) => new Date(a.date) - new Date(b.date));
     document.getElementById('events-count').textContent =
       `${allIndex.length} event${allIndex.length !== 1 ? 's' : ''} available`;
     renderEventsList(allIndex);
