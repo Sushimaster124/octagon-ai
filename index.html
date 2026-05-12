@@ -40,7 +40,6 @@
     min-height: 100vh;
   }
 
-  /* ── Header ── */
   header {
     background: white;
     border-bottom: 1px solid var(--border);
@@ -103,16 +102,17 @@
     background: white;
     font-family: var(--font);
     transition: background 0.15s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
   }
 
   .nav-btn:hover { background: var(--gray-50); }
   .nav-btn.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
 
-  /* ── Pages ── */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* ── Hero ── */
   .hero {
     background: white;
     border-bottom: 1px solid var(--border);
@@ -197,7 +197,6 @@
 
   .search-wrap button:hover { background: var(--red-dark); }
 
-  /* ── Stats bar ── */
   .stats-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -215,7 +214,6 @@
   .stat-value { font-size: 28px; font-weight: 700; color: var(--gray-900); letter-spacing: -0.02em; }
   .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
 
-  /* ── Main layout ── */
   .main {
     max-width: 1100px;
     margin: 0 auto;
@@ -235,7 +233,6 @@
     margin-bottom: 1rem;
   }
 
-  /* ── Events browser ── */
   .events-page {
     max-width: 800px;
     margin: 0 auto;
@@ -249,22 +246,10 @@
     margin-bottom: 1.5rem;
   }
 
-  .events-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--gray-900);
-  }
+  .events-title { font-size: 22px; font-weight: 700; color: var(--gray-900); }
+  .events-count { font-size: 13px; color: var(--gray-400); }
 
-  .events-count {
-    font-size: 13px;
-    color: var(--gray-400);
-  }
-
-  .events-filter {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 1.5rem;
-  }
+  .events-filter { display: flex; gap: 8px; margin-bottom: 1.5rem; }
 
   .filter-btn {
     padding: 6px 14px;
@@ -278,11 +263,7 @@
     transition: all 0.15s;
   }
 
-  .filter-btn.active {
-    background: var(--gray-900);
-    color: white;
-    border-color: var(--gray-900);
-  }
+  .filter-btn.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
 
   .event-row {
     background: white;
@@ -298,53 +279,18 @@
     box-shadow: var(--shadow-sm);
   }
 
-  .event-row:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--gray-200);
-  }
-
+  .event-row:hover { box-shadow: var(--shadow-md); border-color: var(--gray-200); }
   .event-row-left { flex: 1; }
+  .event-row-name { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px; }
+  .event-row-meta { font-size: 12px; color: var(--gray-400); display: flex; align-items: center; gap: 12px; }
+  .event-row-pills { display: flex; align-items: center; gap: 8px; }
+  .event-pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+  .pill-high   { background: var(--green-light); color: var(--green); }
+  .pill-medium { background: var(--amber-light); color: var(--amber); }
+  .pill-low    { background: var(--red-light);   color: var(--red-dark); }
+  .pill-ev     { background: var(--blue-light);  color: var(--blue-dark); }
+  .event-row-arrow { color: var(--gray-400); font-size: 18px; margin-left: 12px; }
 
-  .event-row-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gray-900);
-    margin-bottom: 4px;
-  }
-
-  .event-row-meta {
-    font-size: 12px;
-    color: var(--gray-400);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .event-row-pills {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .event-pill {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 20px;
-  }
-
-  .pill-high   { background: var(--green-light);  color: var(--green); }
-  .pill-medium { background: var(--amber-light);  color: var(--amber); }
-  .pill-low    { background: var(--red-light);    color: var(--red-dark); }
-  .pill-ev     { background: var(--blue-light);   color: var(--blue-dark); }
-
-  .event-row-arrow {
-    color: var(--gray-400);
-    font-size: 18px;
-    margin-left: 12px;
-  }
-
-  /* ── Fight card ── */
   .fight-card {
     background: white;
     border: 1px solid var(--border);
@@ -377,9 +323,9 @@
     letter-spacing: 0.04em;
   }
 
-  .conf-high   { background: var(--green-light);  color: var(--green); }
-  .conf-medium { background: var(--amber-light);  color: var(--amber); }
-  .conf-low    { background: var(--red-light);    color: var(--red-dark); }
+  .conf-high   { background: var(--green-light); color: var(--green); }
+  .conf-medium { background: var(--amber-light); color: var(--amber); }
+  .conf-low    { background: var(--red-light);   color: var(--red-dark); }
 
   .fight-card-body { padding: 16px; }
 
@@ -393,10 +339,8 @@
 
   .fighter-side { display: flex; flex-direction: column; }
   .fighter-side.right { align-items: flex-end; text-align: right; }
-
   .fighter-name { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 2px; }
   .fighter-detail { font-size: 12px; color: var(--gray-400); margin-bottom: 8px; }
-
   .prob-number { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
   .prob-red  { color: var(--red); }
   .prob-blue { color: var(--blue); }
@@ -415,15 +359,8 @@
     overflow: hidden; margin-bottom: 12px;
   }
 
-  .prob-bar-red {
-    position: absolute; left: 0; top: 0; height: 100%;
-    background: var(--red); border-radius: 3px;
-  }
-
-  .prob-bar-blue {
-    position: absolute; right: 0; top: 0; height: 100%;
-    background: var(--blue); border-radius: 3px;
-  }
+  .prob-bar-red  { position: absolute; left: 0; top: 0; height: 100%; background: var(--red); border-radius: 3px; }
+  .prob-bar-blue { position: absolute; right: 0; top: 0; height: 100%; background: var(--blue); border-radius: 3px; }
 
   .winner-row {
     display: flex; align-items: center; justify-content: space-between;
@@ -444,20 +381,16 @@
   }
 
   .clash-flag { font-size: 11px; color: var(--amber); }
-
   .ev-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-
   .ev-chip { padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
   .ev-chip-pos { background: var(--green-light); border-color: transparent; }
   .ev-chip-neg { background: var(--gray-50); }
-
   .ev-chip-fighter { font-size: 11px; color: var(--gray-400); margin-bottom: 2px; }
   .ev-chip-value   { font-size: 14px; font-weight: 700; }
   .ev-chip-pos .ev-chip-value { color: var(--green); }
   .ev-chip-neg .ev-chip-value { color: var(--gray-600); }
-  .ev-chip-line    { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+  .ev-chip-line { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
 
-  /* ── Sidebar ── */
   .sidebar { position: sticky; top: 72px; }
 
   .sidebar-card {
@@ -535,33 +468,21 @@
   }
 
   .back-btn:hover { color: var(--gray-900); }
-
   .summary-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .summary-pill { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
 
-  .summary-pill {
-    padding: 4px 10px; border-radius: 20px;
-    font-size: 12px; font-weight: 600;
-  }
-
-  /* Loading */
-  .loading {
-    text-align: center; padding: 4rem 2rem; color: var(--gray-400);
-  }
+  .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
 
   .spinner {
     width: 32px; height: 32px;
-    border: 3px solid var(--gray-100);
-    border-top-color: var(--red);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
+    border: 3px solid var(--gray-100); border-top-color: var(--red);
+    border-radius: 50%; animation: spin 0.7s linear infinite;
     margin: 0 auto 1rem;
   }
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  .empty-state {
-    text-align: center; padding: 4rem 2rem; color: var(--gray-400);
-  }
+  .empty-state { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
 
   footer {
     text-align: center; padding: 2rem;
@@ -589,14 +510,12 @@
     <button class="nav-btn active" id="btn-home" onclick="showHome()">Predictions</button>
     <button class="nav-btn" id="btn-events" onclick="showEvents()">All events</button>
     <a class="nav-btn" href="fighters.html">Fighters</a>
-    <a class="nav-link" href="accuracy.html">Accuracy</a>
+    <a class="nav-btn" href="accuracy.html">Accuracy</a>
     <span class="accuracy-pill">83% accurate</span>
   </div>
 </header>
 
-<!-- ── HOME PAGE ── -->
 <div class="page active" id="page-home">
-
   <div class="hero">
     <div class="hero-eyebrow">
       <div class="live-dot"></div>
@@ -638,10 +557,8 @@
     </div>
     <div class="sidebar" id="sidebar"></div>
   </div>
-
 </div>
 
-<!-- ── EVENTS PAGE ── -->
 <div class="page" id="page-events">
   <div class="events-page">
     <div class="events-header">
@@ -670,7 +587,6 @@ const DATA_BASE = 'data/';
 let allIndex = [];
 let currentFilter = 'all';
 
-// ── Navigation ────────────────────────────────────────────────────────────────
 function showHome() {
   document.getElementById('page-home').classList.add('active');
   document.getElementById('page-events').classList.remove('active');
@@ -686,10 +602,8 @@ function showEvents() {
   loadEventsList();
 }
 
-// ── Events list ───────────────────────────────────────────────────────────────
 async function loadEventsList() {
   const list = document.getElementById('events-list');
-
   try {
     const resp = await fetch(DATA_BASE + 'index.json');
     allIndex   = await resp.json();
@@ -710,9 +624,15 @@ function filterEvents(filter, btn) {
   let filtered = allIndex;
 
   if (filter === 'upcoming') {
-    filtered = allIndex.filter(e => e.date >= today);
+    filtered = allIndex.filter(e => {
+      try { return new Date(e.date) >= new Date(today); }
+      catch { return true; }
+    });
   } else if (filter === 'past') {
-    filtered = allIndex.filter(e => e.date < today);
+    filtered = allIndex.filter(e => {
+      try { return new Date(e.date) < new Date(today); }
+      catch { return false; }
+    });
   }
 
   renderEventsList(filtered);
@@ -724,8 +644,8 @@ function renderEventsList(events) {
   if (events.length === 0) {
     list.innerHTML = `
       <div class="empty-state">
-        <div style="font-size:32px; margin-bottom:1rem">🥊</div>
-        <div style="font-size:15px; font-weight:600; color:var(--gray-600)">No events found</div>
+        <div style="font-size:32px;margin-bottom:1rem">🥊</div>
+        <div style="font-size:15px;font-weight:600;color:var(--gray-600)">No events found</div>
       </div>
     `;
     return;
@@ -734,16 +654,26 @@ function renderEventsList(events) {
   const today = new Date().toISOString().slice(0,10);
 
   list.innerHTML = events.map(event => {
-    const isUpcoming = event.date >= today;
-    const s = event.summary || {};
-    const high = s.high_conf || 0;
-    const med  = s.medium_conf || 0;
-    const ev   = s.ev_plays || 0;
+    const isUpcoming = (() => {
+      try { return new Date(event.date) >= new Date(today); }
+      catch { return false; }
+    })();
+
+    const s     = event.summary || {};
+    const high  = s.high_conf || 0;
+    const med   = s.medium_conf || 0;
+    const ev    = s.ev_plays || 0;
     const total = s.total_fights || 0;
 
     const dateStr = event.date
-      ? new Date(event.date + 'T12:00:00').toLocaleDateString('en-US',
-          { month: 'short', day: 'numeric', year: 'numeric' })
+      ? (() => {
+          try {
+            const d = new Date(event.date + 'T12:00:00');
+            if (isNaN(d)) return event.date;
+            return d.toLocaleDateString('en-US',
+              { month: 'short', day: 'numeric', year: 'numeric' });
+          } catch(e) { return event.date; }
+        })()
       : '';
 
     return `
@@ -754,9 +684,7 @@ function renderEventsList(events) {
             <span>${dateStr}</span>
             ${event.location ? `<span>${event.location}</span>` : ''}
             <span>${total} fights</span>
-            ${isUpcoming
-              ? `<span style="color:var(--red); font-weight:600">Upcoming</span>`
-              : ''}
+            ${isUpcoming ? `<span style="color:var(--red);font-weight:600">Upcoming</span>` : ''}
           </div>
         </div>
         <div class="event-row-pills">
@@ -776,7 +704,6 @@ async function loadEventFromBrowser(slug) {
   window.scrollTo(0, 0);
 }
 
-// ── Event loading ─────────────────────────────────────────────────────────────
 function getEventSlug() {
   const params = new URLSearchParams(window.location.search);
   return params.get('event') || null;
@@ -784,8 +711,8 @@ function getEventSlug() {
 
 async function loadLatestEvent() {
   try {
-    const resp  = await fetch(DATA_BASE + 'index.json');
-    allIndex    = await resp.json();
+    const resp = await fetch(DATA_BASE + 'index.json');
+    allIndex   = await resp.json();
     if (allIndex.length === 0) { showError('No events found.'); return; }
     loadEvent(allIndex[0].slug);
   } catch(e) {
@@ -815,9 +742,9 @@ async function loadEventBySearch() {
   if (!query) return;
 
   try {
-    const resp  = await fetch(DATA_BASE + 'index.json');
-    allIndex    = await resp.json();
-    const q     = query.toLowerCase();
+    const resp = await fetch(DATA_BASE + 'index.json');
+    allIndex   = await resp.json();
+    const q    = query.toLowerCase();
 
     let match = allIndex.find(e => e.name.toLowerCase() === q);
     if (!match) match = allIndex.find(e => e.name.toLowerCase().includes(q));
@@ -840,20 +767,17 @@ document.getElementById('event-search').addEventListener('keydown', e => {
   if (e.key === 'Enter') loadEventBySearch();
 });
 
-// ── Render event ──────────────────────────────────────────────────────────────
 function renderEvent(data) {
   document.getElementById('fights-count').textContent = data.summary.total_fights;
   const col = document.getElementById('fights-col');
   col.innerHTML = '';
 
-  // Back button
   const back = document.createElement('button');
   back.className = 'back-btn';
   back.innerHTML = '← All events';
   back.onclick = showEvents;
   col.appendChild(back);
 
-  // Event header
   const evCard = document.createElement('div');
   evCard.className = 'event-header-card';
   evCard.innerHTML = `
@@ -874,7 +798,6 @@ function renderEvent(data) {
   label.textContent = 'Fight predictions';
   col.appendChild(label);
 
-  // Fight cards
   data.fights.forEach((fight, i) => {
     const card = document.createElement('div');
     card.className = 'fight-card';
@@ -965,7 +888,6 @@ function renderEvent(data) {
   renderSidebar(data);
 }
 
-// ── Sidebar ───────────────────────────────────────────────────────────────────
 function renderSidebar(data) {
   const sidebar = document.getElementById('sidebar');
   sidebar.innerHTML = '';
@@ -997,12 +919,11 @@ function renderSidebar(data) {
     sidebar.appendChild(evCard);
   }
 
-  const parlayData = data.parlays;
-  if (parlayData) {
+  if (data.parlays) {
     const pCard = document.createElement('div');
     pCard.className = 'sidebar-card';
-    const legs   = parlayData.high_only.legs;
-    const prob   = parlayData.high_only.prob;
+    const legs   = data.parlays.high_only.legs;
+    const prob   = data.parlays.high_only.prob;
     const rating = prob >= 50 ? 'strong' : prob >= 30 ? 'moderate' : 'risky';
     const rLabel = prob >= 50 ? 'Strong play' : prob >= 30 ? 'Moderate risk' : 'High risk';
 
@@ -1045,7 +966,6 @@ function renderSidebar(data) {
   sidebar.appendChild(disc);
 }
 
-// ── Error states ──────────────────────────────────────────────────────────────
 function showError(msg) {
   document.getElementById('fights-col').innerHTML = `
     <div class="empty-state">
@@ -1080,7 +1000,6 @@ function showSearchError(query, index) {
   `;
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
 const slug = getEventSlug();
 if (slug) loadEvent(slug);
 else loadLatestEvent();
