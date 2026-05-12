@@ -1002,7 +1002,14 @@ function showSearchError(query, index) {
 
 const slug = getEventSlug();
 if (slug) loadEvent(slug);
-else loadLatestEvent();
+else {
+  if (sessionStorage.getItem('showEvents') === '1') {
+    sessionStorage.removeItem('showEvents');
+    showEvents();
+  } else {
+    loadLatestEvent();
+  }
+}
 </script>
 </body>
 </html>
