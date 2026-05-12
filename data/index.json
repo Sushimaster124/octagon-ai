@@ -1,5 +1,95 @@
 [
   {
+    "slug": "UFC_323_Dvalishvili_vs._Yan_2",
+    "name": "UFC 323: Dvalishvili vs. Yan 2",
+    "date": "December 06, 2025",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-12T18:46:58.012924",
+    "summary": {
+      "total_fights": 14,
+      "high_conf": 0,
+      "medium_conf": 11,
+      "low_conf": 2,
+      "not_found": 1,
+      "ev_plays": 2
+    }
+  },
+  {
+    "slug": "UFC_324_Gaethje_vs._Pimblett",
+    "name": "UFC 324: Gaethje vs. Pimblett",
+    "date": "January 24, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-12T18:46:53.518552",
+    "summary": {
+      "total_fights": 11,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 0,
+      "not_found": 2,
+      "ev_plays": 1
+    }
+  },
+  {
+    "slug": "UFC_325_Volkanovski_vs._Lopes_2",
+    "name": "UFC 325: Volkanovski vs. Lopes 2",
+    "date": "January 31, 2026",
+    "location": "Sydney, New South Wales, Australia",
+    "generated_at": "2026-05-12T18:46:48.412370",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 8,
+      "low_conf": 1,
+      "not_found": 4,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_326_Holloway_vs._Oliveira_2",
+    "name": "UFC 326: Holloway vs. Oliveira 2",
+    "date": "March 07, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-12T18:46:43.233205",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 10,
+      "low_conf": 1,
+      "not_found": 1,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_327_Prochazka_vs._Ulberg",
+    "name": "UFC 327: Prochazka vs. Ulberg",
+    "date": "April 11, 2026",
+    "location": "Miami, Florida, USA",
+    "generated_at": "2026-05-12T18:46:38.333258",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 7,
+      "low_conf": 3,
+      "not_found": 2,
+      "ev_plays": 2
+    }
+  },
+  {
+    "slug": "UFC_328_Chimaev_vs._Strickland",
+    "name": "UFC 328: Chimaev vs. Strickland",
+    "date": "May 09, 2026",
+    "location": "Newark, New Jersey, USA",
+    "generated_at": "2026-05-12T18:46:33.729606",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 11,
+      "low_conf": 1,
+      "not_found": 1,
+      "ev_plays": 0
+    }
+  },
+  {
     "slug": "UFC_Fight_Night_Allen_vs._Costa",
     "name": "UFC Fight Night: Allen vs. Costa",
     "date": "May 16, 2026",
