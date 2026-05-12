@@ -323,6 +323,15 @@ function processEvent(data) {
     `Best EV plays · ${data.event_name} · ${formatDate(data.event_date || '')}`;
   allPicks = buildPicks(data);
   renderStats();
+  if (allPicks.length === 0) {
+    const hasOdds = data.fights.some(f => !f.not_found && f.odds_a !== null);
+    showEmpty(
+      hasOdds ? 'No medium or high confidence EV plays for this event.' : 'No odds available yet for this event.',
+      !hasOdds
+    );
+    document.getElementById('picks-label').textContent = '';
+    return;
+  }
   renderPicks(allPicks);
   document.getElementById('alloc-panel').classList.remove('visible');
 }
@@ -507,8 +516,18 @@ function formatDate(d) {
   } catch { return d; }
 }
 
-function showEmpty(msg) {
-  document.getElementById('picks-list').innerHTML = `<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">🥊</div><div style="font-size:14px;color:var(--gray-600)">${msg}</div></div>`;
+function showEmpty(msg, noOdds) {
+  document.getElementById('picks-list').innerHTML = `
+    <div class="empty-state">
+      <div style="font-size:32px;margin-bottom:1rem">${noOdds ? '⏳' : '🥊'}</div>
+      <div style="font-size:15px;font-weight:600;color:var(--gray-600);margin-bottom:8px">${msg}</div>
+      ${noOdds ? `
+        <div style="font-size:13px;color:var(--gray-400);max-width:380px;margin:0 auto;line-height:1.6">
+          Vegas typically opens lines 1–2 weeks before fight night. Check back closer to the event — odds and EV picks will populate automatically.
+        </div>
+      ` : ''}
+    </div>
+  `;
   document.getElementById('picks-label').textContent = '';
 }
 
