@@ -469,6 +469,73 @@
     </div>
   </div>
 
+  <hr class="divider">
+
+  <!-- Section 7: How to read the numbers -->
+  <div class="section-eyebrow">Quick reference</div>
+  <div class="section-title">How to read the numbers</div>
+  <p class="section-body">Every fight card shows a handful of metrics. Here's exactly what each one means in plain English.</p>
+
+  <div class="step-list">
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--green);font-size:11px">HC</div>
+      <div class="step-content">
+        <div class="step-title">95% hist. accuracy</div>
+        <div class="step-body">Shown on HIGH confidence fights. Means that historically, when the model was this sure, it was right 19 out of 20 times across 483 real fights. This is the band worth acting on.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--amber);font-size:11px">MC</div>
+      <div class="step-content">
+        <div class="step-title">67–81% hist. accuracy</div>
+        <div class="step-body">Shown on MEDIUM confidence fights. The model still leans one way, but the range is wide — some medium fights are closer to 81%, others closer to 67%. Treat as an informed opinion, not a strong call.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--gray-400);font-size:10px">CH</div>
+      <div class="step-content">
+        <div class="step-title">Chaos score (e.g. chaos 0.42)</div>
+        <div class="step-body">A number from 0 to 1 measuring how unpredictable each fighter's history is — based on how randomly they win by KO vs submission vs decision, and how often they go early vs late rounds. <strong>Lower is more predictable.</strong> Under 0.45 = high confidence zone. Over 0.65 = coin flip territory. Two chaos monsters in one fight = expect the unexpected.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--amber);font-size:10px">⚡</div>
+      <div class="step-content">
+        <div class="step-title">Elo clash detected</div>
+        <div class="step-body">The model's statistical analysis and the Elo ranking system are pointing in opposite directions. For example: Elo says Fighter A is clearly better historically, but the stats say Fighter B should win this specific matchup. When these signals conflict, upset risk goes up. This flag correctly identified the Strickland and Oliveira upsets before they happened.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--blue);font-size:10px">EV</div>
+      <div class="step-content">
+        <div class="step-title">+$42 EV (Expected Value)</div>
+        <div class="step-body">If you bet $100 on this fighter repeatedly in identical situations, you'd make $42 profit on average per bet. Positive EV means Vegas is underpricing the fighter relative to what the model thinks their true win probability is. This is a long-run concept — any single fight can still go wrong.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--blue);font-size:10px">ML</div>
+      <div class="step-content">
+        <div class="step-title">ML +153 / ML -184 (Moneyline odds)</div>
+        <div class="step-body">American betting odds. <strong>Positive (+153)</strong> means underdog — bet $100 to win $153 profit. <strong>Negative (-184)</strong> means favorite — bet $184 to win $100 profit. The bigger the negative number, the more heavily favored Vegas thinks that fighter is.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--red);font-size:10px">ELO</div>
+      <div class="step-content">
+        <div class="step-title">Elo 1625 (Fighter rating)</div>
+        <div class="step-body">A career skill rating. Everyone starts at 1500. Beating a higher-rated opponent moves your score up more than beating a weaker one. Jon Jones sits at 1849 — the highest in UFC history in this dataset. A gap of 100+ Elo points is significant. Under 50 points is essentially a toss-up on ratings alone.</div>
+      </div>
+    </div>
+
+  </div>
+
   <!-- CTA -->
   <div class="cta-box">
     <h3>Ready to see the picks?</h3>
