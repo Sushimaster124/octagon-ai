@@ -860,11 +860,18 @@ function renderEvent(data) {
       return;
     }
 
-    const conf      = fight.confidence;
-    const chaosScore = fight.chaos ? Math.round((1 - fight.chaos) * 100) : null;
-    const confLabel = conf==='high' ? `High confidence${chaosScore ? ' · ' + chaosScore + '%' : ''}` :
-                      conf==='medium' ? `Medium confidence${chaosScore ? ' · ' + chaosScore + '%' : ''}` :
-                      `Low confidence${chaosScore ? ' · ' + chaosScore + '%' : ''}`;
+    const conf       = fight.confidence;
+    const chaosScore = (fight.chaos !== undefined && fight.chaos !== null) ? fight.chaos.toFixed(2) : '—';
+    const clashFlag  = fight.elo_clash || false;
+
+    const confLabel = conf==='high' ? 'High confidence' :
+                      conf==='medium' ? 'Medium confidence' : 'Low confidence';
+
+    const confSub = conf==='high'
+      ? `95% hist. accuracy · chaos ${chaosScore}`
+      : conf==='medium'
+      ? `67–81% hist. accuracy · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`
+      : `Treat as coin flip · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash detected' : ' · high chaos'}`;
     const titleFlag = fight.title_fight ? '🏆 Title · ' : '';
     const wc        = fight.weight_class || `Fight ${i+1}`;
 
@@ -896,6 +903,7 @@ function renderEvent(data) {
       <div class="fight-card-header">
         <span class="fight-meta">${titleFlag}${wc}</span>
         <span class="conf-badge conf-${conf}">${confLabel}</span>
+        <span style="font-size:10px;color:var(--gray-400);margin-top:2px;display:block;text-align:right">${confSub}</span>
       </div>
       <div class="fight-card-body">
         <div class="fighters-grid">
