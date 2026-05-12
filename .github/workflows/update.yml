@@ -2,8 +2,8 @@ name: Auto-update predictions
 
 on:
   schedule:
-    - cron: '0 12 * * 1'  # Every Monday at noon
-  workflow_dispatch:        # Also allow manual trigger
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -17,7 +17,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install pandas numpy xgboost scikit-learn shap requests beautifulsoup4 rapidfuzz python-dotenv joblib scipy
+        run: pip install pandas numpy xgboost scikit-learn requests beautifulsoup4 rapidfuzz python-dotenv joblib scipy
 
       - name: Run updater
         env:
