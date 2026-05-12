@@ -51,7 +51,7 @@
     color: white; font-size: 14px; font-weight: 700;
   }
 
-  .header-right { display: flex; align-items: center; gap: 1rem; }
+  .header-right { display: flex; align-items: center; gap: 0.6rem; }
 
   .hamburger { display: none; }
 
@@ -59,6 +59,7 @@
     font-size: 13px; color: var(--gray-600); text-decoration: none;
     padding: 6px 12px; border-radius: 6px;
     border: 1px solid var(--border); background: white;
+    display: inline-flex; align-items: center;
   }
 
   .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
@@ -224,7 +225,7 @@
     <a class="nav-link" href="index.html#events" onclick="sessionStorage.setItem('showEvents','1')">All events</a>
     <a class="nav-link" href="fighters.html">Fighters</a>
     <a class="nav-link active" href="accuracy.html">Accuracy</a>
-    <span class="accuracy-pill">83% accurate</span>
+    <a class="nav-link" href="how-it-works.html">How it works</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
