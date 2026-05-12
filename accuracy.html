@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accuracy Tracker — Octagon AI</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:        #E24B4A;
+    --red-light:  #FCEBEB;
+    --red-dark:   #A32D2D;
+    --blue:       #378ADD;
+    --blue-light: #E6F1FB;
+    --green:      #1D9E75;
+    --green-light:#E1F5EE;
+    --amber:      #BA7517;
+    --amber-light:#FAEEDA;
+    --gray-50:    #F9F9F8;
+    --gray-100:   #F1EFE8;
+    --gray-200:   #D3D1C7;
+    --gray-400:   #888780;
+    --gray-600:   #5F5E5A;
+    --gray-900:   #1A1A18;
+    --border:     rgba(0,0,0,0.08);
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
+    --radius-md:  10px;
+    --radius-lg:  14px;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body { font-family: var(--font); background: var(--gray-50); color: var(--gray-900); }
+
+  header {
+    background: white; border-bottom: 1px solid var(--border);
+    padding: 0 2rem; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 28px; height: 28px; background: var(--red); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 14px; font-weight: 700;
+  }
+
+  .header-right { display: flex; align-items: center; gap: 1rem; }
+
+  .nav-link {
+    font-size: 13px; color: var(--gray-600); text-decoration: none;
+    padding: 6px 12px; border-radius: 6px;
+    border: 1px solid var(--border); background: white;
+  }
+
+  .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
+  .accuracy-pill { background: var(--green-light); color: var(--green); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+
+  .hero {
+    background: white; border-bottom: 1px solid var(--border);
+    padding: 2.5rem 2rem; text-align: center;
+  }
+
+  .hero h1 { font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+  .hero p  { font-size: 15px; color: var(--gray-600); }
+
+  .main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 20px;
+    box-shadow: var(--shadow-sm); text-align: center;
+  }
+
+  .stat-value { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; }
+  .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-sub   { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+
+  .val-green  { color: var(--green); }
+  .val-red    { color: var(--red); }
+  .val-amber  { color: var(--amber); }
+  .val-blue   { color: var(--blue); }
+
+  /* Confidence breakdown */
+  .conf-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-bottom: 2rem;
+  }
+
+  .conf-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .conf-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+  .conf-high   .conf-title { color: var(--green); }
+  .conf-medium .conf-title { color: var(--amber); }
+  .conf-low    .conf-title { color: var(--red-dark); }
+
+  .conf-acc { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .conf-high   .conf-acc { color: var(--green); }
+  .conf-medium .conf-acc { color: var(--amber); }
+  .conf-low    .conf-acc { color: var(--red); }
+
+  .conf-detail { font-size: 12px; color: var(--gray-400); }
+
+  .conf-bar-wrap { height: 6px; background: var(--gray-100); border-radius: 3px; overflow: hidden; margin-top: 10px; }
+  .conf-bar-fill { height: 6px; border-radius: 3px; }
+  .conf-high   .conf-bar-fill { background: var(--green); }
+  .conf-medium .conf-bar-fill { background: var(--amber); }
+  .conf-low    .conf-bar-fill { background: var(--red); }
+
+  /* Event history */
+  .section-title { font-size: 16px; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem; }
+
+  .event-accuracy-row {
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px 20px;
+    margin-bottom: 10px; box-shadow: var(--shadow-sm);
+    cursor: pointer; transition: box-shadow 0.15s;
+  }
+
+  .event-accuracy-row:hover { box-shadow: var(--shadow-md); }
+
+  .event-acc-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .event-acc-name { font-size: 15px; font-weight: 600; color: var(--gray-900); }
+  .event-acc-date { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+
+  .event-acc-score {
+    font-size: 22px; font-weight: 700;
+  }
+
+  .score-good   { color: var(--green); }
+  .score-ok     { color: var(--amber); }
+  .score-bad    { color: var(--red); }
+
+  .fight-scores { margin-top: 10px; display: none; }
+  .fight-scores.open { display: block; }
+
+  .fight-score-row {
+    display: grid; grid-template-columns: 1fr 1fr 80px 80px;
+    padding: 8px 0; border-top: 1px solid var(--border);
+    font-size: 13px; align-items: center;
+  }
+
+  .fs-names { color: var(--gray-600); }
+  .fs-predicted { color: var(--gray-900); font-weight: 500; }
+  .fs-conf { font-size: 11px; }
+  .fs-result { font-weight: 700; text-align: right; }
+  .fs-correct { color: var(--green); }
+  .fs-wrong   { color: var(--red); }
+
+  .progress-bar-wrap { height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; margin-top: 6px; }
+  .progress-bar-fill { height: 8px; border-radius: 4px; background: var(--green); }
+
+  .loading { text-align: center; padding: 4rem; color: var(--gray-400); }
+  .spinner { width: 32px; height: 32px; border: 3px solid var(--gray-100); border-top-color: var(--red); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem; }
+
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+    .conf-grid  { grid-template-columns: 1fr; }
+    .main { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <div class="logo-icon">O</div>
+    octagon.ai
+  </a>
+  <div class="header-right">
+    <a class="nav-link" href="index.html">Predictions</a>
+    <a class="nav-link" href="fighters.html">Fighters</a>
+    <a class="nav-link active" href="accuracy.html">Accuracy</a>
+    <span class="accuracy-pill" id="live-accuracy">Loading...</span>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Model accuracy tracker</h1>
+  <p>Live tracking of model predictions vs actual UFC results</p>
+</div>
+
+<div class="main" id="main">
+  <div class="loading"><div class="spinner"></div>Loading accuracy data...</div>
+</div>
+
+<footer>
+  octagon.ai · Accuracy updated automatically after each event
+</footer>
+
+<script>
+async function loadAccuracy() {
+  const main = document.getElementById('main');
+
+  try {
+    const resp = await fetch('data/accuracy.json');
+    if (!resp.ok) throw new Error('No accuracy data yet');
+    const data = await resp.json();
+    renderAccuracy(data);
+  } catch(e) {
+    main.innerHTML = `
+      <div class="loading">
+        <div style="font-size:32px;margin-bottom:1rem">📊</div>
+        <div style="font-size:15px;font-weight:600;color:var(--gray-600);margin-bottom:0.5rem">
+          No accuracy data yet
+        </div>
+        <div style="font-size:13px;color:var(--gray-400)">
+          Accuracy data is generated automatically after each UFC event.<br>
+          Check back after the next event completes.
+        </div>
+      </div>
+    `;
+  }
+}
+
+function confAcc(bc, conf) {
+  const c = bc[conf]?.correct || 0;
+  const w = bc[conf]?.wrong   || 0;
+  const t = c + w;
+  return t > 0 ? { acc: (c/t*100).toFixed(1), c, w, t } : { acc: null, c:0, w:0, t:0 };
+}
+
+function renderAccuracy(data) {
+  const main  = document.getElementById('main');
+  const ov    = data.overall || {};
+  const bc    = data.by_confidence || {};
+  const events = Object.values(data.events || {})
+    .sort((a,b) => b.date.localeCompare(a.date));
+
+  const acc = ov.accuracy;
+  document.getElementById('live-accuracy').textContent =
+    acc ? `${acc}% accurate` : 'No data';
+
+  const high = confAcc(bc, 'high');
+  const med  = confAcc(bc, 'medium');
+  const low  = confAcc(bc, 'low');
+
+  main.innerHTML = `
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value val-green">${acc ? acc+'%' : '—'}</div>
+        <div class="stat-label">Overall accuracy</div>
+        <div class="stat-sub">${ov.correct || 0} of ${ov.total || 0} correct</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value val-blue">${high.acc ? high.acc+'%' : '—'}</div>
+        <div class="stat-label">High confidence</div>
+        <div class="stat-sub">${high.c} of ${high.t} correct</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value val-amber">${events.length}</div>
+        <div class="stat-label">Events tracked</div>
+        <div class="stat-sub">Since model launch</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value val-green">${ov.total || 0}</div>
+        <div class="stat-label">Fights scored</div>
+        <div class="stat-sub">Predictions evaluated</div>
+      </div>
+    </div>
+
+    <div class="conf-grid">
+      <div class="conf-card conf-high">
+        <div class="conf-title">High confidence ✅</div>
+        <div class="conf-acc">${high.acc ? high.acc+'%' : '—'}</div>
+        <div class="conf-detail">${high.c} correct · ${high.w} wrong · ${high.t} total</div>
+        <div class="conf-bar-wrap">
+          <div class="conf-bar-fill" style="width:${high.acc || 0}%"></div>
+        </div>
+      </div>
+      <div class="conf-card conf-medium">
+        <div class="conf-title">Medium confidence ⚠️</div>
+        <div class="conf-acc">${med.acc ? med.acc+'%' : '—'}</div>
+        <div class="conf-detail">${med.c} correct · ${med.w} wrong · ${med.t} total</div>
+        <div class="conf-bar-wrap">
+          <div class="conf-bar-fill" style="width:${med.acc || 0}%"></div>
+        </div>
+      </div>
+      <div class="conf-card conf-low">
+        <div class="conf-title">Low confidence ⚠️</div>
+        <div class="conf-acc">${low.acc ? low.acc+'%' : '—'}</div>
+        <div class="conf-detail">${low.c} correct · ${low.w} wrong · ${low.t} total</div>
+        <div class="conf-bar-wrap">
+          <div class="conf-bar-fill" style="width:${low.acc || 0}%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Event by event results</div>
+    <div id="event-list">
+      ${events.length === 0
+        ? '<div style="color:var(--gray-400);font-size:13px">No completed events scored yet.</div>'
+        : events.map(e => renderEventRow(e)).join('')
+      }
+    </div>
+  `;
+}
+
+function renderEventRow(e) {
+  const acc      = e.accuracy || 0;
+  const scoreClass = acc >= 70 ? 'score-good' : acc >= 55 ? 'score-ok' : 'score-bad';
+  const barWidth   = acc.toFixed(0);
+  const slug       = e.name.replace(/\s/g,'_').replace(/:/g,'').replace(/\//g,'');
+
+  const fights = (e.fight_scores || []).map(f => `
+    <div class="fight-score-row">
+      <div class="fs-names">${f.fighter_a} vs ${f.fighter_b}</div>
+      <div class="fs-predicted">→ ${f.predicted}</div>
+      <div class="fs-conf">${f.confidence}</div>
+      <div class="fs-result ${f.correct ? 'fs-correct' : 'fs-wrong'}">
+        ${f.correct ? '✓ Correct' : '✗ Wrong'}
+      </div>
+    </div>
+  `).join('');
+
+  return `
+    <div class="event-accuracy-row" onclick="toggleFights('${slug}')">
+      <div class="event-acc-header">
+        <div>
+          <div class="event-acc-name">${e.name}</div>
+          <div class="event-acc-date">${e.date}</div>
+        </div>
+        <div class="event-acc-score ${scoreClass}">
+          ${e.correct}/${e.total} · ${acc}%
+        </div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" style="width:${barWidth}%"></div>
+      </div>
+      <div class="fight-scores" id="fights-${slug}">
+        <div style="height:10px"></div>
+        ${fights || '<div style="color:var(--gray-400);font-size:13px">No fight details available</div>'}
+      </div>
+    </div>
+  `;
+}
+
+function toggleFights(slug) {
+  const el = document.getElementById(`fights-${slug}`);
+  if (el) el.classList.toggle('open');
+}
+
+loadAccuracy();
+</script>
+</body>
+</html>
