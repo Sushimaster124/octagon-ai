@@ -861,8 +861,9 @@ function renderEvent(data) {
     }
 
     const conf      = fight.confidence;
-    const confLabel = conf==='high' ? 'High confidence' :
-                      conf==='medium' ? 'Medium confidence' : 'Low confidence';
+    const confLabel = conf==='high' ? `High confidence · ${fight.winner_prob}%` :
+                      conf==='medium' ? `Medium confidence · ${fight.winner_prob}%` :
+                      `Low confidence · ${fight.winner_prob}%`;
     const titleFlag = fight.title_fight ? '🏆 Title · ' : '';
     const wc        = fight.weight_class || `Fight ${i+1}`;
 
