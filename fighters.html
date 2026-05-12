@@ -451,14 +451,18 @@ const MAX_ELO = 1850;
 async function loadFighters() {
   try {
     const resp = await fetch(DATA_BASE + 'fighters.json');
-    allFighters = await resp.json();
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const text = await resp.text();
+    allFighters = JSON.parse(text);
     filtered    = allFighters;
+    console.log(`Loaded ${allFighters.length} fighters`);
     renderLeaderboard(allFighters.slice(0, 100));
     document.getElementById('results-count').textContent =
       `Showing top 100 of ${allFighters.length} fighters — search to find anyone`;
   } catch(e) {
+    console.error('Fighter load error:', e);
     document.getElementById('lb-rows').innerHTML =
-      '<div class="loading">Could not load fighters.</div>';
+      `<div class="loading">Could not load fighters: ${e.message}</div>`;
   }
 }
 
