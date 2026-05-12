@@ -847,6 +847,13 @@ async function runH2H() {
   const probB  = 1 - probA;
   const winner = probA >= probB ? currentFighter.name : opp.name;
 
+  const eloGap = Math.abs(eloA - eloB);
+  const h2hConf     = eloGap >= 150 ? 'high' : eloGap >= 75 ? 'medium' : 'low';
+  const h2hConfLabel = h2hConf === 'high' ? 'High confidence' : h2hConf === 'medium' ? 'Medium confidence' : 'Low confidence';
+  const h2hConfColor = h2hConf === 'high' ? 'var(--green)' : h2hConf === 'medium' ? 'var(--amber)' : 'var(--red-dark)';
+  const h2hConfBg    = h2hConf === 'high' ? 'var(--green-light)' : h2hConf === 'medium' ? 'var(--amber-light)' : 'var(--red-light)';
+  const h2hConfSub   = h2hConf === 'high' ? `Elo gap ${eloGap.toFixed(0)} pts — strong signal` : h2hConf === 'medium' ? `Elo gap ${eloGap.toFixed(0)} pts — moderate signal` : `Elo gap ${eloGap.toFixed(0)} pts — weak signal, treat as coin flip`;
+
   result.innerHTML = `
     <div style="border-top:1px solid var(--border);padding-top:12px">
       <div style="display:flex;justify-content:space-between;margin-bottom:8px">
@@ -861,6 +868,10 @@ async function runH2H() {
       </div>
       <div style="height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;margin-bottom:10px">
         <div style="height:6px;background:var(--red);width:${(probA*100).toFixed(0)}%;border-radius:3px"></div>
+      </div>
+      <div style="margin-bottom:10px">
+        <span style="font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:${h2hConfBg};color:${h2hConfColor}">${h2hConfLabel}</span>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px">${h2hConfSub}</div>
       </div>
       <div style="font-size:12px;color:var(--gray-600)">
         Predicted winner: <strong>${winner}</strong><br>
