@@ -866,8 +866,34 @@ function renderEvent(data) {
     const chaosScore = (fight.chaos !== undefined && fight.chaos !== null) ? fight.chaos.toFixed(2) : '—';
     const clashFlag  = fight.elo_clash || false;
 
-    const confLabel = conf==='high' ? 'High confidence' :
-                      conf==='medium' ? 'Medium confidence' : 'Low confidence';
+    const isClash = fight.elo_clash || false;
+    const wp = fight.winner_prob;
+    let confLabel;
+    if (wp >= 75 && !isClash)       confLabel = 'Safe pick';
+    else if (wp >= 75 && isClash)   confLabel = 'Strong lean';
+    else if (wp >= 60 && !isClash)  confLabel = 'Moderate pick';
+    else if (wp >= 60 && isClash)   confLabel = 'Risky';
+    else if (wp < 60 && !isClash)   confLabel = 'Coin flip';
+    else                             confLabel = 'Avoid';
+
+    const winner  = fight.winner;
+    const loser   = fight.winner === fight.fighter_a ? fight.fighter_b : fight.fighter_a;
+    const probGap = Math.abs(fight.prob_a - fight.prob_b).toFixed(0);
+    const eloDiff = Math.abs(fight.elo_diff).toFixed(0);
+
+    let blurb;
+    if (wp >= 75 && !isClash)
+      blurb = `Model strongly favors ${winner} — consistent stats and a clear edge over ${loser}.`;
+    else if (wp >= 75 && isClash)
+      blurb = `${winner} dominates statistically but Elo ranks ${loser} higher historically — model is confident, worth an upset watch.`;
+    else if (wp >= 60 && !isClash)
+      blurb = `${winner} has the statistical edge but ${loser} keeps this competitive — a reasonable lean, not a lock.`;
+    else if (wp >= 60 && isClash)
+      blurb = `${winner} leads on stats but the Elo system favors ${loser} — conflicting signals, size down.`;
+    else if (wp < 60 && !isClash)
+      blurb = `${winner} vs ${loser} is nearly 50/50 — both fighters are unpredictable and the model has low conviction.`;
+    else
+      blurb = `${winner} vs ${loser} — conflicting signals and a chaotic matchup. Treat as a coin flip at best.`;
 
     const chaosVal = fight.chaos || 0.5;
     const clashPenalty = fight.elo_clash ? 1 : 0;
@@ -914,9 +940,12 @@ function renderEvent(data) {
 
     card.innerHTML = `
       <div class="fight-card-header">
-        <span class="fight-meta">${titleFlag}${wc}</span>
-        <span class="conf-badge conf-${conf}">${confLabel}</span>${barHtml}
-        <span style="font-size:10px;color:var(--gray-400);margin-top:2px;display:block;text-align:right">${confSub}</span>
+        <div style="display:flex;align-items:center;gap:10px;width:100%;">
+          <span class="fight-meta">${titleFlag}${wc}</span>
+          <span class="conf-badge conf-${conf}">${confLabel}</span>${barHtml}
+          <span style="font-size:10px;color:var(--gray-400);margin-left:auto">${confSub}</span>
+        </div>
+        <div style="font-size:12px;color:var(--gray-400);font-style:italic;margin-top:5px">${blurb}</div>
       </div>
       <div class="fight-card-body">
         <div class="fighters-grid">
