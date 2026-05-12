@@ -497,6 +497,38 @@
     .sidebar { position: static; }
     .events-page { padding: 1rem; }
   }
+  @media (max-width: 600px) {
+    body { overflow-x: hidden; }
+    header { padding: 0 1rem; }
+    .header-right {
+      display: none; flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: white; border-bottom: 1px solid var(--border);
+      padding: 12px 1rem; gap: 8px; z-index: 200;
+    }
+    .header-right.open { display: flex; }
+    .header-right .nav-btn, .header-right a.nav-btn {
+      width: 100%; justify-content: center; font-size: 14px; padding: 10px;
+    }
+    .hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      width: 22px; height: 2px; background: var(--gray-900);
+      border-radius: 2px; display: block;
+    }
+    .accuracy-pill { display: none; }
+    .hero { padding: 1.5rem 1rem; }
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 13px; }
+    .search-wrap input { font-size: 14px; }
+    .stats-bar { grid-template-columns: repeat(2,1fr); }
+    .main { padding: 1rem; gap: 1rem; }
+    .fighters-grid { gap: 6px; }
+    .prob-number { font-size: 26px; }
+    .fighter-name { font-size: 13px; }
+  }
 </style>
 </head>
 <body>
@@ -506,13 +538,16 @@
     <div class="logo-icon">O</div>
     octagon.ai
   </div>
-  <div class="header-right">
-    <button class="nav-btn active" id="btn-home" onclick="showHome()">Predictions</button>
-    <button class="nav-btn" id="btn-events" onclick="showEvents()">All events</button>
+  <div class="header-right" id="header-nav">
+    <button class="nav-btn active" id="btn-home" onclick="showHome();closeNav()">Predictions</button>
+    <button class="nav-btn" id="btn-events" onclick="showEvents();closeNav()">All events</button>
     <a class="nav-btn" href="fighters.html">Fighters</a>
     <a class="nav-btn" href="accuracy.html">Accuracy</a>
     <span class="accuracy-pill">83% accurate</span>
   </div>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" style="display:none">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
 <div class="page active" id="page-home">
@@ -1010,6 +1045,26 @@ else {
     loadLatestEvent();
   }
 }
+
+function toggleNav() {
+  document.getElementById('header-nav').classList.toggle('open');
+}
+function closeNav() {
+  document.getElementById('header-nav').classList.remove('open');
+}
+if (window.innerWidth <= 600) {
+  document.getElementById('hamburger').style.display = 'flex';
+}
+window.addEventListener('resize', () => {
+  const hb  = document.getElementById('hamburger');
+  const nav = document.getElementById('header-nav');
+  if (window.innerWidth <= 600) {
+    hb.style.display = 'flex';
+  } else {
+    hb.style.display = 'none';
+    nav.classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
