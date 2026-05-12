@@ -92,6 +92,8 @@
     border-radius: 20px;
   }
 
+  .hamburger { display: none; flex-shrink: 0; }
+
   .nav-btn {
     font-size: 13px;
     color: var(--gray-600);
@@ -513,13 +515,11 @@
       width: 100%; justify-content: center; font-size: 14px; padding: 10px;
       display: flex;
     }
-    .header-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .hamburger { display: none; flex-shrink: 0; z-index: 101; }
+    .hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+      flex-shrink: 0;
+    }
     .hamburger span {
       width: 22px; height: 2px; background: var(--gray-900);
       border-radius: 2px; display: block;
