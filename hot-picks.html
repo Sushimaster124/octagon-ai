@@ -35,219 +35,139 @@
 
   body { font-family: var(--font); background: var(--gray-50); color: var(--gray-900); }
 
-  header {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 0 2rem; height: 56px;
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 100;
-  }
-
-  .logo {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none;
-  }
-
-  .logo-icon {
-    width: 28px; height: 28px; background: var(--red); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 14px; font-weight: 700;
-  }
-
+  header { background: white; border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none; }
+  .logo-icon { width: 28px; height: 28px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 700; }
   .header-right { display: flex; align-items: center; gap: 0.6rem; }
-
   .hamburger { display: none; flex-shrink: 0; }
-
-  .nav-link {
-    font-size: 13px; color: var(--gray-600); text-decoration: none;
-    padding: 6px 12px; border-radius: var(--radius-sm);
-    border: 1px solid var(--border); background: white;
-    display: inline-flex; align-items: center; gap: 5px;
-  }
-
+  .nav-link { font-size: 13px; color: var(--gray-600); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: white; display: inline-flex; align-items: center; gap: 5px; }
   .nav-link:hover { background: var(--gray-50); }
   .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
+  .accuracy-pill { background: var(--green-light); color: var(--green); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
 
-  .accuracy-pill {
-    background: var(--green-light); color: var(--green);
-    font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
-  }
-
-  .hero {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 2.5rem 2rem; text-align: center;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--red-light); color: var(--red-dark);
-    font-size: 12px; font-weight: 600; padding: 4px 12px;
-    border-radius: 20px; margin-bottom: 1rem;
-    text-transform: uppercase; letter-spacing: 0.05em;
-  }
-
-  .live-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--red); animation: pulse 1.5s infinite;
-  }
-
+  .hero { background: white; border-bottom: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: var(--red-light); color: var(--red-dark); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
   .hero h1 { font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
   .hero p  { font-size: 15px; color: var(--gray-600); }
 
-  .stats-bar {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    border-bottom: 1px solid var(--border); background: white;
-  }
-
-  .stat-item {
-    padding: 1.25rem 2rem; border-right: 1px solid var(--border); text-align: center;
-  }
-
+  .stats-bar { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--border); background: white; }
+  .stat-item { padding: 1.25rem 2rem; border-right: 1px solid var(--border); text-align: center; }
   .stat-item:last-child { border-right: none; }
   .stat-value { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
   .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
 
   .main { max-width: 760px; margin: 0 auto; padding: 2rem; }
 
-  .filter-row { display: flex; gap: 8px; margin-bottom: 1.5rem; }
+  .budget-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
+  .budget-panel-title { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 14px; }
+  .budget-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: end; }
+  .budget-field { display: flex; flex-direction: column; gap: 5px; }
+  .budget-label { font-size: 12px; color: var(--gray-600); font-weight: 500; }
+  .budget-select, .budget-input { height: 42px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-md); padding: 0 12px; font-size: 14px; font-family: var(--font); outline: none; background: white; color: var(--gray-900); transition: border-color 0.15s; width: 100%; }
+  .budget-select:focus, .budget-input:focus { border-color: var(--red); }
+  .budget-btn { height: 42px; padding: 0 20px; background: var(--red); color: white; border: none; border-radius: var(--radius-md); font-size: 14px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: background 0.15s; white-space: nowrap; }
+  .budget-btn:hover { background: var(--red-dark); }
 
-  .filter-btn {
-    padding: 6px 14px; border-radius: 20px;
-    border: 1px solid var(--border); background: white;
-    font-size: 13px; font-family: var(--font);
-    color: var(--gray-600); cursor: pointer; transition: all 0.15s;
-  }
+  .alloc-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; display: none; }
+  .alloc-panel.visible { display: block; }
+  .alloc-header { background: var(--gray-900); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .alloc-header-title { font-size: 14px; font-weight: 600; color: white; }
+  .alloc-header-sub { font-size: 12px; color: var(--gray-400); }
+  .alloc-row { display: grid; grid-template-columns: 1fr auto auto; padding: 12px 20px; border-bottom: 1px solid var(--border); align-items: center; gap: 12px; }
+  .alloc-row:last-child { border-bottom: none; }
+  .alloc-fighter { font-size: 14px; font-weight: 600; color: var(--gray-900); }
+  .alloc-meta { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+  .alloc-amount { font-size: 18px; font-weight: 700; color: var(--gray-900); text-align: right; white-space: nowrap; }
+  .alloc-return { font-size: 12px; color: var(--green); font-weight: 600; text-align: right; white-space: nowrap; }
+  .alloc-bar-wrap { height: 4px; background: var(--gray-100); border-radius: 2px; overflow: hidden; margin-top: 6px; }
+  .alloc-bar-fill { height: 4px; border-radius: 2px; background: var(--green); }
+  .alloc-bar-fill.medium { background: var(--amber); }
+  .alloc-conf-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; display: inline-block; margin-right: 6px; }
+  .alloc-conf-dot.high { background: var(--green); }
+  .alloc-conf-dot.medium { background: var(--amber); }
 
+  .return-summary { background: var(--gray-900); border-radius: var(--radius-lg); padding: 20px; }
+  .return-summary-title { font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+  .return-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .return-card { background: rgba(255,255,255,0.07); border-radius: var(--radius-md); padding: 14px; }
+  .return-card-val { font-size: 22px; font-weight: 700; color: white; letter-spacing: -0.02em; }
+  .return-card-val.green { color: #5DCAA5; }
+  .return-card-val.amber { color: #FAC775; }
+  .return-card-lbl { font-size: 11px; color: var(--gray-400); margin-top: 4px; }
+  .return-disclaimer { font-size: 11px; color: var(--gray-600); margin-top: 14px; line-height: 1.6; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+
+  .filter-row { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: white; font-size: 13px; font-family: var(--font); color: var(--gray-600); cursor: pointer; transition: all 0.15s; }
   .filter-btn.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
 
-  .section-label {
-    font-size: 11px; font-weight: 600; color: var(--gray-400);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;
-  }
+  .section-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
 
-  .hot-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); margin-bottom: 12px;
-    overflow: hidden; box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.15s;
-  }
-
+  .hot-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.15s; }
   .hot-card:hover { box-shadow: var(--shadow-md); }
-
-  .hot-card-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 9px 16px; border-bottom: 1px solid var(--border);
-  }
-
-  .hot-card-header.high   { background: var(--green-light); }
+  .hot-card-header { display: flex; align-items: center; justify-content: space-between; padding: 9px 16px; border-bottom: 1px solid var(--border); }
+  .hot-card-header.high { background: var(--green-light); }
   .hot-card-header.medium { background: var(--amber-light); }
-
-  .hot-conf-badge {
-    font-size: 11px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em;
-  }
-
-  .hot-conf-badge.high   { color: #085041; }
+  .hot-conf-badge { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hot-conf-badge.high { color: #085041; }
   .hot-conf-badge.medium { color: #633806; }
-
   .hot-conf-sub { font-size: 10px; }
-  .hot-conf-sub.high   { color: #0F6E56; }
+  .hot-conf-sub.high { color: #0F6E56; }
   .hot-conf-sub.medium { color: #854F0B; }
-
   .hot-card-body { padding: 14px 16px; }
-
-  .hot-card-top {
-    display: flex; align-items: flex-start;
-    justify-content: space-between; margin-bottom: 12px;
-  }
-
+  .hot-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
   .hot-fighter { font-size: 15px; font-weight: 600; color: var(--gray-900); }
   .hot-matchup { font-size: 12px; color: var(--gray-400); margin-top: 3px; }
-
   .hot-ev { text-align: right; }
   .hot-ev-val { font-size: 22px; font-weight: 700; color: var(--green); }
   .hot-ev-lbl { font-size: 11px; color: var(--gray-400); }
-
-  .hot-metrics {
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px; margin-bottom: 10px;
-  }
-
-  .hot-metric {
-    background: var(--gray-50); border-radius: var(--radius-sm); padding: 8px 10px;
-  }
-
+  .hot-metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .hot-metric { background: var(--gray-50); border-radius: var(--radius-sm); padding: 8px 10px; }
   .hot-metric.edge { background: var(--green-light); }
-
   .hot-metric-lbl { font-size: 10px; color: var(--gray-400); margin-bottom: 2px; }
   .hot-metric.edge .hot-metric-lbl { color: #0F6E56; }
   .hot-metric-val { font-size: 14px; font-weight: 600; color: var(--gray-900); }
   .hot-metric.edge .hot-metric-val { color: var(--green); }
-
   .hot-advisory { font-size: 11px; color: var(--gray-600); }
-  .hot-advisory.warn {
-    background: var(--amber-light); color: #633806;
-    padding: 7px 10px; border-radius: var(--radius-sm);
-  }
-
-  .rank-badge {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--gray-900); color: white;
-    font-size: 11px; font-weight: 700;
-    display: inline-flex; align-items: center; justify-content: center;
-    margin-right: 8px; flex-shrink: 0;
-  }
+  .hot-advisory.warn { background: var(--amber-light); color: #633806; padding: 7px 10px; border-radius: var(--radius-sm); }
+  .rank-badge { width: 22px; height: 22px; border-radius: 50%; background: var(--gray-900); color: white; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; flex-shrink: 0; }
 
   .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
-  .spinner {
-    width: 32px; height: 32px;
-    border: 3px solid var(--gray-100); border-top-color: var(--red);
-    border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem;
-  }
+  .spinner { width: 32px; height: 32px; border: 3px solid var(--gray-100); border-top-color: var(--red); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .empty-state { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
 
-  footer {
-    text-align: center; padding: 2rem; color: var(--gray-400);
-    font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem;
-  }
+  footer { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem; }
 
   @media (max-width: 768px) {
-    .stats-bar { grid-template-columns: repeat(3,1fr); }
     .main { padding: 1rem; }
     .hero { padding: 1.5rem 1rem; }
     .hero h1 { font-size: 24px; }
-    .hot-metrics { grid-template-columns: 1fr 1fr 1fr; }
+    .budget-row { grid-template-columns: 1fr 1fr; }
+    .budget-btn { grid-column: span 2; width: 100%; }
+    .return-grid { grid-template-columns: 1fr 1fr; }
+    .return-grid .return-card:last-child { grid-column: span 2; }
+    .hot-metrics { grid-template-columns: 1fr 1fr; }
+    .hot-metrics .hot-metric:last-child { grid-column: span 2; }
   }
 
   @media (max-width: 600px) {
     body { overflow-x: hidden; }
     header { padding: 0 1rem; }
-    .header-right {
-      display: none; flex-direction: column;
-      position: absolute; top: 56px; left: 0; right: 0;
-      background: white; border-bottom: 1px solid var(--border);
-      padding: 12px 1rem; gap: 8px; z-index: 200;
-      box-shadow: var(--shadow-md);
-    }
+    .header-right { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 12px 1rem; gap: 8px; z-index: 200; box-shadow: var(--shadow-md); }
     .header-right.open { display: flex; }
-    .header-right .nav-link {
-      width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block;
-    }
-    .hamburger {
-      display: flex; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
-    }
-    .hamburger span {
-      width: 22px; height: 2px; background: var(--gray-900);
-      border-radius: 2px; display: block;
-    }
+    .header-right .nav-link { width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block; }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0; }
+    .hamburger span { width: 22px; height: 2px; background: var(--gray-900); border-radius: 2px; display: block; }
     .accuracy-pill { display: none; }
     .stats-bar { grid-template-columns: 1fr 1fr; }
-    .hot-metrics { grid-template-columns: 1fr 1fr; }
-    .hot-metrics .hot-metric:last-child { grid-column: span 2; }
+    .budget-row { grid-template-columns: 1fr; }
+    .budget-btn { width: 100%; }
+    .return-grid { grid-template-columns: 1fr 1fr; }
+    .return-grid .return-card:last-child { grid-column: span 2; }
+    .alloc-row { grid-template-columns: 1fr auto; }
+    .alloc-return { display: none; }
   }
 </style>
 </head>
@@ -273,10 +193,7 @@
 </header>
 
 <div class="hero">
-  <div class="hero-eyebrow">
-    <div class="live-dot"></div>
-    Live odds
-  </div>
+  <div class="hero-eyebrow"><div class="live-dot"></div>Live odds</div>
   <h1>🔥 Hot picks</h1>
   <p id="hero-sub">Best EV plays · Medium &amp; high confidence only · Sorted by confidence then EV</p>
 </div>
@@ -297,10 +214,49 @@
 </div>
 
 <div class="main">
+
+  <div class="budget-panel">
+    <div class="budget-panel-title">💰 Budget allocator</div>
+    <div class="budget-row">
+      <div class="budget-field">
+        <label class="budget-label">Fight card</label>
+        <select class="budget-select" id="event-select">
+          <option value="">Loading events...</option>
+        </select>
+      </div>
+      <div class="budget-field">
+        <label class="budget-label">Your budget ($)</label>
+        <input class="budget-input" type="number" id="budget-input" placeholder="e.g. 500" min="1" />
+      </div>
+      <button class="budget-btn" onclick="runAllocator()">Allocate</button>
+    </div>
+  </div>
+
+  <div class="alloc-panel" id="alloc-panel">
+    <div class="alloc-header">
+      <div>
+        <div class="alloc-header-title">Recommended allocation</div>
+        <div class="alloc-header-sub">Fractional Kelly (25%) · High conf full weight · Medium conf half weight</div>
+      </div>
+    </div>
+    <div id="alloc-rows"></div>
+    <div style="padding:16px 20px">
+      <div class="return-summary">
+        <div class="return-summary-title">Projected outcome</div>
+        <div class="return-grid" id="return-grid"></div>
+        <div class="return-disclaimer">
+          Projections assume all picks win — which won't happen. This shows maximum upside.
+          Expected profit uses EV per pick and accounts for loss probability.
+          Not financial advice. Never bet more than you can afford to lose.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="filter-row">
-    <button class="filter-btn active" onclick="filterPicks('all', this)">All</button>
-    <button class="filter-btn" onclick="filterPicks('high', this)">High conf only</button>
-    <button class="filter-btn" onclick="filterPicks('ev50', this)">EV &gt; $50</button>
+    <button class="filter-btn active" onclick="filterPicks('all',this)">All</button>
+    <button class="filter-btn" onclick="filterPicks('high',this)">High conf only</button>
+    <button class="filter-btn" onclick="filterPicks('ev50',this)">EV &gt; $50</button>
   </div>
 
   <div class="section-label" id="picks-label">Loading...</div>
@@ -309,96 +265,157 @@
   </div>
 </div>
 
-<footer>
-  octagon.ai · Not financial advice · Positive EV does not guarantee a win
-</footer>
+<footer>octagon.ai · Not financial advice · Positive EV does not guarantee a win</footer>
 
 <script>
 const DATA_BASE = 'data/';
-let allPicks = [];
+let allPicks = [], allEvents = [], eventData = {};
 let currentFilter = 'all';
+const KELLY_FRACTION = 0.25;
 
-async function loadHotPicks() {
+async function init() {
   try {
-    const resp = await fetch(DATA_BASE + 'index.json');
+    const resp  = await fetch(DATA_BASE + 'index.json');
     const index = await resp.json();
-
     const today = new Date().toISOString().slice(0,10);
-    const upcoming = index.filter(e => {
+
+    allEvents = index.filter(e => {
       try { return new Date(e.date) >= new Date(today); }
       catch { return false; }
-    });
+    }).sort((a,b) => new Date(a.date) - new Date(b.date));
 
-    if (upcoming.length === 0) {
-      showEmpty('No upcoming events found.');
+    if (allEvents.length === 0) {
+      showEmpty('No upcoming events with data found.');
+      document.getElementById('event-select').innerHTML = '<option>No upcoming events</option>';
       return;
     }
 
-    upcoming.sort((a,b) => new Date(a.date) - new Date(b.date));
-    const next = upcoming[0];
+    document.getElementById('event-select').innerHTML = allEvents.map((e,i) =>
+      `<option value="${e.slug}"${i===0?' selected':''}>${e.name} · ${formatDate(e.date)}</option>`
+    ).join('');
 
-    document.getElementById('hero-sub').textContent =
-      `Best EV plays · ${next.name} · ${formatDate(next.date)}`;
-
-    const evResp = await fetch(DATA_BASE + next.slug + '.json');
-    if (!evResp.ok) throw new Error('Could not load event');
-    const data = await evResp.json();
-
-    allPicks = buildPicks(data);
-    renderStats();
-    renderPicks(allPicks);
-
+    await loadEvent(allEvents[0].slug);
   } catch(e) {
-    showEmpty('Could not load picks. Try again later.');
+    showEmpty('Could not load events.');
   }
 }
+
+async function loadEvent(slug) {
+  if (eventData[slug]) { processEvent(eventData[slug]); return; }
+  try {
+    const resp = await fetch(DATA_BASE + slug + '.json');
+    if (!resp.ok) throw new Error();
+    const data = await resp.json();
+    eventData[slug] = data;
+    processEvent(data);
+  } catch(e) { showEmpty('Could not load event data.'); }
+}
+
+function processEvent(data) {
+  document.getElementById('hero-sub').textContent =
+    `Best EV plays · ${data.event_name} · ${formatDate(data.event_date || '')}`;
+  allPicks = buildPicks(data);
+  renderStats();
+  renderPicks(allPicks);
+  document.getElementById('alloc-panel').classList.remove('visible');
+}
+
+document.getElementById('event-select').addEventListener('change', function() {
+  if (this.value) loadEvent(this.value);
+});
 
 function buildPicks(data) {
   const picks = [];
-
   for (const fight of data.fights) {
-    if (fight.not_found) continue;
-    if (!fight.ev_a && !fight.ev_b) continue;
-    if (fight.confidence === 'low') continue;
-
-    const candidates = [
-      { fighter: fight.fighter_a, prob: fight.prob_a, ev: fight.ev_a, edge: fight.edge_a, odds: fight.odds_a, vegas_prob: fight.vegas_prob_a },
-      { fighter: fight.fighter_b, prob: fight.prob_b, ev: fight.ev_b, edge: fight.edge_b, odds: fight.odds_b, vegas_prob: fight.vegas_prob_b },
+    if (fight.not_found || fight.confidence === 'low') continue;
+    const sides = [
+      { fighter: fight.fighter_a, opponent: fight.fighter_b, prob: fight.prob_a, ev: fight.ev_a, edge: fight.edge_a, odds: fight.odds_a, vegas_prob: fight.vegas_prob_a },
+      { fighter: fight.fighter_b, opponent: fight.fighter_a, prob: fight.prob_b, ev: fight.ev_b, edge: fight.edge_b, odds: fight.odds_b, vegas_prob: fight.vegas_prob_b },
     ];
-
-    for (const c of candidates) {
+    for (const c of sides) {
       if (!c.ev || c.ev <= 0) continue;
-
-      picks.push({
-        fighter:    c.fighter,
-        opponent:   c.fighter === fight.fighter_a ? fight.fighter_b : fight.fighter_a,
-        weight:     fight.weight_class || '',
-        prob:       c.prob,
-        ev:         c.ev,
-        edge:       c.edge,
-        odds:       c.odds,
-        vegas_prob: c.vegas_prob,
-        confidence: fight.confidence,
-        chaos:      fight.chaos,
-        elo_clash:  fight.elo_clash,
-      });
+      picks.push({ ...c, weight: fight.weight_class || '', confidence: fight.confidence, chaos: fight.chaos, elo_clash: fight.elo_clash });
     }
   }
-
-  picks.sort((a, b) => {
-    const confOrder = { high: 0, medium: 1 };
-    if (confOrder[a.confidence] !== confOrder[b.confidence])
-      return confOrder[a.confidence] - confOrder[b.confidence];
-    return b.ev - a.ev;
+  picks.sort((a,b) => {
+    const o = { high:0, medium:1 };
+    return o[a.confidence] !== o[b.confidence] ? o[a.confidence] - o[b.confidence] : b.ev - a.ev;
   });
-
   return picks;
 }
 
-function renderStats() {
-  const highCount = allPicks.filter(p => p.confidence === 'high').length;
-  const bestEV    = allPicks.length > 0 ? Math.max(...allPicks.map(p => p.ev)) : null;
+function kellyAllocation(picks, budget) {
+  const weights = picks.map(p => {
+    const prob = p.prob / 100;
+    const dec  = p.odds > 0 ? p.odds / 100 : 100 / Math.abs(p.odds);
+    const k    = Math.max(0, (prob * dec - (1 - prob)) / dec);
+    return k * KELLY_FRACTION * (p.confidence === 'high' ? 1.0 : 0.5);
+  });
+  const total = weights.reduce((a,b) => a+b, 0);
+  return total === 0 ? picks.map(() => 0) : weights.map(w => (w / total) * budget);
+}
 
+function runAllocator() {
+  const slug   = document.getElementById('event-select').value;
+  const budget = parseFloat(document.getElementById('budget-input').value);
+  if (!slug || !budget || budget <= 0) { alert('Please select an event and enter a valid budget.'); return; }
+  if (allPicks.length === 0) { alert('No qualifying picks for this event.'); return; }
+  const allocations = kellyAllocation(allPicks, budget);
+  renderAllocations(allPicks, allocations, budget);
+  document.getElementById('alloc-panel').classList.add('visible');
+  document.getElementById('alloc-panel').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function renderAllocations(picks, allocations, budget) {
+  const maxAlloc = Math.max(...allocations);
+  document.getElementById('alloc-rows').innerHTML = picks.map((p, i) => {
+    const amt    = allocations[i];
+    const pct    = maxAlloc > 0 ? (amt / maxAlloc * 100) : 0;
+    const winRet = amt > 0 ? (p.odds > 0 ? (p.odds/100)*amt : (100/Math.abs(p.odds))*amt) : 0;
+    return `
+      <div class="alloc-row">
+        <div>
+          <div style="display:flex;align-items:center">
+            <span class="alloc-conf-dot ${p.confidence}"></span>
+            <span class="alloc-fighter">${p.fighter}</span>
+          </div>
+          <div class="alloc-meta">vs ${p.opponent} · ML ${p.odds>0?'+':''}${p.odds} · ${p.prob}% model prob</div>
+          <div class="alloc-bar-wrap">
+            <div class="alloc-bar-fill ${p.confidence}" style="width:${pct.toFixed(0)}%"></div>
+          </div>
+        </div>
+        <div class="alloc-amount">$${amt.toFixed(0)}</div>
+        <div class="alloc-return">+$${winRet.toFixed(0)} if wins</div>
+      </div>
+    `;
+  }).join('');
+
+  const totalEV       = picks.reduce((s,p,i) => s + (allocations[i]/100)*p.ev, 0);
+  const totalIfAllWin = picks.reduce((s,p,i) => {
+    const a = allocations[i];
+    return s + (p.odds > 0 ? (p.odds/100)*a : (100/Math.abs(p.odds))*a);
+  }, 0);
+  const totalAlloc = allocations.reduce((a,b) => a+b, 0);
+
+  document.getElementById('return-grid').innerHTML = `
+    <div class="return-card">
+      <div class="return-card-val">$${totalAlloc.toFixed(0)}</div>
+      <div class="return-card-lbl">Total allocated</div>
+    </div>
+    <div class="return-card">
+      <div class="return-card-val green">+$${totalEV.toFixed(0)}</div>
+      <div class="return-card-lbl">Expected profit (EV)</div>
+    </div>
+    <div class="return-card">
+      <div class="return-card-val amber">$${(totalAlloc + totalIfAllWin).toFixed(0)}</div>
+      <div class="return-card-lbl">Max if all win</div>
+    </div>
+  `;
+}
+
+function renderStats() {
+  const highCount = allPicks.filter(p => p.confidence==='high').length;
+  const bestEV    = allPicks.length > 0 ? Math.max(...allPicks.map(p => p.ev)) : null;
   document.getElementById('stat-plays').textContent = allPicks.length || '—';
   document.getElementById('stat-best').textContent  = bestEV ? `+$${bestEV.toFixed(0)}` : '—';
   document.getElementById('stat-high').textContent  = highCount || '—';
@@ -408,54 +425,40 @@ function filterPicks(filter, btn) {
   currentFilter = filter;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-
-  let filtered = allPicks;
-  if (filter === 'high')  filtered = allPicks.filter(p => p.confidence === 'high');
-  if (filter === 'ev50')  filtered = allPicks.filter(p => p.ev >= 50);
-
-  renderPicks(filtered);
+  let f = allPicks;
+  if (filter==='high') f = allPicks.filter(p => p.confidence==='high');
+  if (filter==='ev50') f = allPicks.filter(p => p.ev >= 50);
+  renderPicks(f);
 }
 
 function renderPicks(picks) {
   const list  = document.getElementById('picks-list');
   const label = document.getElementById('picks-label');
-
   if (picks.length === 0) {
     label.textContent = 'No picks match this filter';
-    list.innerHTML = `
-      <div class="empty-state">
-        <div style="font-size:32px;margin-bottom:1rem">🔍</div>
-        <div style="font-size:14px;color:var(--gray-600)">No picks match this filter for the upcoming event.</div>
-      </div>
-    `;
+    list.innerHTML = `<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">🔍</div><div style="font-size:14px;color:var(--gray-600)">No picks match this filter.</div></div>`;
     return;
   }
-
-  label.textContent = `${picks.length} pick${picks.length !== 1 ? 's' : ''} · ranked by confidence then EV`;
-
+  label.textContent = `${picks.length} pick${picks.length!==1?'s':''} · ranked by confidence then EV`;
   list.innerHTML = picks.map((p, i) => {
-    const chaos     = p.chaos !== undefined ? p.chaos.toFixed(2) : '—';
-    const clashText = p.elo_clash ? ' · ⚡ Elo clash' : '';
-    const confClass = p.confidence;
-
-    const confLabel = p.confidence === 'high' ? 'High confidence' : 'Medium confidence';
-    const confSub   = p.confidence === 'high'
-      ? `95% hist. accuracy · chaos ${chaos}${clashText}`
-      : `67–81% hist. accuracy · chaos ${chaos}${clashText}`;
-
-    const oddsStr   = p.odds ? `ML ${p.odds > 0 ? '+' : ''}${p.odds}` : '';
-    const advisory  = p.confidence === 'medium'
+    const chaos = p.chaos !== undefined ? p.chaos.toFixed(2) : '—';
+    const clash = p.elo_clash ? ' · ⚡ Elo clash' : '';
+    const confLabel = p.confidence==='high' ? 'High confidence' : 'Medium confidence';
+    const confSub   = p.confidence==='high'
+      ? `95% hist. accuracy · chaos ${chaos}${clash}`
+      : `67–81% hist. accuracy · chaos ${chaos}${clash}`;
+    const oddsStr = p.odds ? `ML ${p.odds>0?'+':''}${p.odds}` : '';
+    const advisory = p.confidence==='medium'
       ? `${oddsStr} · Positive EV but medium confidence — consider sizing down`
       : `${oddsStr} · Model significantly underpriced by Vegas`;
-
     return `
       <div class="hot-card">
-        <div class="hot-card-header ${confClass}">
+        <div class="hot-card-header ${p.confidence}">
           <div style="display:flex;align-items:center">
             <span class="rank-badge">${i+1}</span>
-            <span class="hot-conf-badge ${confClass}">${confLabel}</span>
+            <span class="hot-conf-badge ${p.confidence}">${confLabel}</span>
           </div>
-          <span class="hot-conf-sub ${confClass}">${confSub}</span>
+          <span class="hot-conf-sub ${p.confidence}">${confSub}</span>
         </div>
         <div class="hot-card-body">
           <div class="hot-card-top">
@@ -469,53 +472,35 @@ function renderPicks(picks) {
             </div>
           </div>
           <div class="hot-metrics">
-            <div class="hot-metric">
-              <div class="hot-metric-lbl">Model prob</div>
-              <div class="hot-metric-val">${p.prob}%</div>
-            </div>
-            <div class="hot-metric">
-              <div class="hot-metric-lbl">Vegas implied</div>
-              <div class="hot-metric-val">${p.vegas_prob}%</div>
-            </div>
-            <div class="hot-metric edge">
-              <div class="hot-metric-lbl">Edge</div>
-              <div class="hot-metric-val">+${p.edge}%</div>
-            </div>
+            <div class="hot-metric"><div class="hot-metric-lbl">Model prob</div><div class="hot-metric-val">${p.prob}%</div></div>
+            <div class="hot-metric"><div class="hot-metric-lbl">Vegas implied</div><div class="hot-metric-val">${p.vegas_prob}%</div></div>
+            <div class="hot-metric edge"><div class="hot-metric-lbl">Edge</div><div class="hot-metric-val">+${p.edge}%</div></div>
           </div>
-          <div class="hot-advisory${p.confidence === 'medium' ? ' warn' : ''}">${advisory}</div>
+          <div class="hot-advisory${p.confidence==='medium'?' warn':''}">${advisory}</div>
         </div>
       </div>
     `;
   }).join('');
 }
 
-function formatDate(dateStr) {
+function formatDate(d) {
   try {
-    const d = new Date(dateStr + 'T12:00:00');
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  } catch { return dateStr; }
+    const dt = new Date((d||'').includes('T') ? d : d+'T12:00:00');
+    return isNaN(dt) ? d : dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  } catch { return d; }
 }
 
 function showEmpty(msg) {
-  document.getElementById('picks-list').innerHTML = `
-    <div class="empty-state">
-      <div style="font-size:32px;margin-bottom:1rem">🥊</div>
-      <div style="font-size:14px;color:var(--gray-600)">${msg}</div>
-    </div>
-  `;
+  document.getElementById('picks-list').innerHTML = `<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">🥊</div><div style="font-size:14px;color:var(--gray-600)">${msg}</div></div>`;
+  document.getElementById('picks-label').textContent = '';
 }
 
-function toggleNav() {
-  document.getElementById('header-nav').classList.toggle('open');
-}
-
+function toggleNav() { document.getElementById('header-nav').classList.toggle('open'); }
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 600) {
-    document.getElementById('header-nav').classList.remove('open');
-  }
+  if (window.innerWidth > 600) document.getElementById('header-nav').classList.remove('open');
 });
 
-loadHotPicks();
+init();
 </script>
 </body>
 </html>
