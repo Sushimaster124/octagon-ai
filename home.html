@@ -582,15 +582,26 @@ function renderCountdown(event) {
   `;
 
   function tick() {
-    const target = new Date(event.date + 'T22:00:00-05:00');
+    const today = new Date().toISOString().slice(0,10);
+    const isToday = event.date === today;
+
+    const dEl = document.getElementById('cd-d');
+    const hEl = document.getElementById('cd-h');
+    const mEl = document.getElementById('cd-m');
+
+    if (isToday) {
+      if (dEl) { dEl.textContent = 'Today'; dEl.style.fontSize = '14px'; }
+      if (hEl) hEl.closest('.time-block').style.display = 'none';
+      if (mEl) mEl.closest('.time-block').style.display = 'none';
+      return;
+    }
+
+    const target = new Date(event.date + 'T22:00:00');
     const now = new Date();
     const diff = Math.max(0, target - now);
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);
-    const dEl = document.getElementById('cd-d');
-    const hEl = document.getElementById('cd-h');
-    const mEl = document.getElementById('cd-m');
     if (dEl) dEl.textContent = d;
     if (hEl) hEl.textContent = h;
     if (mEl) mEl.textContent = m;
