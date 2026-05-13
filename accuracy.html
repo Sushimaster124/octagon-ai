@@ -238,6 +238,31 @@
   <p>Live tracking of model predictions vs actual UFC results</p>
 </div>
 
+<div style="max-width:900px;margin:0 auto;padding:2rem 2rem 0;">
+  <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm);margin-bottom:1.5rem;">
+    <div style="font-size:15px;font-weight:600;color:var(--gray-900);margin-bottom:2px;">Accuracy over time</div>
+    <div style="font-size:12px;color:var(--gray-400);margin-bottom:14px;">Win prediction % per scored event · updates automatically after each fight night</div>
+    <div style="display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap;">
+      <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--gray-600);">
+        <span style="width:10px;height:10px;border-radius:50%;background:#1D9E75;display:inline-block;"></span>Overall accuracy
+      </span>
+      <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--gray-600);">
+        <span style="width:10px;height:10px;border-radius:50%;background:#378ADD;display:inline-block;"></span>High confidence
+      </span>
+      <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--gray-600);">
+        <span style="width:18px;height:2px;background:repeating-linear-gradient(90deg,#888780 0,#888780 4px,transparent 4px,transparent 8px);display:inline-block;"></span>83% baseline
+      </span>
+    </div>
+    <div style="position:relative;width:100%;height:260px;" id="chart-wrap">
+      <canvas id="accChart" role="img" aria-label="Line chart of model accuracy per event over time.">No scored events yet.</canvas>
+    </div>
+    <div id="chart-empty" style="display:none;text-align:center;padding:2.5rem 1rem;">
+      <div style="font-size:32px;margin-bottom:8px;">📊</div>
+      <div style="font-size:14px;font-weight:600;color:var(--gray-600);margin-bottom:4px;">No events scored yet</div>
+      <div style="font-size:12px;color:var(--gray-400);">This chart populates automatically after each UFC event is scored.<br>Check back after the next fight night.</div>
+    </div>
+  </div>
+</div>
 <div class="main" id="main">
   <div class="loading"><div class="spinner"></div>Loading accuracy data...</div>
 </div>
@@ -246,7 +271,96 @@
   octagon.ai · Accuracy updated automatically after each event
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
+
+function renderAccuracyChart(data) {
+  const events = Object.values(data.events || {})
+    .filter(e => e.accuracy !== null)
+    .sort((a,b) => a.date.localeCompare(b.date));
+
+  if (events.length === 0) {
+    document.getElementById('chart-wrap').style.display = 'none';
+    document.getElementById('chart-empty').style.display = 'block';
+    return;
+  }
+
+  const labels   = events.map(e => e.name.replace('UFC Fight Night: ','FN: ').replace('UFC ','UFC '));
+  const overall  = events.map(e => e.accuracy);
+  const highConf = events.map(e => {
+    const hc = e.by_confidence?.high || {};
+    const t  = (hc.correct || 0) + (hc.wrong || 0);
+    return t > 0 ? Math.round((hc.correct / t) * 100) : null;
+  });
+  const baseline = events.map(() => 83);
+
+  const gridColor = 'rgba(0,0,0,0.06)';
+  const textColor = '#888780';
+
+  new Chart(document.getElementById('accChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Overall accuracy',
+          data: overall,
+          borderColor: '#1D9E75',
+          backgroundColor: 'rgba(29,158,117,0.08)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#1D9E75',
+          tension: 0.3,
+          fill: true,
+        },
+        {
+          label: 'High confidence',
+          data: highConf,
+          borderColor: '#378ADD',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#378ADD',
+          tension: 0.3,
+          fill: false,
+        },
+        {
+          label: '83% baseline',
+          data: baseline,
+          borderColor: '#888780',
+          borderWidth: 1,
+          borderDash: [4,4],
+          pointRadius: 0,
+          fill: false,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%`
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: textColor, font: { size: 11 }, maxRotation: 35, autoSkip: true },
+          grid: { color: gridColor }
+        },
+        y: {
+          min: 50, max: 100,
+          ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' },
+          grid: { color: gridColor }
+        }
+      }
+    }
+  });
+}
+
 async function loadAccuracy() {
   const main = document.getElementById('main');
 
@@ -254,6 +368,7 @@ async function loadAccuracy() {
     const resp = await fetch('data/accuracy.json');
     if (!resp.ok) throw new Error('No accuracy data yet');
     const data = await resp.json();
+    renderAccuracyChart(data);
     renderAccuracy(data);
   } catch(e) {
     main.innerHTML = `
