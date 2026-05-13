@@ -881,20 +881,32 @@ function renderEvent(data) {
     const probGap = Math.abs(fight.prob_a - fight.prob_b).toFixed(0);
     const eloDiff = Math.abs(fight.elo_diff).toFixed(0);
 
-    let blurb;
-    if (wp >= 75 && !isClash)
-      blurb = `Model strongly favors ${winner} — consistent stats and a clear edge over ${loser}.`;
-    else if (wp >= 75 && isClash)
-      blurb = `${winner} dominates statistically but Elo ranks ${loser} higher historically — public may be backing the wrong fighter, potential value opportunity.`;
-    else if (wp >= 60 && !isClash)
-      blurb = `${winner} has the statistical edge but ${loser} keeps this competitive — a reasonable lean, not a lock.`;
-    else if (wp >= 60 && isClash)
-      blurb = `${winner} leads on stats but the Elo system favors ${loser} — conflicting signals, size down.`;
-    else if (wp < 60 && !isClash)
-      blurb = `${winner} vs ${loser} is nearly 50/50 — both fighters are unpredictable and the model has low conviction.`;
-    else
-      blurb = `${winner} vs ${loser} — conflicting signals and a chaotic matchup. Treat as a coin flip at best.`;
+    // Determine if the predicted winner is a Vegas underdog (positive moneyline)
+    const winnerIsA = fight.winner === fight.fighter_a;
+    const winnerOdds = winnerIsA ? fight.odds_a : fight.odds_b;
+    const winnerIsUnderdog = winnerOdds !== null && winnerOdds > 0;
+    const oddsStr = winnerOdds !== null && winnerOdds > 0 ? `+${winnerOdds}` : null;
 
+    let blurb;
+    if (wp >= 75 && !isClash) {
+      if (winnerIsUnderdog && oddsStr)
+        blurb = `Model gives ${winner} a ${wp}% chance but Vegas has them as the underdog at ${oddsStr} — the stats disagree with the market, which is a strong value signal.`;
+      else
+        blurb = `Model strongly favors ${winner} at ${wp}% — stats back it up and Vegas agrees.`;
+    } else if (wp >= 75 && isClash) {
+      blurb = `${winner} dominates statistically but Elo ranks ${loser} higher — the model may be seeing value Vegas hasn't priced in yet.`;
+    } else if (wp >= 60 && !isClash) {
+      if (winnerIsUnderdog && oddsStr)
+        blurb = `Model leans ${winner} at ${wp}% and Vegas has them as the underdog at ${oddsStr} — worth noting, but margin is thinner here.`;
+      else
+        blurb = `${winner} has the statistical edge but ${loser} keeps this competitive — a reasonable lean, not a lock.`;
+    } else if (wp >= 60 && isClash) {
+      blurb = `${winner} leads on stats but the Elo system favors ${loser} — conflicting signals, size down.`;
+    } else if (wp < 60 && !isClash) {
+      blurb = `${winner} vs ${loser} is nearly 50/50 — both fighters are unpredictable and the model has low conviction.`;
+    } else {
+      blurb = `${winner} vs ${loser} — conflicting signals and a chaotic matchup. Treat as a coin flip at best.`;
+    }
     const chaosVal = fight.chaos || 0.5;
     const clashPenalty = fight.elo_clash ? 1 : 0;
     const rawBars = Math.round((1 - chaosVal) * 5) - clashPenalty;
