@@ -695,6 +695,7 @@ function fuzzyMatch(str, query) {
 }
 
 function filterEventsBySearch() {
+  if (!allIndex.length) return;
   const q = document.getElementById('events-search').value.trim();
   const today = new Date().toISOString().slice(0,10);
 
