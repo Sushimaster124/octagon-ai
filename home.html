@@ -582,23 +582,21 @@ function renderCountdown(event) {
   `;
 
   function tick() {
-    const today = new Date().toISOString().slice(0,10);
-    const isToday = event.date === today;
+    const target = new Date(event.date);
+    const now = new Date();
+    const diff = Math.max(0, target - now);
 
     const dEl = document.getElementById('cd-d');
     const hEl = document.getElementById('cd-h');
     const mEl = document.getElementById('cd-m');
 
-    if (isToday) {
-      if (dEl) { dEl.textContent = 'Today'; dEl.style.fontSize = '14px'; }
+    if (diff === 0 || Math.floor(diff / 86400000) === 0) {
+      if (dEl) { dEl.textContent = 'Today'; dEl.style.fontSize = '13px'; }
       if (hEl) hEl.closest('.time-block').style.display = 'none';
       if (mEl) mEl.closest('.time-block').style.display = 'none';
       return;
     }
 
-    const target = new Date(event.date + 'T22:00:00');
-    const now = new Date();
-    const diff = Math.max(0, target - now);
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);
