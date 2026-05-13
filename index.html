@@ -552,11 +552,10 @@
     octagon.ai
   </div>
   <div class="header-right" id="header-nav">
-    <a class="nav-btn" href="hot-picks.html">🔥 Hot picks</a>
-    <button class="nav-btn active" id="btn-home" onclick="showHome();closeNav()">Predictions</button>
-    <button class="nav-btn" id="btn-events" onclick="showEvents();closeNav()">All events</button>
+    <a class="nav-btn" href="hot-picks.html">🔥 Upcoming picks</a>
+    <button class="nav-btn active" id="btn-events" onclick="showEvents();closeNav()">Events</button>
     <a class="nav-btn" href="fighters.html">Fighters</a>
-    <a class="nav-btn" href="accuracy.html">Accuracy</a>
+    <a class="nav-btn" href="accuracy.html">Model Accuracy</a>
     <a class="nav-btn" href="how-it-works.html">How it works</a>
     <span class="accuracy-pill">83% accurate</span>
   </div>
@@ -640,7 +639,6 @@ let currentFilter = 'all';
 function showHome() {
   document.getElementById('page-home').classList.add('active');
   document.getElementById('page-events').classList.remove('active');
-  document.getElementById('btn-home').classList.add('active');
   document.getElementById('btn-events').classList.remove('active');
   closeNav();
 }
@@ -648,7 +646,6 @@ function showHome() {
 function showEvents() {
   document.getElementById('page-home').classList.remove('active');
   document.getElementById('page-events').classList.add('active');
-  document.getElementById('btn-home').classList.remove('active');
   document.getElementById('btn-events').classList.add('active');
   closeNav();
   loadEventsList();
@@ -1117,14 +1114,7 @@ function showSearchError(query, index) {
 
 const slug = getEventSlug();
 if (slug) loadEvent(slug);
-else {
-  if (sessionStorage.getItem('showEvents') === '1') {
-    sessionStorage.removeItem('showEvents');
-    showEvents();
-  } else {
-    loadLatestEvent();
-  }
-}
+else showEvents();
 
 function toggleNav() {
   document.getElementById('header-nav').classList.toggle('open');
