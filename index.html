@@ -616,14 +616,18 @@
         <div class="events-count" id="events-count">Loading...</div>
       </div>
     </div>
-    <div class="events-filter">
-      <button class="filter-btn active" onclick="filterEvents('all', this)">All</button>
-      <button class="filter-btn" onclick="filterEvents('upcoming', this)">Upcoming</button>
-      <button class="filter-btn" onclick="filterEvents('past', this)">Past</button>
+    <div style="margin-bottom:1.5rem;">
+      <input type="text" id="events-search" placeholder="Search events..." style="
+        width:100%; height:42px; border:1.5px solid var(--gray-200);
+        border-radius:var(--radius-md); padding:0 16px; font-size:14px;
+        font-family:var(--font); outline:none; background:white;
+        color:var(--gray-900); transition:border-color 0.15s;
+      " oninput="filterEventsBySearch()" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor='var(--gray-200)'" />
     </div>
-    <div id="events-list">
-      <div class="loading"><div class="spinner"></div>Loading events...</div>
-    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:10px;">Upcoming</div>
+    <div id="events-upcoming"></div>
+    <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin:1.5rem 0 10px;">Past events</div>
+    <div id="events-past"></div>
   </div>
 </div>
 
@@ -652,80 +656,88 @@ function showEvents() {
 }
 
 async function loadEventsList() {
-  const list = document.getElementById('events-list');
   try {
     const resp = await fetch(DATA_BASE + 'index.json');
     allIndex   = await resp.json();
     allIndex.sort((a,b) => new Date(a.date) - new Date(b.date));
     document.getElementById('events-count').textContent =
       `${allIndex.length} event${allIndex.length !== 1 ? 's' : ''} available`;
-    renderEventsList(allIndex);
+    filterEventsBySearch();
   } catch(e) {
-    list.innerHTML = `<div class="empty-state">Could not load events.</div>`;
+    document.getElementById('events-upcoming').innerHTML =
+      `<div class="empty-state">Could not load events.</div>`;
   }
 }
 
-function filterEvents(filter, btn) {
-  currentFilter = filter;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+function fuzzyMatch(str, query) {
+  if (!query) return true;
+  const s = str.toLowerCase();
+  const q = query.toLowerCase();
+  if (s.includes(q)) return true;
+  const qWords = q.split(/\s+/);
+  const sWords = s.split(/[\s:\-\.]+/);
+  if (qWords.every(qw => sWords.some(sw => sw.startsWith(qw) || sw.includes(qw)))) return true;
+  let qi = 0;
+  for (let i = 0; i < s.length && qi < q.length; i++) {
+    if (s[i] === q[qi]) qi++;
+  }
+  if (qi === q.length) return true;
+  function bigrams(str) {
+    const b = new Set();
+    for (let i = 0; i < str.length - 1; i++) b.add(str.slice(i, i+2));
+    return b;
+  }
+  const qBigrams = bigrams(q);
+  const sBigrams = bigrams(s);
+  let shared = 0;
+  qBigrams.forEach(b => { if (sBigrams.has(b)) shared++; });
+  return (2 * shared) / (qBigrams.size + sBigrams.size) > 0.3;
+}
 
+function filterEventsBySearch() {
+  const q = document.getElementById('events-search').value.trim();
   const today = new Date().toISOString().slice(0,10);
-  let filtered = allIndex;
 
-  if (filter === 'upcoming') {
-    filtered = allIndex.filter(e => {
-      try { return new Date(e.date) >= new Date(today); }
-      catch { return true; }
-    });
-  } else if (filter === 'past') {
-    filtered = allIndex.filter(e => {
-      try { return new Date(e.date) < new Date(today); }
-      catch { return false; }
-    });
+  let upcoming = allIndex.filter(e => {
+    try { return new Date(e.date) >= new Date(today); } catch { return true; }
+  }).sort((a,b) => new Date(a.date) - new Date(b.date));
+
+  let past = allIndex.filter(e => {
+    try { return new Date(e.date) < new Date(today); } catch { return false; }
+  }).sort((a,b) => new Date(b.date) - new Date(a.date));
+
+  if (q) {
+    upcoming = upcoming.filter(e => fuzzyMatch(e.name, q));
+    past = past.filter(e => fuzzyMatch(e.name, q));
   }
 
-  renderEventsList(filtered);
+  renderEventsSection('events-upcoming', upcoming);
+  renderEventsSection('events-past', past);
 }
 
-function renderEventsList(events) {
-  const list = document.getElementById('events-list');
-
+function renderEventsSection(containerId, events) {
+  const el = document.getElementById(containerId);
   if (events.length === 0) {
-    list.innerHTML = `
-      <div class="empty-state">
-        <div style="font-size:32px;margin-bottom:1rem">🥊</div>
-        <div style="font-size:15px;font-weight:600;color:var(--gray-600)">No events found</div>
-      </div>
-    `;
+    el.innerHTML = `<div style="color:var(--gray-400);font-size:13px;padding:12px 0;">No events found.</div>`;
     return;
   }
-
   const today = new Date().toISOString().slice(0,10);
-
-  list.innerHTML = events.map(event => {
+  el.innerHTML = events.map(event => {
     const isUpcoming = (() => {
-      try { return new Date(event.date) >= new Date(today); }
-      catch { return false; }
+      try { return new Date(event.date) >= new Date(today); } catch { return false; }
     })();
-
     const s     = event.summary || {};
     const high  = s.high_conf || 0;
     const med   = s.medium_conf || 0;
     const ev    = s.ev_plays || 0;
     const total = s.total_fights || 0;
-
-    const dateStr = event.date
-      ? (() => {
-          try {
-            const d = new Date(event.date + 'T12:00:00');
-            if (isNaN(d)) return event.date;
-            return d.toLocaleDateString('en-US',
-              { month: 'short', day: 'numeric', year: 'numeric' });
-          } catch(e) { return event.date; }
-        })()
-      : '';
-
+    const dateStr = event.date ? (() => {
+      try {
+        const d = new Date(event.date + 'T12:00:00');
+        if (isNaN(d)) return event.date;
+        return d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+      } catch { return event.date; }
+    })() : '';
     return `
       <div class="event-row" onclick="loadEventFromBrowser('${event.slug}')">
         <div class="event-row-left">
