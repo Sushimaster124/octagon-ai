@@ -381,10 +381,11 @@ function buildPicks(data) {
       const c = sides[si];
       if (!c.ev || c.ev <= 0) continue;
       const opp = sides[1 - si];
+      const recalcConf = c.prob >= 75 ? 'high' : c.prob >= 60 ? 'medium' : 'low';
       picks.push({
         ...c,
         weight: fight.weight_class || '',
-        confidence: fight.confidence,
+        confidence: recalcConf,
         chaos: fight.chaos,
         elo_clash: fight.elo_clash,
         oddsOpp: opp.odds || null,
