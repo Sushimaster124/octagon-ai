@@ -133,12 +133,18 @@
   .hot-advisory.warn { background: var(--amber-light); color: #633806; padding: 7px 10px; border-radius: var(--radius-sm); }
   .rank-badge { width: 22px; height: 22px; border-radius: 50%; background: var(--gray-900); color: white; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; flex-shrink: 0; }
 
-  .odds-row { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; margin-top: 8px; border-top: 1px solid var(--border); }
-  .odds-row-left { font-size: 12px; color: var(--gray-600); display: flex; align-items: center; gap: 6px; }
-  .odds-current { font-weight: 600; color: var(--gray-900); }
-  .custom-badge { font-size: 10px; font-weight: 600; background: var(--amber-light); color: #633806; padding: 2px 7px; border-radius: 20px; display: none; }
+  .odds-section { padding-top: 10px; margin-top: 8px; border-top: 1px solid var(--border); }
+  .odds-section-title { font-size: 10px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .odds-fighter-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .odds-fighter-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .odds-fighter-left { font-size: 12px; color: var(--gray-600); display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+  .odds-fighter-name { font-weight: 600; color: var(--gray-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+  .odds-current { font-size: 12px; color: var(--gray-600); }
+  .custom-badge { font-size: 10px; font-weight: 600; background: var(--amber-light); color: #633806; padding: 2px 7px; border-radius: 20px; display: none; flex-shrink: 0; }
   .custom-badge.show { display: inline; }
-  .odds-row-right { display: flex; align-items: center; gap: 6px; }
+  .pos-ev-badge { font-size: 10px; font-weight: 600; background: var(--green-light); color: #085041; padding: 2px 7px; border-radius: 20px; display: none; flex-shrink: 0; }
+  .pos-ev-badge.show { display: inline; }
+  .odds-fighter-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
   .edit-odds-btn { font-size: 11px; color: var(--gray-600); background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 3px 9px; cursor: pointer; font-family: var(--font); transition: background 0.15s; }
   .edit-odds-btn:hover { background: var(--gray-50); }
   .reset-odds-btn { font-size: 11px; color: var(--red-dark); background: none; border: 1px solid var(--red-light); border-radius: var(--radius-sm); padding: 3px 9px; cursor: pointer; font-family: var(--font); display: none; }
@@ -146,7 +152,7 @@
   .reset-odds-btn:hover { background: var(--red-light); }
   .odds-input-wrap { display: none; align-items: center; gap: 6px; }
   .odds-input-wrap.open { display: flex; }
-  .odds-input { width: 80px; height: 28px; border: 1.5px solid var(--blue); border-radius: var(--radius-sm); padding: 0 8px; font-size: 13px; font-family: var(--font); outline: none; text-align: center; background: white; color: var(--gray-900); }
+  .odds-input { width: 72px; height: 28px; border: 1.5px solid var(--blue); border-radius: var(--radius-sm); padding: 0 8px; font-size: 13px; font-family: var(--font); outline: none; text-align: center; background: white; color: var(--gray-900); }
   .odds-hint { font-size: 10px; color: var(--gray-400); }
 
   .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
@@ -211,9 +217,17 @@
 
 <div class="hero">
   <div class="hero-eyebrow"><div class="live-dot"></div>Live odds</div>
-  <h1>🔥 Hot picks</h1>
+  <h1>🔥 Upcoming picks</h1>
   <p id="hero-sub">Best EV plays · Medium &amp; high confidence only · Sorted by confidence then EV</p>
 </div>
+
+<div style="max-width:760px;margin:0 auto;padding:1.25rem 2rem 0;">
+  <div style="background:var(--blue-light);border:1px solid rgba(55,138,221,0.2);border-radius:var(--radius-lg);padding:14px 18px;font-size:13px;color:var(--blue-dark);line-height:1.65;">
+    <strong>How to use this page:</strong> Below are today's best picks for the upcoming fight card. Odds are pulled automatically from online bookmakers — but if you're at a casino or using a betting app with different lines, tap <em>Edit odds</em> on any fighter to update them. EV and edge recalculate instantly. Once you're happy with the odds, enter your budget and hit <strong>Allocate</strong> — it'll calculate the optimal way to split your bankroll across picks using the odds you've set.
+  </div>
+</div>
+
+<div style="height:1rem"></div>
 
 <div class="stats-bar">
   <div class="stat-item">
@@ -364,9 +378,20 @@ function buildPicks(data) {
       { fighter: fight.fighter_a, opponent: fight.fighter_b, prob: fight.prob_a, ev: fight.ev_a, edge: fight.edge_a, odds: fight.odds_a, vegas_prob: fight.vegas_prob_a },
       { fighter: fight.fighter_b, opponent: fight.fighter_a, prob: fight.prob_b, ev: fight.ev_b, edge: fight.edge_b, odds: fight.odds_b, vegas_prob: fight.vegas_prob_b },
     ];
-    for (const c of sides) {
+    for (let si = 0; si < sides.length; si++) {
+      const c = sides[si];
       if (!c.ev || c.ev <= 0) continue;
-      picks.push({ ...c, weight: fight.weight_class || '', confidence: fight.confidence, chaos: fight.chaos, elo_clash: fight.elo_clash });
+      const opp = sides[1 - si];
+      picks.push({
+        ...c,
+        weight: fight.weight_class || '',
+        confidence: fight.confidence,
+        chaos: fight.chaos,
+        elo_clash: fight.elo_clash,
+        oddsOpp: opp.odds || null,
+        probOpp: opp.prob || null,
+        evOpp: opp.ev || null,
+      });
     }
   }
   picks.sort((a,b) => {
@@ -493,7 +518,12 @@ function renderPicks(picks) {
     const advisory = p.confidence==='medium'
       ? `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`
       : `ML ${oddsStr} · Model significantly underpriced by Vegas`;
-    const globalIdx = allPicks.indexOf(p);
+    const globalIdx  = allPicks.indexOf(p);
+    const oddsA      = p.odds;
+    const oddsB      = p.oddsOpp || null;
+    const oddsAStr   = oddsA > 0 ? `+${oddsA}` : `${oddsA}`;
+    const oddsBStr   = oddsB !== null ? (oddsB > 0 ? `+${oddsB}` : `${oddsB}`) : '—';
+    const evOpp      = p.evOpp || null;
     return `
       <div class="hot-card">
         <div class="hot-card-header ${p.confidence}">
@@ -520,21 +550,42 @@ function renderPicks(picks) {
             <div class="hot-metric edge"><div class="hot-metric-lbl">Edge</div><div class="hot-metric-val" id="edge-display-${globalIdx}">${p.edge >= 0 ? '+' : ''}${p.edge}%</div></div>
           </div>
           <div class="hot-advisory${p.confidence==='medium'?' warn':''}">${advisory}</div>
-          <div class="odds-row">
-            <div class="odds-row-left">
-              Casino odds:
-              <span class="odds-current" id="odds-display-${globalIdx}">ML ${oddsStr}</span>
-              <span class="custom-badge" id="custom-badge-${globalIdx}">custom</span>
-            </div>
-            <div class="odds-row-right">
-              <div class="odds-input-wrap" id="odds-wrap-${globalIdx}">
-                <input class="odds-input" id="odds-inp-${globalIdx}" type="number" placeholder="${p.odds}" step="1"
-                  onkeydown="if(event.key==='Enter') applyOdds(${globalIdx})" />
-                <span class="odds-hint">e.g. -140</span>
+          <div class="odds-section">
+            <div class="odds-section-title">Live odds — edit if yours differ</div>
+            <div class="odds-fighter-row">
+              <div class="odds-fighter-left">
+                <span class="odds-fighter-name">${p.fighter}</span>
+                <span class="odds-current" id="odds-display-${globalIdx}-a">ML ${oddsAStr}</span>
+                <span class="custom-badge" id="custom-badge-${globalIdx}-a">custom</span>
               </div>
-              <button class="edit-odds-btn" id="edit-btn-${globalIdx}" onclick="toggleOddsEdit(${globalIdx})">Edit odds</button>
-              <button class="reset-odds-btn" id="reset-btn-${globalIdx}" onclick="resetOdds(${globalIdx}, ${p.odds}, ${p.ev}, ${p.edge}, ${p.vegas_prob})">Reset</button>
+              <div class="odds-fighter-right">
+                <div class="odds-input-wrap" id="odds-wrap-${globalIdx}-a">
+                  <input class="odds-input" id="odds-inp-${globalIdx}-a" type="number" placeholder="${oddsA}" step="1"
+                    onkeydown="if(event.key==='Enter') applyOddsA(${globalIdx})" />
+                  <span class="odds-hint">e.g. -140</span>
+                </div>
+                <button class="edit-odds-btn" id="edit-btn-${globalIdx}-a" onclick="toggleOddsA(${globalIdx})">Edit odds</button>
+                <button class="reset-odds-btn" id="reset-btn-${globalIdx}-a" onclick="resetOddsA(${globalIdx}, ${p.odds}, ${p.ev}, ${p.edge}, ${p.vegas_prob})">Reset</button>
+              </div>
             </div>
+            ${oddsB !== null ? `
+            <div class="odds-fighter-row">
+              <div class="odds-fighter-left">
+                <span class="odds-fighter-name">${p.opponent}</span>
+                <span class="odds-current" id="odds-display-${globalIdx}-b">ML ${oddsBStr}</span>
+                <span class="custom-badge" id="custom-badge-${globalIdx}-b">custom</span>
+                <span class="pos-ev-badge" id="posev-badge-${globalIdx}-b">${evOpp !== null && evOpp > 0 ? '+$'+Math.round(evOpp)+' EV' : 'EV+'}</span>
+              </div>
+              <div class="odds-fighter-right">
+                <div class="odds-input-wrap" id="odds-wrap-${globalIdx}-b">
+                  <input class="odds-input" id="odds-inp-${globalIdx}-b" type="number" placeholder="${oddsB}" step="1"
+                    onkeydown="if(event.key==='Enter') applyOddsB(${globalIdx})" />
+                  <span class="odds-hint">e.g. +120</span>
+                </div>
+                <button class="edit-odds-btn" id="edit-btn-${globalIdx}-b" onclick="toggleOddsB(${globalIdx})">Edit odds</button>
+                <button class="reset-odds-btn" id="reset-btn-${globalIdx}-b" onclick="resetOddsB(${globalIdx}, ${p.oddsOpp}, ${p.probOpp})">Reset</button>
+              </div>
+            </div>` : ''}
           </div>
         </div>
       </div>
@@ -556,71 +607,112 @@ function calcEV(modelProb, ml) {
   return (modelProb / 100 * payout) - ((1 - modelProb / 100) * 100);
 }
 
-function toggleOddsEdit(idx) {
-  const wrap = document.getElementById(`odds-wrap-${idx}`);
-  const btn  = document.getElementById(`edit-btn-${idx}`);
-  const inp  = document.getElementById(`odds-inp-${idx}`);
+function toggleOddsA(idx) {
+  const wrap = document.getElementById(`odds-wrap-${idx}-a`);
+  const btn  = document.getElementById(`edit-btn-${idx}-a`);
   if (!wrap.classList.contains('open')) {
     wrap.classList.add('open');
     btn.textContent = 'Apply';
-    inp.focus();
-  } else {
-    applyOdds(idx);
-  }
+    document.getElementById(`odds-inp-${idx}-a`).focus();
+  } else { applyOddsA(idx); }
 }
 
-function applyOdds(idx) {
-  const inp = document.getElementById(`odds-inp-${idx}`);
+function toggleOddsB(idx) {
+  const wrap = document.getElementById(`odds-wrap-${idx}-b`);
+  const btn  = document.getElementById(`edit-btn-${idx}-b`);
+  if (!wrap.classList.contains('open')) {
+    wrap.classList.add('open');
+    btn.textContent = 'Apply';
+    document.getElementById(`odds-inp-${idx}-b`).focus();
+  } else { applyOddsB(idx); }
+}
+
+function applyOddsA(idx) {
+  const inp = document.getElementById(`odds-inp-${idx}-a`);
   const val = parseFloat(inp.value);
   if (isNaN(val) || val === 0) return;
-
   const p = allPicks[idx];
   const newOdds = Math.round(val);
   const newVP   = americanToProb(newOdds);
   if (newVP === null) return;
-
   const newEV   = calcEV(p.prob, newOdds);
   const newEdge = p.prob / 100 - newVP;
-
-  p.odds      = newOdds;
-  p.ev        = newEV;
-  p.edge      = parseFloat((newEdge * 100).toFixed(1));
-  p.vegas_prob= parseFloat((newVP * 100).toFixed(1));
+  p.odds       = newOdds;
+  p.ev         = newEV;
+  p.edge       = parseFloat((newEdge * 100).toFixed(1));
+  p.vegas_prob = parseFloat((newVP * 100).toFixed(1));
   p.customOdds = true;
-
   const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
-  document.getElementById(`odds-display-${idx}`).textContent  = `ML ${oddsStr}`;
-  document.getElementById(`ev-display-${idx}`).textContent    = `${newEV >= 0 ? '+' : ''}$${Math.round(newEV)}`;
-  document.getElementById(`ev-display-${idx}`).style.color    = newEV >= 0 ? 'var(--green)' : 'var(--red)';
-  document.getElementById(`vp-display-${idx}`).textContent    = `${(newVP * 100).toFixed(1)}%`;
-  document.getElementById(`edge-display-${idx}`).textContent  = `${newEdge >= 0 ? '+' : ''}${(newEdge * 100).toFixed(1)}%`;
-  document.getElementById(`custom-badge-${idx}`).classList.add('show');
-  document.getElementById(`reset-btn-${idx}`).classList.add('show');
-  document.getElementById(`odds-wrap-${idx}`).classList.remove('open');
-  document.getElementById(`edit-btn-${idx}`).textContent = 'Edit odds';
-
+  document.getElementById(`odds-display-${idx}-a`).textContent = `ML ${oddsStr}`;
+  document.getElementById(`ev-display-${idx}`).textContent     = `${newEV >= 0 ? '+' : ''}$${Math.round(newEV)}`;
+  document.getElementById(`ev-display-${idx}`).style.color     = newEV >= 0 ? 'var(--green)' : 'var(--red)';
+  document.getElementById(`vp-display-${idx}`).textContent     = `${(newVP * 100).toFixed(1)}%`;
+  document.getElementById(`edge-display-${idx}`).textContent   = `${newEdge >= 0 ? '+' : ''}${(newEdge * 100).toFixed(1)}%`;
+  document.getElementById(`custom-badge-${idx}-a`).classList.add('show');
+  document.getElementById(`reset-btn-${idx}-a`).classList.add('show');
+  document.getElementById(`odds-wrap-${idx}-a`).classList.remove('open');
+  document.getElementById(`edit-btn-${idx}-a`).textContent = 'Edit odds';
   renderStats();
 }
 
-function resetOdds(idx, origOdds, origEV, origEdge, origVP) {
+function applyOddsB(idx) {
+  const inp = document.getElementById(`odds-inp-${idx}-b`);
+  const val = parseFloat(inp.value);
+  if (isNaN(val) || val === 0) return;
+  const p = allPicks[idx];
+  const newOdds = Math.round(val);
+  const newVP   = americanToProb(newOdds);
+  if (newVP === null) return;
+  const newEV   = calcEV(p.probOpp, newOdds);
+  p.oddsOpp    = newOdds;
+  p.evOpp      = newEV;
+  const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
+  document.getElementById(`odds-display-${idx}-b`).textContent = `ML ${oddsStr}`;
+  document.getElementById(`custom-badge-${idx}-b`).classList.add('show');
+  document.getElementById(`reset-btn-${idx}-b`).classList.add('show');
+  document.getElementById(`odds-wrap-${idx}-b`).classList.remove('open');
+  document.getElementById(`edit-btn-${idx}-b`).textContent = 'Edit odds';
+  const posEvBadge = document.getElementById(`posev-badge-${idx}-b`);
+  if (posEvBadge) {
+    if (newEV > 0) {
+      posEvBadge.textContent = `+$${Math.round(newEV)} EV`;
+      posEvBadge.classList.add('show');
+    } else {
+      posEvBadge.classList.remove('show');
+    }
+  }
+}
+
+function resetOddsA(idx, origOdds, origEV, origEdge, origVP) {
   const p = allPicks[idx];
   p.odds       = origOdds;
   p.ev         = origEV;
   p.edge       = origEdge;
   p.vegas_prob = origVP;
   p.customOdds = false;
-
   const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
-  document.getElementById(`odds-display-${idx}`).textContent  = `ML ${oddsStr}`;
-  document.getElementById(`ev-display-${idx}`).textContent    = `+$${Math.round(origEV)}`;
-  document.getElementById(`ev-display-${idx}`).style.color    = 'var(--green)';
-  document.getElementById(`vp-display-${idx}`).textContent    = `${origVP}%`;
-  document.getElementById(`edge-display-${idx}`).textContent  = `+${origEdge}%`;
-  document.getElementById(`custom-badge-${idx}`).classList.remove('show');
-  document.getElementById(`reset-btn-${idx}`).classList.remove('show');
-  document.getElementById(`odds-inp-${idx}`).value = '';
-
+  document.getElementById(`odds-display-${idx}-a`).textContent = `ML ${oddsStr}`;
+  document.getElementById(`ev-display-${idx}`).textContent     = `+$${Math.round(origEV)}`;
+  document.getElementById(`ev-display-${idx}`).style.color     = 'var(--green)';
+  document.getElementById(`vp-display-${idx}`).textContent     = `${origVP}%`;
+  document.getElementById(`edge-display-${idx}`).textContent   = `+${origEdge}%`;
+  document.getElementById(`custom-badge-${idx}-a`).classList.remove('show');
+  document.getElementById(`reset-btn-${idx}-a`).classList.remove('show');
+  document.getElementById(`odds-inp-${idx}-a`).value = '';
   renderStats();
+}
+
+function resetOddsB(idx, origOdds, origProbOpp) {
+  const p = allPicks[idx];
+  p.oddsOpp = origOdds;
+  p.evOpp   = origOdds !== null ? calcEV(origProbOpp, origOdds) : null;
+  const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
+  document.getElementById(`odds-display-${idx}-b`).textContent = `ML ${oddsStr}`;
+  document.getElementById(`custom-badge-${idx}-b`).classList.remove('show');
+  document.getElementById(`reset-btn-${idx}-b`).classList.remove('show');
+  document.getElementById(`odds-inp-${idx}-b`).value = '';
+  const posEvBadge = document.getElementById(`posev-badge-${idx}-b`);
+  if (posEvBadge) posEvBadge.classList.remove('show');
 }
 
 function formatDate(d) {
