@@ -691,7 +691,13 @@ function fuzzyMatch(str, query) {
   const sBigrams = bigrams(s);
   let shared = 0;
   qBigrams.forEach(b => { if (sBigrams.has(b)) shared++; });
-  return (2 * shared) / (qBigrams.size + sBigrams.size) > 0.3;
+  // If query contains a number, the string must contain that exact number
+  const nums = q.match(/\d+/g);
+  if (nums) {
+    const sNums = s.match(/\d+/g) || [];
+    if (!nums.every(n => sNums.includes(n))) return false;
+  }
+  return (2 * shared) / (qBigrams.size + sBigrams.size) > 0.5;
 }
 
 function filterEventsBySearch() {
