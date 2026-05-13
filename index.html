@@ -525,6 +525,13 @@
       border-radius: 2px; display: block;
     }
     .accuracy-pill { display: none; }
+    .fight-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 10px 12px;
+    }
+    
     .hero { padding: 1.5rem 1rem; }
     .hero h1 { font-size: 24px; }
     .hero p { font-size: 13px; }
@@ -919,10 +926,10 @@ function renderEvent(data) {
     const barHtml = `<div style="display:inline-flex;align-items:flex-end;gap:2px;height:16px;margin-left:6px;vertical-align:middle">${bars}</div>`;
 
     const confSub = conf==='high'
-      ? `Model 75%+ · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`
+      ? `75%+ · chaos ${chaosScore}${clashFlag ? ' · ⚡ clash' : ''}`
       : conf==='medium'
-      ? `Model 60–74% · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`
-      : `Model below 60% · chaos ${chaosScore}${clashFlag ? ' · ⚡ Elo clash' : ''}`;
+      ? `60–74% · chaos ${chaosScore}${clashFlag ? ' · ⚡ clash' : ''}`
+      : `<60% · chaos ${chaosScore}${clashFlag ? ' · ⚡ clash' : ''}`;
     const titleFlag = fight.title_fight ? '🏆 Title · ' : '';
     const wc        = fight.weight_class || `Fight ${i+1}`;
 
