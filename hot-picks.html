@@ -133,6 +133,22 @@
   .hot-advisory.warn { background: var(--amber-light); color: #633806; padding: 7px 10px; border-radius: var(--radius-sm); }
   .rank-badge { width: 22px; height: 22px; border-radius: 50%; background: var(--gray-900); color: white; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; flex-shrink: 0; }
 
+  .odds-row { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; margin-top: 8px; border-top: 1px solid var(--border); }
+  .odds-row-left { font-size: 12px; color: var(--gray-600); display: flex; align-items: center; gap: 6px; }
+  .odds-current { font-weight: 600; color: var(--gray-900); }
+  .custom-badge { font-size: 10px; font-weight: 600; background: var(--amber-light); color: #633806; padding: 2px 7px; border-radius: 20px; display: none; }
+  .custom-badge.show { display: inline; }
+  .odds-row-right { display: flex; align-items: center; gap: 6px; }
+  .edit-odds-btn { font-size: 11px; color: var(--gray-600); background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 3px 9px; cursor: pointer; font-family: var(--font); transition: background 0.15s; }
+  .edit-odds-btn:hover { background: var(--gray-50); }
+  .reset-odds-btn { font-size: 11px; color: var(--red-dark); background: none; border: 1px solid var(--red-light); border-radius: var(--radius-sm); padding: 3px 9px; cursor: pointer; font-family: var(--font); display: none; }
+  .reset-odds-btn.show { display: inline; }
+  .reset-odds-btn:hover { background: var(--red-light); }
+  .odds-input-wrap { display: none; align-items: center; gap: 6px; }
+  .odds-input-wrap.open { display: flex; }
+  .odds-input { width: 80px; height: 28px; border: 1.5px solid var(--blue); border-radius: var(--radius-sm); padding: 0 8px; font-size: 13px; font-family: var(--font); outline: none; text-align: center; background: white; color: var(--gray-900); }
+  .odds-hint { font-size: 10px; color: var(--gray-400); }
+
   .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
   .spinner { width: 32px; height: 32px; border: 3px solid var(--gray-100); border-top-color: var(--red); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -473,10 +489,11 @@ function renderPicks(picks) {
     const confSub   = p.confidence==='high'
       ? `95% hist. accuracy · chaos ${chaos}${clash}`
       : `67–81% hist. accuracy · chaos ${chaos}${clash}`;
-    const oddsStr = p.odds ? `ML ${p.odds>0?'+':''}${p.odds}` : '';
+    const oddsStr   = p.odds > 0 ? `+${p.odds}` : `${p.odds}`;
     const advisory = p.confidence==='medium'
-      ? `${oddsStr} · Positive EV but medium confidence — consider sizing down`
-      : `${oddsStr} · Model significantly underpriced by Vegas`;
+      ? `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`
+      : `ML ${oddsStr} · Model significantly underpriced by Vegas`;
+    const globalIdx = allPicks.indexOf(p);
     return `
       <div class="hot-card">
         <div class="hot-card-header ${p.confidence}">
@@ -493,20 +510,117 @@ function renderPicks(picks) {
               <div class="hot-matchup">vs ${p.opponent} · ${p.weight}</div>
             </div>
             <div class="hot-ev">
-              <div class="hot-ev-val">+$${p.ev.toFixed(0)}</div>
+              <div class="hot-ev-val" id="ev-display-${globalIdx}">${p.ev >= 0 ? '+' : ''}$${Math.round(p.ev)}</div>
               <div class="hot-ev-lbl">per $100 bet</div>
             </div>
           </div>
           <div class="hot-metrics">
             <div class="hot-metric"><div class="hot-metric-lbl">Model prob</div><div class="hot-metric-val">${p.prob}%</div></div>
-            <div class="hot-metric"><div class="hot-metric-lbl">Vegas implied</div><div class="hot-metric-val">${p.vegas_prob}%</div></div>
-            <div class="hot-metric edge"><div class="hot-metric-lbl">Edge</div><div class="hot-metric-val">+${p.edge}%</div></div>
+            <div class="hot-metric"><div class="hot-metric-lbl">Vegas implied</div><div class="hot-metric-val" id="vp-display-${globalIdx}">${p.vegas_prob}%</div></div>
+            <div class="hot-metric edge"><div class="hot-metric-lbl">Edge</div><div class="hot-metric-val" id="edge-display-${globalIdx}">${p.edge >= 0 ? '+' : ''}${p.edge}%</div></div>
           </div>
           <div class="hot-advisory${p.confidence==='medium'?' warn':''}">${advisory}</div>
+          <div class="odds-row">
+            <div class="odds-row-left">
+              Casino odds:
+              <span class="odds-current" id="odds-display-${globalIdx}">ML ${oddsStr}</span>
+              <span class="custom-badge" id="custom-badge-${globalIdx}">custom</span>
+            </div>
+            <div class="odds-row-right">
+              <div class="odds-input-wrap" id="odds-wrap-${globalIdx}">
+                <input class="odds-input" id="odds-inp-${globalIdx}" type="number" placeholder="${p.odds}" step="1"
+                  onkeydown="if(event.key==='Enter') applyOdds(${globalIdx})" />
+                <span class="odds-hint">e.g. -140</span>
+              </div>
+              <button class="edit-odds-btn" id="edit-btn-${globalIdx}" onclick="toggleOddsEdit(${globalIdx})">Edit odds</button>
+              <button class="reset-odds-btn" id="reset-btn-${globalIdx}" onclick="resetOdds(${globalIdx}, ${p.odds}, ${p.ev}, ${p.edge}, ${p.vegas_prob})">Reset</button>
+            </div>
+          </div>
         </div>
       </div>
     `;
   }).join('');
+}
+
+function americanToProb(ml) {
+  ml = parseFloat(ml);
+  if (isNaN(ml) || ml === 0) return null;
+  return ml < 0 ? Math.abs(ml) / (Math.abs(ml) + 100) : 100 / (ml + 100);
+}
+
+function calcEV(modelProb, ml) {
+  const vp = americanToProb(ml);
+  if (vp === null) return null;
+  ml = parseFloat(ml);
+  const payout = ml < 0 ? (100 / Math.abs(ml)) * 100 : (ml / 100) * 100;
+  return (modelProb / 100 * payout) - ((1 - modelProb / 100) * 100);
+}
+
+function toggleOddsEdit(idx) {
+  const wrap = document.getElementById(`odds-wrap-${idx}`);
+  const btn  = document.getElementById(`edit-btn-${idx}`);
+  const inp  = document.getElementById(`odds-inp-${idx}`);
+  if (!wrap.classList.contains('open')) {
+    wrap.classList.add('open');
+    btn.textContent = 'Apply';
+    inp.focus();
+  } else {
+    applyOdds(idx);
+  }
+}
+
+function applyOdds(idx) {
+  const inp = document.getElementById(`odds-inp-${idx}`);
+  const val = parseFloat(inp.value);
+  if (isNaN(val) || val === 0) return;
+
+  const p = allPicks[idx];
+  const newOdds = Math.round(val);
+  const newVP   = americanToProb(newOdds);
+  if (newVP === null) return;
+
+  const newEV   = calcEV(p.prob, newOdds);
+  const newEdge = p.prob / 100 - newVP;
+
+  p.odds      = newOdds;
+  p.ev        = newEV;
+  p.edge      = parseFloat((newEdge * 100).toFixed(1));
+  p.vegas_prob= parseFloat((newVP * 100).toFixed(1));
+  p.customOdds = true;
+
+  const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
+  document.getElementById(`odds-display-${idx}`).textContent  = `ML ${oddsStr}`;
+  document.getElementById(`ev-display-${idx}`).textContent    = `${newEV >= 0 ? '+' : ''}$${Math.round(newEV)}`;
+  document.getElementById(`ev-display-${idx}`).style.color    = newEV >= 0 ? 'var(--green)' : 'var(--red)';
+  document.getElementById(`vp-display-${idx}`).textContent    = `${(newVP * 100).toFixed(1)}%`;
+  document.getElementById(`edge-display-${idx}`).textContent  = `${newEdge >= 0 ? '+' : ''}${(newEdge * 100).toFixed(1)}%`;
+  document.getElementById(`custom-badge-${idx}`).classList.add('show');
+  document.getElementById(`reset-btn-${idx}`).classList.add('show');
+  document.getElementById(`odds-wrap-${idx}`).classList.remove('open');
+  document.getElementById(`edit-btn-${idx}`).textContent = 'Edit odds';
+
+  renderStats();
+}
+
+function resetOdds(idx, origOdds, origEV, origEdge, origVP) {
+  const p = allPicks[idx];
+  p.odds       = origOdds;
+  p.ev         = origEV;
+  p.edge       = origEdge;
+  p.vegas_prob = origVP;
+  p.customOdds = false;
+
+  const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
+  document.getElementById(`odds-display-${idx}`).textContent  = `ML ${oddsStr}`;
+  document.getElementById(`ev-display-${idx}`).textContent    = `+$${Math.round(origEV)}`;
+  document.getElementById(`ev-display-${idx}`).style.color    = 'var(--green)';
+  document.getElementById(`vp-display-${idx}`).textContent    = `${origVP}%`;
+  document.getElementById(`edge-display-${idx}`).textContent  = `+${origEdge}%`;
+  document.getElementById(`custom-badge-${idx}`).classList.remove('show');
+  document.getElementById(`reset-btn-${idx}`).classList.remove('show');
+  document.getElementById(`odds-inp-${idx}`).value = '';
+
+  renderStats();
 }
 
 function formatDate(d) {
