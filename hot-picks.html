@@ -515,12 +515,9 @@ function renderPicks(picks) {
       ? `95% hist. accuracy · chaos ${chaos}${clash}`
       : `67–81% hist. accuracy · chaos ${chaos}${clash}`;
     const oddsStr   = p.odds > 0 ? `+${p.odds}` : `${p.odds}`;
-    const recalcConf = p.prob >= 75 ? 'high' : p.prob >= 60 ? 'medium' : 'low';
-    const advisory = recalcConf === 'high'
+    const advisory = p.confidence === 'high'
       ? `ML ${oddsStr} · Model significantly underpriced by Vegas`
-      : recalcConf === 'medium'
-      ? `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`
-      : `ML ${oddsStr} · Low conviction — treat as speculative`;
+      : `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`;
     const globalIdx  = allPicks.indexOf(p);
     const oddsA      = p.odds;
     const oddsB      = p.oddsOpp || null;
