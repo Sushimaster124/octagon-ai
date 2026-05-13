@@ -374,22 +374,36 @@
     <div class="conf-card">
       <div class="conf-icon">✅</div>
       <div class="conf-body">
-        <div class="conf-title conf-high-title">High confidence</div>
-        <div class="conf-desc">Model gives the predicted winner <strong>75% or higher</strong> chance of winning. Strong lean — this is the band worth paying attention to and acting on.</div>
+        <div class="conf-title conf-high-title">Safe pick — model 75%+</div>
+        <div class="conf-desc">The model gives the predicted winner a 75% or higher chance of winning. Example: <em>Islam Makhachev vs a late-career opponent — model at 88%, consistent grappling stats, clear edge.</em> This is the band worth acting on.</div>
+      </div>
+    </div>
+    <div class="conf-card">
+      <div class="conf-icon">⚡</div>
+      <div class="conf-body">
+        <div class="conf-title conf-high-title">Strong lean — ranking mismatch</div>
+        <div class="conf-desc">Model is 75%+ confident but the Elo ranking system disagrees — the predicted loser has a stronger historical record. Example: <em>Zhang Mingyang at 92.6% but Elo favors his opponent.</em> Model is still confident — worth an upset watch.</div>
       </div>
     </div>
     <div class="conf-card">
       <div class="conf-icon">⚠️</div>
       <div class="conf-body">
-        <div class="conf-title conf-med-title">Medium confidence</div>
-        <div class="conf-desc">Model gives the predicted winner <strong>60–74%</strong> chance. Clear favorite but the fight is competitive. Treat as an informed lean, not a strong call.</div>
+        <div class="conf-title conf-med-title">Moderate pick — model 60–74%</div>
+        <div class="conf-desc">The model has a clear lean but the fight is competitive. Example: <em>Pavlovich at 65% over Teixeira — statistical edge exists but the margin is close enough to stay cautious.</em> Reasonable lean, not a lock.</div>
       </div>
     </div>
     <div class="conf-card">
       <div class="conf-icon">🎲</div>
       <div class="conf-body">
-        <div class="conf-title conf-low-title">Low confidence</div>
-        <div class="conf-desc">Model gives the predicted winner <strong>below 60%</strong> — essentially a coin flip. The signal bars show fight chaos separately. Even a strong EV play here carries elevated upset risk.</div>
+        <div class="conf-title conf-low-title">Coin flip — model below 60%</div>
+        <div class="conf-desc">The model gives the predicted winner less than 60% — essentially a 50/50. Example: <em>Perez vs Sumudaerji at 53.6%.</em> Both fighters are unpredictable and the model has very low conviction. Treat skeptically regardless of EV.</div>
+      </div>
+    </div>
+    <div class="conf-card">
+      <div class="conf-icon">🚫</div>
+      <div class="conf-body">
+        <div class="conf-title conf-low-title">Avoid — conflicting signals</div>
+        <div class="conf-desc">Below 60% win probability AND Elo clash detected — the model and ranking system both disagree on who wins. Maximum uncertainty. Example: <em>a chaotic striker vs a historically ranked grappler where neither signal is reliable.</em></div>
       </div>
     </div>
   </div>
@@ -480,18 +494,26 @@
   <div class="step-list">
 
     <div class="step-card">
-      <div class="step-num" style="background:var(--green);font-size:11px">HC</div>
+      <div class="step-num" style="background:var(--green);font-size:10px">SP</div>
       <div class="step-content">
-        <div class="step-title">95% hist. accuracy</div>
-        <div class="step-body">Shown on HIGH confidence fights. Means that historically, when the model was this sure, it was right 19 out of 20 times across 483 real fights. This is the band worth acting on.</div>
+        <div class="step-title">Safe pick / Strong lean</div>
+        <div class="step-body">Model gives the winner 75%+. Safe pick means all signals agree. Strong lean means the model is confident but Elo disagrees — still a good pick, just watch for upsets. The signal bars show fight chaos independently.</div>
       </div>
     </div>
 
     <div class="step-card">
-      <div class="step-num" style="background:var(--amber);font-size:11px">MC</div>
+      <div class="step-num" style="background:var(--amber);font-size:10px">MP</div>
       <div class="step-content">
-        <div class="step-title">67–81% hist. accuracy</div>
-        <div class="step-body">Shown on MEDIUM confidence fights. The model still leans one way, but the range is wide — some medium fights are closer to 81%, others closer to 67%. Treat as an informed opinion, not a strong call.</div>
+        <div class="step-title">Moderate pick / Risky</div>
+        <div class="step-body">Model gives the winner 60–74%. Moderate pick means a reasonable lean. Risky means 60–74% but Elo also disagrees — consider sizing down or skipping entirely.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num" style="background:var(--red);font-size:10px">CF</div>
+      <div class="step-content">
+        <div class="step-title">Coin flip / Avoid</div>
+        <div class="step-body">Model gives the winner below 60%. Coin flip means near-even odds. Avoid means below 60% AND Elo clash — maximum uncertainty, both signals are unreliable. Positive EV on these picks should be treated skeptically.</div>
       </div>
     </div>
 
