@@ -274,7 +274,7 @@
     padding: 16px 20px;
     margin-bottom: 10px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
     transition: box-shadow 0.15s, border-color 0.15s;
@@ -284,7 +284,7 @@
   .event-row:hover { box-shadow: var(--shadow-md); border-color: var(--gray-200); }
   .event-row-left { flex: 1; }
   .event-row-name { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px; }
-  .event-row-meta { font-size: 12px; color: var(--gray-400); display: flex; align-items: center; gap: 12px; }
+  .event-row-meta { font-size: 12px; color: var(--gray-400); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .event-row-pills { display: flex; align-items: center; gap: 8px; }
   .event-pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
   .pill-high   { background: var(--green-light); color: var(--green); }
