@@ -648,11 +648,11 @@ function renderProfileCard(f) {
       </div>
       <div class="profile-stat">
         <div class="profile-stat-label">Strike acc</div>
-        <div class="profile-stat-value">${f.str_acc ? (f.str_acc*100).toFixed(0)+'%' : '—'}</div>
+        <div class="profile-stat-value">${f.str_acc ? f.str_acc.toFixed(0)+'%' : '—'}</div>
       </div>
       <div class="profile-stat">
         <div class="profile-stat-label">Strike def</div>
-        <div class="profile-stat-value">${f.str_def ? (f.str_def*100).toFixed(0)+'%' : '—'}</div>
+        <div class="profile-stat-value">${f.str_def ? f.str_def.toFixed(0)+'%' : '—'}</div>
       </div>
       <div class="profile-stat">
         <div class="profile-stat-label">TD avg</div>
@@ -660,7 +660,7 @@ function renderProfileCard(f) {
       </div>
       <div class="profile-stat">
         <div class="profile-stat-label">TD defense</div>
-        <div class="profile-stat-value">${f.td_def ? (f.td_def*100).toFixed(0)+'%' : '—'}</div>
+        <div class="profile-stat-value">${f.td_def ? f.td_def.toFixed(0)+'%' : '—'}</div>
       </div>
       <div class="profile-stat">
         <div class="profile-stat-label">Reach</div>
