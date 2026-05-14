@@ -41,202 +41,91 @@
     display: flex; align-items: center; justify-content: space-between;
     position: sticky; top: 0; z-index: 100;
   }
-
-  .logo {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 16px; font-weight: 600; color: var(--gray-900);
-    text-decoration: none;
-  }
-
-  .logo-icon {
-    width: 28px; height: 28px; background: var(--red);
-    border-radius: 8px; display: flex; align-items: center;
-    justify-content: center; color: white; font-size: 14px; font-weight: 700;
-  }
-
+  .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none; }
+  .logo-icon { width: 28px; height: 28px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 700; }
   .header-right { display: flex; align-items: center; gap: 0.6rem; }
-
   .hamburger { display: none; }
-
-  .nav-link {
-    font-size: 12px; color: var(--gray-600); text-decoration: none;
-    padding: 5px 9px; border-radius: var(--radius-sm);
-    border: 1px solid var(--border); background: white;
-    display: inline-flex; align-items: center;
-  }
-
+  .nav-link { font-size: 12px; color: var(--gray-600); text-decoration: none; padding: 5px 9px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: white; display: inline-flex; align-items: center; }
   .nav-link:hover { background: var(--gray-50); }
   .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
+  .accuracy-pill { background: var(--green-light); color: var(--green); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
 
-  .accuracy-pill {
-    background: var(--green-light); color: var(--green);
-    font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
-  }
-
-  /* ── Hero ── */
-  .hero {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 2.5rem 2rem; text-align: center;
-  }
-
+  .hero { background: white; border-bottom: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
   .hero h1 { font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
   .hero p  { font-size: 15px; color: var(--gray-600); margin-bottom: 1.5rem; }
-
-  .search-row {
-    display: flex; gap: 10px; max-width: 500px; margin: 0 auto;
-  }
-
-  .search-row input {
-    flex: 1; height: 44px;
-    border: 1.5px solid var(--gray-200); border-radius: var(--radius-md);
-    padding: 0 16px; font-size: 15px; font-family: var(--font);
-    outline: none; background: white; color: var(--gray-900);
-    transition: border-color 0.15s;
-  }
-
+  .search-row { display: flex; gap: 10px; max-width: 500px; margin: 0 auto; }
+  .search-row input { flex: 1; height: 44px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-md); padding: 0 16px; font-size: 15px; font-family: var(--font); outline: none; background: white; color: var(--gray-900); transition: border-color 0.15s; }
   .search-row input:focus { border-color: var(--red); }
 
-  /* ── Filter bar ── */
-  .filter-bar {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 12px 2rem; display: flex; align-items: center;
-    gap: 8px; flex-wrap: wrap;
-  }
-
+  .filter-bar { background: white; border-bottom: 1px solid var(--border); padding: 12px 2rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .filter-label { font-size: 12px; color: var(--gray-400); margin-right: 4px; }
-
-  .filter-btn {
-    padding: 5px 14px; border-radius: 20px;
-    border: 1px solid var(--border); background: white;
-    font-size: 12px; font-family: var(--font);
-    color: var(--gray-600); cursor: pointer; transition: all 0.15s;
-  }
-
+  .filter-btn { padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); background: white; font-size: 12px; font-family: var(--font); color: var(--gray-600); cursor: pointer; transition: all 0.15s; }
   .filter-btn.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
 
-  /* ── Main ── */
-  .main {
-    max-width: 1200px; margin: 0 auto; padding: 2rem;
-  }
+  .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
-  /* ── Leaderboard view ── */
   .leaderboard { display: none; }
   .leaderboard.active { display: block; }
 
+  /* Fixed grid — 6 columns, Elo gets its own contained column */
   .lb-header {
     display: grid;
-    grid-template-columns: 48px 1fr 100px 80px 80px 80px 100px;
+    grid-template-columns: 48px 1fr 130px 110px 90px 90px;
     padding: 8px 16px; font-size: 11px; font-weight: 600;
     color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em;
     border-bottom: 1px solid var(--border);
   }
-
   .lb-row {
     display: grid;
-    grid-template-columns: 48px 1fr 100px 80px 80px 80px 100px;
+    grid-template-columns: 48px 1fr 130px 110px 90px 90px;
     padding: 12px 16px; background: white;
     border: 1px solid var(--border); border-radius: var(--radius-md);
     margin-bottom: 6px; align-items: center; cursor: pointer;
     transition: box-shadow 0.15s; box-shadow: var(--shadow-sm);
   }
-
   .lb-row:hover { box-shadow: var(--shadow-md); }
 
   .lb-rank { font-size: 14px; font-weight: 700; color: var(--gray-400); }
   .lb-rank.top3 { color: var(--amber); }
-
   .lb-name-wrap { display: flex; flex-direction: column; }
   .lb-name { font-size: 14px; font-weight: 600; color: var(--gray-900); }
   .lb-nick { font-size: 11px; color: var(--gray-400); }
 
+  /* Elo cell — number + bar, bar capped so it never bleeds into Style */
+  .lb-elo-col { display: flex; flex-direction: column; justify-content: center; padding-right: 16px; }
   .lb-elo { font-size: 16px; font-weight: 700; color: var(--gray-900); }
+  .lb-elo-bar-wrap { height: 4px; background: var(--gray-100); border-radius: 2px; overflow: hidden; margin-top: 5px; max-width: 72px; }
+  .lb-elo-bar { height: 4px; background: var(--red); border-radius: 2px; }
 
-  .lb-style {
-    font-size: 11px; font-weight: 600; padding: 3px 8px;
-    border-radius: 20px; text-align: center;
-  }
-
+  .lb-style { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; text-align: center; display: inline-block; }
   .style-striker  { background: var(--red-light);   color: var(--red-dark); }
   .style-grappler { background: var(--blue-light);  color: var(--blue-dark); }
   .style-wrestler { background: var(--green-light); color: var(--green); }
   .style-hybrid   { background: var(--gray-100);    color: var(--gray-600); }
-
   .lb-record { font-size: 13px; color: var(--gray-600); }
 
-  .lb-elo-bar-wrap {
-    height: 4px; background: var(--gray-100);
-    border-radius: 2px; overflow: hidden; margin-top: 3px;
-  }
-
-  .lb-elo-bar { height: 4px; background: var(--red); border-radius: 2px; }
-
-  /* ── Fighter profile ── */
   .profile-view { display: none; }
   .profile-view.active { display: block; }
-
-  .back-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; color: var(--gray-600); cursor: pointer;
-    margin-bottom: 1.5rem; background: none; border: none;
-    font-family: var(--font); padding: 0;
-  }
-
+  .back-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gray-600); cursor: pointer; margin-bottom: 1.5rem; background: none; border: none; font-family: var(--font); padding: 0; }
   .back-btn:hover { color: var(--gray-900); }
-
-  .profile-grid {
-    display: grid; grid-template-columns: 320px 1fr;
-    gap: 1.5rem; align-items: start;
-  }
-
-  .profile-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 24px;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .profile-avatar {
-    width: 72px; height: 72px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px; font-weight: 700; color: white;
-    margin-bottom: 16px; background: var(--red);
-  }
-
+  .profile-grid { display: grid; grid-template-columns: 320px 1fr; gap: 1.5rem; align-items: start; }
+  .profile-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); }
+  .profile-avatar { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 700; color: white; margin-bottom: 16px; background: var(--red); }
   .profile-name { font-size: 22px; font-weight: 700; color: var(--gray-900); }
   .profile-nick { font-size: 14px; color: var(--gray-400); margin-bottom: 12px; }
-
-  .profile-elo-big {
-    font-size: 48px; font-weight: 700; color: var(--red);
-    letter-spacing: -0.03em; line-height: 1;
-  }
-
+  .profile-elo-big { font-size: 48px; font-weight: 700; color: var(--red); letter-spacing: -0.03em; line-height: 1; }
   .profile-elo-label { font-size: 12px; color: var(--gray-400); margin-bottom: 20px; }
-
-  .profile-stat-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 10px; margin-bottom: 16px;
-  }
-
-  .profile-stat {
-    background: var(--gray-50); border-radius: var(--radius-sm);
-    padding: 10px 12px;
-  }
-
+  .profile-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .profile-stat { background: var(--gray-50); border-radius: var(--radius-sm); padding: 10px 12px; }
   .profile-stat-label { font-size: 11px; color: var(--gray-400); margin-bottom: 3px; }
   .profile-stat-value { font-size: 16px; font-weight: 600; color: var(--gray-900); }
-
-  .profile-record {
-    display: flex; gap: 16px; margin-bottom: 16px;
-    padding: 16px; background: var(--gray-50); border-radius: var(--radius-md);
-    justify-content: center;
-  }
-
+  .profile-record { display: flex; gap: 16px; margin-bottom: 16px; padding: 16px; background: var(--gray-50); border-radius: var(--radius-md); justify-content: center; }
   .record-item { text-align: center; }
   .record-num { font-size: 24px; font-weight: 700; }
   .record-label { font-size: 11px; color: var(--gray-400); }
   .record-wins   .record-num { color: var(--green); }
   .record-losses .record-num { color: var(--red); }
   .record-draws  .record-num { color: var(--gray-400); }
-
   .win-method-bar { margin-top: 12px; }
   .win-method-label { font-size: 11px; color: var(--gray-400); margin-bottom: 8px; }
   .win-method-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
@@ -247,171 +136,59 @@
   .fill-sub { background: var(--blue); }
   .fill-dec { background: var(--green); }
   .win-method-count { font-size: 12px; font-weight: 600; color: var(--gray-900); width: 20px; text-align: right; }
-
-  /* Elo chart */
-  .chart-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 20px;
-    box-shadow: var(--shadow-sm); margin-bottom: 1rem;
-  }
-
+  .chart-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
   .chart-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 16px; }
-
   .elo-chart { width: 100%; height: 200px; position: relative; }
-
-  /* Fight history table */
-  .history-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 20px;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .history-row {
-    display: grid; grid-template-columns: 80px 1fr 120px 80px;
-    padding: 10px 0; border-bottom: 1px solid var(--border);
-    font-size: 13px; align-items: center;
-  }
-
+  .history-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); }
+  .history-row { display: grid; grid-template-columns: 80px 1fr 120px 80px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; align-items: center; }
   .history-row:last-child { border-bottom: none; }
-
   .history-date { color: var(--gray-400); font-size: 12px; }
   .history-opponent { font-weight: 500; color: var(--gray-900); }
   .history-method { color: var(--gray-600); font-size: 12px; }
   .history-result { font-weight: 700; font-size: 13px; }
   .result-win  { color: var(--green); }
   .result-loss { color: var(--red); }
-
-  /* Predict button */
-  .predict-btn {
-    width: 100%; padding: 12px;
-    background: var(--red); color: white; border: none;
-    border-radius: var(--radius-md); font-size: 14px; font-weight: 600;
-    cursor: pointer; font-family: var(--font); margin-top: 12px;
-    transition: background 0.15s;
-  }
-
+  .predict-btn { width: 100%; padding: 12px; background: var(--red); color: white; border: none; border-radius: var(--radius-md); font-size: 14px; font-weight: 600; cursor: pointer; font-family: var(--font); margin-top: 12px; transition: background 0.15s; }
   .predict-btn:hover { background: var(--red-dark); }
-
-  /* Head to head modal */
-  .h2h-panel {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 20px;
-    box-shadow: var(--shadow-sm); margin-top: 1rem; display: none;
-  }
-
+  .h2h-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-top: 1rem; display: none; }
   .h2h-panel.active { display: block; }
   .h2h-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
-
-  .h2h-search {
-    display: flex; gap: 8px; margin-bottom: 12px;
-  }
-
-  .h2h-search input {
-    flex: 1; height: 36px; border: 1px solid var(--gray-200);
-    border-radius: var(--radius-sm); padding: 0 12px;
-    font-size: 13px; font-family: var(--font); outline: none;
-  }
-
+  .h2h-search { display: flex; gap: 8px; margin-bottom: 12px; }
+  .h2h-search input { flex: 1; height: 36px; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 0 12px; font-size: 13px; font-family: var(--font); outline: none; }
   .h2h-search input:focus { border-color: var(--red); }
-
-  .h2h-search button {
-    height: 36px; padding: 0 14px; background: var(--gray-900);
-    color: white; border: none; border-radius: var(--radius-sm);
-    font-size: 13px; cursor: pointer; font-family: var(--font);
-  }
-
+  .h2h-search button { height: 36px; padding: 0 14px; background: var(--gray-900); color: white; border: none; border-radius: var(--radius-sm); font-size: 13px; cursor: pointer; font-family: var(--font); }
   .h2h-result { margin-top: 12px; }
-
-  /* Loading / empty */
-  .loading {
-    text-align: center; padding: 4rem 2rem; color: var(--gray-400);
-  }
-
-  .spinner {
-    width: 32px; height: 32px;
-    border: 3px solid var(--gray-100); border-top-color: var(--red);
-    border-radius: 50%; animation: spin 0.7s linear infinite;
-    margin: 0 auto 1rem;
-  }
-
+  .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
+  .spinner { width: 32px; height: 32px; border: 3px solid var(--gray-100); border-top-color: var(--red); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  .results-count {
-    font-size: 12px; color: var(--gray-400); margin-bottom: 1rem;
-  }
-
-  footer {
-    text-align: center; padding: 2rem; color: var(--gray-400);
-    font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem;
-  }
+  .results-count { font-size: 12px; color: var(--gray-400); margin-bottom: 1rem; }
+  footer { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem; }
 
   @media (max-width: 768px) {
     .profile-grid { grid-template-columns: 1fr; }
     .lb-header { display: none; }
-    .lb-row { grid-template-columns: 40px 1fr 80px; }
-    .lb-style, .lb-record, .lb-elo-bar-wrap { display: none; }
+    .lb-row { grid-template-columns: 40px 1fr 90px; }
+    .lb-style, .lb-record { display: none; }
     .main { padding: 1rem; }
   }
 
   @media (max-width: 600px) {
     body { overflow-x: hidden; }
     header { padding: 0 1rem; }
-    .header-right {
-      display: none; flex-direction: column;
-      position: absolute; top: 56px; left: 0; right: 0;
-      background: white; border-bottom: 1px solid var(--border);
-      padding: 12px 1rem; gap: 8px; z-index: 200;
-    }
+    .header-right { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 12px 1rem; gap: 8px; z-index: 200; }
     .header-right.open { display: flex; }
-    .header-right .nav-link {
-      width: 100%; text-align: center; font-size: 14px; padding: 10px;
-      display: block;
-    }
-    .hamburger {
-      display: flex; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
-    .hamburger span {
-      width: 22px; height: 2px; background: var(--gray-900);
-      border-radius: 2px; display: block;
-    }
+    .header-right .nav-link { width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block; }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 2px; background: var(--gray-900); border-radius: 2px; display: block; }
     .accuracy-pill { display: none; }
     .hero { padding: 1.5rem 1rem; }
     .hero h1 { font-size: 22px; }
     .filter-bar { padding: 10px 1rem; }
-    .filter-bar { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .filter-label { color: #5F5E5A; }
-    .search-row input { background: #1A1A18; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
-    .lb-row { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .lb-name { color: #E8E6DF; }
-    .lb-elo { color: #E8E6DF; }
-    .lb-record { color: #888780; }
-    .lb-elo-bar-wrap { background: #2C2C2A; }
-    .style-hybrid { background: #2C2C2A; color: #888780; }
-    .profile-card { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .profile-name { color: #E8E6DF; }
-    .profile-stat { background: #111110; }
-    .profile-stat-label { color: #5F5E5A; }
-    .profile-stat-value { color: #E8E6DF; }
-    .profile-record { background: #111110; }
-    .win-method-name { color: #888780; }
-    .win-method-track { background: #2C2C2A; }
-    .win-method-count { color: #E8E6DF; }
-    .chart-card { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .chart-title { color: #E8E6DF; }
-    .history-card { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .history-row { border-color: rgba(255,255,255,0.06); }
-    .history-opponent { color: #E8E6DF; }
-    .history-date { color: #5F5E5A; }
-    .history-method { color: #888780; }
-    .h2h-panel { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .h2h-title { color: #E8E6DF; }
-    .h2h-search input { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
-    .back-btn { color: #888780; }
-    .results-count { color: #5F5E5A; }
   }
 
+  /* ── Dark mode — desktop + mobile ── */
   @media (prefers-color-scheme: dark) {
+    * { box-shadow: none; }
     body { background: #111110; color: #E8E6DF; }
     header { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .logo { color: #E8E6DF; }
@@ -422,17 +199,49 @@
     .hero { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .hero h1 { color: #E8E6DF; }
     .hero p { color: #888780; }
-    .hero-eyebrow { background: rgba(226,75,74,0.15); color: #F09595; }
-    .stats-bar { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .stat-item { border-color: rgba(255,255,255,0.06); }
-    .stat-value { color: #E8E6DF; }
-    .stat-label { color: #5F5E5A; }
+    .search-row input { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
+    .search-row input:focus { border-color: var(--red); }
+    .filter-bar { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .filter-label { color: #5F5E5A; }
     .filter-btn { background: #1A1A18; border-color: rgba(255,255,255,0.08); color: #888780; }
     .filter-btn.active { background: #E8E6DF; color: #1A1A18; border-color: #E8E6DF; }
-    .section-label { color: #444441; }
-    footer { border-color: rgba(255,255,255,0.06); color: #444441; }
-    .header-right { background: #1A1A18; }
+    .lb-header { border-color: rgba(255,255,255,0.06); color: #5F5E5A; }
+    .lb-row { background: #242422; border-color: rgba(255,255,255,0.06); }
+    .lb-row:hover { background: #2C2C2A; }
+    .lb-name { color: #E8E6DF; }
+    .lb-nick { color: #5F5E5A; }
+    .lb-elo { color: #E8E6DF; }
+    .lb-elo-bar-wrap { background: #2C2C2A; }
+    .lb-record { color: #888780; }
+    .style-hybrid { background: #2C2C2A; color: #888780; }
+    .results-count { color: #5F5E5A; }
+    .profile-card { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .profile-name { color: #E8E6DF; }
+    .profile-nick { color: #5F5E5A; }
+    .profile-stat { background: #111110; }
+    .profile-stat-label { color: #5F5E5A; }
+    .profile-stat-value { color: #E8E6DF; }
+    .profile-record { background: #111110; }
+    .win-method-name { color: #888780; }
+    .win-method-track { background: #2C2C2A; }
+    .win-method-count { color: #E8E6DF; }
+    .win-method-label { color: #5F5E5A; }
+    .chart-card { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .chart-title { color: #E8E6DF; }
+    .history-card { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .history-row { border-color: rgba(255,255,255,0.06); }
+    .history-opponent { color: #E8E6DF; }
+    .history-date { color: #5F5E5A; }
+    .history-method { color: #888780; }
+    .h2h-panel { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .h2h-title { color: #E8E6DF; }
+    .h2h-search input { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
+    .h2h-search button { background: #E8E6DF; color: #1A1A18; }
+    .back-btn { color: #888780; }
+    .back-btn:hover { color: #E8E6DF; }
+    .header-right { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .hamburger span { background: #E8E6DF; }
+    footer { border-color: rgba(255,255,255,0.06); color: #444441; }
   }
 </style>
 </head>
@@ -461,8 +270,7 @@
   <h1>Fighter profiles</h1>
   <p>4,474 UFC fighters · Elo ratings · Career stats · Fight history</p>
   <div class="search-row">
-    <input type="text" id="fighter-search"
-           placeholder="Search fighter name e.g. Jon Jones" />
+    <input type="text" id="fighter-search" placeholder="Search fighter name e.g. Jon Jones" />
   </div>
 </div>
 
@@ -476,8 +284,6 @@
 </div>
 
 <div class="main">
-
-  <!-- Leaderboard -->
   <div class="leaderboard active" id="leaderboard">
     <div id="results-count" class="results-count"></div>
     <div class="lb-header">
@@ -487,14 +293,12 @@
       <div>Style</div>
       <div>Record</div>
       <div>UFC Fights</div>
-      <div>Elo rating</div>
     </div>
     <div id="lb-rows">
       <div class="loading"><div class="spinner"></div>Loading fighters...</div>
     </div>
   </div>
 
-  <!-- Fighter profile -->
   <div class="profile-view" id="profile-view">
     <button class="back-btn" onclick="showLeaderboard()">← All fighters</button>
     <div class="profile-grid">
@@ -503,8 +307,7 @@
         <div class="h2h-panel" id="h2h-panel">
           <div class="h2h-title">Head to head prediction</div>
           <div class="h2h-search">
-            <input type="text" id="h2h-opponent"
-                   placeholder="Enter opponent name..." />
+            <input type="text" id="h2h-opponent" placeholder="Enter opponent name..." />
             <button onclick="runH2H()">Predict</button>
           </div>
           <div class="h2h-result" id="h2h-result"></div>
@@ -516,49 +319,35 @@
           <canvas id="elo-canvas" class="elo-chart"></canvas>
         </div>
         <div class="history-card">
-          <div class="chart-title" style="margin-bottom:12px">
-            Fight history
-          </div>
+          <div class="chart-title" style="margin-bottom:12px">Fight history</div>
           <div id="fight-history"></div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
-<footer>
-  octagon.ai · 4,474 UFC fighters · Elo ratings computed on 8,337 fights
-</footer>
+<footer>octagon.ai · 4,474 UFC fighters · Elo ratings computed on 8,337 fights</footer>
 
 <script>
 const DATA_BASE = '/octagon-ai/data/';
-let allFighters  = [];
-let filtered     = [];
-let currentStyle = 'all';
-let currentFighter = null;
+let allFighters = [], filtered = [], currentStyle = 'all', currentFighter = null;
 const MAX_ELO = 1850;
 
-// ── Load fighters ─────────────────────────────────────────────────────────────
 async function loadFighters() {
   try {
     const resp = await fetch(DATA_BASE + 'fighters.json');
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const text = await resp.text();
-    allFighters = JSON.parse(text);
-    filtered    = allFighters;
-    console.log(`Loaded ${allFighters.length} fighters`);
+    allFighters = JSON.parse(await resp.text());
+    filtered = allFighters;
     renderLeaderboard(allFighters.slice(0, 100));
     document.getElementById('results-count').textContent =
       `Showing top 100 of ${allFighters.length} fighters — search to find anyone`;
   } catch(e) {
-    console.error('Fighter load error:', e);
-    document.getElementById('lb-rows').innerHTML =
-      `<div class="loading">Could not load fighters: ${e.message}</div>`;
+    document.getElementById('lb-rows').innerHTML = `<div class="loading">Could not load fighters: ${e.message}</div>`;
   }
 }
 
-// ── Filter / search ───────────────────────────────────────────────────────────
 function setStyle(style, btn) {
   currentStyle = style;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -567,94 +356,67 @@ function setStyle(style, btn) {
 }
 
 function applyFilters() {
-  if (allFighters.length === 0) return;
+  if (!allFighters.length) return;
   const q = document.getElementById('fighter-search').value.toLowerCase().trim();
   filtered = allFighters.filter(f => {
-    const matchStyle = currentStyle === 'all' ||
-                       (f.style || '').toLowerCase() === currentStyle.toLowerCase();
-    const matchName  = !q || f.name.toLowerCase().includes(q) ||
-                       (f.nickname || '').toLowerCase().includes(q);
+    const matchStyle = currentStyle === 'all' || (f.style || '').toLowerCase() === currentStyle.toLowerCase();
+    const matchName  = !q || f.name.toLowerCase().includes(q) || (f.nickname || '').toLowerCase().includes(q);
     return matchStyle && matchName;
   });
-
   const showing = filtered.slice(0, q ? 50 : 100);
   renderLeaderboard(showing);
-
   const count = document.getElementById('results-count');
-  if (q) {
-    count.textContent = `${filtered.length} fighter${filtered.length !== 1 ? 's' : ''} found`;
-  } else {
-    count.textContent = `Showing top ${showing.length} of ${filtered.length} fighters`;
-  }
+  count.textContent = q
+    ? `${filtered.length} fighter${filtered.length !== 1 ? 's' : ''} found`
+    : `Showing top ${showing.length} of ${filtered.length} fighters`;
 }
 
 document.getElementById('fighter-search').addEventListener('input', () => {
-  const profileView = document.getElementById('profile-view');
-  if (profileView.classList.contains('active')) {
-    showLeaderboard();
-  }
+  if (document.getElementById('profile-view').classList.contains('active')) showLeaderboard();
   applyFilters();
 });
 
-// ── Leaderboard ───────────────────────────────────────────────────────────────
 function renderLeaderboard(fighters) {
   const container = document.getElementById('lb-rows');
-
-  if (fighters.length === 0) {
-    container.innerHTML = `
-      <div class="loading" style="padding:2rem">
-        No fighters found. Try a different search.
-      </div>`;
+  if (!fighters.length) {
+    container.innerHTML = `<div class="loading" style="padding:2rem">No fighters found. Try a different search.</div>`;
     return;
   }
-
-  container.innerHTML = fighters.map((f, i) => {
-    const rank      = allFighters.indexOf(f) + 1;
-    const isTop3    = rank <= 3;
-    const eloWidth  = Math.min(100, ((f.elo - 1400) / (MAX_ELO - 1400)) * 100);
+  container.innerHTML = fighters.map(f => {
+    const rank       = allFighters.indexOf(f) + 1;
+    const eloWidth   = Math.min(100, ((f.elo - 1400) / (MAX_ELO - 1400)) * 100);
     const styleClass = `style-${(f.style || 'hybrid').toLowerCase()}`;
-    const record    = `${f.wins || 0}-${f.losses || 0}${f.draws > 0 ? '-' + f.draws : ''}`;
-
+    const record     = `${f.wins || 0}-${f.losses || 0}${f.draws > 0 ? '-' + f.draws : ''}`;
     return `
       <div class="lb-row" onclick="showProfile('${f.name.replace(/'/g,"\\'")}')">
-        <div class="lb-rank ${isTop3 ? 'top3' : ''}">${rank}</div>
+        <div class="lb-rank ${rank <= 3 ? 'top3' : ''}">${rank}</div>
         <div class="lb-name-wrap">
           <div class="lb-name">${f.name}</div>
           ${f.nickname ? `<div class="lb-nick">"${f.nickname}"</div>` : ''}
         </div>
-        <div>
+        <div class="lb-elo-col">
           <div class="lb-elo">${f.elo.toFixed(0)}</div>
-          <div class="lb-elo-bar-wrap">
-            <div class="lb-elo-bar" style="width:${eloWidth}%"></div>
-          </div>
+          <div class="lb-elo-bar-wrap"><div class="lb-elo-bar" style="width:${eloWidth}%"></div></div>
         </div>
         <div><span class="lb-style ${styleClass}">${f.style || 'Unknown'}</span></div>
         <div class="lb-record">${record}</div>
         <div class="lb-record">${f.total_ufc_fights || 0}</div>
-        <div></div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
-// ── Fighter profile ───────────────────────────────────────────────────────────
 function showProfile(name) {
   const fighter = allFighters.find(f => f.name === name);
   if (!fighter) return;
-
   currentFighter = fighter;
-
   document.getElementById('leaderboard').classList.remove('active');
   document.getElementById('profile-view').classList.add('active');
   document.getElementById('h2h-panel').classList.remove('active');
   document.getElementById('h2h-result').innerHTML = '';
-
   window.scrollTo(0, 0);
-
   renderProfileCard(fighter);
   renderEloChart(fighter);
   renderFightHistory(fighter);
-
   window.history.pushState({}, '', `?fighter=${encodeURIComponent(name)}`);
 }
 
@@ -665,312 +427,148 @@ function showLeaderboard() {
 }
 
 function renderProfileCard(f) {
-  const card   = document.getElementById('profile-card');
-  const initials = f.name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase();
-  const record = `${f.wins || 0}-${f.losses || 0}${f.draws > 0 ? '-' + f.draws : ''}`;
+  const card       = document.getElementById('profile-card');
+  const initials   = f.name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase();
   const styleClass = `style-${(f.style || 'hybrid').toLowerCase()}`;
   const totalWins  = (f.ko_wins || 0) + (f.sub_wins || 0) + (f.dec_wins || 0);
-
   const koW  = totalWins > 0 ? ((f.ko_wins  || 0) / totalWins * 100).toFixed(0) : 0;
   const subW = totalWins > 0 ? ((f.sub_wins || 0) / totalWins * 100).toFixed(0) : 0;
   const decW = totalWins > 0 ? ((f.dec_wins || 0) / totalWins * 100).toFixed(0) : 0;
-
   card.innerHTML = `
     <div class="profile-avatar">${initials}</div>
     <div class="profile-name">${f.name}</div>
     ${f.nickname ? `<div class="profile-nick">"${f.nickname}"</div>` : '<div style="margin-bottom:12px"></div>'}
     <div class="profile-elo-big">${f.elo.toFixed(0)}</div>
     <div class="profile-elo-label">Elo rating · <span class="lb-style ${styleClass}" style="display:inline">${f.style || 'Unknown'}</span></div>
-
     <div class="profile-record">
-      <div class="record-item record-wins">
-        <div class="record-num">${f.wins || 0}</div>
-        <div class="record-label">Wins</div>
-      </div>
-      <div class="record-item record-losses">
-        <div class="record-num">${f.losses || 0}</div>
-        <div class="record-label">Losses</div>
-      </div>
-      <div class="record-item record-draws">
-        <div class="record-num">${f.draws || 0}</div>
-        <div class="record-label">Draws</div>
-      </div>
+      <div class="record-item record-wins"><div class="record-num">${f.wins || 0}</div><div class="record-label">Wins</div></div>
+      <div class="record-item record-losses"><div class="record-num">${f.losses || 0}</div><div class="record-label">Losses</div></div>
+      <div class="record-item record-draws"><div class="record-num">${f.draws || 0}</div><div class="record-label">Draws</div></div>
     </div>
-
     <div class="profile-stat-grid">
-      <div class="profile-stat">
-        <div class="profile-stat-label">Strikes/min</div>
-        <div class="profile-stat-value">${f.splm || '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">Absorbed/min</div>
-        <div class="profile-stat-value">${f.sapm || '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">Strike acc</div>
-        <div class="profile-stat-value">${f.str_acc ? f.str_acc.toFixed(0)+'%' : '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">Strike def</div>
-        <div class="profile-stat-value">${f.str_def ? f.str_def.toFixed(0)+'%' : '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">TD avg</div>
-        <div class="profile-stat-value">${f.td_avg || '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">TD defense</div>
-        <div class="profile-stat-value">${f.td_def ? f.td_def.toFixed(0)+'%' : '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">Reach</div>
-        <div class="profile-stat-value">${f.reach ? f.reach+'"' : '—'}</div>
-      </div>
-      <div class="profile-stat">
-        <div class="profile-stat-label">Stance</div>
-        <div class="profile-stat-value">${f.stance || '—'}</div>
-      </div>
+      <div class="profile-stat"><div class="profile-stat-label">Strikes/min</div><div class="profile-stat-value">${f.splm || '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">Absorbed/min</div><div class="profile-stat-value">${f.sapm || '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">Strike acc</div><div class="profile-stat-value">${f.str_acc ? f.str_acc.toFixed(0)+'%' : '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">Strike def</div><div class="profile-stat-value">${f.str_def ? f.str_def.toFixed(0)+'%' : '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">TD avg</div><div class="profile-stat-value">${f.td_avg || '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">TD defense</div><div class="profile-stat-value">${f.td_def ? f.td_def.toFixed(0)+'%' : '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">Reach</div><div class="profile-stat-value">${f.reach ? f.reach+'"' : '—'}</div></div>
+      <div class="profile-stat"><div class="profile-stat-label">Stance</div><div class="profile-stat-value">${f.stance || '—'}</div></div>
     </div>
-
     ${totalWins > 0 ? `
     <div class="win-method-bar">
       <div class="win-method-label">Win breakdown</div>
-      <div class="win-method-row">
-        <div class="win-method-name">KO/TKO</div>
-        <div class="win-method-track">
-          <div class="win-method-fill fill-ko" style="width:${koW}%"></div>
-        </div>
-        <div class="win-method-count">${f.ko_wins || 0}</div>
-      </div>
-      <div class="win-method-row">
-        <div class="win-method-name">Sub</div>
-        <div class="win-method-track">
-          <div class="win-method-fill fill-sub" style="width:${subW}%"></div>
-        </div>
-        <div class="win-method-count">${f.sub_wins || 0}</div>
-      </div>
-      <div class="win-method-row">
-        <div class="win-method-name">Decision</div>
-        <div class="win-method-track">
-          <div class="win-method-fill fill-dec" style="width:${decW}%"></div>
-        </div>
-        <div class="win-method-count">${f.dec_wins || 0}</div>
-      </div>
-    </div>
-    ` : ''}
-
-    <button class="predict-btn" onclick="toggleH2H()">
-      Head to head prediction →
-    </button>
+      <div class="win-method-row"><div class="win-method-name">KO/TKO</div><div class="win-method-track"><div class="win-method-fill fill-ko" style="width:${koW}%"></div></div><div class="win-method-count">${f.ko_wins || 0}</div></div>
+      <div class="win-method-row"><div class="win-method-name">Sub</div><div class="win-method-track"><div class="win-method-fill fill-sub" style="width:${subW}%"></div></div><div class="win-method-count">${f.sub_wins || 0}</div></div>
+      <div class="win-method-row"><div class="win-method-name">Decision</div><div class="win-method-track"><div class="win-method-fill fill-dec" style="width:${decW}%"></div></div><div class="win-method-count">${f.dec_wins || 0}</div></div>
+    </div>` : ''}
+    <button class="predict-btn" onclick="toggleH2H()">Head to head prediction →</button>
   `;
 }
 
 function renderEloChart(f) {
-  const canvas  = document.getElementById('elo-canvas');
-  const ctx     = canvas.getContext('2d');
+  const canvas = document.getElementById('elo-canvas');
+  const ctx    = canvas.getContext('2d');
   const history = f.elo_history || [];
-
   canvas.width  = canvas.offsetWidth;
   canvas.height = 200;
-
   if (history.length < 2) {
-    ctx.fillStyle = '#888780';
-    ctx.font      = '13px -apple-system, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Not enough fight history', canvas.width/2, 100);
-    return;
+    ctx.fillStyle = '#888780'; ctx.font = '13px -apple-system, sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('Not enough fight history', canvas.width/2, 100); return;
   }
-
   const elos   = history.map(h => h.elo_after);
-  const minElo = Math.min(...elos) - 30;
-  const maxElo = Math.max(...elos) + 30;
+  const minElo = Math.min(...elos) - 30, maxElo = Math.max(...elos) + 30;
   const pad    = { top:20, right:20, bottom:30, left:50 };
-  const W      = canvas.width  - pad.left - pad.right;
-  const H      = canvas.height - pad.top  - pad.bottom;
-
+  const W = canvas.width - pad.left - pad.right, H = canvas.height - pad.top - pad.bottom;
   const xScale = i => pad.left + (i / (history.length - 1)) * W;
   const yScale = v => pad.top  + H - ((v - minElo) / (maxElo - minElo)) * H;
-
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Grid lines
-  ctx.strokeStyle = '#F1EFE8';
-  ctx.lineWidth   = 1;
+  ctx.strokeStyle = '#F1EFE8'; ctx.lineWidth = 1;
   [0, 0.25, 0.5, 0.75, 1].forEach(t => {
     const y = pad.top + H * t;
-    ctx.beginPath();
-    ctx.moveTo(pad.left, y);
-    ctx.lineTo(pad.left + W, y);
-    ctx.stroke();
-    const val = maxElo - t * (maxElo - minElo);
-    ctx.fillStyle = '#888780';
-    ctx.font = '11px -apple-system, sans-serif';
-    ctx.textAlign = 'right';
-    ctx.fillText(val.toFixed(0), pad.left - 6, y + 4);
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + W, y); ctx.stroke();
+    ctx.fillStyle = '#888780'; ctx.font = '11px -apple-system, sans-serif'; ctx.textAlign = 'right';
+    ctx.fillText((maxElo - t * (maxElo - minElo)).toFixed(0), pad.left - 6, y + 4);
   });
-
-  // Fill area
   const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + H);
-  grad.addColorStop(0, 'rgba(226,75,74,0.15)');
-  grad.addColorStop(1, 'rgba(226,75,74,0)');
-  ctx.beginPath();
-  ctx.moveTo(xScale(0), yScale(elos[0]));
+  grad.addColorStop(0, 'rgba(226,75,74,0.15)'); grad.addColorStop(1, 'rgba(226,75,74,0)');
+  ctx.beginPath(); ctx.moveTo(xScale(0), yScale(elos[0]));
   history.forEach((h, i) => ctx.lineTo(xScale(i), yScale(h.elo_after)));
-  ctx.lineTo(xScale(history.length-1), pad.top + H);
-  ctx.lineTo(xScale(0), pad.top + H);
-  ctx.closePath();
-  ctx.fillStyle = grad;
-  ctx.fill();
-
-  // Line
-  ctx.beginPath();
-  ctx.strokeStyle = '#E24B4A';
-  ctx.lineWidth   = 2.5;
-  ctx.lineJoin    = 'round';
-  history.forEach((h, i) => {
-    if (i === 0) ctx.moveTo(xScale(i), yScale(h.elo_after));
-    else         ctx.lineTo(xScale(i), yScale(h.elo_after));
-  });
+  ctx.lineTo(xScale(history.length-1), pad.top + H); ctx.lineTo(xScale(0), pad.top + H);
+  ctx.closePath(); ctx.fillStyle = grad; ctx.fill();
+  ctx.beginPath(); ctx.strokeStyle = '#E24B4A'; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
+  history.forEach((h, i) => { if (i===0) ctx.moveTo(xScale(i), yScale(h.elo_after)); else ctx.lineTo(xScale(i), yScale(h.elo_after)); });
   ctx.stroke();
-
-  // Dots — win=green, loss=red
   history.forEach((h, i) => {
-    ctx.beginPath();
-    ctx.arc(xScale(i), yScale(h.elo_after), 4, 0, Math.PI*2);
-    ctx.fillStyle = h.won ? '#1D9E75' : '#E24B4A';
-    ctx.fill();
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth   = 1.5;
-    ctx.stroke();
+    ctx.beginPath(); ctx.arc(xScale(i), yScale(h.elo_after), 4, 0, Math.PI*2);
+    ctx.fillStyle = h.won ? '#1D9E75' : '#E24B4A'; ctx.fill();
+    ctx.strokeStyle = 'white'; ctx.lineWidth = 1.5; ctx.stroke();
   });
-
-  // X-axis dates (first, middle, last)
-  ctx.fillStyle  = '#888780';
-  ctx.font       = '11px -apple-system, sans-serif';
-  ctx.textAlign  = 'center';
-  [[0, history[0].date],
-   [Math.floor(history.length/2), history[Math.floor(history.length/2)].date],
-   [history.length-1, history[history.length-1].date]
-  ].forEach(([i, d]) => {
-    ctx.fillText(d.slice(0,7), xScale(i), canvas.height - 6);
-  });
+  ctx.fillStyle = '#888780'; ctx.font = '11px -apple-system, sans-serif'; ctx.textAlign = 'center';
+  [[0, history[0].date], [Math.floor(history.length/2), history[Math.floor(history.length/2)].date], [history.length-1, history[history.length-1].date]]
+    .forEach(([i, d]) => ctx.fillText(d.slice(0,7), xScale(i), canvas.height - 6));
 }
 
 function renderFightHistory(f) {
-  const history = [...(f.elo_history || [])].reverse().slice(0, 20);
+  const history   = [...(f.elo_history || [])].reverse().slice(0, 20);
   const container = document.getElementById('fight-history');
-
-  if (history.length === 0) {
-    container.innerHTML = '<div style="color:var(--gray-400);font-size:13px">No fight history in dataset</div>';
-    return;
-  }
-
+  if (!history.length) { container.innerHTML = '<div style="color:var(--gray-400);font-size:13px">No fight history in dataset</div>'; return; }
   container.innerHTML = history.map(h => `
     <div class="history-row">
       <div class="history-date">${h.date.slice(0,7)}</div>
       <div class="history-opponent">${h.opponent}</div>
       <div class="history-method">${h.method}</div>
-      <div class="history-result ${h.won ? 'result-win' : 'result-loss'}">
-        ${h.won ? 'WIN' : 'LOSS'}
-      </div>
-    </div>
-  `).join('');
+      <div class="history-result ${h.won ? 'result-win' : 'result-loss'}">${h.won ? 'WIN' : 'LOSS'}</div>
+    </div>`).join('');
 }
 
-// ── Head to head ──────────────────────────────────────────────────────────────
-function toggleH2H() {
-  const panel = document.getElementById('h2h-panel');
-  panel.classList.toggle('active');
-}
+function toggleH2H() { document.getElementById('h2h-panel').classList.toggle('active'); }
 
 async function runH2H() {
   if (!currentFighter) return;
   const oppName = document.getElementById('h2h-opponent').value.trim();
   if (!oppName) return;
-
-  const opp = allFighters.find(f =>
-    f.name.toLowerCase().includes(oppName.toLowerCase())
-  );
-
+  const opp    = allFighters.find(f => f.name.toLowerCase().includes(oppName.toLowerCase()));
   const result = document.getElementById('h2h-result');
-
-  if (!opp) {
-    result.innerHTML = `<div style="color:var(--gray-400);font-size:13px">
-      Fighter not found. Try full name.
-    </div>`;
-    return;
-  }
-
-  // Simple Elo-based probability
-  const eloA   = currentFighter.elo;
-  const eloB   = opp.elo;
-  const probA  = 1 / (1 + Math.pow(10, (eloB - eloA) / 400));
-  const probB  = 1 - probA;
+  if (!opp) { result.innerHTML = `<div style="color:var(--gray-400);font-size:13px">Fighter not found. Try full name.</div>`; return; }
+  const eloA = currentFighter.elo, eloB = opp.elo;
+  const probA = 1 / (1 + Math.pow(10, (eloB - eloA) / 400)), probB = 1 - probA;
   const winner = probA >= probB ? currentFighter.name : opp.name;
-
   const eloGap = Math.abs(eloA - eloB);
-  const h2hConf     = eloGap >= 150 ? 'high' : eloGap >= 75 ? 'medium' : 'low';
-  const h2hConfLabel = h2hConf === 'high' ? 'High confidence' : h2hConf === 'medium' ? 'Medium confidence' : 'Low confidence';
-  const h2hConfColor = h2hConf === 'high' ? 'var(--green)' : h2hConf === 'medium' ? 'var(--amber)' : 'var(--red-dark)';
-  const h2hConfBg    = h2hConf === 'high' ? 'var(--green-light)' : h2hConf === 'medium' ? 'var(--amber-light)' : 'var(--red-light)';
-  const h2hConfSub   = h2hConf === 'high' ? `Elo gap ${eloGap.toFixed(0)} pts — strong signal` : h2hConf === 'medium' ? `Elo gap ${eloGap.toFixed(0)} pts — moderate signal` : `Elo gap ${eloGap.toFixed(0)} pts — weak signal, treat as coin flip`;
-
+  const conf  = eloGap >= 150 ? 'high' : eloGap >= 75 ? 'medium' : 'low';
+  const cLabel = conf === 'high' ? 'High confidence' : conf === 'medium' ? 'Medium confidence' : 'Low confidence';
+  const cColor = conf === 'high' ? 'var(--green)' : conf === 'medium' ? 'var(--amber)' : 'var(--red-dark)';
+  const cBg    = conf === 'high' ? 'var(--green-light)' : conf === 'medium' ? 'var(--amber-light)' : 'var(--red-light)';
+  const cSub   = conf === 'high' ? `Elo gap ${eloGap.toFixed(0)} pts — strong signal` : conf === 'medium' ? `Elo gap ${eloGap.toFixed(0)} pts — moderate signal` : `Elo gap ${eloGap.toFixed(0)} pts — weak signal, treat as coin flip`;
   result.innerHTML = `
     <div style="border-top:1px solid var(--border);padding-top:12px">
       <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-        <div>
-          <div style="font-size:13px;font-weight:600">${currentFighter.name}</div>
-          <div style="font-size:20px;font-weight:700;color:var(--red)">${(probA*100).toFixed(1)}%</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:13px;font-weight:600">${opp.name}</div>
-          <div style="font-size:20px;font-weight:700;color:var(--blue)">${(probB*100).toFixed(1)}%</div>
-        </div>
+        <div><div style="font-size:13px;font-weight:600">${currentFighter.name}</div><div style="font-size:20px;font-weight:700;color:var(--red)">${(probA*100).toFixed(1)}%</div></div>
+        <div style="text-align:right"><div style="font-size:13px;font-weight:600">${opp.name}</div><div style="font-size:20px;font-weight:700;color:var(--blue)">${(probB*100).toFixed(1)}%</div></div>
       </div>
       <div style="height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;margin-bottom:10px">
         <div style="height:6px;background:var(--red);width:${(probA*100).toFixed(0)}%;border-radius:3px"></div>
       </div>
       <div style="margin-bottom:10px">
-        <span style="font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:${h2hConfBg};color:${h2hConfColor}">${h2hConfLabel}</span>
-        <div style="font-size:11px;color:var(--gray-400);margin-top:4px">${h2hConfSub}</div>
+        <span style="font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:${cBg};color:${cColor}">${cLabel}</span>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px">${cSub}</div>
       </div>
-      <div style="font-size:12px;color:var(--gray-600)">
-        Predicted winner: <strong>${winner}</strong><br>
-        Elo: ${eloA.toFixed(0)} vs ${eloB.toFixed(0)} (diff: ${(eloA-eloB).toFixed(0)})
-      </div>
-      <div style="font-size:11px;color:var(--gray-400);margin-top:6px">
-        Elo-based prediction only. For full model prediction use
-        <a href="index.html" style="color:var(--blue-dark)">the card predictor</a>.
-      </div>
-    </div>
-  `;
+      <div style="font-size:12px;color:var(--gray-600)">Predicted winner: <strong>${winner}</strong><br>Elo: ${eloA.toFixed(0)} vs ${eloB.toFixed(0)} (diff: ${(eloA-eloB).toFixed(0)})</div>
+      <div style="font-size:11px;color:var(--gray-400);margin-top:6px">Elo-based prediction only. For full model prediction use <a href="index.html" style="color:var(--blue-dark)">the card predictor</a>.</div>
+    </div>`;
 }
 
-document.getElementById('h2h-opponent').addEventListener('keydown', e => {
-  if (e.key === 'Enter') runH2H();
-});
-
-// ── Init ──────────────────────────────────────────────────────────────────────
-const params = new URLSearchParams(window.location.search);
-const initFighter = params.get('fighter');
+document.getElementById('h2h-opponent').addEventListener('keydown', e => { if (e.key === 'Enter') runH2H(); });
 
 async function init() {
   await loadFighters();
-  if (initFighter) {
-    showProfile(decodeURIComponent(initFighter));
-  }
+  const p = new URLSearchParams(window.location.search).get('fighter');
+  if (p) showProfile(decodeURIComponent(p));
 }
-
 init();
 
-function toggleNav() {
-  document.getElementById('header-nav').classList.toggle('open');
-}
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 600) {
-    document.getElementById('header-nav').classList.remove('open');
-  }
-});
+function toggleNav() { document.getElementById('header-nav').classList.toggle('open'); }
+window.addEventListener('resize', () => { if (window.innerWidth > 600) document.getElementById('header-nav').classList.remove('open'); });
 </script>
 </body>
 </html>

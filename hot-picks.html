@@ -60,15 +60,61 @@
 
   .main { max-width: 760px; margin: 0 auto; padding: 2rem; }
 
-  .budget-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
-  .budget-panel-title { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 14px; }
-  .budget-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 10px; align-items: end; }
-  .budget-field { display: flex; flex-direction: column; gap: 5px; }
-  .budget-label { font-size: 12px; color: var(--gray-600); font-weight: 500; }
-  .budget-select, .budget-input { height: 42px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-md); padding: 0 12px; font-size: 14px; font-family: var(--font); outline: none; background: white; color: var(--gray-900); transition: border-color 0.15s; width: 100%; }
-  .budget-select:focus, .budget-input:focus { border-color: var(--red); }
-  .budget-btn { height: 42px; padding: 0 20px; background: var(--red); color: white; border: none; border-radius: var(--radius-md); font-size: 14px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: background 0.15s; white-space: nowrap; }
-  .budget-btn:hover { background: var(--red-dark); }
+  /* ── Budget panel — refined selects ── */
+  .budget-panel {
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 22px 24px;
+    box-shadow: var(--shadow-sm); margin-bottom: 1.5rem;
+  }
+  .budget-panel-title { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 18px; }
+  .budget-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; align-items: end; }
+  .budget-field { display: flex; flex-direction: column; gap: 6px; }
+  .budget-label { font-size: 11px; color: var(--gray-400); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* Custom select wrapper — removes OS chrome, adds chevron */
+  .select-wrap {
+    position: relative; display: flex; align-items: center;
+  }
+  .select-wrap::after {
+    content: '';
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--gray-400);
+    pointer-events: none;
+  }
+  .budget-select {
+    width: 100%; height: 40px;
+    border: 1.5px solid var(--gray-200); border-radius: var(--radius-md);
+    padding: 0 32px 0 12px;
+    font-size: 13px; font-weight: 500; font-family: var(--font);
+    outline: none; background: var(--gray-50); color: var(--gray-900);
+    transition: border-color 0.15s, background 0.15s;
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+  }
+  .budget-select:focus { border-color: var(--red); background: white; }
+  .budget-select:hover { border-color: var(--gray-400); }
+
+  .budget-input {
+    width: 100%; height: 40px;
+    border: 1.5px solid var(--gray-200); border-radius: var(--radius-md);
+    padding: 0 12px;
+    font-size: 13px; font-weight: 500; font-family: var(--font);
+    outline: none; background: var(--gray-50); color: var(--gray-900);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .budget-input:focus { border-color: var(--red); background: white; }
+  .budget-input::placeholder { color: var(--gray-400); font-weight: 400; }
+
+  .budget-btn {
+    height: 40px; padding: 0 20px;
+    background: var(--gray-900); color: white; border: none;
+    border-radius: var(--radius-md); font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: var(--font); transition: background 0.15s;
+    white-space: nowrap; letter-spacing: 0.01em;
+  }
+  .budget-btn:hover { background: #2C2C2A; }
 
   .alloc-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; display: none; }
   .alloc-panel.visible { display: block; }
@@ -168,7 +214,6 @@
     .hero h1 { font-size: 24px; }
     .budget-row { grid-template-columns: 1fr 1fr; }
     .budget-btn { grid-column: span 2; width: 100%; }
-    #max-fights-select { grid-column: span 1; }
     .return-grid { grid-template-columns: 1fr 1fr; }
     .return-grid .return-card:last-child { grid-column: span 2; }
     .hot-metrics { grid-template-columns: 1fr 1fr; }
@@ -194,9 +239,8 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    * { box-shadow: none; }
     body { background: #111110; color: #E8E6DF; }
-    .budget-panel { background: #1A1A18 !important; border-color: rgba(255,255,255,0.06); }
-    .budget-select, .budget-input { background: #111110 !important; border-color: rgba(255,255,255,0.1) !important; color: #E8E6DF !important; }
     header { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .logo { color: #E8E6DF; }
     .nav-link { background: #1A1A18; color: #888780; border-color: rgba(255,255,255,0.08); }
@@ -211,14 +255,40 @@
     .stat-item { border-color: rgba(255,255,255,0.06); }
     .stat-value { color: #E8E6DF; }
     .stat-label { color: #5F5E5A; }
+    .budget-panel { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .budget-panel-title { color: #E8E6DF; }
+    .budget-label { color: #5F5E5A; }
+    .budget-select { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
+    .budget-select:focus { border-color: var(--red); background: #1A1A18; }
+    .budget-select:hover { border-color: rgba(255,255,255,0.2); }
+    .select-wrap::after { border-top-color: #5F5E5A; }
+    .budget-input { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
+    .budget-input:focus { border-color: var(--red); background: #1A1A18; }
+    .budget-input::placeholder { color: #444441; }
+    .budget-btn { background: #E8E6DF; color: #1A1A18; }
+    .budget-btn:hover { background: white; }
+    .hot-card { background: #242422; border-color: rgba(255,255,255,0.06); }
+    .hot-card-header:not(.high):not(.medium) { background: #1A1A18; }
+    .hot-fighter { color: #E8E6DF; }
+    .hot-matchup { color: #5F5E5A; }
+    .hot-metric { background: #1A1A18; }
+    .hot-metric-lbl { color: #5F5E5A; }
+    .hot-metric-val { color: #E8E6DF; }
+    .hot-advisory { color: #888780; }
+    .odds-section-title { color: #5F5E5A; }
+    .odds-fighter-row { border-color: rgba(255,255,255,0.06); }
+    .odds-fighter-name { color: #E8E6DF; }
+    .odds-current { color: #888780; }
+    .edit-odds-btn { color: #888780; border-color: rgba(255,255,255,0.08); }
+    .edit-odds-btn:hover { background: #2C2C2A; }
+    .odds-input { background: #111110; border-color: var(--blue); color: #E8E6DF; }
     .filter-btn { background: #1A1A18; border-color: rgba(255,255,255,0.08); color: #888780; }
     .filter-btn.active { background: #E8E6DF; color: #1A1A18; border-color: #E8E6DF; }
     .section-label { color: #444441; }
     footer { border-color: rgba(255,255,255,0.06); color: #444441; }
-    .header-right { background: #1A1A18; }
+    .header-right { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .hamburger span { background: #E8E6DF; }
   }
-
 </style>
 </head>
 <body>
@@ -248,8 +318,6 @@
   <p id="hero-sub">Best EV plays · Medium &amp; high confidence only · Sorted by confidence then EV</p>
 </div>
 
-
-
 <div style="height:1rem"></div>
 
 <div class="stats-bar">
@@ -277,9 +345,11 @@
     <div class="budget-row">
       <div class="budget-field">
         <label class="budget-label">Fight card</label>
-        <select class="budget-select" id="event-select">
-          <option value="">Loading events...</option>
-        </select>
+        <div class="select-wrap">
+          <select class="budget-select" id="event-select">
+            <option value="">Loading events...</option>
+          </select>
+        </div>
       </div>
       <div class="budget-field">
         <label class="budget-label">Your budget ($)</label>
@@ -287,9 +357,11 @@
       </div>
       <div class="budget-field">
         <label class="budget-label">Max fights</label>
-        <select class="budget-select" id="max-fights-select">
-          <option value="all">All picks</option>
-        </select>
+        <div class="select-wrap">
+          <select class="budget-select" id="max-fights-select">
+            <option value="all">All picks</option>
+          </select>
+        </div>
       </div>
       <button class="budget-btn" onclick="runAllocator()">Allocate</button>
     </div>
@@ -341,26 +413,19 @@ async function init() {
     const resp  = await fetch(DATA_BASE + 'index.json');
     const index = await resp.json();
     const today = new Date().toISOString().slice(0,10);
-
     allEvents = index.filter(e => {
-      try { return new Date(e.date) >= new Date(today); }
-      catch { return false; }
+      try { return new Date(e.date) >= new Date(today); } catch { return false; }
     }).sort((a,b) => new Date(a.date) - new Date(b.date));
-
     if (allEvents.length === 0) {
       showEmpty('No upcoming events with data found.');
       document.getElementById('event-select').innerHTML = '<option>No upcoming events</option>';
       return;
     }
-
     document.getElementById('event-select').innerHTML = allEvents.map((e,i) =>
       `<option value="${e.slug}"${i===0?' selected':''}>${e.name} · ${formatDate(e.date)}</option>`
     ).join('');
-
     await loadEvent(allEvents[0].slug);
-  } catch(e) {
-    showEmpty('Could not load events.');
-  }
+  } catch(e) { showEmpty('Could not load events.'); }
 }
 
 async function loadEvent(slug) {
@@ -409,16 +474,7 @@ function buildPicks(data) {
       if (!c.ev || c.ev <= 0) continue;
       const opp = sides[1 - si];
       const recalcConf = c.prob >= 75 ? 'high' : c.prob >= 60 ? 'medium' : 'low';
-      picks.push({
-        ...c,
-        weight: fight.weight_class || '',
-        confidence: recalcConf,
-        chaos: fight.chaos,
-        elo_clash: fight.elo_clash,
-        oddsOpp: opp.odds || null,
-        probOpp: opp.prob || null,
-        evOpp: opp.ev || null,
-      });
+      picks.push({ ...c, weight: fight.weight_class || '', confidence: recalcConf, chaos: fight.chaos, elo_clash: fight.elo_clash, oddsOpp: opp.odds || null, probOpp: opp.prob || null, evOpp: opp.ev || null });
     }
   }
   picks.sort((a,b) => {
@@ -440,12 +496,12 @@ function kellyAllocation(picks, budget) {
 }
 
 function runAllocator() {
-  const slug      = document.getElementById('event-select').value;
-  const budget    = parseFloat(document.getElementById('budget-input').value);
-  const maxVal    = document.getElementById('max-fights-select').value;
+  const slug   = document.getElementById('event-select').value;
+  const budget = parseFloat(document.getElementById('budget-input').value);
+  const maxVal = document.getElementById('max-fights-select').value;
   if (!slug || !budget || budget <= 0) { alert('Please select an event and enter a valid budget.'); return; }
   if (allPicks.length === 0) { alert('No qualifying picks for this event.'); return; }
-  const picks     = maxVal === 'all' ? allPicks : allPicks.slice(0, parseInt(maxVal));
+  const picks = maxVal === 'all' ? allPicks : allPicks.slice(0, parseInt(maxVal));
   const allocations = kellyAllocation(picks, budget);
   renderAllocations(picks, allocations, budget);
   document.getElementById('alloc-panel').classList.add('visible');
@@ -466,14 +522,11 @@ function renderAllocations(picks, allocations, budget) {
             <span class="alloc-fighter">${p.fighter}</span>
           </div>
           <div class="alloc-meta">vs ${p.opponent} · ML ${p.odds>0?'+':''}${p.odds} · ${p.prob}% model prob</div>
-          <div class="alloc-bar-wrap">
-            <div class="alloc-bar-fill ${p.confidence}" style="width:${pct.toFixed(0)}%"></div>
-          </div>
+          <div class="alloc-bar-wrap"><div class="alloc-bar-fill ${p.confidence}" style="width:${pct.toFixed(0)}%"></div></div>
         </div>
         <div class="alloc-amount">$${amt.toFixed(0)}</div>
         <div class="alloc-return">+$${winRet.toFixed(0)} if wins</div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 
   const totalEV       = picks.reduce((s,p,i) => s + (allocations[i]/100)*p.ev, 0);
@@ -482,20 +535,10 @@ function renderAllocations(picks, allocations, budget) {
     return s + (p.odds > 0 ? (p.odds/100)*a : (100/Math.abs(p.odds))*a);
   }, 0);
   const totalAlloc = allocations.reduce((a,b) => a+b, 0);
-
   document.getElementById('return-grid').innerHTML = `
-    <div class="return-card">
-      <div class="return-card-val">$${totalAlloc.toFixed(0)}</div>
-      <div class="return-card-lbl">Total allocated</div>
-    </div>
-    <div class="return-card">
-      <div class="return-card-val green">+$${totalEV.toFixed(0)}</div>
-      <div class="return-card-lbl">Expected profit (EV)</div>
-    </div>
-    <div class="return-card">
-      <div class="return-card-val amber">$${(totalAlloc + totalIfAllWin).toFixed(0)}</div>
-      <div class="return-card-lbl">Max if all win</div>
-    </div>
+    <div class="return-card"><div class="return-card-val">$${totalAlloc.toFixed(0)}</div><div class="return-card-lbl">Total allocated</div></div>
+    <div class="return-card"><div class="return-card-val green">+$${totalEV.toFixed(0)}</div><div class="return-card-lbl">Expected profit (EV)</div></div>
+    <div class="return-card"><div class="return-card-val amber">$${(totalAlloc + totalIfAllWin).toFixed(0)}</div><div class="return-card-lbl">Max if all win</div></div>
   `;
 }
 
@@ -505,13 +548,10 @@ function renderStats() {
   document.getElementById('stat-plays').textContent = allPicks.length || '—';
   document.getElementById('stat-best').textContent  = bestEV ? `+$${bestEV.toFixed(0)}` : '—';
   document.getElementById('stat-high').textContent  = highCount || '—';
-
   const sel = document.getElementById('max-fights-select');
   const prev = sel.value;
   sel.innerHTML = '<option value="all">All picks</option>' +
-    Array.from({length: allPicks.length}, (_,i) =>
-      `<option value="${i+1}">Top ${i+1}</option>`
-    ).join('');
+    Array.from({length: allPicks.length}, (_,i) => `<option value="${i+1}">Top ${i+1}</option>`).join('');
   sel.value = prev && prev !== 'all' && parseInt(prev) <= allPicks.length ? prev : 'all';
 }
 
@@ -528,29 +568,24 @@ function filterPicks(filter, btn) {
 function renderPicks(picks) {
   const list  = document.getElementById('picks-list');
   const label = document.getElementById('picks-label');
-  if (picks.length === 0) {
+  if (!picks.length) {
     label.textContent = 'No picks match this filter';
     list.innerHTML = `<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">🔍</div><div style="font-size:14px;color:var(--gray-600)">No picks match this filter.</div></div>`;
     return;
   }
   label.textContent = `${picks.length} pick${picks.length!==1?'s':''} · ranked by confidence then EV`;
   list.innerHTML = picks.map((p, i) => {
-    const chaos = p.chaos !== undefined ? p.chaos.toFixed(2) : '—';
-    const clash = p.elo_clash ? ' · ⚡ Elo clash' : '';
+    const chaos     = p.chaos !== undefined ? p.chaos.toFixed(2) : '—';
+    const clash     = p.elo_clash ? ' · ⚡ Elo clash' : '';
     const confLabel = p.confidence==='high' ? 'High confidence' : 'Medium confidence';
-    const confSub   = p.confidence==='high'
-      ? `95% hist. accuracy · chaos ${chaos}${clash}`
-      : `67–81% hist. accuracy · chaos ${chaos}${clash}`;
+    const confSub   = p.confidence==='high' ? `95% hist. accuracy · chaos ${chaos}${clash}` : `67–81% hist. accuracy · chaos ${chaos}${clash}`;
     const oddsStr   = p.odds > 0 ? `+${p.odds}` : `${p.odds}`;
-    const advisory = p.confidence === 'high'
-      ? `ML ${oddsStr} · Model significantly underpriced by Vegas`
-      : `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`;
-    const globalIdx  = allPicks.indexOf(p);
-    const oddsA      = p.odds;
-    const oddsB      = p.oddsOpp || null;
-    const oddsAStr   = oddsA > 0 ? `+${oddsA}` : `${oddsA}`;
-    const oddsBStr   = oddsB !== null ? (oddsB > 0 ? `+${oddsB}` : `${oddsB}`) : '—';
-    const evOpp      = p.evOpp || null;
+    const advisory  = p.confidence === 'high' ? `ML ${oddsStr} · Model significantly underpriced by Vegas` : `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`;
+    const globalIdx = allPicks.indexOf(p);
+    const oddsAStr  = p.odds > 0 ? `+${p.odds}` : `${p.odds}`;
+    const oddsB     = p.oddsOpp || null;
+    const oddsBStr  = oddsB !== null ? (oddsB > 0 ? `+${oddsB}` : `${oddsB}`) : '—';
+    const evOpp     = p.evOpp || null;
     return `
       <div class="hot-card">
         <div class="hot-card-header ${p.confidence}">
@@ -587,8 +622,7 @@ function renderPicks(picks) {
               </div>
               <div class="odds-fighter-right">
                 <div class="odds-input-wrap" id="odds-wrap-${globalIdx}-a">
-                  <input class="odds-input" id="odds-inp-${globalIdx}-a" type="number" placeholder="${oddsA}" step="1"
-                    onkeydown="if(event.key==='Enter') applyOddsA(${globalIdx})" />
+                  <input class="odds-input" id="odds-inp-${globalIdx}-a" type="number" placeholder="${p.odds}" step="1" onkeydown="if(event.key==='Enter') applyOddsA(${globalIdx})" />
                   <span class="odds-hint">e.g. -140</span>
                 </div>
                 <button class="edit-odds-btn" id="edit-btn-${globalIdx}-a" onclick="toggleOddsA(${globalIdx})">Edit odds</button>
@@ -605,8 +639,7 @@ function renderPicks(picks) {
               </div>
               <div class="odds-fighter-right">
                 <div class="odds-input-wrap" id="odds-wrap-${globalIdx}-b">
-                  <input class="odds-input" id="odds-inp-${globalIdx}-b" type="number" placeholder="${oddsB}" step="1"
-                    onkeydown="if(event.key==='Enter') applyOddsB(${globalIdx})" />
+                  <input class="odds-input" id="odds-inp-${globalIdx}-b" type="number" placeholder="${oddsB}" step="1" onkeydown="if(event.key==='Enter') applyOddsB(${globalIdx})" />
                   <span class="odds-hint">e.g. +120</span>
                 </div>
                 <button class="edit-odds-btn" id="edit-btn-${globalIdx}-b" onclick="toggleOddsB(${globalIdx})">Edit odds</button>
@@ -615,8 +648,7 @@ function renderPicks(picks) {
             </div>` : ''}
           </div>
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
@@ -637,21 +669,15 @@ function calcEV(modelProb, ml) {
 function toggleOddsA(idx) {
   const wrap = document.getElementById(`odds-wrap-${idx}-a`);
   const btn  = document.getElementById(`edit-btn-${idx}-a`);
-  if (!wrap.classList.contains('open')) {
-    wrap.classList.add('open');
-    btn.textContent = 'Apply';
-    document.getElementById(`odds-inp-${idx}-a`).focus();
-  } else { applyOddsA(idx); }
+  if (!wrap.classList.contains('open')) { wrap.classList.add('open'); btn.textContent = 'Apply'; document.getElementById(`odds-inp-${idx}-a`).focus(); }
+  else { applyOddsA(idx); }
 }
 
 function toggleOddsB(idx) {
   const wrap = document.getElementById(`odds-wrap-${idx}-b`);
   const btn  = document.getElementById(`edit-btn-${idx}-b`);
-  if (!wrap.classList.contains('open')) {
-    wrap.classList.add('open');
-    btn.textContent = 'Apply';
-    document.getElementById(`odds-inp-${idx}-b`).focus();
-  } else { applyOddsB(idx); }
+  if (!wrap.classList.contains('open')) { wrap.classList.add('open'); btn.textContent = 'Apply'; document.getElementById(`odds-inp-${idx}-b`).focus(); }
+  else { applyOddsB(idx); }
 }
 
 function applyOddsA(idx) {
@@ -664,11 +690,8 @@ function applyOddsA(idx) {
   if (newVP === null) return;
   const newEV   = calcEV(p.prob, newOdds);
   const newEdge = p.prob / 100 - newVP;
-  p.odds       = newOdds;
-  p.ev         = newEV;
-  p.edge       = parseFloat((newEdge * 100).toFixed(1));
-  p.vegas_prob = parseFloat((newVP * 100).toFixed(1));
-  p.customOdds = true;
+  p.odds = newOdds; p.ev = newEV; p.edge = parseFloat((newEdge * 100).toFixed(1));
+  p.vegas_prob = parseFloat((newVP * 100).toFixed(1)); p.customOdds = true;
   const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
   document.getElementById(`odds-display-${idx}-a`).textContent = `ML ${oddsStr}`;
   document.getElementById(`ev-display-${idx}`).textContent     = `${newEV >= 0 ? '+' : ''}$${Math.round(newEV)}`;
@@ -690,9 +713,8 @@ function applyOddsB(idx) {
   const newOdds = Math.round(val);
   const newVP   = americanToProb(newOdds);
   if (newVP === null) return;
-  const newEV   = calcEV(p.probOpp, newOdds);
-  p.oddsOpp    = newOdds;
-  p.evOpp      = newEV;
+  const newEV = calcEV(p.probOpp, newOdds);
+  p.oddsOpp = newOdds; p.evOpp = newEV;
   const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
   document.getElementById(`odds-display-${idx}-b`).textContent = `ML ${oddsStr}`;
   document.getElementById(`custom-badge-${idx}-b`).classList.add('show');
@@ -700,23 +722,12 @@ function applyOddsB(idx) {
   document.getElementById(`odds-wrap-${idx}-b`).classList.remove('open');
   document.getElementById(`edit-btn-${idx}-b`).textContent = 'Edit odds';
   const posEvBadge = document.getElementById(`posev-badge-${idx}-b`);
-  if (posEvBadge) {
-    if (newEV > 0) {
-      posEvBadge.textContent = `+$${Math.round(newEV)} EV`;
-      posEvBadge.classList.add('show');
-    } else {
-      posEvBadge.classList.remove('show');
-    }
-  }
+  if (posEvBadge) { if (newEV > 0) { posEvBadge.textContent = `+$${Math.round(newEV)} EV`; posEvBadge.classList.add('show'); } else { posEvBadge.classList.remove('show'); } }
 }
 
 function resetOddsA(idx, origOdds, origEV, origEdge, origVP) {
   const p = allPicks[idx];
-  p.odds       = origOdds;
-  p.ev         = origEV;
-  p.edge       = origEdge;
-  p.vegas_prob = origVP;
-  p.customOdds = false;
+  p.odds = origOdds; p.ev = origEV; p.edge = origEdge; p.vegas_prob = origVP; p.customOdds = false;
   const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
   document.getElementById(`odds-display-${idx}-a`).textContent = `ML ${oddsStr}`;
   document.getElementById(`ev-display-${idx}`).textContent     = `+$${Math.round(origEV)}`;
@@ -731,8 +742,7 @@ function resetOddsA(idx, origOdds, origEV, origEdge, origVP) {
 
 function resetOddsB(idx, origOdds, origProbOpp) {
   const p = allPicks[idx];
-  p.oddsOpp = origOdds;
-  p.evOpp   = origOdds !== null ? calcEV(origProbOpp, origOdds) : null;
+  p.oddsOpp = origOdds; p.evOpp = origOdds !== null ? calcEV(origProbOpp, origOdds) : null;
   const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
   document.getElementById(`odds-display-${idx}-b`).textContent = `ML ${oddsStr}`;
   document.getElementById(`custom-badge-${idx}-b`).classList.remove('show');
@@ -754,20 +764,13 @@ function showEmpty(msg, noOdds) {
     <div class="empty-state">
       <div style="font-size:32px;margin-bottom:1rem">${noOdds ? '⏳' : '🥊'}</div>
       <div style="font-size:15px;font-weight:600;color:var(--gray-600);margin-bottom:8px">${msg}</div>
-      ${noOdds ? `
-        <div style="font-size:13px;color:var(--gray-400);max-width:380px;margin:0 auto;line-height:1.6">
-          Vegas typically opens lines 1–2 weeks before fight night. Check back closer to the event — odds and EV picks will populate automatically.
-        </div>
-      ` : ''}
-    </div>
-  `;
+      ${noOdds ? `<div style="font-size:13px;color:var(--gray-400);max-width:380px;margin:0 auto;line-height:1.6">Vegas typically opens lines 1–2 weeks before fight night. Check back closer to the event — odds and EV picks will populate automatically.</div>` : ''}
+    </div>`;
   document.getElementById('picks-label').textContent = '';
 }
 
 function toggleNav() { document.getElementById('header-nav').classList.toggle('open'); }
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 600) document.getElementById('header-nav').classList.remove('open');
-});
+window.addEventListener('resize', () => { if (window.innerWidth > 600) document.getElementById('header-nav').classList.remove('open'); });
 
 init();
 </script>
