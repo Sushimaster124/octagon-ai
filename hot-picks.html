@@ -60,65 +60,69 @@
 
   .main { max-width: 760px; margin: 0 auto; padding: 2rem; }
 
-  /* ── Budget panel — refined selects ── */
-  .budget-panel {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 22px 24px;
-    box-shadow: var(--shadow-sm); margin-bottom: 1.5rem;
-  }
+  .budget-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
   .budget-panel-title { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 18px; }
   .budget-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; align-items: end; }
   .budget-field { display: flex; flex-direction: column; gap: 6px; }
   .budget-label { font-size: 11px; color: var(--gray-400); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
 
-  /* Custom select wrapper — removes OS chrome, adds chevron */
-  .select-wrap {
-    position: relative; display: flex; align-items: center;
-  }
-  .select-wrap::after {
-    content: '';
-    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-    width: 0; height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 5px solid var(--gray-400);
-    pointer-events: none;
-  }
-  .budget-select {
-    width: 100%; height: 40px;
-    border: 1.5px solid var(--gray-200); border-radius: var(--radius-md);
-    padding: 0 32px 0 12px;
+  /* Custom dropdown */
+  .custom-select { position: relative; }
+
+  .custom-select-trigger {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 40px; padding: 0 12px;
+    background: var(--gray-50); border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-md); cursor: pointer;
     font-size: 13px; font-weight: 500; font-family: var(--font);
-    outline: none; background: var(--gray-50); color: var(--gray-900);
+    color: var(--gray-900); user-select: none;
     transition: border-color 0.15s, background 0.15s;
-    appearance: none; -webkit-appearance: none; cursor: pointer;
   }
-  .budget-select:focus { border-color: var(--red); background: white; }
-  .budget-select:hover { border-color: var(--gray-400); }
+  .custom-select-trigger:hover { border-color: var(--gray-400); }
+  .custom-select-trigger.open { border-color: var(--red); background: white; }
+  .custom-select-trigger-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }
+  .custom-select-chevron {
+    flex-shrink: 0; margin-left: 8px; width: 0; height: 0;
+    border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 5px solid var(--gray-400); transition: transform 0.15s;
+  }
+  .custom-select-trigger.open .custom-select-chevron { transform: rotate(180deg); }
+
+  .custom-select-menu {
+    display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: white; border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-md); overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    z-index: 200; max-height: 240px; overflow-y: auto;
+  }
+  .custom-select-menu.open { display: block; }
+
+  .custom-select-option {
+    padding: 9px 12px; font-size: 13px; font-family: var(--font);
+    font-weight: 500; color: var(--gray-900); cursor: pointer;
+    transition: background 0.1s; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .custom-select-option:hover { background: var(--gray-50); }
+  .custom-select-option.selected { color: var(--red); font-weight: 600; background: var(--red-light); }
 
   .budget-input {
     width: 100%; height: 40px;
     border: 1.5px solid var(--gray-200); border-radius: var(--radius-md);
-    padding: 0 12px;
-    font-size: 13px; font-weight: 500; font-family: var(--font);
-    outline: none; background: var(--gray-50); color: var(--gray-900);
+    padding: 0 12px; font-size: 13px; font-weight: 500;
+    font-family: var(--font); outline: none;
+    background: var(--gray-50); color: var(--gray-900);
     transition: border-color 0.15s, background 0.15s;
   }
   .budget-input:focus { border-color: var(--red); background: white; }
   .budget-input::placeholder { color: var(--gray-400); font-weight: 400; }
 
-  .budget-btn {
-    height: 40px; padding: 0 20px;
-    background: var(--gray-900); color: white; border: none;
-    border-radius: var(--radius-md); font-size: 13px; font-weight: 600;
-    cursor: pointer; font-family: var(--font); transition: background 0.15s;
-    white-space: nowrap; letter-spacing: 0.01em;
-  }
+  .budget-btn { height: 40px; padding: 0 20px; background: var(--gray-900); color: white; border: none; border-radius: var(--radius-md); font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: background 0.15s; white-space: nowrap; }
   .budget-btn:hover { background: #2C2C2A; }
 
   .alloc-panel { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; display: none; }
   .alloc-panel.visible { display: block; }
-  .alloc-header { background: var(--gray-900); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .alloc-header { background: var(--gray-900); padding: 14px 20px; }
   .alloc-header-title { font-size: 14px; font-weight: 600; color: white; }
   .alloc-header-sub { font-size: 12px; color: var(--gray-400); }
   .alloc-row { display: grid; grid-template-columns: 1fr auto auto; padding: 12px 20px; border-bottom: 1px solid var(--border); align-items: center; gap: 12px; }
@@ -205,7 +209,6 @@
   .spinner { width: 32px; height: 32px; border: 3px solid var(--gray-100); border-top-color: var(--red); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .empty-state { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
-
   footer { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem; }
 
   @media (max-width: 768px) {
@@ -258,15 +261,20 @@
     .budget-panel { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .budget-panel-title { color: #E8E6DF; }
     .budget-label { color: #5F5E5A; }
-    .budget-select { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
-    .budget-select:focus { border-color: var(--red); background: #1A1A18; }
-    .budget-select:hover { border-color: rgba(255,255,255,0.2); }
-    .select-wrap::after { border-top-color: #5F5E5A; }
+    .custom-select-trigger { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
+    .custom-select-trigger:hover { border-color: rgba(255,255,255,0.2); }
+    .custom-select-trigger.open { border-color: var(--red); background: #1A1A18; }
+    .custom-select-chevron { border-top-color: #5F5E5A; }
+    .custom-select-menu { background: #1A1A18; border-color: rgba(255,255,255,0.1); box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+    .custom-select-option { color: #E8E6DF; }
+    .custom-select-option:hover { background: #2C2C2A; }
+    .custom-select-option.selected { background: rgba(226,75,74,0.15); color: #F09595; }
     .budget-input { background: #111110; border-color: rgba(255,255,255,0.1); color: #E8E6DF; }
     .budget-input:focus { border-color: var(--red); background: #1A1A18; }
     .budget-input::placeholder { color: #444441; }
     .budget-btn { background: #E8E6DF; color: #1A1A18; }
     .budget-btn:hover { background: white; }
+    .alloc-fighter { color: #E8E6DF; }
     .hot-card { background: #242422; border-color: rgba(255,255,255,0.06); }
     .hot-card-header:not(.high):not(.medium) { background: #1A1A18; }
     .hot-fighter { color: #E8E6DF; }
@@ -343,36 +351,42 @@
   <div class="budget-panel">
     <div class="budget-panel-title">💰 Budget allocator</div>
     <div class="budget-row">
+
       <div class="budget-field">
         <label class="budget-label">Fight card</label>
-        <div class="select-wrap">
-          <select class="budget-select" id="event-select">
-            <option value="">Loading events...</option>
-          </select>
+        <div class="custom-select" id="event-select-wrap">
+          <div class="custom-select-trigger" id="event-trigger" onclick="toggleDropdown('event')">
+            <span class="custom-select-trigger-text" id="event-trigger-text">Loading events...</span>
+            <span class="custom-select-chevron"></span>
+          </div>
+          <div class="custom-select-menu" id="event-menu"></div>
         </div>
       </div>
+
       <div class="budget-field">
         <label class="budget-label">Your budget ($)</label>
         <input class="budget-input" type="number" id="budget-input" placeholder="e.g. 500" min="1" />
       </div>
+
       <div class="budget-field">
         <label class="budget-label">Max fights</label>
-        <div class="select-wrap">
-          <select class="budget-select" id="max-fights-select">
-            <option value="all">All picks</option>
-          </select>
+        <div class="custom-select" id="maxfights-select-wrap">
+          <div class="custom-select-trigger" id="maxfights-trigger" onclick="toggleDropdown('maxfights')">
+            <span class="custom-select-trigger-text" id="maxfights-trigger-text">All picks</span>
+            <span class="custom-select-chevron"></span>
+          </div>
+          <div class="custom-select-menu" id="maxfights-menu"></div>
         </div>
       </div>
+
       <button class="budget-btn" onclick="runAllocator()">Allocate</button>
     </div>
   </div>
 
   <div class="alloc-panel" id="alloc-panel">
     <div class="alloc-header">
-      <div>
-        <div class="alloc-header-title">Recommended allocation</div>
-        <div class="alloc-header-sub">Fractional Kelly (25%) · High conf full weight · Medium conf half weight</div>
-      </div>
+      <div class="alloc-header-title">Recommended allocation</div>
+      <div class="alloc-header-sub">Fractional Kelly (25%) · High conf full weight · Medium conf half weight</div>
     </div>
     <div id="alloc-rows"></div>
     <div style="padding:16px 20px">
@@ -406,7 +420,64 @@
 const DATA_BASE = 'data/';
 let allPicks = [], allEvents = [], eventData = {};
 let currentFilter = 'all';
+let selectedEventSlug = '';
+let selectedMaxFights = 'all';
 const KELLY_FRACTION = 0.25;
+
+function toggleDropdown(id) {
+  const trigger = document.getElementById(id + '-trigger');
+  const menu    = document.getElementById(id + '-menu');
+  const isOpen  = menu.classList.contains('open');
+  closeAllDropdowns();
+  if (!isOpen) { trigger.classList.add('open'); menu.classList.add('open'); }
+}
+
+function closeAllDropdowns() {
+  document.querySelectorAll('.custom-select-trigger').forEach(t => t.classList.remove('open'));
+  document.querySelectorAll('.custom-select-menu').forEach(m => m.classList.remove('open'));
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.custom-select')) closeAllDropdowns();
+});
+
+function buildEventMenu(events) {
+  const menu = document.getElementById('event-menu');
+  menu.innerHTML = events.map((e, i) => {
+    const label = e.name + ' · ' + formatDate(e.date);
+    return '<div class="custom-select-option' + (i === 0 ? ' selected' : '') + '" data-value="' + e.slug + '" onclick="selectEvent(\'' + e.slug + '\', this)">' + label + '</div>';
+  }).join('');
+  if (events.length > 0) {
+    selectedEventSlug = events[0].slug;
+    document.getElementById('event-trigger-text').textContent = events[0].name + ' · ' + formatDate(events[0].date);
+  }
+}
+
+function selectEvent(slug, el) {
+  selectedEventSlug = slug;
+  document.getElementById('event-trigger-text').textContent = el.textContent.trim();
+  document.querySelectorAll('#event-menu .custom-select-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  closeAllDropdowns();
+  loadEvent(slug);
+}
+
+function buildMaxFightsMenu(count) {
+  const menu = document.getElementById('maxfights-menu');
+  let html = '<div class="custom-select-option' + (selectedMaxFights === 'all' ? ' selected' : '') + '" data-value="all" onclick="selectMaxFights(\'all\', this)">All picks</div>';
+  for (let i = 1; i <= count; i++) {
+    html += '<div class="custom-select-option' + (selectedMaxFights === String(i) ? ' selected' : '') + '" data-value="' + i + '" onclick="selectMaxFights(\'' + i + '\', this)">Top ' + i + '</div>';
+  }
+  menu.innerHTML = html;
+}
+
+function selectMaxFights(val, el) {
+  selectedMaxFights = val;
+  document.getElementById('maxfights-trigger-text').textContent = el.textContent.trim();
+  document.querySelectorAll('#maxfights-menu .custom-select-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  closeAllDropdowns();
+}
 
 async function init() {
   try {
@@ -418,12 +489,10 @@ async function init() {
     }).sort((a,b) => new Date(a.date) - new Date(b.date));
     if (allEvents.length === 0) {
       showEmpty('No upcoming events with data found.');
-      document.getElementById('event-select').innerHTML = '<option>No upcoming events</option>';
+      document.getElementById('event-trigger-text').textContent = 'No upcoming events';
       return;
     }
-    document.getElementById('event-select').innerHTML = allEvents.map((e,i) =>
-      `<option value="${e.slug}"${i===0?' selected':''}>${e.name} · ${formatDate(e.date)}</option>`
-    ).join('');
+    buildEventMenu(allEvents);
     await loadEvent(allEvents[0].slug);
   } catch(e) { showEmpty('Could not load events.'); }
 }
@@ -440,26 +509,18 @@ async function loadEvent(slug) {
 }
 
 function processEvent(data) {
-  document.getElementById('hero-sub').textContent =
-    `Best EV plays · ${data.event_name} · ${formatDate(data.event_date || '')}`;
+  document.getElementById('hero-sub').textContent = 'Best EV plays · ' + data.event_name + ' · ' + formatDate(data.event_date || '');
   allPicks = buildPicks(data);
   renderStats();
   if (allPicks.length === 0) {
     const hasOdds = data.fights.some(f => !f.not_found && f.odds_a !== null);
-    showEmpty(
-      hasOdds ? 'No medium or high confidence EV plays for this event.' : 'No odds available yet for this event.',
-      !hasOdds
-    );
+    showEmpty(hasOdds ? 'No medium or high confidence EV plays for this event.' : 'No odds available yet for this event.', !hasOdds);
     document.getElementById('picks-label').textContent = '';
     return;
   }
   renderPicks(allPicks);
   document.getElementById('alloc-panel').classList.remove('visible');
 }
-
-document.getElementById('event-select').addEventListener('change', function() {
-  if (this.value) loadEvent(this.value);
-});
 
 function buildPicks(data) {
   const picks = [];
@@ -474,7 +535,7 @@ function buildPicks(data) {
       if (!c.ev || c.ev <= 0) continue;
       const opp = sides[1 - si];
       const recalcConf = c.prob >= 75 ? 'high' : c.prob >= 60 ? 'medium' : 'low';
-      picks.push({ ...c, weight: fight.weight_class || '', confidence: recalcConf, chaos: fight.chaos, elo_clash: fight.elo_clash, oddsOpp: opp.odds || null, probOpp: opp.prob || null, evOpp: opp.ev || null });
+      picks.push(Object.assign({}, c, { weight: fight.weight_class || '', confidence: recalcConf, chaos: fight.chaos, elo_clash: fight.elo_clash, oddsOpp: opp.odds || null, probOpp: opp.prob || null, evOpp: opp.ev || null }));
     }
   }
   picks.sort((a,b) => {
@@ -496,12 +557,10 @@ function kellyAllocation(picks, budget) {
 }
 
 function runAllocator() {
-  const slug   = document.getElementById('event-select').value;
   const budget = parseFloat(document.getElementById('budget-input').value);
-  const maxVal = document.getElementById('max-fights-select').value;
-  if (!slug || !budget || budget <= 0) { alert('Please select an event and enter a valid budget.'); return; }
+  if (!selectedEventSlug || !budget || budget <= 0) { alert('Please select an event and enter a valid budget.'); return; }
   if (allPicks.length === 0) { alert('No qualifying picks for this event.'); return; }
-  const picks = maxVal === 'all' ? allPicks : allPicks.slice(0, parseInt(maxVal));
+  const picks = selectedMaxFights === 'all' ? allPicks : allPicks.slice(0, parseInt(selectedMaxFights));
   const allocations = kellyAllocation(picks, budget);
   renderAllocations(picks, allocations, budget);
   document.getElementById('alloc-panel').classList.add('visible');
@@ -509,50 +568,29 @@ function runAllocator() {
 }
 
 function renderAllocations(picks, allocations, budget) {
-  const maxAlloc = Math.max(...allocations);
+  const maxAlloc = Math.max.apply(null, allocations);
   document.getElementById('alloc-rows').innerHTML = picks.map((p, i) => {
     const amt    = allocations[i];
     const pct    = maxAlloc > 0 ? (amt / maxAlloc * 100) : 0;
     const winRet = amt > 0 ? (p.odds > 0 ? (p.odds/100)*amt : (100/Math.abs(p.odds))*amt) : 0;
-    return `
-      <div class="alloc-row">
-        <div>
-          <div style="display:flex;align-items:center">
-            <span class="alloc-conf-dot ${p.confidence}"></span>
-            <span class="alloc-fighter">${p.fighter}</span>
-          </div>
-          <div class="alloc-meta">vs ${p.opponent} · ML ${p.odds>0?'+':''}${p.odds} · ${p.prob}% model prob</div>
-          <div class="alloc-bar-wrap"><div class="alloc-bar-fill ${p.confidence}" style="width:${pct.toFixed(0)}%"></div></div>
-        </div>
-        <div class="alloc-amount">$${amt.toFixed(0)}</div>
-        <div class="alloc-return">+$${winRet.toFixed(0)} if wins</div>
-      </div>`;
+    return '<div class="alloc-row"><div><div style="display:flex;align-items:center"><span class="alloc-conf-dot ' + p.confidence + '"></span><span class="alloc-fighter">' + p.fighter + '</span></div><div class="alloc-meta">vs ' + p.opponent + ' · ML ' + (p.odds>0?'+':'') + p.odds + ' · ' + p.prob + '% model prob</div><div class="alloc-bar-wrap"><div class="alloc-bar-fill ' + p.confidence + '" style="width:' + pct.toFixed(0) + '%"></div></div></div><div class="alloc-amount">$' + amt.toFixed(0) + '</div><div class="alloc-return">+$' + winRet.toFixed(0) + ' if wins</div></div>';
   }).join('');
-
   const totalEV       = picks.reduce((s,p,i) => s + (allocations[i]/100)*p.ev, 0);
-  const totalIfAllWin = picks.reduce((s,p,i) => {
-    const a = allocations[i];
-    return s + (p.odds > 0 ? (p.odds/100)*a : (100/Math.abs(p.odds))*a);
-  }, 0);
-  const totalAlloc = allocations.reduce((a,b) => a+b, 0);
-  document.getElementById('return-grid').innerHTML = `
-    <div class="return-card"><div class="return-card-val">$${totalAlloc.toFixed(0)}</div><div class="return-card-lbl">Total allocated</div></div>
-    <div class="return-card"><div class="return-card-val green">+$${totalEV.toFixed(0)}</div><div class="return-card-lbl">Expected profit (EV)</div></div>
-    <div class="return-card"><div class="return-card-val amber">$${(totalAlloc + totalIfAllWin).toFixed(0)}</div><div class="return-card-lbl">Max if all win</div></div>
-  `;
+  const totalIfAllWin = picks.reduce((s,p,i) => { const a = allocations[i]; return s + (p.odds > 0 ? (p.odds/100)*a : (100/Math.abs(p.odds))*a); }, 0);
+  const totalAlloc    = allocations.reduce((a,b) => a+b, 0);
+  document.getElementById('return-grid').innerHTML =
+    '<div class="return-card"><div class="return-card-val">$' + totalAlloc.toFixed(0) + '</div><div class="return-card-lbl">Total allocated</div></div>' +
+    '<div class="return-card"><div class="return-card-val green">+$' + totalEV.toFixed(0) + '</div><div class="return-card-lbl">Expected profit (EV)</div></div>' +
+    '<div class="return-card"><div class="return-card-val amber">$' + (totalAlloc + totalIfAllWin).toFixed(0) + '</div><div class="return-card-lbl">Max if all win</div></div>';
 }
 
 function renderStats() {
   const highCount = allPicks.filter(p => p.confidence==='high').length;
-  const bestEV    = allPicks.length > 0 ? Math.max(...allPicks.map(p => p.ev)) : null;
+  const bestEV    = allPicks.length > 0 ? Math.max.apply(null, allPicks.map(p => p.ev)) : null;
   document.getElementById('stat-plays').textContent = allPicks.length || '—';
-  document.getElementById('stat-best').textContent  = bestEV ? `+$${bestEV.toFixed(0)}` : '—';
+  document.getElementById('stat-best').textContent  = bestEV ? '+$' + bestEV.toFixed(0) : '—';
   document.getElementById('stat-high').textContent  = highCount || '—';
-  const sel = document.getElementById('max-fights-select');
-  const prev = sel.value;
-  sel.innerHTML = '<option value="all">All picks</option>' +
-    Array.from({length: allPicks.length}, (_,i) => `<option value="${i+1}">Top ${i+1}</option>`).join('');
-  sel.value = prev && prev !== 'all' && parseInt(prev) <= allPicks.length ? prev : 'all';
+  buildMaxFightsMenu(allPicks.length);
 }
 
 function filterPicks(filter, btn) {
@@ -570,85 +608,28 @@ function renderPicks(picks) {
   const label = document.getElementById('picks-label');
   if (!picks.length) {
     label.textContent = 'No picks match this filter';
-    list.innerHTML = `<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">🔍</div><div style="font-size:14px;color:var(--gray-600)">No picks match this filter.</div></div>`;
+    list.innerHTML = '<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">🔍</div><div style="font-size:14px;color:var(--gray-600)">No picks match this filter.</div></div>';
     return;
   }
-  label.textContent = `${picks.length} pick${picks.length!==1?'s':''} · ranked by confidence then EV`;
+  label.textContent = picks.length + ' pick' + (picks.length!==1?'s':'') + ' · ranked by confidence then EV';
   list.innerHTML = picks.map((p, i) => {
     const chaos     = p.chaos !== undefined ? p.chaos.toFixed(2) : '—';
     const clash     = p.elo_clash ? ' · ⚡ Elo clash' : '';
     const confLabel = p.confidence==='high' ? 'High confidence' : 'Medium confidence';
-    const confSub   = p.confidence==='high' ? `95% hist. accuracy · chaos ${chaos}${clash}` : `67–81% hist. accuracy · chaos ${chaos}${clash}`;
-    const oddsStr   = p.odds > 0 ? `+${p.odds}` : `${p.odds}`;
-    const advisory  = p.confidence === 'high' ? `ML ${oddsStr} · Model significantly underpriced by Vegas` : `ML ${oddsStr} · Positive EV but medium confidence — consider sizing down`;
+    const confSub   = p.confidence==='high' ? '95% hist. accuracy · chaos ' + chaos + clash : '67–81% hist. accuracy · chaos ' + chaos + clash;
+    const oddsStr   = p.odds > 0 ? '+' + p.odds : '' + p.odds;
+    const advisory  = p.confidence === 'high' ? 'ML ' + oddsStr + ' · Model significantly underpriced by Vegas' : 'ML ' + oddsStr + ' · Positive EV but medium confidence — consider sizing down';
     const globalIdx = allPicks.indexOf(p);
-    const oddsAStr  = p.odds > 0 ? `+${p.odds}` : `${p.odds}`;
+    const oddsAStr  = p.odds > 0 ? '+' + p.odds : '' + p.odds;
     const oddsB     = p.oddsOpp || null;
-    const oddsBStr  = oddsB !== null ? (oddsB > 0 ? `+${oddsB}` : `${oddsB}`) : '—';
+    const oddsBStr  = oddsB !== null ? (oddsB > 0 ? '+' + oddsB : '' + oddsB) : '—';
     const evOpp     = p.evOpp || null;
-    return `
-      <div class="hot-card">
-        <div class="hot-card-header ${p.confidence}">
-          <div style="display:flex;align-items:center">
-            <span class="rank-badge">${i+1}</span>
-            <span class="hot-conf-badge ${p.confidence}">${confLabel}</span>
-          </div>
-          <span class="hot-conf-sub ${p.confidence}">${confSub}</span>
-        </div>
-        <div class="hot-card-body">
-          <div class="hot-card-top">
-            <div>
-              <div class="hot-fighter">${p.fighter}</div>
-              <div class="hot-matchup">vs ${p.opponent} · ${p.weight}</div>
-            </div>
-            <div class="hot-ev">
-              <div class="hot-ev-val" id="ev-display-${globalIdx}">${p.ev >= 0 ? '+' : ''}$${Math.round(p.ev)}</div>
-              <div class="hot-ev-lbl">per $100 bet</div>
-            </div>
-          </div>
-          <div class="hot-metrics">
-            <div class="hot-metric"><div class="hot-metric-lbl">Model prob</div><div class="hot-metric-val">${p.prob}%</div></div>
-            <div class="hot-metric"><div class="hot-metric-lbl">Vegas implied</div><div class="hot-metric-val" id="vp-display-${globalIdx}">${p.vegas_prob}%</div></div>
-            <div class="hot-metric edge"><div class="hot-metric-lbl">Edge</div><div class="hot-metric-val" id="edge-display-${globalIdx}">${p.edge >= 0 ? '+' : ''}${p.edge}%</div></div>
-          </div>
-          <div class="hot-advisory${p.confidence==='medium'?' warn':''}">${advisory}</div>
-          <div class="odds-section">
-            <div class="odds-section-title">Live odds — edit if yours differ</div>
-            <div class="odds-fighter-row">
-              <div class="odds-fighter-left">
-                <span class="odds-fighter-name">${p.fighter}</span>
-                <span class="odds-current" id="odds-display-${globalIdx}-a">ML ${oddsAStr}</span>
-                <span class="custom-badge" id="custom-badge-${globalIdx}-a">custom</span>
-              </div>
-              <div class="odds-fighter-right">
-                <div class="odds-input-wrap" id="odds-wrap-${globalIdx}-a">
-                  <input class="odds-input" id="odds-inp-${globalIdx}-a" type="number" placeholder="${p.odds}" step="1" onkeydown="if(event.key==='Enter') applyOddsA(${globalIdx})" />
-                  <span class="odds-hint">e.g. -140</span>
-                </div>
-                <button class="edit-odds-btn" id="edit-btn-${globalIdx}-a" onclick="toggleOddsA(${globalIdx})">Edit odds</button>
-                <button class="reset-odds-btn" id="reset-btn-${globalIdx}-a" onclick="resetOddsA(${globalIdx}, ${p.odds}, ${p.ev}, ${p.edge}, ${p.vegas_prob})">Reset</button>
-              </div>
-            </div>
-            ${oddsB !== null ? `
-            <div class="odds-fighter-row">
-              <div class="odds-fighter-left">
-                <span class="odds-fighter-name">${p.opponent}</span>
-                <span class="odds-current" id="odds-display-${globalIdx}-b">ML ${oddsBStr}</span>
-                <span class="custom-badge" id="custom-badge-${globalIdx}-b">custom</span>
-                <span class="pos-ev-badge" id="posev-badge-${globalIdx}-b">${evOpp !== null && evOpp > 0 ? '+$'+Math.round(evOpp)+' EV' : 'EV+'}</span>
-              </div>
-              <div class="odds-fighter-right">
-                <div class="odds-input-wrap" id="odds-wrap-${globalIdx}-b">
-                  <input class="odds-input" id="odds-inp-${globalIdx}-b" type="number" placeholder="${oddsB}" step="1" onkeydown="if(event.key==='Enter') applyOddsB(${globalIdx})" />
-                  <span class="odds-hint">e.g. +120</span>
-                </div>
-                <button class="edit-odds-btn" id="edit-btn-${globalIdx}-b" onclick="toggleOddsB(${globalIdx})">Edit odds</button>
-                <button class="reset-odds-btn" id="reset-btn-${globalIdx}-b" onclick="resetOddsB(${globalIdx}, ${p.oddsOpp}, ${p.probOpp})">Reset</button>
-              </div>
-            </div>` : ''}
-          </div>
-        </div>
-      </div>`;
+    let html = '<div class="hot-card"><div class="hot-card-header ' + p.confidence + '"><div style="display:flex;align-items:center"><span class="rank-badge">' + (i+1) + '</span><span class="hot-conf-badge ' + p.confidence + '">' + confLabel + '</span></div><span class="hot-conf-sub ' + p.confidence + '">' + confSub + '</span></div><div class="hot-card-body"><div class="hot-card-top"><div><div class="hot-fighter">' + p.fighter + '</div><div class="hot-matchup">vs ' + p.opponent + ' · ' + p.weight + '</div></div><div class="hot-ev"><div class="hot-ev-val" id="ev-display-' + globalIdx + '">' + (p.ev >= 0 ? '+' : '') + '$' + Math.round(p.ev) + '</div><div class="hot-ev-lbl">per $100 bet</div></div></div><div class="hot-metrics"><div class="hot-metric"><div class="hot-metric-lbl">Model prob</div><div class="hot-metric-val">' + p.prob + '%</div></div><div class="hot-metric"><div class="hot-metric-lbl">Vegas implied</div><div class="hot-metric-val" id="vp-display-' + globalIdx + '">' + p.vegas_prob + '%</div></div><div class="hot-metric edge"><div class="hot-metric-lbl">Edge</div><div class="hot-metric-val" id="edge-display-' + globalIdx + '">' + (p.edge >= 0 ? '+' : '') + p.edge + '%</div></div></div><div class="hot-advisory' + (p.confidence==='medium'?' warn':'') + '">' + advisory + '</div><div class="odds-section"><div class="odds-section-title">Live odds — edit if yours differ</div><div class="odds-fighter-row"><div class="odds-fighter-left"><span class="odds-fighter-name">' + p.fighter + '</span><span class="odds-current" id="odds-display-' + globalIdx + '-a">ML ' + oddsAStr + '</span><span class="custom-badge" id="custom-badge-' + globalIdx + '-a">custom</span></div><div class="odds-fighter-right"><div class="odds-input-wrap" id="odds-wrap-' + globalIdx + '-a"><input class="odds-input" id="odds-inp-' + globalIdx + '-a" type="number" placeholder="' + p.odds + '" step="1" onkeydown="if(event.key===\'Enter\') applyOddsA(' + globalIdx + ')" /><span class="odds-hint">e.g. -140</span></div><button class="edit-odds-btn" id="edit-btn-' + globalIdx + '-a" onclick="toggleOddsA(' + globalIdx + ')">Edit odds</button><button class="reset-odds-btn" id="reset-btn-' + globalIdx + '-a" onclick="resetOddsA(' + globalIdx + ', ' + p.odds + ', ' + p.ev + ', ' + p.edge + ', ' + p.vegas_prob + ')">Reset</button></div></div>';
+    if (oddsB !== null) {
+      html += '<div class="odds-fighter-row"><div class="odds-fighter-left"><span class="odds-fighter-name">' + p.opponent + '</span><span class="odds-current" id="odds-display-' + globalIdx + '-b">ML ' + oddsBStr + '</span><span class="custom-badge" id="custom-badge-' + globalIdx + '-b">custom</span><span class="pos-ev-badge" id="posev-badge-' + globalIdx + '-b">' + (evOpp !== null && evOpp > 0 ? '+$' + Math.round(evOpp) + ' EV' : 'EV+') + '</span></div><div class="odds-fighter-right"><div class="odds-input-wrap" id="odds-wrap-' + globalIdx + '-b"><input class="odds-input" id="odds-inp-' + globalIdx + '-b" type="number" placeholder="' + oddsB + '" step="1" onkeydown="if(event.key===\'Enter\') applyOddsB(' + globalIdx + ')" /><span class="odds-hint">e.g. +120</span></div><button class="edit-odds-btn" id="edit-btn-' + globalIdx + '-b" onclick="toggleOddsB(' + globalIdx + ')">Edit odds</button><button class="reset-odds-btn" id="reset-btn-' + globalIdx + '-b" onclick="resetOddsB(' + globalIdx + ', ' + p.oddsOpp + ', ' + p.probOpp + ')">Reset</button></div></div>';
+    }
+    html += '</div></div></div>';
+    return html;
   }).join('');
 }
 
@@ -667,88 +648,85 @@ function calcEV(modelProb, ml) {
 }
 
 function toggleOddsA(idx) {
-  const wrap = document.getElementById(`odds-wrap-${idx}-a`);
-  const btn  = document.getElementById(`edit-btn-${idx}-a`);
-  if (!wrap.classList.contains('open')) { wrap.classList.add('open'); btn.textContent = 'Apply'; document.getElementById(`odds-inp-${idx}-a`).focus(); }
+  const wrap = document.getElementById('odds-wrap-' + idx + '-a');
+  const btn  = document.getElementById('edit-btn-' + idx + '-a');
+  if (!wrap.classList.contains('open')) { wrap.classList.add('open'); btn.textContent = 'Apply'; document.getElementById('odds-inp-' + idx + '-a').focus(); }
   else { applyOddsA(idx); }
 }
 
 function toggleOddsB(idx) {
-  const wrap = document.getElementById(`odds-wrap-${idx}-b`);
-  const btn  = document.getElementById(`edit-btn-${idx}-b`);
-  if (!wrap.classList.contains('open')) { wrap.classList.add('open'); btn.textContent = 'Apply'; document.getElementById(`odds-inp-${idx}-b`).focus(); }
+  const wrap = document.getElementById('odds-wrap-' + idx + '-b');
+  const btn  = document.getElementById('edit-btn-' + idx + '-b');
+  if (!wrap.classList.contains('open')) { wrap.classList.add('open'); btn.textContent = 'Apply'; document.getElementById('odds-inp-' + idx + '-b').focus(); }
   else { applyOddsB(idx); }
 }
 
 function applyOddsA(idx) {
-  const inp = document.getElementById(`odds-inp-${idx}-a`);
+  const inp = document.getElementById('odds-inp-' + idx + '-a');
   const val = parseFloat(inp.value);
   if (isNaN(val) || val === 0) return;
   const p = allPicks[idx];
-  const newOdds = Math.round(val);
-  const newVP   = americanToProb(newOdds);
+  const newOdds = Math.round(val), newVP = americanToProb(newOdds);
   if (newVP === null) return;
-  const newEV   = calcEV(p.prob, newOdds);
-  const newEdge = p.prob / 100 - newVP;
+  const newEV = calcEV(p.prob, newOdds), newEdge = p.prob / 100 - newVP;
   p.odds = newOdds; p.ev = newEV; p.edge = parseFloat((newEdge * 100).toFixed(1));
   p.vegas_prob = parseFloat((newVP * 100).toFixed(1)); p.customOdds = true;
-  const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
-  document.getElementById(`odds-display-${idx}-a`).textContent = `ML ${oddsStr}`;
-  document.getElementById(`ev-display-${idx}`).textContent     = `${newEV >= 0 ? '+' : ''}$${Math.round(newEV)}`;
-  document.getElementById(`ev-display-${idx}`).style.color     = newEV >= 0 ? 'var(--green)' : 'var(--red)';
-  document.getElementById(`vp-display-${idx}`).textContent     = `${(newVP * 100).toFixed(1)}%`;
-  document.getElementById(`edge-display-${idx}`).textContent   = `${newEdge >= 0 ? '+' : ''}${(newEdge * 100).toFixed(1)}%`;
-  document.getElementById(`custom-badge-${idx}-a`).classList.add('show');
-  document.getElementById(`reset-btn-${idx}-a`).classList.add('show');
-  document.getElementById(`odds-wrap-${idx}-a`).classList.remove('open');
-  document.getElementById(`edit-btn-${idx}-a`).textContent = 'Edit odds';
+  const oddsStr = newOdds > 0 ? '+' + newOdds : '' + newOdds;
+  document.getElementById('odds-display-' + idx + '-a').textContent = 'ML ' + oddsStr;
+  document.getElementById('ev-display-' + idx).textContent = (newEV >= 0 ? '+' : '') + '$' + Math.round(newEV);
+  document.getElementById('ev-display-' + idx).style.color = newEV >= 0 ? 'var(--green)' : 'var(--red)';
+  document.getElementById('vp-display-' + idx).textContent = (newVP * 100).toFixed(1) + '%';
+  document.getElementById('edge-display-' + idx).textContent = (newEdge >= 0 ? '+' : '') + (newEdge * 100).toFixed(1) + '%';
+  document.getElementById('custom-badge-' + idx + '-a').classList.add('show');
+  document.getElementById('reset-btn-' + idx + '-a').classList.add('show');
+  document.getElementById('odds-wrap-' + idx + '-a').classList.remove('open');
+  document.getElementById('edit-btn-' + idx + '-a').textContent = 'Edit odds';
   renderStats();
 }
 
 function applyOddsB(idx) {
-  const inp = document.getElementById(`odds-inp-${idx}-b`);
+  const inp = document.getElementById('odds-inp-' + idx + '-b');
   const val = parseFloat(inp.value);
   if (isNaN(val) || val === 0) return;
   const p = allPicks[idx];
-  const newOdds = Math.round(val);
-  const newVP   = americanToProb(newOdds);
+  const newOdds = Math.round(val), newVP = americanToProb(newOdds);
   if (newVP === null) return;
   const newEV = calcEV(p.probOpp, newOdds);
   p.oddsOpp = newOdds; p.evOpp = newEV;
-  const oddsStr = newOdds > 0 ? `+${newOdds}` : `${newOdds}`;
-  document.getElementById(`odds-display-${idx}-b`).textContent = `ML ${oddsStr}`;
-  document.getElementById(`custom-badge-${idx}-b`).classList.add('show');
-  document.getElementById(`reset-btn-${idx}-b`).classList.add('show');
-  document.getElementById(`odds-wrap-${idx}-b`).classList.remove('open');
-  document.getElementById(`edit-btn-${idx}-b`).textContent = 'Edit odds';
-  const posEvBadge = document.getElementById(`posev-badge-${idx}-b`);
-  if (posEvBadge) { if (newEV > 0) { posEvBadge.textContent = `+$${Math.round(newEV)} EV`; posEvBadge.classList.add('show'); } else { posEvBadge.classList.remove('show'); } }
+  const oddsStr = newOdds > 0 ? '+' + newOdds : '' + newOdds;
+  document.getElementById('odds-display-' + idx + '-b').textContent = 'ML ' + oddsStr;
+  document.getElementById('custom-badge-' + idx + '-b').classList.add('show');
+  document.getElementById('reset-btn-' + idx + '-b').classList.add('show');
+  document.getElementById('odds-wrap-' + idx + '-b').classList.remove('open');
+  document.getElementById('edit-btn-' + idx + '-b').textContent = 'Edit odds';
+  const posEvBadge = document.getElementById('posev-badge-' + idx + '-b');
+  if (posEvBadge) { if (newEV > 0) { posEvBadge.textContent = '+$' + Math.round(newEV) + ' EV'; posEvBadge.classList.add('show'); } else { posEvBadge.classList.remove('show'); } }
 }
 
 function resetOddsA(idx, origOdds, origEV, origEdge, origVP) {
   const p = allPicks[idx];
   p.odds = origOdds; p.ev = origEV; p.edge = origEdge; p.vegas_prob = origVP; p.customOdds = false;
-  const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
-  document.getElementById(`odds-display-${idx}-a`).textContent = `ML ${oddsStr}`;
-  document.getElementById(`ev-display-${idx}`).textContent     = `+$${Math.round(origEV)}`;
-  document.getElementById(`ev-display-${idx}`).style.color     = 'var(--green)';
-  document.getElementById(`vp-display-${idx}`).textContent     = `${origVP}%`;
-  document.getElementById(`edge-display-${idx}`).textContent   = `+${origEdge}%`;
-  document.getElementById(`custom-badge-${idx}-a`).classList.remove('show');
-  document.getElementById(`reset-btn-${idx}-a`).classList.remove('show');
-  document.getElementById(`odds-inp-${idx}-a`).value = '';
+  const oddsStr = origOdds > 0 ? '+' + origOdds : '' + origOdds;
+  document.getElementById('odds-display-' + idx + '-a').textContent = 'ML ' + oddsStr;
+  document.getElementById('ev-display-' + idx).textContent = '+$' + Math.round(origEV);
+  document.getElementById('ev-display-' + idx).style.color = 'var(--green)';
+  document.getElementById('vp-display-' + idx).textContent = origVP + '%';
+  document.getElementById('edge-display-' + idx).textContent = '+' + origEdge + '%';
+  document.getElementById('custom-badge-' + idx + '-a').classList.remove('show');
+  document.getElementById('reset-btn-' + idx + '-a').classList.remove('show');
+  document.getElementById('odds-inp-' + idx + '-a').value = '';
   renderStats();
 }
 
 function resetOddsB(idx, origOdds, origProbOpp) {
   const p = allPicks[idx];
   p.oddsOpp = origOdds; p.evOpp = origOdds !== null ? calcEV(origProbOpp, origOdds) : null;
-  const oddsStr = origOdds > 0 ? `+${origOdds}` : `${origOdds}`;
-  document.getElementById(`odds-display-${idx}-b`).textContent = `ML ${oddsStr}`;
-  document.getElementById(`custom-badge-${idx}-b`).classList.remove('show');
-  document.getElementById(`reset-btn-${idx}-b`).classList.remove('show');
-  document.getElementById(`odds-inp-${idx}-b`).value = '';
-  const posEvBadge = document.getElementById(`posev-badge-${idx}-b`);
+  const oddsStr = origOdds > 0 ? '+' + origOdds : '' + origOdds;
+  document.getElementById('odds-display-' + idx + '-b').textContent = 'ML ' + oddsStr;
+  document.getElementById('custom-badge-' + idx + '-b').classList.remove('show');
+  document.getElementById('reset-btn-' + idx + '-b').classList.remove('show');
+  document.getElementById('odds-inp-' + idx + '-b').value = '';
+  const posEvBadge = document.getElementById('posev-badge-' + idx + '-b');
   if (posEvBadge) posEvBadge.classList.remove('show');
 }
 
@@ -760,12 +738,7 @@ function formatDate(d) {
 }
 
 function showEmpty(msg, noOdds) {
-  document.getElementById('picks-list').innerHTML = `
-    <div class="empty-state">
-      <div style="font-size:32px;margin-bottom:1rem">${noOdds ? '⏳' : '🥊'}</div>
-      <div style="font-size:15px;font-weight:600;color:var(--gray-600);margin-bottom:8px">${msg}</div>
-      ${noOdds ? `<div style="font-size:13px;color:var(--gray-400);max-width:380px;margin:0 auto;line-height:1.6">Vegas typically opens lines 1–2 weeks before fight night. Check back closer to the event — odds and EV picks will populate automatically.</div>` : ''}
-    </div>`;
+  document.getElementById('picks-list').innerHTML = '<div class="empty-state"><div style="font-size:32px;margin-bottom:1rem">' + (noOdds ? '⏳' : '🥊') + '</div><div style="font-size:15px;font-weight:600;color:var(--gray-600);margin-bottom:8px">' + msg + '</div>' + (noOdds ? '<div style="font-size:13px;color:var(--gray-400);max-width:380px;margin:0 auto;line-height:1.6">Vegas typically opens lines 1–2 weeks before fight night. Check back closer to the event — odds and EV picks will populate automatically.</div>' : '') + '</div>';
   document.getElementById('picks-label').textContent = '';
 }
 
