@@ -534,7 +534,13 @@ function applyFilters() {
   }
 }
 
-document.getElementById('fighter-search').addEventListener('input', applyFilters);
+document.getElementById('fighter-search').addEventListener('input', () => {
+  const profileView = document.getElementById('profile-view');
+  if (profileView.classList.contains('active')) {
+    showLeaderboard();
+  }
+  applyFilters();
+});
 
 // ── Leaderboard ───────────────────────────────────────────────────────────────
 function renderLeaderboard(fighters) {
