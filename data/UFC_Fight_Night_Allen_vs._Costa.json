@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Allen_vs._Costa",
   "event_date": "May 16, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-15T18:31:02.581844",
+  "generated_at": "2026-05-15T18:38:13.508575",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -13,10 +13,10 @@
   "summary": {
     "total_fights": 13,
     "high_conf": 0,
-    "medium_conf": 10,
-    "low_conf": 1,
-    "not_found": 2,
-    "ev_plays": 10
+    "medium_conf": 9,
+    "low_conf": 4,
+    "not_found": 0,
+    "ev_plays": 12
   },
   "fights": [
     {
@@ -76,32 +76,54 @@
     {
       "fighter_a": "Malcolm Wellmaker",
       "fighter_b": "Juan Diaz",
-      "not_found": true,
+      "prob_a": 54.4,
+      "prob_b": 45.6,
+      "winner": "Malcolm Wellmaker",
+      "winner_prob": 54.4,
+      "confidence": "low",
+      "elo_a": 1530.4,
+      "elo_b": 1500.0,
+      "elo_diff": 30.4,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": -282,
+      "odds_b": 228,
+      "ev_a": -26.3,
+      "ev_b": 49.6,
+      "edge_a": -19.4,
+      "edge_b": 15.1,
+      "vegas_prob_a": 73.8,
+      "vegas_prob_b": 30.5,
       "weight_class": "Bantamweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Modestas Bukauskas",
-      "fighter_b": "Justin Edwards",
-      "prob_a": 94.5,
-      "prob_b": 5.5,
+      "fighter_b": "Christian Edwards",
+      "prob_a": 57.1,
+      "prob_b": 42.9,
       "winner": "Modestas Bukauskas",
-      "winner_prob": 94.5,
-      "confidence": "medium",
+      "winner_prob": 57.1,
+      "confidence": "low",
       "elo_a": 1549.4,
-      "elo_b": 1455.6,
-      "elo_diff": 93.7,
-      "style_a": "hybrid",
-      "style_b": "hybrid",
-      "chaos": 0.532,
+      "elo_b": 1500.0,
+      "elo_diff": 49.4,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
+      "data_limited": true,
       "odds_a": -330,
       "odds_b": 265,
-      "ev_a": 23.1,
-      "ev_b": -79.9,
-      "edge_a": 17.8,
-      "edge_b": -21.9,
+      "ev_a": -25.6,
+      "ev_b": 56.6,
+      "edge_a": -19.6,
+      "edge_b": 15.5,
       "vegas_prob_a": 76.7,
       "vegas_prob_b": 27.4,
       "weight_class": "Catch Weight",
@@ -191,9 +213,30 @@
     {
       "fighter_a": "Tommy Gantt",
       "fighter_b": "Artur Minev",
-      "not_found": true,
+      "prob_a": 50.0,
+      "prob_b": 50.0,
+      "winner": "Tommy Gantt",
+      "winner_prob": 50.0,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1500.0,
+      "elo_diff": 0.0,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": -203,
+      "odds_b": 169,
+      "ev_a": -25.4,
+      "ev_b": 34.5,
+      "edge_a": -17.0,
+      "edge_b": 12.8,
+      "vegas_prob_a": 67.0,
+      "vegas_prob_b": 37.2,
       "weight_class": "Lightweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Ketlen Vieira",
@@ -265,14 +308,14 @@
       "chaos": 0.547,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -208,
-      "odds_b": 170,
-      "ev_a": -31.0,
-      "ev_b": 44.2,
-      "edge_a": -20.9,
-      "edge_b": 16.4,
-      "vegas_prob_a": 67.5,
-      "vegas_prob_b": 37.0,
+      "odds_a": -209,
+      "odds_b": 172,
+      "ev_a": -31.1,
+      "ev_b": 45.2,
+      "edge_a": -21.0,
+      "edge_b": 16.6,
+      "vegas_prob_a": 67.6,
+      "vegas_prob_b": 36.8,
       "weight_class": "Women's Strawweight",
       "not_found": false
     },
@@ -369,6 +412,15 @@
       "confidence": "low"
     },
     {
+      "fighter": "Christian Edwards",
+      "prob": 42.9,
+      "ev": 56.6,
+      "edge": 15.5,
+      "odds": 265,
+      "vegas_prob": 27.4,
+      "confidence": "low"
+    },
+    {
       "fighter": "Benardo Sopaj",
       "prob": 90.2,
       "ev": 51.6,
@@ -378,12 +430,21 @@
       "confidence": "medium"
     },
     {
+      "fighter": "Juan Diaz",
+      "prob": 45.6,
+      "ev": 49.6,
+      "edge": 15.1,
+      "odds": 228,
+      "vegas_prob": 30.5,
+      "confidence": "low"
+    },
+    {
       "fighter": "Polyana Viana",
       "prob": 53.4,
-      "ev": 44.2,
-      "edge": 16.4,
-      "odds": 170,
-      "vegas_prob": 37.0,
+      "ev": 45.2,
+      "edge": 16.6,
+      "odds": 172,
+      "vegas_prob": 36.8,
       "confidence": "medium"
     },
     {
@@ -396,31 +457,13 @@
       "confidence": "medium"
     },
     {
-      "fighter": "Ketlen Vieira",
-      "prob": 52.3,
-      "ev": 24.0,
-      "edge": 10.1,
-      "odds": 137,
-      "vegas_prob": 42.2,
-      "confidence": "medium"
-    },
-    {
-      "fighter": "Modestas Bukauskas",
-      "prob": 94.5,
-      "ev": 23.1,
-      "edge": 17.8,
-      "odds": -330,
-      "vegas_prob": 76.7,
-      "confidence": "medium"
-    },
-    {
-      "fighter": "Andre Petroski",
-      "prob": 81.6,
-      "ev": 20.8,
-      "edge": 14.1,
-      "odds": -208,
-      "vegas_prob": 67.5,
-      "confidence": "medium"
+      "fighter": "Artur Minev",
+      "prob": 50.0,
+      "ev": 34.5,
+      "edge": 12.8,
+      "odds": 169,
+      "vegas_prob": 37.2,
+      "confidence": "low"
     }
   ],
   "parlays": {
@@ -434,10 +477,6 @@
         {
           "fighter": "Dooho Choi",
           "prob": 80.1
-        },
-        {
-          "fighter": "Modestas Bukauskas",
-          "prob": 94.5
         },
         {
           "fighter": "Benardo Sopaj",
@@ -460,8 +499,8 @@
           "prob": 62.4
         }
       ],
-      "prob": 22.0,
-      "count": 7
+      "prob": 23.3,
+      "count": 6
     }
   }
 }
