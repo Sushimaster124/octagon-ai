@@ -3,7 +3,7 @@
   "event_slug": "UFC_322_Della_Maddalena_vs._Makhachev",
   "event_date": "November 15, 2025",
   "location": "New York City, New York, USA",
-  "generated_at": "2026-05-13T08:44:20.980467",
+  "generated_at": "2026-05-16T00:14:22.904636",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -14,8 +14,8 @@
     "total_fights": 14,
     "high_conf": 0,
     "medium_conf": 11,
-    "low_conf": 2,
-    "not_found": 1,
+    "low_conf": 3,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -238,9 +238,30 @@
     {
       "fighter_a": "Ethyn Ewing",
       "fighter_b": "Malcolm Wellmaker",
-      "not_found": true,
+      "prob_a": 45.6,
+      "prob_b": 54.4,
+      "winner": "Malcolm Wellmaker",
+      "winner_prob": 54.4,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1530.4,
+      "elo_diff": -30.4,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Kyle Daukaus",

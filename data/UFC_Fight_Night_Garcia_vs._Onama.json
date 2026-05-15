@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Garcia_vs._Onama",
   "event_date": "November 01, 2025",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T08:45:03.479017",
+  "generated_at": "2026-05-16T00:14:13.410056",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -13,9 +13,9 @@
   "summary": {
     "total_fights": 13,
     "high_conf": 0,
-    "medium_conf": 12,
-    "low_conf": 0,
-    "not_found": 1,
+    "medium_conf": 11,
+    "low_conf": 2,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -184,9 +184,30 @@
     {
       "fighter_a": "Billy Elekana",
       "fighter_b": "Kevin Christian",
-      "not_found": true,
+      "prob_a": 50.3,
+      "prob_b": 49.7,
+      "winner": "Billy Elekana",
+      "winner_prob": 50.3,
+      "confidence": "low",
+      "elo_a": 1502.0,
+      "elo_b": 1500.0,
+      "elo_diff": 2.0,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Timmy Cuamba",
@@ -216,21 +237,22 @@
       "not_found": false
     },
     {
-      "fighter_a": "Dashon Johnson",
+      "fighter_a": "Donte Johnson",
       "fighter_b": "Sedriques Dumas",
-      "prob_a": 94.8,
-      "prob_b": 5.2,
-      "winner": "Dashon Johnson",
-      "winner_prob": 94.8,
-      "confidence": "medium",
-      "elo_a": 1467.8,
+      "prob_a": 50.5,
+      "prob_b": 49.5,
+      "winner": "Donte Johnson",
+      "winner_prob": 50.5,
+      "confidence": "low",
+      "elo_a": 1500.0,
       "elo_b": 1496.6,
-      "elo_diff": -28.8,
-      "style_a": "hybrid",
-      "style_b": "hybrid",
+      "elo_diff": 3.4,
+      "style_a": "unknown",
+      "style_b": "unknown",
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
+      "data_limited": true,
       "odds_a": null,
       "odds_b": null,
       "ev_a": null,
@@ -385,10 +407,6 @@
           "prob": 64.5
         },
         {
-          "fighter": "Dashon Johnson",
-          "prob": 94.8
-        },
-        {
           "fighter": "Norma Dumont",
           "prob": 74.5
         },
@@ -401,8 +419,8 @@
           "prob": 85.1
         }
       ],
-      "prob": 11.7,
-      "count": 10
+      "prob": 12.3,
+      "count": 9
     }
   }
 }

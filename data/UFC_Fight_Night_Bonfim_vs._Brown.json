@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Bonfim_vs._Brown",
   "event_date": "November 08, 2025",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T08:44:56.036885",
+  "generated_at": "2026-05-16T00:14:18.166359",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -13,9 +13,9 @@
   "summary": {
     "total_fights": 12,
     "high_conf": 0,
-    "medium_conf": 10,
-    "low_conf": 1,
-    "not_found": 1,
+    "medium_conf": 9,
+    "low_conf": 3,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -238,9 +238,30 @@
     {
       "fighter_a": "Josh Hokit",
       "fighter_b": "Max Gimenis",
-      "not_found": true,
+      "prob_a": 50.0,
+      "prob_b": 50.0,
+      "winner": "Josh Hokit",
+      "winner_prob": 50.0,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1500.0,
+      "elo_diff": 0.0,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Heavyweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Denise Gomes",
@@ -297,21 +318,22 @@
       "not_found": false
     },
     {
-      "fighter_a": "Zachary Reese",
+      "fighter_a": "Zach Reese",
       "fighter_b": "Jackson McVey",
-      "prob_a": 88.1,
-      "prob_b": 11.9,
-      "winner": "Zachary Reese",
-      "winner_prob": 88.1,
-      "confidence": "medium",
-      "elo_a": 1513.7,
+      "prob_a": 52.1,
+      "prob_b": 47.9,
+      "winner": "Zach Reese",
+      "winner_prob": 52.1,
+      "confidence": "low",
+      "elo_a": 1500.0,
       "elo_b": 1485.4,
-      "elo_diff": 28.3,
-      "style_a": "grappler",
-      "style_b": "hybrid",
+      "elo_diff": 14.6,
+      "style_a": "unknown",
+      "style_b": "unknown",
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
+      "data_limited": true,
       "odds_a": null,
       "odds_b": null,
       "ev_a": null,
@@ -356,14 +378,10 @@
         {
           "fighter": "Daniel Marcos",
           "prob": 94.9
-        },
-        {
-          "fighter": "Zachary Reese",
-          "prob": 88.1
         }
       ],
-      "prob": 26.2,
-      "count": 7
+      "prob": 29.7,
+      "count": 6
     }
   }
 }

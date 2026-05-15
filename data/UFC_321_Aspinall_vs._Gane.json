@@ -3,7 +3,7 @@
   "event_slug": "UFC_321_Aspinall_vs._Gane",
   "event_date": "October 25, 2025",
   "location": "Abu Dhabi, Abu Dhabi, United Arab Emirates",
-  "generated_at": "2026-05-13T08:45:09.612436",
+  "generated_at": "2026-05-16T00:14:05.584049",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -14,9 +14,9 @@
     "total_fights": 13,
     "high_conf": 0,
     "medium_conf": 11,
-    "low_conf": 1,
-    "not_found": 1,
-    "ev_plays": 1
+    "low_conf": 2,
+    "not_found": 0,
+    "ev_plays": 2
   },
   "fights": [
     {
@@ -36,13 +36,13 @@
       "elo_clash": false,
       "title_fight": false,
       "odds_a": -198,
-      "odds_b": 18,
+      "odds_b": -17,
       "ev_a": 10.8,
-      "ev_b": -68.8,
+      "ev_b": 81.7,
       "edge_a": 7.2,
-      "edge_b": -58.3,
+      "edge_b": 11.9,
       "vegas_prob_a": 66.4,
-      "vegas_prob_b": 84.7,
+      "vegas_prob_b": 14.5,
       "weight_class": "Heavyweight",
       "not_found": false
     },
@@ -238,9 +238,30 @@
     {
       "fighter_a": "Valter Walker",
       "fighter_b": "Louie Sutherland",
-      "not_found": true,
+      "prob_a": 54.4,
+      "prob_b": 45.6,
+      "winner": "Valter Walker",
+      "winner_prob": 54.4,
+      "confidence": "low",
+      "elo_a": 1530.6,
+      "elo_b": 1500.0,
+      "elo_diff": 30.6,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Heavyweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Nathaniel Wood",
@@ -352,6 +373,15 @@
     }
   ],
   "ev_plays": [
+    {
+      "fighter": "Ciryl Gane",
+      "prob": 26.4,
+      "ev": 81.7,
+      "edge": 11.9,
+      "odds": -17,
+      "vegas_prob": 14.5,
+      "confidence": "medium"
+    },
     {
       "fighter": "Tom Aspinall",
       "prob": 73.6,

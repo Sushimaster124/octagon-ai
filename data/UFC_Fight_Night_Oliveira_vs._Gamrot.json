@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Oliveira_vs._Gamrot",
   "event_date": "October 11, 2025",
   "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
-  "generated_at": "2026-05-13T08:45:23.261919",
+  "generated_at": "2026-05-16T00:13:55.445915",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -14,8 +14,8 @@
     "total_fights": 12,
     "high_conf": 0,
     "medium_conf": 10,
-    "low_conf": 1,
-    "not_found": 1,
+    "low_conf": 2,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -238,9 +238,30 @@
     {
       "fighter_a": "Bia Mesquita",
       "fighter_b": "Irina Alekseeva",
-      "not_found": true,
+      "prob_a": 52.4,
+      "prob_b": 47.6,
+      "winner": "Bia Mesquita",
+      "winner_prob": 52.4,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1483.3,
+      "elo_diff": 16.7,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Lucas Rocha",

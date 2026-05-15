@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
   "event_date": "June 20, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T09:22:56.275346",
+  "generated_at": "2026-05-16T00:13:36.680537",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -14,8 +14,8 @@
     "total_fights": 6,
     "high_conf": 0,
     "medium_conf": 5,
-    "low_conf": 0,
-    "not_found": 1,
+    "low_conf": 1,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -157,9 +157,30 @@
     {
       "fighter_a": "Bia Mesquita",
       "fighter_b": "Melissa Mullins",
-      "not_found": true,
+      "prob_a": 50.0,
+      "prob_b": 50.0,
+      "winner": "Melissa Mullins",
+      "winner_prob": 50.0,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1500.1,
+      "elo_diff": -0.1,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
-      "title_fight": false
+      "not_found": false
     }
   ],
   "ev_plays": [],

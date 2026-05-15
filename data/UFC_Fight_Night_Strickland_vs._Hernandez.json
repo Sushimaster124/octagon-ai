@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Strickland_vs._Hernandez",
   "event_date": "February 21, 2026",
   "location": "Houston, Texas, USA",
-  "generated_at": "2026-05-13T08:43:56.146110",
+  "generated_at": "2026-05-16T00:14:43.639297",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -13,9 +13,9 @@
   "summary": {
     "total_fights": 14,
     "high_conf": 0,
-    "medium_conf": 11,
-    "low_conf": 0,
-    "not_found": 3,
+    "medium_conf": 10,
+    "low_conf": 4,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -130,26 +130,48 @@
     {
       "fighter_a": "Jacobe Smith",
       "fighter_b": "Josiah Harrell",
-      "not_found": true,
+      "prob_a": 54.6,
+      "prob_b": 45.4,
+      "winner": "Jacobe Smith",
+      "winner_prob": 54.6,
+      "confidence": "low",
+      "elo_a": 1532.2,
+      "elo_b": 1500.0,
+      "elo_diff": 32.2,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Michel Pereira",
-      "fighter_b": "Zachary Reese",
-      "prob_a": 73.3,
-      "prob_b": 26.7,
+      "fighter_b": "Zach Reese",
+      "prob_a": 57.8,
+      "prob_b": 42.2,
       "winner": "Michel Pereira",
-      "winner_prob": 73.3,
-      "confidence": "medium",
+      "winner_prob": 57.8,
+      "confidence": "low",
       "elo_a": 1554.4,
-      "elo_b": 1513.7,
-      "elo_diff": 40.6,
-      "style_a": "hybrid",
-      "style_b": "grappler",
-      "chaos": 0.542,
+      "elo_b": 1500.0,
+      "elo_diff": 54.4,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
+      "data_limited": true,
       "odds_a": null,
       "odds_b": null,
       "ev_a": null,
@@ -218,9 +240,30 @@
     {
       "fighter_a": "Alden Coria",
       "fighter_b": "Luis Gurule",
-      "not_found": true,
+      "prob_a": 52.5,
+      "prob_b": 47.5,
+      "winner": "Alden Coria",
+      "winner_prob": 52.5,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1482.5,
+      "elo_diff": 17.5,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Joselyne Edwards",
@@ -279,9 +322,30 @@
     {
       "fighter_a": "Jean-Paul Lebosnoyani",
       "fighter_b": "Phil Rowe",
-      "not_found": true,
+      "prob_a": 46.5,
+      "prob_b": 53.5,
+      "winner": "Phil Rowe",
+      "winner_prob": 53.5,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1524.6,
+      "elo_diff": -24.6,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Jordan Leavitt",
@@ -360,10 +424,6 @@
           "prob": 91.7
         },
         {
-          "fighter": "Michel Pereira",
-          "prob": 73.3
-        },
-        {
           "fighter": "Chidi Njokuani",
           "prob": 65.4
         },
@@ -388,8 +448,8 @@
           "prob": 94.9
         }
       ],
-      "prob": 14.7,
-      "count": 10
+      "prob": 20.1,
+      "count": 9
     }
   }
 }

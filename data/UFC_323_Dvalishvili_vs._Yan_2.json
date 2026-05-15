@@ -3,7 +3,7 @@
   "event_slug": "UFC_323_Dvalishvili_vs._Yan_2",
   "event_date": "December 06, 2025",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-12T18:46:58.012924",
+  "generated_at": "2026-05-16T00:15:26.603268",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -14,8 +14,8 @@
     "total_fights": 14,
     "high_conf": 0,
     "medium_conf": 11,
-    "low_conf": 2,
-    "not_found": 1,
+    "low_conf": 3,
+    "not_found": 0,
     "ev_plays": 2
   },
   "fights": [
@@ -319,9 +319,30 @@
     {
       "fighter_a": "Iwo Baraniewski",
       "fighter_b": "Ibo Aslan",
-      "not_found": true,
+      "prob_a": 50.9,
+      "prob_b": 49.1,
+      "winner": "Iwo Baraniewski",
+      "winner_prob": 50.9,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1493.7,
+      "elo_diff": 6.3,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Mansur Abdul-Malik",

@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
   "event_date": "June 06, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-13T09:22:48.027500",
+  "generated_at": "2026-05-16T00:13:46.282641",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -13,9 +13,9 @@
   "summary": {
     "total_fights": 12,
     "high_conf": 0,
-    "medium_conf": 8,
-    "low_conf": 1,
-    "not_found": 3,
+    "medium_conf": 7,
+    "low_conf": 5,
+    "not_found": 0,
     "ev_plays": 0
   },
   "fights": [
@@ -49,26 +49,48 @@
     {
       "fighter_a": "Iwo Baraniewski",
       "fighter_b": "Billy Elekana",
-      "not_found": true,
-      "weight_class": "Light Heavyweight",
-      "title_fight": false
-    },
-    {
-      "fighter_a": "Manuel Rodriguez",
-      "fighter_b": "Matt Schnell",
-      "prob_a": 68.3,
-      "prob_b": 31.7,
-      "winner": "Manuel Rodriguez",
-      "winner_prob": 68.3,
-      "confidence": "medium",
-      "elo_a": 1484.0,
-      "elo_b": 1493.4,
-      "elo_diff": -9.4,
-      "style_a": "wrestler",
-      "style_b": "hybrid",
-      "chaos": 0.532,
+      "prob_a": 49.7,
+      "prob_b": 50.3,
+      "winner": "Billy Elekana",
+      "winner_prob": 50.3,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1502.0,
+      "elo_diff": -2.0,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
+      "weight_class": "Light Heavyweight",
+      "not_found": false
+    },
+    {
+      "fighter_a": "Imanol Rodriguez",
+      "fighter_b": "Matt Schnell",
+      "prob_a": 51.0,
+      "prob_b": 49.0,
+      "winner": "Imanol Rodriguez",
+      "winner_prob": 51.0,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1493.4,
+      "elo_diff": 6.6,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
       "odds_a": null,
       "odds_b": null,
       "ev_a": null,
@@ -110,9 +132,30 @@
     {
       "fighter_a": "Jeisla Chaves",
       "fighter_b": "Yuneisy Duben",
-      "not_found": true,
+      "prob_a": 52.4,
+      "prob_b": 47.6,
+      "winner": "Jeisla Chaves",
+      "winner_prob": 52.4,
+      "confidence": "low",
+      "elo_a": 1500.0,
+      "elo_b": 1483.2,
+      "elo_diff": 16.8,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Brendan Allen",
@@ -171,9 +214,30 @@
     {
       "fighter_a": "Marcus McGhee",
       "fighter_b": "Jakub Wiklacz",
-      "not_found": true,
+      "prob_a": 56.9,
+      "prob_b": 43.1,
+      "winner": "Marcus McGhee",
+      "winner_prob": 56.9,
+      "confidence": "low",
+      "elo_a": 1547.9,
+      "elo_b": 1500.0,
+      "elo_diff": 47.9,
+      "style_a": "unknown",
+      "style_b": "unknown",
+      "chaos": 0.5,
+      "elo_clash": false,
+      "title_fight": false,
+      "data_limited": true,
+      "odds_a": null,
+      "odds_b": null,
+      "ev_a": null,
+      "ev_b": null,
+      "edge_a": null,
+      "edge_b": null,
+      "vegas_prob_a": null,
+      "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "title_fight": false
+      "not_found": false
     },
     {
       "fighter_a": "Jordan Leavitt",
@@ -294,10 +358,6 @@
     "high_and_med": {
       "legs": [
         {
-          "fighter": "Manuel Rodriguez",
-          "prob": 68.3
-        },
-        {
           "fighter": "Bruno Silva",
           "prob": 66.4
         },
@@ -322,8 +382,8 @@
           "prob": 94.3
         }
       ],
-      "prob": 14.7,
-      "count": 7
+      "prob": 21.6,
+      "count": 6
     }
   }
 }

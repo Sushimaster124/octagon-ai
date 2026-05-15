@@ -1,391 +1,16 @@
 [
   {
-    "slug": "UFC_Fight_Night_Allen_vs._Costa",
-    "name": "UFC Fight Night: Allen vs. Costa",
-    "date": "May 16, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-15T18:38:13.508575",
+    "slug": "UFC_328_Chimaev_vs._Strickland",
+    "name": "UFC 328: Chimaev vs. Strickland",
+    "date": "May 09, 2026",
+    "location": "Newark, New Jersey, USA",
+    "generated_at": "2026-05-16T00:15:53.998512",
     "summary": {
       "total_fights": 13,
       "high_conf": 0,
-      "medium_conf": 9,
-      "low_conf": 4,
+      "medium_conf": 11,
+      "low_conf": 2,
       "not_found": 0,
-      "ev_plays": 12
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Fiziev_vs._Torres",
-    "name": "UFC Fight Night: Fiziev vs. Torres",
-    "date": "June 27, 2026",
-    "location": "Baku, Azerbaijan",
-    "generated_at": "2026-05-13T09:23:00.525457",
-    "summary": {
-      "total_fights": 6,
-      "high_conf": 0,
-      "medium_conf": 6,
-      "low_conf": 0,
-      "not_found": 0,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
-    "name": "UFC Fight Night: Kape vs. Horiguchi",
-    "date": "June 20, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T09:22:56.275346",
-    "summary": {
-      "total_fights": 6,
-      "high_conf": 0,
-      "medium_conf": 5,
-      "low_conf": 0,
-      "not_found": 1,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Freedom_250",
-    "name": "UFC Freedom 250",
-    "date": "June 14, 2026",
-    "location": "Washington, DC, USA",
-    "generated_at": "2026-05-13T09:22:52.847745",
-    "summary": {
-      "total_fights": 7,
-      "high_conf": 0,
-      "medium_conf": 6,
-      "low_conf": 0,
-      "not_found": 1,
-      "ev_plays": 5
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
-    "name": "UFC Fight Night: Muhammad vs. Bonfim",
-    "date": "June 06, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T09:22:48.027500",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 1,
-      "not_found": 3,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
-    "name": "UFC Fight Night: Song vs. Figueiredo",
-    "date": "May 30, 2026",
-    "location": "Macau, China",
-    "generated_at": "2026-05-13T09:22:43.680986",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 1,
-      "not_found": 4,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Oliveira_vs._Gamrot",
-    "name": "UFC Fight Night: Oliveira vs. Gamrot",
-    "date": "October 11, 2025",
-    "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
-    "generated_at": "2026-05-13T08:45:23.261919",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 10,
-      "low_conf": 1,
-      "not_found": 1,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_De_Ridder_vs._Allen",
-    "name": "UFC Fight Night: De Ridder vs. Allen",
-    "date": "October 18, 2025",
-    "location": "Vancouver, British Columbia, Canada",
-    "generated_at": "2026-05-13T08:45:17.151310",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 11,
-      "low_conf": 0,
-      "not_found": 2,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_321_Aspinall_vs._Gane",
-    "name": "UFC 321: Aspinall vs. Gane",
-    "date": "October 25, 2025",
-    "location": "Abu Dhabi, Abu Dhabi, United Arab Emirates",
-    "generated_at": "2026-05-13T08:45:09.612436",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 11,
-      "low_conf": 1,
-      "not_found": 1,
-      "ev_plays": 1
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Garcia_vs._Onama",
-    "name": "UFC Fight Night: Garcia vs. Onama",
-    "date": "November 01, 2025",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T08:45:03.479017",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 12,
-      "low_conf": 0,
-      "not_found": 1,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Bonfim_vs._Brown",
-    "name": "UFC Fight Night: Bonfim vs. Brown",
-    "date": "November 08, 2025",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T08:44:56.036885",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 10,
-      "low_conf": 1,
-      "not_found": 1,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_322_Della_Maddalena_vs._Makhachev",
-    "name": "UFC 322: Della Maddalena vs. Makhachev",
-    "date": "November 15, 2025",
-    "location": "New York City, New York, USA",
-    "generated_at": "2026-05-13T08:44:20.980467",
-    "summary": {
-      "total_fights": 14,
-      "high_conf": 0,
-      "medium_conf": 11,
-      "low_conf": 2,
-      "not_found": 1,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Tsarukyan_vs._Hooker",
-    "name": "UFC Fight Night: Tsarukyan vs. Hooker",
-    "date": "November 22, 2025",
-    "location": "Doha, Qatar",
-    "generated_at": "2026-05-13T08:44:15.704375",
-    "summary": {
-      "total_fights": 14,
-      "high_conf": 1,
-      "medium_conf": 6,
-      "low_conf": 2,
-      "not_found": 5,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Royval_vs._Kape",
-    "name": "UFC Fight Night: Royval vs. Kape",
-    "date": "December 13, 2025",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T08:44:09.675314",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 6,
-      "low_conf": 0,
-      "not_found": 6,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Bautista_vs._Oliveira",
-    "name": "UFC Fight Night: Bautista vs. Oliveira",
-    "date": "February 07, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T08:44:03.553140",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 1,
-      "medium_conf": 7,
-      "low_conf": 2,
-      "not_found": 3,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Strickland_vs._Hernandez",
-    "name": "UFC Fight Night: Strickland vs. Hernandez",
-    "date": "February 21, 2026",
-    "location": "Houston, Texas, USA",
-    "generated_at": "2026-05-13T08:43:56.146110",
-    "summary": {
-      "total_fights": 14,
-      "high_conf": 0,
-      "medium_conf": 11,
-      "low_conf": 0,
-      "not_found": 3,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Emmett_vs._Vallejos",
-    "name": "UFC Fight Night: Emmett vs. Vallejos",
-    "date": "March 14, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T08:43:07.995343",
-    "summary": {
-      "total_fights": 14,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 1,
-      "not_found": 5,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Evloev_vs._Murphy",
-    "name": "UFC Fight Night: Evloev vs. Murphy",
-    "date": "March 21, 2026",
-    "location": "London, England, United Kingdom",
-    "generated_at": "2026-05-13T08:43:02.568737",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 4,
-      "low_conf": 0,
-      "not_found": 9,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Adesanya_vs._Pyfer",
-    "name": "UFC Fight Night: Adesanya vs. Pyfer",
-    "date": "March 28, 2026",
-    "location": "Seattle, Washington, USA",
-    "generated_at": "2026-05-13T08:42:57.083678",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 1,
-      "medium_conf": 6,
-      "low_conf": 3,
-      "not_found": 3,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Moicano_vs._Duncan",
-    "name": "UFC Fight Night: Moicano vs. Duncan",
-    "date": "April 04, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T08:42:52.117066",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 0,
-      "not_found": 5,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Burns_vs._Malott",
-    "name": "UFC Fight Night: Burns vs. Malott",
-    "date": "April 18, 2026",
-    "location": "Winnipeg, Manitoba, Canada",
-    "generated_at": "2026-05-13T08:42:45.703419",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 6,
-      "low_conf": 0,
-      "not_found": 6,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Della_Maddalena_vs._Prates",
-    "name": "UFC Fight Night: Della Maddalena vs. Prates",
-    "date": "May 02, 2026",
-    "location": "Perth, Western Australia, Australia",
-    "generated_at": "2026-05-13T08:41:52.900114",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 5,
-      "low_conf": 1,
-      "not_found": 7,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_323_Dvalishvili_vs._Yan_2",
-    "name": "UFC 323: Dvalishvili vs. Yan 2",
-    "date": "December 06, 2025",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-12T18:46:58.012924",
-    "summary": {
-      "total_fights": 14,
-      "high_conf": 0,
-      "medium_conf": 11,
-      "low_conf": 2,
-      "not_found": 1,
-      "ev_plays": 2
-    }
-  },
-  {
-    "slug": "UFC_324_Gaethje_vs._Pimblett",
-    "name": "UFC 324: Gaethje vs. Pimblett",
-    "date": "January 24, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-12T18:46:53.518552",
-    "summary": {
-      "total_fights": 11,
-      "high_conf": 0,
-      "medium_conf": 9,
-      "low_conf": 0,
-      "not_found": 2,
-      "ev_plays": 1
-    }
-  },
-  {
-    "slug": "UFC_325_Volkanovski_vs._Lopes_2",
-    "name": "UFC 325: Volkanovski vs. Lopes 2",
-    "date": "January 31, 2026",
-    "location": "Sydney, New South Wales, Australia",
-    "generated_at": "2026-05-12T18:46:48.412370",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 1,
-      "not_found": 4,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_326_Holloway_vs._Oliveira_2",
-    "name": "UFC 326: Holloway vs. Oliveira 2",
-    "date": "March 07, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-12T18:46:43.233205",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 10,
-      "low_conf": 1,
-      "not_found": 1,
       "ev_plays": 0
     }
   },
@@ -394,29 +19,404 @@
     "name": "UFC 327: Prochazka vs. Ulberg",
     "date": "April 11, 2026",
     "location": "Miami, Florida, USA",
-    "generated_at": "2026-05-12T18:46:38.333258",
+    "generated_at": "2026-05-16T00:15:49.005358",
     "summary": {
       "total_fights": 12,
       "high_conf": 0,
       "medium_conf": 7,
-      "low_conf": 3,
-      "not_found": 2,
+      "low_conf": 5,
+      "not_found": 0,
       "ev_plays": 2
     }
   },
   {
-    "slug": "UFC_328_Chimaev_vs._Strickland",
-    "name": "UFC 328: Chimaev vs. Strickland",
-    "date": "May 09, 2026",
-    "location": "Newark, New Jersey, USA",
-    "generated_at": "2026-05-12T18:46:33.729606",
+    "slug": "UFC_326_Holloway_vs._Oliveira_2",
+    "name": "UFC 326: Holloway vs. Oliveira 2",
+    "date": "March 07, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:15:44.631776",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 3,
+      "not_found": 0,
+      "ev_plays": 2
+    }
+  },
+  {
+    "slug": "UFC_325_Volkanovski_vs._Lopes_2",
+    "name": "UFC 325: Volkanovski vs. Lopes 2",
+    "date": "January 31, 2026",
+    "location": "Sydney, New South Wales, Australia",
+    "generated_at": "2026-05-16T00:15:38.062134",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 8,
+      "low_conf": 5,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_324_Gaethje_vs._Pimblett",
+    "name": "UFC 324: Gaethje vs. Pimblett",
+    "date": "January 24, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:15:32.405661",
+    "summary": {
+      "total_fights": 11,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 2,
+      "not_found": 0,
+      "ev_plays": 1
+    }
+  },
+  {
+    "slug": "UFC_323_Dvalishvili_vs._Yan_2",
+    "name": "UFC 323: Dvalishvili vs. Yan 2",
+    "date": "December 06, 2025",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:15:26.603268",
+    "summary": {
+      "total_fights": 14,
+      "high_conf": 0,
+      "medium_conf": 11,
+      "low_conf": 3,
+      "not_found": 0,
+      "ev_plays": 2
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Della_Maddalena_vs._Prates",
+    "name": "UFC Fight Night: Della Maddalena vs. Prates",
+    "date": "May 02, 2026",
+    "location": "Perth, Western Australia, Australia",
+    "generated_at": "2026-05-16T00:15:21.083190",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 5,
+      "low_conf": 8,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Burns_vs._Malott",
+    "name": "UFC Fight Night: Burns vs. Malott",
+    "date": "April 18, 2026",
+    "location": "Winnipeg, Manitoba, Canada",
+    "generated_at": "2026-05-16T00:15:13.911637",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 6,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Moicano_vs._Duncan",
+    "name": "UFC Fight Night: Moicano vs. Duncan",
+    "date": "April 04, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:15:09.272057",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 7,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Adesanya_vs._Pyfer",
+    "name": "UFC Fight Night: Adesanya vs. Pyfer",
+    "date": "March 28, 2026",
+    "location": "Seattle, Washington, USA",
+    "generated_at": "2026-05-16T00:15:00.567764",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 1,
+      "medium_conf": 6,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Evloev_vs._Murphy",
+    "name": "UFC Fight Night: Evloev vs. Murphy",
+    "date": "March 21, 2026",
+    "location": "London, England, United Kingdom",
+    "generated_at": "2026-05-16T00:14:55.619246",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 4,
+      "low_conf": 9,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Emmett_vs._Vallejos",
+    "name": "UFC Fight Night: Emmett vs. Vallejos",
+    "date": "March 14, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:14:51.250012",
+    "summary": {
+      "total_fights": 14,
+      "high_conf": 0,
+      "medium_conf": 8,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Strickland_vs._Hernandez",
+    "name": "UFC Fight Night: Strickland vs. Hernandez",
+    "date": "February 21, 2026",
+    "location": "Houston, Texas, USA",
+    "generated_at": "2026-05-16T00:14:43.639297",
+    "summary": {
+      "total_fights": 14,
+      "high_conf": 0,
+      "medium_conf": 10,
+      "low_conf": 4,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Bautista_vs._Oliveira",
+    "name": "UFC Fight Night: Bautista vs. Oliveira",
+    "date": "February 07, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:14:38.546298",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 1,
+      "medium_conf": 7,
+      "low_conf": 5,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Royval_vs._Kape",
+    "name": "UFC Fight Night: Royval vs. Kape",
+    "date": "December 13, 2025",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:14:32.482172",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 6,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Tsarukyan_vs._Hooker",
+    "name": "UFC Fight Night: Tsarukyan vs. Hooker",
+    "date": "November 22, 2025",
+    "location": "Doha, Qatar",
+    "generated_at": "2026-05-16T00:14:27.394048",
+    "summary": {
+      "total_fights": 14,
+      "high_conf": 1,
+      "medium_conf": 6,
+      "low_conf": 7,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_322_Della_Maddalena_vs._Makhachev",
+    "name": "UFC 322: Della Maddalena vs. Makhachev",
+    "date": "November 15, 2025",
+    "location": "New York City, New York, USA",
+    "generated_at": "2026-05-16T00:14:22.904636",
+    "summary": {
+      "total_fights": 14,
+      "high_conf": 0,
+      "medium_conf": 11,
+      "low_conf": 3,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Bonfim_vs._Brown",
+    "name": "UFC Fight Night: Bonfim vs. Brown",
+    "date": "November 08, 2025",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:14:18.166359",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 3,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Garcia_vs._Onama",
+    "name": "UFC Fight Night: Garcia vs. Onama",
+    "date": "November 01, 2025",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:14:13.410056",
     "summary": {
       "total_fights": 13,
       "high_conf": 0,
       "medium_conf": 11,
-      "low_conf": 1,
-      "not_found": 1,
+      "low_conf": 2,
+      "not_found": 0,
       "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_321_Aspinall_vs._Gane",
+    "name": "UFC 321: Aspinall vs. Gane",
+    "date": "October 25, 2025",
+    "location": "Abu Dhabi, Abu Dhabi, United Arab Emirates",
+    "generated_at": "2026-05-16T00:14:05.584049",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 11,
+      "low_conf": 2,
+      "not_found": 0,
+      "ev_plays": 2
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_De_Ridder_vs._Allen",
+    "name": "UFC Fight Night: De Ridder vs. Allen",
+    "date": "October 18, 2025",
+    "location": "Vancouver, British Columbia, Canada",
+    "generated_at": "2026-05-16T00:14:00.817063",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 11,
+      "low_conf": 2,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Oliveira_vs._Gamrot",
+    "name": "UFC Fight Night: Oliveira vs. Gamrot",
+    "date": "October 11, 2025",
+    "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
+    "generated_at": "2026-05-16T00:13:55.445915",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 10,
+      "low_conf": 2,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
+    "name": "UFC Fight Night: Song vs. Figueiredo",
+    "date": "May 30, 2026",
+    "location": "Macau, China",
+    "generated_at": "2026-05-16T00:13:51.031516",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 8,
+      "low_conf": 5,
+      "not_found": 0,
+      "ev_plays": 9
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
+    "name": "UFC Fight Night: Muhammad vs. Bonfim",
+    "date": "June 06, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:13:46.282641",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 7,
+      "low_conf": 5,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Freedom_250",
+    "name": "UFC Freedom 250",
+    "date": "June 14, 2026",
+    "location": "Washington, DC, USA",
+    "generated_at": "2026-05-16T00:13:40.000899",
+    "summary": {
+      "total_fights": 7,
+      "high_conf": 0,
+      "medium_conf": 6,
+      "low_conf": 1,
+      "not_found": 0,
+      "ev_plays": 6
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
+    "name": "UFC Fight Night: Kape vs. Horiguchi",
+    "date": "June 20, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:13:36.680537",
+    "summary": {
+      "total_fights": 6,
+      "high_conf": 0,
+      "medium_conf": 5,
+      "low_conf": 1,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Fiziev_vs._Torres",
+    "name": "UFC Fight Night: Fiziev vs. Torres",
+    "date": "June 27, 2026",
+    "location": "Baku, Azerbaijan",
+    "generated_at": "2026-05-16T00:13:33.200774",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 3,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Allen_vs._Costa",
+    "name": "UFC Fight Night: Allen vs. Costa",
+    "date": "May 16, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T00:13:29.353190",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 4,
+      "not_found": 0,
+      "ev_plays": 13
     }
   }
 ]
