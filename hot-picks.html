@@ -433,7 +433,7 @@
 
         <div class="sidebar-alloc">
           <input class="sidebar-budget" type="number" id="budget-input" placeholder="Your budget e.g. $500" min="1" />
-          <button class="sidebar-alloc-btn" onclick="runAllocator()">Allocate</button>
+          <button class="sidebar-alloc-btn" id="sidebar-alloc-btn" onclick="runAllocator()">Allocate</button>
         </div>
 
         <div class="alloc-result" id="alloc-result">
@@ -497,7 +497,7 @@
   </div>
   <div class="sheet-alloc">
     <input class="sheet-budget" type="number" id="sheet-budget-input" placeholder="Your budget e.g. $500" min="1" />
-    <button class="sheet-alloc-btn" onclick="runAllocatorMobile()">Allocate</button>
+    <button class="sheet-alloc-btn" id="sheet-alloc-btn" onclick="runAllocatorMobile()">Allocate</button>
   </div>
 </div>
 
@@ -666,6 +666,9 @@ function setMode(mode){
   updateBasket();
   document.getElementById('alloc-result').classList.remove('vis');
   document.getElementById('sheet-result').classList.remove('vis');
+  const label=mode==='parlay'?'Calculate':'Allocate';
+  document.getElementById('sidebar-alloc-btn').textContent=label;
+  document.getElementById('sheet-alloc-btn').textContent=label;
 }
 
 function updateBasket(){
