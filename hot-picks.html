@@ -544,10 +544,10 @@ function updateOddsTimestamp(data){
   const dot=document.getElementById('odds-dot');
   const txt=document.getElementById('odds-ts-text');
   if(!dot||!txt)return;
-  const updated=data.odds_updated||data.event_date||null;
+  const updated=data.generated_at||data.odds_updated||null;
   if(!updated){txt.textContent='Odds freshness unknown';dot.className='odds-dot stale';return;}
   try{
-    const t=new Date(updated.includes('T')?updated:updated+'T12:00:00');
+    const t=new Date(updated);
     const diffH=Math.round((Date.now()-t)/(1000*60*60));
     if(diffH<1){txt.textContent='Odds updated just now';dot.className='odds-dot';}
     else if(diffH<24){txt.textContent='Odds updated '+diffH+'h ago';dot.className='odds-dot';}
