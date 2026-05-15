@@ -185,8 +185,8 @@
 
   /* ── Tablet: collapse sidebar below content ── */
   @media(max-width:900px) {
-    .page-body { grid-template-columns:1fr; }
-    .sidebar { position:static; order:2; margin-top:1.5rem; }
+    .page-body { flex-direction:column; align-items:center; }
+    .sidebar { position:static; width:100%; max-width:760px; }
     .sidebar-card { border-width:2px; }
   }
 
