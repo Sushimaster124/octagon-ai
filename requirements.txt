@@ -6,7 +6,7 @@ optuna==3.3.0
 shap==0.42.1
 matplotlib==3.7.2
 seaborn==0.12.2
-beautifulsoup4==4.12.2
+beautifulsoup4>=4.12.3
 requests==2.31.0
 rapidfuzz==3.2.0
 ufcscraper==1.1.0
