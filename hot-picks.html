@@ -203,7 +203,7 @@
     .hero { padding:1.5rem 1rem; }
     .hero h1 { font-size:24px; }
     .page-body { padding:1rem; padding-bottom:80px; }
-    .stats-bar { grid-template-columns:1fr 1fr; }
+    .stats-bar { grid-template-columns:1fr 1fr 1fr; }
     .sidebar { display:none; }
 
     /* Floating bottom bar */
@@ -225,12 +225,12 @@
     .sheet { position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); border-radius:16px 16px 0 0; z-index:500; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height:85vh; display:flex; flex-direction:column; }
     .sheet.open { transform:translateY(0); }
 
-    .sheet-handle-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 10px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; }
-    .sheet-handle { width:36px; height:4px; background:rgba(255,255,255,0.2); border-radius:2px; margin:0 auto 0 0; }
-    .sheet-toggle { display:flex; gap:3px; background:rgba(255,255,255,0.1); border-radius:20px; padding:3px; }
-    .shtoggle { font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
+    .sheet-handle-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 12px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; gap:12px; }
+    .sheet-handle { width:36px; height:4px; background:rgba(255,255,255,0.2); border-radius:2px; flex-shrink:0; }
+    .sheet-toggle { display:flex; gap:4px; background:rgba(255,255,255,0.1); border-radius:20px; padding:4px; flex:1; }
+    .shtoggle { flex:1; text-align:center; font-size:14px; font-weight:600; padding:8px 0; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
     .shtoggle.active { background:#E8E6DF; color:var(--gray-900); }
-    .sheet-close { background:none; border:none; color:var(--gray-400); font-size:20px; cursor:pointer; padding:0; line-height:1; }
+    .sheet-close { background:none; border:none; color:var(--gray-400); font-size:22px; cursor:pointer; padding:0; line-height:1; flex-shrink:0; }
 
     .sheet-body { overflow-y:auto; flex:1; }
 
