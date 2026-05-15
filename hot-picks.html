@@ -169,8 +169,8 @@
   .ev-neg { color:var(--red)!important; }
   .fight-unavail { padding:20px; text-align:center; color:var(--gray-400); font-size:13px; display:flex; align-items:center; justify-content:center; gap:8px; }
 
-  .odds-edit-btn { margin-top:5px; padding:4px 10px; font-size:10px; font-weight:600; color:var(--blue-dark); background:var(--blue-light); border:1px solid rgba(55,138,221,0.2); border-radius:4px; cursor:pointer; font-family:var(--font); display:block; }
-  .odds-edit-btn:hover { background:#CCDFF8; }
+  .odds-edit-btn { margin-left:6px; padding:2px 7px; font-size:10px; font-weight:600; color:var(--gray-600); background:var(--gray-100); border:1px solid var(--gray-200); border-radius:20px; cursor:pointer; font-family:var(--font); display:inline-flex; align-items:center; vertical-align:middle; }
+  .odds-edit-btn:hover { background:var(--gray-200); }
   .odds-input-wrap { margin-top:4px; display:flex; flex-direction:column; gap:4px; }
   .fstat-odds-input { width:80px; height:28px; border:1.5px solid var(--blue); border-radius:4px; padding:0 6px; font-size:13px; font-weight:600; font-family:var(--font); outline:none; background:white; color:var(--gray-900); }
   .fstat-reset { font-size:10px; color:var(--blue); cursor:pointer; background:none; border:none; font-family:var(--font); padding:0; text-decoration:underline; }
@@ -339,7 +339,8 @@
     .header-right{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .hamburger span{background:#E8E6DF;}
     .sidebar-hint{background:#1A1A18;}
-    .odds-edit-btn{background:rgba(55,138,221,0.15);color:#85B7EB;border-color:rgba(55,138,221,0.2);}
+    .odds-edit-btn{background:#2C2C2A;color:#888780;border-color:rgba(255,255,255,0.08);}
+    .odds-edit-btn:hover{background:#3A3A38;}
     .fstat-odds-input{background:#111110;border-color:var(--blue);color:#E8E6DF;}
     .fstat-reset{color:#85B7EB;}
   }
@@ -668,8 +669,8 @@ function chipHTML(f,idx){
       +'<div class="fighter-fav">'+fav+'</div>'
       +'<div class="fighter-stats">'
       +'<div><div class="fstat-label">Octagon AI prob</div><div class="fstat-val">'+(prob!==null?prob+'%':'—')+'</div></div>'
-      +'<div><div class="fstat-label">Vegas odds</div><div class="fstat-val" id="ov-'+idx+'-'+s+'">'+odds+'</div>'
-      +'<button class="odds-edit-btn" onclick="event.stopPropagation();startEditOdds('+idx+',\''+s+'\')">Edit odds</button></div>'
+      +'<div><div class="fstat-label">Vegas odds</div><div style="display:flex;align-items:center;flex-wrap:wrap;gap:2px;"><div class="fstat-val" id="ov-'+idx+'-'+s+'">'+odds+'</div>'
+      +'<button class="odds-edit-btn" onclick="event.stopPropagation();startEditOdds('+idx+',\''+s+'\')">edit</button></div></div>'
       +'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'">'+ev+'</div></div>'
       +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'">'+edge+'</div></div>'
       +'</div></div>';
