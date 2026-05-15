@@ -857,7 +857,7 @@ function buildParlayResult(picks,budget){
 function runAutoPick(){
   const candidates=[];
   currentFights.forEach((f,idx)=>{
-    if(f.not_found||(f.odds_a===null&&f.odds_b===null))return;
+    if(f.not_found||f.data_limited||(f.odds_a===null&&f.odds_b===null))return;
     [['a',f.fighter_a,f.prob_a,f.ev_a,f.odds_a,f.edge_a,f.fighter_b],['b',f.fighter_b,f.prob_b,f.ev_b,f.odds_b,f.edge_b,f.fighter_a]].forEach(([side,name,prob,ev,odds,edge,opp])=>{
       if(prob===null||prob===undefined)return;
       candidates.push({fightIdx:idx,side,fighter:name,opponent:opp,prob,ev:ev||0,odds,edge:edge||0,confidence:f.confidence,score:(prob/100)*(ev||0)});
