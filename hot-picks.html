@@ -647,8 +647,11 @@ function chipHTML(f,idx){
   const pos=idx===0?'Main event':idx===1?'Co-main':'Fight '+(idx+1);
   const conf=f.confidence||'low';
   const confLabel=conf==='high'?'High confidence':conf==='medium'?'Medium confidence':'Low confidence';
-  if(f.not_found||(f.odds_a===null&&f.odds_b===null)){
-    return '<div class="fight-chip"><div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div><div class="fight-unavail"><span style="font-size:18px">⏳</span> Fight data unavailable — odds not yet posted</div></div>';
+  if(f.not_found){
+    return '<div class="fight-chip"><div class="fight-chip-header"><span class="fight-chip-conf low">'+pos+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div><div class="fight-unavail" style="flex-direction:column;gap:6px;padding:16px 20px;text-align:left;"><div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--amber-dark)"><span>⚠️</span>'+(f.fighter_a||'Fighter A')+' vs '+(f.fighter_b||'Fighter B')+'</div><div style="font-size:12px;color:var(--gray-400);line-height:1.5;">Prediction unavailable — one or both fighters are new to our dataset or not yet in our training data. This fight cannot be modelled with confidence. Treat any odds you see here as unverified.</div></div></div>';
+  }
+  if(f.odds_a===null&&f.odds_b===null&&!f.data_limited){
+    return '<div class="fight-chip"><div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div><div class="fight-unavail"><span style="font-size:18px">⏳</span> Odds not yet posted</div></div>';
   }
   const kA=idx+'-a',kB=idx+'-b';
   const selA=selectedPicks[kA]?' sel':'',selB=selectedPicks[kB]?' sel':'';
@@ -677,6 +680,7 @@ function chipHTML(f,idx){
   }
   return '<div class="fight-chip">'
     +'<div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
+    +(f.data_limited?'<div style="background:var(--amber-light);border-bottom:1px solid rgba(186,117,23,0.2);padding:8px 14px;font-size:11px;color:var(--amber-dark);line-height:1.5;"><strong>⚠️ Limited data</strong> — one fighter is new to our dataset. This prediction is Elo-based only, not a full model prediction. Treat it with caution.</div>':'')
     +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a')+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b')+'</div></div>';
 }
 
