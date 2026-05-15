@@ -17,154 +17,269 @@
     --shadow-md:0 4px 12px rgba(0,0,0,0.08);
     --radius-sm:6px;--radius-md:10px;--radius-lg:14px;
     --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  }
-  body{font-family:var(--font);background:var(--gray-50);color:var(--gray-900);}
-  header{background:white;border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-  .logo{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:600;color:var(--gray-900);text-decoration:none;}
-  .logo-icon{width:28px;height:28px;background:var(--red);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;font-weight:700;}
-  .header-right{display:flex;align-items:center;gap:0.6rem;}
-  .hamburger{display:none;flex-shrink:0;}
-  .nav-link{font-size:12px;color:var(--gray-600);text-decoration:none;padding:5px 9px;border-radius:var(--radius-sm);border:1px solid var(--border);background:white;display:inline-flex;align-items:center;gap:5px;}
-  .nav-link:hover{background:var(--gray-50);}
-  .nav-link.active{background:var(--gray-900);color:white;border-color:var(--gray-900);}
-  .accuracy-pill{background:var(--green-light);color:var(--green);font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;}
-  .hero{background:white;border-bottom:1px solid var(--border);padding:2.5rem 2rem;text-align:center;}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:6px;background:var(--red-light);color:var(--red-dark);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;}
-  .live-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.5s infinite;}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-  .hero h1{font-size:30px;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em;}
-  .hero p{font-size:15px;color:var(--gray-600);}
-  .stats-bar{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border);background:white;}
-  .stat-item{padding:1.25rem 2rem;border-right:1px solid var(--border);text-align:center;}
-  .stat-item:last-child{border-right:none;}
-  .stat-value{font-size:28px;font-weight:700;letter-spacing:-0.02em;}
-  .stat-label{font-size:12px;color:var(--gray-400);margin-top:2px;text-transform:uppercase;letter-spacing:0.04em;}
-  .main{max-width:760px;margin:0 auto;padding:2rem;}
-  .event-bar{background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 18px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);}
-  .event-bar-label{font-size:11px;color:var(--gray-400);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;}
-  .event-bar-name{font-size:14px;font-weight:600;color:var(--gray-900);}
-  .custom-select{position:relative;}
-  .custom-select-trigger{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 12px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);cursor:pointer;font-size:13px;font-weight:500;font-family:var(--font);color:var(--gray-900);user-select:none;transition:border-color 0.15s;min-width:100px;}
-  .custom-select-trigger:hover{border-color:var(--gray-400);}
-  .custom-select-trigger.open{border-color:var(--red);}
-  .custom-select-trigger-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0;}
-  .custom-select-chevron{flex-shrink:0;margin-left:8px;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--gray-400);transition:transform 0.15s;}
-  .custom-select-trigger.open .custom-select-chevron{transform:rotate(180deg);}
-  .custom-select-menu{display:none;position:absolute;top:calc(100% + 4px);right:0;left:auto;min-width:280px;background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.1);z-index:200;max-height:240px;overflow-y:auto;}
-  .custom-select-menu.open{display:block;}
-  .custom-select-option{padding:9px 12px;font-size:13px;font-family:var(--font);font-weight:500;color:var(--gray-900);cursor:pointer;transition:background 0.1s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .custom-select-option:hover{background:var(--gray-50);}
-  .custom-select-option.selected{color:var(--red);font-weight:600;background:var(--red-light);}
-  .section-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-  .section-label{font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;}
-  .auto-pick-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--amber-light);color:var(--amber-dark);border:1px solid rgba(186,117,23,0.2);cursor:pointer;font-family:var(--font);transition:background 0.15s;}
-  .auto-pick-btn:hover{background:#F5E4C5;}
-  .fight-chip{background:white;border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow-sm);}
-  .fight-chip-header{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid var(--border);background:var(--gray-50);}
-  .fight-chip-conf{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;}
-  .fight-chip-conf.high{color:var(--green-dark);}
-  .fight-chip-conf.medium{color:var(--amber-dark);}
-  .fight-chip-conf.low{color:var(--gray-600);}
-  .fight-chip-weight{font-size:11px;color:var(--gray-400);}
-  .fight-chip-body{display:grid;grid-template-columns:1fr 1fr;}
-  .fighter-side{padding:14px;cursor:pointer;transition:background 0.12s;position:relative;}
-  .fighter-side:first-child{border-right:1px solid var(--border);}
-  .fighter-side:hover{background:var(--gray-50);}
-  .fighter-side.sel{background:var(--green-light);}
-  .fighter-side.sel:hover{background:#D2EFE5;}
-  .fighter-check{position:absolute;top:8px;right:8px;width:18px;height:18px;border-radius:50%;background:var(--green);display:none;align-items:center;justify-content:center;}
-  .fighter-check svg{width:10px;height:10px;stroke:white;stroke-width:2.5;fill:none;}
-  .fighter-side.sel .fighter-check{display:flex;}
-  .fighter-name{font-size:14px;font-weight:600;color:var(--gray-900);margin-bottom:2px;padding-right:24px;}
-  .fighter-side.sel .fighter-name{color:var(--green-dark);}
-  .fighter-fav{font-size:10px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;min-height:14px;}
-  .fighter-side.sel .fighter-fav{color:var(--green);}
-  .fighter-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;}
-  .fstat-label{font-size:10px;color:var(--gray-400);margin-bottom:1px;}
-  .fighter-side.sel .fstat-label{color:var(--green);opacity:0.8;}
-  .fstat-val{font-size:13px;font-weight:600;color:var(--gray-900);}
-  .fighter-side.sel .fstat-val{color:var(--green-dark);}
-  .ev-pos{color:var(--green)!important;}
-  .ev-neg{color:var(--red)!important;}
-  .fight-unavail{padding:20px;text-align:center;color:var(--gray-400);font-size:13px;display:flex;align-items:center;justify-content:center;gap:8px;}
-  .basket{background:white;border:2px solid var(--gray-900);border-radius:var(--radius-lg);padding:18px 20px;margin-top:1.5rem;box-shadow:var(--shadow-md);}
-  .basket-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-  .basket-title{font-size:15px;font-weight:600;color:var(--gray-900);}
-  .basket-count{font-size:12px;color:var(--gray-400);font-weight:400;margin-left:6px;}
-  .basket-toggle{display:flex;gap:4px;background:var(--gray-100);border-radius:20px;padding:3px;}
-  .btoggle{font-size:12px;font-weight:600;padding:5px 16px;border-radius:20px;border:none;cursor:pointer;font-family:var(--font);transition:all 0.15s;background:none;color:var(--gray-600);}
-  .btoggle.active{background:var(--gray-900);color:white;}
-  .basket-pick{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-top:1px solid var(--border);font-size:13px;}
-  .bp-name{font-weight:600;color:var(--gray-900);}
-  .bp-opp{font-weight:400;color:var(--gray-400);}
-  .bp-meta{font-size:12px;color:var(--gray-400);text-align:right;}
-  .bp-remove{background:none;border:none;cursor:pointer;color:var(--gray-400);font-size:18px;padding:0 0 0 10px;font-family:var(--font);line-height:1;}
-  .bp-remove:hover{color:var(--red);}
-  .parlay-box{background:var(--gray-900);border-radius:var(--radius-md);padding:14px 16px;margin:12px 0;display:none;}
-  .parlay-box.vis{display:block;}
-  .parlay-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;}
-  .pstat-label{font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;}
-  .pstat-val{font-size:18px;font-weight:700;color:white;}
-  .pstat-val.g{color:#5DCAA5;}
-  .alloc-row-wrap{display:flex;gap:10px;align-items:center;margin-top:14px;}
-  .budget-inp{flex:1;height:40px;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);padding:0 12px;font-size:13px;font-weight:500;font-family:var(--font);outline:none;background:var(--gray-50);color:var(--gray-900);transition:border-color 0.15s;}
-  .budget-inp:focus{border-color:var(--red);background:white;}
-  .budget-inp::placeholder{color:var(--gray-400);font-weight:400;}
-  .alloc-btn{height:40px;padding:0 20px;background:var(--gray-900);color:white;border:none;border-radius:var(--radius-md);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:background 0.15s;}
-  .alloc-btn:hover{background:#2C2C2A;}
-  .alloc-result{margin-top:14px;display:none;}
-  .alloc-result.vis{display:block;}
-  .alloc-res-head{background:var(--gray-900);border-radius:var(--radius-md) var(--radius-md) 0 0;padding:12px 16px;}
-  .alloc-res-title{font-size:13px;font-weight:600;color:white;}
-  .alloc-res-sub{font-size:11px;color:var(--gray-400);margin-top:2px;}
-  .alloc-row{display:grid;grid-template-columns:1fr auto;padding:10px 16px;border-bottom:1px solid var(--border);align-items:center;gap:12px;background:white;}
-  .alloc-row:last-child{border-bottom:none;border-radius:0 0 var(--radius-md) var(--radius-md);}
-  .ar-fighter{font-size:13px;font-weight:600;color:var(--gray-900);}
-  .ar-meta{font-size:11px;color:var(--gray-400);margin-top:2px;}
-  .ar-bar-wrap{height:3px;background:var(--gray-100);border-radius:2px;overflow:hidden;margin-top:5px;}
-  .ar-bar{height:3px;border-radius:2px;background:var(--green);}
-  .ar-amount{font-size:16px;font-weight:700;color:var(--gray-900);text-align:right;white-space:nowrap;}
-  .ar-return{font-size:11px;color:var(--green);font-weight:600;text-align:right;white-space:nowrap;}
-  .ret-summary{background:var(--gray-900);border-radius:var(--radius-lg);padding:16px;margin-top:12px;}
-  .ret-title{font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
-  .ret-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
-  .ret-card{background:rgba(255,255,255,0.07);border-radius:var(--radius-md);padding:12px;}
-  .ret-val{font-size:20px;font-weight:700;color:white;letter-spacing:-0.02em;}
-  .ret-val.g{color:#5DCAA5;}
-  .ret-val.a{color:#FAC775;}
-  .ret-lbl{font-size:10px;color:var(--gray-400);margin-top:3px;}
-  .ret-disc{font-size:11px;color:var(--gray-600);margin-top:12px;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);}
-  .auto-pick-msg{background:var(--amber-light);border:1px solid rgba(186,117,23,0.2);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:12px;font-size:12px;color:var(--amber-dark);line-height:1.6;display:none;}
-  .auto-pick-msg.vis{display:block;}
-  .loading{text-align:center;padding:4rem 2rem;color:var(--gray-400);}
-  .spinner{width:32px;height:32px;border:3px solid var(--gray-100);border-top-color:var(--red);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 1rem;}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .empty-state{text-align:center;padding:4rem 2rem;color:var(--gray-400);}
-  footer{text-align:center;padding:2rem;color:var(--gray-400);font-size:12px;border-top:1px solid var(--border);margin-top:3rem;}
-
-  @media(max-width:600px){
-    body{overflow-x:hidden;}
-    header{padding:0 1rem;}
-    .header-right{display:none;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:12px 1rem;gap:8px;z-index:200;}
-    .header-right.open{display:flex;}
-    .header-right .nav-link{width:100%;text-align:center;font-size:14px;padding:10px;display:block;}
-    .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;}
-    .hamburger span{width:22px;height:2px;background:var(--gray-900);border-radius:2px;display:block;}
-    .accuracy-pill{display:none;}
-    .hero{padding:1.5rem 1rem;}
-    .hero h1{font-size:24px;}
-    .main{padding:1rem;}
-    .stats-bar{grid-template-columns:1fr 1fr;}
-    .ret-grid{grid-template-columns:1fr 1fr;}
-    .ret-grid .ret-card:last-child{grid-column:span 2;}
-    .parlay-grid{grid-template-columns:1fr 1fr;}
-    .alloc-row-wrap{flex-direction:column;}
-    .alloc-btn{width:100%;}
-    .budget-inp{width:100%;}
-    .fighter-stats{grid-template-columns:1fr 1fr;}
+    --sidebar-w:300px;
   }
 
-  @media(prefers-color-scheme:dark){
+  body { font-family:var(--font); background:var(--gray-50); color:var(--gray-900); }
+
+  header { background:white; border-bottom:1px solid var(--border); padding:0 2rem; height:56px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .logo { display:flex; align-items:center; gap:10px; font-size:16px; font-weight:600; color:var(--gray-900); text-decoration:none; }
+  .logo-icon { width:28px; height:28px; background:var(--red); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-size:14px; font-weight:700; }
+  .header-right { display:flex; align-items:center; gap:0.6rem; }
+  .hamburger { display:none; flex-shrink:0; }
+  .nav-link { font-size:12px; color:var(--gray-600); text-decoration:none; padding:5px 9px; border-radius:var(--radius-sm); border:1px solid var(--border); background:white; display:inline-flex; align-items:center; gap:5px; }
+  .nav-link:hover { background:var(--gray-50); }
+  .nav-link.active { background:var(--gray-900); color:white; border-color:var(--gray-900); }
+  .accuracy-pill { background:var(--green-light); color:var(--green); font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px; }
+
+  .hero { background:white; border-bottom:1px solid var(--border); padding:2.5rem 2rem; text-align:center; }
+  .hero-eyebrow { display:inline-flex; align-items:center; gap:6px; background:var(--red-light); color:var(--red-dark); font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.05em; }
+  .live-dot { width:6px; height:6px; border-radius:50%; background:var(--red); animation:pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 { font-size:30px; font-weight:700; margin-bottom:0.5rem; letter-spacing:-0.02em; }
+  .hero p { font-size:15px; color:var(--gray-600); }
+
+  .stats-bar { display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1px solid var(--border); background:white; }
+  .stat-item { padding:1.25rem 2rem; border-right:1px solid var(--border); text-align:center; }
+  .stat-item:last-child { border-right:none; }
+  .stat-value { font-size:28px; font-weight:700; letter-spacing:-0.02em; }
+  .stat-label { font-size:12px; color:var(--gray-400); margin-top:2px; text-transform:uppercase; letter-spacing:0.04em; }
+
+  /* ── Desktop layout: fights + sidebar ── */
+  .page-body { max-width:1140px; margin:0 auto; padding:2rem; display:grid; grid-template-columns:1fr var(--sidebar-w); gap:2rem; align-items:start; }
+
+  .fights-col { min-width:0; }
+
+  /* ── Sidebar ── */
+  .sidebar { position:sticky; top:72px; }
+
+  .sidebar-card { background:white; border:1.5px solid var(--gray-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+
+  .sidebar-empty { padding:20px; text-align:center; }
+  .sidebar-empty-icon { font-size:28px; margin-bottom:8px; }
+  .sidebar-empty-text { font-size:13px; color:var(--gray-400); line-height:1.5; }
+
+  .sidebar-header { background:var(--gray-900); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; }
+  .sidebar-title { font-size:14px; font-weight:600; color:white; }
+  .sidebar-count { font-size:11px; color:var(--gray-400); }
+
+  .sidebar-toggle { display:flex; gap:3px; background:rgba(255,255,255,0.1); border-radius:20px; padding:3px; }
+  .stoggle { font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
+  .stoggle.active { background:#E8E6DF; color:var(--gray-900); }
+
+  .sidebar-picks { padding:0 14px; }
+  .sidebar-pick { display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:12px; }
+  .sidebar-pick:last-child { border-bottom:none; }
+  .sp-name { font-weight:600; color:var(--gray-900); }
+  .sp-opp { color:var(--gray-400); font-weight:400; }
+  .sp-meta { font-size:11px; color:var(--gray-400); margin-top:1px; }
+  .sp-remove { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:16px; padding:0 0 0 8px; font-family:var(--font); line-height:1; flex-shrink:0; }
+  .sp-remove:hover { color:var(--red); }
+
+  .sidebar-hint { padding:10px 14px; font-size:11px; color:var(--gray-400); text-align:center; border:1px dashed var(--gray-200); border-radius:var(--radius-sm); margin:10px 14px; }
+
+  .parlay-box { background:var(--gray-900); padding:12px 14px; display:none; }
+  .parlay-box.vis { display:block; }
+  .parlay-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .pstat-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
+  .pstat-val { font-size:16px; font-weight:700; color:white; }
+  .pstat-val.g { color:#5DCAA5; }
+
+  .sidebar-alloc { padding:12px 14px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:8px; }
+  .sidebar-budget { width:100%; height:38px; border:1.5px solid var(--gray-200); border-radius:var(--radius-md); padding:0 12px; font-size:13px; font-family:var(--font); outline:none; background:var(--gray-50); color:var(--gray-900); transition:border-color 0.15s; }
+  .sidebar-budget:focus { border-color:var(--red); background:white; }
+  .sidebar-budget::placeholder { color:var(--gray-400); }
+  .sidebar-alloc-btn { width:100%; height:38px; background:var(--gray-900); color:white; border:none; border-radius:var(--radius-md); font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); transition:background 0.15s; }
+  .sidebar-alloc-btn:hover { background:#2C2C2A; }
+
+  .alloc-result { display:none; }
+  .alloc-result.vis { display:block; }
+  .alloc-res-head { background:var(--gray-900); padding:10px 14px; }
+  .alloc-res-title { font-size:12px; font-weight:600; color:white; }
+  .alloc-res-sub { font-size:10px; color:var(--gray-400); margin-top:2px; line-height:1.4; }
+  .alloc-row { display:grid; grid-template-columns:1fr auto; padding:8px 14px; border-bottom:1px solid var(--border); align-items:center; gap:8px; background:white; }
+  .alloc-row:last-child { border-bottom:none; }
+  .ar-fighter { font-size:12px; font-weight:600; color:var(--gray-900); }
+  .ar-meta { font-size:10px; color:var(--gray-400); margin-top:1px; }
+  .ar-bar-wrap { height:2px; background:var(--gray-100); border-radius:2px; overflow:hidden; margin-top:4px; }
+  .ar-bar { height:2px; border-radius:2px; background:var(--green); }
+  .ar-amount { font-size:14px; font-weight:700; color:var(--gray-900); text-align:right; white-space:nowrap; }
+  .ar-return { font-size:10px; color:var(--green); font-weight:600; text-align:right; white-space:nowrap; }
+
+  .ret-summary { background:var(--gray-900); padding:12px 14px; }
+  .ret-title { font-size:10px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; }
+  .ret-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .ret-card { background:rgba(255,255,255,0.07); border-radius:var(--radius-sm); padding:10px; }
+  .ret-val { font-size:16px; font-weight:700; color:white; letter-spacing:-0.02em; }
+  .ret-val.g { color:#5DCAA5; }
+  .ret-val.a { color:#FAC775; }
+  .ret-lbl { font-size:10px; color:var(--gray-400); margin-top:2px; }
+  .ret-disc { font-size:10px; color:var(--gray-600); margin-top:10px; line-height:1.5; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08); }
+
+  /* ── Fight chips ── */
+  .event-bar { background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:14px 18px; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow-sm); }
+  .event-bar-label { font-size:11px; color:var(--gray-400); font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px; }
+  .event-bar-name { font-size:14px; font-weight:600; color:var(--gray-900); }
+
+  .custom-select { position:relative; }
+  .custom-select-trigger { display:flex; align-items:center; justify-content:space-between; height:36px; padding:0 12px; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:var(--radius-md); cursor:pointer; font-size:13px; font-weight:500; font-family:var(--font); color:var(--gray-900); user-select:none; transition:border-color 0.15s; min-width:100px; }
+  .custom-select-trigger:hover { border-color:var(--gray-400); }
+  .custom-select-trigger.open { border-color:var(--red); }
+  .custom-select-trigger-text { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; min-width:0; }
+  .custom-select-chevron { flex-shrink:0; margin-left:8px; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:5px solid var(--gray-400); transition:transform 0.15s; }
+  .custom-select-trigger.open .custom-select-chevron { transform:rotate(180deg); }
+  .custom-select-menu { display:none; position:absolute; top:calc(100% + 4px); right:0; left:auto; min-width:280px; background:white; border:1.5px solid var(--gray-200); border-radius:var(--radius-md); overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); z-index:200; max-height:240px; overflow-y:auto; }
+  .custom-select-menu.open { display:block; }
+  .custom-select-option { padding:9px 12px; font-size:13px; font-family:var(--font); font-weight:500; color:var(--gray-900); cursor:pointer; transition:background 0.1s; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .custom-select-option:hover { background:var(--gray-50); }
+  .custom-select-option.selected { color:var(--red); font-weight:600; background:var(--red-light); }
+
+  .section-label-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .section-label { font-size:11px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.08em; }
+  .auto-pick-btn { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; padding:6px 14px; border-radius:20px; background:var(--amber-light); color:var(--amber-dark); border:1px solid rgba(186,117,23,0.2); cursor:pointer; font-family:var(--font); transition:background 0.15s; }
+  .auto-pick-btn:hover { background:#F5E4C5; }
+
+  .fight-chip { background:white; border:1px solid var(--border); border-radius:var(--radius-lg); margin-bottom:10px; overflow:hidden; box-shadow:var(--shadow-sm); }
+  .fight-chip-header { display:flex; align-items:center; justify-content:space-between; padding:8px 14px; border-bottom:1px solid var(--border); background:var(--gray-50); }
+  .fight-chip-conf { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
+  .fight-chip-conf.high { color:var(--green-dark); }
+  .fight-chip-conf.medium { color:var(--amber-dark); }
+  .fight-chip-conf.low { color:var(--gray-600); }
+  .fight-chip-weight { font-size:11px; color:var(--gray-400); }
+  .fight-chip-body { display:grid; grid-template-columns:1fr 1fr; }
+  .fighter-side { padding:14px; cursor:pointer; transition:background 0.12s; position:relative; }
+  .fighter-side:first-child { border-right:1px solid var(--border); }
+  .fighter-side:hover { background:var(--gray-50); }
+  .fighter-side.sel { background:var(--green-light); }
+  .fighter-side.sel:hover { background:#D2EFE5; }
+  .fighter-check { position:absolute; top:8px; right:8px; width:18px; height:18px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
+  .fighter-check svg { width:10px; height:10px; stroke:white; stroke-width:2.5; fill:none; }
+  .fighter-side.sel .fighter-check { display:flex; }
+  .fighter-name { font-size:14px; font-weight:600; color:var(--gray-900); margin-bottom:2px; padding-right:24px; }
+  .fighter-side.sel .fighter-name { color:var(--green-dark); }
+  .fighter-fav { font-size:10px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px; min-height:14px; }
+  .fighter-side.sel .fighter-fav { color:var(--green); }
+  .fighter-stats { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px; }
+  .fstat-label { font-size:10px; color:var(--gray-400); margin-bottom:1px; }
+  .fighter-side.sel .fstat-label { color:var(--green); opacity:0.8; }
+  .fstat-val { font-size:13px; font-weight:600; color:var(--gray-900); }
+  .fighter-side.sel .fstat-val { color:var(--green-dark); }
+  .ev-pos { color:var(--green)!important; }
+  .ev-neg { color:var(--red)!important; }
+  .fight-unavail { padding:20px; text-align:center; color:var(--gray-400); font-size:13px; display:flex; align-items:center; justify-content:center; gap:8px; }
+
+  .auto-pick-msg { background:var(--amber-light); border:1px solid rgba(186,117,23,0.2); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:12px; font-size:12px; color:var(--amber-dark); line-height:1.6; display:none; }
+  .auto-pick-msg.vis { display:block; }
+
+  .loading { text-align:center; padding:4rem 2rem; color:var(--gray-400); }
+  .spinner { width:32px; height:32px; border:3px solid var(--gray-100); border-top-color:var(--red); border-radius:50%; animation:spin 0.7s linear infinite; margin:0 auto 1rem; }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  .empty-state { text-align:center; padding:4rem 2rem; color:var(--gray-400); }
+
+  /* ── Mobile bottom sheet — hidden on desktop ── */
+  .mobile-bar { display:none; }
+  .sheet-overlay { display:none; }
+
+  footer { text-align:center; padding:2rem; color:var(--gray-400); font-size:12px; border-top:1px solid var(--border); margin-top:3rem; }
+
+  /* ── Tablet: collapse sidebar below content ── */
+  @media(max-width:900px) {
+    .page-body { grid-template-columns:1fr; }
+    .sidebar { position:static; order:2; margin-top:1.5rem; }
+    .sidebar-card { border-width:2px; }
+  }
+
+  /* ── Mobile: hide sidebar, show bottom sheet ── */
+  @media(max-width:600px) {
+    body { overflow-x:hidden; }
+    header { padding:0 1rem; }
+    .header-right { display:none; flex-direction:column; position:absolute; top:56px; left:0; right:0; background:white; border-bottom:1px solid var(--border); padding:12px 1rem; gap:8px; z-index:200; }
+    .header-right.open { display:flex; }
+    .header-right .nav-link { width:100%; text-align:center; font-size:14px; padding:10px; display:block; }
+    .hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; flex-shrink:0; }
+    .hamburger span { width:22px; height:2px; background:var(--gray-900); border-radius:2px; display:block; }
+    .accuracy-pill { display:none; }
+    .hero { padding:1.5rem 1rem; }
+    .hero h1 { font-size:24px; }
+    .page-body { padding:1rem; padding-bottom:80px; }
+    .stats-bar { grid-template-columns:1fr 1fr; }
+    .sidebar { display:none; }
+
+    /* Floating bottom bar */
+    .mobile-bar { display:flex; align-items:center; justify-content:space-between; position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); padding:12px 16px; z-index:300; border-top:1px solid rgba(255,255,255,0.08); }
+    .mobile-bar.hidden { display:none; }
+    .mb-left { display:flex; flex-direction:column; }
+    .mb-title { font-size:13px; font-weight:600; color:white; }
+    .mb-sub { font-size:11px; color:var(--gray-400); margin-top:1px; }
+    .mb-right { display:flex; align-items:center; gap:10px; }
+    .mb-badge { background:var(--red); color:white; font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .mb-chevron { color:var(--gray-400); font-size:20px; line-height:1; transition:transform 0.2s; }
+    .mb-chevron.up { transform:rotate(180deg); }
+
+    /* Bottom sheet overlay */
+    .sheet-overlay { display:block; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:400; opacity:0; pointer-events:none; transition:opacity 0.25s; }
+    .sheet-overlay.vis { opacity:1; pointer-events:auto; }
+
+    /* Bottom sheet panel */
+    .sheet { position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); border-radius:16px 16px 0 0; z-index:500; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height:85vh; display:flex; flex-direction:column; }
+    .sheet.open { transform:translateY(0); }
+
+    .sheet-handle-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 10px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; }
+    .sheet-handle { width:36px; height:4px; background:rgba(255,255,255,0.2); border-radius:2px; margin:0 auto 0 0; }
+    .sheet-toggle { display:flex; gap:3px; background:rgba(255,255,255,0.1); border-radius:20px; padding:3px; }
+    .shtoggle { font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
+    .shtoggle.active { background:#E8E6DF; color:var(--gray-900); }
+    .sheet-close { background:none; border:none; color:var(--gray-400); font-size:20px; cursor:pointer; padding:0; line-height:1; }
+
+    .sheet-body { overflow-y:auto; flex:1; }
+
+    .sheet-picks { padding:0 16px; }
+    .sheet-pick { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:13px; }
+    .sheet-pick:last-child { border-bottom:none; }
+    .shp-name { font-weight:600; color:#E8E6DF; }
+    .shp-opp { font-weight:400; color:var(--gray-400); }
+    .shp-meta { font-size:11px; color:var(--gray-400); margin-top:1px; }
+    .shp-remove { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:18px; padding:0 0 0 10px; font-family:var(--font); line-height:1; }
+    .shp-remove:hover { color:var(--red); }
+
+    .sheet-parlay { background:rgba(255,255,255,0.07); margin:10px 16px; border-radius:var(--radius-md); padding:12px; display:none; }
+    .sheet-parlay.vis { display:block; }
+    .sheet-parlay-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .shps-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
+    .shps-val { font-size:16px; font-weight:700; color:#E8E6DF; }
+    .shps-val.g { color:#5DCAA5; }
+
+    .sheet-alloc { padding:12px 16px; border-top:1px solid rgba(255,255,255,0.08); display:flex; gap:8px; flex-shrink:0; }
+    .sheet-budget { flex:1; height:40px; border:1.5px solid rgba(255,255,255,0.15); border-radius:var(--radius-md); padding:0 12px; font-size:13px; font-family:var(--font); outline:none; background:rgba(255,255,255,0.08); color:#E8E6DF; }
+    .sheet-budget::placeholder { color:var(--gray-400); }
+    .sheet-budget:focus { border-color:var(--red); }
+    .sheet-alloc-btn { height:40px; padding:0 18px; background:#E8E6DF; color:var(--gray-900); border:none; border-radius:var(--radius-md); font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); white-space:nowrap; }
+
+    .sheet-result { display:none; padding:0 16px 16px; }
+    .sheet-result.vis { display:block; }
+    .sheet-result-head { background:rgba(255,255,255,0.08); border-radius:var(--radius-md) var(--radius-md) 0 0; padding:10px 12px; }
+    .sr-title { font-size:12px; font-weight:600; color:#E8E6DF; }
+    .sr-sub { font-size:10px; color:var(--gray-400); margin-top:2px; line-height:1.4; }
+    .sheet-alloc-row { display:grid; grid-template-columns:1fr auto; padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.05); align-items:center; gap:8px; }
+    .sheet-alloc-row:last-child { border-bottom:none; border-radius:0 0 var(--radius-md) var(--radius-md); }
+    .sar-fighter { font-size:12px; font-weight:600; color:#E8E6DF; }
+    .sar-meta { font-size:10px; color:var(--gray-400); margin-top:1px; }
+    .sar-amount { font-size:14px; font-weight:700; color:#E8E6DF; text-align:right; white-space:nowrap; }
+    .sar-return { font-size:10px; color:#5DCAA5; font-weight:600; text-align:right; }
+    .sheet-ret-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:10px; }
+    .sheet-ret-card { background:rgba(255,255,255,0.07); border-radius:var(--radius-sm); padding:10px; }
+    .src-val { font-size:16px; font-weight:700; color:white; }
+    .src-val.g { color:#5DCAA5; }
+    .src-val.a { color:#FAC775; }
+    .src-lbl { font-size:10px; color:var(--gray-400); margin-top:2px; }
+    .sheet-ret-disc { font-size:10px; color:rgba(255,255,255,0.3); margin-top:10px; line-height:1.5; }
+
+    .ret-grid { grid-template-columns:1fr 1fr; }
+    .ret-grid .ret-card:last-child { grid-column:span 2; }
+    .fighter-stats { grid-template-columns:1fr 1fr; }
+  }
+
+  @media(prefers-color-scheme:dark) {
     *{box-shadow:none;}
     body{background:#111110;color:#E8E6DF;}
     header{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
@@ -205,26 +320,26 @@
     .fstat-val{color:#E8E6DF;}
     .fstat-label{color:#5F5E5A;}
     .fighter-fav{color:#5F5E5A;}
-    .basket{background:#1A1A18;border-color:#E8E6DF;}
-    .basket-title{color:#E8E6DF;}
-    .basket-toggle{background:#111110;}
-    .btoggle{color:#888780;}
-    .btoggle.active{background:#E8E6DF;color:#1A1A18;}
-    .basket-pick{border-color:rgba(255,255,255,0.06);}
-    .bp-name{color:#E8E6DF;}
-    .budget-inp{background:#111110;border-color:rgba(255,255,255,0.1);color:#E8E6DF;}
-    .budget-inp:focus{border-color:var(--red);background:#1A1A18;}
-    .alloc-btn{background:#E8E6DF;color:#1A1A18;}
-    .alloc-btn:hover{background:white;}
+    .sidebar-card{background:#1A1A18;border-color:#E8E6DF;}
+    .sidebar-picks{background:#1A1A18;}
+    .sidebar-pick{border-color:rgba(255,255,255,0.06);}
+    .sp-name{color:#E8E6DF;}
+    .sp-meta{color:#5F5E5A;}
+    .sidebar-hint{border-color:rgba(255,255,255,0.08);color:#5F5E5A;}
+    .sidebar-budget{background:#111110;border-color:rgba(255,255,255,0.1);color:#E8E6DF;}
+    .sidebar-budget:focus{border-color:var(--red);background:#1A1A18;}
+    .sidebar-alloc-btn{background:#E8E6DF;color:#1A1A18;}
+    .sidebar-alloc-btn:hover{background:white;}
     .alloc-row{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .ar-fighter{color:#E8E6DF;}
     .ar-amount{color:#E8E6DF;}
-    .fight-unavail{color:#5F5E5A;}
+    .sidebar-empty-text{color:#5F5E5A;}
     .section-label{color:#444441;}
+    .fight-unavail{color:#5F5E5A;}
+    .auto-pick-msg{background:rgba(186,117,23,0.12);border-color:rgba(186,117,23,0.2);color:#FAC775;}
     footer{border-color:rgba(255,255,255,0.06);color:#444441;}
     .header-right{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .hamburger span{background:#E8E6DF;}
-    .auto-pick-msg{background:rgba(186,117,23,0.12);border-color:rgba(186,117,23,0.2);color:#FAC775;}
   }
 </style>
 </head>
@@ -256,48 +371,132 @@
   <div class="stat-item"><div class="stat-value" id="stat-sel" style="color:var(--blue)">0</div><div class="stat-label">Selected</div></div>
 </div>
 
-<div class="main">
-  <div class="event-bar">
-    <div>
-      <div class="event-bar-label">Fight card</div>
-      <div class="event-bar-name" id="event-bar-name">Loading...</div>
-    </div>
-    <div class="custom-select" id="event-select-wrap">
-      <div class="custom-select-trigger" id="event-trigger" onclick="toggleDropdown('event')">
-        <span class="custom-select-trigger-text" id="event-trigger-text">Change</span>
-        <span class="custom-select-chevron"></span>
+<!-- Desktop layout -->
+<div class="page-body">
+
+  <!-- Fights column -->
+  <div class="fights-col">
+    <div class="event-bar">
+      <div>
+        <div class="event-bar-label">Fight card</div>
+        <div class="event-bar-name" id="event-bar-name">Loading...</div>
       </div>
-      <div class="custom-select-menu" id="event-menu"></div>
+      <div class="custom-select" id="event-select-wrap">
+        <div class="custom-select-trigger" id="event-trigger" onclick="toggleDropdown('event')">
+          <span class="custom-select-trigger-text" id="event-trigger-text">Change</span>
+          <span class="custom-select-chevron"></span>
+        </div>
+        <div class="custom-select-menu" id="event-menu"></div>
+      </div>
+    </div>
+
+    <div class="section-label-row">
+      <div class="section-label" id="card-label">Loading fights...</div>
+      <button class="auto-pick-btn" onclick="runAutoPick()">✨ You pick for me</button>
+    </div>
+
+    <div class="auto-pick-msg" id="auto-pick-msg"></div>
+    <div id="fights-list"><div class="loading"><div class="spinner"></div>Loading fight card...</div></div>
+  </div>
+
+  <!-- Desktop sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-card">
+
+      <!-- Empty state -->
+      <div class="sidebar-empty" id="sidebar-empty">
+        <div class="sidebar-empty-icon">🥊</div>
+        <div class="sidebar-empty-text">Select fighters from the card to build your bet</div>
+      </div>
+
+      <!-- Filled state -->
+      <div id="sidebar-filled" style="display:none">
+        <div class="sidebar-header">
+          <div>
+            <div class="sidebar-title">Your picks</div>
+            <div class="sidebar-count" id="sidebar-count"></div>
+          </div>
+          <div class="sidebar-toggle">
+            <button class="stoggle active" id="sb-singles" onclick="setMode('singles')">Singles</button>
+            <button class="stoggle" id="sb-parlay" onclick="setMode('parlay')">Parlay</button>
+          </div>
+        </div>
+
+        <div class="sidebar-picks" id="sidebar-picks"></div>
+
+        <div id="sidebar-hint" class="sidebar-hint">Add more picks or enter budget below</div>
+
+        <div class="parlay-box" id="parlay-box">
+          <div class="parlay-grid" id="parlay-grid"></div>
+        </div>
+
+        <div class="sidebar-alloc">
+          <input class="sidebar-budget" type="number" id="budget-input" placeholder="Your budget e.g. $500" min="1" />
+          <button class="sidebar-alloc-btn" onclick="runAllocator()">Allocate</button>
+        </div>
+
+        <div class="alloc-result" id="alloc-result">
+          <div class="alloc-res-head">
+            <div class="alloc-res-title" id="alloc-title">Recommended allocation</div>
+            <div class="alloc-res-sub" id="alloc-sub"></div>
+          </div>
+          <div id="alloc-rows"></div>
+          <div class="ret-summary">
+            <div class="ret-title">Projected outcome</div>
+            <div class="ret-grid" id="ret-grid"></div>
+            <div class="ret-disc">Not financial advice. Never bet more than you can afford to lose.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="section-label-row">
-    <div class="section-label" id="card-label">Loading fights...</div>
-    <button class="auto-pick-btn" onclick="runAutoPick()">✨ You pick for me</button>
+</div>
+
+<!-- Mobile bottom bar -->
+<div class="mobile-bar hidden" id="mobile-bar" onclick="openSheet()">
+  <div class="mb-left">
+    <div class="mb-title" id="mb-title">0 picks selected</div>
+    <div class="mb-sub" id="mb-sub">Singles · tap to review</div>
   </div>
+  <div class="mb-right">
+    <div class="mb-badge" id="mb-badge">0</div>
+    <div class="mb-chevron" id="mb-chevron">▲</div>
+  </div>
+</div>
 
-  <div class="auto-pick-msg" id="auto-pick-msg"></div>
-  <div id="fights-list"><div class="loading"><div class="spinner"></div>Loading fight card...</div></div>
+<!-- Mobile sheet overlay -->
+<div class="sheet-overlay" id="sheet-overlay" onclick="closeSheet()"></div>
 
-  <div class="basket" id="basket" style="display:none">
-    <div class="basket-header">
-      <div><span class="basket-title">Your picks</span><span class="basket-count" id="basket-count"></span></div>
-      <div class="basket-toggle">
-        <button class="btoggle active" id="btn-singles" onclick="setMode('singles')">Singles</button>
-        <button class="btoggle" id="btn-parlay" onclick="setMode('parlay')">Parlay</button>
+<!-- Mobile bottom sheet -->
+<div class="sheet" id="sheet">
+  <div class="sheet-handle-row">
+    <div class="sheet-handle"></div>
+    <div class="sheet-toggle">
+      <button class="shtoggle active" id="sh-singles" onclick="setMode('singles')">Singles</button>
+      <button class="shtoggle" id="sh-parlay" onclick="setMode('parlay')">Parlay</button>
+    </div>
+    <button class="sheet-close" onclick="closeSheet()">×</button>
+  </div>
+  <div class="sheet-body">
+    <div class="sheet-picks" id="sheet-picks"></div>
+    <div class="sheet-parlay" id="sheet-parlay">
+      <div class="sheet-parlay-grid" id="sheet-parlay-grid"></div>
+    </div>
+    <div class="sheet-result" id="sheet-result">
+      <div class="sheet-result-head">
+        <div class="sr-title" id="sr-title"></div>
+        <div class="sr-sub" id="sr-sub"></div>
       </div>
+      <div id="sheet-alloc-rows"></div>
+      <div class="sheet-ret-grid" id="sheet-ret-grid"></div>
+      <div class="sheet-ret-disc">Not financial advice. Never bet more than you can afford to lose.</div>
     </div>
-    <div id="basket-picks"></div>
-    <div class="parlay-box" id="parlay-box"><div class="parlay-grid" id="parlay-grid"></div></div>
-    <div class="alloc-row-wrap">
-      <input class="budget-inp" type="number" id="budget-input" placeholder="Your budget e.g. $500" min="1" />
-      <button class="alloc-btn" onclick="runAllocator()">Allocate</button>
-    </div>
-    <div class="alloc-result" id="alloc-result">
-      <div class="alloc-res-head"><div class="alloc-res-title" id="alloc-title">Recommended allocation</div><div class="alloc-res-sub" id="alloc-sub"></div></div>
-      <div id="alloc-rows"></div>
-      <div class="ret-summary"><div class="ret-title">Projected outcome</div><div class="ret-grid" id="ret-grid"></div><div class="ret-disc">Not financial advice. Never bet more than you can afford to lose. Projections assume all picks win.</div></div>
-    </div>
+  </div>
+  <div class="sheet-alloc">
+    <input class="sheet-budget" type="number" id="sheet-budget-input" placeholder="Your budget e.g. $500" min="1" />
+    <button class="sheet-alloc-btn" onclick="runAllocatorMobile()">Allocate</button>
   </div>
 </div>
 
@@ -308,7 +507,9 @@ const DATA_BASE='data/';
 let allEvents=[],eventData={},currentFights=[];
 let selectedPicks={},betMode='singles',selectedEventSlug='';
 const KELLY=0.25;
+let sheetOpen=false;
 
+// ── Dropdown ──────────────────────────────────────────────────────────────────
 function toggleDropdown(id){
   const t=document.getElementById(id+'-trigger'),m=document.getElementById(id+'-menu');
   const open=m.classList.contains('open');
@@ -332,6 +533,21 @@ function selectEvent(slug,el){
   loadEvent(slug);
 }
 
+// ── Mobile sheet ──────────────────────────────────────────────────────────────
+function openSheet(){
+  sheetOpen=true;
+  document.getElementById('sheet').classList.add('open');
+  document.getElementById('sheet-overlay').classList.add('vis');
+  document.getElementById('mb-chevron').classList.add('up');
+}
+function closeSheet(){
+  sheetOpen=false;
+  document.getElementById('sheet').classList.remove('open');
+  document.getElementById('sheet-overlay').classList.remove('vis');
+  document.getElementById('mb-chevron').classList.remove('up');
+}
+
+// ── Data ──────────────────────────────────────────────────────────────────────
 async function init(){
   try{
     const resp=await fetch(DATA_BASE+'index.json');
@@ -370,6 +586,7 @@ function processEvent(data){
   renderFights();
 }
 
+// ── Fight chips ───────────────────────────────────────────────────────────────
 function renderFights(){
   document.getElementById('fights-list').innerHTML=currentFights.map((f,i)=>chipHTML(f,i)).join('');
 }
@@ -435,35 +652,81 @@ function rerenderChip(idx){
   }
 }
 
+// ── Basket / sidebar update ───────────────────────────────────────────────────
 function setMode(mode){
   betMode=mode;
-  document.getElementById('btn-singles').classList.toggle('active',mode==='singles');
-  document.getElementById('btn-parlay').classList.toggle('active',mode==='parlay');
+  ['sb-singles','sb-parlay','btn-singles','btn-parlay','sh-singles','sh-parlay'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){
+      const isSingles=id.includes('singles');
+      el.classList.toggle('active',mode==='singles'?isSingles:!isSingles);
+    }
+  });
   updateBasket();
   document.getElementById('alloc-result').classList.remove('vis');
+  document.getElementById('sheet-result').classList.remove('vis');
 }
 
 function updateBasket(){
   const picks=Object.values(selectedPicks);
-  document.getElementById('stat-sel').textContent=picks.length;
-  if(!picks.length){document.getElementById('basket').style.display='none';return;}
-  document.getElementById('basket').style.display='block';
-  document.getElementById('basket-count').textContent=picks.length+' pick'+(picks.length!==1?'s':'');
-  document.getElementById('basket-picks').innerHTML=picks.map(p=>{
+  const count=picks.length;
+  document.getElementById('stat-sel').textContent=count;
+
+  // Mobile bar
+  const bar=document.getElementById('mobile-bar');
+  if(count===0){bar.classList.add('hidden');}
+  else{
+    bar.classList.remove('hidden');
+    document.getElementById('mb-title').textContent=count+' pick'+(count!==1?'s':'')+' selected';
+    document.getElementById('mb-sub').textContent=(betMode==='singles'?'Singles':'Parlay')+' · tap to review';
+    document.getElementById('mb-badge').textContent=count;
+  }
+
+  // Desktop sidebar
+  if(count===0){
+    document.getElementById('sidebar-empty').style.display='block';
+    document.getElementById('sidebar-filled').style.display='none';
+    return;
+  }
+  document.getElementById('sidebar-empty').style.display='none';
+  document.getElementById('sidebar-filled').style.display='block';
+  document.getElementById('sidebar-count').textContent=count+' pick'+(count!==1?'s':'');
+
+  const pickHTML=picks.map(p=>{
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:var(--green)':'color:var(--red)';
-    return '<div class="basket-pick"><div><span class="bp-name">'+p.fighter+'</span> <span class="bp-opp">vs '+p.opponent+'</span></div>'
-      +'<div style="display:flex;align-items:center;gap:12px">'
-      +'<div class="bp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div>'
-      +'<button class="bp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button>'
-      +'</div></div>';
+    return '<div class="sidebar-pick">'
+      +'<div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div>'
+      +'<div class="sp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div>'
+      +'<button class="sp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button>'
+      +'</div>';
   }).join('');
-  if(betMode==='parlay'&&picks.length>=2){
+
+  document.getElementById('sidebar-picks').innerHTML=pickHTML;
+
+  const sheetPickHTML=picks.map(p=>{
+    const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
+    const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
+    const evCol=p.ev>0?'color:#5DCAA5':'color:#F09595';
+    return '<div class="sheet-pick">'
+      +'<div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div>'
+      +'<div class="shp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div>'
+      +'<button class="shp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button>'
+      +'</div>';
+  }).join('');
+  document.getElementById('sheet-picks').innerHTML=sheetPickHTML;
+
+  const showHint=count<2&&betMode==='singles';
+  document.getElementById('sidebar-hint').style.display=showHint?'block':'none';
+
+  if(betMode==='parlay'&&count>=2){
     updateParlaySummary(picks);
     document.getElementById('parlay-box').classList.add('vis');
+    document.getElementById('sheet-parlay').classList.add('vis');
   }else{
     document.getElementById('parlay-box').classList.remove('vis');
+    document.getElementById('sheet-parlay').classList.remove('vis');
   }
 }
 
@@ -473,6 +736,7 @@ function removePick(key){
   rerenderChip(p.fightIdx);
   updateBasket();
   document.getElementById('alloc-result').classList.remove('vis');
+  document.getElementById('sheet-result').classList.remove('vis');
 }
 
 function updateParlaySummary(picks){
@@ -483,11 +747,19 @@ function updateParlaySummary(picks){
     return a*imp;
   },1);
   const pOdds=calcParlayOdds(picks);
-  document.getElementById('parlay-grid').innerHTML=
+  const grid=
     '<div><div class="pstat-label">Octagon AI prob</div><div class="pstat-val g">'+(winProb*100).toFixed(1)+'%</div></div>'
-    +'<div><div class="pstat-label">Vegas implied prob</div><div class="pstat-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'
+    +'<div><div class="pstat-label">Vegas implied</div><div class="pstat-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'
     +'<div><div class="pstat-label">Combined odds</div><div class="pstat-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'
     +'<div><div class="pstat-label">Legs</div><div class="pstat-val">'+picks.length+'</div></div>';
+  document.getElementById('parlay-grid').innerHTML=grid;
+
+  const sgrid=
+    '<div><div class="shps-label">Octagon AI prob</div><div class="shps-val g">'+(winProb*100).toFixed(1)+'%</div></div>'
+    +'<div><div class="shps-label">Vegas implied</div><div class="shps-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'
+    +'<div><div class="shps-label">Combined odds</div><div class="shps-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'
+    +'<div><div class="shps-label">Legs</div><div class="shps-val">'+picks.length+'</div></div>';
+  document.getElementById('sheet-parlay-grid').innerHTML=sgrid;
 }
 
 function calcParlayOdds(picks){
@@ -496,15 +768,31 @@ function calcParlayOdds(picks){
   return dec>=2?Math.round((dec-1)*100):Math.round(-100/(dec-1));
 }
 
+// ── Allocator ─────────────────────────────────────────────────────────────────
 function runAllocator(){
   const picks=Object.values(selectedPicks);
   const budget=parseFloat(document.getElementById('budget-input').value);
   if(!budget||budget<=0){alert('Please enter a valid budget.');return;}
   if(!picks.length){alert('Select at least one pick.');return;}
-  if(betMode==='singles'){const allocs=kellyAlloc(picks,budget);renderSingles(picks,allocs,budget);}
-  else{renderParlay(picks,budget);}
+  const result=betMode==='singles'?buildSinglesResult(picks,budget):buildParlayResult(picks,budget);
+  document.getElementById('alloc-title').textContent=result.title;
+  document.getElementById('alloc-sub').textContent=result.sub;
+  document.getElementById('alloc-rows').innerHTML=result.rows;
+  document.getElementById('ret-grid').innerHTML=result.retGrid;
   document.getElementById('alloc-result').classList.add('vis');
-  document.getElementById('alloc-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function runAllocatorMobile(){
+  const picks=Object.values(selectedPicks);
+  const budget=parseFloat(document.getElementById('sheet-budget-input').value);
+  if(!budget||budget<=0){alert('Please enter a valid budget.');return;}
+  if(!picks.length){alert('Select at least one pick.');return;}
+  const result=betMode==='singles'?buildSinglesResult(picks,budget):buildParlayResult(picks,budget);
+  document.getElementById('sr-title').textContent=result.title;
+  document.getElementById('sr-sub').textContent=result.sub;
+  document.getElementById('sheet-alloc-rows').innerHTML=result.mobileRows;
+  document.getElementById('sheet-ret-grid').innerHTML=result.mobileRetGrid;
+  document.getElementById('sheet-result').classList.add('vis');
 }
 
 function kellyAlloc(picks,budget){
@@ -518,48 +806,65 @@ function kellyAlloc(picks,budget){
   return total===0?picks.map(()=>budget/picks.length):w.map(x=>(x/total)*budget);
 }
 
-function renderSingles(picks,allocs,budget){
+function buildSinglesResult(picks,budget){
+  const allocs=kellyAlloc(picks,budget);
   const maxA=Math.max.apply(null,allocs);
-  document.getElementById('alloc-title').textContent='Recommended allocation — singles';
-  document.getElementById('alloc-sub').textContent='Fractional Kelly (25%) · weighted by confidence';
-  document.getElementById('alloc-rows').innerHTML=picks.map((p,i)=>{
+  const rows=picks.map((p,i)=>{
     const amt=allocs[i],pct=maxA>0?(amt/maxA*100):0;
     const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;
     const oStr=p.odds>0?'+'+p.odds:''+p.odds;
-    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oStr+' · '+p.prob+'% Octagon AI prob</div><div class="ar-bar-wrap"><div class="ar-bar" style="width:'+pct.toFixed(0)+'%"></div></div></div>'
+    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oStr+' · '+p.prob+'%</div><div class="ar-bar-wrap"><div class="ar-bar" style="width:'+pct.toFixed(0)+'%"></div></div></div>'
       +'<div><div class="ar-amount">$'+amt.toFixed(0)+'</div><div class="ar-return">+$'+winRet.toFixed(0)+' if wins</div></div></div>';
+  }).join('');
+  const mobileRows=picks.map((p,i)=>{
+    const amt=allocs[i];
+    const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;
+    const oStr=p.odds>0?'+'+p.odds:''+p.odds;
+    return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oStr+' · '+p.prob+'%</div></div>'
+      +'<div><div class="sar-amount">$'+amt.toFixed(0)+'</div><div class="sar-return">+$'+winRet.toFixed(0)+'</div></div></div>';
   }).join('');
   const totalEV=picks.reduce((s,p,i)=>s+(allocs[i]/100)*(p.ev||0),0);
   const totalWin=picks.reduce((s,p,i)=>{const a=allocs[i];return s+(p.odds>0?(p.odds/100)*a:(100/Math.abs(p.odds))*a);},0);
   const totalA=allocs.reduce((a,b)=>a+b,0);
-  document.getElementById('ret-grid').innerHTML=
-    '<div class="ret-card"><div class="ret-val">$'+totalA.toFixed(0)+'</div><div class="ret-lbl">Total allocated</div></div>'
-    +'<div class="ret-card"><div class="ret-val g">+'+'$'+totalEV.toFixed(0)+'</div><div class="ret-lbl">Expected profit (EV)</div></div>'
+  const retGrid=
+    '<div class="ret-card"><div class="ret-val">$'+totalA.toFixed(0)+'</div><div class="ret-lbl">Allocated</div></div>'
+    +'<div class="ret-card"><div class="ret-val g">+$'+totalEV.toFixed(0)+'</div><div class="ret-lbl">Expected profit</div></div>'
     +'<div class="ret-card"><div class="ret-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="ret-lbl">Max if all win</div></div>';
+  const mobileRetGrid=
+    '<div class="sheet-ret-card"><div class="src-val">$'+totalA.toFixed(0)+'</div><div class="src-lbl">Allocated</div></div>'
+    +'<div class="sheet-ret-card"><div class="src-val g">+$'+totalEV.toFixed(0)+'</div><div class="src-lbl">Expected profit</div></div>'
+    +'<div class="sheet-ret-card"><div class="src-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="src-lbl">Max if all win</div></div>';
+  return{title:'Recommended allocation — singles',sub:'Fractional Kelly (25%) · weighted by confidence',rows,mobileRows,retGrid,mobileRetGrid};
 }
 
-function renderParlay(picks,budget){
+function buildParlayResult(picks,budget){
   const winProb=picks.reduce((a,p)=>a*((p.prob||50)/100),1);
-  const vegasProb=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
+  const vegasP=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
   const pOdds=calcParlayOdds(picks);
   const pDec=pOdds>0?(pOdds/100)+1:(100/Math.abs(pOdds))+1;
   const winReturn=budget*(pDec-1);
   const expVal=(winProb*winReturn)-((1-winProb)*budget);
   const oStr=pOdds>0?'+'+pOdds:''+pOdds;
-  document.getElementById('alloc-title').textContent=picks.length+'-leg parlay';
-  const vegasP=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
-  document.getElementById('alloc-sub').textContent='Octagon AI: '+(winProb*100).toFixed(1)+'% · Vegas implied: '+(vegasP*100).toFixed(1)+'% · '+oStr+' combined odds';
-  document.getElementById('alloc-rows').innerHTML=picks.map(p=>{
+  const rows=picks.map(p=>{
     const oS=p.odds>0?'+'+p.odds:''+p.odds;
-    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oS+' · '+p.prob+'% Octagon AI prob</div></div>'
-      +'<div style="font-size:12px;color:var(--gray-400)">leg</div></div>';
+    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';
   }).join('');
-  document.getElementById('ret-grid').innerHTML=
+  const mobileRows=picks.map(p=>{
+    const oS=p.odds>0?'+'+p.odds:''+p.odds;
+    return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';
+  }).join('');
+  const retGrid=
     '<div class="ret-card"><div class="ret-val">$'+budget.toFixed(0)+'</div><div class="ret-lbl">Stake</div></div>'
     +'<div class="ret-card"><div class="ret-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="ret-lbl">Expected value</div></div>'
     +'<div class="ret-card"><div class="ret-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="ret-lbl">Payout if hits</div></div>';
+  const mobileRetGrid=
+    '<div class="sheet-ret-card"><div class="src-val">$'+budget.toFixed(0)+'</div><div class="src-lbl">Stake</div></div>'
+    +'<div class="sheet-ret-card"><div class="src-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="src-lbl">Expected value</div></div>'
+    +'<div class="sheet-ret-card"><div class="src-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="src-lbl">Payout if hits</div></div>';
+  return{title:picks.length+'-leg parlay',sub:'Octagon AI: '+(winProb*100).toFixed(1)+'% · Vegas implied: '+(vegasP*100).toFixed(1)+'% · '+oStr+' combined odds',rows,mobileRows,retGrid,mobileRetGrid};
 }
 
+// ── Auto-pick ─────────────────────────────────────────────────────────────────
 function runAutoPick(){
   const candidates=[];
   currentFights.forEach((f,idx)=>{
@@ -594,7 +899,7 @@ function runAutoPick(){
   const msg='✨ Selected '+bestCombo.length+'-leg parlay: '+bestCombo.map(p=>p.fighter+' ('+p.prob+'%)').join(', ')+'. Combined win probability: '+(winProb*100).toFixed(1)+'%. Picks scored by (Octagon AI prob × EV) — highest confidence + highest edge.';
   const el=document.getElementById('auto-pick-msg');
   el.textContent=msg;el.classList.add('vis');
-  document.getElementById('basket').scrollIntoView({behavior:'smooth',block:'start'});
+  if(window.innerWidth<=600){openSheet();}
 }
 
 function getCombos(arr,size){
