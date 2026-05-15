@@ -737,20 +737,22 @@ function updateBasket(){
   document.getElementById('sidebar-empty').style.display='none';
   document.getElementById('sidebar-filled').style.display='block';
   document.getElementById('sidebar-count').textContent=count+' pick'+(count!==1?'s':'');
+  const hasLimited=picks.some(p=>currentFights[p.fightIdx]&&currentFights[p.fightIdx].data_limited);
+  const limitedWarning=hasLimited?'<div style="margin:10px 14px;padding:10px 12px;background:rgba(162,45,45,0.12);border:1px solid rgba(162,45,45,0.3);border-radius:var(--radius-sm);font-size:11px;color:#F09595;line-height:1.6;"><strong>⚠️ Heads up</strong> — one or more of your picks uses an Elo-only prediction, not the full model. These are long shots at best. Bet accordingly.</div>':'';
   const pickHTML=picks.map(p=>{
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:var(--green)':'color:var(--red)';
     return '<div class="sidebar-pick"><div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div><div class="sp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="sp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
   }).join('');
-  document.getElementById('sidebar-picks').innerHTML=pickHTML;
+  document.getElementById('sidebar-picks').innerHTML=limitedWarning+pickHTML;
   const sheetPickHTML=picks.map(p=>{
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:#5DCAA5':'color:#F09595';
     return '<div class="sheet-pick"><div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div><div class="shp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="shp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
   }).join('');
-  document.getElementById('sheet-picks').innerHTML=sheetPickHTML;
+  document.getElementById('sheet-picks').innerHTML=limitedWarning+sheetPickHTML;
   const showHint=count<2&&betMode==='singles';
   document.getElementById('sidebar-hint').style.display=showHint?'block':'none';
   if(betMode==='parlay'&&count>=2){updateParlaySummary(picks);document.getElementById('parlay-box').classList.add('vis');document.getElementById('sheet-parlay').classList.add('vis');}
