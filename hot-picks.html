@@ -678,9 +678,9 @@ function chipHTML(f,idx){
       +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'">'+edge+'</div></div>'
       +'</div></div>';
   }
-  return '<div class="fight-chip">'
-    +'<div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
-    +(f.data_limited?'<div style="background:var(--amber-light);border-bottom:1px solid rgba(186,117,23,0.2);padding:8px 14px;font-size:11px;color:var(--amber-dark);line-height:1.5;"><strong>⚠️ Limited data</strong> — one fighter is new to our dataset. This prediction is Elo-based only, not a full model prediction. Treat it with caution.</div>':'')
+  return '<div class="fight-chip" style="'+(f.data_limited?'border-color:rgba(162,45,45,0.5);box-shadow:0 0 0 1px rgba(162,45,45,0.3);':'')+'">'
+    +'<div class="fight-chip-header" style="'+(f.data_limited?'background:rgba(162,45,45,0.1);':'')+'"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
+    +(f.data_limited?'<div style="background:rgba(162,45,45,0.15);border-bottom:1px solid rgba(162,45,45,0.3);padding:8px 14px;font-size:11px;color:#F09595;line-height:1.5;"><strong>⚠️ Limited data</strong> — one fighter is new to our dataset. This prediction is Elo-based only, not a full model prediction. Treat it with caution.</div>':'')
     +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a')+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b')+'</div></div>';
 }
 
