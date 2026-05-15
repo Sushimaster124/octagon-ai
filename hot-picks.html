@@ -45,29 +45,20 @@
   .stat-value { font-size:28px; font-weight:700; letter-spacing:-0.02em; }
   .stat-label { font-size:12px; color:var(--gray-400); margin-top:2px; text-transform:uppercase; letter-spacing:0.04em; }
 
-  /* ── Desktop layout: fights + sidebar ── */
   .page-body { max-width:1140px; margin:0 auto; padding:2rem; display:flex; justify-content:center; align-items:start; gap:2rem; }
-  .fights-col { max-width:760px; width:100%; }
+  .fights-col { max-width:760px; width:100%; min-width:0; }
 
-  .fights-col { min-width:0; }
-
-  /* ── Sidebar ── */
   .sidebar { position:sticky; top:72px; flex-shrink:0; width:var(--sidebar-w); max-height:calc(100vh - 88px); overflow-y:auto; }
-
   .sidebar-card { background:white; border:1.5px solid var(--gray-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); min-height:100%; }
-
   .sidebar-empty { padding:20px; text-align:center; }
   .sidebar-empty-icon { font-size:28px; margin-bottom:8px; }
   .sidebar-empty-text { font-size:13px; color:var(--gray-400); line-height:1.5; }
-
   .sidebar-header { background:var(--gray-900); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; }
   .sidebar-title { font-size:14px; font-weight:600; color:white; }
   .sidebar-count { font-size:11px; color:var(--gray-400); }
-
   .sidebar-toggle { display:flex; gap:3px; background:rgba(255,255,255,0.1); border-radius:20px; padding:3px; }
   .stoggle { font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
   .stoggle.active { background:#E8E6DF; color:var(--gray-900); }
-
   .sidebar-picks { padding:0 14px; }
   .sidebar-pick { display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:12px; }
   .sidebar-pick:last-child { border-bottom:none; }
@@ -76,23 +67,19 @@
   .sp-meta { font-size:11px; color:var(--gray-400); margin-top:1px; }
   .sp-remove { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:16px; padding:0 0 0 8px; font-family:var(--font); line-height:1; flex-shrink:0; }
   .sp-remove:hover { color:var(--red); }
-
   .sidebar-hint { padding:10px 14px; font-size:11px; color:var(--gray-400); text-align:center; border:1px dashed var(--gray-200); border-radius:var(--radius-sm); margin:10px 14px; }
-
   .parlay-box { background:var(--gray-900); padding:12px 14px; display:none; }
   .parlay-box.vis { display:block; }
   .parlay-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
   .pstat-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
   .pstat-val { font-size:16px; font-weight:700; color:white; }
   .pstat-val.g { color:#5DCAA5; }
-
   .sidebar-alloc { padding:12px 14px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:8px; }
   .sidebar-budget { width:100%; height:38px; border:1.5px solid var(--gray-200); border-radius:var(--radius-md); padding:0 12px; font-size:13px; font-family:var(--font); outline:none; background:var(--gray-50); color:var(--gray-900); transition:border-color 0.15s; }
   .sidebar-budget:focus { border-color:var(--red); background:white; }
   .sidebar-budget::placeholder { color:var(--gray-400); }
   .sidebar-alloc-btn { width:100%; height:38px; background:var(--gray-900); color:white; border:none; border-radius:var(--radius-md); font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); transition:background 0.15s; }
   .sidebar-alloc-btn:hover { background:#2C2C2A; }
-
   .alloc-result { display:none; }
   .alloc-result.vis { display:block; }
   .alloc-res-head { background:var(--gray-900); padding:10px 14px; }
@@ -106,7 +93,6 @@
   .ar-bar { height:2px; border-radius:2px; background:var(--green); }
   .ar-amount { font-size:14px; font-weight:700; color:var(--gray-900); text-align:right; white-space:nowrap; }
   .ar-return { font-size:10px; color:var(--green); font-weight:600; text-align:right; white-space:nowrap; }
-
   .ret-summary { background:var(--gray-900); padding:12px 14px; }
   .ret-title { font-size:10px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; }
   .ret-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
@@ -117,10 +103,24 @@
   .ret-lbl { font-size:10px; color:var(--gray-400); margin-top:2px; }
   .ret-disc { font-size:10px; color:var(--gray-600); margin-top:10px; line-height:1.5; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08); }
 
-  /* ── Fight chips ── */
-  .event-bar { background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:14px 18px; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow-sm); }
+  /* ── Event bar with countdown + timestamp ── */
+  .event-bar { background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:14px 18px; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow-sm); gap:12px; }
+  .event-bar-left { flex:1; min-width:0; }
   .event-bar-label { font-size:11px; color:var(--gray-400); font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px; }
   .event-bar-name { font-size:14px; font-weight:600; color:var(--gray-900); }
+  .event-bar-meta { display:flex; align-items:center; gap:12px; margin-top:5px; flex-wrap:wrap; }
+
+  /* Countdown chip */
+  .countdown-chip { display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; }
+  .countdown-chip.soon { background:var(--red-light); color:var(--red-dark); }
+  .countdown-chip.days { background:var(--amber-light); color:var(--amber-dark); }
+  .countdown-chip.future { background:var(--gray-100); color:var(--gray-600); }
+  .countdown-chip.live { background:var(--green-light); color:var(--green-dark); }
+
+  /* Odds timestamp */
+  .odds-timestamp { font-size:11px; color:var(--gray-400); display:flex; align-items:center; gap:4px; }
+  .odds-dot { width:5px; height:5px; border-radius:50%; background:var(--green); flex-shrink:0; }
+  .odds-dot.stale { background:var(--amber); }
 
   .custom-select { position:relative; }
   .custom-select-trigger { display:flex; align-items:center; justify-content:space-between; height:36px; padding:0 12px; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:var(--radius-md); cursor:pointer; font-size:13px; font-weight:500; font-family:var(--font); color:var(--gray-900); user-select:none; transition:border-color 0.15s; min-width:100px; }
@@ -177,21 +177,18 @@
   @keyframes spin { to{transform:rotate(360deg)} }
   .empty-state { text-align:center; padding:4rem 2rem; color:var(--gray-400); }
 
-  /* ── Mobile bottom sheet — hidden on desktop ── */
   .mobile-bar { display:none; }
   .sheet-overlay { display:none; }
   .sheet { display:none; }
 
   footer { text-align:center; padding:2rem; color:var(--gray-400); font-size:12px; border-top:1px solid var(--border); margin-top:3rem; }
 
-  /* ── Tablet: collapse sidebar below content ── */
   @media(max-width:900px) {
     .page-body { flex-direction:column; align-items:center; }
     .sidebar { position:static; width:100%; max-width:760px; }
     .sidebar-card { border-width:2px; }
   }
 
-  /* ── Mobile: hide sidebar, show bottom sheet ── */
   @media(max-width:600px) {
     body { overflow-x:hidden; }
     header { padding:0 1rem; }
@@ -206,8 +203,6 @@
     .page-body { padding:1rem; padding-bottom:80px; }
     .stats-bar { grid-template-columns:1fr 1fr 1fr; }
     .sidebar { display:none; }
-
-    /* Floating bottom bar */
     .mobile-bar { display:flex; align-items:center; justify-content:space-between; position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); padding:12px 16px; z-index:300; border-top:1px solid rgba(255,255,255,0.08); }
     .mobile-bar.hidden { display:none; }
     .mb-left { display:flex; flex-direction:column; }
@@ -217,24 +212,17 @@
     .mb-badge { background:var(--red); color:white; font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
     .mb-chevron { color:var(--gray-400); font-size:20px; line-height:1; transition:transform 0.2s; }
     .mb-chevron.up { transform:rotate(180deg); }
-
-    /* Bottom sheet overlay */
     .sheet-overlay { display:block; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:400; opacity:0; pointer-events:none; transition:opacity 0.25s; }
     .sheet-overlay.vis { opacity:1; pointer-events:auto; }
-
-    /* Bottom sheet panel */
     .sheet { display:flex; position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); border-radius:16px 16px 0 0; z-index:500; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height:85vh; flex-direction:column; }
     .sheet.open { transform:translateY(0); }
-
     .sheet-handle-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 12px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; gap:12px; }
     .sheet-handle { width:36px; height:4px; background:rgba(255,255,255,0.2); border-radius:2px; flex-shrink:0; }
     .sheet-toggle { display:flex; gap:4px; background:rgba(255,255,255,0.1); border-radius:20px; padding:4px; flex:1; }
     .shtoggle { flex:1; text-align:center; font-size:14px; font-weight:600; padding:8px 0; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
     .shtoggle.active { background:#E8E6DF; color:var(--gray-900); }
     .sheet-close { background:none; border:none; color:var(--gray-400); font-size:22px; cursor:pointer; padding:0; line-height:1; flex-shrink:0; }
-
     .sheet-body { overflow-y:auto; flex:1; }
-
     .sheet-picks { padding:0 16px; }
     .sheet-pick { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:13px; }
     .sheet-pick:last-child { border-bottom:none; }
@@ -243,20 +231,17 @@
     .shp-meta { font-size:11px; color:var(--gray-400); margin-top:1px; }
     .shp-remove { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:18px; padding:0 0 0 10px; font-family:var(--font); line-height:1; }
     .shp-remove:hover { color:var(--red); }
-
     .sheet-parlay { background:rgba(255,255,255,0.07); margin:10px 16px; border-radius:var(--radius-md); padding:12px; display:none; }
     .sheet-parlay.vis { display:block; }
     .sheet-parlay-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
     .shps-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
     .shps-val { font-size:16px; font-weight:700; color:#E8E6DF; }
     .shps-val.g { color:#5DCAA5; }
-
     .sheet-alloc { padding:12px 16px; border-top:1px solid rgba(255,255,255,0.08); display:flex; gap:8px; flex-shrink:0; }
     .sheet-budget { flex:1; height:40px; border:1.5px solid rgba(255,255,255,0.15); border-radius:var(--radius-md); padding:0 12px; font-size:13px; font-family:var(--font); outline:none; background:rgba(255,255,255,0.08); color:#E8E6DF; }
     .sheet-budget::placeholder { color:var(--gray-400); }
     .sheet-budget:focus { border-color:var(--red); }
     .sheet-alloc-btn { height:40px; padding:0 18px; background:#E8E6DF; color:var(--gray-900); border:none; border-radius:var(--radius-md); font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); white-space:nowrap; }
-
     .sheet-result { display:none; padding:0 16px 16px; }
     .sheet-result.vis { display:block; }
     .sheet-result-head { background:rgba(255,255,255,0.08); border-radius:var(--radius-md) var(--radius-md) 0 0; padding:10px 12px; }
@@ -275,10 +260,11 @@
     .src-val.a { color:#FAC775; }
     .src-lbl { font-size:10px; color:var(--gray-400); margin-top:2px; }
     .sheet-ret-disc { font-size:10px; color:rgba(255,255,255,0.3); margin-top:10px; line-height:1.5; }
-
     .ret-grid { grid-template-columns:1fr 1fr; }
     .ret-grid .ret-card:last-child { grid-column:span 2; }
     .fighter-stats { grid-template-columns:1fr 1fr; }
+    .event-bar { flex-wrap:wrap; }
+    .event-bar-meta { gap:8px; }
   }
 
   @media(prefers-color-scheme:dark) {
@@ -300,6 +286,11 @@
     .stat-label{color:#5F5E5A;}
     .event-bar{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .event-bar-name{color:#E8E6DF;}
+    .odds-timestamp{color:#5F5E5A;}
+    .countdown-chip.future{background:#2C2C2A;color:#888780;}
+    .countdown-chip.days{background:rgba(186,117,23,0.15);color:#FAC775;}
+    .countdown-chip.soon{background:rgba(226,75,74,0.15);color:#F09595;}
+    .countdown-chip.live{background:rgba(29,158,117,0.15);color:#5DCAA5;}
     .custom-select-trigger{background:#111110;border-color:rgba(255,255,255,0.1);color:#E8E6DF;}
     .custom-select-trigger:hover{border-color:rgba(255,255,255,0.2);}
     .custom-select-trigger.open{border-color:var(--red);}
@@ -342,6 +333,7 @@
     footer{border-color:rgba(255,255,255,0.06);color:#444441;}
     .header-right{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .hamburger span{background:#E8E6DF;}
+    .sidebar-hint{background:#1A1A18;}
   }
 </style>
 </head>
@@ -373,15 +365,17 @@
   <div class="stat-item"><div class="stat-value" id="stat-sel" style="color:var(--blue)">0</div><div class="stat-label">Selected</div></div>
 </div>
 
-<!-- Desktop layout -->
 <div class="page-body">
-
-  <!-- Fights column -->
   <div class="fights-col">
+
     <div class="event-bar">
-      <div>
+      <div class="event-bar-left">
         <div class="event-bar-label">Fight card</div>
         <div class="event-bar-name" id="event-bar-name">Loading...</div>
+        <div class="event-bar-meta">
+          <span class="countdown-chip future" id="countdown-chip">—</span>
+          <span class="odds-timestamp" id="odds-timestamp"><span class="odds-dot" id="odds-dot"></span><span id="odds-ts-text">Odds loading...</span></span>
+        </div>
       </div>
       <div class="custom-select" id="event-select-wrap">
         <div class="custom-select-trigger" id="event-trigger" onclick="toggleDropdown('event')">
@@ -401,17 +395,12 @@
     <div id="fights-list"><div class="loading"><div class="spinner"></div>Loading fight card...</div></div>
   </div>
 
-  <!-- Desktop sidebar -->
   <div class="sidebar">
     <div class="sidebar-card">
-
-      <!-- Empty state -->
       <div class="sidebar-empty" id="sidebar-empty">
         <div class="sidebar-empty-icon">🥊</div>
         <div class="sidebar-empty-text">Select fighters from the card to build your bet</div>
       </div>
-
-      <!-- Filled state -->
       <div id="sidebar-filled" style="display:none">
         <div class="sidebar-header">
           <div>
@@ -423,20 +412,15 @@
             <button class="stoggle" id="sb-parlay" onclick="setMode('parlay')">Parlay</button>
           </div>
         </div>
-
         <div class="sidebar-picks" id="sidebar-picks"></div>
-
         <div id="sidebar-hint" class="sidebar-hint">Add more picks or enter budget below</div>
-
         <div class="parlay-box" id="parlay-box">
           <div class="parlay-grid" id="parlay-grid"></div>
         </div>
-
         <div class="sidebar-alloc">
           <input class="sidebar-budget" type="number" id="budget-input" placeholder="Your budget e.g. $500" min="1" />
           <button class="sidebar-alloc-btn" id="sidebar-alloc-btn" onclick="runAllocator()">Allocate</button>
         </div>
-
         <div class="alloc-result" id="alloc-result">
           <div class="alloc-res-head">
             <div class="alloc-res-title" id="alloc-title">Recommended allocation</div>
@@ -450,13 +434,10 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
 </div>
 
-<!-- Mobile bottom bar -->
 <div class="mobile-bar hidden" id="mobile-bar" onclick="openSheet()">
   <div class="mb-left">
     <div class="mb-title" id="mb-title">0 picks selected</div>
@@ -468,10 +449,8 @@
   </div>
 </div>
 
-<!-- Mobile sheet overlay -->
 <div class="sheet-overlay" id="sheet-overlay" onclick="closeSheet()"></div>
 
-<!-- Mobile bottom sheet -->
 <div class="sheet" id="sheet">
   <div class="sheet-handle-row">
     <div class="sheet-handle"></div>
@@ -510,6 +489,65 @@ let allEvents=[],eventData={},currentFights=[];
 let selectedPicks={},betMode='singles',selectedEventSlug='',lastPickWasAuto=false;
 const KELLY=0.25;
 let sheetOpen=false;
+let countdownInterval=null;
+
+// ── Countdown + odds timestamp ─────────────────────────────────────────────────
+function updateCountdown(eventDate){
+  if(countdownInterval)clearInterval(countdownInterval);
+  function tick(){
+    const now=new Date();
+    const fight=new Date(eventDate+'T23:00:00');
+    const diff=fight-now;
+    const chip=document.getElementById('countdown-chip');
+    if(!chip)return;
+    if(diff<=0){
+      chip.textContent='Fight night';
+      chip.className='countdown-chip live';
+      clearInterval(countdownInterval);
+      return;
+    }
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hrs=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((diff%(1000*60*60))/(1000*60));
+    if(days===0&&hrs<6){
+      chip.textContent='Tonight · '+hrs+'h '+mins+'m';
+      chip.className='countdown-chip soon';
+    }else if(days===0){
+      chip.textContent='Today · '+hrs+'h away';
+      chip.className='countdown-chip soon';
+    }else if(days===1){
+      chip.textContent='Tomorrow · '+hrs+'h away';
+      chip.className='countdown-chip days';
+    }else if(days<=7){
+      chip.textContent=days+' days away';
+      chip.className='countdown-chip days';
+    }else{
+      chip.textContent=days+' days away';
+      chip.className='countdown-chip future';
+    }
+  }
+  tick();
+  countdownInterval=setInterval(tick,30000);
+}
+
+function updateOddsTimestamp(data){
+  const dot=document.getElementById('odds-dot');
+  const txt=document.getElementById('odds-ts-text');
+  if(!dot||!txt)return;
+  const updated=data.odds_updated||data.event_date||null;
+  if(!updated){txt.textContent='Odds freshness unknown';dot.className='odds-dot stale';return;}
+  try{
+    const t=new Date(updated.includes('T')?updated:updated+'T12:00:00');
+    const diffH=Math.round((Date.now()-t)/(1000*60*60));
+    if(diffH<1){txt.textContent='Odds updated just now';dot.className='odds-dot';}
+    else if(diffH<24){txt.textContent='Odds updated '+diffH+'h ago';dot.className='odds-dot';}
+    else{
+      const diffD=Math.floor(diffH/24);
+      txt.textContent='Odds updated '+diffD+'d ago';
+      dot.className='odds-dot stale';
+    }
+  }catch{txt.textContent='Odds live';dot.className='odds-dot';}
+}
 
 // ── Dropdown ──────────────────────────────────────────────────────────────────
 function toggleDropdown(id){
@@ -585,6 +623,8 @@ function processEvent(data){
   document.getElementById('stat-fights').textContent=currentFights.length||'—';
   document.getElementById('stat-high').textContent=highConf||'—';
   document.getElementById('card-label').textContent=currentFights.length+' fights · main event first';
+  if(data.event_date)updateCountdown(data.event_date);
+  updateOddsTimestamp(data);
   renderFights();
 }
 
@@ -615,8 +655,7 @@ function chipHTML(f,idx){
   const edAc=f.edge_a>0?'ev-pos':'ev-neg',edBc=f.edge_b>0?'ev-pos':'ev-neg';
   function side(sel,name,fav,prob,odds,ev,evC,edge,edC,s){
     return '<div class="fighter-side'+sel+'" onclick="togglePick('+idx+',\''+s+'\')">'
-      +chk
-      +'<div class="fighter-name">'+(name||'—')+'</div>'
+      +chk+'<div class="fighter-name">'+(name||'—')+'</div>'
       +'<div class="fighter-fav">'+fav+'</div>'
       +'<div class="fighter-stats">'
       +'<div><div class="fstat-label">Octagon AI prob</div><div class="fstat-val">'+(prob!==null?prob+'%':'—')+'</div></div>'
@@ -627,10 +666,7 @@ function chipHTML(f,idx){
   }
   return '<div class="fight-chip">'
     +'<div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
-    +'<div class="fight-chip-body">'
-    +side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a')
-    +side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b')
-    +'</div></div>';
+    +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a')+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b')+'</div></div>';
 }
 
 function togglePick(idx,side){
@@ -655,31 +691,25 @@ function rerenderChip(idx){
   }
 }
 
-// ── Basket / sidebar update ───────────────────────────────────────────────────
+// ── Basket ────────────────────────────────────────────────────────────────────
 function setMode(mode){
   betMode=mode;
   ['sb-singles','sb-parlay','btn-singles','btn-parlay','sh-singles','sh-parlay'].forEach(id=>{
     const el=document.getElementById(id);
-    if(el){
-      const isSingles=id.includes('singles');
-      el.classList.toggle('active',mode==='singles'?isSingles:!isSingles);
-    }
+    if(el){const isSingles=id.includes('singles');el.classList.toggle('active',mode==='singles'?isSingles:!isSingles);}
   });
   document.getElementById('alloc-result').classList.remove('vis');
   document.getElementById('sheet-result').classList.remove('vis');
   const label=mode==='parlay'?'Calculate':'Allocate';
   document.getElementById('sidebar-alloc-btn').textContent=label;
   document.getElementById('sheet-alloc-btn').textContent=label;
-  if(lastPickWasAuto){runAutoPick();}
-  else{updateBasket();}
+  if(lastPickWasAuto){runAutoPick();}else{updateBasket();}
 }
 
 function updateBasket(){
   const picks=Object.values(selectedPicks);
   const count=picks.length;
   document.getElementById('stat-sel').textContent=count;
-
-  // Mobile bar
   const bar=document.getElementById('mobile-bar');
   if(count===0){bar.classList.add('hidden');}
   else{
@@ -688,90 +718,49 @@ function updateBasket(){
     document.getElementById('mb-sub').textContent=(betMode==='singles'?'Singles':'Parlay')+' · tap to review';
     document.getElementById('mb-badge').textContent=count;
   }
-
-  // Desktop sidebar
-  if(count===0){
-    document.getElementById('sidebar-empty').style.display='block';
-    document.getElementById('sidebar-filled').style.display='none';
-    return;
-  }
+  if(count===0){document.getElementById('sidebar-empty').style.display='block';document.getElementById('sidebar-filled').style.display='none';return;}
   document.getElementById('sidebar-empty').style.display='none';
   document.getElementById('sidebar-filled').style.display='block';
   document.getElementById('sidebar-count').textContent=count+' pick'+(count!==1?'s':'');
-
   const pickHTML=picks.map(p=>{
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:var(--green)':'color:var(--red)';
-    return '<div class="sidebar-pick">'
-      +'<div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div>'
-      +'<div class="sp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div>'
-      +'<button class="sp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button>'
-      +'</div>';
+    return '<div class="sidebar-pick"><div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div><div class="sp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="sp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
   }).join('');
-
   document.getElementById('sidebar-picks').innerHTML=pickHTML;
-
   const sheetPickHTML=picks.map(p=>{
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:#5DCAA5':'color:#F09595';
-    return '<div class="sheet-pick">'
-      +'<div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div>'
-      +'<div class="shp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div>'
-      +'<button class="shp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button>'
-      +'</div>';
+    return '<div class="sheet-pick"><div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div><div class="shp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="shp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
   }).join('');
   document.getElementById('sheet-picks').innerHTML=sheetPickHTML;
-
   const showHint=count<2&&betMode==='singles';
   document.getElementById('sidebar-hint').style.display=showHint?'block':'none';
-
-  if(betMode==='parlay'&&count>=2){
-    updateParlaySummary(picks);
-    document.getElementById('parlay-box').classList.add('vis');
-    document.getElementById('sheet-parlay').classList.add('vis');
-  }else{
-    document.getElementById('parlay-box').classList.remove('vis');
-    document.getElementById('sheet-parlay').classList.remove('vis');
-  }
+  if(betMode==='parlay'&&count>=2){updateParlaySummary(picks);document.getElementById('parlay-box').classList.add('vis');document.getElementById('sheet-parlay').classList.add('vis');}
+  else{document.getElementById('parlay-box').classList.remove('vis');document.getElementById('sheet-parlay').classList.remove('vis');}
 }
 
 function removePick(key){
   const p=selectedPicks[key];if(!p)return;
-  delete selectedPicks[key];
-  rerenderChip(p.fightIdx);
-  updateBasket();
+  delete selectedPicks[key];rerenderChip(p.fightIdx);updateBasket();
   document.getElementById('alloc-result').classList.remove('vis');
   document.getElementById('sheet-result').classList.remove('vis');
 }
 
 function updateParlaySummary(picks){
   const winProb=picks.reduce((a,p)=>a*(p.prob/100),1);
-  const vegasProb=picks.reduce((a,p)=>{
-    if(!p.odds)return a;
-    const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);
-    return a*imp;
-  },1);
+  const vegasProb=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
   const pOdds=calcParlayOdds(picks);
-  const grid=
-    '<div><div class="pstat-label">Octagon AI prob</div><div class="pstat-val g">'+(winProb*100).toFixed(1)+'%</div></div>'
-    +'<div><div class="pstat-label">Vegas implied</div><div class="pstat-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'
-    +'<div><div class="pstat-label">Combined odds</div><div class="pstat-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'
-    +'<div><div class="pstat-label">Legs</div><div class="pstat-val">'+picks.length+'</div></div>';
+  const grid='<div><div class="pstat-label">Octagon AI prob</div><div class="pstat-val g">'+(winProb*100).toFixed(1)+'%</div></div>'+'<div><div class="pstat-label">Vegas implied</div><div class="pstat-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'+'<div><div class="pstat-label">Combined odds</div><div class="pstat-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'+'<div><div class="pstat-label">Legs</div><div class="pstat-val">'+picks.length+'</div></div>';
   document.getElementById('parlay-grid').innerHTML=grid;
-
-  const sgrid=
-    '<div><div class="shps-label">Octagon AI prob</div><div class="shps-val g">'+(winProb*100).toFixed(1)+'%</div></div>'
-    +'<div><div class="shps-label">Vegas implied</div><div class="shps-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'
-    +'<div><div class="shps-label">Combined odds</div><div class="shps-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'
-    +'<div><div class="shps-label">Legs</div><div class="shps-val">'+picks.length+'</div></div>';
+  const sgrid='<div><div class="shps-label">Octagon AI prob</div><div class="shps-val g">'+(winProb*100).toFixed(1)+'%</div></div>'+'<div><div class="shps-label">Vegas implied</div><div class="shps-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'+'<div><div class="shps-label">Combined odds</div><div class="shps-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'+'<div><div class="shps-label">Legs</div><div class="shps-val">'+picks.length+'</div></div>';
   document.getElementById('sheet-parlay-grid').innerHTML=sgrid;
 }
 
 function calcParlayOdds(picks){
-  let dec=1;
-  picks.forEach(p=>{if(p.odds===null)return;dec*=p.odds>0?(p.odds/100)+1:(100/Math.abs(p.odds))+1;});
+  let dec=1;picks.forEach(p=>{if(p.odds===null)return;dec*=p.odds>0?(p.odds/100)+1:(100/Math.abs(p.odds))+1;});
   return dec>=2?Math.round((dec-1)*100):Math.round(-100/(dec-1));
 }
 
@@ -820,27 +809,17 @@ function buildSinglesResult(picks,budget){
     const amt=allocs[i],pct=maxA>0?(amt/maxA*100):0;
     const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;
     const oStr=p.odds>0?'+'+p.odds:''+p.odds;
-    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oStr+' · '+p.prob+'%</div><div class="ar-bar-wrap"><div class="ar-bar" style="width:'+pct.toFixed(0)+'%"></div></div></div>'
-      +'<div><div class="ar-amount">$'+amt.toFixed(0)+'</div><div class="ar-return">+$'+winRet.toFixed(0)+' if wins</div></div></div>';
+    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oStr+' · '+p.prob+'%</div><div class="ar-bar-wrap"><div class="ar-bar" style="width:'+pct.toFixed(0)+'%"></div></div></div><div><div class="ar-amount">$'+amt.toFixed(0)+'</div><div class="ar-return">+$'+winRet.toFixed(0)+' if wins</div></div></div>';
   }).join('');
   const mobileRows=picks.map((p,i)=>{
-    const amt=allocs[i];
-    const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;
-    const oStr=p.odds>0?'+'+p.odds:''+p.odds;
-    return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oStr+' · '+p.prob+'%</div></div>'
-      +'<div><div class="sar-amount">$'+amt.toFixed(0)+'</div><div class="sar-return">+$'+winRet.toFixed(0)+'</div></div></div>';
+    const amt=allocs[i];const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;const oStr=p.odds>0?'+'+p.odds:''+p.odds;
+    return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oStr+' · '+p.prob+'%</div></div><div><div class="sar-amount">$'+amt.toFixed(0)+'</div><div class="sar-return">+$'+winRet.toFixed(0)+'</div></div></div>';
   }).join('');
   const totalEV=picks.reduce((s,p,i)=>s+(allocs[i]/100)*(p.ev||0),0);
   const totalWin=picks.reduce((s,p,i)=>{const a=allocs[i];return s+(p.odds>0?(p.odds/100)*a:(100/Math.abs(p.odds))*a);},0);
   const totalA=allocs.reduce((a,b)=>a+b,0);
-  const retGrid=
-    '<div class="ret-card"><div class="ret-val">$'+totalA.toFixed(0)+'</div><div class="ret-lbl">Allocated</div></div>'
-    +'<div class="ret-card"><div class="ret-val g">+$'+totalEV.toFixed(0)+'</div><div class="ret-lbl">Expected profit</div></div>'
-    +'<div class="ret-card"><div class="ret-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="ret-lbl">Max if all win</div></div>';
-  const mobileRetGrid=
-    '<div class="sheet-ret-card"><div class="src-val">$'+totalA.toFixed(0)+'</div><div class="src-lbl">Allocated</div></div>'
-    +'<div class="sheet-ret-card"><div class="src-val g">+$'+totalEV.toFixed(0)+'</div><div class="src-lbl">Expected profit</div></div>'
-    +'<div class="sheet-ret-card"><div class="src-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="src-lbl">Max if all win</div></div>';
+  const retGrid='<div class="ret-card"><div class="ret-val">$'+totalA.toFixed(0)+'</div><div class="ret-lbl">Allocated</div></div><div class="ret-card"><div class="ret-val g">+$'+totalEV.toFixed(0)+'</div><div class="ret-lbl">Expected profit</div></div><div class="ret-card"><div class="ret-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="ret-lbl">Max if all win</div></div>';
+  const mobileRetGrid='<div class="sheet-ret-card"><div class="src-val">$'+totalA.toFixed(0)+'</div><div class="src-lbl">Allocated</div></div><div class="sheet-ret-card"><div class="src-val g">+$'+totalEV.toFixed(0)+'</div><div class="src-lbl">Expected profit</div></div><div class="sheet-ret-card"><div class="src-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="src-lbl">Max if all win</div></div>';
   return{title:'Recommended allocation — singles',sub:'Fractional Kelly (25%) · weighted by confidence',rows,mobileRows,retGrid,mobileRetGrid};
 }
 
@@ -852,22 +831,10 @@ function buildParlayResult(picks,budget){
   const winReturn=budget*(pDec-1);
   const expVal=(winProb*winReturn)-((1-winProb)*budget);
   const oStr=pOdds>0?'+'+pOdds:''+pOdds;
-  const rows=picks.map(p=>{
-    const oS=p.odds>0?'+'+p.odds:''+p.odds;
-    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';
-  }).join('');
-  const mobileRows=picks.map(p=>{
-    const oS=p.odds>0?'+'+p.odds:''+p.odds;
-    return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';
-  }).join('');
-  const retGrid=
-    '<div class="ret-card"><div class="ret-val">$'+budget.toFixed(0)+'</div><div class="ret-lbl">Stake</div></div>'
-    +'<div class="ret-card"><div class="ret-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="ret-lbl">Expected value</div></div>'
-    +'<div class="ret-card"><div class="ret-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="ret-lbl">Payout if hits</div></div>';
-  const mobileRetGrid=
-    '<div class="sheet-ret-card"><div class="src-val">$'+budget.toFixed(0)+'</div><div class="src-lbl">Stake</div></div>'
-    +'<div class="sheet-ret-card"><div class="src-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="src-lbl">Expected value</div></div>'
-    +'<div class="sheet-ret-card"><div class="src-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="src-lbl">Payout if hits</div></div>';
+  const rows=picks.map(p=>{const oS=p.odds>0?'+'+p.odds:''+p.odds;return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';}).join('');
+  const mobileRows=picks.map(p=>{const oS=p.odds>0?'+'+p.odds:''+p.odds;return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';}).join('');
+  const retGrid='<div class="ret-card"><div class="ret-val">$'+budget.toFixed(0)+'</div><div class="ret-lbl">Stake</div></div><div class="ret-card"><div class="ret-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="ret-lbl">Expected value</div></div><div class="ret-card"><div class="ret-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="ret-lbl">Payout if hits</div></div>';
+  const mobileRetGrid='<div class="sheet-ret-card"><div class="src-val">$'+budget.toFixed(0)+'</div><div class="src-lbl">Stake</div></div><div class="sheet-ret-card"><div class="src-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="src-lbl">Expected value</div></div><div class="sheet-ret-card"><div class="src-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="src-lbl">Payout if hits</div></div>';
   return{title:picks.length+'-leg parlay',sub:'Octagon AI: '+(winProb*100).toFixed(1)+'% · Vegas implied: '+(vegasP*100).toFixed(1)+'% · '+oStr+' combined odds',rows,mobileRows,retGrid,mobileRetGrid};
 }
 
@@ -876,60 +843,41 @@ function runAutoPick(){
   const candidates=[];
   currentFights.forEach((f,idx)=>{
     if(f.not_found||(f.odds_a===null&&f.odds_b===null))return;
-    [['a',f.fighter_a,f.prob_a,f.ev_a,f.odds_a,f.edge_a,f.fighter_b],
-     ['b',f.fighter_b,f.prob_b,f.ev_b,f.odds_b,f.edge_b,f.fighter_a]].forEach(([side,name,prob,ev,odds,edge,opp])=>{
+    [['a',f.fighter_a,f.prob_a,f.ev_a,f.odds_a,f.edge_a,f.fighter_b],['b',f.fighter_b,f.prob_b,f.ev_b,f.odds_b,f.edge_b,f.fighter_a]].forEach(([side,name,prob,ev,odds,edge,opp])=>{
       if(prob===null||prob===undefined)return;
       candidates.push({fightIdx:idx,side,fighter:name,opponent:opp,prob,ev:ev||0,odds,edge:edge||0,confidence:f.confidence,score:(prob/100)*(ev||0)});
     });
   });
   if(!candidates.length){alert('Not enough fight data.');return;}
-  selectedPicks={};
-  lastPickWasAuto=true;
-
+  selectedPicks={};lastPickWasAuto=true;
   if(betMode==='singles'){
-    // Singles: pick top 5 by EV, one per fight
     const seen=new Set();
-    candidates
-      .filter(c=>c.ev>0)
-      .sort((a,b)=>b.ev-a.ev)
-      .forEach(c=>{
-        if(seen.has(c.fightIdx)||seen.size>=5)return;
-        seen.add(c.fightIdx);
-        selectedPicks[c.fightIdx+'-'+c.side]=c;
-      });
+    candidates.filter(c=>c.ev>0).sort((a,b)=>b.ev-a.ev).forEach(c=>{if(seen.has(c.fightIdx)||seen.size>=5)return;seen.add(c.fightIdx);selectedPicks[c.fightIdx+'-'+c.side]=c;});
     if(!Object.keys(selectedPicks).length){alert('No positive EV picks found for singles.');return;}
     const picked=Object.values(selectedPicks);
-    currentFights.forEach((_,idx)=>rerenderChip(idx));
-    updateBasket();
+    currentFights.forEach((_,idx)=>rerenderChip(idx));updateBasket();
     const msg='✨ Selected top '+picked.length+' EV plays: '+picked.map(p=>p.fighter+' (+$'+Math.round(p.ev)+' EV)').join(', ')+'. Sorted by highest EV — one pick per fight.';
-    const el=document.getElementById('auto-pick-msg');
-    el.textContent=msg;el.classList.add('vis');
-  } else {
-    // Parlay: optimize combo by prob × EV score
+    const el=document.getElementById('auto-pick-msg');el.textContent=msg;el.classList.add('vis');
+  }else{
     if(candidates.length<2){alert('Not enough fight data to build a parlay.');return;}
     candidates.sort((a,b)=>b.score-a.score);
     const top=candidates.slice(0,Math.min(candidates.length,8));
     let bestCombo=null,bestScore=-Infinity;
     for(let size=2;size<=top.length;size++){
       getCombos(top,size).forEach(combo=>{
-        const ids=new Set(combo.map(c=>c.fightIdx));
-        if(ids.size!==combo.length)return;
-        const winProb=combo.reduce((a,c)=>a*(c.prob/100),1);
-        if(winProb<0.10)return;
+        const ids=new Set(combo.map(c=>c.fightIdx));if(ids.size!==combo.length)return;
+        const winProb=combo.reduce((a,c)=>a*(c.prob/100),1);if(winProb<0.10)return;
         const score=combo.reduce((a,c)=>a+c.score,0)*winProb;
         if(score>bestScore){bestScore=score;bestCombo=combo;}
       });
     }
     if(!bestCombo){alert('Could not find a suitable parlay. Try selecting picks manually.');return;}
     bestCombo.forEach(p=>{selectedPicks[p.fightIdx+'-'+p.side]=p;});
-    currentFights.forEach((_,idx)=>rerenderChip(idx));
-    updateBasket();
+    currentFights.forEach((_,idx)=>rerenderChip(idx));updateBasket();
     const winProb=bestCombo.reduce((a,p)=>a*(p.prob/100),1);
     const msg='✨ Selected '+bestCombo.length+'-leg parlay: '+bestCombo.map(p=>p.fighter+' ('+p.prob+'%)').join(', ')+'. Combined win probability: '+(winProb*100).toFixed(1)+'%. Picks scored by (Octagon AI prob × EV) — highest confidence + highest edge.';
-    const el=document.getElementById('auto-pick-msg');
-    el.textContent=msg;el.classList.add('vis');
+    const el=document.getElementById('auto-pick-msg');el.textContent=msg;el.classList.add('vis');
   }
-
   if(window.innerWidth<=600){openSheet();}
 }
 
