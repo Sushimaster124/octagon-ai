@@ -507,7 +507,7 @@
 <script>
 const DATA_BASE='data/';
 let allEvents=[],eventData={},currentFights=[];
-let selectedPicks={},betMode='singles',selectedEventSlug='';
+let selectedPicks={},betMode='singles',selectedEventSlug='',lastPickWasAuto=false;
 const KELLY=0.25;
 let sheetOpen=false;
 
@@ -641,6 +641,7 @@ function togglePick(idx,side){
     const f=currentFights[idx];
     selectedPicks[thisK]={fighter:side==='a'?f.fighter_a:f.fighter_b,opponent:side==='a'?f.fighter_b:f.fighter_a,odds:side==='a'?f.odds_a:f.odds_b,prob:side==='a'?f.prob_a:f.prob_b,ev:side==='a'?f.ev_a:f.ev_b,edge:side==='a'?f.edge_a:f.edge_b,confidence:f.confidence,fightIdx:idx,side};
   }
+  lastPickWasAuto=false;
   rerenderChip(idx);
   updateBasket();
 }
@@ -664,12 +665,13 @@ function setMode(mode){
       el.classList.toggle('active',mode==='singles'?isSingles:!isSingles);
     }
   });
-  updateBasket();
   document.getElementById('alloc-result').classList.remove('vis');
   document.getElementById('sheet-result').classList.remove('vis');
   const label=mode==='parlay'?'Calculate':'Allocate';
   document.getElementById('sidebar-alloc-btn').textContent=label;
   document.getElementById('sheet-alloc-btn').textContent=label;
+  if(lastPickWasAuto){runAutoPick();}
+  else{updateBasket();}
 }
 
 function updateBasket(){
@@ -882,6 +884,7 @@ function runAutoPick(){
   });
   if(!candidates.length){alert('Not enough fight data.');return;}
   selectedPicks={};
+  lastPickWasAuto=true;
 
   if(betMode==='singles'){
     // Singles: pick top 5 by EV, one per fight
