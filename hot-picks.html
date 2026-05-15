@@ -52,9 +52,9 @@
   .fights-col { min-width:0; }
 
   /* ── Sidebar ── */
-  .sidebar { position:sticky; top:72px; flex-shrink:0; width:var(--sidebar-w); }
+  .sidebar { position:sticky; top:72px; flex-shrink:0; width:var(--sidebar-w); max-height:calc(100vh - 88px); overflow-y:auto; }
 
-  .sidebar-card { background:white; border:1.5px solid var(--gray-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+  .sidebar-card { background:white; border:1.5px solid var(--gray-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); min-height:100%; }
 
   .sidebar-empty { padding:20px; text-align:center; }
   .sidebar-empty-icon { font-size:28px; margin-bottom:8px; }
