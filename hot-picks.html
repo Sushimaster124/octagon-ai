@@ -650,9 +650,7 @@ function chipHTML(f,idx){
   if(f.not_found){
     return '<div class="fight-chip"><div class="fight-chip-header"><span class="fight-chip-conf low">'+pos+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div><div class="fight-unavail" style="flex-direction:column;gap:6px;padding:16px 20px;text-align:left;"><div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--amber-dark)"><span>⚠️</span>'+(f.fighter_a||'Fighter A')+' vs '+(f.fighter_b||'Fighter B')+'</div><div style="font-size:12px;color:var(--gray-400);line-height:1.5;">Prediction unavailable — one or both fighters are new to our dataset or not yet in our training data. This fight cannot be modelled with confidence. Treat any odds you see here as unverified.</div></div></div>';
   }
-  if(f.odds_a===null&&f.odds_b===null&&!f.data_limited){
-    return '<div class="fight-chip"><div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div><div class="fight-unavail"><span style="font-size:18px">⏳</span> Odds not yet posted</div></div>';
-  }
+  // odds pending — fall through to full chip render
   const kA=idx+'-a',kB=idx+'-b';
   const selA=selectedPicks[kA]?' sel':'',selB=selectedPicks[kB]?' sel':'';
   const chk='<div class="fighter-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div>';
@@ -667,15 +665,21 @@ function chipHTML(f,idx){
   const evAc=f.ev_a>0?'ev-pos':'ev-neg',evBc=f.ev_b>0?'ev-pos':'ev-neg';
   const edAc=f.edge_a>0?'ev-pos':'ev-neg',edBc=f.edge_b>0?'ev-pos':'ev-neg';
   function side(sel,name,fav,prob,odds,ev,evC,edge,edC,s){
+    const noOdds=f.odds_a===null&&f.odds_b===null;
     return '<div class="fighter-side'+sel+'" onclick="togglePick('+idx+',\''+s+'\')">'
       +chk+'<div class="fighter-name">'+(name||'—')+'</div>'
       +'<div class="fighter-fav">'+fav+'</div>'
       +'<div class="fighter-stats">'
       +'<div><div class="fstat-label">Octagon AI prob</div><div class="fstat-val">'+(prob!==null?prob+'%':'—')+'</div></div>'
-      +'<div><div class="fstat-label">Vegas odds</div><div style="display:flex;align-items:center;flex-wrap:wrap;gap:2px;"><div class="fstat-val" id="ov-'+idx+'-'+s+'">'+odds+'</div>'
-      +'<button class="odds-edit-btn" onclick="event.stopPropagation();startEditOdds('+idx+',\''+s+'\')">edit</button></div></div>'
-      +'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'">'+ev+'</div></div>'
-      +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'">'+edge+'</div></div>'
+      +(noOdds
+        ?'<div><div class="fstat-label">Vegas odds</div><div class="fstat-val" style="color:var(--gray-400);font-size:11px;">Odds pending</div></div>'
+        :'<div><div class="fstat-label">Vegas odds</div><div style="display:flex;align-items:center;flex-wrap:wrap;gap:2px;"><div class="fstat-val" id="ov-'+idx+'-'+s+'">'+odds+'</div>'
+        +'<button class="odds-edit-btn" onclick="event.stopPropagation();startEditOdds('+idx+',\''+s+'\')">edit</button></div></div>')
+      +(noOdds
+        ?'<div><div class="fstat-label">EV</div><div class="fstat-val" style="color:var(--gray-400);font-size:11px;">Pending</div></div>'
+        +'<div><div class="fstat-label">Edge</div><div class="fstat-val" style="color:var(--gray-400);font-size:11px;">Pending</div></div>'
+        :'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'">'+ev+'</div></div>'
+        +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'">'+edge+'</div></div>')
       +'</div></div>';
   }
   return '<div class="fight-chip" style="'+(f.data_limited?'border-color:rgba(162,45,45,0.5);box-shadow:0 0 0 1px rgba(162,45,45,0.3);':'')+'">'
