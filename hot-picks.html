@@ -169,6 +169,11 @@
   .ev-neg { color:var(--red)!important; }
   .fight-unavail { padding:20px; text-align:center; color:var(--gray-400); font-size:13px; display:flex; align-items:center; justify-content:center; gap:8px; }
 
+  .odds-edit-btn { margin-top:5px; padding:4px 10px; font-size:10px; font-weight:600; color:var(--blue-dark); background:var(--blue-light); border:1px solid rgba(55,138,221,0.2); border-radius:4px; cursor:pointer; font-family:var(--font); display:block; }
+  .odds-edit-btn:hover { background:#CCDFF8; }
+  .odds-input-wrap { margin-top:4px; display:flex; flex-direction:column; gap:4px; }
+  .fstat-odds-input { width:80px; height:28px; border:1.5px solid var(--blue); border-radius:4px; padding:0 6px; font-size:13px; font-weight:600; font-family:var(--font); outline:none; background:white; color:var(--gray-900); }
+  .fstat-reset { font-size:10px; color:var(--blue); cursor:pointer; background:none; border:none; font-family:var(--font); padding:0; text-decoration:underline; }
   .auto-pick-msg { background:var(--amber-light); border:1px solid rgba(186,117,23,0.2); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:12px; font-size:12px; color:var(--amber-dark); line-height:1.6; display:none; }
   .auto-pick-msg.vis { display:block; }
 
@@ -334,6 +339,9 @@
     .header-right{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .hamburger span{background:#E8E6DF;}
     .sidebar-hint{background:#1A1A18;}
+    .odds-edit-btn{background:rgba(55,138,221,0.15);color:#85B7EB;border-color:rgba(55,138,221,0.2);}
+    .fstat-odds-input{background:#111110;border-color:var(--blue);color:#E8E6DF;}
+    .fstat-reset{color:#85B7EB;}
   }
 </style>
 </head>
@@ -496,7 +504,8 @@ function updateCountdown(eventDate){
   if(countdownInterval)clearInterval(countdownInterval);
   function tick(){
     const now=new Date();
-    const fight=new Date(eventDate+'T23:00:00');
+    const d=new Date(eventDate);
+    const fight=new Date(d.getFullYear(),d.getMonth(),d.getDate(),22,0,0);
     const diff=fight-now;
     const chip=document.getElementById('countdown-chip');
     if(!chip)return;
@@ -659,7 +668,8 @@ function chipHTML(f,idx){
       +'<div class="fighter-fav">'+fav+'</div>'
       +'<div class="fighter-stats">'
       +'<div><div class="fstat-label">Octagon AI prob</div><div class="fstat-val">'+(prob!==null?prob+'%':'—')+'</div></div>'
-      +'<div><div class="fstat-label">Vegas odds</div><div class="fstat-val">'+odds+'</div></div>'
+      +'<div><div class="fstat-label">Vegas odds</div><div class="fstat-val" id="ov-'+idx+'-'+s+'">'+odds+'</div>'
+      +'<button class="odds-edit-btn" onclick="event.stopPropagation();startEditOdds('+idx+',\''+s+'\')">Edit odds</button></div>'
       +'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'">'+ev+'</div></div>'
       +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'">'+edge+'</div></div>'
       +'</div></div>';
@@ -879,6 +889,49 @@ function runAutoPick(){
     const el=document.getElementById('auto-pick-msg');el.textContent=msg;el.classList.add('vis');
   }
   if(window.innerWidth<=600){openSheet();}
+}
+
+function startEditOdds(idx,side){
+  const eid=idx+'-'+side;
+  const ov=document.getElementById('ov-'+eid);
+  if(!ov)return;
+  const f=currentFights[idx];
+  const orig=side==='a'?f.odds_a:f.odds_b;
+  ov.outerHTML='<div class="odds-input-wrap">'
+    +'<input class="fstat-odds-input" id="oi-'+eid+'" type="text" placeholder="+150 or -200" value="'+(orig>0?'+'+orig:orig||'')+'"'
+    +' onkeydown="oddsKey(event,\''+eid+'\','+idx+',\''+side+'\')"'
+    +' onblur="commitOdds(\''+eid+'\','+idx+',\''+side+'\')"'
+    +' onclick="event.stopPropagation()" />'
+    +'<button class="fstat-reset" onclick="event.stopPropagation();resetOdds('+idx+',\''+side+'\')">reset to original</button>'
+    +'</div>';
+  setTimeout(()=>{const i=document.getElementById('oi-'+eid);if(i){i.focus();i.select();}},0);
+}
+function oddsKey(e,eid,idx,side){
+  if(e.key==='Enter'){e.preventDefault();commitOdds(eid,idx,side);}
+  if(e.key==='Escape'){resetOdds(idx,side);}
+}
+function commitOdds(eid,idx,side){
+  const inp=document.getElementById('oi-'+eid);
+  if(!inp)return;
+  const val=parseInt(inp.value.replace(/^\+/,''));
+  if(isNaN(val)||val===0){resetOdds(idx,side);return;}
+  const f=currentFights[idx];
+  if(side==='a')f.odds_a=val;else f.odds_b=val;
+  recalcFight(f);
+  rerenderChip(idx);
+  const key=idx+'-'+side;
+  if(selectedPicks[key]){selectedPicks[key].odds=val;updateBasket();}
+}
+function resetOdds(idx,side){
+  const orig=eventData[selectedEventSlug]?.fights?.[idx];
+  if(orig){const f=currentFights[idx];if(side==='a')f.odds_a=orig.odds_a;else f.odds_b=orig.odds_b;recalcFight(f);}
+  rerenderChip(idx);
+}
+function recalcFight(f){
+  function ev(prob,odds){if(prob===null||odds===null)return null;const p=prob/100,d=odds>0?(odds/100)+1:(100/Math.abs(odds))+1;return parseFloat(((p*d-(1-p))*100).toFixed(1));}
+  function edge(prob,odds){if(prob===null||odds===null)return null;const vi=odds<0?Math.abs(odds)/(Math.abs(odds)+100)*100:100/(odds+100)*100;return parseFloat((prob-vi).toFixed(1));}
+  f.ev_a=ev(f.prob_a,f.odds_a);f.ev_b=ev(f.prob_b,f.odds_b);
+  f.edge_a=edge(f.prob_a,f.odds_a);f.edge_b=edge(f.prob_b,f.odds_b);
 }
 
 function getCombos(arr,size){
