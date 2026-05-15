@@ -1098,8 +1098,11 @@ function renderEvent(data) {
       ? `<span class="clash-flag">⚡ Elo clash</span>`
       : `<span style="font-size:11px;color:var(--gray-400)">Elo diff: ${fight.elo_diff > 0 ? '+' : ''}${fight.elo_diff}</span>`;
 
+    card.style.borderColor = fight.data_limited ? 'rgba(162,45,45,0.5)' : '';
+    card.style.boxShadow = fight.data_limited ? '0 0 0 1px rgba(162,45,45,0.3)' : '';
     card.innerHTML = `
-      <div class="fight-card-header">
+      ${fight.data_limited ? `<div style="background:rgba(162,45,45,0.12);border-bottom:1px solid rgba(162,45,45,0.3);padding:8px 14px;font-size:11px;color:#F09595;line-height:1.5;"><strong>⚠️ Limited data</strong> — one or both fighters are new to our dataset. This is an Elo-only prediction, not a full model output. Treat it as a rough guide only.</div>` : ''}
+      <div class="fight-card-header" style="${fight.data_limited ? 'background:rgba(162,45,45,0.08);' : ''}">
         <span class="fight-meta">${titleFlag}${wc}</span>
         <div style="display:flex;align-items:center;gap:6px;">
           <span class="conf-badge conf-${conf}">${confLabel}</span>${barHtml}
