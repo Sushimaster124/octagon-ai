@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Allen_vs._Costa",
   "event_date": "May 16, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-16T01:43:53.092299",
+  "generated_at": "2026-05-16T01:45:57.552322",
   "model_stats": {
     "accuracy": 83.1,
     "roc_auc": 0.9229,
@@ -16,7 +16,7 @@
     "medium_conf": 9,
     "low_conf": 4,
     "not_found": 0,
-    "ev_plays": 13
+    "ev_plays": 11
   },
   "fights": [
     {
@@ -376,15 +376,6 @@
   ],
   "ev_plays": [
     {
-      "fighter": "Nikolay Veretennikov",
-      "prob": 24.3,
-      "ev": 1139.3,
-      "edge": 22.3,
-      "odds": -2,
-      "vegas_prob": 2.0,
-      "confidence": "medium"
-    },
-    {
       "fighter": "Shauna Bannon",
       "prob": 62.4,
       "ev": 103.4,
@@ -457,13 +448,22 @@
       "confidence": "medium"
     },
     {
-      "fighter": "Melquizael Costa",
-      "prob": 81.4,
-      "ev": 38.4,
-      "edge": 22.6,
-      "odds": 70,
-      "vegas_prob": 58.8,
+      "fighter": "Artur Minev",
+      "prob": 50.0,
+      "ev": 31.5,
+      "edge": 12.0,
+      "odds": 163,
+      "vegas_prob": 38.0,
       "confidence": "low"
+    },
+    {
+      "fighter": "Andre Petroski",
+      "prob": 81.6,
+      "ev": 24.1,
+      "edge": 15.8,
+      "odds": -192,
+      "vegas_prob": 65.8,
+      "confidence": "medium"
     }
   ],
   "parlays": {

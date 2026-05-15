@@ -4,14 +4,14 @@
     "name": "UFC Fight Night: Allen vs. Costa",
     "date": "May 16, 2026",
     "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-16T01:43:53.092299",
+    "generated_at": "2026-05-16T01:45:57.552322",
     "summary": {
       "total_fights": 13,
       "high_conf": 0,
       "medium_conf": 9,
       "low_conf": 4,
       "not_found": 0,
-      "ev_plays": 13
+      "ev_plays": 11
     }
   },
   {
