@@ -351,7 +351,7 @@
   <a class="logo" href="home.html"><div class="logo-icon">O</div>octagon.ai</a>
   <div class="header-right" id="header-nav">
     <a class="nav-link" href="home.html">Home</a>
-    <a class="nav-link active" href="hot-picks.html">Card Builder</a>
+    <a class="nav-link active" href="hot-picks.html">Card builder</a>
     <a class="nav-link" href="index.html">Events</a>
     <a class="nav-link" href="fighters.html">Fighters</a>
     <a class="nav-link" href="accuracy.html">Model Accuracy</a>
@@ -578,7 +578,7 @@ async function loadEvent(slug){
 
 function processEvent(data){
   document.getElementById('event-bar-name').textContent=data.event_name+' · '+formatDate(data.event_date||'');
-  document.getElementById('hero-sub').textContent=data.event_name+' · '+formatDate(data.event_date||'')+' · Select your picks below';
+  document.getElementById('hero-sub').textContent='Pick your fights, set your budget, get your allocation.';
   document.getElementById('event-trigger-text').textContent='Change';
   currentFights=(data.fights||[]).slice();
   const highConf=currentFights.filter(f=>!f.not_found&&f.confidence==='high').length;
