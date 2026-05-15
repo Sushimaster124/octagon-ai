@@ -1,5 +1,20 @@
 [
   {
+    "slug": "UFC_Fight_Night_Allen_vs._Costa",
+    "name": "UFC Fight Night: Allen vs. Costa",
+    "date": "May 16, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-16T01:40:22.624024",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 9,
+      "low_conf": 4,
+      "not_found": 0,
+      "ev_plays": 13
+    }
+  },
+  {
     "slug": "UFC_328_Chimaev_vs._Strickland",
     "name": "UFC 328: Chimaev vs. Strickland",
     "date": "May 09, 2026",
@@ -402,21 +417,6 @@
       "low_conf": 3,
       "not_found": 0,
       "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Allen_vs._Costa",
-    "name": "UFC Fight Night: Allen vs. Costa",
-    "date": "May 16, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-16T00:13:29.353190",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 9,
-      "low_conf": 4,
-      "not_found": 0,
-      "ev_plays": 13
     }
   }
 ]

@@ -177,6 +177,7 @@ style_map = {
 def american_to_prob(ml):
     try:
         ml=float(ml)
+        if abs(ml) < 100: return None  # impossible moneyline, reject it
         return abs(ml)/(abs(ml)+100) if ml<0 else 100/(ml+100)
     except: return None
 
@@ -199,7 +200,26 @@ def get_odds_for_fighter(name, odds_map):
 def predict_fight(name_a, name_b, title_fight=False):
     row_a, corner_a, matched_a = find_fighter(name_a)
     row_b, corner_b, matched_b = find_fighter(name_b)
-    if row_a is None or row_b is None: return None
+
+    if row_a is None:
+        print(f"  [SKIP] '{name_a}' — not found in dataset")
+        return None
+    if row_b is None:
+        print(f"  [SKIP] '{name_b}' — not found in dataset")
+        return None
+
+    if matched_a != name_a:
+        print(f"  [FUZZY] '{name_a}' matched to '{matched_a}'")
+    if matched_b != name_b:
+        print(f"  [FUZZY] '{name_b}' matched to '{matched_b}'")
+
+    roll_a = get_rolling_stats(matched_a)
+    roll_b = get_rolling_stats(matched_b)
+
+    if all(v == 0.0 for v in roll_a.values()):
+        print(f"  [WARN] '{matched_a}' has no rolling stats")
+    if all(v == 0.0 for v in roll_b.values()):
+        print(f"  [WARN] '{matched_b}' has no rolling stats")
 
     p,q = corner_a, corner_b
     def s(row,corner,col):
@@ -309,6 +329,7 @@ if __name__ == "__main__":
     # Run predictions
     fight_data = []
     for fa, fb, is_title, weight_class in fights:
+        print(f"\nProcessing: {fa} vs {fb}")
         result = predict_fight(fa, fb, is_title)
         if result is None:
             fight_data.append({
