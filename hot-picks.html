@@ -3,519 +3,988 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hot Picks — Octagon AI</title>
+<title>Fight Card Builder — Octagon AI</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --red:        #E24B4A;
-    --red-light:  #FCEBEB;
-    --red-dark:   #A32D2D;
-    --blue:       #378ADD;
-    --blue-light: #E6F1FB;
-    --blue-dark:  #185FA5;
-    --green:      #1D9E75;
-    --green-light:#E1F5EE;
-    --amber:      #BA7517;
-    --amber-light:#FAEEDA;
-    --gray-50:    #F9F9F8;
-    --gray-100:   #F1EFE8;
-    --gray-200:   #D3D1C7;
-    --gray-400:   #888780;
-    --gray-600:   #5F5E5A;
-    --gray-900:   #1A1A18;
-    --border:     rgba(0,0,0,0.08);
-    --shadow-sm:  0 1px 3px rgba(0,0,0,0.06);
-    --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
-    --radius-sm:  6px;
-    --radius-md:  10px;
-    --radius-lg:  14px;
-    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --red:#E24B4A;--red-light:#FCEBEB;--red-dark:#A32D2D;
+    --blue:#378ADD;--blue-light:#E6F1FB;--blue-dark:#185FA5;
+    --green:#1D9E75;--green-light:#E1F5EE;--green-dark:#085041;
+    --amber:#BA7517;--amber-light:#FAEEDA;--amber-dark:#633806;
+    --gray-50:#F9F9F8;--gray-100:#F1EFE8;--gray-200:#D3D1C7;
+    --gray-400:#888780;--gray-600:#5F5E5A;--gray-900:#1A1A18;
+    --border:rgba(0,0,0,0.08);--shadow-sm:0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+    --radius-sm:6px;--radius-md:10px;--radius-lg:14px;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --sidebar-w:300px;
   }
 
-  body { font-family: var(--font); background: var(--gray-50); color: var(--gray-900); }
+  body { font-family:var(--font); background:var(--gray-50); color:var(--gray-900); }
 
-  header {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 0 2rem; height: 56px;
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 100;
-  }
+  header { background:white; border-bottom:1px solid var(--border); padding:0 2rem; height:56px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .logo { display:flex; align-items:center; gap:10px; font-size:16px; font-weight:600; color:var(--gray-900); text-decoration:none; }
+  .logo-icon { width:28px; height:28px; background:var(--red); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-size:14px; font-weight:700; }
+  .header-right { display:flex; align-items:center; gap:0.6rem; }
+  .hamburger { display:none; flex-shrink:0; }
+  .nav-link { font-size:12px; color:var(--gray-600); text-decoration:none; padding:5px 9px; border-radius:var(--radius-sm); border:1px solid var(--border); background:white; display:inline-flex; align-items:center; gap:5px; }
+  .nav-link:hover { background:var(--gray-50); }
+  .nav-link.active { background:var(--gray-900); color:white; border-color:var(--gray-900); }
+  .accuracy-pill { background:var(--green-light); color:var(--green); font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px; }
 
-  .logo {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none;
-  }
-
-  .logo-icon {
-    width: 28px; height: 28px; background: var(--red); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 14px; font-weight: 700;
-  }
-
-  .header-right { display: flex; align-items: center; gap: 0.6rem; }
-
-  .hamburger { display: none; flex-shrink: 0; }
-
-  .nav-link {
-    font-size: 13px; color: var(--gray-600); text-decoration: none;
-    padding: 6px 12px; border-radius: var(--radius-sm);
-    border: 1px solid var(--border); background: white;
-    display: inline-flex; align-items: center; gap: 5px;
-  }
-
-  .nav-link:hover { background: var(--gray-50); }
-  .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
-
-  .accuracy-pill {
-    background: var(--green-light); color: var(--green);
-    font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
-  }
-
-  .hero {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 2.5rem 2rem; text-align: center;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--red-light); color: var(--red-dark);
-    font-size: 12px; font-weight: 600; padding: 4px 12px;
-    border-radius: 20px; margin-bottom: 1rem;
-    text-transform: uppercase; letter-spacing: 0.05em;
-  }
-
-  .live-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--red); animation: pulse 1.5s infinite;
-  }
-
+  .hero { background:white; border-bottom:1px solid var(--border); padding:2.5rem 2rem; text-align:center; }
+  .hero-eyebrow { display:inline-flex; align-items:center; gap:6px; background:var(--red-light); color:var(--red-dark); font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.05em; }
+  .live-dot { width:6px; height:6px; border-radius:50%; background:var(--red); animation:pulse 1.5s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 { font-size:30px; font-weight:700; margin-bottom:0.5rem; letter-spacing:-0.02em; }
+  .hero p { font-size:15px; color:var(--gray-600); }
 
-  .hero h1 { font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-  .hero p  { font-size: 15px; color: var(--gray-600); }
+  .stats-bar { display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1px solid var(--border); background:white; }
+  .stat-item { padding:1.25rem 2rem; border-right:1px solid var(--border); text-align:center; }
+  .stat-item:last-child { border-right:none; }
+  .stat-value { font-size:28px; font-weight:700; letter-spacing:-0.02em; }
+  .stat-label { font-size:12px; color:var(--gray-400); margin-top:2px; text-transform:uppercase; letter-spacing:0.04em; }
 
-  .stats-bar {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    border-bottom: 1px solid var(--border); background: white;
+  .page-body { max-width:1140px; margin:0 auto; padding:2rem; display:flex; justify-content:center; align-items:start; gap:2rem; }
+  .fights-col { max-width:760px; width:100%; min-width:0; }
+
+  .sidebar { position:sticky; top:72px; flex-shrink:0; width:var(--sidebar-w); max-height:calc(100vh - 88px); overflow-y:auto; }
+  .sidebar-card { background:white; border:1.5px solid var(--gray-900); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); min-height:100%; }
+  .sidebar-empty { padding:20px; text-align:center; }
+  .sidebar-empty-icon { font-size:28px; margin-bottom:8px; }
+  .sidebar-empty-text { font-size:13px; color:var(--gray-400); line-height:1.5; }
+  .sidebar-header { background:var(--gray-900); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; }
+  .sidebar-title { font-size:14px; font-weight:600; color:white; }
+  .sidebar-count { font-size:11px; color:var(--gray-400); }
+  .sidebar-toggle { display:flex; gap:3px; background:rgba(255,255,255,0.1); border-radius:20px; padding:3px; }
+  .stoggle { font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
+  .stoggle.active { background:#E8E6DF; color:var(--gray-900); }
+  .sidebar-picks { padding:0 14px; }
+  .sidebar-pick { display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:12px; }
+  .sidebar-pick:last-child { border-bottom:none; }
+  .sp-name { font-weight:600; color:var(--gray-900); }
+  .sp-opp { color:var(--gray-400); font-weight:400; }
+  .sp-meta { font-size:11px; color:var(--gray-400); margin-top:1px; }
+  .sp-remove { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:16px; padding:0 0 0 8px; font-family:var(--font); line-height:1; flex-shrink:0; }
+  .sp-remove:hover { color:var(--red); }
+  .sidebar-hint { padding:10px 14px; font-size:11px; color:var(--gray-400); text-align:center; border:1px dashed var(--gray-200); border-radius:var(--radius-sm); margin:10px 14px; }
+  .parlay-box { background:var(--gray-900); padding:12px 14px; display:none; }
+  .parlay-box.vis { display:block; }
+  .parlay-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .pstat-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
+  .pstat-val { font-size:16px; font-weight:700; color:white; }
+  .pstat-val.g { color:#5DCAA5; }
+  .sidebar-alloc { padding:12px 14px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:8px; }
+  .sidebar-budget { width:100%; height:38px; border:1.5px solid var(--gray-200); border-radius:var(--radius-md); padding:0 12px; font-size:13px; font-family:var(--font); outline:none; background:var(--gray-50); color:var(--gray-900); transition:border-color 0.15s; }
+  .sidebar-budget:focus { border-color:var(--red); background:white; }
+  .sidebar-budget::placeholder { color:var(--gray-400); }
+  .sidebar-alloc-btn { width:100%; height:38px; background:var(--gray-900); color:white; border:none; border-radius:var(--radius-md); font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); transition:background 0.15s; }
+  .sidebar-alloc-btn:hover { background:#2C2C2A; }
+  .alloc-result { display:none; }
+  .alloc-result.vis { display:block; }
+  .alloc-res-head { background:var(--gray-900); padding:10px 14px; }
+  .alloc-res-title { font-size:12px; font-weight:600; color:white; }
+  .alloc-res-sub { font-size:10px; color:var(--gray-400); margin-top:2px; line-height:1.4; }
+  .alloc-row { display:grid; grid-template-columns:1fr auto; padding:8px 14px; border-bottom:1px solid var(--border); align-items:center; gap:8px; background:white; }
+  .alloc-row:last-child { border-bottom:none; }
+  .ar-fighter { font-size:12px; font-weight:600; color:var(--gray-900); }
+  .ar-meta { font-size:10px; color:var(--gray-400); margin-top:1px; }
+  .ar-bar-wrap { height:2px; background:var(--gray-100); border-radius:2px; overflow:hidden; margin-top:4px; }
+  .ar-bar { height:2px; border-radius:2px; background:var(--green); }
+  .ar-amount { font-size:14px; font-weight:700; color:var(--gray-900); text-align:right; white-space:nowrap; }
+  .ar-return { font-size:10px; color:var(--green); font-weight:600; text-align:right; white-space:nowrap; }
+  .ret-summary { background:var(--gray-900); padding:12px 14px; }
+  .ret-title { font-size:10px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; }
+  .ret-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .ret-card { background:rgba(255,255,255,0.07); border-radius:var(--radius-sm); padding:10px; }
+  .ret-val { font-size:16px; font-weight:700; color:white; letter-spacing:-0.02em; }
+  .ret-val.g { color:#5DCAA5; }
+  .ret-val.a { color:#FAC775; }
+  .ret-lbl { font-size:10px; color:var(--gray-400); margin-top:2px; }
+  .ret-disc { font-size:10px; color:var(--gray-600); margin-top:10px; line-height:1.5; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08); }
+
+  /* ── Event bar with countdown + timestamp ── */
+  .event-bar { background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:14px 18px; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; box-shadow:var(--shadow-sm); gap:12px; }
+  .event-bar-left { flex:1; min-width:0; }
+  .event-bar-label { font-size:11px; color:var(--gray-400); font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px; }
+  .event-bar-name { font-size:14px; font-weight:600; color:var(--gray-900); }
+  .event-bar-meta { display:flex; align-items:center; gap:12px; margin-top:5px; flex-wrap:wrap; }
+
+  /* Countdown chip */
+  .countdown-chip { display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; }
+  .countdown-chip.soon { background:var(--red-light); color:var(--red-dark); }
+  .countdown-chip.days { background:var(--amber-light); color:var(--amber-dark); }
+  .countdown-chip.future { background:var(--gray-100); color:var(--gray-600); }
+  .countdown-chip.live { background:var(--green-light); color:var(--green-dark); }
+
+  /* Odds timestamp */
+  .odds-timestamp { font-size:11px; color:var(--gray-400); display:flex; align-items:center; gap:4px; }
+  .odds-dot { width:5px; height:5px; border-radius:50%; background:var(--green); flex-shrink:0; }
+  .odds-dot.stale { background:var(--amber); }
+
+  .custom-select { position:relative; }
+  .custom-select-trigger { display:flex; align-items:center; justify-content:space-between; height:36px; padding:0 12px; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:var(--radius-md); cursor:pointer; font-size:13px; font-weight:500; font-family:var(--font); color:var(--gray-900); user-select:none; transition:border-color 0.15s; min-width:100px; }
+  .custom-select-trigger:hover { border-color:var(--gray-400); }
+  .custom-select-trigger.open { border-color:var(--red); }
+  .custom-select-trigger-text { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; min-width:0; }
+  .custom-select-chevron { flex-shrink:0; margin-left:8px; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:5px solid var(--gray-400); transition:transform 0.15s; }
+  .custom-select-trigger.open .custom-select-chevron { transform:rotate(180deg); }
+  .custom-select-menu { display:none; position:absolute; top:calc(100% + 4px); right:0; left:auto; min-width:280px; background:white; border:1.5px solid var(--gray-200); border-radius:var(--radius-md); overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); z-index:200; max-height:240px; overflow-y:auto; }
+  .custom-select-menu.open { display:block; }
+  .custom-select-option { padding:9px 12px; font-size:13px; font-family:var(--font); font-weight:500; color:var(--gray-900); cursor:pointer; transition:background 0.1s; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .custom-select-option:hover { background:var(--gray-50); }
+  .custom-select-option.selected { color:var(--red); font-weight:600; background:var(--red-light); }
+
+  .section-label-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .section-label { font-size:11px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.08em; }
+  .auto-pick-btn { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; padding:6px 14px; border-radius:20px; background:var(--amber-light); color:var(--amber-dark); border:1px solid rgba(186,117,23,0.2); cursor:pointer; font-family:var(--font); transition:background 0.15s; }
+  .auto-pick-btn:hover { background:#F5E4C5; }
+
+  .fight-chip { background:white; border:1px solid var(--border); border-radius:var(--radius-lg); margin-bottom:10px; overflow:hidden; box-shadow:var(--shadow-sm); }
+  .fight-chip-header { display:flex; align-items:center; justify-content:space-between; padding:8px 14px; border-bottom:1px solid var(--border); background:var(--gray-50); }
+  .fight-chip-conf { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
+  .fight-chip-conf.high { color:var(--green-dark); }
+  .fight-chip-conf.medium { color:var(--amber-dark); }
+  .fight-chip-conf.low { color:var(--gray-600); }
+  .fight-chip-weight { font-size:11px; color:var(--gray-400); }
+  .fight-chip-body { display:grid; grid-template-columns:1fr 1fr; }
+  .fighter-side { padding:14px; cursor:pointer; transition:background 0.12s; position:relative; }
+  .fighter-side:first-child { border-right:1px solid var(--border); }
+  .fighter-side:hover { background:var(--gray-50); }
+  .fighter-side.sel { background:var(--green-light); }
+  .fighter-side.sel:hover { background:#D2EFE5; }
+  .fighter-check { position:absolute; top:8px; right:8px; width:18px; height:18px; border-radius:50%; background:var(--green); display:none; align-items:center; justify-content:center; }
+  .fighter-check svg { width:10px; height:10px; stroke:white; stroke-width:2.5; fill:none; }
+  .fighter-side.sel .fighter-check { display:flex; }
+  .fighter-name { font-size:14px; font-weight:600; color:var(--gray-900); margin-bottom:2px; padding-right:24px; }
+  .fighter-side.sel .fighter-name { color:var(--green-dark); }
+  .fighter-fav { font-size:10px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px; min-height:14px; }
+  .fighter-side.sel .fighter-fav { color:var(--green); }
+  .fighter-stats { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px; }
+  .fstat-label { font-size:10px; color:var(--gray-400); margin-bottom:1px; }
+  .fighter-side.sel .fstat-label { color:var(--green); opacity:0.8; }
+  .fstat-val { font-size:13px; font-weight:600; color:var(--gray-900); }
+  .fighter-side.sel .fstat-val { color:var(--green-dark); }
+  .ev-pos { color:var(--green)!important; }
+  .ev-neg { color:var(--red)!important; }
+  .fight-unavail { padding:20px; text-align:center; color:var(--gray-400); font-size:13px; display:flex; align-items:center; justify-content:center; gap:8px; }
+
+  /* ── Odds editing ── */
+  .fstat-odds-wrap { display:flex; align-items:center; gap:4px; }
+  .fstat-edit-btn { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:11px; padding:1px 3px; line-height:1; font-family:var(--font); opacity:0.6; }
+  .fstat-edit-btn:hover { opacity:1; color:var(--blue); }
+  .fstat-odds-input { width:64px; height:22px; border:1.5px solid var(--blue); border-radius:4px; padding:0 5px; font-size:12px; font-weight:600; font-family:var(--font); outline:none; background:white; color:var(--gray-900); }
+  .fstat-reset { font-size:10px; color:var(--blue); cursor:pointer; background:none; border:none; font-family:var(--font); padding:0; text-decoration:underline; }
+
+  .auto-pick-msg { background:var(--amber-light); border:1px solid rgba(186,117,23,0.2); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:12px; font-size:12px; color:var(--amber-dark); line-height:1.6; display:none; }
+  .auto-pick-msg.vis { display:block; }
+
+  .loading { text-align:center; padding:4rem 2rem; color:var(--gray-400); }
+  .spinner { width:32px; height:32px; border:3px solid var(--gray-100); border-top-color:var(--red); border-radius:50%; animation:spin 0.7s linear infinite; margin:0 auto 1rem; }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  .empty-state { text-align:center; padding:4rem 2rem; color:var(--gray-400); }
+
+  .mobile-bar { display:none; }
+  .sheet-overlay { display:none; }
+  .sheet { display:none; }
+
+  footer { text-align:center; padding:2rem; color:var(--gray-400); font-size:12px; border-top:1px solid var(--border); margin-top:3rem; }
+
+  @media(max-width:900px) {
+    .page-body { flex-direction:column; align-items:center; }
+    .sidebar { position:static; width:100%; max-width:760px; }
+    .sidebar-card { border-width:2px; }
   }
 
-  .stat-item {
-    padding: 1.25rem 2rem; border-right: 1px solid var(--border); text-align: center;
+  @media(max-width:600px) {
+    body { overflow-x:hidden; }
+    header { padding:0 1rem; }
+    .header-right { display:none; flex-direction:column; position:absolute; top:56px; left:0; right:0; background:white; border-bottom:1px solid var(--border); padding:12px 1rem; gap:8px; z-index:200; }
+    .header-right.open { display:flex; }
+    .header-right .nav-link { width:100%; text-align:center; font-size:14px; padding:10px; display:block; }
+    .hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; flex-shrink:0; }
+    .hamburger span { width:22px; height:2px; background:var(--gray-900); border-radius:2px; display:block; }
+    .accuracy-pill { display:none; }
+    .hero { padding:1.5rem 1rem; }
+    .hero h1 { font-size:24px; }
+    .page-body { padding:1rem; padding-bottom:80px; }
+    .stats-bar { grid-template-columns:1fr 1fr 1fr; }
+    .sidebar { display:none; }
+    .mobile-bar { display:flex; align-items:center; justify-content:space-between; position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); padding:12px 16px; z-index:300; border-top:1px solid rgba(255,255,255,0.08); }
+    .mobile-bar.hidden { display:none; }
+    .mb-left { display:flex; flex-direction:column; }
+    .mb-title { font-size:13px; font-weight:600; color:white; }
+    .mb-sub { font-size:11px; color:var(--gray-400); margin-top:1px; }
+    .mb-right { display:flex; align-items:center; gap:10px; }
+    .mb-badge { background:var(--red); color:white; font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .mb-chevron { color:var(--gray-400); font-size:20px; line-height:1; transition:transform 0.2s; }
+    .mb-chevron.up { transform:rotate(180deg); }
+    .sheet-overlay { display:block; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:400; opacity:0; pointer-events:none; transition:opacity 0.25s; }
+    .sheet-overlay.vis { opacity:1; pointer-events:auto; }
+    .sheet { display:flex; position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); border-radius:16px 16px 0 0; z-index:500; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height:85vh; flex-direction:column; }
+    .sheet.open { transform:translateY(0); }
+    .sheet-handle-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 12px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; gap:12px; }
+    .sheet-handle { width:36px; height:4px; background:rgba(255,255,255,0.2); border-radius:2px; flex-shrink:0; }
+    .sheet-toggle { display:flex; gap:4px; background:rgba(255,255,255,0.1); border-radius:20px; padding:4px; flex:1; }
+    .shtoggle { flex:1; text-align:center; font-size:14px; font-weight:600; padding:8px 0; border-radius:20px; border:none; cursor:pointer; font-family:var(--font); transition:all 0.15s; background:none; color:var(--gray-400); }
+    .shtoggle.active { background:#E8E6DF; color:var(--gray-900); }
+    .sheet-close { background:none; border:none; color:var(--gray-400); font-size:22px; cursor:pointer; padding:0; line-height:1; flex-shrink:0; }
+    .sheet-body { overflow-y:auto; flex:1; }
+    .sheet-picks { padding:0 16px; }
+    .sheet-pick { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:13px; }
+    .sheet-pick:last-child { border-bottom:none; }
+    .shp-name { font-weight:600; color:#E8E6DF; }
+    .shp-opp { font-weight:400; color:var(--gray-400); }
+    .shp-meta { font-size:11px; color:var(--gray-400); margin-top:1px; }
+    .shp-remove { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:18px; padding:0 0 0 10px; font-family:var(--font); line-height:1; }
+    .shp-remove:hover { color:var(--red); }
+    .sheet-parlay { background:rgba(255,255,255,0.07); margin:10px 16px; border-radius:var(--radius-md); padding:12px; display:none; }
+    .sheet-parlay.vis { display:block; }
+    .sheet-parlay-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .shps-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
+    .shps-val { font-size:16px; font-weight:700; color:#E8E6DF; }
+    .shps-val.g { color:#5DCAA5; }
+    .sheet-alloc { padding:12px 16px; border-top:1px solid rgba(255,255,255,0.08); display:flex; gap:8px; flex-shrink:0; }
+    .sheet-budget { flex:1; height:40px; border:1.5px solid rgba(255,255,255,0.15); border-radius:var(--radius-md); padding:0 12px; font-size:13px; font-family:var(--font); outline:none; background:rgba(255,255,255,0.08); color:#E8E6DF; }
+    .sheet-budget::placeholder { color:var(--gray-400); }
+    .sheet-budget:focus { border-color:var(--red); }
+    .sheet-alloc-btn { height:40px; padding:0 18px; background:#E8E6DF; color:var(--gray-900); border:none; border-radius:var(--radius-md); font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); white-space:nowrap; }
+    .sheet-result { display:none; padding:0 16px 16px; }
+    .sheet-result.vis { display:block; }
+    .sheet-result-head { background:rgba(255,255,255,0.08); border-radius:var(--radius-md) var(--radius-md) 0 0; padding:10px 12px; }
+    .sr-title { font-size:12px; font-weight:600; color:#E8E6DF; }
+    .sr-sub { font-size:10px; color:var(--gray-400); margin-top:2px; line-height:1.4; }
+    .sheet-alloc-row { display:grid; grid-template-columns:1fr auto; padding:8px 12px; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.05); align-items:center; gap:8px; }
+    .sheet-alloc-row:last-child { border-bottom:none; border-radius:0 0 var(--radius-md) var(--radius-md); }
+    .sar-fighter { font-size:12px; font-weight:600; color:#E8E6DF; }
+    .sar-meta { font-size:10px; color:var(--gray-400); margin-top:1px; }
+    .sar-amount { font-size:14px; font-weight:700; color:#E8E6DF; text-align:right; white-space:nowrap; }
+    .sar-return { font-size:10px; color:#5DCAA5; font-weight:600; text-align:right; }
+    .sheet-ret-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:10px; }
+    .sheet-ret-card { background:rgba(255,255,255,0.07); border-radius:var(--radius-sm); padding:10px; }
+    .src-val { font-size:16px; font-weight:700; color:white; }
+    .src-val.g { color:#5DCAA5; }
+    .src-val.a { color:#FAC775; }
+    .src-lbl { font-size:10px; color:var(--gray-400); margin-top:2px; }
+    .sheet-ret-disc { font-size:10px; color:rgba(255,255,255,0.3); margin-top:10px; line-height:1.5; }
+    .ret-grid { grid-template-columns:1fr 1fr; }
+    .ret-grid .ret-card:last-child { grid-column:span 2; }
+    .fighter-stats { grid-template-columns:1fr 1fr; }
+    .event-bar { flex-wrap:wrap; }
+    .event-bar-meta { gap:8px; }
   }
 
-  .stat-item:last-child { border-right: none; }
-  .stat-value { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
-  .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
-
-  .main { max-width: 760px; margin: 0 auto; padding: 2rem; }
-
-  .filter-row { display: flex; gap: 8px; margin-bottom: 1.5rem; }
-
-  .filter-btn {
-    padding: 6px 14px; border-radius: 20px;
-    border: 1px solid var(--border); background: white;
-    font-size: 13px; font-family: var(--font);
-    color: var(--gray-600); cursor: pointer; transition: all 0.15s;
-  }
-
-  .filter-btn.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
-
-  .section-label {
-    font-size: 11px; font-weight: 600; color: var(--gray-400);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;
-  }
-
-  .hot-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); margin-bottom: 12px;
-    overflow: hidden; box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.15s;
-  }
-
-  .hot-card:hover { box-shadow: var(--shadow-md); }
-
-  .hot-card-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 9px 16px; border-bottom: 1px solid var(--border);
-  }
-
-  .hot-card-header.high   { background: var(--green-light); }
-  .hot-card-header.medium { background: var(--amber-light); }
-
-  .hot-conf-badge {
-    font-size: 11px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em;
-  }
-
-  .hot-conf-badge.high   { color: #085041; }
-  .hot-conf-badge.medium { color: #633806; }
-
-  .hot-conf-sub { font-size: 10px; }
-  .hot-conf-sub.high   { color: #0F6E56; }
-  .hot-conf-sub.medium { color: #854F0B; }
-
-  .hot-card-body { padding: 14px 16px; }
-
-  .hot-card-top {
-    display: flex; align-items: flex-start;
-    justify-content: space-between; margin-bottom: 12px;
-  }
-
-  .hot-fighter { font-size: 15px; font-weight: 600; color: var(--gray-900); }
-  .hot-matchup { font-size: 12px; color: var(--gray-400); margin-top: 3px; }
-
-  .hot-ev { text-align: right; }
-  .hot-ev-val { font-size: 22px; font-weight: 700; color: var(--green); }
-  .hot-ev-lbl { font-size: 11px; color: var(--gray-400); }
-
-  .hot-metrics {
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px; margin-bottom: 10px;
-  }
-
-  .hot-metric {
-    background: var(--gray-50); border-radius: var(--radius-sm); padding: 8px 10px;
-  }
-
-  .hot-metric.edge { background: var(--green-light); }
-
-  .hot-metric-lbl { font-size: 10px; color: var(--gray-400); margin-bottom: 2px; }
-  .hot-metric.edge .hot-metric-lbl { color: #0F6E56; }
-  .hot-metric-val { font-size: 14px; font-weight: 600; color: var(--gray-900); }
-  .hot-metric.edge .hot-metric-val { color: var(--green); }
-
-  .hot-advisory { font-size: 11px; color: var(--gray-600); }
-  .hot-advisory.warn {
-    background: var(--amber-light); color: #633806;
-    padding: 7px 10px; border-radius: var(--radius-sm);
-  }
-
-  .rank-badge {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--gray-900); color: white;
-    font-size: 11px; font-weight: 700;
-    display: inline-flex; align-items: center; justify-content: center;
-    margin-right: 8px; flex-shrink: 0;
-  }
-
-  .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
-  .spinner {
-    width: 32px; height: 32px;
-    border: 3px solid var(--gray-100); border-top-color: var(--red);
-    border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .empty-state { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
-
-  footer {
-    text-align: center; padding: 2rem; color: var(--gray-400);
-    font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem;
-  }
-
-  @media (max-width: 768px) {
-    .stats-bar { grid-template-columns: repeat(3,1fr); }
-    .main { padding: 1rem; }
-    .hero { padding: 1.5rem 1rem; }
-    .hero h1 { font-size: 24px; }
-    .hot-metrics { grid-template-columns: 1fr 1fr 1fr; }
-  }
-
-  @media (max-width: 600px) {
-    body { overflow-x: hidden; }
-    header { padding: 0 1rem; }
-    .header-right {
-      display: none; flex-direction: column;
-      position: absolute; top: 56px; left: 0; right: 0;
-      background: white; border-bottom: 1px solid var(--border);
-      padding: 12px 1rem; gap: 8px; z-index: 200;
-      box-shadow: var(--shadow-md);
-    }
-    .header-right.open { display: flex; }
-    .header-right .nav-link {
-      width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block;
-    }
-    .hamburger {
-      display: flex; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
-    }
-    .hamburger span {
-      width: 22px; height: 2px; background: var(--gray-900);
-      border-radius: 2px; display: block;
-    }
-    .accuracy-pill { display: none; }
-    .stats-bar { grid-template-columns: 1fr 1fr; }
-    .hot-metrics { grid-template-columns: 1fr 1fr; }
-    .hot-metrics .hot-metric:last-child { grid-column: span 2; }
+  @media(prefers-color-scheme:dark) {
+    *{box-shadow:none;}
+    body{background:#111110;color:#E8E6DF;}
+    header{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .logo{color:#E8E6DF;}
+    .nav-link{background:#1A1A18;color:#888780;border-color:rgba(255,255,255,0.08);}
+    .nav-link:hover{background:#2C2C2A;}
+    .nav-link.active{background:#E8E6DF;color:#1A1A18;border-color:#E8E6DF;}
+    .accuracy-pill{display:none;}
+    .hero{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .hero h1{color:#E8E6DF;}
+    .hero p{color:#888780;}
+    .hero-eyebrow{background:rgba(226,75,74,0.15);color:#F09595;}
+    .stats-bar{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .stat-item{border-color:rgba(255,255,255,0.06);}
+    .stat-value{color:#E8E6DF;}
+    .stat-label{color:#5F5E5A;}
+    .event-bar{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .event-bar-name{color:#E8E6DF;}
+    .odds-timestamp{color:#5F5E5A;}
+    .countdown-chip.future{background:#2C2C2A;color:#888780;}
+    .countdown-chip.days{background:rgba(186,117,23,0.15);color:#FAC775;}
+    .countdown-chip.soon{background:rgba(226,75,74,0.15);color:#F09595;}
+    .countdown-chip.live{background:rgba(29,158,117,0.15);color:#5DCAA5;}
+    .custom-select-trigger{background:#111110;border-color:rgba(255,255,255,0.1);color:#E8E6DF;}
+    .custom-select-trigger:hover{border-color:rgba(255,255,255,0.2);}
+    .custom-select-trigger.open{border-color:var(--red);}
+    .custom-select-chevron{border-top-color:#5F5E5A;}
+    .custom-select-menu{background:#1A1A18;border-color:rgba(255,255,255,0.1);box-shadow:0 4px 16px rgba(0,0,0,0.4);}
+    .custom-select-option{color:#E8E6DF;}
+    .custom-select-option:hover{background:#2C2C2A;}
+    .custom-select-option.selected{background:rgba(226,75,74,0.15);color:#F09595;}
+    .fight-chip{background:#242422;border-color:rgba(255,255,255,0.06);}
+    .fight-chip-header{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .fighter-side:first-child{border-color:rgba(255,255,255,0.06);}
+    .fighter-side:hover{background:#2C2C2A;}
+    .fighter-side.sel{background:rgba(29,158,117,0.15);}
+    .fighter-side.sel:hover{background:rgba(29,158,117,0.2);}
+    .fighter-name{color:#E8E6DF;}
+    .fighter-side.sel .fighter-name{color:#5DCAA5;}
+    .fighter-side.sel .fighter-fav{color:#5DCAA5;}
+    .fighter-side.sel .fstat-label{color:#5DCAA5;opacity:0.7;}
+    .fighter-side.sel .fstat-val{color:#5DCAA5;}
+    .fstat-val{color:#E8E6DF;}
+    .fstat-label{color:#5F5E5A;}
+    .fighter-fav{color:#5F5E5A;}
+    .sidebar-card{background:#1A1A18;border-color:#E8E6DF;}
+    .sidebar-picks{background:#1A1A18;}
+    .sidebar-pick{border-color:rgba(255,255,255,0.06);}
+    .sp-name{color:#E8E6DF;}
+    .sp-meta{color:#5F5E5A;}
+    .sidebar-hint{border-color:rgba(255,255,255,0.08);color:#5F5E5A;}
+    .sidebar-budget{background:#111110;border-color:rgba(255,255,255,0.1);color:#E8E6DF;}
+    .sidebar-budget:focus{border-color:var(--red);background:#1A1A18;}
+    .sidebar-alloc-btn{background:#E8E6DF;color:#1A1A18;}
+    .sidebar-alloc-btn:hover{background:white;}
+    .alloc-row{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .ar-fighter{color:#E8E6DF;}
+    .ar-amount{color:#E8E6DF;}
+    .sidebar-empty-text{color:#5F5E5A;}
+    .section-label{color:#444441;}
+    .fight-unavail{color:#5F5E5A;}
+    .auto-pick-msg{background:rgba(186,117,23,0.12);border-color:rgba(186,117,23,0.2);color:#FAC775;}
+    footer{border-color:rgba(255,255,255,0.06);color:#444441;}
+    .header-right{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
+    .hamburger span{background:#E8E6DF;}
+    .sidebar-hint{background:#1A1A18;}
+    .fstat-odds-input{background:#111110;border-color:var(--blue);color:#E8E6DF;}
+    .fstat-reset{color:#85B7EB;}
+    .fstat-edit-btn{color:#5F5E5A;}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <a class="logo" href="index.html">
-    <div class="logo-icon">O</div>
-    octagon.ai
-  </a>
+  <a class="logo" href="home.html"><div class="logo-icon">O</div>octagon.ai</a>
   <div class="header-right" id="header-nav">
-    <a class="nav-link active" href="hot-picks.html">🔥 Hot picks</a>
-    <a class="nav-link" href="index.html">Predictions</a>
-    <a class="nav-link" href="index.html" onclick="sessionStorage.setItem('showEvents','1')">All events</a>
+    <a class="nav-link" href="home.html">Home</a>
+    <a class="nav-link active" href="hot-picks.html">Card builder</a>
+    <a class="nav-link" href="index.html">Events</a>
     <a class="nav-link" href="fighters.html">Fighters</a>
-    <a class="nav-link" href="accuracy.html">Accuracy</a>
+    <a class="nav-link" href="accuracy.html">Model Accuracy</a>
     <a class="nav-link" href="how-it-works.html">How it works</a>
     <span class="accuracy-pill">83% accurate</span>
   </div>
-  <button class="hamburger" id="hamburger" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </header>
 
 <div class="hero">
-  <div class="hero-eyebrow">
-    <div class="live-dot"></div>
-    Live odds
-  </div>
-  <h1>🔥 Hot picks</h1>
-  <p id="hero-sub">Best EV plays · Medium &amp; high confidence only · Sorted by confidence then EV</p>
+  <div class="hero-eyebrow"><div class="live-dot"></div>Live odds</div>
+  <h1>Fight Card Builder</h1>
+  <p id="hero-sub">Pick your fights, set your budget, get your allocation.</p>
 </div>
 
 <div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-value" id="stat-plays" style="color:var(--green)">—</div>
-    <div class="stat-label">EV plays</div>
+  <div class="stat-item"><div class="stat-value" id="stat-fights" style="color:var(--gray-900)">—</div><div class="stat-label">Fights on card</div></div>
+  <div class="stat-item"><div class="stat-value" id="stat-high" style="color:var(--green)">—</div><div class="stat-label">High conf picks</div></div>
+  <div class="stat-item"><div class="stat-value" id="stat-sel" style="color:var(--blue)">0</div><div class="stat-label">Selected</div></div>
+</div>
+
+<div class="page-body">
+  <div class="fights-col">
+
+    <div class="event-bar">
+      <div class="event-bar-left">
+        <div class="event-bar-label">Fight card</div>
+        <div class="event-bar-name" id="event-bar-name">Loading...</div>
+        <div class="event-bar-meta">
+          <span class="countdown-chip future" id="countdown-chip">—</span>
+          <span class="odds-timestamp" id="odds-timestamp"><span class="odds-dot" id="odds-dot"></span><span id="odds-ts-text">Odds loading...</span></span>
+        </div>
+      </div>
+      <div class="custom-select" id="event-select-wrap">
+        <div class="custom-select-trigger" id="event-trigger" onclick="toggleDropdown('event')">
+          <span class="custom-select-trigger-text" id="event-trigger-text">Change</span>
+          <span class="custom-select-chevron"></span>
+        </div>
+        <div class="custom-select-menu" id="event-menu"></div>
+      </div>
+    </div>
+
+    <div class="section-label-row">
+      <div class="section-label" id="card-label">Loading fights...</div>
+      <button class="auto-pick-btn" onclick="runAutoPick()">✨ You pick for me</button>
+    </div>
+
+    <div class="auto-pick-msg" id="auto-pick-msg"></div>
+    <div id="fights-list"><div class="loading"><div class="spinner"></div>Loading fight card...</div></div>
   </div>
-  <div class="stat-item">
-    <div class="stat-value" id="stat-best" style="color:var(--green)">—</div>
-    <div class="stat-label">Best EV</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value" id="stat-high">—</div>
-    <div class="stat-label">High conf picks</div>
+
+  <div class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-empty" id="sidebar-empty">
+        <div class="sidebar-empty-icon">🥊</div>
+        <div class="sidebar-empty-text">Select fighters from the card to build your bet</div>
+      </div>
+      <div id="sidebar-filled" style="display:none">
+        <div class="sidebar-header">
+          <div>
+            <div class="sidebar-title">Your picks</div>
+            <div class="sidebar-count" id="sidebar-count"></div>
+          </div>
+          <div class="sidebar-toggle">
+            <button class="stoggle active" id="sb-singles" onclick="setMode('singles')">Singles</button>
+            <button class="stoggle" id="sb-parlay" onclick="setMode('parlay')">Parlay</button>
+          </div>
+        </div>
+        <div class="sidebar-picks" id="sidebar-picks"></div>
+        <div id="sidebar-hint" class="sidebar-hint">Add more picks or enter budget below</div>
+        <div class="parlay-box" id="parlay-box">
+          <div class="parlay-grid" id="parlay-grid"></div>
+        </div>
+        <div class="sidebar-alloc">
+          <input class="sidebar-budget" type="number" id="budget-input" placeholder="Your budget e.g. $500" min="1" />
+          <button class="sidebar-alloc-btn" id="sidebar-alloc-btn" onclick="runAllocator()">Allocate</button>
+        </div>
+        <div class="alloc-result" id="alloc-result">
+          <div class="alloc-res-head">
+            <div class="alloc-res-title" id="alloc-title">Recommended allocation</div>
+            <div class="alloc-res-sub" id="alloc-sub"></div>
+          </div>
+          <div id="alloc-rows"></div>
+          <div class="ret-summary">
+            <div class="ret-title">Projected outcome</div>
+            <div class="ret-grid" id="ret-grid"></div>
+            <div class="ret-disc">Not financial advice. Never bet more than you can afford to lose.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="main">
-  <div class="filter-row">
-    <button class="filter-btn active" onclick="filterPicks('all', this)">All</button>
-    <button class="filter-btn" onclick="filterPicks('high', this)">High conf only</button>
-    <button class="filter-btn" onclick="filterPicks('ev50', this)">EV &gt; $50</button>
+<div class="mobile-bar hidden" id="mobile-bar" onclick="openSheet()">
+  <div class="mb-left">
+    <div class="mb-title" id="mb-title">0 picks selected</div>
+    <div class="mb-sub" id="mb-sub">Singles · tap to review</div>
   </div>
-
-  <div class="section-label" id="picks-label">Loading...</div>
-  <div id="picks-list">
-    <div class="loading"><div class="spinner"></div>Loading hot picks...</div>
+  <div class="mb-right">
+    <div class="mb-badge" id="mb-badge">0</div>
+    <div class="mb-chevron" id="mb-chevron">▲</div>
   </div>
 </div>
 
-<footer>
-  octagon.ai · Not financial advice · Positive EV does not guarantee a win
-</footer>
+<div class="sheet-overlay" id="sheet-overlay" onclick="closeSheet()"></div>
+
+<div class="sheet" id="sheet">
+  <div class="sheet-handle-row">
+    <div class="sheet-handle"></div>
+    <div class="sheet-toggle">
+      <button class="shtoggle active" id="sh-singles" onclick="setMode('singles')">Singles</button>
+      <button class="shtoggle" id="sh-parlay" onclick="setMode('parlay')">Parlay</button>
+    </div>
+    <button class="sheet-close" onclick="closeSheet()">×</button>
+  </div>
+  <div class="sheet-body">
+    <div class="sheet-picks" id="sheet-picks"></div>
+    <div class="sheet-parlay" id="sheet-parlay">
+      <div class="sheet-parlay-grid" id="sheet-parlay-grid"></div>
+    </div>
+    <div class="sheet-result" id="sheet-result">
+      <div class="sheet-result-head">
+        <div class="sr-title" id="sr-title"></div>
+        <div class="sr-sub" id="sr-sub"></div>
+      </div>
+      <div id="sheet-alloc-rows"></div>
+      <div class="sheet-ret-grid" id="sheet-ret-grid"></div>
+      <div class="sheet-ret-disc">Not financial advice. Never bet more than you can afford to lose.</div>
+    </div>
+  </div>
+  <div class="sheet-alloc">
+    <input class="sheet-budget" type="number" id="sheet-budget-input" placeholder="Your budget e.g. $500" min="1" />
+    <button class="sheet-alloc-btn" id="sheet-alloc-btn" onclick="runAllocatorMobile()">Allocate</button>
+  </div>
+</div>
+
+<footer>octagon.ai · Not financial advice · Positive EV does not guarantee a win</footer>
 
 <script>
-const DATA_BASE = 'data/';
-let allPicks = [];
-let currentFilter = 'all';
+const DATA_BASE='data/';
+let allEvents=[],eventData={},currentFights=[];
+let selectedPicks={},betMode='singles',selectedEventSlug='',lastPickWasAuto=false;
+const KELLY=0.25;
+let sheetOpen=false;
+let countdownInterval=null;
 
-async function loadHotPicks() {
-  try {
-    const resp = await fetch(DATA_BASE + 'index.json');
-    const index = await resp.json();
-
-    const today = new Date().toISOString().slice(0,10);
-    const upcoming = index.filter(e => {
-      try { return new Date(e.date) >= new Date(today); }
-      catch { return false; }
-    });
-
-    if (upcoming.length === 0) {
-      showEmpty('No upcoming events found.');
-      return;
+// ── Countdown + odds timestamp ─────────────────────────────────────────────────
+function parseEventDate(str){
+  // Handles both 'May 16, 2026' and '2026-05-16' formats
+  if(!str)return null;
+  try{
+    // Try direct parse first (ISO format)
+    if(str.includes('-')){
+      const d=new Date(str+'T22:00:00-05:00'); // 10pm ET default
+      return isNaN(d)?null:d;
     }
-
-    upcoming.sort((a,b) => new Date(a.date) - new Date(b.date));
-    const next = upcoming[0];
-
-    document.getElementById('hero-sub').textContent =
-      `Best EV plays · ${next.name} · ${formatDate(next.date)}`;
-
-    const evResp = await fetch(DATA_BASE + next.slug + '.json');
-    if (!evResp.ok) throw new Error('Could not load event');
-    const data = await evResp.json();
-
-    allPicks = buildPicks(data);
-    renderStats();
-    renderPicks(allPicks);
-
-  } catch(e) {
-    showEmpty('Could not load picks. Try again later.');
-  }
+    // Human readable: 'May 16, 2026'
+    const d=new Date(str+' 22:00:00 GMT-0500');
+    return isNaN(d)?null:d;
+  }catch{return null;}
 }
 
-function buildPicks(data) {
-  const picks = [];
-
-  for (const fight of data.fights) {
-    if (fight.not_found) continue;
-    if (!fight.ev_a && !fight.ev_b) continue;
-    if (fight.confidence === 'low') continue;
-
-    const candidates = [
-      { fighter: fight.fighter_a, prob: fight.prob_a, ev: fight.ev_a, edge: fight.edge_a, odds: fight.odds_a, vegas_prob: fight.vegas_prob_a },
-      { fighter: fight.fighter_b, prob: fight.prob_b, ev: fight.ev_b, edge: fight.edge_b, odds: fight.odds_b, vegas_prob: fight.vegas_prob_b },
-    ];
-
-    for (const c of candidates) {
-      if (!c.ev || c.ev <= 0) continue;
-
-      picks.push({
-        fighter:    c.fighter,
-        opponent:   c.fighter === fight.fighter_a ? fight.fighter_b : fight.fighter_a,
-        weight:     fight.weight_class || '',
-        prob:       c.prob,
-        ev:         c.ev,
-        edge:       c.edge,
-        odds:       c.odds,
-        vegas_prob: c.vegas_prob,
-        confidence: fight.confidence,
-        chaos:      fight.chaos,
-        elo_clash:  fight.elo_clash,
-      });
-    }
-  }
-
-  picks.sort((a, b) => {
-    const confOrder = { high: 0, medium: 1 };
-    if (confOrder[a.confidence] !== confOrder[b.confidence])
-      return confOrder[a.confidence] - confOrder[b.confidence];
-    return b.ev - a.ev;
-  });
-
-  return picks;
-}
-
-function renderStats() {
-  const highCount = allPicks.filter(p => p.confidence === 'high').length;
-  const bestEV    = allPicks.length > 0 ? Math.max(...allPicks.map(p => p.ev)) : null;
-
-  document.getElementById('stat-plays').textContent = allPicks.length || '—';
-  document.getElementById('stat-best').textContent  = bestEV ? `+$${bestEV.toFixed(0)}` : '—';
-  document.getElementById('stat-high').textContent  = highCount || '—';
-}
-
-function filterPicks(filter, btn) {
-  currentFilter = filter;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  let filtered = allPicks;
-  if (filter === 'high')  filtered = allPicks.filter(p => p.confidence === 'high');
-  if (filter === 'ev50')  filtered = allPicks.filter(p => p.ev >= 50);
-
-  renderPicks(filtered);
-}
-
-function renderPicks(picks) {
-  const list  = document.getElementById('picks-list');
-  const label = document.getElementById('picks-label');
-
-  if (picks.length === 0) {
-    label.textContent = 'No picks match this filter';
-    list.innerHTML = `
-      <div class="empty-state">
-        <div style="font-size:32px;margin-bottom:1rem">🔍</div>
-        <div style="font-size:14px;color:var(--gray-600)">No picks match this filter for the upcoming event.</div>
-      </div>
-    `;
+function updateCountdown(eventDate,startTime){
+  if(countdownInterval)clearInterval(countdownInterval);
+  // Use explicit start_time if available, otherwise parse event_date at 10pm ET
+  const fightTime=startTime?new Date(startTime):parseEventDate(eventDate);
+  if(!fightTime){
+    const chip=document.getElementById('countdown-chip');
+    if(chip){chip.textContent='Fight night';chip.className='countdown-chip future';}
     return;
   }
-
-  label.textContent = `${picks.length} pick${picks.length !== 1 ? 's' : ''} · ranked by confidence then EV`;
-
-  list.innerHTML = picks.map((p, i) => {
-    const chaos     = p.chaos !== undefined ? p.chaos.toFixed(2) : '—';
-    const clashText = p.elo_clash ? ' · ⚡ Elo clash' : '';
-    const confClass = p.confidence;
-
-    const confLabel = p.confidence === 'high' ? 'High confidence' : 'Medium confidence';
-    const confSub   = p.confidence === 'high'
-      ? `95% hist. accuracy · chaos ${chaos}${clashText}`
-      : `67–81% hist. accuracy · chaos ${chaos}${clashText}`;
-
-    const oddsStr   = p.odds ? `ML ${p.odds > 0 ? '+' : ''}${p.odds}` : '';
-    const advisory  = p.confidence === 'medium'
-      ? `${oddsStr} · Positive EV but medium confidence — consider sizing down`
-      : `${oddsStr} · Model significantly underpriced by Vegas`;
-
-    return `
-      <div class="hot-card">
-        <div class="hot-card-header ${confClass}">
-          <div style="display:flex;align-items:center">
-            <span class="rank-badge">${i+1}</span>
-            <span class="hot-conf-badge ${confClass}">${confLabel}</span>
-          </div>
-          <span class="hot-conf-sub ${confClass}">${confSub}</span>
-        </div>
-        <div class="hot-card-body">
-          <div class="hot-card-top">
-            <div>
-              <div class="hot-fighter">${p.fighter}</div>
-              <div class="hot-matchup">vs ${p.opponent} · ${p.weight}</div>
-            </div>
-            <div class="hot-ev">
-              <div class="hot-ev-val">+$${p.ev.toFixed(0)}</div>
-              <div class="hot-ev-lbl">per $100 bet</div>
-            </div>
-          </div>
-          <div class="hot-metrics">
-            <div class="hot-metric">
-              <div class="hot-metric-lbl">Model prob</div>
-              <div class="hot-metric-val">${p.prob}%</div>
-            </div>
-            <div class="hot-metric">
-              <div class="hot-metric-lbl">Vegas implied</div>
-              <div class="hot-metric-val">${p.vegas_prob}%</div>
-            </div>
-            <div class="hot-metric edge">
-              <div class="hot-metric-lbl">Edge</div>
-              <div class="hot-metric-val">+${p.edge}%</div>
-            </div>
-          </div>
-          <div class="hot-advisory${p.confidence === 'medium' ? ' warn' : ''}">${advisory}</div>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-function formatDate(dateStr) {
-  try {
-    const d = new Date(dateStr + 'T12:00:00');
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  } catch { return dateStr; }
-}
-
-function showEmpty(msg) {
-  document.getElementById('picks-list').innerHTML = `
-    <div class="empty-state">
-      <div style="font-size:32px;margin-bottom:1rem">🥊</div>
-      <div style="font-size:14px;color:var(--gray-600)">${msg}</div>
-    </div>
-  `;
-}
-
-function toggleNav() {
-  document.getElementById('header-nav').classList.toggle('open');
-}
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 600) {
-    document.getElementById('header-nav').classList.remove('open');
+  function tick(){
+    const now=new Date();
+    const diff=fightTime-now;
+    const chip=document.getElementById('countdown-chip');
+    if(!chip)return;
+    if(diff<=0){
+      chip.textContent='Fight night';
+      chip.className='countdown-chip live';
+      clearInterval(countdownInterval);
+      return;
+    }
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hrs=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((diff%(1000*60*60))/(1000*60));
+    chip.textContent=days+'d '+hrs+'h '+mins+'m';
+    if(days===0)chip.className='countdown-chip soon';
+    else if(days<=7)chip.className='countdown-chip days';
+    else chip.className='countdown-chip future';
   }
-});
+  tick();
+  countdownInterval=setInterval(tick,30000);
+}
 
-loadHotPicks();
+function updateOddsTimestamp(data){
+  const dot=document.getElementById('odds-dot');
+  const txt=document.getElementById('odds-ts-text');
+  if(!dot||!txt)return;
+  // Use generated_at as the odds freshness indicator
+  const updated=data.generated_at||data.odds_updated||null;
+  if(!updated){txt.textContent='Odds freshness unknown';dot.className='odds-dot stale';return;}
+  try{
+    const t=new Date(updated);
+    const diffH=Math.round((Date.now()-t)/(1000*60*60));
+    if(diffH<1){txt.textContent='Odds updated just now';dot.className='odds-dot';}
+    else if(diffH<24){txt.textContent='Odds updated '+diffH+'h ago';dot.className='odds-dot';}
+    else{
+      const diffD=Math.floor(diffH/24);
+      txt.textContent='Odds updated '+diffD+'d ago';
+      dot.className='odds-dot stale';
+    }
+  }catch{txt.textContent='Odds live';dot.className='odds-dot';}
+}
+
+// ── Dropdown ──────────────────────────────────────────────────────────────────
+function toggleDropdown(id){
+  const t=document.getElementById(id+'-trigger'),m=document.getElementById(id+'-menu');
+  const open=m.classList.contains('open');
+  closeAllDropdowns();
+  if(!open){t.classList.add('open');m.classList.add('open');}
+}
+function closeAllDropdowns(){
+  document.querySelectorAll('.custom-select-trigger').forEach(t=>t.classList.remove('open'));
+  document.querySelectorAll('.custom-select-menu').forEach(m=>m.classList.remove('open'));
+}
+document.addEventListener('click',e=>{if(!e.target.closest('.custom-select'))closeAllDropdowns();});
+
+function buildEventMenu(events){
+  document.getElementById('event-menu').innerHTML=events.map((e,i)=>'<div class="custom-select-option'+(i===0?' selected':'')+'" onclick="selectEvent(\''+e.slug+'\',this)">'+e.name+' · '+formatDate(e.date)+'</div>').join('');
+}
+function selectEvent(slug,el){
+  selectedEventSlug=slug;
+  document.querySelectorAll('#event-menu .custom-select-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  closeAllDropdowns();
+  loadEvent(slug);
+}
+
+// ── Mobile sheet ──────────────────────────────────────────────────────────────
+function openSheet(){
+  sheetOpen=true;
+  document.getElementById('sheet').classList.add('open');
+  document.getElementById('sheet-overlay').classList.add('vis');
+  document.getElementById('mb-chevron').classList.add('up');
+}
+function closeSheet(){
+  sheetOpen=false;
+  document.getElementById('sheet').classList.remove('open');
+  document.getElementById('sheet-overlay').classList.remove('vis');
+  document.getElementById('mb-chevron').classList.remove('up');
+}
+
+// ── Data ──────────────────────────────────────────────────────────────────────
+async function init(){
+  try{
+    const resp=await fetch(DATA_BASE+'index.json');
+    const index=await resp.json();
+    const today=new Date().toISOString().slice(0,10);
+    allEvents=index.filter(e=>{try{return new Date(e.date)>=new Date(today);}catch{return false;}}).sort((a,b)=>new Date(a.date)-new Date(b.date));
+    if(!allEvents.length){document.getElementById('fights-list').innerHTML='<div class="empty-state">No upcoming events found.</div>';document.getElementById('event-bar-name').textContent='No upcoming events';return;}
+    buildEventMenu(allEvents);
+    selectedEventSlug=allEvents[0].slug;
+    await loadEvent(allEvents[0].slug);
+  }catch(e){document.getElementById('fights-list').innerHTML='<div class="empty-state">Could not load events.</div>';}
+}
+
+async function loadEvent(slug){
+  selectedPicks={};updateBasket();
+  document.getElementById('fights-list').innerHTML='<div class="loading"><div class="spinner"></div>Loading fight card...</div>';
+  document.getElementById('auto-pick-msg').classList.remove('vis');
+  if(eventData[slug]){processEvent(eventData[slug]);return;}
+  try{
+    const resp=await fetch(DATA_BASE+slug+'.json');
+    if(!resp.ok)throw new Error();
+    const data=await resp.json();
+    eventData[slug]=data;processEvent(data);
+  }catch(e){document.getElementById('fights-list').innerHTML='<div class="empty-state">Could not load fight data.</div>';}
+}
+
+function processEvent(data){
+  document.getElementById('event-bar-name').textContent=data.event_name+' · '+formatDate(data.event_date||'');
+  document.getElementById('hero-sub').textContent='Pick your fights, set your budget, get your allocation.';
+  document.getElementById('event-trigger-text').textContent='Change';
+  currentFights=(data.fights||[]).slice();
+  const highConf=currentFights.filter(f=>!f.not_found&&f.confidence==='high').length;
+  document.getElementById('stat-fights').textContent=currentFights.length||'—';
+  document.getElementById('stat-high').textContent=highConf||'—';
+  document.getElementById('card-label').textContent=currentFights.length+' fights · main event first';
+  updateCountdown(data.event_date, data.start_time||null);
+  updateOddsTimestamp(data);
+  renderFights();
+}
+
+// ── Fight chips ───────────────────────────────────────────────────────────────
+function renderFights(){
+  document.getElementById('fights-list').innerHTML=currentFights.map((f,i)=>chipHTML(f,i)).join('');
+}
+
+function chipHTML(f,idx){
+  const pos=idx===0?'Main event':idx===1?'Co-main':'Fight '+(idx+1);
+  const conf=f.confidence||'low';
+  const confLabel=conf==='high'?'High confidence':conf==='medium'?'Medium confidence':'Low confidence';
+  if(f.not_found||(f.odds_a===null&&f.odds_b===null)){
+    return '<div class="fight-chip"><div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div><div class="fight-unavail"><span style="font-size:18px">⏳</span> Fight data unavailable — odds not yet posted</div></div>';
+  }
+  const kA=idx+'-a',kB=idx+'-b';
+  const selA=selectedPicks[kA]?' sel':'',selB=selectedPicks[kB]?' sel':'';
+  const chk='<div class="fighter-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div>';
+  const favA=f.odds_a!==null&&f.odds_a<0?'favourite':'';
+  const favB=f.odds_b!==null&&f.odds_b<0?'favourite':'';
+  const oA=f.odds_a!==null?(f.odds_a>0?'+'+f.odds_a:''+f.odds_a):'—';
+  const oB=f.odds_b!==null?(f.odds_b>0?'+'+f.odds_b:''+f.odds_b):'—';
+  const evA=f.ev_a!==null?(f.ev_a>=0?'+$':'-$')+Math.abs(Math.round(f.ev_a)):'—';
+  const evB=f.ev_b!==null?(f.ev_b>=0?'+$':'-$')+Math.abs(Math.round(f.ev_b)):'—';
+  const edA=f.edge_a!==null?(f.edge_a>=0?'+':'')+f.edge_a+'%':'—';
+  const edB=f.edge_b!==null?(f.edge_b>=0?'+':'')+f.edge_b+'%':'—';
+  const evAc=f.ev_a>0?'ev-pos':'ev-neg',evBc=f.ev_b>0?'ev-pos':'ev-neg';
+  const edAc=f.edge_a>0?'ev-pos':'ev-neg',edBc=f.edge_b>0?'ev-pos':'ev-neg';
+  function side(sel,name,fav,prob,odds,ev,evC,edge,edC,s,rawOdds,fidx){
+    const editId='odds-'+fidx+'-'+s;
+    const oddsDisplay='<div class="fstat-odds-wrap">'
+      +'<div class="fstat-val" id="oddsval-'+editId+'">'+odds+'</div>'
+      +'<button class="fstat-edit-btn" onclick="event.stopPropagation();startEditOdds(\''+editId+'\','+fidx+',\''+s+'\')" title="Edit odds">✎</button>'
+      +'</div>';
+    return '<div class="fighter-side'+sel+'" onclick="togglePick('+fidx+',\''+s+'\')">'
+      +chk+'<div class="fighter-name">'+(name||'—')+'</div>'
+      +'<div class="fighter-fav">'+fav+'</div>'
+      +'<div class="fighter-stats">'
+      +'<div><div class="fstat-label">Octagon AI prob</div><div class="fstat-val">'+(prob!==null?prob+'%':'—')+'</div></div>'
+      +'<div><div class="fstat-label">Vegas odds</div>'+oddsDisplay+'</div>'
+      +'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'" id="evval-'+editId+'">'+ev+'</div></div>'
+      +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'" id="edgeval-'+editId+'">'+edge+'</div></div>'
+      +'</div></div>';
+  }
+  return '<div class="fight-chip">'
+    +'<div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
+    +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a',f.odds_a,idx)+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b',f.odds_b,idx)+'</div></div>';
+}
+
+function togglePick(idx,side){
+  const kA=idx+'-a',kB=idx+'-b',thisK=idx+'-'+side,otherK=side==='a'?kB:kA;
+  if(selectedPicks[thisK]){delete selectedPicks[thisK];}
+  else{
+    delete selectedPicks[otherK];
+    const f=currentFights[idx];
+    selectedPicks[thisK]={fighter:side==='a'?f.fighter_a:f.fighter_b,opponent:side==='a'?f.fighter_b:f.fighter_a,odds:side==='a'?f.odds_a:f.odds_b,prob:side==='a'?f.prob_a:f.prob_b,ev:side==='a'?f.ev_a:f.ev_b,edge:side==='a'?f.edge_a:f.edge_b,confidence:f.confidence,fightIdx:idx,side};
+  }
+  lastPickWasAuto=false;
+  rerenderChip(idx);
+  updateBasket();
+}
+
+function rerenderChip(idx){
+  const chips=document.getElementById('fights-list').children;
+  if(chips[idx]){
+    const newEl=document.createElement('div');
+    newEl.innerHTML=chipHTML(currentFights[idx],idx);
+    chips[idx].replaceWith(newEl.firstChild);
+  }
+}
+
+// ── Basket ────────────────────────────────────────────────────────────────────
+function setMode(mode){
+  betMode=mode;
+  ['sb-singles','sb-parlay','btn-singles','btn-parlay','sh-singles','sh-parlay'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){const isSingles=id.includes('singles');el.classList.toggle('active',mode==='singles'?isSingles:!isSingles);}
+  });
+  document.getElementById('alloc-result').classList.remove('vis');
+  document.getElementById('sheet-result').classList.remove('vis');
+  const label=mode==='parlay'?'Calculate':'Allocate';
+  document.getElementById('sidebar-alloc-btn').textContent=label;
+  document.getElementById('sheet-alloc-btn').textContent=label;
+  if(lastPickWasAuto){runAutoPick();}else{updateBasket();}
+}
+
+function updateBasket(){
+  const picks=Object.values(selectedPicks);
+  const count=picks.length;
+  document.getElementById('stat-sel').textContent=count;
+  const bar=document.getElementById('mobile-bar');
+  if(count===0){bar.classList.add('hidden');}
+  else{
+    bar.classList.remove('hidden');
+    document.getElementById('mb-title').textContent=count+' pick'+(count!==1?'s':'')+' selected';
+    document.getElementById('mb-sub').textContent=(betMode==='singles'?'Singles':'Parlay')+' · tap to review';
+    document.getElementById('mb-badge').textContent=count;
+  }
+  if(count===0){document.getElementById('sidebar-empty').style.display='block';document.getElementById('sidebar-filled').style.display='none';return;}
+  document.getElementById('sidebar-empty').style.display='none';
+  document.getElementById('sidebar-filled').style.display='block';
+  document.getElementById('sidebar-count').textContent=count+' pick'+(count!==1?'s':'');
+  const pickHTML=picks.map(p=>{
+    const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
+    const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
+    const evCol=p.ev>0?'color:var(--green)':'color:var(--red)';
+    return '<div class="sidebar-pick"><div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div><div class="sp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="sp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
+  }).join('');
+  document.getElementById('sidebar-picks').innerHTML=pickHTML;
+  const sheetPickHTML=picks.map(p=>{
+    const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
+    const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
+    const evCol=p.ev>0?'color:#5DCAA5':'color:#F09595';
+    return '<div class="sheet-pick"><div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div><div class="shp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="shp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
+  }).join('');
+  document.getElementById('sheet-picks').innerHTML=sheetPickHTML;
+  const showHint=count<2&&betMode==='singles';
+  document.getElementById('sidebar-hint').style.display=showHint?'block':'none';
+  if(betMode==='parlay'&&count>=2){updateParlaySummary(picks);document.getElementById('parlay-box').classList.add('vis');document.getElementById('sheet-parlay').classList.add('vis');}
+  else{document.getElementById('parlay-box').classList.remove('vis');document.getElementById('sheet-parlay').classList.remove('vis');}
+}
+
+function removePick(key){
+  const p=selectedPicks[key];if(!p)return;
+  delete selectedPicks[key];rerenderChip(p.fightIdx);updateBasket();
+  document.getElementById('alloc-result').classList.remove('vis');
+  document.getElementById('sheet-result').classList.remove('vis');
+}
+
+function updateParlaySummary(picks){
+  const winProb=picks.reduce((a,p)=>a*(p.prob/100),1);
+  const vegasProb=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
+  const pOdds=calcParlayOdds(picks);
+  const grid='<div><div class="pstat-label">Octagon AI prob</div><div class="pstat-val g">'+(winProb*100).toFixed(1)+'%</div></div>'+'<div><div class="pstat-label">Vegas implied</div><div class="pstat-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'+'<div><div class="pstat-label">Combined odds</div><div class="pstat-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'+'<div><div class="pstat-label">Legs</div><div class="pstat-val">'+picks.length+'</div></div>';
+  document.getElementById('parlay-grid').innerHTML=grid;
+  const sgrid='<div><div class="shps-label">Octagon AI prob</div><div class="shps-val g">'+(winProb*100).toFixed(1)+'%</div></div>'+'<div><div class="shps-label">Vegas implied</div><div class="shps-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'+'<div><div class="shps-label">Combined odds</div><div class="shps-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'+'<div><div class="shps-label">Legs</div><div class="shps-val">'+picks.length+'</div></div>';
+  document.getElementById('sheet-parlay-grid').innerHTML=sgrid;
+}
+
+function calcParlayOdds(picks){
+  let dec=1;picks.forEach(p=>{if(p.odds===null)return;dec*=p.odds>0?(p.odds/100)+1:(100/Math.abs(p.odds))+1;});
+  return dec>=2?Math.round((dec-1)*100):Math.round(-100/(dec-1));
+}
+
+// ── Allocator ─────────────────────────────────────────────────────────────────
+function runAllocator(){
+  const picks=Object.values(selectedPicks);
+  const budget=parseFloat(document.getElementById('budget-input').value);
+  if(!budget||budget<=0){alert('Please enter a valid budget.');return;}
+  if(!picks.length){alert('Select at least one pick.');return;}
+  const result=betMode==='singles'?buildSinglesResult(picks,budget):buildParlayResult(picks,budget);
+  document.getElementById('alloc-title').textContent=result.title;
+  document.getElementById('alloc-sub').textContent=result.sub;
+  document.getElementById('alloc-rows').innerHTML=result.rows;
+  document.getElementById('ret-grid').innerHTML=result.retGrid;
+  document.getElementById('alloc-result').classList.add('vis');
+}
+
+function runAllocatorMobile(){
+  const picks=Object.values(selectedPicks);
+  const budget=parseFloat(document.getElementById('sheet-budget-input').value);
+  if(!budget||budget<=0){alert('Please enter a valid budget.');return;}
+  if(!picks.length){alert('Select at least one pick.');return;}
+  const result=betMode==='singles'?buildSinglesResult(picks,budget):buildParlayResult(picks,budget);
+  document.getElementById('sr-title').textContent=result.title;
+  document.getElementById('sr-sub').textContent=result.sub;
+  document.getElementById('sheet-alloc-rows').innerHTML=result.mobileRows;
+  document.getElementById('sheet-ret-grid').innerHTML=result.mobileRetGrid;
+  document.getElementById('sheet-result').classList.add('vis');
+}
+
+function kellyAlloc(picks,budget){
+  const w=picks.map(p=>{
+    if(!p.odds||!p.prob)return 0;
+    const prob=p.prob/100,dec=p.odds>0?p.odds/100:100/Math.abs(p.odds);
+    const k=Math.max(0,(prob*dec-(1-prob))/dec);
+    return k*KELLY*(p.confidence==='high'?1.0:p.confidence==='medium'?0.5:0.25);
+  });
+  const total=w.reduce((a,b)=>a+b,0);
+  return total===0?picks.map(()=>budget/picks.length):w.map(x=>(x/total)*budget);
+}
+
+function buildSinglesResult(picks,budget){
+  const allocs=kellyAlloc(picks,budget);
+  const maxA=Math.max.apply(null,allocs);
+  const rows=picks.map((p,i)=>{
+    const amt=allocs[i],pct=maxA>0?(amt/maxA*100):0;
+    const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;
+    const oStr=p.odds>0?'+'+p.odds:''+p.odds;
+    return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oStr+' · '+p.prob+'%</div><div class="ar-bar-wrap"><div class="ar-bar" style="width:'+pct.toFixed(0)+'%"></div></div></div><div><div class="ar-amount">$'+amt.toFixed(0)+'</div><div class="ar-return">+$'+winRet.toFixed(0)+' if wins</div></div></div>';
+  }).join('');
+  const mobileRows=picks.map((p,i)=>{
+    const amt=allocs[i];const winRet=amt>0&&p.odds?(p.odds>0?(p.odds/100)*amt:(100/Math.abs(p.odds))*amt):0;const oStr=p.odds>0?'+'+p.odds:''+p.odds;
+    return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oStr+' · '+p.prob+'%</div></div><div><div class="sar-amount">$'+amt.toFixed(0)+'</div><div class="sar-return">+$'+winRet.toFixed(0)+'</div></div></div>';
+  }).join('');
+  const totalEV=picks.reduce((s,p,i)=>s+(allocs[i]/100)*(p.ev||0),0);
+  const totalWin=picks.reduce((s,p,i)=>{const a=allocs[i];return s+(p.odds>0?(p.odds/100)*a:(100/Math.abs(p.odds))*a);},0);
+  const totalA=allocs.reduce((a,b)=>a+b,0);
+  const retGrid='<div class="ret-card"><div class="ret-val">$'+totalA.toFixed(0)+'</div><div class="ret-lbl">Allocated</div></div><div class="ret-card"><div class="ret-val g">+$'+totalEV.toFixed(0)+'</div><div class="ret-lbl">Expected profit</div></div><div class="ret-card"><div class="ret-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="ret-lbl">Max if all win</div></div>';
+  const mobileRetGrid='<div class="sheet-ret-card"><div class="src-val">$'+totalA.toFixed(0)+'</div><div class="src-lbl">Allocated</div></div><div class="sheet-ret-card"><div class="src-val g">+$'+totalEV.toFixed(0)+'</div><div class="src-lbl">Expected profit</div></div><div class="sheet-ret-card"><div class="src-val a">$'+(totalA+totalWin).toFixed(0)+'</div><div class="src-lbl">Max if all win</div></div>';
+  return{title:'Recommended allocation — singles',sub:'Fractional Kelly (25%) · weighted by confidence',rows,mobileRows,retGrid,mobileRetGrid};
+}
+
+function buildParlayResult(picks,budget){
+  const winProb=picks.reduce((a,p)=>a*((p.prob||50)/100),1);
+  const vegasP=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
+  const pOdds=calcParlayOdds(picks);
+  const pDec=pOdds>0?(pOdds/100)+1:(100/Math.abs(pOdds))+1;
+  const winReturn=budget*(pDec-1);
+  const expVal=(winProb*winReturn)-((1-winProb)*budget);
+  const oStr=pOdds>0?'+'+pOdds:''+pOdds;
+  const rows=picks.map(p=>{const oS=p.odds>0?'+'+p.odds:''+p.odds;return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';}).join('');
+  const mobileRows=picks.map(p=>{const oS=p.odds>0?'+'+p.odds:''+p.odds;return '<div class="sheet-alloc-row"><div><div class="sar-fighter">'+p.fighter+'</div><div class="sar-meta">ML '+oS+' · '+p.prob+'%</div></div><div style="font-size:11px;color:var(--gray-400)">leg</div></div>';}).join('');
+  const retGrid='<div class="ret-card"><div class="ret-val">$'+budget.toFixed(0)+'</div><div class="ret-lbl">Stake</div></div><div class="ret-card"><div class="ret-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="ret-lbl">Expected value</div></div><div class="ret-card"><div class="ret-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="ret-lbl">Payout if hits</div></div>';
+  const mobileRetGrid='<div class="sheet-ret-card"><div class="src-val">$'+budget.toFixed(0)+'</div><div class="src-lbl">Stake</div></div><div class="sheet-ret-card"><div class="src-val '+(expVal>=0?'g':'')+'">'+(expVal>=0?'+':'')+' $'+Math.abs(expVal).toFixed(0)+'</div><div class="src-lbl">Expected value</div></div><div class="sheet-ret-card"><div class="src-val a">$'+(budget+winReturn).toFixed(0)+'</div><div class="src-lbl">Payout if hits</div></div>';
+  return{title:picks.length+'-leg parlay',sub:'Octagon AI: '+(winProb*100).toFixed(1)+'% · Vegas implied: '+(vegasP*100).toFixed(1)+'% · '+oStr+' combined odds',rows,mobileRows,retGrid,mobileRetGrid};
+}
+
+// ── Auto-pick ─────────────────────────────────────────────────────────────────
+function runAutoPick(){
+  const candidates=[];
+  currentFights.forEach((f,idx)=>{
+    if(f.not_found||(f.odds_a===null&&f.odds_b===null))return;
+    [['a',f.fighter_a,f.prob_a,f.ev_a,f.odds_a,f.edge_a,f.fighter_b],['b',f.fighter_b,f.prob_b,f.ev_b,f.odds_b,f.edge_b,f.fighter_a]].forEach(([side,name,prob,ev,odds,edge,opp])=>{
+      if(prob===null||prob===undefined)return;
+      candidates.push({fightIdx:idx,side,fighter:name,opponent:opp,prob,ev:ev||0,odds,edge:edge||0,confidence:f.confidence,score:(prob/100)*(ev||0)});
+    });
+  });
+  if(!candidates.length){alert('Not enough fight data.');return;}
+  selectedPicks={};lastPickWasAuto=true;
+  if(betMode==='singles'){
+    const seen=new Set();
+    candidates.filter(c=>c.ev>0).sort((a,b)=>b.ev-a.ev).forEach(c=>{if(seen.has(c.fightIdx)||seen.size>=5)return;seen.add(c.fightIdx);selectedPicks[c.fightIdx+'-'+c.side]=c;});
+    if(!Object.keys(selectedPicks).length){alert('No positive EV picks found for singles.');return;}
+    const picked=Object.values(selectedPicks);
+    currentFights.forEach((_,idx)=>rerenderChip(idx));updateBasket();
+    const msg='✨ Selected top '+picked.length+' EV plays: '+picked.map(p=>p.fighter+' (+$'+Math.round(p.ev)+' EV)').join(', ')+'. Sorted by highest EV — one pick per fight.';
+    const el=document.getElementById('auto-pick-msg');el.textContent=msg;el.classList.add('vis');
+  }else{
+    if(candidates.length<2){alert('Not enough fight data to build a parlay.');return;}
+    candidates.sort((a,b)=>b.score-a.score);
+    const top=candidates.slice(0,Math.min(candidates.length,8));
+    let bestCombo=null,bestScore=-Infinity;
+    for(let size=2;size<=top.length;size++){
+      getCombos(top,size).forEach(combo=>{
+        const ids=new Set(combo.map(c=>c.fightIdx));if(ids.size!==combo.length)return;
+        const winProb=combo.reduce((a,c)=>a*(c.prob/100),1);if(winProb<0.10)return;
+        const score=combo.reduce((a,c)=>a+c.score,0)*winProb;
+        if(score>bestScore){bestScore=score;bestCombo=combo;}
+      });
+    }
+    if(!bestCombo){alert('Could not find a suitable parlay. Try selecting picks manually.');return;}
+    bestCombo.forEach(p=>{selectedPicks[p.fightIdx+'-'+p.side]=p;});
+    currentFights.forEach((_,idx)=>rerenderChip(idx));updateBasket();
+    const winProb=bestCombo.reduce((a,p)=>a*(p.prob/100),1);
+    const msg='✨ Selected '+bestCombo.length+'-leg parlay: '+bestCombo.map(p=>p.fighter+' ('+p.prob+'%)').join(', ')+'. Combined win probability: '+(winProb*100).toFixed(1)+'%. Picks scored by (Octagon AI prob × EV) — highest confidence + highest edge.';
+    const el=document.getElementById('auto-pick-msg');el.textContent=msg;el.classList.add('vis');
+  }
+  if(window.innerWidth<=600){openSheet();}
+}
+
+// ── Odds editing ──────────────────────────────────────────────────────────────
+function startEditOdds(editId,idx,side){
+  const valEl=document.getElementById('oddsval-'+editId);
+  if(!valEl)return;
+  const f=currentFights[idx];
+  const origOdds=side==='a'?f.odds_a:f.odds_b;
+  const cur=valEl.textContent;
+  valEl.outerHTML='<input class="fstat-odds-input" id="oddsinput-'+editId+'" type="number" value="'+(origOdds||'')+'" onkeydown="oddsKeyDown(event,\''+editId+'\','+idx+',\''+side+'\')" onblur="commitOdds(\''+editId+'\','+idx+',\''+side+'\')" onclick="event.stopPropagation()" />'
+    +'<button class="fstat-reset" onclick="event.stopPropagation();resetOdds('+idx+',\''+side+'\')" title="Reset">reset</button>';
+  setTimeout(()=>{const inp=document.getElementById('oddsinput-'+editId);if(inp){inp.focus();inp.select();}},0);
+}
+
+function oddsKeyDown(e,editId,idx,side){
+  if(e.key==='Enter'){e.preventDefault();commitOdds(editId,idx,side);}
+  if(e.key==='Escape'){resetOdds(idx,side);}
+}
+
+function commitOdds(editId,idx,side){
+  const inp=document.getElementById('oddsinput-'+editId);
+  if(!inp)return;
+  const val=parseInt(inp.value);
+  if(isNaN(val)||val===0){resetOdds(idx,side);return;}
+  const f=currentFights[idx];
+  if(side==='a'){f.odds_a=val;}else{f.odds_b=val;}
+  // Recalculate EV and edge
+  recalcFight(f);
+  rerenderChip(idx);
+  // Update pick if this fighter is selected
+  const key=idx+'-'+side;
+  if(selectedPicks[key]){selectedPicks[key].odds=val;updateBasket();}
+}
+
+function resetOdds(idx,side){
+  // Restore from original eventData
+  const slug=selectedEventSlug;
+  const orig=eventData[slug]?.fights?.[idx];
+  if(orig){
+    const f=currentFights[idx];
+    if(side==='a'){f.odds_a=orig.odds_a;}else{f.odds_b=orig.odds_b;}
+    recalcFight(f);
+  }
+  rerenderChip(idx);
+}
+
+function recalcFight(f){
+  // Recalculate EV and edge for both sides after odds change
+  function calcEV(prob,odds){
+    if(prob===null||odds===null)return null;
+    const p=prob/100;
+    const dec=odds>0?(odds/100)+1:(100/Math.abs(odds))+1;
+    return parseFloat(((p*dec-(1-p))*100).toFixed(1));
+  }
+  function calcEdge(prob,odds){
+    if(prob===null||odds===null)return null;
+    const vegasImpl=odds<0?Math.abs(odds)/(Math.abs(odds)+100)*100:100/(odds+100)*100;
+    return parseFloat((prob-vegasImpl).toFixed(1));
+  }
+  f.ev_a=calcEV(f.prob_a,f.odds_a);
+  f.ev_b=calcEV(f.prob_b,f.odds_b);
+  f.edge_a=calcEdge(f.prob_a,f.odds_a);
+  f.edge_b=calcEdge(f.prob_b,f.odds_b);
+}
+
+function getCombos(arr,size){
+  if(size===1)return arr.map(x=>[x]);
+  const res=[];
+  for(let i=0;i<=arr.length-size;i++){getCombos(arr.slice(i+1),size-1).forEach(c=>res.push([arr[i],...c]));}
+  return res;
+}
+
+function formatDate(d){
+  try{const dt=new Date((d||'').includes('T')?d:d+'T12:00:00');return isNaN(dt)?d:dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+  catch{return d;}
+}
+
+function toggleNav(){document.getElementById('header-nav').classList.toggle('open');}
+window.addEventListener('resize',()=>{if(window.innerWidth>600)document.getElementById('header-nav').classList.remove('open');});
+
+init();
 </script>
 </body>
 </html>
