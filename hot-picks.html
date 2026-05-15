@@ -685,6 +685,7 @@ function chipHTML(f,idx){
   return '<div class="fight-chip" style="'+(f.data_limited?'border-color:rgba(162,45,45,0.5);box-shadow:0 0 0 1px rgba(162,45,45,0.3);':'')+'">'
     +'<div class="fight-chip-header" style="'+(f.data_limited?'background:rgba(162,45,45,0.1);':'')+'"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
     +(f.data_limited?'<div style="background:rgba(162,45,45,0.15);border-bottom:1px solid rgba(162,45,45,0.3);padding:8px 14px;font-size:11px;color:#F09595;line-height:1.5;"><strong>⚠️ Limited data</strong> — one fighter is new to our dataset. This prediction is Elo-based only, not a full model prediction. Treat it with caution.</div>':'')
+    +(f.result?'<div style="padding:6px 14px;font-size:11px;font-weight:600;'+(f.result==='correct'?'background:rgba(29,158,117,0.15);color:#5DCAA5;':'background:rgba(162,45,45,0.15);color:#F09595;')+'border-bottom:1px solid '+(f.result==='correct'?'rgba(29,158,117,0.2)':'rgba(162,45,45,0.2)')+';">'+(f.result==='correct'?'✓ Model correct — '+f.actual_winner+' won':'✗ Model wrong — '+f.actual_winner+' won')+'</div>':'')
     +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a')+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b')+'</div></div>';
 }
 
@@ -951,6 +952,15 @@ function getCombos(arr,size){
   for(let i=0;i<=arr.length-size;i++){getCombos(arr.slice(i+1),size-1).forEach(c=>res.push([arr[i],...c]));}
   return res;
 }
+
+ // Auto-refresh every 5 minutes on fight day (Saturday/Sunday)
+function startLiveRefresh(){
+  const day=new Date().getDay();
+  if(day===0||day===6){
+    setTimeout(()=>location.reload(),5*60*1000);
+  }
+}
+startLiveRefresh();
 
 function formatDate(d){
   try{const dt=new Date((d||'').includes('T')?d:d+'T12:00:00');return isNaN(dt)?d:dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}

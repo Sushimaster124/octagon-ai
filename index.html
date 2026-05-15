@@ -1114,6 +1114,7 @@ function renderEvent(data) {
         </div>
         <span style="font-size:10px;color:var(--gray-400);">${confSub}</span>
       </div>
+      ${fight.result ? `<div style="padding:6px 14px;font-size:11px;font-weight:600;${fight.result==='correct'?'background:rgba(29,158,117,0.15);color:#5DCAA5;border-bottom:1px solid rgba(29,158,117,0.2);':'background:rgba(162,45,45,0.15);color:#F09595;border-bottom:1px solid rgba(162,45,45,0.2);'}">${fight.result==='correct'?'✓ Model correct — '+fight.actual_winner+' won':'✗ Model wrong — '+fight.actual_winner+' won'}</div>` : ''}
       <div class="fight-card-body">
         <div class="fighters-grid">
           <div class="fighter-side">
@@ -1267,6 +1268,14 @@ function showSearchError(query, index) {
 const slug = getEventSlug();
 if (slug) loadEvent(slug);
 else showEvents();
+
+function startLiveRefresh(){
+  const day=new Date().getDay();
+  if(day===0||day===6){
+    setTimeout(()=>location.reload(),5*60*1000);
+  }
+}
+startLiveRefresh();
 
 function toggleNav() {
   document.getElementById('header-nav').classList.toggle('open');

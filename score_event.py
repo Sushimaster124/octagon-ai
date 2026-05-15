@@ -151,8 +151,9 @@ def main():
             print(f"  Skipping upcoming: {name}")
             continue
 
-        # Skip already scored
-        if slug in event_scores:
+        # Skip already scored unless it's today (live rescoring)
+        today_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        if slug in event_scores and date != today_date:
             print(f"  Already scored: {name}")
             continue
 
@@ -182,6 +183,21 @@ def main():
             'scored_at': datetime.now(timezone.utc).isoformat(),
             **scores
         }
+
+        # Write results back into event JSON per fight
+        for fight in event_data.get('fights', []):
+            if fight.get('not_found') or fight.get('data_limited'):
+                continue
+            fa = fight['fighter_a']
+            fb = fight['fighter_b']
+            actual_winner = (actual.get(f"{fa}|{fb}") or actual.get(f"{fb}|{fa}"))
+            if actual_winner:
+                fight['actual_winner'] = actual_winner
+                fight['result'] = 'correct' if fight['winner'].lower().strip() == actual_winner.lower().strip() else 'wrong'
+
+        with open(event_path, 'w') as f:
+            json.dump(event_data, f, indent=2, default=str)
+        print(f"  Results written to {slug}.json")
 
         print(f"  Result: {scores['correct']}/{scores['total']} correct "
               f"({scores['accuracy']}%)")
