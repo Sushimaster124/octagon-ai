@@ -225,6 +225,21 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    * { box-shadow: none; }
+    body, .main, .events-page { background: #1A1A18 !important; }
+    header, .hero, .stats-bar, .filter-bar,
+    .fight-card, .sidebar-card, .event-row, .hot-card,
+    .budget-panel, .alloc-panel, .highlight-card, .step-card,
+    .conf-card, .ev-example, .profile-card, .chart-card,
+    .history-card, .h2h-panel, .stat-card, .event-accuracy-row,
+    .best-bet, .countdown-card, .nav-card, .strengths,
+    .lb-row, .lb-header, .filter-btn:not(.active) {
+      background: #242422 !important;
+      border-color: rgba(255,255,255,0.06) !important;
+    }
+    .fight-card-header, .hot-card-header:not(.high):not(.medium) {
+      background: #1A1A18 !important;
+    }
     body { background: #111110; color: #E8E6DF; }
     header { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .logo { color: #E8E6DF; }
@@ -259,7 +274,7 @@
   </a>
   <div class="header-right" id="header-nav">
     <a class="nav-link" href="home.html">Home</a>
-    <a class="nav-link" href="hot-picks.html">🔥 Upcoming picks</a>
+    <a class="nav-link" href="hot-picks.html">Card builder</a>
     <a class="nav-link" href="index.html">Events</a>
     <a class="nav-link" href="fighters.html">Fighters</a>
     <a class="nav-link active" href="accuracy.html">Model Accuracy</a>
