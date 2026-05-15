@@ -1,5 +1,20 @@
 [
   {
+    "slug": "UFC_Fight_Night_Allen_vs._Costa",
+    "name": "UFC Fight Night: Allen vs. Costa",
+    "date": "May 16, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-15T18:31:02.581844",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 0,
+      "medium_conf": 10,
+      "low_conf": 1,
+      "not_found": 2,
+      "ev_plays": 10
+    }
+  },
+  {
     "slug": "UFC_Fight_Night_Fiziev_vs._Torres",
     "name": "UFC Fight Night: Fiziev vs. Torres",
     "date": "June 27, 2026",
@@ -72,21 +87,6 @@
       "low_conf": 1,
       "not_found": 4,
       "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Allen_vs._Costa",
-    "name": "UFC Fight Night: Allen vs. Costa",
-    "date": "May 16, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-13T09:22:39.489454",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 10,
-      "low_conf": 1,
-      "not_found": 2,
-      "ev_plays": 10
     }
   },
   {
