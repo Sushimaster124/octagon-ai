@@ -180,6 +180,7 @@
   /* ── Mobile bottom sheet — hidden on desktop ── */
   .mobile-bar { display:none; }
   .sheet-overlay { display:none; }
+  .sheet { display:none; }
 
   footer { text-align:center; padding:2rem; color:var(--gray-400); font-size:12px; border-top:1px solid var(--border); margin-top:3rem; }
 
@@ -222,7 +223,7 @@
     .sheet-overlay.vis { opacity:1; pointer-events:auto; }
 
     /* Bottom sheet panel */
-    .sheet { position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); border-radius:16px 16px 0 0; z-index:500; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height:85vh; display:flex; flex-direction:column; }
+    .sheet { display:flex; position:fixed; bottom:0; left:0; right:0; background:var(--gray-900); border-radius:16px 16px 0 0; z-index:500; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1); max-height:85vh; flex-direction:column; }
     .sheet.open { transform:translateY(0); }
 
     .sheet-handle-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 12px; border-bottom:1px solid rgba(255,255,255,0.08); flex-shrink:0; gap:12px; }
@@ -879,30 +880,53 @@ function runAutoPick(){
       candidates.push({fightIdx:idx,side,fighter:name,opponent:opp,prob,ev:ev||0,odds,edge:edge||0,confidence:f.confidence,score:(prob/100)*(ev||0)});
     });
   });
-  if(candidates.length<2){alert('Not enough fight data to build a parlay.');return;}
-  candidates.sort((a,b)=>b.score-a.score);
-  const top=candidates.slice(0,Math.min(candidates.length,8));
-  let bestCombo=null,bestScore=-Infinity;
-  for(let size=2;size<=top.length;size++){
-    getCombos(top,size).forEach(combo=>{
-      const ids=new Set(combo.map(c=>c.fightIdx));
-      if(ids.size!==combo.length)return;
-      const winProb=combo.reduce((a,c)=>a*(c.prob/100),1);
-      if(winProb<0.10)return;
-      const score=combo.reduce((a,c)=>a+c.score,0)*winProb;
-      if(score>bestScore){bestScore=score;bestCombo=combo;}
-    });
-  }
-  if(!bestCombo){alert('Could not find a suitable parlay. Try selecting picks manually.');return;}
+  if(!candidates.length){alert('Not enough fight data.');return;}
   selectedPicks={};
-  bestCombo.forEach(p=>{selectedPicks[p.fightIdx+'-'+p.side]=p;});
-  currentFights.forEach((_,idx)=>rerenderChip(idx));
-  setMode('parlay');
-  updateBasket();
-  const winProb=bestCombo.reduce((a,p)=>a*(p.prob/100),1);
-  const msg='✨ Selected '+bestCombo.length+'-leg parlay: '+bestCombo.map(p=>p.fighter+' ('+p.prob+'%)').join(', ')+'. Combined win probability: '+(winProb*100).toFixed(1)+'%. Picks scored by (Octagon AI prob × EV) — highest confidence + highest edge.';
-  const el=document.getElementById('auto-pick-msg');
-  el.textContent=msg;el.classList.add('vis');
+
+  if(betMode==='singles'){
+    // Singles: pick top 5 by EV, one per fight
+    const seen=new Set();
+    candidates
+      .filter(c=>c.ev>0)
+      .sort((a,b)=>b.ev-a.ev)
+      .forEach(c=>{
+        if(seen.has(c.fightIdx)||seen.size>=5)return;
+        seen.add(c.fightIdx);
+        selectedPicks[c.fightIdx+'-'+c.side]=c;
+      });
+    if(!Object.keys(selectedPicks).length){alert('No positive EV picks found for singles.');return;}
+    const picked=Object.values(selectedPicks);
+    currentFights.forEach((_,idx)=>rerenderChip(idx));
+    updateBasket();
+    const msg='✨ Selected top '+picked.length+' EV plays: '+picked.map(p=>p.fighter+' (+$'+Math.round(p.ev)+' EV)').join(', ')+'. Sorted by highest EV — one pick per fight.';
+    const el=document.getElementById('auto-pick-msg');
+    el.textContent=msg;el.classList.add('vis');
+  } else {
+    // Parlay: optimize combo by prob × EV score
+    if(candidates.length<2){alert('Not enough fight data to build a parlay.');return;}
+    candidates.sort((a,b)=>b.score-a.score);
+    const top=candidates.slice(0,Math.min(candidates.length,8));
+    let bestCombo=null,bestScore=-Infinity;
+    for(let size=2;size<=top.length;size++){
+      getCombos(top,size).forEach(combo=>{
+        const ids=new Set(combo.map(c=>c.fightIdx));
+        if(ids.size!==combo.length)return;
+        const winProb=combo.reduce((a,c)=>a*(c.prob/100),1);
+        if(winProb<0.10)return;
+        const score=combo.reduce((a,c)=>a+c.score,0)*winProb;
+        if(score>bestScore){bestScore=score;bestCombo=combo;}
+      });
+    }
+    if(!bestCombo){alert('Could not find a suitable parlay. Try selecting picks manually.');return;}
+    bestCombo.forEach(p=>{selectedPicks[p.fightIdx+'-'+p.side]=p;});
+    currentFights.forEach((_,idx)=>rerenderChip(idx));
+    updateBasket();
+    const winProb=bestCombo.reduce((a,p)=>a*(p.prob/100),1);
+    const msg='✨ Selected '+bestCombo.length+'-leg parlay: '+bestCombo.map(p=>p.fighter+' ('+p.prob+'%)').join(', ')+'. Combined win probability: '+(winProb*100).toFixed(1)+'%. Picks scored by (Octagon AI prob × EV) — highest confidence + highest edge.';
+    const el=document.getElementById('auto-pick-msg');
+    el.textContent=msg;el.classList.add('vis');
+  }
+
   if(window.innerWidth<=600){openSheet();}
 }
 
