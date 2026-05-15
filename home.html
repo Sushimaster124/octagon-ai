@@ -668,7 +668,10 @@ function renderCountdown(event) {
   `;
 
   function tick() {
-    const target = new Date(event.date);
+    const d = new Date(event.date);
+    const target = event.start_time
+      ? new Date(event.start_time)
+      : new Date(d.getFullYear(), d.getMonth(), d.getDate(), 22+4, 0, 0); // 10pm ET = 2am UTC
     const now = new Date();
     const diff = Math.max(0, target - now);
 
@@ -676,17 +679,10 @@ function renderCountdown(event) {
     const hEl = document.getElementById('cd-h');
     const mEl = document.getElementById('cd-m');
 
-    if (diff === 0 || Math.floor(diff / 86400000) === 0) {
-      if (dEl) { dEl.textContent = 'Today'; dEl.style.fontSize = '13px'; }
-      if (hEl) hEl.closest('.time-block').style.display = 'none';
-      if (mEl) mEl.closest('.time-block').style.display = 'none';
-      return;
-    }
-
-    const d = Math.floor(diff / 86400000);
+    const days = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);
-    if (dEl) dEl.textContent = d;
+    if (dEl) dEl.textContent = days;
     if (hEl) hEl.textContent = h;
     if (mEl) mEl.textContent = m;
   }
