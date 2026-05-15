@@ -169,13 +169,6 @@
   .ev-neg { color:var(--red)!important; }
   .fight-unavail { padding:20px; text-align:center; color:var(--gray-400); font-size:13px; display:flex; align-items:center; justify-content:center; gap:8px; }
 
-  /* ── Odds editing ── */
-  .fstat-odds-wrap { display:flex; align-items:center; gap:4px; }
-  .fstat-edit-btn { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:11px; padding:1px 3px; line-height:1; font-family:var(--font); opacity:0.6; }
-  .fstat-edit-btn:hover { opacity:1; color:var(--blue); }
-  .fstat-odds-input { width:64px; height:22px; border:1.5px solid var(--blue); border-radius:4px; padding:0 5px; font-size:12px; font-weight:600; font-family:var(--font); outline:none; background:white; color:var(--gray-900); }
-  .fstat-reset { font-size:10px; color:var(--blue); cursor:pointer; background:none; border:none; font-family:var(--font); padding:0; text-decoration:underline; }
-
   .auto-pick-msg { background:var(--amber-light); border:1px solid rgba(186,117,23,0.2); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:12px; font-size:12px; color:var(--amber-dark); line-height:1.6; display:none; }
   .auto-pick-msg.vis { display:block; }
 
@@ -341,9 +334,6 @@
     .header-right{background:#1A1A18;border-color:rgba(255,255,255,0.06);}
     .hamburger span{background:#E8E6DF;}
     .sidebar-hint{background:#1A1A18;}
-    .fstat-odds-input{background:#111110;border-color:var(--blue);color:#E8E6DF;}
-    .fstat-reset{color:#85B7EB;}
-    .fstat-edit-btn{color:#5F5E5A;}
   }
 </style>
 </head>
@@ -502,33 +492,12 @@ let sheetOpen=false;
 let countdownInterval=null;
 
 // ── Countdown + odds timestamp ─────────────────────────────────────────────────
-function parseEventDate(str){
-  // Handles both 'May 16, 2026' and '2026-05-16' formats
-  if(!str)return null;
-  try{
-    // Try direct parse first (ISO format)
-    if(str.includes('-')){
-      const d=new Date(str+'T22:00:00-05:00'); // 10pm ET default
-      return isNaN(d)?null:d;
-    }
-    // Human readable: 'May 16, 2026'
-    const d=new Date(str+' 22:00:00 GMT-0500');
-    return isNaN(d)?null:d;
-  }catch{return null;}
-}
-
-function updateCountdown(eventDate,startTime){
+function updateCountdown(eventDate){
   if(countdownInterval)clearInterval(countdownInterval);
-  // Use explicit start_time if available, otherwise parse event_date at 10pm ET
-  const fightTime=startTime?new Date(startTime):parseEventDate(eventDate);
-  if(!fightTime){
-    const chip=document.getElementById('countdown-chip');
-    if(chip){chip.textContent='Fight night';chip.className='countdown-chip future';}
-    return;
-  }
   function tick(){
     const now=new Date();
-    const diff=fightTime-now;
+    const fight=new Date(eventDate+'T23:00:00');
+    const diff=fight-now;
     const chip=document.getElementById('countdown-chip');
     if(!chip)return;
     if(diff<=0){
@@ -540,10 +509,22 @@ function updateCountdown(eventDate,startTime){
     const days=Math.floor(diff/(1000*60*60*24));
     const hrs=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
     const mins=Math.floor((diff%(1000*60*60))/(1000*60));
-    chip.textContent=days+'d '+hrs+'h '+mins+'m';
-    if(days===0)chip.className='countdown-chip soon';
-    else if(days<=7)chip.className='countdown-chip days';
-    else chip.className='countdown-chip future';
+    if(days===0&&hrs<6){
+      chip.textContent='Tonight · '+hrs+'h '+mins+'m';
+      chip.className='countdown-chip soon';
+    }else if(days===0){
+      chip.textContent='Today · '+hrs+'h away';
+      chip.className='countdown-chip soon';
+    }else if(days===1){
+      chip.textContent='Tomorrow · '+hrs+'h away';
+      chip.className='countdown-chip days';
+    }else if(days<=7){
+      chip.textContent=days+' days away';
+      chip.className='countdown-chip days';
+    }else{
+      chip.textContent=days+' days away';
+      chip.className='countdown-chip future';
+    }
   }
   tick();
   countdownInterval=setInterval(tick,30000);
@@ -553,11 +534,10 @@ function updateOddsTimestamp(data){
   const dot=document.getElementById('odds-dot');
   const txt=document.getElementById('odds-ts-text');
   if(!dot||!txt)return;
-  // Use generated_at as the odds freshness indicator
-  const updated=data.generated_at||data.odds_updated||null;
+  const updated=data.odds_updated||data.event_date||null;
   if(!updated){txt.textContent='Odds freshness unknown';dot.className='odds-dot stale';return;}
   try{
-    const t=new Date(updated);
+    const t=new Date(updated.includes('T')?updated:updated+'T12:00:00');
     const diffH=Math.round((Date.now()-t)/(1000*60*60));
     if(diffH<1){txt.textContent='Odds updated just now';dot.className='odds-dot';}
     else if(diffH<24){txt.textContent='Odds updated '+diffH+'h ago';dot.className='odds-dot';}
@@ -643,7 +623,7 @@ function processEvent(data){
   document.getElementById('stat-fights').textContent=currentFights.length||'—';
   document.getElementById('stat-high').textContent=highConf||'—';
   document.getElementById('card-label').textContent=currentFights.length+' fights · main event first';
-  updateCountdown(data.event_date, data.start_time||null);
+  if(data.event_date)updateCountdown(data.event_date);
   updateOddsTimestamp(data);
   renderFights();
 }
@@ -673,25 +653,20 @@ function chipHTML(f,idx){
   const edB=f.edge_b!==null?(f.edge_b>=0?'+':'')+f.edge_b+'%':'—';
   const evAc=f.ev_a>0?'ev-pos':'ev-neg',evBc=f.ev_b>0?'ev-pos':'ev-neg';
   const edAc=f.edge_a>0?'ev-pos':'ev-neg',edBc=f.edge_b>0?'ev-pos':'ev-neg';
-  function side(sel,name,fav,prob,odds,ev,evC,edge,edC,s,rawOdds,fidx){
-    const editId='odds-'+fidx+'-'+s;
-    const oddsDisplay='<div class="fstat-odds-wrap">'
-      +'<div class="fstat-val" id="oddsval-'+editId+'">'+odds+'</div>'
-      +'<button class="fstat-edit-btn" onclick="event.stopPropagation();startEditOdds(\''+editId+'\','+fidx+',\''+s+'\')" title="Edit odds">✎</button>'
-      +'</div>';
-    return '<div class="fighter-side'+sel+'" onclick="togglePick('+fidx+',\''+s+'\')">'
+  function side(sel,name,fav,prob,odds,ev,evC,edge,edC,s){
+    return '<div class="fighter-side'+sel+'" onclick="togglePick('+idx+',\''+s+'\')">'
       +chk+'<div class="fighter-name">'+(name||'—')+'</div>'
       +'<div class="fighter-fav">'+fav+'</div>'
       +'<div class="fighter-stats">'
       +'<div><div class="fstat-label">Octagon AI prob</div><div class="fstat-val">'+(prob!==null?prob+'%':'—')+'</div></div>'
-      +'<div><div class="fstat-label">Vegas odds</div>'+oddsDisplay+'</div>'
-      +'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'" id="evval-'+editId+'">'+ev+'</div></div>'
-      +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'" id="edgeval-'+editId+'">'+edge+'</div></div>'
+      +'<div><div class="fstat-label">Vegas odds</div><div class="fstat-val">'+odds+'</div></div>'
+      +'<div><div class="fstat-label">EV</div><div class="fstat-val '+evC+'">'+ev+'</div></div>'
+      +'<div><div class="fstat-label">Edge</div><div class="fstat-val '+edC+'">'+edge+'</div></div>'
       +'</div></div>';
   }
   return '<div class="fight-chip">'
     +'<div class="fight-chip-header"><span class="fight-chip-conf '+conf+'">'+pos+' · '+confLabel+'</span><span class="fight-chip-weight">'+(f.weight_class||'')+'</span></div>'
-    +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a',f.odds_a,idx)+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b',f.odds_b,idx)+'</div></div>';
+    +'<div class="fight-chip-body">'+side(selA,f.fighter_a,favA,f.prob_a,oA,evA,evAc,edA,edAc,'a')+side(selB,f.fighter_b,favB,f.prob_b,oB,evB,evBc,edB,edBc,'b')+'</div></div>';
 }
 
 function togglePick(idx,side){
@@ -904,69 +879,6 @@ function runAutoPick(){
     const el=document.getElementById('auto-pick-msg');el.textContent=msg;el.classList.add('vis');
   }
   if(window.innerWidth<=600){openSheet();}
-}
-
-// ── Odds editing ──────────────────────────────────────────────────────────────
-function startEditOdds(editId,idx,side){
-  const valEl=document.getElementById('oddsval-'+editId);
-  if(!valEl)return;
-  const f=currentFights[idx];
-  const origOdds=side==='a'?f.odds_a:f.odds_b;
-  const cur=valEl.textContent;
-  valEl.outerHTML='<input class="fstat-odds-input" id="oddsinput-'+editId+'" type="number" value="'+(origOdds||'')+'" onkeydown="oddsKeyDown(event,\''+editId+'\','+idx+',\''+side+'\')" onblur="commitOdds(\''+editId+'\','+idx+',\''+side+'\')" onclick="event.stopPropagation()" />'
-    +'<button class="fstat-reset" onclick="event.stopPropagation();resetOdds('+idx+',\''+side+'\')" title="Reset">reset</button>';
-  setTimeout(()=>{const inp=document.getElementById('oddsinput-'+editId);if(inp){inp.focus();inp.select();}},0);
-}
-
-function oddsKeyDown(e,editId,idx,side){
-  if(e.key==='Enter'){e.preventDefault();commitOdds(editId,idx,side);}
-  if(e.key==='Escape'){resetOdds(idx,side);}
-}
-
-function commitOdds(editId,idx,side){
-  const inp=document.getElementById('oddsinput-'+editId);
-  if(!inp)return;
-  const val=parseInt(inp.value);
-  if(isNaN(val)||val===0){resetOdds(idx,side);return;}
-  const f=currentFights[idx];
-  if(side==='a'){f.odds_a=val;}else{f.odds_b=val;}
-  // Recalculate EV and edge
-  recalcFight(f);
-  rerenderChip(idx);
-  // Update pick if this fighter is selected
-  const key=idx+'-'+side;
-  if(selectedPicks[key]){selectedPicks[key].odds=val;updateBasket();}
-}
-
-function resetOdds(idx,side){
-  // Restore from original eventData
-  const slug=selectedEventSlug;
-  const orig=eventData[slug]?.fights?.[idx];
-  if(orig){
-    const f=currentFights[idx];
-    if(side==='a'){f.odds_a=orig.odds_a;}else{f.odds_b=orig.odds_b;}
-    recalcFight(f);
-  }
-  rerenderChip(idx);
-}
-
-function recalcFight(f){
-  // Recalculate EV and edge for both sides after odds change
-  function calcEV(prob,odds){
-    if(prob===null||odds===null)return null;
-    const p=prob/100;
-    const dec=odds>0?(odds/100)+1:(100/Math.abs(odds))+1;
-    return parseFloat(((p*dec-(1-p))*100).toFixed(1));
-  }
-  function calcEdge(prob,odds){
-    if(prob===null||odds===null)return null;
-    const vegasImpl=odds<0?Math.abs(odds)/(Math.abs(odds)+100)*100:100/(odds+100)*100;
-    return parseFloat((prob-vegasImpl).toFixed(1));
-  }
-  f.ev_a=calcEV(f.prob_a,f.odds_a);
-  f.ev_b=calcEV(f.prob_b,f.odds_b);
-  f.edge_a=calcEdge(f.prob_a,f.odds_a);
-  f.edge_b=calcEdge(f.prob_b,f.odds_b);
 }
 
 function getCombos(arr,size){
