@@ -102,7 +102,7 @@
   .bp-remove:hover{color:var(--red);}
   .parlay-box{background:var(--gray-900);border-radius:var(--radius-md);padding:14px 16px;margin:12px 0;display:none;}
   .parlay-box.vis{display:block;}
-  .parlay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+  .parlay-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;}
   .pstat-label{font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;}
   .pstat-val{font-size:18px;font-weight:700;color:white;}
   .pstat-val.g{color:#5DCAA5;}
@@ -477,9 +477,15 @@ function removePick(key){
 
 function updateParlaySummary(picks){
   const winProb=picks.reduce((a,p)=>a*(p.prob/100),1);
+  const vegasProb=picks.reduce((a,p)=>{
+    if(!p.odds)return a;
+    const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);
+    return a*imp;
+  },1);
   const pOdds=calcParlayOdds(picks);
   document.getElementById('parlay-grid').innerHTML=
-    '<div><div class="pstat-label">Win probability</div><div class="pstat-val '+(winProb>0.25?'g':'')+'">'+(winProb*100).toFixed(1)+'%</div></div>'
+    '<div><div class="pstat-label">Octagon AI prob</div><div class="pstat-val g">'+(winProb*100).toFixed(1)+'%</div></div>'
+    +'<div><div class="pstat-label">Vegas implied prob</div><div class="pstat-val">'+(vegasProb*100).toFixed(1)+'%</div></div>'
     +'<div><div class="pstat-label">Combined odds</div><div class="pstat-val">'+(pOdds>0?'+':'')+pOdds+'</div></div>'
     +'<div><div class="pstat-label">Legs</div><div class="pstat-val">'+picks.length+'</div></div>';
 }
@@ -534,13 +540,15 @@ function renderSingles(picks,allocs,budget){
 
 function renderParlay(picks,budget){
   const winProb=picks.reduce((a,p)=>a*((p.prob||50)/100),1);
+  const vegasProb=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
   const pOdds=calcParlayOdds(picks);
   const pDec=pOdds>0?(pOdds/100)+1:(100/Math.abs(pOdds))+1;
   const winReturn=budget*(pDec-1);
   const expVal=(winProb*winReturn)-((1-winProb)*budget);
   const oStr=pOdds>0?'+'+pOdds:''+pOdds;
   document.getElementById('alloc-title').textContent=picks.length+'-leg parlay';
-  document.getElementById('alloc-sub').textContent=(winProb*100).toFixed(1)+'% win probability · '+oStr+' combined odds';
+  const vegasP=picks.reduce((a,p)=>{if(!p.odds)return a;const imp=p.odds<0?Math.abs(p.odds)/(Math.abs(p.odds)+100):100/(p.odds+100);return a*imp;},1);
+  document.getElementById('alloc-sub').textContent='Octagon AI: '+(winProb*100).toFixed(1)+'% · Vegas implied: '+(vegasP*100).toFixed(1)+'% · '+oStr+' combined odds';
   document.getElementById('alloc-rows').innerHTML=picks.map(p=>{
     const oS=p.odds>0?'+'+p.odds:''+p.odds;
     return '<div class="alloc-row"><div><div class="ar-fighter">'+p.fighter+'</div><div class="ar-meta">vs '+p.opponent+' · ML '+oS+' · '+p.prob+'% Octagon AI prob</div></div>'
