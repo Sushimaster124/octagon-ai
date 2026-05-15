@@ -1010,6 +1010,11 @@ function renderEvent(data) {
       return;
     }
 
+    if (fight.data_limited) {
+      card.style.borderColor = 'rgba(162,45,45,0.5)';
+      card.style.boxShadow = '0 0 0 1px rgba(162,45,45,0.3)';
+    }
+
     const conf       = fight.confidence;
     const chaosScore = (fight.chaos !== undefined && fight.chaos !== null) ? fight.chaos.toFixed(2) : '—';
     const clashFlag  = fight.elo_clash || false;
