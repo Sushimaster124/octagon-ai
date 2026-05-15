@@ -1,0 +1,41 @@
+name: Score UFC Results
+
+on:
+  schedule:
+    # 2am ET Sunday (6am UTC) — catches Saturday night results
+    - cron: '0 6 * * 0'
+    # 10am ET Sunday (2pm UTC) — backup run
+    - cron: '0 14 * * 0'
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run accuracy scorer
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          GITHUB_ACTIONS_SITE: ${{ github.workspace }}
+        run: |
+          python score_event.py
+
+      - name: Commit and push accuracy data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/accuracy.json
+          git diff --staged --quiet || git commit -m "Auto-score: update accuracy.json [skip ci]"
+          git push
