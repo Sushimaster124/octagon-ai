@@ -565,6 +565,171 @@ function toggleFights(slug) {
 }
 
 loadAccuracy();
+loadVegasDisagreements();
+
+async function loadVegasDisagreements() {
+  try {
+    const resp = await fetch('data/index.json');
+    const index = await resp.json();
+    const past = index.filter(e => {
+      try { return new Date(e.date) <= new Date(Date.now() - 86400000); } catch { return false; }
+    });
+
+    const allDisagreements = [];
+
+    await Promise.all(past.map(async event => {
+      try {
+        const r = await fetch('data/' + event.slug + '.json');
+        if (!r.ok) return;
+        const data = await r.json();
+        (data.fights || []).forEach(f => {
+          if (f.not_found || f.data_limited || !f.result) return;
+          [
+            { fighter: f.fighter_a, opponent: f.fighter_b, modelProb: f.prob_a, vegasProb: f.vegas_prob_a, edge: f.edge_a, odds: f.odds_a, side: 'a' },
+            { fighter: f.fighter_b, opponent: f.fighter_a, modelProb: f.prob_b, vegasProb: f.vegas_prob_b, edge: f.edge_b, odds: f.odds_b, side: 'b' }
+          ].forEach(side => {
+            if (side.edge === null || side.edge === undefined || Math.abs(side.edge) < 15) return;
+            if (side.vegasProb === null || side.modelProb === null) return;
+            const winner = f.actual_winner;
+            const isCorrect = winner && f.winner && f.winner.toLowerCase().trim() === winner.toLowerCase().trim();
+            const predictedThisFighter = f.winner === side.fighter;
+            if (!predictedThisFighter) return;
+            allDisagreements.push({
+              fighter: side.fighter,
+              opponent: side.opponent,
+              modelProb: side.modelProb,
+              vegasProb: side.vegasProb,
+              edge: side.edge,
+              odds: side.odds,
+              result: f.result,
+              correct: f.result === 'correct',
+              blurb: null,
+              eventName: data.event_name,
+              eventDate: data.event_date,
+              weightClass: f.weight_class || '',
+            });
+          });
+        });
+      } catch {}
+    }));
+
+    if (!allDisagreements.length) return;
+
+    allDisagreements.sort((a, b) => Math.abs(b.edge) - Math.abs(a.edge));
+
+    const total = allDisagreements.length;
+    const correct = allDisagreements.filter(d => d.correct).length;
+    const big = allDisagreements.filter(d => Math.abs(d.edge) >= 25);
+    const bigCorrect = big.filter(d => d.correct).length;
+    const pct = total > 0 ? Math.round(correct / total * 100) : 0;
+    const bigPct = big.length > 0 ? Math.round(bigCorrect / big.length * 100) : 0;
+
+    const section = document.createElement('div');
+    section.id = 'vegas-section';
+    section.style.cssText = 'margin-top:2rem;';
+    section.innerHTML = `
+      <div style="margin-bottom:1.25rem;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--red);margin-bottom:6px;">Vegas vs model</div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;color:var(--gray-900);margin-bottom:4px;" id="vvm-title">Where we disagreed with Vegas</div>
+        <div style="font-size:13px;color:var(--gray-400);line-height:1.6;">Every fight where our model differed from Vegas by 15%+ — and what actually happened.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.25rem;">
+        <div class="stat-card">
+          <div class="stat-value val-green">${pct}%</div>
+          <div class="stat-label">Right at 15%+ edge</div>
+          <div class="stat-sub">${correct} of ${total} fights</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value val-blue">${bigPct}%</div>
+          <div class="stat-label">Right at 25%+ edge</div>
+          <div class="stat-sub">${bigCorrect} of ${big.length} fights</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">${total}</div>
+          <div class="stat-label">Total disagreements</div>
+          <div class="stat-sub">Edge ≥ 15% vs Vegas</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;" id="vvm-filters">
+        <button onclick="filterVVM('all',this)" style="font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;border:1px solid var(--gray-900);background:var(--gray-900);color:white;cursor:pointer;font-family:inherit;">All</button>
+        <button onclick="filterVVM('big',this)" style="font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:white;color:var(--gray-600);cursor:pointer;font-family:inherit;">Edge 25%+</button>
+        <button onclick="filterVVM('correct',this)" style="font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:white;color:var(--gray-600);cursor:pointer;font-family:inherit;">Model right ✓</button>
+        <button onclick="filterVVM('wrong',this)" style="font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:white;color:var(--gray-600);cursor:pointer;font-family:inherit;">Model wrong ✗</button>
+      </div>
+
+      <div id="vvm-list"></div>
+    `;
+
+    document.getElementById('main').appendChild(section);
+
+    window._vvmData = allDisagreements;
+    filterVVM('all', document.querySelector('#vvm-filters button'));
+
+  } catch(e) {
+    console.error('Vegas disagreements error:', e);
+  }
+}
+
+function filterVVM(type, btn) {
+  document.querySelectorAll('#vvm-filters button').forEach(b => {
+    b.style.background = 'white';
+    b.style.color = 'var(--gray-600)';
+    b.style.borderColor = 'var(--border)';
+  });
+  if (btn) {
+    btn.style.background = 'var(--gray-900)';
+    btn.style.color = 'white';
+    btn.style.borderColor = 'var(--gray-900)';
+  }
+
+  const data = window._vvmData || [];
+  let filtered = data;
+  if (type === 'big') filtered = data.filter(d => Math.abs(d.edge) >= 25);
+  if (type === 'correct') filtered = data.filter(d => d.correct);
+  if (type === 'wrong') filtered = data.filter(d => !d.correct);
+
+  const list = document.getElementById('vvm-list');
+  if (!filtered.length) {
+    list.innerHTML = '<div style="color:var(--gray-400);font-size:13px;padding:1rem 0;">No fights match this filter.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(d => {
+    const edgeStr = (d.edge > 0 ? '+' : '') + d.edge + '%';
+    const oddsStr = d.odds !== null ? (d.odds > 0 ? '+' + d.odds : '' + d.odds) : '—';
+    const borderColor = d.correct ? 'var(--green)' : 'var(--red)';
+    const badgeBg = d.correct ? 'var(--green-light)' : 'var(--red-light)';
+    const badgeColor = d.correct ? 'var(--green-dark)' : 'var(--red-dark)';
+    const badgeText = d.correct ? '✓ Model right' : '✗ Model wrong';
+    return `
+      <div style="background:white;border:1px solid var(--border);border-left:3px solid ${borderColor};border-radius:12px;padding:14px 18px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;">
+        <div>
+          <div style="font-size:15px;font-weight:600;color:var(--gray-900);margin-bottom:2px;">${d.fighter}</div>
+          <div style="font-size:12px;color:var(--gray-400);margin-bottom:8px;">vs ${d.opponent} · ${d.weightClass} · ${d.eventName}</div>
+          <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <div style="font-size:16px;font-weight:700;color:var(--blue);">${d.modelProb}%</div>
+              <div style="font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.3px;">Model</div>
+            </div>
+            <div style="font-size:11px;color:var(--gray-200);font-weight:600;">vs</div>
+            <div style="text-align:center;">
+              <div style="font-size:16px;font-weight:700;color:var(--gray-600);">${d.vegasProb}%</div>
+              <div style="font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.3px;">Vegas</div>
+            </div>
+            <div style="font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--red-light);color:var(--red-dark);">${edgeStr} edge</div>
+          </div>
+          <div style="font-size:12px;color:var(--gray-600);font-style:italic;line-height:1.5;">${d.eventDate}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+          <div style="font-size:12px;font-weight:700;padding:5px 12px;border-radius:6px;background:${badgeBg};color:${badgeColor};white-space:nowrap;">${badgeText}</div>
+          <div style="font-size:12px;font-weight:600;color:var(--gray-600);">ML ${oddsStr}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
 
 function toggleNav() {
   document.getElementById('header-nav').classList.toggle('open');
