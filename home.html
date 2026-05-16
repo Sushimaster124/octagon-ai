@@ -332,7 +332,7 @@ async function loadHomeData() {
 
     const now = new Date();
     const upcoming = index
-      .filter(e => { try { return new Date(Date.UTC(...e.date.split('-').map(Number))) > new Date(now - 86400000*2); } catch { return false; } })
+      .filter(e => { try { return new Date(e.date + 'T00:00:00Z') > new Date(now - 86400000*2); } catch { return false; } })
       .sort((a,b) => new Date(a.date) - new Date(b.date));
 
     if (upcoming.length > 0) {
