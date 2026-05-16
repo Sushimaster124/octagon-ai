@@ -8,189 +8,202 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --red:        #E24B4A;
-    --red-light:  #FCEBEB;
-    --red-dark:   #A32D2D;
-    --blue:       #378ADD;
-    --blue-light: #E6F1FB;
-    --blue-dark:  #185FA5;
-    --green:      #1D9E75;
-    --green-light:#E1F5EE;
-    --green-dark: #085041;
-    --amber:      #BA7517;
-    --amber-light:#FAEEDA;
-    --gray-50:    #F9F9F8;
-    --gray-100:   #F1EFE8;
-    --gray-200:   #D3D1C7;
-    --gray-400:   #888780;
-    --gray-600:   #5F5E5A;
-    --gray-900:   #1A1A18;
-    --border:     rgba(0,0,0,0.08);
-    --shadow-sm:  0 1px 3px rgba(0,0,0,0.06);
-    --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
-    --radius-sm:  6px;
-    --radius-md:  10px;
-    --radius-lg:  14px;
+    --red: #E24B4A; --red-light: #FCEBEB; --red-dark: #A32D2D;
+    --green: #1D9E75; --green-light: #E1F5EE; --green-dark: #085041;
+    --blue: #378ADD;
+    --amber: #BA7517; --amber-light: #FAEEDA;
+    --gray-400: #888780; --gray-600: #5F5E5A; --gray-900: #1A1A18;
+    --border: rgba(0,0,0,0.08);
     --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  body { font-family: var(--font); background: var(--gray-50); color: var(--gray-900); min-height: 100vh; }
+  body { font-family: var(--font); background: #111110; color: #E8E6DF; min-height: 100vh; }
 
-  header { background: white; border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-  .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none; }
-  .logo-icon { width: 28px; height: 28px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 700; }
-  .header-right { display: flex; align-items: center; gap: 0.6rem; }
-  .hamburger { display: none; flex-shrink: 0; }
-  .nav-link { font-size: 12px; color: var(--gray-600); text-decoration: none; padding: 5px 9px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: white; display: inline-flex; align-items: center; gap: 4px; transition: background 0.15s; }
-  .nav-link:hover { background: var(--gray-50); }
-  .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
-  .accuracy-pill { background: var(--green-light); color: var(--green); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
-
-  .hero { background: white; border-bottom: 1px solid var(--border); padding: 4rem 2rem 3rem; text-align: center; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--red-light); color: var(--red-dark); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.06em; }
-  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 1.5s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .hero-title { font-size: 56px; font-weight: 700; color: var(--gray-900); letter-spacing: -0.04em; line-height: 1; margin-bottom: 1.25rem; }
-  .hero-title span { color: var(--red); }
-  .hero-sub { font-size: 16px; color: var(--gray-600); line-height: 1.65; max-width: 520px; margin: 0 auto 2.5rem; }
-  .hero-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 6px; background: var(--red); color: white; font-size: 14px; font-weight: 600; padding: 11px 24px; border-radius: var(--radius-md); border: none; cursor: pointer; font-family: var(--font); text-decoration: none; transition: background 0.15s; }
-  .btn-primary:hover { background: var(--red-dark); }
-  .btn-secondary { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--gray-900); font-size: 14px; font-weight: 500; padding: 11px 24px; border-radius: var(--radius-md); border: 1px solid var(--border); cursor: pointer; font-family: var(--font); text-decoration: none; transition: background 0.15s; }
-  .btn-secondary:hover { background: var(--gray-50); }
-
-  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); background: white; border-bottom: 1px solid var(--border); }
-  .stat-item { padding: 1.4rem 2rem; border-right: 1px solid var(--border); text-align: center; }
-  .stat-item:last-child { border-right: none; }
-  .stat-value { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
-  .stat-label { font-size: 11px; color: var(--gray-400); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
-
-  .main { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; }
-  .section-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; margin-top: 2rem; }
-  .section-label:first-child { margin-top: 0; }
-
-  .best-bet { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
-  .best-bet-header { background: var(--green-light); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
-  .best-bet-label { font-size: 11px; font-weight: 700; color: var(--green-dark); text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px; }
-  .best-bet-event { font-size: 11px; color: #0F6E56; font-weight: 500; }
-  .best-bet-body { padding: 18px; }
-  .best-bet-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
-  .best-bet-fighter { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 3px; }
-  .best-bet-matchup { font-size: 12px; color: var(--gray-400); }
-  .best-bet-ev-val { font-size: 32px; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
-  .best-bet-ev-lbl { font-size: 11px; color: var(--gray-400); text-align: right; }
-  .best-bet-metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-  .bm { background: var(--gray-50); border-radius: var(--radius-sm); padding: 8px 10px; }
-  .bm.edge { background: var(--green-light); }
-  .bm-lbl { font-size: 10px; color: var(--gray-400); margin-bottom: 2px; }
-  .bm.edge .bm-lbl { color: #0F6E56; }
-  .bm-val { font-size: 15px; font-weight: 600; color: var(--gray-900); }
-  .bm.edge .bm-val { color: var(--green); }
-  .best-bet-blurb { font-size: 12px; color: var(--gray-400); font-style: italic; line-height: 1.6; padding-top: 12px; border-top: 1px solid var(--border); }
-  .no-bet { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; color: var(--gray-400); font-size: 13px; box-shadow: var(--shadow-sm); }
-
-  .countdown-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
-  .countdown-eyebrow { font-size: 11px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-  .countdown-name { font-size: 16px; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
-  .countdown-date { font-size: 12px; color: var(--gray-400); }
-  .countdown-timer { display: flex; gap: 8px; flex-shrink: 0; }
-  .time-block { text-align: center; background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 8px 12px; min-width: 52px; }
-  .time-num { font-size: 22px; font-weight: 700; color: var(--gray-900); line-height: 1; }
-  .time-lbl { font-size: 10px; color: var(--gray-400); text-transform: uppercase; margin-top: 3px; letter-spacing: 0.04em; }
-  .no-event { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; color: var(--gray-400); font-size: 13px; box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
-
-  .nav-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1rem; }
-  .nav-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; text-decoration: none; display: block; transition: box-shadow 0.15s, border-color 0.15s; box-shadow: var(--shadow-sm); }
-  .nav-card:hover { box-shadow: var(--shadow-md); border-color: var(--gray-200); }
-  .nav-card-icon { font-size: 20px; margin-bottom: 10px; }
-  .nav-card-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 5px; }
-  .nav-card-desc { font-size: 12px; color: var(--gray-400); line-height: 1.55; }
-
-  .strengths { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
-  .strengths-title { font-size: 13px; font-weight: 600; color: var(--gray-900); margin-bottom: 12px; }
-  .strength-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-  .strength-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .sdot { width: 7px; height: 7px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
-  .strength-text { color: var(--gray-600); line-height: 1.55; }
-
-  .disclaimer { background: var(--amber-light); border-radius: var(--radius-md); padding: 12px 16px; font-size: 12px; color: #633806; line-height: 1.65; margin-bottom: 1.5rem; display: flex; gap: 10px; align-items: flex-start; }
-  .update-note { font-size: 11px; color: var(--gray-400); text-align: center; padding: 1.5rem 0 0; border-top: 1px solid var(--border); }
-
-  .loading { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 13px; }
-  .spinner { width: 24px; height: 24px; border: 2px solid var(--gray-100); border-top-color: var(--red); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 0.75rem; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  footer { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 12px; border-top: 1px solid var(--border); margin-top: 2rem; }
-
-  @media (max-width: 768px) {
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-    .nav-cards { grid-template-columns: 1fr; }
-    .hero-title { font-size: 40px; }
-    .countdown-card { flex-direction: column; gap: 16px; align-items: flex-start; }
-    .main { padding: 1.5rem 1rem; }
+  /* NAV */
+  header {
+    background: rgba(17,17,16,0.96);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0 2rem; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
   }
+  .logo { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: #E8E6DF; text-decoration: none; letter-spacing: -0.3px; }
+  .logo-icon { width: 28px; height: 28px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 13px; font-weight: 700; }
+  .header-right { display: flex; align-items: center; gap: 0.5rem; }
+  .hamburger { display: none; flex-shrink: 0; }
+  .nav-link { font-size: 12px; color: var(--gray-400); text-decoration: none; padding: 5px 9px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); transition: color 0.15s, background 0.15s; }
+  .nav-link:hover { color: #E8E6DF; background: rgba(255,255,255,0.07); }
+  .nav-link.active { background: #E8E6DF; color: var(--gray-900); border-color: #E8E6DF; }
 
+  /* FADE */
+  .fade { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade.vis { opacity: 1; transform: translateY(0); }
+  .fd1 { transition-delay: 0.05s; }
+  .fd2 { transition-delay: 0.15s; }
+  .fd3 { transition-delay: 0.25s; }
+  .fd4 { transition-delay: 0.35s; }
+  .fd5 { transition-delay: 0.45s; }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .live-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(226,75,74,0.12); color: #F09595;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 5px 13px; border-radius: 20px;
+    margin-bottom: 2rem; border: 1px solid rgba(226,75,74,0.2);
+  }
+  .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero-title { font-size: 72px; font-weight: 800; letter-spacing: -0.048em; line-height: 0.93; margin-bottom: 1.5rem; color: #E8E6DF; }
+  .hero-title em { color: var(--red); font-style: normal; }
+  .hero-sub { font-size: 17px; color: var(--gray-600); line-height: 1.72; max-width: 420px; margin: 0 auto 2.5rem; }
+  .hero-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem; }
+  .btn-red { background: var(--red); color: white; font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 10px; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; }
+  .btn-red:hover { background: var(--red-dark); }
+  .btn-ghost { background: rgba(255,255,255,0.05); color: var(--gray-400); font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; text-decoration: none; transition: background 0.15s; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.09); }
+  .scroll-hint { color: #2C2C2A; font-size: 11px; display: flex; flex-direction: column; align-items: center; gap: 6px; letter-spacing: 0.3px; }
+  .scroll-arr { width: 16px; height: 16px; border-right: 1.5px solid #2C2C2A; border-bottom: 1.5px solid #2C2C2A; transform: rotate(45deg); animation: bounce 1.6s infinite; }
+  @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
+
+  /* SECTIONS */
+  .section { padding: 4.5rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .section-inner { max-width: 600px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--red); margin-bottom: 8px; }
+  .sec-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: #E8E6DF; margin-bottom: 6px; line-height: 1.18; }
+  .sec-sub { font-size: 14px; color: var(--gray-600); line-height: 1.68; margin-bottom: 1.5rem; }
+
+  /* BEST BET */
+  .bet-card { background: #1A1A18; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; margin-bottom: 1rem; }
+  .bet-top { background: #04342C; padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+  .bet-conf { font-size: 11px; font-weight: 700; color: #5DCAA5; text-transform: uppercase; letter-spacing: 0.4px; }
+  .bet-event { font-size: 11px; color: #5DCAA5; opacity: 0.7; }
+  .bet-body { padding: 20px 22px; }
+  .bet-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+  .bet-fighter { font-size: 22px; font-weight: 700; color: #E8E6DF; margin-bottom: 4px; }
+  .bet-match { font-size: 13px; color: var(--gray-600); }
+  .bet-ev { font-size: 36px; font-weight: 800; color: var(--green); letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+  .bet-ev-lbl { font-size: 11px; color: var(--gray-600); text-align: right; margin-top: 3px; }
+  .bet-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .bet-col { background: #111110; border-radius: 8px; padding: 12px 14px; }
+  .bet-col.edge { background: #04342C; }
+  .bet-col-lbl { font-size: 10px; color: #444441; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 5px; }
+  .bet-col.edge .bet-col-lbl { color: #5DCAA5; opacity: 0.7; }
+  .bet-col-val { font-size: 20px; font-weight: 700; color: #E8E6DF; }
+  .bet-col.edge .bet-col-val { color: var(--green); }
+  .bet-col-sub { font-size: 11px; color: #444441; margin-top: 3px; }
+  .bet-footer { padding: 12px 22px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: #444441; line-height: 1.65; }
+  .cta-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--red); text-decoration: none; padding: 8px 0; transition: color 0.15s; }
+  .cta-link:hover { color: #F09595; }
+
+  /* FLOW STEPS */
+  .flow-steps { display: flex; flex-direction: column; margin-top: 0.5rem; }
+  .flow-step { display: flex; gap: 0; }
+  .flow-left { display: flex; flex-direction: column; align-items: center; margin-right: 18px; flex-shrink: 0; }
+  .flow-num { width: 34px; height: 34px; border-radius: 50%; background: var(--red); color: white; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .flow-line { width: 1px; background: rgba(255,255,255,0.07); flex: 1; margin: 5px 0; min-height: 24px; }
+  .flow-step:last-child .flow-line { display: none; }
+  .flow-content { flex: 1; padding-bottom: 2.5rem; min-width: 0; }
+  .flow-title { font-size: 16px; font-weight: 600; color: #E8E6DF; margin-bottom: 6px; margin-top: 5px; line-height: 1.3; }
+  .flow-desc { font-size: 13px; color: var(--gray-600); line-height: 1.72; margin-bottom: 12px; }
+  .flow-card { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 16px; }
+  .flow-card-label { font-size: 10px; color: #444441; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 10px; }
+  .flow-cta { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--red); text-decoration: none; margin-top: 12px; transition: color 0.15s; }
+  .flow-cta:hover { color: #F09595; }
+
+  /* CHIPS */
+  .chip-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .chip { background: #111110; border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px 14px; }
+  .chip.selected { background: rgba(29,158,117,0.15); border-color: rgba(29,158,117,0.4); }
+  .chip-name { font-size: 13px; font-weight: 600; color: #E8E6DF; margin-bottom: 3px; }
+  .chip.selected .chip-name { color: #5DCAA5; }
+  .chip-prob { font-size: 11px; color: var(--gray-600); line-height: 1.4; }
+  .chip.selected .chip-prob { color: #5DCAA5; }
+  .chip-check { font-size: 10px; color: var(--green); margin-top: 5px; font-weight: 600; }
+
+  /* BASKET */
+  .basket-preview { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; }
+  .basket-header { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .basket-title { font-size: 12px; font-weight: 600; color: #E8E6DF; }
+  .basket-toggle { display: flex; gap: 3px; background: rgba(255,255,255,0.06); border-radius: 20px; padding: 3px; }
+  .btoggle { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: none; cursor: pointer; font-family: var(--font); background: none; color: var(--gray-600); }
+  .btoggle.active { background: #E8E6DF; color: var(--gray-900); }
+  .basket-pick { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .basket-pick:last-child { border-bottom: none; }
+  .bp-name { font-size: 13px; font-weight: 600; color: #E8E6DF; }
+  .bp-meta { font-size: 11px; color: var(--gray-600); margin-top: 2px; }
+  .bp-ev { font-size: 13px; font-weight: 700; color: var(--green); white-space: nowrap; flex-shrink: 0; }
+
+  /* EV BOX */
+  .ev-box { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px 18px; }
+  .ev-box-label { font-size: 10px; color: #444441; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 10px; }
+  .ev-box-text { font-size: 13px; color: var(--gray-600); line-height: 1.72; }
+  .ev-box-text span { color: var(--green); font-weight: 600; }
+
+  /* MORE CARDS */
+  .more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1.5rem; }
+  .more-card { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 18px 20px; text-decoration: none; display: block; transition: border-color 0.15s; }
+  .more-card:hover { border-color: rgba(255,255,255,0.14); }
+  .more-title { font-size: 14px; font-weight: 600; color: #E8E6DF; margin-bottom: 5px; }
+  .more-desc { font-size: 12px; color: var(--gray-600); line-height: 1.62; margin-bottom: 10px; }
+  .more-arrow { font-size: 12px; color: var(--red); font-weight: 600; }
+
+  /* HONEST */
+  .honest-row { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .honest-row:last-child { border-bottom: none; }
+  .honest-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 7px; opacity: 0.5; }
+  .honest-text { font-size: 13px; color: var(--gray-600); line-height: 1.72; }
+  .honest-text strong { color: var(--gray-400); font-weight: 500; }
+
+  /* DISCLAIMER + FOOTER */
+  .disclaimer { background: rgba(186,117,23,0.07); border-top: 1px solid rgba(186,117,23,0.15); padding: 14px 1.5rem; text-align: center; font-size: 12px; color: #854F0B; line-height: 1.65; }
+  footer { text-align: center; padding: 2rem 1.5rem; color: #444441; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+  /* MOBILE */
   @media (max-width: 600px) {
     body { overflow-x: hidden; }
     header { padding: 0 1rem; }
-    .header-right { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 12px 1rem; gap: 8px; z-index: 200; box-shadow: var(--shadow-md); }
+    .header-right {
+      display: none; flex-direction: column;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: #1A1A18; border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 1rem; gap: 8px; z-index: 200;
+    }
     .header-right.open { display: flex; }
-    .header-right .nav-link { width: 100%; justify-content: center; font-size: 14px; padding: 10px; display: flex; }
+    .header-right .nav-link { width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block; }
     .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0; }
-    .hamburger span { width: 22px; height: 2px; background: var(--gray-900); border-radius: 2px; display: block; }
-    .accuracy-pill { display: none; }
-    .hero { padding: 2.5rem 1rem 2rem; }
-    .hero-title { font-size: 32px; }
-    .hero-sub { font-size: 14px; }
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-    .best-bet-fighter { font-size: 17px; }
-    .best-bet-ev-val { font-size: 26px; }
+    .hamburger span { width: 22px; height: 2px; background: #E8E6DF; border-radius: 2px; display: block; }
+    .hero { min-height: 80vh; padding: 4rem 1.25rem 3rem; }
+    .hero-title { font-size: 46px; }
+    .hero-sub { font-size: 15px; }
+    .section { padding: 3rem 1.25rem; }
+    .sec-title { font-size: 22px; }
+    .bet-body { padding: 16px; }
+    .bet-fighter { font-size: 18px; }
+    .bet-ev { font-size: 28px; }
+    .bet-cols { gap: 8px; }
+    .bet-col { padding: 10px 12px; }
+    .bet-col-val { font-size: 17px; }
+    .chip-row { grid-template-columns: 1fr; }
+    .more-grid { grid-template-columns: 1fr; }
+    .flow-content { padding-bottom: 2rem; }
+    .flow-title { font-size: 15px; }
+    .basket-header { flex-direction: column; align-items: flex-start; }
+    .flow-left { margin-right: 14px; }
   }
 
-  @media (prefers-color-scheme: dark) {
-    body { background: #111110; color: #E8E6DF; }
-    header { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .logo { color: #E8E6DF; }
-    .nav-link { background: #1A1A18; color: #888780; border-color: rgba(255,255,255,0.08); }
-    .nav-link:hover { background: #2C2C2A; }
-    .nav-link.active { background: #E8E6DF; color: #1A1A18; border-color: #E8E6DF; }
-    .accuracy-pill { display: none; }
-    .hero { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .hero-title { color: #E8E6DF; }
-    .hero-sub { color: #888780; }
-    .hero-badge { background: rgba(226,75,74,0.15); color: #F09595; }
-    .btn-secondary { background: #1A1A18; color: #E8E6DF; border-color: rgba(255,255,255,0.1); }
-    .stats-bar { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .stat-item { border-color: rgba(255,255,255,0.06); }
-    .stat-value { color: #E8E6DF; }
-    .stat-label { color: #5F5E5A; }
-    .section-label { color: #444441; }
-    .best-bet { background: #242422; border-color: rgba(255,255,255,0.06); }
-    .best-bet-header { background: #04342C; }
-    .best-bet-fighter { color: #E8E6DF; }
-    .best-bet-matchup { color: #5F5E5A; }
-    .best-bet-blurb { color: #5F5E5A; border-color: rgba(255,255,255,0.06); }
-    .bm { background: #111110; }
-    .bm-val { color: #E8E6DF; }
-    .bm-lbl { color: #5F5E5A; }
-    .no-bet { background: #242422; border-color: rgba(255,255,255,0.06); color: #5F5E5A; }
-    .countdown-card { background: #242422; border-color: rgba(255,255,255,0.06); }
-    .countdown-name { color: #E8E6DF; }
-    .countdown-date { color: #5F5E5A; }
-    .time-block { background: #111110; border-color: rgba(255,255,255,0.06); }
-    .time-num { color: #E8E6DF; }
-    .time-lbl { color: #5F5E5A; }
-    .nav-card { background: #242422; border-color: rgba(255,255,255,0.06); }
-    .nav-card-title { color: #E8E6DF; }
-    .nav-card-desc { color: #5F5E5A; }
-    .strengths { background: #242422; border-color: rgba(255,255,255,0.06); }
-    .strength-row { border-color: rgba(255,255,255,0.06); }
-    .strength-text { color: #888780; }
-    .disclaimer { background: #412402; color: #FAC775; }
-    .update-note { color: #444441; border-color: rgba(255,255,255,0.06); }
-    footer { border-color: rgba(255,255,255,0.06); color: #444441; }
-    .header-right { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .hamburger span { background: #E8E6DF; }
+  @media (max-width: 380px) {
+    .hero-title { font-size: 38px; }
+    .bet-row { flex-direction: column; }
+    .bet-ev { font-size: 26px; }
   }
 </style>
 </head>
@@ -208,270 +221,262 @@
     <a class="nav-link" href="fighters.html">Fighters</a>
     <a class="nav-link" href="accuracy.html">Model Accuracy</a>
     <a class="nav-link" href="how-it-works.html">How it works</a>
-    <span class="accuracy-pill">83% accurate</span>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
   </button>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">
-    <div class="live-dot"></div>
-    Live Vegas odds updated daily
+  <div class="live-pill fade fd1"><div class="live-dot"></div>Live Vegas odds</div>
+  <h1 class="hero-title fade fd2">We find where<br>Vegas is <em>wrong.</em></h1>
+  <p class="hero-sub fade fd3">A model trained on UFC fights that finds bets Vegas is mispricing. See the edge in plain English. Build your card. Know the math before you decide.</p>
+  <div class="hero-actions fade fd4">
+    <a class="btn-red" href="hot-picks.html">Build my card →</a>
+    <a class="btn-ghost" href="how-it-works.html">How it works</a>
   </div>
-  <h1 class="hero-title">OCTAGON <span>AI</span></h1>
-  <p class="hero-sub">An XGBoost model trained on 8,337 UFC fights that finds discrepancies between predicted outcomes and Vegas odds — surfacing the highest EV bets before fight night.</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="index.html">View upcoming events →</a>
-    <a class="btn-secondary" href="hot-picks.html">Build your card</a>
+  <div class="scroll-hint fade fd5"><span>scroll</span><div class="scroll-arr"></div></div>
+</div>
+
+<!-- TOP BET -->
+<div class="section">
+  <div class="section-inner">
+    <div class="eyebrow fade">Right now</div>
+    <div class="sec-title fade">The biggest gap between what we see and what Vegas priced.</div>
+    <div class="sec-sub fade">Updates automatically before every event.</div>
+    <div id="best-bet-container" class="fade"></div>
+    <a class="cta-link fade" href="index.html">See every fight on the upcoming card →</a>
   </div>
 </div>
 
+<!-- HOW TO USE -->
+<div class="section">
+  <div class="section-inner">
+    <div class="eyebrow fade">How to use this</div>
+    <div class="sec-title fade">Build your betting card in three steps.</div>
+    <div class="sec-sub fade">Pick your fighters, choose singles or a parlay, and see exactly what the math says you stand to make.</div>
 
-<div class="main">
+    <div class="flow-steps">
 
-  <div class="section-label">Top bet right now</div>
-  <div id="best-bet-container">
-    <div class="loading"><div class="spinner"></div>Loading best pick...</div>
-  </div>
+      <div class="flow-step fade">
+        <div class="flow-left"><div class="flow-num">1</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title">Pick the fighters you like</div>
+          <div class="flow-desc">Go to Card Builder and tap any fighter you want to back. You can pick fighters across multiple events and mix them into one card.</div>
+          <div class="flow-card">
+            <div class="flow-card-label">UFC Fight Night: Allen vs Costa · Welterweight</div>
+            <div class="chip-row">
+              <div class="chip">
+                <div class="chip-name">Khaos Williams</div>
+                <div class="chip-prob">We give him 76% · Vegas agrees</div>
+              </div>
+              <div class="chip selected">
+                <div class="chip-name">Benardo Sopaj</div>
+                <div class="chip-prob">We give him 90% · Vegas underpriced him</div>
+                <div class="chip-check">✓ Added to basket</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="section-label">Next event</div>
-  <div id="countdown-container">
-    <div class="loading"><div class="spinner"></div>Loading event...</div>
-  </div>
+      <div class="flow-step fade">
+        <div class="flow-left"><div class="flow-num">2</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title">Choose single bets or a parlay</div>
+          <div class="flow-desc">Singles means you bet each fighter separately. A parlay combines them into one bet with a bigger payout but all of them need to win. Your basket shows both options side by side.</div>
+          <div class="basket-preview">
+            <div class="basket-header">
+              <div class="basket-title">🧺 Your basket · 2 picks</div>
+              <div class="basket-toggle">
+                <button class="btoggle active">Singles</button>
+                <button class="btoggle">Parlay</button>
+              </div>
+            </div>
+            <div class="basket-pick">
+              <div>
+                <div class="bp-name">Benardo Sopaj</div>
+                <div class="bp-meta">vs Cuamba · ML +114 · We give him 90%</div>
+              </div>
+              <div class="bp-ev">+$56 per $100</div>
+            </div>
+            <div class="basket-pick">
+              <div>
+                <div class="bp-name">Shauna Bannon</div>
+                <div class="bp-meta">vs Caliari · ML +226 · We give her 62%</div>
+              </div>
+              <div class="bp-ev">+$103 per $100</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="section-label">Explore</div>
-  <div class="nav-cards">
-    <a class="nav-card" href="index.html">
-      <div class="nav-card-icon">📅</div>
-      <div class="nav-card-title">Events</div>
-      <div class="nav-card-desc">All fight cards with full predictions, EV analysis, and confidence ratings per fight.</div>
-    </a>
-    <a class="nav-card" href="hot-picks.html">
-      <div class="nav-card-icon">🔥</div>
-      <div class="nav-card-title">Upcoming picks</div>
-      <div class="nav-card-desc">Best EV plays ranked by confidence then value. Budget allocator included.</div>
-    </a>
-    <a class="nav-card" href="fighters.html">
-      <div class="nav-card-icon">🥊</div>
-      <div class="nav-card-title">Fighters</div>
-      <div class="nav-card-desc">4,474 profiles with Elo ratings, career stats, and head-to-head predictor.</div>
-    </a>
-  </div>
+      <div class="flow-step fade">
+        <div class="flow-left"><div class="flow-num">3</div><div class="flow-line"></div></div>
+        <div class="flow-content">
+          <div class="flow-title">See what you stand to make</div>
+          <div class="flow-desc">Enter your budget and we show you how much to put on each pick. The expected value number tells you what you should profit per $100 if the model is right over time.</div>
+          <div class="ev-box">
+            <div class="ev-box-label">Expected value explained simply</div>
+            <div class="ev-box-text">If a bet shows <span>+$56 EV</span> that means if you made this exact bet 100 times you would profit $56 on average per bet. It does not mean you win tonight. It means the odds are in your favor.</div>
+          </div>
+          <a class="flow-cta" href="hot-picks.html">Go to Card Builder →</a>
+        </div>
+      </div>
 
-  <div class="section-label">What the model is good at</div>
-  <div class="strengths">
-    <div class="strength-row">
-      <div class="sdot" style="background:var(--green)"></div>
-      <div class="strength-text">Dominant wrestlers and grapplers with consistent takedown defense — high-conviction picks hit at 90%+ in this bracket.</div>
     </div>
-    <div class="strength-row">
-      <div class="sdot" style="background:var(--green)"></div>
-      <div class="strength-text">Fighters with long, statistically stable careers — the model performs best with deep historical data to draw from.</div>
-    </div>
-    <div class="strength-row">
-      <div class="sdot" style="background:var(--green)"></div>
-      <div class="strength-text">Clear Elo + statistical alignment — when both systems agree, high confidence picks hit at 94.8%.</div>
-    </div>
-    <div class="strength-row">
-      <div class="sdot" style="background:var(--red)"></div>
-      <div class="strength-text">One-punch knockout artists like Pereira or Ngannou — raw KO power isn't fully captured in stats. These fights are flagged low confidence.</div>
-    </div>
-    <div class="strength-row">
-      <div class="sdot" style="background:var(--red)"></div>
-      <div class="strength-text">Fighters with fewer than 5 UFC fights — not enough data for reliable predictions.</div>
-    </div>
-    <div class="strength-row">
-      <div class="sdot" style="background:var(--red)"></div>
-      <div class="strength-text">Last-minute injuries, weight cuts, camp changes — none of this appears in historical stats. Always check fight news before acting.</div>
+  </div>
+</div>
+
+<!-- MORE ON THE SITE -->
+<div class="section">
+  <div class="section-inner">
+    <div class="eyebrow fade">More on the site</div>
+    <div class="sec-title fade">Other things worth checking.</div>
+    <div class="more-grid">
+      <a class="more-card fade" href="index.html">
+        <div class="more-title">Browse every event</div>
+        <div class="more-desc">Past and upcoming UFC cards with full fight by fight predictions and Vegas comparisons.</div>
+        <div class="more-arrow">Go to Events →</div>
+      </a>
+      <a class="more-card fade" href="fighters.html">
+        <div class="more-title">Look up any fighter</div>
+        <div class="more-desc">4,400 plus profiles. Search any name and see how the model rates them and their full career stats.</div>
+        <div class="more-arrow">Go to Fighters →</div>
+      </a>
+      <a class="more-card fade" href="accuracy.html">
+        <div class="more-title">See where we beat Vegas</div>
+        <div class="more-desc">Every time our model disagreed with Vegas by a lot and what actually happened. The full record.</div>
+        <div class="more-arrow">Go to Accuracy →</div>
+      </a>
+      <a class="more-card fade" href="how-it-works.html">
+        <div class="more-title">How the model works</div>
+        <div class="more-desc">What data it uses, what the confidence levels mean, and where it struggles. No jargon.</div>
+        <div class="more-arrow">Go to How it Works →</div>
+      </a>
     </div>
   </div>
+</div>
 
-  <div class="disclaimer">
-    ⚠️
-    <span>Positive EV is a long-run concept — any single fight can go wrong. Odds and model update once daily at midnight UTC. Vegas typically opens lines 1–2 weeks before fight night, so EV plays appear automatically once available. Never bet more than you can afford to lose. Not financial advice.</span>
+<!-- HONEST -->
+<div class="section">
+  <div class="section-inner">
+    <div class="eyebrow fade">Be honest</div>
+    <div class="sec-title fade">What this cannot do.</div>
+    <div class="honest-row fade">
+      <div class="honest-dot"></div>
+      <div class="honest-text"><strong>It does not watch tape.</strong> Raw knockout power from fighters like Pereira or Ngannou is not fully captured in stats. Those fights get flagged low confidence.</div>
+    </div>
+    <div class="honest-row fade">
+      <div class="honest-dot"></div>
+      <div class="honest-text"><strong>It does not know what happened this week.</strong> Injuries, weight cuts, camp changes. None of it shows up in historical data. Always check fight news before acting on a pick.</div>
+    </div>
+    <div class="honest-row fade">
+      <div class="honest-dot"></div>
+      <div class="honest-text"><strong>New fighters are a rough guess.</strong> Fewer than 5 UFC fights means not enough data. The model says so explicitly on every affected prediction.</div>
+    </div>
+    <div class="honest-row fade">
+      <div class="honest-dot"></div>
+      <div class="honest-text"><strong>A positive edge does not mean you win tonight.</strong> It means the math is in your favor over hundreds of identical bets. Any single fight can go wrong.</div>
+    </div>
   </div>
+</div>
 
-  <div class="update-note">
-    Odds + predictions refresh daily at midnight UTC · Model trained on 8,337 fights · 2022–2025 blind test
-  </div>
-
+<div class="disclaimer">
+  Not financial advice. Never bet more than you can afford to lose. Positive EV is a long run concept and any single fight can go wrong.
 </div>
 
 <footer>
-  octagon.ai · Built on XGBoost · 8,337 fights trained · Not financial advice
+  octagon.ai · Built on XGBoost · Not financial advice
 </footer>
 
 <script>
 const DATA_BASE = 'data/';
 
-async function loadHomeData() {
+async function loadBestBet() {
+  const container = document.getElementById('best-bet-container');
   try {
     const resp = await fetch(DATA_BASE + 'index.json');
     const index = await resp.json();
-    const today = new Date().toISOString().slice(0,10);
-
-    const now = new Date();
     const upcoming = index
-      .filter(e => { try { return new Date(e.date) > new Date(now.getTime() - 86400000*2); } catch { return false; } })
-      .sort((a,b) => new Date(a.date) - new Date(b.date));
+      .filter(e => { try { return new Date(e.date) > new Date(Date.now() - 86400000 * 2); } catch { return false; } })
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-    if (upcoming.length > 0) {
-      renderCountdown(upcoming[0]);
-      await loadBestBet(upcoming[0].slug);
-    } else {
-      document.getElementById('countdown-container').innerHTML =
-        '<div class="no-event">No upcoming events found — check back soon.</div>';
-      document.getElementById('best-bet-container').innerHTML =
-        '<div class="no-bet">No upcoming events with odds available right now.</div>';
+    if (!upcoming.length) {
+      container.innerHTML = '<div style="color:#444441;font-size:13px;padding:0.5rem 0;">No upcoming events found. Check back soon.</div>';
+      return;
     }
 
-    const accResp = await fetch(DATA_BASE + 'accuracy.json').catch(() => null);
-    if (accResp && accResp.ok) {
-      const acc = await accResp.json();
-      if (acc.overall?.accuracy) {
-        document.getElementById('stat-overall').textContent = acc.overall.accuracy + '%';
-      }
-    }
-  } catch(e) {
-    document.getElementById('countdown-container').innerHTML =
-      '<div class="no-event">Could not load event data.</div>';
-    document.getElementById('best-bet-container').innerHTML =
-      '<div class="no-bet">Could not load picks data.</div>';
-  }
-}
-
-async function loadBestBet(slug) {
-  try {
-    const resp = await fetch(DATA_BASE + slug + '.json');
-    if (!resp.ok) throw new Error();
-    const data = await resp.json();
+    const event = upcoming[0];
+    const evResp = await fetch(DATA_BASE + event.slug + '.json');
+    if (!evResp.ok) throw new Error();
+    const data = await evResp.json();
 
     const plays = (data.ev_plays || []).filter(p => p.ev > 0);
-    if (plays.length === 0) {
-      document.getElementById('best-bet-container').innerHTML =
-        '<div class="no-bet">No EV plays available yet — odds open 1–2 weeks before fight night.</div>';
+    if (!plays.length) {
+      container.innerHTML = '<div style="color:#444441;font-size:13px;padding:0.5rem 0;">No EV plays available yet. Odds open 1 to 2 weeks before fight night.</div>';
       return;
     }
 
     const p = plays[0];
     const oddsStr = p.odds > 0 ? '+' + p.odds : '' + p.odds;
     const isUnderdog = p.odds > 0;
+    const gap = Math.round(p.prob - p.vegas_prob);
+    const footerText = isUnderdog
+      ? 'Vegas has ' + p.fighter + ' as the underdog at ' + oddsStr + '. Our model gives them a ' + p.prob + '% chance to win. That ' + gap + ' point gap is where the value is.'
+      : 'Our model gives ' + p.fighter + ' a ' + p.prob + '% chance to win. Vegas agrees they are the favorite but the model sees more edge than the price reflects.';
 
-    let blurb;
-    if (isUnderdog) {
-      blurb = `Model gives ${p.fighter} a ${p.prob}% chance but Vegas has them as the underdog at ${oddsStr} — the stats disagree with the market, which is a strong value signal.`;
-    } else {
-      blurb = `Model gives ${p.fighter} a ${p.prob}% chance and Vegas agrees they're the favorite — but the model sees more edge than the odds reflect.`;
-    }
-
-    const confLabel = p.confidence === 'high' ? 'Safe pick · High confidence' : 'Moderate pick · Medium confidence';
-
-    document.getElementById('best-bet-container').innerHTML = `
-      <div class="best-bet">
-        <div class="best-bet-header">
-          <div class="best-bet-label">⭐ ${confLabel}</div>
-          <div class="best-bet-event">${data.event_name}</div>
+    container.innerHTML = `
+      <div class="bet-card">
+        <div class="bet-top">
+          <span class="bet-conf">⭐ ${p.confidence === 'high' ? 'High confidence' : 'Medium confidence'}</span>
+          <span class="bet-event">${data.event_name}</span>
         </div>
-        <div class="best-bet-body">
-          <div class="best-bet-top">
+        <div class="bet-body">
+          <div class="bet-row">
             <div>
-              <div class="best-bet-fighter">${p.fighter}</div>
-              <div class="best-bet-matchup">ML ${oddsStr} · ${p.confidence === 'high' ? 'High' : 'Medium'} confidence</div>
+              <div class="bet-fighter">${p.fighter}</div>
+              <div class="bet-match">ML ${oddsStr} · ${p.confidence === 'high' ? 'High' : 'Medium'} confidence</div>
             </div>
-            <div>
-              <div class="best-bet-ev-val">+$${Math.round(p.ev)}</div>
-              <div class="best-bet-ev-lbl">per $100 bet</div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div class="bet-ev">+$${Math.round(p.ev)}</div>
+              <div class="bet-ev-lbl">per $100 bet</div>
             </div>
           </div>
-          <div class="best-bet-metrics">
-            <div class="bm"><div class="bm-lbl">Model probability</div><div class="bm-val">${p.prob}%</div></div>
-            <div class="bm"><div class="bm-lbl">Vegas implied</div><div class="bm-val">${p.vegas_prob}%</div></div>
-            <div class="bm edge"><div class="bm-lbl">Edge</div><div class="bm-val">+${p.edge}%</div></div>
+          <div class="bet-cols">
+            <div class="bet-col">
+              <div class="bet-col-lbl">We give them</div>
+              <div class="bet-col-val">${p.prob}%</div>
+              <div class="bet-col-sub">chance to win</div>
+            </div>
+            <div class="bet-col edge">
+              <div class="bet-col-lbl">Vegas gives them</div>
+              <div class="bet-col-val">${p.vegas_prob}%</div>
+              <div class="bet-col-sub">chance to win</div>
+            </div>
           </div>
-          <div class="best-bet-blurb">${blurb}</div>
         </div>
+        <div class="bet-footer">${footerText}</div>
       </div>
     `;
   } catch(e) {
-    document.getElementById('best-bet-container').innerHTML =
-      '<div class="no-bet">No odds available yet for the next event — check back closer to fight night.</div>';
+    container.innerHTML = '<div style="color:#444441;font-size:13px;padding:0.5rem 0;">Could not load top pick. Check back soon.</div>';
   }
 }
 
-function renderCountdown(event) {
-  const dateStr = event.date ? (() => {
-    try {
-      const d = new Date(event.date + 'T12:00:00');
-      return isNaN(d) ? event.date : d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-    } catch { return event.date; }
-  })() : '';
+loadBestBet();
 
-  document.getElementById('countdown-container').innerHTML = `
-    <div class="countdown-card">
-      <div>
-        <div class="countdown-eyebrow" id="countdown-eyebrow">Upcoming</div>
-        <div class="countdown-name">${event.name}</div>
-        <div class="countdown-date">${dateStr}${event.location ? ' · ' + event.location : ''}</div>
-      </div>
-      <div class="countdown-timer">
-        <div class="time-block"><div class="time-num" id="cd-d">—</div><div class="time-lbl">Days</div></div>
-        <div class="time-block"><div class="time-num" id="cd-h">—</div><div class="time-lbl">Hrs</div></div>
-        <div class="time-block"><div class="time-num" id="cd-m">—</div><div class="time-lbl">Min</div></div>
-      </div>
-    </div>
-  `;
-
-  function tick() {
-    const d = new Date(event.date);
-    // 10pm ET = 2am UTC next day (ET is UTC-4 in summer)
-    const fightStart = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()+1, 2, 0, 0));
-    const fightEnd   = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()+1, 6, 0, 0));
-    const now = new Date();
-    const isLive = now >= fightStart && now <= fightEnd;
-    const diff = Math.max(0, fightStart - now);
-
-    const dEl = document.getElementById('cd-d');
-    const hEl = document.getElementById('cd-h');
-    const mEl = document.getElementById('cd-m');
-    const eyebrow = document.getElementById('countdown-eyebrow');
-
-    if (isLive) {
-      if (eyebrow) eyebrow.innerHTML = '🔴 LIVE NOW';
-      if (dEl) dEl.parentElement.style.background = 'var(--red)';
-      if (dEl) dEl.style.color = 'white';
-      if (dEl) dEl.textContent = '🔴';
-      if (hEl) hEl.parentElement.style.background = 'var(--red)';
-      if (hEl) hEl.style.color = 'white';
-      if (hEl) hEl.textContent = 'LI';
-      if (mEl) mEl.parentElement.style.background = 'var(--red)';
-      if (mEl) mEl.style.color = 'white';
-      if (mEl) mEl.textContent = 'VE';
-      return;
-    }
-
-    const days = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    if (dEl) dEl.textContent = days;
-    if (hEl) hEl.textContent = h;
-    if (mEl) mEl.textContent = m;
-  }
-
-  tick();
-  setInterval(tick, 30000);
-}
-
-loadHomeData();
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
 function toggleNav() {
   document.getElementById('header-nav').classList.toggle('open');
 }
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 600) {
-    document.getElementById('header-nav').classList.remove('open');
-  }
+  if (window.innerWidth > 600) document.getElementById('header-nav').classList.remove('open');
 });
 </script>
 </body>
