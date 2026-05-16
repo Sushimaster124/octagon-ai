@@ -832,11 +832,11 @@ function filterEventsBySearch() {
   const today = new Date().toISOString().slice(0,10);
 
   let upcoming = allIndex.filter(e => {
-    try { return new Date(e.date) >= new Date(today); } catch { return true; }
+    try { return new Date(e.date) > new Date(Date.now() - 86400000*2); } catch { return true; }
   }).sort((a,b) => new Date(a.date) - new Date(b.date));
 
   let past = allIndex.filter(e => {
-    try { return new Date(e.date) < new Date(today); } catch { return false; }
+    try { return new Date(e.date) <= new Date(Date.now() - 86400000*2); } catch { return false; }
   }).sort((a,b) => new Date(b.date) - new Date(a.date));
 
   if (q) {
