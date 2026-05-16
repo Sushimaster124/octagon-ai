@@ -620,7 +620,7 @@ async function init(){
 }
 
 async function loadEvent(slug){
-  selectedPicks={};updateBasket();
+  updateBasket();
   document.getElementById('fights-list').innerHTML='<div class="loading"><div class="spinner"></div>Loading fight card...</div>';
   document.getElementById('auto-pick-msg').classList.remove('vis');
   if(eventData[slug]){processEvent(eventData[slug]);return;}
@@ -698,12 +698,14 @@ function chipHTML(f,idx){
 }
 
 function togglePick(idx,side){
-  const kA=idx+'-a',kB=idx+'-b',thisK=idx+'-'+side,otherK=side==='a'?kB:kA;
+  const slug=selectedEventSlug;
+  const kA=slug+'-'+idx+'-a',kB=slug+'-'+idx+'-b';
+  const thisK=slug+'-'+idx+'-'+side,otherK=side==='a'?kB:kA;
   if(selectedPicks[thisK]){delete selectedPicks[thisK];}
   else{
     delete selectedPicks[otherK];
     const f=currentFights[idx];
-    selectedPicks[thisK]={fighter:side==='a'?f.fighter_a:f.fighter_b,opponent:side==='a'?f.fighter_b:f.fighter_a,odds:side==='a'?f.odds_a:f.odds_b,prob:side==='a'?f.prob_a:f.prob_b,ev:side==='a'?f.ev_a:f.ev_b,edge:side==='a'?f.edge_a:f.edge_b,confidence:f.confidence,fightIdx:idx,side};
+    selectedPicks[thisK]={fighter:side==='a'?f.fighter_a:f.fighter_b,opponent:side==='a'?f.fighter_b:f.fighter_a,odds:side==='a'?f.odds_a:f.odds_b,prob:side==='a'?f.prob_a:f.prob_b,ev:side==='a'?f.ev_a:f.ev_b,edge:side==='a'?f.edge_a:f.edge_b,confidence:f.confidence,fightIdx:idx,eventSlug:slug,eventName:eventData[slug]?.event_name||slug,side};
   }
   lastPickWasAuto=false;
   rerenderChip(idx);
@@ -756,14 +758,14 @@ function updateBasket(){
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:var(--green)':'color:var(--red)';
-    return '<div class="sidebar-pick"><div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div><div class="sp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="sp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
+    return '<div class="sidebar-pick"><div><div><span class="sp-name">'+p.fighter+'</span> <span class="sp-opp">vs '+p.opponent+'</span></div><div class="sp-meta">'+(p.eventName?'<span style="color:var(--gray-400)">'+p.eventName+'</span> · ':'')+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="sp-remove" onclick="removePick(\''+p.eventSlug+'-'+p.fightIdx+'-'+p.side+'\')">×</button></div>';
   }).join('');
   document.getElementById('sidebar-picks').innerHTML=limitedWarning+pickHTML;
   const sheetPickHTML=picks.map(p=>{
     const oStr=p.odds!==null?(p.odds>0?'+'+p.odds:''+p.odds):'—';
     const evStr=p.ev!==null?(p.ev>=0?'+$':'-$')+Math.abs(Math.round(p.ev)):'—';
     const evCol=p.ev>0?'color:#5DCAA5':'color:#F09595';
-    return '<div class="sheet-pick"><div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div><div class="shp-meta">'+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="shp-remove" onclick="removePick(\''+p.fightIdx+'-'+p.side+'\')">×</button></div>';
+    return '<div class="sheet-pick"><div><div><span class="shp-name">'+p.fighter+'</span> <span class="shp-opp">vs '+p.opponent+'</span></div><div class="shp-meta">'+(p.eventName?'<span style="color:var(--gray-400)">'+p.eventName+'</span> · ':'')+oStr+' · '+p.prob+'% · <span style="font-weight:600;'+evCol+'">'+evStr+' EV</span></div></div><button class="shp-remove" onclick="removePick(\''+p.eventSlug+'-'+p.fightIdx+'-'+p.side+'\')">×</button></div>';
   }).join('');
   document.getElementById('sheet-picks').innerHTML=limitedWarning+sheetPickHTML;
   const showHint=count<2&&betMode==='singles';
@@ -774,7 +776,9 @@ function updateBasket(){
 
 function removePick(key){
   const p=selectedPicks[key];if(!p)return;
-  delete selectedPicks[key];rerenderChip(p.fightIdx);updateBasket();
+  delete selectedPicks[key];
+  if(p.eventSlug===selectedEventSlug)rerenderChip(p.fightIdx);
+  updateBasket();
   document.getElementById('alloc-result').classList.remove('vis');
   document.getElementById('sheet-result').classList.remove('vis');
 }
