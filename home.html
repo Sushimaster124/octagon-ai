@@ -429,7 +429,7 @@ function renderCountdown(event) {
   document.getElementById('countdown-container').innerHTML = `
     <div class="countdown-card">
       <div>
-        <div class="countdown-eyebrow">Upcoming</div>
+        <div class="countdown-eyebrow" id="countdown-eyebrow">Upcoming</div>
         <div class="countdown-name">${event.name}</div>
         <div class="countdown-date">${dateStr}${event.location ? ' · ' + event.location : ''}</div>
       </div>
@@ -443,14 +443,32 @@ function renderCountdown(event) {
 
   function tick() {
     const d = new Date(event.date);
-    const target = event.start_time
-      ? new Date(event.start_time)
-      : new Date(d.getFullYear(), d.getMonth(), d.getDate(), 22+4, 0, 0);
+    // 10pm ET = 2am UTC next day (ET is UTC-4 in summer)
+    const fightStart = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()+1, 2, 0, 0));
+    const fightEnd   = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()+1, 6, 0, 0));
     const now = new Date();
-    const diff = Math.max(0, target - now);
+    const isLive = now >= fightStart && now <= fightEnd;
+    const diff = Math.max(0, fightStart - now);
+
     const dEl = document.getElementById('cd-d');
     const hEl = document.getElementById('cd-h');
     const mEl = document.getElementById('cd-m');
+    const eyebrow = document.getElementById('countdown-eyebrow');
+
+    if (isLive) {
+      if (eyebrow) eyebrow.innerHTML = '🔴 LIVE NOW';
+      if (dEl) dEl.parentElement.style.background = 'var(--red)';
+      if (dEl) dEl.style.color = 'white';
+      if (dEl) dEl.textContent = '🔴';
+      if (hEl) hEl.parentElement.style.background = 'var(--red)';
+      if (hEl) hEl.style.color = 'white';
+      if (hEl) hEl.textContent = 'LI';
+      if (mEl) mEl.parentElement.style.background = 'var(--red)';
+      if (mEl) mEl.style.color = 'white';
+      if (mEl) mEl.textContent = 'VE';
+      return;
+    }
+
     const days = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);

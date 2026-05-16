@@ -510,6 +510,14 @@ function updateCountdown(eventDate){
     const diff=fight-now;
     const chip=document.getElementById('countdown-chip');
     if(!chip)return;
+    // 10pm ET = 2am UTC next day
+    const fightStart=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()+1,2,0,0));
+    const fightEnd=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()+1,6,0,0));
+    if(now>=fightStart&&now<=fightEnd){
+      chip.textContent='🔴 LIVE NOW';
+      chip.className='countdown-chip soon';
+      return;
+    }
     if(diff<=0){
       chip.textContent='Fight night';
       chip.className='countdown-chip live';
