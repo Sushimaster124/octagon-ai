@@ -147,9 +147,16 @@ def main():
         date = event.get('date', '')
 
         # Skip upcoming events
-        if date >= today:
-            print(f"  Skipping upcoming: {name}")
-            continue
+        try:
+            event_dt = datetime.strptime(date, "%B %d, %Y").date()
+            today_dt = datetime.now(timezone.utc).date()
+            if event_dt > today_dt:
+                print(f"  Skipping upcoming: {name}")
+                continue
+        except Exception:
+            if date >= today:
+                print(f"  Skipping upcoming: {name}")
+                continue
 
         # Skip already scored unless it's today (live rescoring)
         today_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')

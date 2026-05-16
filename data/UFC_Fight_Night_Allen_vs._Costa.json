@@ -44,7 +44,9 @@
       "vegas_prob_a": 55.8,
       "vegas_prob_b": 48.8,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Arnold Allen",
+      "result": "wrong"
     },
     {
       "fighter_a": "Dooho Choi",
@@ -71,7 +73,9 @@
       "vegas_prob_a": 42.2,
       "vegas_prob_b": 62.0,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Dooho Choi",
+      "result": "correct"
     },
     {
       "fighter_a": "Malcolm Wellmaker",
@@ -154,7 +158,9 @@
       "vegas_prob_a": 47.6,
       "vegas_prob_b": 56.7,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Timmy Cuamba",
+      "result": "wrong"
     },
     {
       "fighter_a": "Nikolay Veretennikov",
@@ -181,7 +187,9 @@
       "vegas_prob_a": 35.5,
       "vegas_prob_b": 53.3,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Nikolay Veretennikov",
+      "result": "wrong"
     },
     {
       "fighter_a": "Tuco Tokkos",
@@ -208,7 +216,9 @@
       "vegas_prob_a": 41.5,
       "vegas_prob_b": 62.7,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Tuco Tokkos",
+      "result": "correct"
     },
     {
       "fighter_a": "Tommy Gantt",
@@ -263,7 +273,9 @@
       "vegas_prob_a": 43.9,
       "vegas_prob_b": 60.3,
       "weight_class": "Women's Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ketlen Vieira",
+      "result": "correct"
     },
     {
       "fighter_a": "Cody Brundage",
@@ -290,7 +302,9 @@
       "vegas_prob_a": 43.3,
       "vegas_prob_b": 60.9,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Cody Brundage",
+      "result": "wrong"
     },
     {
       "fighter_a": "Alice Ardelean",
@@ -317,7 +331,9 @@
       "vegas_prob_a": 65.9,
       "vegas_prob_b": 38.2,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alice Ardelean",
+      "result": "wrong"
     },
     {
       "fighter_a": "Daniel Barez",
@@ -344,7 +360,9 @@
       "vegas_prob_a": 43.3,
       "vegas_prob_b": 60.8,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Luis Gurule",
+      "result": "correct"
     },
     {
       "fighter_a": "Shauna Bannon",
@@ -371,7 +389,9 @@
       "vegas_prob_a": 30.1,
       "vegas_prob_b": 74.0,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Nicolle Caliari",
+      "result": "wrong"
     }
   ],
   "ev_plays": [

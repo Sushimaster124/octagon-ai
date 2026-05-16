@@ -44,7 +44,9 @@
       "vegas_prob_a": 63.6,
       "vegas_prob_b": 40.0,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Petr Yan",
+      "result": "wrong"
     },
     {
       "fighter_a": "Joshua Van",
@@ -71,7 +73,9 @@
       "vegas_prob_a": 41.3,
       "vegas_prob_b": 63.6,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Joshua Van",
+      "result": "wrong"
     },
     {
       "fighter_a": "Tatsuro Taira",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Tatsuro Taira",
+      "result": "correct"
     },
     {
       "fighter_a": "Payton Talbott",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Payton Talbott",
+      "result": "correct"
     },
     {
       "fighter_a": "Jan Blachowicz",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jan Blachowicz",
+      "result": "wrong"
     },
     {
       "fighter_a": "Manuel Torres",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Manuel Torres",
+      "result": "correct"
     },
     {
       "fighter_a": "Chris Duncan",
@@ -206,7 +218,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Chris Duncan",
+      "result": "wrong"
     },
     {
       "fighter_a": "Maycee Barber",
@@ -233,7 +247,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Maycee Barber",
+      "result": "wrong"
     },
     {
       "fighter_a": "Fares Ziam",
@@ -260,7 +276,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Fares Ziam",
+      "result": "wrong"
     },
     {
       "fighter_a": "Brunno Ferreira",
@@ -287,7 +305,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Brunno Ferreira",
+      "result": "correct"
     },
     {
       "fighter_a": "Jalin Turner",
@@ -314,7 +334,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jalin Turner",
+      "result": "wrong"
     },
     {
       "fighter_a": "Iwo Baraniewski",
@@ -369,7 +391,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mansur Abdul-Malik",
+      "result": "correct"
     },
     {
       "fighter_a": "Mairon Santos",
@@ -396,7 +420,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mairon Santos",
+      "result": "correct"
     }
   ],
   "ev_plays": [

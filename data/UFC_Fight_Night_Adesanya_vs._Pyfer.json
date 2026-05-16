@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Joe Pyfer",
+      "result": "correct"
     },
     {
       "fighter_a": "Alexa Grasso",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alexa Grasso",
+      "result": "wrong"
     },
     {
       "fighter_a": "Michael Chiesa",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Michael Chiesa",
+      "result": "wrong"
     },
     {
       "fighter_a": "Lerryan Douglas",
@@ -181,7 +187,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Terrance McKinney",
+      "result": "correct"
     },
     {
       "fighter_a": "Tofiq Musayev",
@@ -208,7 +216,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Tofiq Musayev",
+      "result": "wrong"
     },
     {
       "fighter_a": "Lance Gibson",
@@ -290,7 +300,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Casey O'Neill",
+      "result": "correct"
     },
     {
       "fighter_a": "Navajo Stirling",
@@ -317,7 +329,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Navajo Stirling",
+      "result": "correct"
     },
     {
       "fighter_a": "Ricky Simon",
@@ -344,7 +358,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ricky Simon",
+      "result": "wrong"
     },
     {
       "fighter_a": "Alexia Thainara",
@@ -371,7 +387,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alexia Thainara",
+      "result": "correct"
     }
   ],
   "ev_plays": [],

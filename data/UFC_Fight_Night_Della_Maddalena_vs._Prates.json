@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Carlos Prates",
+      "result": "correct"
     },
     {
       "fighter_a": "Quillan Salkilld",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Quillan Salkilld",
+      "result": "wrong"
     },
     {
       "fighter_a": "Steve Erceg",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Steve Erceg",
+      "result": "wrong"
     },
     {
       "fighter_a": "Marwan Rahiki",
@@ -265,7 +271,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jacob Malkoun",
+      "result": "correct"
     },
     {
       "fighter_a": "Colby Thicknesse",
@@ -292,7 +300,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Colby Thicknesse",
+      "result": "wrong"
     },
     {
       "fighter_a": "Wes Schultz",
@@ -347,7 +357,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jonathan Micallef",
+      "result": "correct"
     },
     {
       "fighter_a": "Kody Steele",

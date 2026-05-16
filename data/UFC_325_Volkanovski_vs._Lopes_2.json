@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alexander Volkanovski",
+      "result": "wrong"
     },
     {
       "fighter_a": "Benoit Saint Denis",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Benoit Saint Denis",
+      "result": "wrong"
     },
     {
       "fighter_a": "Mauricio Ruffy",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mauricio Ruffy",
+      "result": "correct"
     },
     {
       "fighter_a": "Tallison Teixeira",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Tallison Teixeira",
+      "result": "correct"
     },
     {
       "fighter_a": "Quillan Salkilld",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Quillan Salkilld",
+      "result": "correct"
     },
     {
       "fighter_a": "Billy Elekana",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Billy Elekana",
+      "result": "correct"
     },
     {
       "fighter_a": "Cam Rowston",
@@ -234,7 +246,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jacob Malkoun",
+      "result": "correct"
     },
     {
       "fighter_a": "Jonathan Micallef",
@@ -261,7 +275,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jonathan Micallef",
+      "result": "correct"
     },
     {
       "fighter_a": "Kaan Ofli",
@@ -288,7 +304,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Kaan Ofli",
+      "result": "wrong"
     },
     {
       "fighter_a": "Dom Mar Fan",

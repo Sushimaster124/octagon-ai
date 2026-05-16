@@ -44,7 +44,9 @@
       "vegas_prob_a": 35.7,
       "vegas_prob_b": 28.6,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Carlos Ulberg",
+      "result": "correct"
     },
     {
       "fighter_a": "Paulo Costa",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Paulo Costa",
+      "result": "correct"
     },
     {
       "fighter_a": "Josh Hokit",
@@ -126,7 +130,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Dominick Reyes",
+      "result": "wrong"
     },
     {
       "fighter_a": "Cub Swanson",
@@ -153,7 +159,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Cub Swanson",
+      "result": "correct"
     },
     {
       "fighter_a": "Aaron Pico",
@@ -208,7 +216,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Kevin Holland",
+      "result": "correct"
     },
     {
       "fighter_a": "Mateusz Gamrot",
@@ -235,7 +245,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mateusz Gamrot",
+      "result": "wrong"
     },
     {
       "fighter_a": "Tatiana Suarez",
@@ -262,7 +274,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Tatiana Suarez",
+      "result": "correct"
     },
     {
       "fighter_a": "Chris Padilla",
@@ -289,7 +303,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Chris Padilla",
+      "result": "wrong"
     },
     {
       "fighter_a": "Vicente Luque",
@@ -316,7 +332,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Vicente Luque",
+      "result": "correct"
     },
     {
       "fighter_a": "Charles Radtke",
@@ -343,7 +361,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Charles Radtke",
+      "result": "wrong"
     }
   ],
   "ev_plays": [

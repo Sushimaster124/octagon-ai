@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Islam Makhachev",
+      "result": "correct"
     },
     {
       "fighter_a": "Valentina Shevchenko",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Valentina Shevchenko",
+      "result": "wrong"
     },
     {
       "fighter_a": "Michael Morales",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Michael Morales",
+      "result": "wrong"
     },
     {
       "fighter_a": "Carlos Prates",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Carlos Prates",
+      "result": "correct"
     },
     {
       "fighter_a": "Benoit Saint Denis",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Benoit Saint Denis",
+      "result": "wrong"
     },
     {
       "fighter_a": "Bo Nickal",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Bo Nickal",
+      "result": "correct"
     },
     {
       "fighter_a": "Gregory Rodrigues",
@@ -206,7 +218,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Gregory Rodrigues",
+      "result": "correct"
     },
     {
       "fighter_a": "Erin Blanchfield",
@@ -233,7 +247,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Erin Blanchfield",
+      "result": "wrong"
     },
     {
       "fighter_a": "Ethyn Ewing",
@@ -288,7 +304,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Kyle Daukaus",
+      "result": "correct"
     },
     {
       "fighter_a": "Pat Sabatini",
@@ -315,7 +333,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Pat Sabatini",
+      "result": "correct"
     },
     {
       "fighter_a": "Fatima Kline",
@@ -342,7 +362,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Fatima Kline",
+      "result": "correct"
     },
     {
       "fighter_a": "Baisangur Susurkaev",
@@ -369,7 +391,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Baisangur Susurkaev",
+      "result": "correct"
     },
     {
       "fighter_a": "Matheus Camilo",
@@ -396,7 +420,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Matheus Camilo",
+      "result": "correct"
     }
   ],
   "ev_plays": [],

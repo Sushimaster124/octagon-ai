@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Charles Oliveira",
+      "result": "correct"
     },
     {
       "fighter_a": "Caio Borralho",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Caio Borralho",
+      "result": "wrong"
     },
     {
       "fighter_a": "Raul Rosas Jr.",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Raul Rosas Jr.",
+      "result": "wrong"
     },
     {
       "fighter_a": "Drew Dober",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Drew Dober",
+      "result": "wrong"
     },
     {
       "fighter_a": "Gregory Rodrigues",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Gregory Rodrigues",
+      "result": "wrong"
     },
     {
       "fighter_a": "Cody Garbrandt",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Cody Garbrandt",
+      "result": "wrong"
     },
     {
       "fighter_a": "Donte Johnson",
@@ -261,7 +273,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Nyamjargal Tumendemberel",
+      "result": "correct"
     },
     {
       "fighter_a": "Sumudaerji",
@@ -288,7 +302,9 @@
       "vegas_prob_a": 44.1,
       "vegas_prob_b": 27.0,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Sumudaerji",
+      "result": "correct"
     },
     {
       "fighter_a": "Diyar Nurgozhay",

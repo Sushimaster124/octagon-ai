@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Arman Tsarukyan",
+      "result": "wrong"
     },
     {
       "fighter_a": "Ian Machado Garry",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ian Machado Garry",
+      "result": "correct"
     },
     {
       "fighter_a": "Volkan Oezdemir",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Volkan Oezdemir",
+      "result": "correct"
     },
     {
       "fighter_a": "Myktybek Orolbai",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Myktybek Orolbai",
+      "result": "correct"
     },
     {
       "fighter_a": "Waldo Cortes-Acosta",
@@ -179,7 +187,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Kyoji Horiguchi",
+      "result": "correct"
     },
     {
       "fighter_a": "Luke Riley",
@@ -262,7 +272,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Asu Almabayev",
+      "result": "correct"
     },
     {
       "fighter_a": "Abdul Rakhman Yakhyaev",
@@ -317,7 +329,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Aleksandre Topuria",
+      "result": "wrong"
     },
     {
       "fighter_a": "Ismail Naurdiev",
@@ -344,7 +358,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ismail Naurdiev",
+      "result": "wrong"
     },
     {
       "fighter_a": "Nurullo Aliev",

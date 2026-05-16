@@ -44,7 +44,9 @@
       "vegas_prob_a": 16.1,
       "vegas_prob_b": 39.1,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Justin Gaethje",
+      "result": "correct"
     },
     {
       "fighter_a": "Sean O'Malley",
@@ -71,7 +73,9 @@
       "vegas_prob_a": 80.4,
       "vegas_prob_b": 80.4,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Sean O'Malley",
+      "result": "correct"
     },
     {
       "fighter_a": "Waldo Cortes-Acosta",
@@ -125,7 +129,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Natalia Silva",
+      "result": "correct"
     },
     {
       "fighter_a": "Jean Silva",
@@ -152,7 +158,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jean Silva",
+      "result": "correct"
     },
     {
       "fighter_a": "Umar Nurmagomedov",
@@ -179,7 +187,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Umar Nurmagomedov",
+      "result": "correct"
     },
     {
       "fighter_a": "Ateba Gautier",
@@ -206,7 +216,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ateba Gautier",
+      "result": "correct"
     },
     {
       "fighter_a": "Nikita Krylov",
@@ -233,7 +245,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Nikita Krylov",
+      "result": "wrong"
     },
     {
       "fighter_a": "Alex Perez",
@@ -260,7 +274,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alex Perez",
+      "result": "wrong"
     },
     {
       "fighter_a": "Josh Hokit",
