@@ -603,7 +603,7 @@ async function init(){
     const resp=await fetch(DATA_BASE+'index.json');
     const index=await resp.json();
     const today=new Date().toISOString().slice(0,10);
-    allEvents=index.filter(e=>{try{return new Date(e.date)>=new Date(today);}catch{return false;}}).sort((a,b)=>new Date(a.date)-new Date(b.date));
+    allEvents=index.filter(e=>{try{return new Date(Date.UTC(...e.date.split('-').map(Number)))>new Date(Date.now()-86400000*2);}catch{return false;}}).sort((a,b)=>new Date(a.date)-new Date(b.date));
     if(!allEvents.length){document.getElementById('fights-list').innerHTML='<div class="empty-state">No upcoming events found.</div>';document.getElementById('event-bar-name').textContent='No upcoming events';return;}
     buildEventMenu(allEvents);
     selectedEventSlug=allEvents[0].slug;
