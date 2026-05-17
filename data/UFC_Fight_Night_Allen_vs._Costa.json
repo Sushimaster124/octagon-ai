@@ -159,8 +159,8 @@
       "vegas_prob_b": 56.7,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "actual_winner": "Timmy Cuamba",
-      "result": "wrong"
+      "actual_winner": "Benardo Sopaj",
+      "result": "correct"
     },
     {
       "fighter_a": "Nikolay Veretennikov",
@@ -188,8 +188,8 @@
       "vegas_prob_b": 53.3,
       "weight_class": "Welterweight",
       "not_found": false,
-      "actual_winner": "Nikolay Veretennikov",
-      "result": "wrong"
+      "actual_winner": "Khaos Williams",
+      "result": "correct"
     },
     {
       "fighter_a": "Tuco Tokkos",
