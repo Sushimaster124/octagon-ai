@@ -401,7 +401,7 @@ async function loadBestBet() {
     const resp = await fetch(DATA_BASE + 'index.json');
     const index = await resp.json();
     const upcoming = index
-      .filter(e => { try { return new Date(e.date) > new Date(Date.now() - 86400000 * 2); } catch { return false; } })
+      .filter(e => { try { return new Date(e.date) >= new Date(Date.now() - 86400000); } catch { return false; } })
       .sort((a, b) => new Date(a.date) - new Date(b.date));
 
     if (!upcoming.length) {
