@@ -44,11 +44,14 @@ def fetch_actual_results(event_name):
             links = cols[1].find_all('a')
             if len(links) < 2:
                 continue
-            fa = links[0].get_text(strip=True)
-            fb = links[1].get_text(strip=True)
-            # First fighter listed is the winner on UFCStats
-            results[f"{fa}|{fb}"] = fa
-            results[f"{fb}|{fa}"] = fa
+            winner = links[0].get_text(strip=True)
+            loser  = links[1].get_text(strip=True)
+            # Store by both orderings so lookup works regardless of fighter_a/fighter_b order
+            results[f"{winner}|{loser}"] = winner
+            results[f"{loser}|{winner}"] = winner
+            # Also store individual names for direct lookup
+            results[winner.lower()] = winner
+            results[loser.lower()] = loser
 
         print(f"  Found {len(results)//2} fight results")
         return results if results else None
@@ -79,8 +82,25 @@ def score_predictions(event_data, actual_results):
         pred = fight['winner']
         conf = fight.get('confidence', 'medium')
 
+        # Try exact pair match first
         actual = (actual_results.get(f"{fa}|{fb}") or
                   actual_results.get(f"{fb}|{fa}"))
+        
+        # If no pair match, try fuzzy match against individual stored names
+        if not actual:
+            from rapidfuzz import fuzz
+            best_score = 0
+            best_winner = None
+            for key, winner in actual_results.items():
+                if '|' not in key:
+                    continue
+                k_winner, k_loser = key.split('|', 1)
+                fa_score = max(fuzz.ratio(fa.lower(), k_winner.lower()),
+                               fuzz.ratio(fb.lower(), k_winner.lower()))
+                if fa_score > best_score and fa_score > 85:
+                    best_score = fa_score
+                    best_winner = winner
+            actual = best_winner
         if not actual:
             continue
 
