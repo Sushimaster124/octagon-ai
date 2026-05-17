@@ -842,7 +842,7 @@ function renderEventsSection(containerId, events) {
   const today = new Date().toISOString().slice(0,10);
   el.innerHTML = events.map(event => {
     const isUpcoming = (() => {
-      try { return new Date(event.date) > new Date(Date.now() - 86400000*2); } catch { return false; }
+      try { return new Date(event.date) > new Date(Date.now() - 86400000); } catch { return false; }
     })();
     const s     = event.summary || {};
     const high  = s.high_conf || 0;
