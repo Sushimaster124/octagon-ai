@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-05-17T03:54:58.320297+00:00",
+  "updated_at": "2026-05-17T03:57:03.658261+00:00",
   "overall": {
-    "total": 275,
-    "correct": 165,
-    "wrong": 110,
-    "accuracy": 60.0
+    "total": 284,
+    "correct": 166,
+    "wrong": 118,
+    "accuracy": 58.5
   },
   "by_confidence": {
     "high": {
@@ -12,23 +12,165 @@
       "wrong": 2
     },
     "medium": {
-      "correct": 106,
-      "wrong": 68
+      "correct": 107,
+      "wrong": 75
     },
     "low": {
       "correct": 58,
-      "wrong": 40
+      "wrong": 41
     }
   },
   "events": {
+    "UFC_Fight_Night_Allen_vs._Costa": {
+      "name": "UFC Fight Night: Allen vs. Costa",
+      "date": "May 16, 2026",
+      "scored_at": "2026-05-17T03:56:28.547053+00:00",
+      "total": 13,
+      "correct": 7,
+      "wrong": 6,
+      "accuracy": 53.8,
+      "by_confidence": {
+        "high": {
+          "correct": 0,
+          "wrong": 0
+        },
+        "medium": {
+          "correct": 5,
+          "wrong": 4
+        },
+        "low": {
+          "correct": 2,
+          "wrong": 2
+        }
+      },
+      "fight_scores": [
+        {
+          "fighter_a": "Arnold Allen",
+          "fighter_b": "Melquizael Costa",
+          "predicted": "Melquizael Costa",
+          "actual": "Arnold Allen",
+          "correct": false,
+          "confidence": "low",
+          "prob": 81.4
+        },
+        {
+          "fighter_a": "Dooho Choi",
+          "fighter_b": "Daniel Santos",
+          "predicted": "Dooho Choi",
+          "actual": "Dooho Choi",
+          "correct": true,
+          "confidence": "medium",
+          "prob": 80.1
+        },
+        {
+          "fighter_a": "Malcolm Wellmaker",
+          "fighter_b": "Juan Diaz",
+          "predicted": "Malcolm Wellmaker",
+          "actual": "Juan Diaz",
+          "correct": false,
+          "confidence": "low",
+          "prob": 54.4
+        },
+        {
+          "fighter_a": "Modestas Bukauskas",
+          "fighter_b": "Christian Edwards",
+          "predicted": "Modestas Bukauskas",
+          "actual": "Modestas Bukauskas",
+          "correct": true,
+          "confidence": "low",
+          "prob": 57.1
+        },
+        {
+          "fighter_a": "Timmy Cuamba",
+          "fighter_b": "Benardo Sopaj",
+          "predicted": "Benardo Sopaj",
+          "actual": "Benardo Sopaj",
+          "correct": true,
+          "confidence": "medium",
+          "prob": 90.2
+        },
+        {
+          "fighter_a": "Nikolay Veretennikov",
+          "fighter_b": "Khaos Williams",
+          "predicted": "Khaos Williams",
+          "actual": "Khaos Williams",
+          "correct": true,
+          "confidence": "medium",
+          "prob": 75.7
+        },
+        {
+          "fighter_a": "Tuco Tokkos",
+          "fighter_b": "Ivan Erslan",
+          "predicted": "Tuco Tokkos",
+          "actual": "Ivan Erslan",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 83.5
+        },
+        {
+          "fighter_a": "Tommy Gantt",
+          "fighter_b": "Artur Minev",
+          "predicted": "Tommy Gantt",
+          "actual": "Tommy Gantt",
+          "correct": true,
+          "confidence": "low",
+          "prob": 50.0
+        },
+        {
+          "fighter_a": "Ketlen Vieira",
+          "fighter_b": "Jacqueline Cavalcanti",
+          "predicted": "Ketlen Vieira",
+          "actual": "Ketlen Vieira",
+          "correct": true,
+          "confidence": "medium",
+          "prob": 52.3
+        },
+        {
+          "fighter_a": "Cody Brundage",
+          "fighter_b": "Andre Petroski",
+          "predicted": "Andre Petroski",
+          "actual": "Cody Brundage",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 81.6
+        },
+        {
+          "fighter_a": "Alice Ardelean",
+          "fighter_b": "Polyana Viana",
+          "predicted": "Polyana Viana",
+          "actual": "Alice Ardelean",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 53.4
+        },
+        {
+          "fighter_a": "Daniel Barez",
+          "fighter_b": "Luis Gurule",
+          "predicted": "Luis Gurule",
+          "actual": "Luis Gurule",
+          "correct": true,
+          "confidence": "medium",
+          "prob": 58.9
+        },
+        {
+          "fighter_a": "Shauna Bannon",
+          "fighter_b": "Nicolle Caliari",
+          "predicted": "Shauna Bannon",
+          "actual": "Nicolle Caliari",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 62.4
+        }
+      ]
+    },
     "UFC_328_Chimaev_vs._Strickland": {
       "name": "UFC 328: Chimaev vs. Strickland",
       "date": "May 09, 2026",
-      "scored_at": "2026-05-17T00:11:47.303732+00:00",
-      "total": 12,
+      "scored_at": "2026-05-17T03:56:31.004504+00:00",
+      "total": 13,
       "correct": 8,
-      "wrong": 4,
-      "accuracy": 66.7,
+      "wrong": 5,
+      "accuracy": 61.5,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -36,7 +178,7 @@
         },
         "medium": {
           "correct": 7,
-          "wrong": 3
+          "wrong": 4
         },
         "low": {
           "correct": 1,
@@ -61,6 +203,15 @@
           "correct": false,
           "confidence": "medium",
           "prob": 91.5
+        },
+        {
+          "fighter_a": "Alexander Volkov",
+          "fighter_b": "Waldo Cortes-Acosta",
+          "predicted": "Waldo Cortes-Acosta",
+          "actual": "Alexander Volkov",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 50.4
         },
         {
           "fighter_a": "Sean Brady",
@@ -157,7 +308,7 @@
     "UFC_327_Prochazka_vs._Ulberg": {
       "name": "UFC 327: Prochazka vs. Ulberg",
       "date": "April 11, 2026",
-      "scored_at": "2026-05-17T00:11:49.298918+00:00",
+      "scored_at": "2026-05-17T03:56:33.133234+00:00",
       "total": 12,
       "correct": 6,
       "wrong": 6,
@@ -290,11 +441,11 @@
     "UFC_326_Holloway_vs._Oliveira_2": {
       "name": "UFC 326: Holloway vs. Oliveira 2",
       "date": "March 07, 2026",
-      "scored_at": "2026-05-17T00:11:51.207257+00:00",
-      "total": 11,
+      "scored_at": "2026-05-17T03:56:34.359914+00:00",
+      "total": 12,
       "correct": 4,
-      "wrong": 7,
-      "accuracy": 36.4,
+      "wrong": 8,
+      "accuracy": 33.3,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -302,7 +453,7 @@
         },
         "medium": {
           "correct": 3,
-          "wrong": 5
+          "wrong": 6
         },
         "low": {
           "correct": 1,
@@ -374,6 +525,15 @@
           "prob": 52.7
         },
         {
+          "fighter_a": "Albert Morales",
+          "fighter_b": "Ricky Turcios",
+          "predicted": "Ricky Turcios",
+          "actual": "Alberto Montes",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 75.5
+        },
+        {
           "fighter_a": "Nyamjargal Tumendemberel",
           "fighter_b": "Cody Durden",
           "predicted": "Nyamjargal Tumendemberel",
@@ -414,7 +574,7 @@
     "UFC_325_Volkanovski_vs._Lopes_2": {
       "name": "UFC 325: Volkanovski vs. Lopes 2",
       "date": "January 31, 2026",
-      "scored_at": "2026-05-17T00:11:52.846858+00:00",
+      "scored_at": "2026-05-17T03:56:36.000104+00:00",
       "total": 13,
       "correct": 9,
       "wrong": 4,
@@ -556,11 +716,11 @@
     "UFC_324_Gaethje_vs._Pimblett": {
       "name": "UFC 324: Gaethje vs. Pimblett",
       "date": "January 24, 2026",
-      "scored_at": "2026-05-17T00:11:54.338197+00:00",
-      "total": 10,
+      "scored_at": "2026-05-17T03:56:37.645459+00:00",
+      "total": 11,
       "correct": 8,
-      "wrong": 2,
-      "accuracy": 80.0,
+      "wrong": 3,
+      "accuracy": 72.7,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -568,7 +728,7 @@
         },
         "medium": {
           "correct": 6,
-          "wrong": 2
+          "wrong": 3
         },
         "low": {
           "correct": 2,
@@ -593,6 +753,15 @@
           "correct": true,
           "confidence": "medium",
           "prob": 70.5
+        },
+        {
+          "fighter_a": "Waldo Cortes-Acosta",
+          "fighter_b": "Derrick Lewis",
+          "predicted": "Waldo Cortes-Acosta",
+          "actual": "Waldo Cortes Acosta",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 83.0
         },
         {
           "fighter_a": "Natalia Silva",
@@ -671,7 +840,7 @@
     "UFC_323_Dvalishvili_vs._Yan_2": {
       "name": "UFC 323: Dvalishvili vs. Yan 2",
       "date": "December 06, 2025",
-      "scored_at": "2026-05-17T00:11:55.782062+00:00",
+      "scored_at": "2026-05-17T03:56:39.071936+00:00",
       "total": 14,
       "correct": 7,
       "wrong": 7,
@@ -822,7 +991,7 @@
     "UFC_Fight_Night_Della_Maddalena_vs._Prates": {
       "name": "UFC Fight Night: Della Maddalena vs. Prates",
       "date": "May 02, 2026",
-      "scored_at": "2026-05-17T00:11:56.989768+00:00",
+      "scored_at": "2026-05-17T03:56:40.507991+00:00",
       "total": 13,
       "correct": 5,
       "wrong": 8,
@@ -964,11 +1133,11 @@
     "UFC_Fight_Night_Burns_vs._Malott": {
       "name": "UFC Fight Night: Burns vs. Malott",
       "date": "April 18, 2026",
-      "scored_at": "2026-05-17T00:11:58.244788+00:00",
-      "total": 11,
+      "scored_at": "2026-05-17T03:56:41.713709+00:00",
+      "total": 12,
       "correct": 5,
-      "wrong": 6,
-      "accuracy": 45.5,
+      "wrong": 7,
+      "accuracy": 41.7,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -976,7 +1145,7 @@
         },
         "medium": {
           "correct": 3,
-          "wrong": 2
+          "wrong": 3
         },
         "low": {
           "correct": 2,
@@ -1048,6 +1217,15 @@
           "prob": 57.5
         },
         {
+          "fighter_a": "Gokhan Saki",
+          "fighter_b": "Tanner Boser",
+          "predicted": "Gokhan Saki",
+          "actual": "Gokhan Saricam",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 50.0
+        },
+        {
           "fighter_a": "Melissa Croden",
           "fighter_b": "Daria Zhelezniakova",
           "predicted": "Daria Zhelezniakova",
@@ -1088,11 +1266,11 @@
     "UFC_Fight_Night_Moicano_vs._Duncan": {
       "name": "UFC Fight Night: Moicano vs. Duncan",
       "date": "April 04, 2026",
-      "scored_at": "2026-05-17T00:11:59.474165+00:00",
-      "total": 12,
+      "scored_at": "2026-05-17T03:56:43.165985+00:00",
+      "total": 13,
       "correct": 7,
-      "wrong": 5,
-      "accuracy": 58.3,
+      "wrong": 6,
+      "accuracy": 53.8,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -1100,7 +1278,7 @@
         },
         "medium": {
           "correct": 3,
-          "wrong": 3
+          "wrong": 4
         },
         "low": {
           "correct": 4,
@@ -1152,6 +1330,15 @@
           "correct": true,
           "confidence": "low",
           "prob": 52.3
+        },
+        {
+          "fighter_a": "Jose Delgado",
+          "fighter_b": "Robert Ruchala",
+          "predicted": "Jose Delgado",
+          "actual": "Jose Delano",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 92.9
         },
         {
           "fighter_a": "Thomas Petersen",
@@ -1221,11 +1408,11 @@
     "UFC_Fight_Night_Adesanya_vs._Pyfer": {
       "name": "UFC Fight Night: Adesanya vs. Pyfer",
       "date": "March 28, 2026",
-      "scored_at": "2026-05-17T00:12:00.967899+00:00",
-      "total": 12,
+      "scored_at": "2026-05-17T03:56:44.705661+00:00",
+      "total": 13,
       "correct": 5,
-      "wrong": 7,
-      "accuracy": 41.7,
+      "wrong": 8,
+      "accuracy": 38.5,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -1237,7 +1424,7 @@
         },
         "low": {
           "correct": 1,
-          "wrong": 4
+          "wrong": 5
         }
       },
       "fight_scores": [
@@ -1305,6 +1492,15 @@
           "prob": 88.7
         },
         {
+          "fighter_a": "Lance Gibson",
+          "fighter_b": "Chase Hooper",
+          "predicted": "Lance Gibson",
+          "actual": "Lance Gibson Jr.",
+          "correct": false,
+          "confidence": "low",
+          "prob": 89.7
+        },
+        {
           "fighter_a": "Tyrell Fortune",
           "fighter_b": "Marcin Tybura",
           "predicted": "Marcin Tybura",
@@ -1354,7 +1550,7 @@
     "UFC_Fight_Night_Evloev_vs._Murphy": {
       "name": "UFC Fight Night: Evloev vs. Murphy",
       "date": "March 21, 2026",
-      "scored_at": "2026-05-17T00:12:03.529635+00:00",
+      "scored_at": "2026-05-17T03:56:46.099210+00:00",
       "total": 13,
       "correct": 10,
       "wrong": 3,
@@ -1496,7 +1692,7 @@
     "UFC_Fight_Night_Emmett_vs._Vallejos": {
       "name": "UFC Fight Night: Emmett vs. Vallejos",
       "date": "March 14, 2026",
-      "scored_at": "2026-05-17T00:12:04.968155+00:00",
+      "scored_at": "2026-05-17T03:56:47.584847+00:00",
       "total": 14,
       "correct": 12,
       "wrong": 2,
@@ -1647,7 +1843,7 @@
     "UFC_Fight_Night_Strickland_vs._Hernandez": {
       "name": "UFC Fight Night: Strickland vs. Hernandez",
       "date": "February 21, 2026",
-      "scored_at": "2026-05-17T00:12:06.336630+00:00",
+      "scored_at": "2026-05-17T03:56:49.046232+00:00",
       "total": 14,
       "correct": 10,
       "wrong": 4,
@@ -1798,7 +1994,7 @@
     "UFC_Fight_Night_Bautista_vs._Oliveira": {
       "name": "UFC Fight Night: Bautista vs. Oliveira",
       "date": "February 07, 2026",
-      "scored_at": "2026-05-17T00:12:07.500409+00:00",
+      "scored_at": "2026-05-17T03:56:51.667607+00:00",
       "total": 13,
       "correct": 3,
       "wrong": 10,
@@ -1940,18 +2136,18 @@
     "UFC_Fight_Night_Royval_vs._Kape": {
       "name": "UFC Fight Night: Royval vs. Kape",
       "date": "December 13, 2025",
-      "scored_at": "2026-05-17T00:12:09.412835+00:00",
-      "total": 11,
-      "correct": 7,
+      "scored_at": "2026-05-17T03:56:53.088941+00:00",
+      "total": 12,
+      "correct": 8,
       "wrong": 4,
-      "accuracy": 63.6,
+      "accuracy": 66.7,
       "by_confidence": {
         "high": {
           "correct": 0,
           "wrong": 0
         },
         "medium": {
-          "correct": 3,
+          "correct": 4,
           "wrong": 2
         },
         "low": {
@@ -2004,6 +2200,15 @@
           "correct": true,
           "confidence": "medium",
           "prob": 92.6
+        },
+        {
+          "fighter_a": "King Green",
+          "fighter_b": "Lance Gibson",
+          "predicted": "King Green",
+          "actual": "King Green",
+          "correct": true,
+          "confidence": "medium",
+          "prob": 70.1
         },
         {
           "fighter_a": "Yaroslav Amosov",
@@ -2064,11 +2269,11 @@
     "UFC_Fight_Night_Tsarukyan_vs._Hooker": {
       "name": "UFC Fight Night: Tsarukyan vs. Hooker",
       "date": "November 22, 2025",
-      "scored_at": "2026-05-17T00:12:11.189017+00:00",
-      "total": 13,
+      "scored_at": "2026-05-17T03:56:54.639503+00:00",
+      "total": 14,
       "correct": 9,
-      "wrong": 4,
-      "accuracy": 69.2,
+      "wrong": 5,
+      "accuracy": 64.3,
       "by_confidence": {
         "high": {
           "correct": 1,
@@ -2076,7 +2281,7 @@
         },
         "medium": {
           "correct": 2,
-          "wrong": 3
+          "wrong": 4
         },
         "low": {
           "correct": 6,
@@ -2119,6 +2324,15 @@
           "correct": true,
           "confidence": "medium",
           "prob": 63.2
+        },
+        {
+          "fighter_a": "Waldo Cortes-Acosta",
+          "fighter_b": "Shamil Gaziev",
+          "predicted": "Waldo Cortes-Acosta",
+          "actual": "Waldo Cortes Acosta",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 89.9
         },
         {
           "fighter_a": "Kyoji Horiguchi",
@@ -2206,7 +2420,7 @@
     "UFC_322_Della_Maddalena_vs._Makhachev": {
       "name": "UFC 322: Della Maddalena vs. Makhachev",
       "date": "November 15, 2025",
-      "scored_at": "2026-05-17T00:12:12.804356+00:00",
+      "scored_at": "2026-05-17T03:56:56.177620+00:00",
       "total": 14,
       "correct": 9,
       "wrong": 5,
@@ -2357,7 +2571,7 @@
     "UFC_Fight_Night_Bonfim_vs._Brown": {
       "name": "UFC Fight Night: Bonfim vs. Brown",
       "date": "November 08, 2025",
-      "scored_at": "2026-05-17T00:12:14.377580+00:00",
+      "scored_at": "2026-05-17T03:56:57.709302+00:00",
       "total": 12,
       "correct": 10,
       "wrong": 2,
@@ -2490,11 +2704,11 @@
     "UFC_Fight_Night_Garcia_vs._Onama": {
       "name": "UFC Fight Night: Garcia vs. Onama",
       "date": "November 01, 2025",
-      "scored_at": "2026-05-17T00:12:16.029995+00:00",
-      "total": 12,
+      "scored_at": "2026-05-17T03:56:59.244377+00:00",
+      "total": 13,
       "correct": 8,
-      "wrong": 4,
-      "accuracy": 66.7,
+      "wrong": 5,
+      "accuracy": 61.5,
       "by_confidence": {
         "high": {
           "correct": 0,
@@ -2502,7 +2716,7 @@
         },
         "medium": {
           "correct": 6,
-          "wrong": 4
+          "wrong": 5
         },
         "low": {
           "correct": 2,
@@ -2518,6 +2732,15 @@
           "correct": false,
           "confidence": "medium",
           "prob": 63.4
+        },
+        {
+          "fighter_a": "Waldo Cortes-Acosta",
+          "fighter_b": "Ante Delija",
+          "predicted": "Waldo Cortes-Acosta",
+          "actual": "Waldo Cortes Acosta",
+          "correct": false,
+          "confidence": "medium",
+          "prob": 77.1
         },
         {
           "fighter_a": "Jeremiah Wells",
@@ -2623,7 +2846,7 @@
     "UFC_321_Aspinall_vs._Gane": {
       "name": "UFC 321: Aspinall vs. Gane",
       "date": "October 25, 2025",
-      "scored_at": "2026-05-17T00:12:17.766796+00:00",
+      "scored_at": "2026-05-17T03:57:00.782782+00:00",
       "total": 13,
       "correct": 10,
       "wrong": 3,
@@ -2765,7 +2988,7 @@
     "UFC_Fight_Night_De_Ridder_vs._Allen": {
       "name": "UFC Fight Night: De Ridder vs. Allen",
       "date": "October 18, 2025",
-      "scored_at": "2026-05-17T00:12:19.224461+00:00",
+      "scored_at": "2026-05-17T03:57:03.033561+00:00",
       "total": 13,
       "correct": 6,
       "wrong": 7,
@@ -2901,148 +3124,6 @@
           "correct": false,
           "confidence": "low",
           "prob": 52.1
-        }
-      ]
-    },
-    "UFC_Fight_Night_Allen_vs._Costa": {
-      "name": "UFC Fight Night: Allen vs. Costa",
-      "date": "May 16, 2026",
-      "scored_at": "2026-05-17T03:54:53.406186+00:00",
-      "total": 13,
-      "correct": 7,
-      "wrong": 6,
-      "accuracy": 53.8,
-      "by_confidence": {
-        "high": {
-          "correct": 0,
-          "wrong": 0
-        },
-        "medium": {
-          "correct": 5,
-          "wrong": 4
-        },
-        "low": {
-          "correct": 2,
-          "wrong": 2
-        }
-      },
-      "fight_scores": [
-        {
-          "fighter_a": "Arnold Allen",
-          "fighter_b": "Melquizael Costa",
-          "predicted": "Melquizael Costa",
-          "actual": "Arnold Allen",
-          "correct": false,
-          "confidence": "low",
-          "prob": 81.4
-        },
-        {
-          "fighter_a": "Dooho Choi",
-          "fighter_b": "Daniel Santos",
-          "predicted": "Dooho Choi",
-          "actual": "Dooho Choi",
-          "correct": true,
-          "confidence": "medium",
-          "prob": 80.1
-        },
-        {
-          "fighter_a": "Malcolm Wellmaker",
-          "fighter_b": "Juan Diaz",
-          "predicted": "Malcolm Wellmaker",
-          "actual": "Juan Diaz",
-          "correct": false,
-          "confidence": "low",
-          "prob": 54.4
-        },
-        {
-          "fighter_a": "Modestas Bukauskas",
-          "fighter_b": "Christian Edwards",
-          "predicted": "Modestas Bukauskas",
-          "actual": "Modestas Bukauskas",
-          "correct": true,
-          "confidence": "low",
-          "prob": 57.1
-        },
-        {
-          "fighter_a": "Timmy Cuamba",
-          "fighter_b": "Benardo Sopaj",
-          "predicted": "Benardo Sopaj",
-          "actual": "Benardo Sopaj",
-          "correct": true,
-          "confidence": "medium",
-          "prob": 90.2
-        },
-        {
-          "fighter_a": "Nikolay Veretennikov",
-          "fighter_b": "Khaos Williams",
-          "predicted": "Khaos Williams",
-          "actual": "Khaos Williams",
-          "correct": true,
-          "confidence": "medium",
-          "prob": 75.7
-        },
-        {
-          "fighter_a": "Tuco Tokkos",
-          "fighter_b": "Ivan Erslan",
-          "predicted": "Tuco Tokkos",
-          "actual": "Ivan Erslan",
-          "correct": false,
-          "confidence": "medium",
-          "prob": 83.5
-        },
-        {
-          "fighter_a": "Tommy Gantt",
-          "fighter_b": "Artur Minev",
-          "predicted": "Tommy Gantt",
-          "actual": "Tommy Gantt",
-          "correct": true,
-          "confidence": "low",
-          "prob": 50.0
-        },
-        {
-          "fighter_a": "Ketlen Vieira",
-          "fighter_b": "Jacqueline Cavalcanti",
-          "predicted": "Ketlen Vieira",
-          "actual": "Ketlen Vieira",
-          "correct": true,
-          "confidence": "medium",
-          "prob": 52.3
-        },
-        {
-          "fighter_a": "Cody Brundage",
-          "fighter_b": "Andre Petroski",
-          "predicted": "Andre Petroski",
-          "actual": "Cody Brundage",
-          "correct": false,
-          "confidence": "medium",
-          "prob": 81.6
-        },
-        {
-          "fighter_a": "Alice Ardelean",
-          "fighter_b": "Polyana Viana",
-          "predicted": "Polyana Viana",
-          "actual": "Alice Ardelean",
-          "correct": false,
-          "confidence": "medium",
-          "prob": 53.4
-        },
-        {
-          "fighter_a": "Daniel Barez",
-          "fighter_b": "Luis Gurule",
-          "predicted": "Luis Gurule",
-          "actual": "Luis Gurule",
-          "correct": true,
-          "confidence": "medium",
-          "prob": 58.9
-        },
-        {
-          "fighter_a": "Shauna Bannon",
-          "fighter_b": "Nicolle Caliari",
-          "predicted": "Shauna Bannon",
-          "actual": "Nicolle Caliari",
-          "correct": false,
-          "confidence": "medium",
-          "prob": 62.4
         }
       ]
     }
