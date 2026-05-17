@@ -44,7 +44,9 @@
       "vegas_prob_a": 66.4,
       "vegas_prob_b": 14.5,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Tom Aspinall",
+      "result": "correct"
     },
     {
       "fighter_a": "Mackenzie Dern",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mackenzie Dern",
+      "result": "wrong"
     },
     {
       "fighter_a": "Umar Nurmagomedov",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Umar Nurmagomedov",
+      "result": "correct"
     },
     {
       "fighter_a": "Alexander Volkov",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alexander Volkov",
+      "result": "correct"
     },
     {
       "fighter_a": "Azamat Murzakanov",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Azamat Murzakanov",
+      "result": "correct"
     },
     {
       "fighter_a": "Quillan Salkilld",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Quillan Salkilld",
+      "result": "correct"
     },
     {
       "fighter_a": "Ikram Aliskerov",
@@ -206,7 +218,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ikram Aliskerov",
+      "result": "correct"
     },
     {
       "fighter_a": "Ludovit Klein",
@@ -233,7 +247,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Ludovit Klein",
+      "result": "correct"
     },
     {
       "fighter_a": "Valter Walker",
@@ -288,7 +304,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Nathaniel Wood",
+      "result": "correct"
     },
     {
       "fighter_a": "Hamdy Abdelwahab",
@@ -315,7 +333,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Hamdy Abdelwahab",
+      "result": "correct"
     },
     {
       "fighter_a": "Mitch Raposo",
@@ -342,7 +362,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mitch Raposo",
+      "result": "wrong"
     },
     {
       "fighter_a": "Mizuki",
@@ -369,7 +391,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mizuki",
+      "result": "wrong"
     }
   ],
   "ev_plays": [

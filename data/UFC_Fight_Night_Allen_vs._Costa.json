@@ -217,8 +217,8 @@
       "vegas_prob_b": 62.7,
       "weight_class": "Light Heavyweight",
       "not_found": false,
-      "actual_winner": "Tuco Tokkos",
-      "result": "correct"
+      "actual_winner": "Ivan Erslan",
+      "result": "wrong"
     },
     {
       "fighter_a": "Tommy Gantt",

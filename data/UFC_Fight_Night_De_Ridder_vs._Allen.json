@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Brendan Allen",
+      "result": "wrong"
     },
     {
       "fighter_a": "Mike Malott",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Mike Malott",
+      "result": "correct"
     },
     {
       "fighter_a": "Aiemann Zahabi",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Aiemann Zahabi",
+      "result": "correct"
     },
     {
       "fighter_a": "Manon Fiorot",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Manon Fiorot",
+      "result": "wrong"
     },
     {
       "fighter_a": "Charles Jourdain",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Charles Jourdain",
+      "result": "correct"
     },
     {
       "fighter_a": "Kyle Nelson",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Kyle Nelson",
+      "result": "wrong"
     },
     {
       "fighter_a": "Drew Dober",
@@ -206,7 +218,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Drew Dober",
+      "result": "correct"
     },
     {
       "fighter_a": "Aoriqileng",
@@ -233,7 +247,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Aoriqileng",
+      "result": "correct"
     },
     {
       "fighter_a": "Bruno Silva",
@@ -260,7 +276,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Bruno Silva",
+      "result": "wrong"
     },
     {
       "fighter_a": "Djorden Santos",
@@ -287,7 +305,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Djorden Santos",
+      "result": "correct"
     },
     {
       "fighter_a": "Stephanie Luciano",
@@ -314,7 +334,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Stephanie Luciano",
+      "result": "wrong"
     },
     {
       "fighter_a": "Yousri Belgaroui",

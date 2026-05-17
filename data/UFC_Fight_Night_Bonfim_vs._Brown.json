@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Gabriel Bonfim",
+      "result": "correct"
     },
     {
       "fighter_a": "Joseph Morales",
@@ -71,7 +73,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Joseph Morales",
+      "result": "correct"
     },
     {
       "fighter_a": "Uros Medic",
@@ -98,7 +102,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Uros Medic",
+      "result": "correct"
     },
     {
       "fighter_a": "Chris Padilla",
@@ -125,7 +131,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Chris Padilla",
+      "result": "wrong"
     },
     {
       "fighter_a": "Christian Leroy Duncan",
@@ -152,7 +160,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Christian Leroy Duncan",
+      "result": "wrong"
     },
     {
       "fighter_a": "Jamall Emmers",
@@ -179,7 +189,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jamall Emmers",
+      "result": "correct"
     },
     {
       "fighter_a": "Raoni Barcelos",
@@ -206,7 +218,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Raoni Barcelos",
+      "result": "correct"
     },
     {
       "fighter_a": "Jacqueline Cavalcanti",
@@ -233,7 +247,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jacqueline Cavalcanti",
+      "result": "correct"
     },
     {
       "fighter_a": "Josh Hokit",
@@ -288,7 +304,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Denise Gomes",
+      "result": "correct"
     },
     {
       "fighter_a": "Daniel Marcos",
@@ -315,7 +333,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Daniel Marcos",
+      "result": "correct"
     },
     {
       "fighter_a": "Zach Reese",

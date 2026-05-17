@@ -44,7 +44,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Steve Garcia",
+      "result": "wrong"
     },
     {
       "fighter_a": "Waldo Cortes-Acosta",
@@ -98,7 +100,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Jeremiah Wells",
+      "result": "wrong"
     },
     {
       "fighter_a": "Yadier del Valle",
@@ -125,7 +129,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Yadier del Valle",
+      "result": "wrong"
     },
     {
       "fighter_a": "Charles Radtke",
@@ -152,7 +158,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Charles Radtke",
+      "result": "correct"
     },
     {
       "fighter_a": "Allan Nascimento",
@@ -179,7 +187,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Catch Weight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Allan Nascimento",
+      "result": "correct"
     },
     {
       "fighter_a": "Billy Elekana",
@@ -234,7 +244,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Timmy Cuamba",
+      "result": "wrong"
     },
     {
       "fighter_a": "Donte Johnson",
@@ -289,7 +301,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Norma Dumont",
+      "result": "correct"
     },
     {
       "fighter_a": "Alice Ardelean",
@@ -316,7 +330,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Alice Ardelean",
+      "result": "correct"
     },
     {
       "fighter_a": "Seokhyeon Ko",
@@ -343,7 +359,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Seokhyeon Ko",
+      "result": "correct"
     },
     {
       "fighter_a": "Talita Alencar",
@@ -370,7 +388,9 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "actual_winner": "Talita Alencar",
+      "result": "correct"
     }
   ],
   "ev_plays": [],
