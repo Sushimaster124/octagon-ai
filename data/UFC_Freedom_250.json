@@ -3,7 +3,7 @@
   "event_slug": "UFC_Freedom_250",
   "event_date": "June 14, 2026",
   "location": "Washington, DC, USA",
-  "generated_at": "2026-05-16T00:13:40.000899",
+  "generated_at": "2026-05-19T10:44:33.404655",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -12,11 +12,11 @@
   },
   "summary": {
     "total_fights": 7,
-    "high_conf": 7,
+    "high_conf": 6,
     "medium_conf": 0,
-    "low_conf": 0,
+    "low_conf": 1,
     "not_found": 0,
-    "ev_plays": 6
+    "ev_plays": 5
   },
   "fights": [
     {
@@ -35,16 +35,19 @@
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -518,
-      "odds_b": 521,
-      "ev_a": -3.5,
-      "ev_b": 18.6,
-      "edge_a": -2.9,
-      "edge_b": 3.0,
-      "vegas_prob_a": 83.8,
-      "vegas_prob_b": 16.1,
+      "odds_a": -527,
+      "odds_b": 528,
+      "ev_a": -3.7,
+      "ev_b": 19.9,
+      "edge_a": -3.2,
+      "edge_b": 3.2,
+      "vegas_prob_a": 84.1,
+      "vegas_prob_b": 15.9,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Ilia Topuria is a well-rounded fighter who can strike, grapple, and wrestle effectively. He's known for combining punching power with solid wrestling to control his opponents.",
+      "fighter_b_bio": "Justin Gaethje is an aggressive striker who relies on powerful kicks and punches to overwhelm his opponents. He tends to charge forward and look for early finishes rather than playing it safe.",
+      "watch_for": "The deciding factor will be whether Gaethje can keep the fight standing and land his powerful strikes before Topuria uses wrestling to take him down and control the pace."
     },
     {
       "fighter_a": "Alex Pereira",
@@ -63,15 +66,18 @@
       "elo_clash": false,
       "title_fight": false,
       "odds_a": -102,
-      "odds_b": -17,
+      "odds_b": -18,
       "ev_a": -89.5,
-      "ev_b": 551.8,
+      "ev_b": 520.8,
       "edge_a": -45.2,
-      "edge_b": 80.2,
+      "edge_b": 79.4,
       "vegas_prob_a": 50.5,
-      "vegas_prob_b": 14.5,
+      "vegas_prob_b": 15.3,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Alex Pereira uses a mixed approach, combining striking with grappling to adapt to different opponents. He's unpredictable and can find ways to win even when the odds aren't in his favor.",
+      "fighter_b_bio": "Ciryl Gane is a striker who relies on powerful punches and kicks to control fights from a distance. He's very consistent and rarely makes mistakes, making him one of the most reliable fighters in this matchup.",
+      "watch_for": "Gane's ability to keep the fight at striking distance will be crucial\u2014if he controls the range, his superior skills should dominate, but Pereira's willingness to mix things up could create openings."
     },
     {
       "fighter_a": "Sean O'Malley",
@@ -98,7 +104,10 @@
       "vegas_prob_a": 80.4,
       "vegas_prob_b": 24.3,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Sean O'Malley is a striker who uses speed and precision to pick apart opponents from distance. He relies on quick hands and feet to control the pace rather than throwing heavy power shots.",
+      "fighter_b_bio": "Aiemann Zahabi mixes striking and wrestling, trying to be effective both standing up and on the ground. He's a well-rounded fighter who can adapt depending on how the fight develops.",
+      "watch_for": "If O'Malley can keep the fight standing and avoid Zahabi's takedowns, his speed advantage should carry him to victory."
     },
     {
       "fighter_a": "Josh Hokit",
@@ -107,7 +116,7 @@
       "prob_b": 64.2,
       "winner": "Derrick Lewis",
       "winner_prob": 64.2,
-      "confidence": "high",
+      "confidence": "low",
       "elo_a": 1500.0,
       "elo_b": 1601.6,
       "elo_diff": -101.6,
@@ -117,16 +126,19 @@
       "elo_clash": false,
       "title_fight": false,
       "data_limited": true,
-      "odds_a": -329,
-      "odds_b": 258,
-      "ev_a": -53.3,
-      "ev_b": 129.8,
-      "edge_a": -40.9,
-      "edge_b": 36.3,
-      "vegas_prob_a": 76.7,
-      "vegas_prob_b": 27.9,
+      "odds_a": -339,
+      "odds_b": 262,
+      "ev_a": -53.6,
+      "ev_b": 132.4,
+      "edge_a": -41.4,
+      "edge_b": 36.6,
+      "vegas_prob_a": 77.2,
+      "vegas_prob_b": 27.6,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Josh Hokit is an emerging fighter still building his record and experience at this level. He'll need to execute a solid game plan and capitalize on any mistakes from his opponent.",
+      "fighter_b_bio": "Derrick Lewis is an experienced fighter with a strong record and proven ability to compete at the top level. He has the skills and experience advantage heading into this matchup.",
+      "watch_for": "Watch whether Hokit can stay composed and avoid early mistakes, or if Lewis's experience allows him to take control from the opening bell."
     },
     {
       "fighter_a": "Mauricio Ruffy",
@@ -144,16 +156,19 @@
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -610,
-      "odds_b": 322,
-      "ev_a": 10.0,
-      "ev_b": -76.8,
-      "edge_a": 8.6,
-      "edge_b": -18.2,
-      "vegas_prob_a": 85.9,
-      "vegas_prob_b": 23.7,
+      "odds_a": -619,
+      "odds_b": 440,
+      "ev_a": 9.8,
+      "ev_b": -70.3,
+      "edge_a": 8.4,
+      "edge_b": -13.0,
+      "vegas_prob_a": 86.1,
+      "vegas_prob_b": 18.5,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Mauricio Ruffy is a well-rounded fighter who can attack and defend effectively both standing up and on the ground. He's a skilled all-around competitor who doesn't rely on just one strength.",
+      "fighter_b_bio": "Michael Chandler is also a versatile fighter comfortable fighting anywhere in the octagon. He mixes striking with grappling to keep opponents guessing.",
+      "watch_for": "Ruffy's superior skill level across the board should be the deciding factor, but Chandler can surprise if he catches Ruffy with a clean strike early."
     },
     {
       "fighter_a": "Bo Nickal",
@@ -180,7 +195,10 @@
       "vegas_prob_a": 75.2,
       "vegas_prob_b": 29.4,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Bo Nickal is a grappler who relies on wrestling and ground control to wear down opponents. He uses takedowns to dictate the fight and limit exchanges on his feet.",
+      "fighter_b_bio": "Kyle Daukaus mixes striking with wrestling, making him dangerous both standing and on the ground. His versatility lets him adapt to different opponents and fight styles.",
+      "watch_for": "If Nickal can get Daukaus to the mat early, he has a real chance\u2014but if Daukaus stays on his feet and uses his striking, he should control the fight."
     },
     {
       "fighter_a": "Diego Lopes",
@@ -207,19 +225,13 @@
       "vegas_prob_a": 65.5,
       "vegas_prob_b": 39.1,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Diego Lopes is a well-rounded fighter who mixes striking with wrestling and grappling. He adapts his approach based on his opponent and isn't predictable in how he attacks.",
+      "fighter_b_bio": "Steve Garcia relies on his striking skills and tries to hurt opponents with punches and kicks while staying on his feet. He prefers to keep the fight standing rather than wrestling on the ground.",
+      "watch_for": "If Garcia can avoid getting taken down and trade strikes effectively, he has a path to an upset, but Lopes' versatility gives him multiple ways to win."
     }
   ],
   "ev_plays": [
-    {
-      "fighter": "Ciryl Gane",
-      "prob": 94.7,
-      "ev": 551.8,
-      "edge": 80.2,
-      "odds": -17,
-      "vegas_prob": 14.5,
-      "confidence": "medium"
-    },
     {
       "fighter": "Kyle Daukaus",
       "prob": 78.1,
@@ -227,15 +239,15 @@
       "edge": 48.7,
       "odds": 240,
       "vegas_prob": 29.4,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "fighter": "Derrick Lewis",
       "prob": 64.2,
-      "ev": 129.8,
-      "edge": 36.3,
-      "odds": 258,
-      "vegas_prob": 27.9,
+      "ev": 132.4,
+      "edge": 36.6,
+      "odds": 262,
+      "vegas_prob": 27.6,
       "confidence": "low"
     },
     {
@@ -245,32 +257,57 @@
       "edge": 28.3,
       "odds": -190,
       "vegas_prob": 65.5,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "fighter": "Justin Gaethje",
       "prob": 19.1,
-      "ev": 18.6,
-      "edge": 3.0,
-      "odds": 521,
-      "vegas_prob": 16.1,
-      "confidence": "medium"
+      "ev": 19.9,
+      "edge": 3.2,
+      "odds": 528,
+      "vegas_prob": 15.9,
+      "confidence": "high"
     },
     {
       "fighter": "Mauricio Ruffy",
       "prob": 94.5,
-      "ev": 10.0,
-      "edge": 8.6,
-      "odds": -610,
-      "vegas_prob": 85.9,
-      "confidence": "medium"
+      "ev": 9.8,
+      "edge": 8.4,
+      "odds": -619,
+      "vegas_prob": 86.1,
+      "confidence": "high"
     }
   ],
   "parlays": {
     "high_only": {
-      "legs": [],
-      "prob": 100.0,
-      "count": 0
+      "legs": [
+        {
+          "fighter": "Ilia Topuria",
+          "prob": 80.9
+        },
+        {
+          "fighter": "Ciryl Gane",
+          "prob": 94.7
+        },
+        {
+          "fighter": "Sean O'Malley",
+          "prob": 78.0
+        },
+        {
+          "fighter": "Mauricio Ruffy",
+          "prob": 94.5
+        },
+        {
+          "fighter": "Kyle Daukaus",
+          "prob": 78.1
+        },
+        {
+          "fighter": "Diego Lopes",
+          "prob": 93.8
+        }
+      ],
+      "prob": 41.4,
+      "count": 6
     },
     "high_and_med": {
       "legs": [

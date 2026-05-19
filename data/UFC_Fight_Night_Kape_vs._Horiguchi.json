@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
   "event_date": "June 20, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-16T00:13:36.680537",
+  "generated_at": "2026-05-19T10:45:00.029382",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -44,7 +44,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Manel Kape is a striker who likes to stand and trade punches and kicks. He's quick on his feet but comes into this fight as the underdog.",
+      "fighter_b_bio": "Kyoji Horiguchi is a well-rounded fighter who can strike, wrestle, and grapple effectively. He's the heavy favorite and uses his technical skills to control opponents.",
+      "watch_for": "If Kape can stay on his feet and land clean strikes early, he has a puncher's chance, but Horiguchi's ability to mix up his attacks will likely wear him down."
     },
     {
       "fighter_a": "Allan Nascimento",
@@ -71,7 +74,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Allan Nascimento is a well-rounded fighter who mixes striking and wrestling effectively. He adapts his approach based on his opponent and consistently makes smart decisions in the cage.",
+      "fighter_b_bio": "Mitch Raposo relies on wrestling as his main weapon, using takedowns to control fights and wear down opponents on the ground. He's at his best when he can dictate where the fight happens.",
+      "watch_for": "If Raposo can get Nascimento to the ground early, he stays competitive\u2014but if Nascimento keeps the fight standing, his superior overall skills should take over."
     },
     {
       "fighter_a": "Ion Cutelaba",
@@ -98,7 +104,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Ion Cutelaba is a wrestler who likes to take fights to the ground and control opponents from there. He uses his grappling skills to wear down his opponents over time.",
+      "fighter_b_bio": "Navajo Stirling is a well-rounded fighter who can mix striking and wrestling together effectively. He's comfortable fighting standing up or on the ground, making him adaptable to different opponents.",
+      "watch_for": "Whether Cutelaba can successfully wrestle Stirling to the ground, or if Stirling keeps the fight standing where he has more options."
     },
     {
       "fighter_a": "Andre Lima",
@@ -125,7 +134,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Andre Lima is a well-rounded fighter who can adapt to different opponents and situations in the cage. He combines striking and wrestling effectively to control fights and wear down his opponents.",
+      "fighter_b_bio": "Kevin Borjas is also a versatile fighter who uses a mix of striking and grappling skills. He looks to stay competitive by using multiple attacking angles and adapting throughout the fight.",
+      "watch_for": "Lima's superior technical consistency and experience should allow him to control the pace and dictate where the fight takes place."
     },
     {
       "fighter_a": "Hyder Amil",
@@ -152,7 +164,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Hyder Amil is a striker who relies on speed and distance to land clean shots. He'll look to stay on the outside and use his hands to control the fight.",
+      "fighter_b_bio": "Christian Rodriguez is a well-rounded fighter who can both strike and wrestle. He's comfortable mixing up his attacks and adapting to what his opponent does.",
+      "watch_for": "If Amil can keep Rodriguez at distance with his striking, he has a path to upset; otherwise, Rodriguez's versatility should wear him down over time."
     },
     {
       "fighter_a": "Bia Mesquita",
@@ -180,15 +195,39 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Bia Mesquita is an evenly matched competitor at this level of the sport. She has a balanced skill set with no clear strengths or weaknesses that stand out.",
+      "fighter_b_bio": "Melissa Mullins is virtually identical in experience and ability to her opponent. She sits right at the middle of the skill range for fighters in her division.",
+      "watch_for": "This is essentially a coin flip matchup, so whoever executes their game plan better and avoids mistakes will likely take the win."
     }
   ],
   "ev_plays": [],
   "parlays": {
     "high_only": {
-      "legs": [],
-      "prob": 100.0,
-      "count": 0
+      "legs": [
+        {
+          "fighter": "Kyoji Horiguchi",
+          "prob": 83.4
+        },
+        {
+          "fighter": "Allan Nascimento",
+          "prob": 90.0
+        },
+        {
+          "fighter": "Navajo Stirling",
+          "prob": 70.4
+        },
+        {
+          "fighter": "Andre Lima",
+          "prob": 98.4
+        },
+        {
+          "fighter": "Christian Rodriguez",
+          "prob": 82.7
+        }
+      ],
+      "prob": 43.0,
+      "count": 5
     },
     "high_and_med": {
       "legs": [

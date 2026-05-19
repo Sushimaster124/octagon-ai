@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
   "event_date": "June 06, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-16T00:13:46.282641",
+  "generated_at": "2026-05-19T10:44:02.571782",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -13,8 +13,8 @@
   "summary": {
     "total_fights": 12,
     "high_conf": 7,
-    "medium_conf": 1,
-    "low_conf": 4,
+    "medium_conf": 0,
+    "low_conf": 5,
     "not_found": 0,
     "ev_plays": 0
   },
@@ -44,7 +44,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Belal Muhammad uses a well-rounded approach, mixing striking with wrestling to control fights. He adapts his game plan based on his opponent and isn't afraid to take risks.",
+      "fighter_b_bio": "Gabriel Bonfim is a grappler who looks to take opponents down and win on the ground. He uses his wrestling to tire out fighters and set up submissions or ground-and-pound.",
+      "watch_for": "If Belal can keep the fight standing and use his striking, he has a chance, but if Bonfim gets him to the mat, his grappling advantage takes over."
     },
     {
       "fighter_a": "Iwo Baraniewski",
@@ -72,7 +75,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Iwo Baraniewski is an evenly matched competitor with a well-rounded skill set. He has the fundamentals to compete at this level but hasn't yet established a dominant fighting style.",
+      "fighter_b_bio": "Billy Elekana is a balanced fighter with similar experience and skill level to his opponent. He approaches fights with solid technique but lacks a distinctive edge in any one area.",
+      "watch_for": "This is a true toss-up fight\u2014whichever fighter lands cleaner strikes and controls the pace in the middle rounds will likely take the win."
     },
     {
       "fighter_a": "Imanol Rodriguez",
@@ -100,7 +106,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Imanol Rodriguez is an evenly matched competitor with a balanced skill set. He fights at a similar level to his opponent, making this a competitive bout.",
+      "fighter_b_bio": "Matt Schnell is a well-rounded fighter with comparable experience and abilities to his opponent. He comes into this fight as a slight underdog in what should be a close contest.",
+      "watch_for": "Look for who can control the pace and impose their will early, as both fighters are nearly identical in skill level."
     },
     {
       "fighter_a": "Bruno Silva",
@@ -127,7 +136,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Bruno Silva mixes striking and wrestling to control fights from multiple angles. He's the betting favorite here with a 66% chance to win.",
+      "fighter_b_bio": "Edgar Chairez also uses a blend of striking and grappling, though he hasn't had the same level of success as Silva. He'll need to capitalize on any openings to pull off the upset.",
+      "watch_for": "Look for Silva to impose his game early\u2014if he can get ahead on the scorecards, Chairez will struggle to catch up."
     },
     {
       "fighter_a": "Jeisla Chaves",
@@ -155,7 +167,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Jeisla Chaves is a well-rounded fighter with a slight edge in overall skill level. She tends to control fights through consistency and smart decision-making.",
+      "fighter_b_bio": "Yuneisy Duben is a competitive fighter with similar abilities to her opponent. She relies on staying in the fight and looking for opportunities to catch her opponent off guard.",
+      "watch_for": "This matchup comes down to who can avoid mistakes, since both fighters have equally unpredictable elements that could swing the fight either way."
     },
     {
       "fighter_a": "Brendan Allen",
@@ -182,7 +197,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Brendan Allen is a well-rounded fighter who mixes striking with wrestling and grappling. He adapts his approach based on his opponent and isn't afraid to take fights to the ground.",
+      "fighter_b_bio": "Edmen Shahbazyan is also a versatile fighter who can strike and wrestle effectively. He brings youth and athleticism to his fights, though he's still building experience at the higher levels.",
+      "watch_for": "Allen's slightly higher skill rating gives him the edge, so look for whether he can control the pace and avoid getting caught in Shahbazyan's explosive moments."
     },
     {
       "fighter_a": "Bryce Mitchell",
@@ -209,7 +227,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Bryce Mitchell is a grappler who likes to take opponents down and control them on the ground. He wins by using wrestling and submission holds rather than striking.",
+      "fighter_b_bio": "Victor Henry uses a mix of striking and grappling, giving him flexibility in how he approaches fights. He can stand and trade punches or take the fight to the ground depending on what's working.",
+      "watch_for": "If Mitchell can successfully get Henry to the ground early, he has a path to victory, but Henry's well-rounded skillset makes him the heavy favorite."
     },
     {
       "fighter_a": "Marcus McGhee",
@@ -218,7 +239,7 @@
       "prob_b": 43.1,
       "winner": "Marcus McGhee",
       "winner_prob": 56.9,
-      "confidence": "medium",
+      "confidence": "low",
       "elo_a": 1547.9,
       "elo_b": 1500.0,
       "elo_diff": 47.9,
@@ -237,7 +258,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Marcus McGhee is the slight favorite in this matchup with a 57% chance to win. He has solid overall fighting ability based on his track record.",
+      "fighter_b_bio": "Jakub Wiklacz comes in as the underdog with a 43% win probability. He's a capable fighter looking to pull off an upset in this bout.",
+      "watch_for": "Both fighters have similar unpredictability levels, so whoever can control the pace and avoid mistakes will likely come out on top."
     },
     {
       "fighter_a": "Jordan Leavitt",
@@ -264,7 +288,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Jordan Leavitt is a grappler who likes to take opponents down to the ground and control them. He uses wrestling and submissions to try to finish fights on the mat.",
+      "fighter_b_bio": "Joanderson Brito is a hybrid fighter who mixes striking with grappling skills. He's comfortable both standing and on the ground, which gives him flexibility in how he approaches fights.",
+      "watch_for": "The fight likely comes down to whether Leavitt can successfully take Brito down, since Leavitt is the stronger grappler but Brito is well-rounded enough to defend and counter."
     },
     {
       "fighter_a": "Fares Ziam",
@@ -291,7 +318,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Fares Ziam is a well-rounded fighter who mixes striking with grappling to keep opponents guessing. He's comfortable both standing and on the ground, giving him options to control how the fight plays out.",
+      "fighter_b_bio": "Tom Nolan is a striker who prefers to fight on his feet and use his hands and kicks to outpoint opponents. He'll want to keep distance and avoid getting dragged into close exchanges.",
+      "watch_for": "If Nolan can stay on the outside and land clean strikes early, he has a puncher's chance, but Ziam's ability to take the fight wherever he wants makes him the heavy favorite."
     },
     {
       "fighter_a": "Ketlen Souza",
@@ -318,7 +348,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Ketlen Souza is a well-rounded fighter who mixes striking and grappling to control her opponents. She's the favorite in this matchup with a strong track record.",
+      "fighter_b_bio": "Ariane Carnelossi is also a versatile fighter who can strike and wrestle effectively. She'll need to execute her game plan precisely to pull off the upset.",
+      "watch_for": "Whoever controls the fight's pace and forces their opponent into uncomfortable positions will likely come out on top."
     },
     {
       "fighter_a": "Priscila Cachoeira",
@@ -345,18 +378,20 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Priscila Cachoeira uses a well-rounded approach, mixing striking and grappling to control fights from various positions. She's a versatile fighter who can adapt to different opponents.",
+      "fighter_b_bio": "Chelsea Chandler also relies on a hybrid style, blending multiple fighting techniques to stay competitive. She works to find openings wherever the fight takes place.",
+      "watch_for": "Cachoeira's experience and consistency should give her the edge in executing her game plan against Chandler."
     }
   ],
   "ev_plays": [],
   "parlays": {
     "high_only": {
-      "legs": [],
-      "prob": 100.0,
-      "count": 0
-    },
-    "high_and_med": {
       "legs": [
+        {
+          "fighter": "Gabriel Bonfim",
+          "prob": 74.2
+        },
         {
           "fighter": "Bruno Silva",
           "prob": 66.4
@@ -382,8 +417,42 @@
           "prob": 94.3
         }
       ],
-      "prob": 21.6,
-      "count": 6
+      "prob": 16.0,
+      "count": 7
+    },
+    "high_and_med": {
+      "legs": [
+        {
+          "fighter": "Gabriel Bonfim",
+          "prob": 74.2
+        },
+        {
+          "fighter": "Bruno Silva",
+          "prob": 66.4
+        },
+        {
+          "fighter": "Victor Henry",
+          "prob": 91.8
+        },
+        {
+          "fighter": "Joanderson Brito",
+          "prob": 67.6
+        },
+        {
+          "fighter": "Fares Ziam",
+          "prob": 75.9
+        },
+        {
+          "fighter": "Ketlen Souza",
+          "prob": 73.2
+        },
+        {
+          "fighter": "Priscila Cachoeira",
+          "prob": 94.3
+        }
+      ],
+      "prob": 16.0,
+      "count": 7
     }
   }
 }

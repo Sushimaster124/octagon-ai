@@ -1,5 +1,65 @@
 [
   {
+    "slug": "UFC_Fight_Night_Fiziev_vs._Torres",
+    "name": "UFC Fight Night: Fiziev vs. Torres",
+    "date": "June 27, 2026",
+    "location": "Baku, Azerbaijan",
+    "generated_at": "2026-05-19T10:45:43.847021",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 8,
+      "medium_conf": 0,
+      "low_conf": 4,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
+    "name": "UFC Fight Night: Kape vs. Horiguchi",
+    "date": "June 20, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-19T10:45:00.029382",
+    "summary": {
+      "total_fights": 6,
+      "high_conf": 5,
+      "medium_conf": 0,
+      "low_conf": 1,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Freedom_250",
+    "name": "UFC Freedom 250",
+    "date": "June 14, 2026",
+    "location": "Washington, DC, USA",
+    "generated_at": "2026-05-19T10:44:33.404655",
+    "summary": {
+      "total_fights": 7,
+      "high_conf": 6,
+      "medium_conf": 0,
+      "low_conf": 1,
+      "not_found": 0,
+      "ev_plays": 5
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
+    "name": "UFC Fight Night: Muhammad vs. Bonfim",
+    "date": "June 06, 2026",
+    "location": "Las Vegas, Nevada, USA",
+    "generated_at": "2026-05-19T10:44:02.571782",
+    "summary": {
+      "total_fights": 12,
+      "high_conf": 7,
+      "medium_conf": 0,
+      "low_conf": 5,
+      "not_found": 0,
+      "ev_plays": 0
+    }
+  },
+  {
     "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
     "name": "UFC Fight Night: Song vs. Figueiredo",
     "date": "May 30, 2026",
@@ -355,66 +415,6 @@
       "high_conf": 0,
       "medium_conf": 10,
       "low_conf": 2,
-      "not_found": 0,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
-    "name": "UFC Fight Night: Muhammad vs. Bonfim",
-    "date": "June 06, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-16T00:13:46.282641",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 7,
-      "low_conf": 5,
-      "not_found": 0,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Freedom_250",
-    "name": "UFC Freedom 250",
-    "date": "June 14, 2026",
-    "location": "Washington, DC, USA",
-    "generated_at": "2026-05-16T00:13:40.000899",
-    "summary": {
-      "total_fights": 7,
-      "high_conf": 0,
-      "medium_conf": 6,
-      "low_conf": 1,
-      "not_found": 0,
-      "ev_plays": 6
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
-    "name": "UFC Fight Night: Kape vs. Horiguchi",
-    "date": "June 20, 2026",
-    "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-16T00:13:36.680537",
-    "summary": {
-      "total_fights": 6,
-      "high_conf": 0,
-      "medium_conf": 5,
-      "low_conf": 1,
-      "not_found": 0,
-      "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Fiziev_vs._Torres",
-    "name": "UFC Fight Night: Fiziev vs. Torres",
-    "date": "June 27, 2026",
-    "location": "Baku, Azerbaijan",
-    "generated_at": "2026-05-16T00:13:33.200774",
-    "summary": {
-      "total_fights": 12,
-      "high_conf": 0,
-      "medium_conf": 9,
-      "low_conf": 3,
       "not_found": 0,
       "ev_plays": 0
     }

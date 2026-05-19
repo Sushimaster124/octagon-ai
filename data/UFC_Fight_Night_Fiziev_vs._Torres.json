@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Fiziev_vs._Torres",
   "event_date": "June 27, 2026",
   "location": "Baku, Azerbaijan",
-  "generated_at": "2026-05-16T00:13:33.200774",
+  "generated_at": "2026-05-19T10:45:43.847021",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -44,7 +44,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Rafael Fiziev is a well-rounded fighter who can strike and wrestle effectively. He'll try to control the fight using multiple approaches, but faces a significant challenge here.",
+      "fighter_b_bio": "Manuel Torres is a versatile hybrid fighter who can handle opponents on both the feet and the ground. He's the heavy favorite with strong overall skills across all fighting areas.",
+      "watch_for": "Watch whether Fiziev can find openings with his diverse techniques or if Torres will dominate through superior overall skill level."
     },
     {
       "fighter_a": "Shara Magomedov",
@@ -71,7 +74,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Shara Magomedov is a striker who relies on sharp punches and kicks to control fights from distance. He's technical and precise, breaking opponents down with clean striking rather than wild brawling.",
+      "fighter_b_bio": "Michel Pereira is a versatile fighter who mixes striking with grappling, always looking for creative openings. He's unpredictable and aggressive, but can be vulnerable to fighters with solid fundamentals.",
+      "watch_for": "Can Magomedov's technical striking keep Pereira at range, or will Pereira's aggression and hybrid approach close the distance and create chaos?"
     },
     {
       "fighter_a": "Ismail Naurdiev",
@@ -98,7 +104,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Ismail Naurdiev is a well-rounded fighter who mixes striking with grappling to control his opponents. He adapts his approach based on what works in each fight.",
+      "fighter_b_bio": "Marvin Vettori is a versatile competitor who blends striking and wrestling effectively. He's known for staying composed and adjusting his game plan when needed.",
+      "watch_for": "This fight comes down to who can impose their will early\u2014Naurdiev is favored to control the pace, but Vettori has the skill to disrupt that plan if he stays sharp."
     },
     {
       "fighter_a": "Ikram Aliskerov",
@@ -125,7 +134,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Ikram Aliskerov is a well-rounded fighter who can compete both on the feet and on the ground. He mixes striking with grappling to control his opponents throughout the fight.",
+      "fighter_b_bio": "Brunno Ferreira is also a versatile fighter who uses both striking and wrestling. He'll look to use his skills across all areas of the octagon to stay competitive.",
+      "watch_for": "Aliskerov's experience and current form give him a strong edge\u2014look for him to control the pace and capitalize on his advantages as the fight progresses."
     },
     {
       "fighter_a": "Nursulton Ruziboev",
@@ -152,7 +164,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Nursulton Ruziboev is a well-rounded fighter who mixes striking and wrestling effectively. He uses his technical skills and ring control to wear down opponents over time.",
+      "fighter_b_bio": "Andrey Pulyaev is also a versatile fighter who can strike and grapple. He'll need to stay aggressive and create openings to compete at this level.",
+      "watch_for": "Watch whether Pulyaev can stay close and land strikes early, or if Ruziboev takes control with his superior technique and experience."
     },
     {
       "fighter_a": "Nazim Sadykhov",
@@ -179,7 +194,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Nazim Sadykhov uses a well-rounded mix of striking and grappling, staying dangerous in all areas of the fight. He's the more experienced fighter overall based on his track record.",
+      "fighter_b_bio": "Matheus Camilo is a grappler who looks to take opponents down and control them on the ground. He'll need to use his wrestling to neutralize Sadykhov's striking advantage.",
+      "watch_for": "Watch whether Camilo can successfully take Sadykhov down early\u2014if the fight stays standing, Sadykhov's mixed skills should give him the edge."
     },
     {
       "fighter_a": "Daniil Donchenko",
@@ -207,7 +225,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Daniil Donchenko is an evenly matched fighter with a balanced skill set across striking and grappling. He fights with a steady, reliable approach without major strengths or weaknesses standing out.",
+      "fighter_b_bio": "Andreas Gustafsson is a well-rounded competitor with similar overall abilities to his opponent. He brings consistent technique and doesn't rely on any single dominant skill to win fights.",
+      "watch_for": "This is an extremely close matchup, so watch for who can land cleaner strikes and control the fight's pace in the early rounds."
     },
     {
       "fighter_a": "Bekzat Almakhan",
@@ -234,7 +255,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Bekzat Almakhan is a well-rounded fighter who blends striking and wrestling effectively. He's favored to win this matchup with strong fundamentals across all areas of fighting.",
+      "fighter_b_bio": "Jean Matsumoto uses a balanced approach, mixing different techniques rather than specializing in one area. He'll need to execute his game plan perfectly to pull off the upset.",
+      "watch_for": "Almakhan's ability to control the fight's pace and position will likely determine whether he can maintain his advantage over the distance."
     },
     {
       "fighter_a": "Abus Magomedov",
@@ -261,7 +285,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Abus Magomedov is a wrestler who uses takedowns and ground control to wear down opponents. He relies on his physical strength and grappling skills to dominate fights from top position.",
+      "fighter_b_bio": "Michal Oleksiejczuk is a hybrid fighter who mixes striking and wrestling to adapt to different opponents. He can stand and trade punches or take fights to the ground depending on what he needs.",
+      "watch_for": "Watch whether Oleksiejczuk can keep the fight standing and use his striking, because Magomedov will likely try to take him down and control the fight on the mat."
     },
     {
       "fighter_a": "Abdul Rakhman Yakhyaev",
@@ -289,7 +316,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Abdul Rakhman Yakhyaev is an evenly matched fighter with a 50-50 record against top competition. He brings consistent skill to every matchup without clear strengths or weaknesses.",
+      "fighter_b_bio": "Julius Walker has nearly identical credentials to his opponent with comparable experience and rating. He's a well-rounded fighter who competes effectively across different situations.",
+      "watch_for": "This is a true toss-up fight, so look for early control and momentum\u2014whoever gets the upper hand in the first round will likely carry that advantage to victory."
     },
     {
       "fighter_a": "Asu Almabayev",
@@ -316,7 +346,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Asu Almabayev is a grappler who relies on takedowns and ground control to wear down opponents. He'll look to get the fight to the mat where he can use his wrestling advantage.",
+      "fighter_b_bio": "Charles Johnson is a hybrid fighter who can strike and grapple, giving him flexibility in how he approaches a fight. He's comfortable fighting anywhere but uses smart combinations to set up his attacks.",
+      "watch_for": "Watch whether Johnson can keep the fight standing and use his striking, or if Almabayev successfully takes him down and dominates on the ground."
     },
     {
       "fighter_a": "Farman Hasanov",
@@ -344,15 +377,51 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Farman Hasanov is a well-rounded fighter with a balanced skill set across striking and grappling. He has a slight edge in experience and technical ability compared to his opponent.",
+      "fighter_b_bio": "Eric Nolan is an active competitor with solid fundamentals in both stand-up and ground fighting. He relies on consistency and applying steady pressure throughout his fights.",
+      "watch_for": "This matchup comes down to who can control the pace\u2014Hasanov has a slight technical advantage, but Nolan thrives when he forces his opponent into a battle of attrition."
     }
   ],
   "ev_plays": [],
   "parlays": {
     "high_only": {
-      "legs": [],
-      "prob": 100.0,
-      "count": 0
+      "legs": [
+        {
+          "fighter": "Manuel Torres",
+          "prob": 95.3
+        },
+        {
+          "fighter": "Shara Magomedov",
+          "prob": 83.0
+        },
+        {
+          "fighter": "Ismail Naurdiev",
+          "prob": 82.3
+        },
+        {
+          "fighter": "Ikram Aliskerov",
+          "prob": 78.9
+        },
+        {
+          "fighter": "Nursulton Ruziboev",
+          "prob": 79.5
+        },
+        {
+          "fighter": "Nazim Sadykhov",
+          "prob": 69.1
+        },
+        {
+          "fighter": "Bekzat Almakhan",
+          "prob": 84.1
+        },
+        {
+          "fighter": "Abus Magomedov",
+          "prob": 92.7
+        }
+      ],
+      "prob": 22.0,
+      "count": 8
     },
     "high_and_med": {
       "legs": [
