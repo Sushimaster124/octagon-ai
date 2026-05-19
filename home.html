@@ -148,6 +148,17 @@
   .ev-box-text { font-size: 13px; color: var(--gray-600); line-height: 1.72; }
   .ev-box-text span { color: var(--green); font-weight: 600; }
 
+  /* SNIPPET PREVIEW */
+  .snippet-card { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; }
+  .snippet-fighters { display: grid; grid-template-columns: 1fr 1fr; }
+  .snippet-fighter { padding: 14px; border-right: 1px solid rgba(255,255,255,0.06); }
+  .snippet-fighter:last-child { border-right: none; }
+  .snippet-name { font-size: 13px; font-weight: 600; color: #E8E6DF; margin-bottom: 6px; }
+  .snippet-bio { font-size: 11px; color: var(--gray-600); line-height: 1.6; }
+  .snippet-watch { background: rgba(186,117,23,0.1); border-top: 1px solid rgba(186,117,23,0.15); padding: 10px 14px; }
+  .snippet-watch-label { font-size: 10px; font-weight: 700; color: #FAC775; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 3px; }
+  .snippet-watch-text { font-size: 11px; color: #FAC775; line-height: 1.6; opacity: 0.8; }
+
   /* MORE CARDS */
   .more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1.5rem; }
   .more-card { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 18px 20px; text-decoration: none; display: block; transition: border-color 0.15s; }
@@ -193,6 +204,9 @@
     .bet-col { padding: 10px 12px; }
     .bet-col-val { font-size: 17px; }
     .chip-row { grid-template-columns: 1fr; }
+    .snippet-fighters { grid-template-columns: 1fr; }
+    .snippet-fighter { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .snippet-fighter:last-child { border-bottom: none; }
     .more-grid { grid-template-columns: 1fr; }
     .flow-content { padding-bottom: 2rem; }
     .flow-title { font-size: 15px; }
@@ -230,9 +244,9 @@
 <!-- HERO -->
 <div class="hero" style="position:relative;overflow:hidden;">
 <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.03;pointer-events:none;flex-shrink:0;" width="520" height="520" viewBox="0 0 100 100"><polygon points="35,5 65,5 95,35 95,65 65,95 35,95 5,65 5,35" fill="none" stroke="#E8E6DF" stroke-width="1.5"/><polygon points="38,10 62,10 90,38 90,62 62,90 38,90 10,62 10,38" fill="none" stroke="#E8E6DF" stroke-width="0.5"/></svg>
-  <div class="live-pill fade fd1"><div class="live-dot"></div>Live Vegas odds</div>
-  <h1 class="hero-title fade fd2">We find where<br>Vegas is <em>wrong.</em></h1>
-  <p class="hero-sub fade fd3">A model trained on UFC fights that finds bets Vegas is mispricing. See the edge in plain English. Build your card. Know the math before you decide.</p>
+  <div class="live-pill fade fd1"><div class="live-dot"></div>UFC fight night</div>
+  <h1 class="hero-title fade fd2">Know the card.<br>Bet with <em>confidence.</em></h1>
+  <p class="hero-sub fade fd3">Fighter breakdowns, model picks, and a budget allocator for every UFC event. Built for fans who want more than a gut feeling.</p>
   <div class="hero-actions fade fd4">
     <a class="btn-red" href="hot-picks.html">Build my card →</a>
     <a class="btn-ghost" href="how-it-works.html">How it works</a>
@@ -244,10 +258,10 @@
 <div class="section">
   <div class="section-inner">
     <div class="eyebrow fade">Right now</div>
-    <div class="sec-title fade">The biggest gap between what we see and what Vegas priced.</div>
-    <div class="sec-sub fade">Updates automatically before every event.</div>
+    <div class="sec-title fade">The model's top pick for the next card.</div>
+    <div class="sec-sub fade">Read the fighter breakdown on the card builder before you decide.</div>
     <div id="best-bet-container" class="fade"></div>
-    <a class="cta-link fade" href="index.html">See every fight on the upcoming card →</a>
+    <a class="cta-link fade" href="hot-picks.html">See every fight with full fighter breakdowns →</a>
   </div>
 </div>
 
@@ -255,28 +269,30 @@
 <div class="section">
   <div class="section-inner">
     <div class="eyebrow fade">How to use this</div>
-    <div class="sec-title fade">Build your betting card in three steps.</div>
-    <div class="sec-sub fade">Pick your fighters, choose singles or a parlay, and see exactly what the math says you stand to make.</div>
+    <div class="sec-title fade">Go from casual fan to confident bettor in three steps.</div>
+    <div class="sec-sub fade">We do the research. You make the call.</div>
 
     <div class="flow-steps">
 
       <div class="flow-step fade">
         <div class="flow-left"><div class="flow-num">1</div><div class="flow-line"></div></div>
         <div class="flow-content">
-          <div class="flow-title">Pick the fighters you like</div>
-          <div class="flow-desc">Go to Card Builder and tap any fighter you want to back. You can pick fighters across multiple events and mix them into one card.</div>
-          <div class="flow-card">
-            <div class="flow-card-label">UFC Fight Night: Allen vs Costa · Welterweight</div>
-            <div class="chip-row">
-              <div class="chip">
-                <div class="chip-name">Khaos Williams</div>
-                <div class="chip-prob">We give him 76% · Vegas agrees</div>
+          <div class="flow-title">Read the fighter breakdown</div>
+          <div class="flow-desc">Every fight on the card comes with a plain-English breakdown of both fighters — how they actually fight, what makes them dangerous, and the one thing that decides the fight. No stats jargon. No tape study required.</div>
+          <div class="snippet-card">
+            <div class="snippet-fighters">
+              <div class="snippet-fighter">
+                <div class="snippet-name">Deiveson Figueiredo</div>
+                <div class="snippet-bio">A heavy-handed pocket fighter who explodes with combinations up close. Nasty elbows and knees in the clinch — dangerous the moment he closes distance.</div>
               </div>
-              <div class="chip selected">
-                <div class="chip-name">Benardo Sopaj</div>
-                <div class="chip-prob">We give him 90% · Vegas underpriced him</div>
-                <div class="chip-check">✓ Added to basket</div>
+              <div class="snippet-fighter">
+                <div class="snippet-name">Song Yadong</div>
+                <div class="snippet-bio">Throws volume from range and hunts the body kick. Works hard early but tends to fade if he can't get the finish in the first two rounds.</div>
               </div>
+            </div>
+            <div class="snippet-watch">
+              <div class="snippet-watch-label">👀 Watch for</div>
+              <div class="snippet-watch-text">Whether Song can stay on the outside and land the body kick before Figueiredo closes the distance and turns it into a war. If Figueiredo gets inside early, Song's in trouble.</div>
             </div>
           </div>
         </div>
@@ -285,11 +301,11 @@
       <div class="flow-step fade">
         <div class="flow-left"><div class="flow-num">2</div><div class="flow-line"></div></div>
         <div class="flow-content">
-          <div class="flow-title">Choose single bets or a parlay</div>
-          <div class="flow-desc">Singles means you bet each fighter separately. A parlay combines them into one bet with a bigger payout but all of them need to win. Your basket shows both options side by side.</div>
+          <div class="flow-title">Pick who you want to back</div>
+          <div class="flow-desc">Once you know the fight, tap the fighter you like. The model shows you its win probability, the Vegas odds, and whether there's value in the bet. You can build a full card across multiple fights.</div>
           <div class="basket-preview">
             <div class="basket-header">
-              <div class="basket-title">🧺 Your basket · 2 picks</div>
+              <div class="basket-title">Your picks · 2 selected</div>
               <div class="basket-toggle">
                 <button class="btoggle active">Singles</button>
                 <button class="btoggle">Parlay</button>
@@ -297,17 +313,17 @@
             </div>
             <div class="basket-pick">
               <div>
-                <div class="bp-name">Benardo Sopaj</div>
-                <div class="bp-meta">vs Cuamba · ML +114 · We give him 90%</div>
+                <div class="bp-name">Deiveson Figueiredo</div>
+                <div class="bp-meta">vs Song Yadong · ML +398 · Model gives him 80%</div>
               </div>
-              <div class="bp-ev">+$56 per $100</div>
+              <div class="bp-ev">+$299 per $100</div>
             </div>
             <div class="basket-pick">
               <div>
-                <div class="bp-name">Shauna Bannon</div>
-                <div class="bp-meta">vs Caliari · ML +226 · We give her 62%</div>
+                <div class="bp-name">Zhang Mingyang</div>
+                <div class="bp-meta">vs Menifield · ML -230 · Model gives him 93%</div>
               </div>
-              <div class="bp-ev">+$103 per $100</div>
+              <div class="bp-ev">+$33 per $100</div>
             </div>
           </div>
         </div>
@@ -316,11 +332,11 @@
       <div class="flow-step fade">
         <div class="flow-left"><div class="flow-num">3</div><div class="flow-line"></div></div>
         <div class="flow-content">
-          <div class="flow-title">See what you stand to make</div>
-          <div class="flow-desc">Enter your budget and we show you how much to put on each pick. The expected value number tells you what you should profit per $100 if the model is right over time.</div>
+          <div class="flow-title">Set your budget and allocate</div>
+          <div class="flow-desc">Enter how much you want to spend and hit Allocate. We split your budget across your picks using a formula that weights higher-confidence bets more. You see exactly how much to put on each fight and what you stand to make if they win.</div>
           <div class="ev-box">
-            <div class="ev-box-label">Expected value explained simply</div>
-            <div class="ev-box-text">If a bet shows <span>+$56 EV</span> that means if you made this exact bet 100 times you would profit $56 on average per bet. It does not mean you win tonight. It means the odds are in your favor.</div>
+            <div class="ev-box-label">What does EV mean?</div>
+            <div class="ev-box-text">EV stands for expected value. If a bet shows <span>+$56 EV</span> it means if you made this exact bet over and over, you'd profit $56 on average per $100. It does not mean you win tonight — it means the math is in your favor.</div>
           </div>
           <a class="flow-cta" href="hot-picks.html">Go to Card Builder →</a>
         </div>
@@ -338,7 +354,7 @@
     <div class="more-grid">
       <a class="more-card fade" href="index.html">
         <div class="more-title">Browse every event</div>
-        <div class="more-desc">Past and upcoming UFC cards with full fight by fight predictions and Vegas comparisons.</div>
+        <div class="more-desc">Past and upcoming UFC cards with full fight by fight predictions and breakdowns.</div>
         <div class="more-arrow">Go to Events →</div>
       </a>
       <a class="more-card fade" href="fighters.html">
@@ -347,8 +363,8 @@
         <div class="more-arrow">Go to Fighters →</div>
       </a>
       <a class="more-card fade" href="accuracy.html">
-        <div class="more-title">See where we beat Vegas</div>
-        <div class="more-desc">Every time our model disagreed with Vegas by a lot and what actually happened. The full record.</div>
+        <div class="more-title">See our prediction record</div>
+        <div class="more-desc">Every prediction tracked publicly. See exactly how the model has performed across every event.</div>
         <div class="more-arrow">Go to Accuracy →</div>
       </a>
       <a class="more-card fade" href="how-it-works.html">
@@ -371,7 +387,7 @@
     </div>
     <div class="honest-row fade">
       <div class="honest-dot"></div>
-      <div class="honest-text"><strong>It does not know what happened this week.</strong> Injuries, weight cuts, camp changes. None of it shows up in historical data. Always check fight news before acting on a pick.</div>
+      <div class="honest-text"><strong>It does not know what happened this week.</strong> Injuries, weight cuts, camp changes — none of it shows up in historical data. Always check fight news before acting on a pick.</div>
     </div>
     <div class="honest-row fade">
       <div class="honest-dot"></div>
@@ -425,7 +441,7 @@ async function loadBestBet() {
     const isUnderdog = p.odds > 0;
     const gap = Math.round(p.prob - p.vegas_prob);
     const footerText = isUnderdog
-      ? 'Vegas has ' + p.fighter + ' as the underdog at ' + oddsStr + '. Our model gives them a ' + p.prob + '% chance to win. That ' + gap + ' point gap is where the value is.'
+      ? 'Our model gives ' + p.fighter + ' a ' + p.prob + '% chance to win. Vegas has them as the underdog at ' + oddsStr + '. That ' + gap + ' point gap is the reason this pick is on the board.'
       : 'Our model gives ' + p.fighter + ' a ' + p.prob + '% chance to win. Vegas agrees they are the favorite but the model sees more edge than the price reflects.';
 
     container.innerHTML = `
@@ -447,7 +463,7 @@ async function loadBestBet() {
           </div>
           <div class="bet-cols">
             <div class="bet-col">
-              <div class="bet-col-lbl">We give them</div>
+              <div class="bet-col-lbl">Model gives them</div>
               <div class="bet-col-val">${p.prob}%</div>
               <div class="bet-col-sub">chance to win</div>
             </div>
