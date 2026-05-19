@@ -1,5 +1,20 @@
 [
   {
+    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
+    "name": "UFC Fight Night: Song vs. Figueiredo",
+    "date": "May 30, 2026",
+    "location": "Macau, China",
+    "generated_at": "2026-05-19T10:42:12.406406",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 7,
+      "medium_conf": 0,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 10
+    }
+  },
+  {
     "slug": "UFC_Fight_Night_Allen_vs._Costa",
     "name": "UFC Fight Night: Allen vs. Costa",
     "date": "May 16, 2026",
@@ -342,21 +357,6 @@
       "low_conf": 2,
       "not_found": 0,
       "ev_plays": 0
-    }
-  },
-  {
-    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
-    "name": "UFC Fight Night: Song vs. Figueiredo",
-    "date": "May 30, 2026",
-    "location": "Macau, China",
-    "generated_at": "2026-05-16T00:13:51.031516",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 0,
-      "medium_conf": 8,
-      "low_conf": 5,
-      "not_found": 0,
-      "ev_plays": 9
     }
   },
   {

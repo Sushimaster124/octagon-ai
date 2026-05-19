@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Song_vs._Figueiredo",
   "event_date": "May 30, 2026",
   "location": "Macau, China",
-  "generated_at": "2026-05-16T00:13:51.031516",
+  "generated_at": "2026-05-19T10:42:12.406406",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -16,7 +16,7 @@
     "medium_conf": 0,
     "low_conf": 6,
     "not_found": 0,
-    "ev_plays": 9
+    "ev_plays": 10
   },
   "fights": [
     {
@@ -35,16 +35,19 @@
       "chaos": 0.555,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -410,
-      "odds_b": 315,
-      "ev_a": -75.4,
-      "ev_b": 232.8,
-      "edge_a": -60.6,
-      "edge_b": 56.1,
-      "vegas_prob_a": 80.4,
-      "vegas_prob_b": 24.1,
+      "odds_a": -552,
+      "odds_b": 398,
+      "ev_a": -76.6,
+      "ev_b": 299.4,
+      "edge_a": -64.9,
+      "edge_b": 60.1,
+      "vegas_prob_a": 84.7,
+      "vegas_prob_b": 20.1,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Song Yadong is a versatile fighter who mixes striking with wrestling and grappling. He looks to control fights by using different techniques rather than relying on just one skill.",
+      "fighter_b_bio": "Deiveson Figueiredo is a well-rounded fighter who can strike, wrestle, and submit opponents from various positions. He's known for being dangerous and effective no matter where the fight takes place.",
+      "watch_for": "Figueiredo is heavily favored, so look for whether Song can catch him with strikes early or control the fight on the ground before Figueiredo's experience takes over."
     },
     {
       "fighter_a": "Zhang Mingyang",
@@ -62,16 +65,19 @@
       "chaos": 0.521,
       "elo_clash": true,
       "title_fight": false,
-      "odds_a": -219,
-      "odds_b": 182,
-      "ev_a": 34.9,
-      "ev_b": -79.1,
-      "edge_a": 23.9,
-      "edge_b": -28.1,
-      "vegas_prob_a": 68.7,
-      "vegas_prob_b": 35.5,
+      "odds_a": -230,
+      "odds_b": 188,
+      "ev_a": 32.9,
+      "ev_b": -78.7,
+      "edge_a": 22.9,
+      "edge_b": -27.3,
+      "vegas_prob_a": 69.7,
+      "vegas_prob_b": 34.7,
       "weight_class": "Light Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Zhang Mingyang is a striker who relies on speed and precision with his hands and feet. He's comfortable staying at distance and using angles to pick apart opponents.",
+      "fighter_b_bio": "Alonzo Menifield is a well-rounded fighter who can strike and wrestle. He likes to pressure opponents and isn't afraid to take the fight to the ground if it helps him win.",
+      "watch_for": "Zhang's ability to keep Menifield at range with strikes will be critical\u2014if Menifield gets inside and closes the distance, he can make this fight much more competitive."
     },
     {
       "fighter_a": "Sergei Pavlovich",
@@ -89,16 +95,19 @@
       "chaos": 0.547,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -405,
-      "odds_b": 325,
-      "ev_a": -18.5,
-      "ev_b": 47.1,
-      "edge_a": -14.8,
-      "edge_b": 11.1,
-      "vegas_prob_a": 80.2,
-      "vegas_prob_b": 23.5,
+      "odds_a": -509,
+      "odds_b": 372,
+      "ev_a": -21.8,
+      "ev_b": 63.3,
+      "edge_a": -18.2,
+      "edge_b": 13.4,
+      "vegas_prob_a": 83.6,
+      "vegas_prob_b": 21.2,
       "weight_class": "Heavyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Sergei Pavlovich is a well-rounded fighter who mixes striking with wrestling and grappling. He uses multiple tools to control opponents and has a strong record against tough competition.",
+      "fighter_b_bio": "Tallison Teixeira is a striker who relies on powerful punches and kicks to finish opponents. He looks to keep fights standing and use his striking speed to create openings.",
+      "watch_for": "This fight comes down to whether Teixeira can keep the fight on the feet where he's dangerous, or if Pavlovich can use his wrestling to control the pace."
     },
     {
       "fighter_a": "Kai Asakura",
@@ -116,16 +125,19 @@
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -302,
-      "odds_b": 248,
-      "ev_a": -12.5,
-      "ev_b": 19.4,
-      "edge_a": -9.4,
-      "edge_b": 5.6,
-      "vegas_prob_a": 75.1,
-      "vegas_prob_b": 28.7,
+      "odds_a": -307,
+      "odds_b": 246,
+      "ev_a": -12.9,
+      "ev_b": 18.7,
+      "edge_a": -9.7,
+      "edge_b": 5.4,
+      "vegas_prob_a": 75.4,
+      "vegas_prob_b": 28.9,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Kai Asakura is a well-rounded fighter who combines striking and wrestling. He adapts his approach based on his opponent, making him unpredictable in the cage.",
+      "fighter_b_bio": "Cameron Smotherman is a versatile fighter who mixes different fighting styles to control his opponents. He's willing to fight anywhere\u2014standing up or on the ground.",
+      "watch_for": "Asakura's ability to execute his game plan will likely decide this fight, as his well-rounded approach gives him the edge in adapting to Smotherman's tactics."
     },
     {
       "fighter_a": "Muslim Salikhov",
@@ -143,16 +155,19 @@
       "chaos": 0.519,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": 202,
-      "odds_b": -242,
-      "ev_a": 107.5,
-      "ev_b": -55.8,
-      "edge_a": 35.6,
-      "edge_b": -39.5,
-      "vegas_prob_a": 33.1,
-      "vegas_prob_b": 70.8,
+      "odds_a": -120,
+      "odds_b": 100,
+      "ev_a": 26.0,
+      "ev_b": -37.4,
+      "edge_a": 14.2,
+      "edge_b": -18.7,
+      "vegas_prob_a": 54.5,
+      "vegas_prob_b": 50.0,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Muslim Salikhov uses a balanced mix of striking and grappling, adapting his approach based on his opponent. He's comfortable fighting on his feet or on the ground, making him unpredictable and hard to gameplan against.",
+      "fighter_b_bio": "Jake Matthews also blends striking with wrestling and submissions, using versatility to stay competitive across different fight situations. He's a well-rounded fighter who can adjust his strategy mid-fight.",
+      "watch_for": "Salikhov's experience edge should show in how well he controls the fight's pace and transitions between striking and grappling exchanges."
     },
     {
       "fighter_a": "Alex Perez",
@@ -170,16 +185,19 @@
       "chaos": 0.526,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -149,
-      "odds_b": 127,
-      "ev_a": -10.4,
-      "ev_b": 5.3,
-      "edge_a": -6.2,
-      "edge_b": 2.3,
-      "vegas_prob_a": 59.8,
-      "vegas_prob_b": 44.1,
+      "odds_a": -139,
+      "odds_b": 117,
+      "ev_a": -7.8,
+      "ev_b": 0.7,
+      "edge_a": -4.6,
+      "edge_b": 0.3,
+      "vegas_prob_a": 58.2,
+      "vegas_prob_b": 46.1,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Alex Perez is a well-rounded fighter who mixes striking and wrestling to control opponents. He adapts his approach based on what his opponent gives him in the cage.",
+      "fighter_b_bio": "Sumudaerji is also a versatile fighter who can strike and grapple effectively. He looks to stay balanced and use both skills to keep opponents guessing.",
+      "watch_for": "Since both fighters use similar all-around approaches, whoever executes their gameplan more cleanly and lands cleaner strikes will likely take this one."
     },
     {
       "fighter_a": "Yi Sak Lee",
@@ -198,16 +216,19 @@
       "elo_clash": false,
       "title_fight": false,
       "data_limited": true,
-      "odds_a": null,
-      "odds_b": null,
-      "ev_a": null,
-      "ev_b": null,
-      "edge_a": null,
-      "edge_b": null,
-      "vegas_prob_a": null,
-      "vegas_prob_b": null,
+      "odds_a": 137,
+      "odds_b": -166,
+      "ev_a": 18.5,
+      "ev_b": -19.9,
+      "edge_a": 7.8,
+      "edge_b": -12.4,
+      "vegas_prob_a": 42.2,
+      "vegas_prob_b": 62.4,
       "weight_class": "Middleweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Yi Sak Lee is an evenly matched fighter with balanced overall skills. Both fighters and bettors view this as a genuine 50-50 matchup.",
+      "fighter_b_bio": "Luis Felipe Dias is an evenly matched fighter with balanced overall skills. Both fighters and bettors view this as a genuine 50-50 matchup.",
+      "watch_for": "This is a true toss-up fight, so watch for who executes their game plan better and avoids mistakes in the early rounds."
     },
     {
       "fighter_a": "Ding Meng",
@@ -235,7 +256,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Ding Meng is an evenly matched competitor with balanced skills across all areas of fighting. Both strikers and grapplers should expect a competitive bout.",
+      "fighter_b_bio": "Jose Henrique comes in as an equally skilled fighter with no clear weaknesses in his game. Expect a well-rounded performance from this opponent.",
+      "watch_for": "This is a coin-flip matchup, so look for who controls the pace early and avoids making mistakes."
     },
     {
       "fighter_a": "Aoriqileng",
@@ -253,16 +277,19 @@
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": 272,
-      "odds_b": -332,
-      "ev_a": 245.2,
-      "ev_b": -90.6,
-      "edge_a": 65.9,
-      "edge_b": -69.7,
-      "vegas_prob_a": 26.9,
-      "vegas_prob_b": 76.9,
+      "odds_a": 280,
+      "odds_b": -359,
+      "ev_a": 252.6,
+      "ev_b": -90.8,
+      "edge_a": 66.5,
+      "edge_b": -71.0,
+      "vegas_prob_a": 26.3,
+      "vegas_prob_b": 78.2,
       "weight_class": "Bantamweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Aoriqileng is a well-rounded fighter who can strike and grapple effectively. He's the heavy favorite here and tends to control fights by mixing up his attacks.",
+      "fighter_b_bio": "Cody Haddon is also a versatile fighter with skills both standing and on the ground. He'll need to land something clean or catch Aoriqileng in a mistake to pull off the upset.",
+      "watch_for": "Whether Haddon can stay composed early and avoid getting overwhelmed by Aoriqileng's pressure."
     },
     {
       "fighter_a": "Rei Tsuruya",
@@ -280,16 +307,19 @@
       "chaos": 0.5,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": -335,
-      "odds_b": 270,
-      "ev_a": -31.7,
-      "ev_b": 75.4,
-      "edge_a": -24.4,
-      "edge_b": 20.4,
-      "vegas_prob_a": 77.0,
-      "vegas_prob_b": 27.0,
+      "odds_a": -340,
+      "odds_b": 267,
+      "ev_a": -31.9,
+      "ev_b": 74.0,
+      "edge_a": -24.7,
+      "edge_b": 20.2,
+      "vegas_prob_a": 77.3,
+      "vegas_prob_b": 27.2,
       "weight_class": "Flyweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Rei Tsuruya is a grappler who relies on takedowns and ground control to wear down opponents. He wins fights by getting you on your back and keeping you there.",
+      "fighter_b_bio": "Jesus Aguilar is a well-rounded hybrid fighter who can strike and grapple. He's comfortable fighting in any position and adapts his approach based on what his opponent does.",
+      "watch_for": "Watch if Tsuruya can get Aguilar to the ground early\u2014if Aguilar stays on his feet and uses his striking, he'll have the edge."
     },
     {
       "fighter_a": "Angela Hill",
@@ -317,7 +347,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Angela Hill is a well-rounded striker who uses her speed and footwork to outpoint opponents over the course of a fight. She's known for her high work rate and ability to stay active from the opening bell.",
+      "fighter_b_bio": "Xiong Jingnan is a dominant wrestler with excellent takedown ability and top control. She uses her strength to grind out wins by controlling the fight on the ground.",
+      "watch_for": "This fight comes down to whether Hill can avoid the takedown and make Xiong fight standing up where Hill's speed gives her an advantage."
     },
     {
       "fighter_a": "Zhu Kangjie",
@@ -345,7 +378,10 @@
       "vegas_prob_a": null,
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Zhu Kangjie is a well-rounded fighter with balanced skills across all areas of combat. He doesn't have a dominant specialty, making him unpredictable and adaptable to different opponents.",
+      "fighter_b_bio": "Ramon Taveras is similarly versatile, bringing a balanced approach to his fights without relying heavily on any one technique. Both fighters are comfortable whether the fight stays standing or goes to the ground.",
+      "watch_for": "This is essentially a coin flip matchup, so look for who can control the pace early and impose their will before the fight becomes chaotic."
     },
     {
       "fighter_a": "Loma Lookboonmee",
@@ -363,112 +399,123 @@
       "chaos": 0.473,
       "elo_clash": false,
       "title_fight": false,
-      "odds_a": 127,
-      "odds_b": -149,
-      "ev_a": -82.5,
-      "ev_b": 54.2,
-      "edge_a": -36.4,
-      "edge_b": 32.5,
-      "vegas_prob_a": 44.1,
-      "vegas_prob_b": 59.8,
+      "odds_a": -136,
+      "odds_b": 114,
+      "ev_a": -86.6,
+      "ev_b": 97.5,
+      "edge_a": -49.9,
+      "edge_b": 45.6,
+      "vegas_prob_a": 57.6,
+      "vegas_prob_b": 46.7,
       "weight_class": "Women's Strawweight",
-      "not_found": false
+      "not_found": false,
+      "fighter_a_bio": "Loma Lookboonmee uses a mix of striking and grappling, staying flexible and ready to adapt during fights. However, this fighter tends to struggle against top-level competition.",
+      "fighter_b_bio": "Jaqueline Amorim is a skilled hybrid fighter who can strike and grapple effectively, giving her multiple ways to win. She's significantly more experienced and proven at this level.",
+      "watch_for": "Watch whether Lookboonmee can land early strikes and stay aggressive, as Amorim is the heavy favorite and will control the pace if given the chance."
     }
   ],
   "ev_plays": [
     {
-      "fighter": "Aoriqileng",
-      "prob": 92.8,
-      "ev": 245.2,
-      "edge": 65.9,
-      "odds": 272,
-      "vegas_prob": 26.9,
-      "confidence": "medium"
-    },
-    {
       "fighter": "Deiveson Figueiredo",
       "prob": 80.2,
-      "ev": 232.8,
-      "edge": 56.1,
-      "odds": 315,
-      "vegas_prob": 24.1,
-      "confidence": "medium"
+      "ev": 299.4,
+      "edge": 60.1,
+      "odds": 398,
+      "vegas_prob": 20.1,
+      "confidence": "high"
     },
     {
-      "fighter": "Muslim Salikhov",
-      "prob": 68.7,
-      "ev": 107.5,
-      "edge": 35.6,
-      "odds": 202,
-      "vegas_prob": 33.1,
-      "confidence": "medium"
-    },
-    {
-      "fighter": "Jesus Aguilar",
-      "prob": 47.4,
-      "ev": 75.4,
-      "edge": 20.4,
-      "odds": 270,
-      "vegas_prob": 27.0,
-      "confidence": "medium"
+      "fighter": "Aoriqileng",
+      "prob": 92.8,
+      "ev": 252.6,
+      "edge": 66.5,
+      "odds": 280,
+      "vegas_prob": 26.3,
+      "confidence": "high"
     },
     {
       "fighter": "Jaqueline Amorim",
       "prob": 92.3,
-      "ev": 54.2,
-      "edge": 32.5,
-      "odds": -149,
-      "vegas_prob": 59.8,
-      "confidence": "medium"
+      "ev": 97.5,
+      "edge": 45.6,
+      "odds": 114,
+      "vegas_prob": 46.7,
+      "confidence": "high"
+    },
+    {
+      "fighter": "Jesus Aguilar",
+      "prob": 47.4,
+      "ev": 74.0,
+      "edge": 20.2,
+      "odds": 267,
+      "vegas_prob": 27.2,
+      "confidence": "low"
     },
     {
       "fighter": "Tallison Teixeira",
       "prob": 34.6,
-      "ev": 47.1,
-      "edge": 11.1,
-      "odds": 325,
-      "vegas_prob": 23.5,
-      "confidence": "medium"
+      "ev": 63.3,
+      "edge": 13.4,
+      "odds": 372,
+      "vegas_prob": 21.2,
+      "confidence": "high"
     },
     {
       "fighter": "Zhang Mingyang",
       "prob": 92.6,
-      "ev": 34.9,
-      "edge": 23.9,
-      "odds": -219,
-      "vegas_prob": 68.7,
-      "confidence": "low"
+      "ev": 32.9,
+      "edge": 22.9,
+      "odds": -230,
+      "vegas_prob": 69.7,
+      "confidence": "high"
+    },
+    {
+      "fighter": "Muslim Salikhov",
+      "prob": 68.7,
+      "ev": 26.0,
+      "edge": 14.2,
+      "odds": -120,
+      "vegas_prob": 54.5,
+      "confidence": "high"
     },
     {
       "fighter": "Cameron Smotherman",
       "prob": 34.3,
-      "ev": 19.4,
-      "edge": 5.6,
-      "odds": 248,
-      "vegas_prob": 28.7,
-      "confidence": "medium"
+      "ev": 18.7,
+      "edge": 5.4,
+      "odds": 246,
+      "vegas_prob": 28.9,
+      "confidence": "high"
+    },
+    {
+      "fighter": "Yi Sak Lee",
+      "prob": 50.0,
+      "ev": 18.5,
+      "edge": 7.8,
+      "odds": 137,
+      "vegas_prob": 42.2,
+      "confidence": "low"
     },
     {
       "fighter": "Sumudaerji",
       "prob": 46.4,
-      "ev": 5.3,
-      "edge": 2.3,
-      "odds": 127,
-      "vegas_prob": 44.1,
-      "confidence": "medium"
+      "ev": 0.7,
+      "edge": 0.3,
+      "odds": 117,
+      "vegas_prob": 46.1,
+      "confidence": "low"
     }
   ],
   "parlays": {
     "high_only": {
-      "legs": [],
-      "prob": 100.0,
-      "count": 0
-    },
-    "high_and_med": {
       "legs": [
         {
           "fighter": "Deiveson Figueiredo",
           "prob": 80.2
+        },
+        {
+          "fighter": "Zhang Mingyang",
+          "prob": 92.6
         },
         {
           "fighter": "Sergei Pavlovich",
@@ -491,8 +538,42 @@
           "prob": 92.3
         }
       ],
-      "prob": 20.3,
-      "count": 6
+      "prob": 18.8,
+      "count": 7
+    },
+    "high_and_med": {
+      "legs": [
+        {
+          "fighter": "Deiveson Figueiredo",
+          "prob": 80.2
+        },
+        {
+          "fighter": "Zhang Mingyang",
+          "prob": 92.6
+        },
+        {
+          "fighter": "Sergei Pavlovich",
+          "prob": 65.4
+        },
+        {
+          "fighter": "Kai Asakura",
+          "prob": 65.7
+        },
+        {
+          "fighter": "Muslim Salikhov",
+          "prob": 68.7
+        },
+        {
+          "fighter": "Aoriqileng",
+          "prob": 92.8
+        },
+        {
+          "fighter": "Jaqueline Amorim",
+          "prob": 92.3
+        }
+      ],
+      "prob": 18.8,
+      "count": 7
     }
   }
 }
