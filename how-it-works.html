@@ -41,181 +41,69 @@
     display: flex; align-items: center; justify-content: space-between;
     position: sticky; top: 0; z-index: 100;
   }
-
-  .logo {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none;
-  }
-
-  .logo-icon {
-    width: 28px; height: 28px; background: var(--red); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 14px; font-weight: 700;
-  }
-
+  .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--gray-900); text-decoration: none; }
+  .logo-icon { width: 28px; height: 28px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 700; }
   .header-right { display: flex; align-items: center; gap: 0.6rem; }
-
-  .nav-link {
-    font-size: 12px; color: var(--gray-600); text-decoration: none;
-    padding: 5px 9px; border-radius: var(--radius-sm);
-    border: 1px solid var(--border); background: white;
-    display: inline-flex; align-items: center;
-  }
-
+  .nav-link { font-size: 12px; color: var(--gray-600); text-decoration: none; padding: 5px 9px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: white; display: inline-flex; align-items: center; }
   .nav-link:hover { background: var(--gray-50); }
   .nav-link.active { background: var(--gray-900); color: white; border-color: var(--gray-900); }
-
-  .accuracy-pill {
-    background: var(--green-light); color: var(--green);
-    font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
-  }
-
   .hamburger { display: none; flex-shrink: 0; }
 
-  .hero {
-    background: white; border-bottom: 1px solid var(--border);
-    padding: 3rem 2rem; text-align: center;
-  }
-
+  .hero { background: white; border-bottom: 1px solid var(--border); padding: 3rem 2rem; text-align: center; }
   .hero h1 { font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
   .hero p { font-size: 16px; color: var(--gray-600); max-width: 560px; margin: 0 auto; }
 
   .main { max-width: 760px; margin: 0 auto; padding: 3rem 2rem; }
 
-  /* Section headers */
-  .section-eyebrow {
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--red); margin-bottom: 6px;
-  }
-
-  .section-title {
-    font-size: 22px; font-weight: 700; color: var(--gray-900);
-    margin-bottom: 0.5rem; letter-spacing: -0.01em;
-  }
-
-  .section-body {
-    font-size: 15px; color: var(--gray-600); line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Divider */
+  .section-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 6px; }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .section-body { font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 1.5rem; }
   .divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
 
-  /* Stat highlight cards */
-  .highlight-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 12px; margin: 1.5rem 0;
-  }
-
-  .highlight-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 20px;
-    box-shadow: var(--shadow-sm); text-align: center;
-  }
-
-  .highlight-value {
-    font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
-    margin-bottom: 4px;
-  }
-
+  .highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 1.5rem 0; }
+  .highlight-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); text-align: center; }
+  .highlight-value { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
   .highlight-label { font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.04em; }
-  .highlight-sub   { font-size: 11px; color: var(--gray-400); margin-top: 4px; }
-
+  .highlight-sub { font-size: 11px; color: var(--gray-400); margin-top: 4px; }
   .val-green { color: var(--green); }
   .val-red   { color: var(--red); }
   .val-blue  { color: var(--blue); }
 
-  /* Step cards */
   .step-list { display: flex; flex-direction: column; gap: 12px; margin: 1.5rem 0; }
-
-  .step-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 20px 24px;
-    box-shadow: var(--shadow-sm); display: flex; gap: 16px; align-items: flex-start;
-  }
-
-  .step-num {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--red); color: white;
-    font-size: 14px; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 2px;
-  }
-
-  .step-content {}
+  .step-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px 24px; box-shadow: var(--shadow-sm); display: flex; gap: 16px; align-items: flex-start; }
+  .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--red); color: white; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
   .step-title { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px; }
   .step-body  { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
 
-  /* Confidence cards */
   .conf-explainer { display: flex; flex-direction: column; gap: 10px; margin: 1.5rem 0; }
-
-  .conf-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 16px 20px;
-    box-shadow: var(--shadow-sm); display: flex; gap: 16px; align-items: center;
-  }
-
-  .conf-icon { font-size: 24px; flex-shrink: 0; }
-
-  .conf-body {}
+  .conf-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 20px; box-shadow: var(--shadow-sm); display: flex; gap: 16px; align-items: flex-start; }
+  .conf-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
   .conf-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
   .conf-high-title  { color: var(--green); }
   .conf-med-title   { color: var(--amber); }
   .conf-low-title   { color: var(--red-dark); }
   .conf-desc { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
 
-  /* EV explainer */
-  .ev-example {
-    background: white; border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 20px 24px;
-    box-shadow: var(--shadow-sm); margin: 1.5rem 0;
-  }
-
+  .ev-example { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px 24px; box-shadow: var(--shadow-sm); margin: 1.5rem 0; }
   .ev-example-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 12px; }
-
-  .ev-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px;
-  }
-
+  .ev-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   .ev-row:last-child { border-bottom: none; }
   .ev-row-label { color: var(--gray-600); }
   .ev-row-value { font-weight: 600; color: var(--gray-900); }
   .ev-row-value.positive { color: var(--green); }
   .ev-row-value.negative { color: var(--red); }
 
-  /* Disclaimer box */
-  .disclaimer {
-    background: var(--amber-light); border: 1px solid var(--amber);
-    border-radius: var(--radius-lg); padding: 16px 20px;
-    margin: 1.5rem 0; display: flex; gap: 12px; align-items: flex-start;
-  }
-
+  .disclaimer { background: var(--amber-light); border: 1px solid var(--amber); border-radius: var(--radius-lg); padding: 16px 20px; margin: 1.5rem 0; display: flex; gap: 12px; align-items: flex-start; }
   .disclaimer-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
   .disclaimer-text { font-size: 13px; color: var(--gray-900); line-height: 1.6; }
 
-  /* CTA */
-  .cta-box {
-    background: var(--gray-900); border-radius: var(--radius-lg);
-    padding: 2rem; text-align: center; margin-top: 3rem;
-  }
-
+  .cta-box { background: var(--gray-900); border-radius: var(--radius-lg); padding: 2rem; text-align: center; margin-top: 3rem; }
   .cta-box h3 { font-size: 20px; font-weight: 700; color: white; margin-bottom: 8px; }
   .cta-box p  { font-size: 14px; color: var(--gray-400); margin-bottom: 1.5rem; }
-
-  .cta-btn {
-    display: inline-block; background: var(--red); color: white;
-    text-decoration: none; padding: 12px 28px;
-    border-radius: var(--radius-md); font-size: 14px; font-weight: 600;
-    transition: background 0.15s;
-  }
-
+  .cta-btn { display: inline-block; background: var(--red); color: white; text-decoration: none; padding: 12px 28px; border-radius: var(--radius-md); font-size: 14px; font-weight: 600; transition: background 0.15s; }
   .cta-btn:hover { background: var(--red-dark); }
 
-  footer {
-    text-align: center; padding: 2rem; color: var(--gray-400);
-    font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem;
-  }
+  footer { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 12px; border-top: 1px solid var(--border); margin-top: 3rem; }
 
   @media (max-width: 768px) {
     .highlight-grid { grid-template-columns: repeat(2, 1fr); }
@@ -227,29 +115,27 @@
   @media (max-width: 600px) {
     body { overflow-x: hidden; }
     header { padding: 0 1rem; }
-    .header-right {
-      display: none; flex-direction: column;
-      position: absolute; top: 56px; left: 0; right: 0;
-      background: white; border-bottom: 1px solid var(--border);
-      padding: 12px 1rem; gap: 8px; z-index: 200;
-      box-shadow: var(--shadow-md);
-    }
+    .header-right { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 12px 1rem; gap: 8px; z-index: 200; box-shadow: var(--shadow-md); }
     .header-right.open { display: flex; }
-    .header-right .nav-link {
-      width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block;
-    }
-    .hamburger {
-      display: flex; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
-    }
-    .hamburger span {
-      width: 22px; height: 2px; background: var(--gray-900);
-      border-radius: 2px; display: block;
-    }
-    .accuracy-pill { display: none; }
-    .highlight-grid { grid-template-columns: 1fr 1fr; }
+    .header-right .nav-link { width: 100%; text-align: center; font-size: 14px; padding: 10px; display: block; }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0; }
+    .hamburger span { width: 22px; height: 2px; background: var(--gray-900); border-radius: 2px; display: block; }
     .step-card { flex-direction: column; gap: 10px; }
     .conf-card { flex-direction: column; gap: 8px; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    * { box-shadow: none; }
+    body { background: #111110; color: #E8E6DF; }
+    header { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .logo { color: #E8E6DF; }
+    .nav-link { background: #1A1A18; color: #888780; border-color: rgba(255,255,255,0.08); }
+    .nav-link:hover { background: #2C2C2A; }
+    .nav-link.active { background: #E8E6DF; color: #1A1A18; border-color: #E8E6DF; }
+    .hero { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
+    .hero h1 { color: #E8E6DF; }
+    .hero p { color: #888780; }
+    .main { background: #111110; }
     .section-title { color: #E8E6DF; }
     .section-body { color: #888780; }
     .divider { border-color: rgba(255,255,255,0.06); }
@@ -266,50 +152,13 @@
     .ev-row { border-color: rgba(255,255,255,0.06); }
     .ev-row-label { color: #888780; }
     .ev-row-value { color: #E8E6DF; }
-    .disclaimer { background: #412402; border-color: #854F0B; }
+    .disclaimer { background: rgba(186,117,23,0.12); border-color: rgba(186,117,23,0.3); }
     .disclaimer-text { color: #FAC775; }
-    .cta-box { background: #1A1A18; }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    * { box-shadow: none; }
-    body, .main, .events-page { background: #1A1A18 !important; }
-    .hero, .stats-bar, .filter-bar,
-    .fight-card, .sidebar-card, .event-row, .hot-card,
-    .budget-panel, .alloc-panel, .highlight-card, .step-card,
-    .conf-card, .ev-example, .profile-card, .chart-card,
-    .history-card, .h2h-panel, .stat-card, .event-accuracy-row,
-    .best-bet, .countdown-card, .nav-card, .strengths,
-    .lb-row, .lb-header, .filter-btn:not(.active) {
-      background: #242422 !important;
-      border-color: rgba(255,255,255,0.06) !important;
-    }
-    .fight-card-header, .hot-card-header:not(.high):not(.medium) {
-      background: #1A1A18 !important;
-    }
-    body { background: #111110; color: #E8E6DF; }
-    header { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .logo { color: #E8E6DF; }
-    .nav-link { background: #1A1A18; color: #888780; border-color: rgba(255,255,255,0.08); }
-    .nav-link:hover { background: #2C2C2A; }
-    .nav-link.active { background: #E8E6DF; color: #1A1A18; border-color: #E8E6DF; }
-    .accuracy-pill { display: none; }
-    .hero { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .hero h1 { color: #E8E6DF; }
-    .hero p { color: #888780; }
-    .hero-eyebrow { background: rgba(226,75,74,0.15); color: #F09595; }
-    .stats-bar { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
-    .stat-item { border-color: rgba(255,255,255,0.06); }
-    .stat-value { color: #E8E6DF; }
-    .stat-label { color: #5F5E5A; }
-    .filter-btn { background: #1A1A18; border-color: rgba(255,255,255,0.08); color: #888780; }
-    .filter-btn.active { background: #E8E6DF; color: #1A1A18; border-color: #E8E6DF; }
-    .section-label { color: #444441; }
+    .cta-box { background: #1A1A18; border: 1px solid rgba(255,255,255,0.06); }
     footer { border-color: rgba(255,255,255,0.06); color: #444441; }
-    .header-right { background: #1A1A18; }
+    .header-right { background: #1A1A18; border-color: rgba(255,255,255,0.06); }
     .hamburger span { background: #E8E6DF; }
   }
-
 </style>
 </head>
 <body>
@@ -326,7 +175,6 @@
     <a class="nav-link" href="fighters.html">Fighters</a>
     <a class="nav-link" href="accuracy.html">Model Accuracy</a>
     <a class="nav-link active" href="how-it-works.html">How it works</a>
-    <span class="accuracy-pill">83% accurate</span>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -335,36 +183,43 @@
 
 <div class="hero">
   <h1>How Octagon AI works</h1>
-  <p>No statistics degree required. Here's exactly how we predict UFC fights — and what our numbers actually mean.</p>
+  <p>What the model actually does, what the numbers mean, and where it falls short. No statistics degree required.</p>
 </div>
 
 <div class="main">
 
   <!-- Section 1: The Big Idea -->
   <div class="section-eyebrow">The big idea</div>
-  <div class="section-title">A computer that studied 8,337 fights</div>
+  <div class="section-title">A model trained on 8,337 UFC fights</div>
   <p class="section-body">
-    Octagon AI is a machine learning model like a very attentive student who watched every UFC fight since 1994, took detailed notes on striking, takedowns, knockdowns, records, and physical attributes, then got tested on fights it had never seen before. It correctly predicted the winner <strong>83% of the time</strong> on those unseen fights.
+    Octagon AI is a machine learning model that studied every UFC fight since 1994 — striking stats, takedown numbers, records, physical attributes, fight outcomes. It learned which patterns tend to predict winners, then we tested it on fights it had never seen before.
   </p>
   <p class="section-body">
-    It doesn't watch video. It reads numbers, for example, how accurately a fighter lands strikes, how often they get taken down, their recent form, and how their Elo rating compares to their opponent's.
+    It doesn't watch video or read fight news. It reads numbers — how accurately a fighter lands strikes, how often they get taken down, their recent form, and how their skill rating compares to their opponent. Think of it as a very well-informed second opinion before you decide who to bet on.
   </p>
 
   <div class="highlight-grid">
     <div class="highlight-card">
-      <div class="highlight-value val-green">83%</div>
-      <div class="highlight-label">Overall accuracy</div>
-      <div class="highlight-sub">Tested on 880 real fights</div>
+      <div class="highlight-value val-green">58.5%</div>
+      <div class="highlight-label">Real-world accuracy</div>
+      <div class="highlight-sub">Live predictions, 2025–2026</div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-value val-red">95%</div>
-      <div class="highlight-label">High confidence picks</div>
-      <div class="highlight-sub">When the model is sure, it's right 19/20 times</div>
+      <div class="highlight-value val-red">83%</div>
+      <div class="highlight-label">Lab accuracy</div>
+      <div class="highlight-sub">Tested on historical data</div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-value val-blue">0.92</div>
-      <div class="highlight-label">ROC-AUC score</div>
-      <div class="highlight-sub">1.0 is perfect. 0.5 is a coin flip.</div>
+      <div class="highlight-value val-blue">8,337</div>
+      <div class="highlight-label">Fights trained on</div>
+      <div class="highlight-sub">UFC fights from 1994–2021</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <div class="disclaimer-icon">⚠️</div>
+    <div class="disclaimer-text">
+      <strong>The honest number is 58.5%.</strong> The 83% figure is from controlled lab testing on historical data — real-world live predictions are harder. 58.5% is still better than a coin flip, and we publish every prediction publicly so you can see the full record. Always pick for yourself — this is a tool to inform your decision, not make it for you.
     </div>
   </div>
 
@@ -372,125 +227,125 @@
 
   <!-- Section 2: How it learned -->
   <div class="section-eyebrow">How it learned</div>
-  <div class="section-title">Training, testing, and making sure it's not cheating</div>
+  <div class="section-title">What it looks at for every fight</div>
   <p class="section-body">
-    The model was trained only on fights from 1994–2021. It was then tested on fights from 2022–2025 — fights it had never seen and couldn't have memorized. 
+    For each fight, the model computes the difference between both fighters across 32 categories. It's not asking "is Fighter A good?" — it's asking "is Fighter A better than Fighter B in the areas that matter for this specific matchup?"
   </p>
 
   <div class="step-list">
     <div class="step-card">
       <div class="step-num">1</div>
       <div class="step-content">
-        <div class="step-title">Collect the data</div>
-        <div class="step-body">Every UFC fight since 1994 — striking stats, grappling stats, physical measurements, fight outcomes, and more. Over 124 data points per fight.</div>
+        <div class="step-title">Striking</div>
+        <div class="step-body">Significant strike accuracy, strikes landed per minute, strikes absorbed per minute, strike defense percentage. Who lands cleaner and who eats more damage.</div>
       </div>
     </div>
     <div class="step-card">
       <div class="step-num">2</div>
       <div class="step-content">
-        <div class="step-title">Build fighter profiles</div>
-        <div class="step-body">For each fight, we compute the <em>difference</em> between both fighters across 32 categories — striking accuracy, takedown defense, recent form, and so on. The model looks at gaps, not just raw numbers.</div>
+        <div class="step-title">Grappling</div>
+        <div class="step-body">Takedown accuracy, takedown defense, submission attempts, control time on the ground. Who dominates when the fight hits the mat.</div>
       </div>
     </div>
     <div class="step-card">
       <div class="step-num">3</div>
       <div class="step-content">
-        <div class="step-title">Train the model</div>
-        <div class="step-body">A machine learning algorithm called XGBoost finds patterns across thousands of fights — things like "fighters with better striking accuracy and a recent win streak win more often." It runs 150 rounds of self-improvement to find the best version of itself.</div>
+        <div class="step-title">Recent form</div>
+        <div class="step-body">Win streaks, performance in the last 3 and 5 fights, days since last fight. Fresh fighters on winning runs tend to outperform their career averages.</div>
       </div>
     </div>
     <div class="step-card">
       <div class="step-num">4</div>
       <div class="step-content">
-        <div class="step-title">Test it honestly</div>
-        <div class="step-body">The model is evaluated only on fights after 2023 — ones it never trained on. If it does well there, the accuracy is real. Our model scored 83.1% on this blind test.</div>
+        <div class="step-title">Elo skill rating</div>
+        <div class="step-body">A career rating that adjusts based on who you beat. Knocking out a top contender moves your score up more than beating a newcomer. Everyone starts at 1,500 — Jon Jones sits at 1,849.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title">Physical attributes</div>
+        <div class="step-body">Reach difference, height difference, age. These matter less than most people think but are included for completeness.</div>
       </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- Section 3: Elo -->
-  <div class="section-eyebrow">Fighter ratings</div>
-  <div class="section-title">Elo — the same system used in chess</div>
-  <p class="section-body">
-    Every fighter starts with an Elo rating of 1,500 — like a baseline score. When you beat a higher-rated opponent, your score goes up a lot. Beat a weaker opponent and it barely moves. Lose to a heavy underdog and your score drops sharply.
-  </p>
-  <p class="section-body">
-    This gives every fighter a single number that captures their career trajectory. Jon Jones is at 1,849. A debut fighter sits at 1,500 until they prove themselves. The model uses this Elo difference as one of its inputs — but it's not the only thing it looks at.
-  </p>
-
-  <hr class="divider">
-
-  <!-- Section 4: Confidence -->
-  <div class="section-eyebrow">Reading the predictions</div>
+  <!-- Section 3: Confidence -->
+  <div class="section-eyebrow">Reading the picks</div>
   <div class="section-title">What the confidence levels mean</div>
   <p class="section-body">
-    Every prediction comes with a confidence badge. This isn't just about the probability number — it also factors in how "chaotic" a fight is likely to be and whether the model's different signals agree with each other.
+    Every prediction comes with a confidence label. This reflects how much the model's signals agree with each other — not just the win probability number. A fight can have a 70% probability but still be flagged low confidence if the data is noisy or contradictory.
   </p>
 
   <div class="conf-explainer">
     <div class="conf-card">
       <div class="conf-icon">✅</div>
       <div class="conf-body">
-        <div class="conf-title conf-high-title">Safe pick — model 75%+</div>
-        <div class="conf-desc">The model gives the predicted winner a 75% or higher chance of winning. Example: <em>Islam Makhachev vs a late-career opponent — model at 88%, consistent grappling stats, clear edge.</em> This is the band worth acting on.</div>
+        <div class="conf-title conf-high-title">High confidence</div>
+        <div class="conf-desc">The model gives the predicted winner 75% or higher, and the signals all point the same direction. Historically right about 9 out of 10 times in testing. These are the picks worth paying attention to.</div>
       </div>
     </div>
     <div class="conf-card">
       <div class="conf-icon">⚡</div>
       <div class="conf-body">
-        <div class="conf-title conf-high-title">Strong lean — ranking mismatch</div>
-        <div class="conf-desc">Model is 75%+ confident in the predicted winner, but the Elo ranking system favors the other fighter historically. This means the public and oddsmakers may be backing the wrong fighter — creating a potential value opportunity. Example: <em>Zhang Mingyang at 92.6% but Elo favors Menifield — if Vegas prices Zhang as an underdog, you're getting good odds on a near-certain model favorite.</em> This is the chip to look for when hunting value bets.</div>
-      </div>
-    </div>
-    <div class="conf-card">
-      <div class="conf-icon">⚠️</div>
-      <div class="conf-body">
-        <div class="conf-title conf-med-title">Moderate pick — model 60–74%</div>
-        <div class="conf-desc">The model has a clear lean but the fight is competitive. Example: <em>Pavlovich at 65% over Teixeira — statistical edge exists but the margin is close enough to stay cautious.</em> Reasonable lean, not a lock.</div>
+        <div class="conf-title conf-med-title">Medium confidence</div>
+        <div class="conf-desc">The model has a clear lean at 60–74% but the fight is competitive. There's an edge here but not a lock. Good for smaller bets or as part of a parlay — not something to go heavy on.</div>
       </div>
     </div>
     <div class="conf-card">
       <div class="conf-icon">🎲</div>
       <div class="conf-body">
-        <div class="conf-title conf-low-title">Coin flip — model below 60%</div>
-        <div class="conf-desc">The model gives the predicted winner less than 60% — essentially a 50/50. Example: <em>Perez vs Sumudaerji at 53.6%.</em> Both fighters are unpredictable and the model has very low conviction. Treat skeptically regardless of EV.</div>
+        <div class="conf-title conf-low-title">Low confidence</div>
+        <div class="conf-desc">Below 60% — essentially a coin flip. The model has a very weak lean or the data is contradictory. Treat these as entertainment, not betting advice. Any positive EV on these should be viewed skeptically.</div>
       </div>
     </div>
     <div class="conf-card">
       <div class="conf-icon">🚫</div>
       <div class="conf-body">
         <div class="conf-title conf-low-title">Avoid — conflicting signals</div>
-        <div class="conf-desc">Below 60% win probability AND Elo clash detected — the model and ranking system both disagree on who wins. Maximum uncertainty. Example: <em>a chaotic striker vs a historically ranked grappler where neither signal is reliable.</em></div>
+        <div class="conf-desc">The statistical model and the Elo rating system are pointing at different winners. Maximum uncertainty. Even if there's positive EV showing, the model is essentially guessing. Skip these.</div>
       </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- Section 5: EV -->
-  <div class="section-eyebrow">The odds</div>
-  <div class="section-title">What is EV and why does it matter?</div>
+  <!-- Section 4: Chaos -->
+  <div class="section-eyebrow">Unpredictability</div>
+  <div class="section-title">The chaos score</div>
   <p class="section-body">
-    EV stands for "Expected Value." It answers a simple question: if you bet $100 on this fighter over and over again, would you make money or lose money in the long run?
+    Each fight gets a chaos score between 0 and 1. It measures how unpredictable a fighter's history is — based on how randomly they win by KO versus submission versus decision, and whether fights tend to end early or go the distance.
   </p>
   <p class="section-body">
-    Vegas sets odds based on where people are betting — not necessarily who they think will win. Sometimes the crowd is wrong, and our model spots a gap between what Vegas implies and what the data says. That gap is called "edge."
+    <strong>Under 0.45</strong> means the fight is relatively predictable — good for high confidence picks. <strong>Over 0.65</strong> means expect the unexpected. Two high-chaos fighters in one fight is a coin flip regardless of what the model says.
+  </p>
+
+  <hr class="divider">
+
+  <!-- Section 5: EV -->
+  <div class="section-eyebrow">The odds</div>
+  <div class="section-title">What EV means in plain English</div>
+  <p class="section-body">
+    EV stands for Expected Value. It answers one question: based on what the model thinks the fighter's true win probability is, are the betting odds offering good value or bad value?
+  </p>
+  <p class="section-body">
+    When the model thinks a fighter has a 70% chance to win but the odds imply only a 50% chance, that's a gap worth noting. When the model and the odds agree, EV is close to zero.
   </p>
 
   <div class="ev-example">
     <div class="ev-example-title">Example — Fighter A at +200 (underdog)</div>
     <div class="ev-row">
-      <span class="ev-row-label">Vegas implied win probability</span>
+      <span class="ev-row-label">What the odds imply their chance is</span>
       <span class="ev-row-value">33%</span>
     </div>
     <div class="ev-row">
-      <span class="ev-row-label">Our model's win probability</span>
+      <span class="ev-row-label">What the model thinks their chance is</span>
       <span class="ev-row-value">52%</span>
     </div>
     <div class="ev-row">
-      <span class="ev-row-label">Edge (model minus Vegas)</span>
+      <span class="ev-row-label">Gap between model and odds</span>
       <span class="ev-row-value positive">+19%</span>
     </div>
     <div class="ev-row">
@@ -500,129 +355,112 @@
   </div>
 
   <p class="section-body">
-    A positive EV means the bet is mathematically underpriced by Vegas. It does <strong>not</strong> mean the fighter will definitely win — it means the odds are in your favor if you made this same bet many times.
+    Positive EV means the model sees more value in the bet than the odds reflect. It does <strong>not</strong> mean the fighter will win — it means if this situation repeated itself many times, you'd come out ahead on average. Any single fight can still go wrong.
   </p>
 
   <div class="disclaimer">
     <div class="disclaimer-icon">⚠️</div>
     <div class="disclaimer-text">
-      <strong>Important:</strong> Positive EV is a long-run concept. Any single fight can go either way — upsets happen constantly in MMA. Never bet more than you're comfortable losing, and treat these as tools for thinking, not guarantees. This is not financial advice.
+      <strong>EV is a long-run concept.</strong> MMA is chaotic — upsets happen constantly. Never use EV as a reason to bet more than you're comfortable losing. Use it as one input in your decision, alongside the fighter breakdown and your own knowledge of the sport. This is not financial advice.
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- Section 6: Limitations -->
+  <!-- Section 6: Quick reference -->
+  <div class="section-eyebrow">Quick reference</div>
+  <div class="section-title">What each number on the card means</div>
+
+  <div class="step-list">
+    <div class="step-card">
+      <div class="step-num" style="background:var(--blue);font-size:11px;">ML</div>
+      <div class="step-content">
+        <div class="step-title">Moneyline odds (e.g. +153 or -184)</div>
+        <div class="step-body">American betting odds. <strong>Positive (+153)</strong> = underdog — bet $100 to win $153 profit. <strong>Negative (-184)</strong> = favorite — bet $184 to win $100 profit. The bigger the negative number, the more heavily favored that fighter is.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" style="background:var(--green);font-size:11px;">%</div>
+      <div class="step-content">
+        <div class="step-title">Octagon AI probability</div>
+        <div class="step-body">What the model thinks each fighter's chance of winning is. This is based purely on historical stats — not tape, not fight news, not gut feel. Use it alongside the fighter breakdown to form your own view.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" style="background:var(--blue);font-size:11px;">EV</div>
+      <div class="step-content">
+        <div class="step-title">Expected Value (e.g. +$42)</div>
+        <div class="step-body">The average profit per $100 bet if the model's probability is correct over many repetitions. Positive = the odds offer value relative to the model. Negative = the odds don't justify the bet at face value. Always check confidence level before acting on EV.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" style="background:var(--red);font-size:11px;">ELO</div>
+      <div class="step-content">
+        <div class="step-title">Elo rating (e.g. 1625)</div>
+        <div class="step-body">A career skill score. Everyone starts at 1,500. Beating higher-rated opponents moves your score up more. A gap of 100+ points is significant. Under 50 points difference is essentially a toss-up on ratings alone.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" style="background:var(--amber);font-size:11px;">CH</div>
+      <div class="step-content">
+        <div class="step-title">Chaos score (e.g. 0.42)</div>
+        <div class="step-body">How unpredictable a fighter's history is. Under 0.45 = more predictable. Over 0.65 = expect the unexpected. Two chaotic fighters in one fight means the confidence label matters more than the probability number.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" style="background:var(--gray-400);font-size:10px;">⚡</div>
+      <div class="step-content">
+        <div class="step-title">Elo clash</div>
+        <div class="step-body">The statistical model and the Elo rating system are pointing at different winners. This flag means increased upset risk — the model is less certain than the probability number suggests. Treat these picks with extra caution.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 7: Limitations -->
   <div class="section-eyebrow">Honesty</div>
-  <div class="section-title">What the model can't do</div>
+  <div class="section-title">Where it falls short</div>
   <p class="section-body">
-    No model predicts MMA perfectly — and anyone who claims otherwise is lying to you. Here's what ours genuinely struggles with:
+    No model predicts MMA perfectly. Here's where ours struggles most — and what you should do about it.
   </p>
 
   <div class="step-list">
     <div class="step-card">
       <div class="step-num" style="background:var(--gray-400)">1</div>
       <div class="step-content">
-        <div class="step-title">One-punch knockouts</div>
-        <div class="step-body">Fighters like Francis Ngannou or Alex Pereira can end any fight with a single shot. Data can't fully capture raw knockout power. The model knows this and flags those fights as low confidence.</div>
+        <div class="step-title">One-punch knockout artists</div>
+        <div class="step-body">Fighters like Alex Pereira or Francis Ngannou can end any fight with a single shot regardless of stats. Raw power doesn't show up cleanly in numbers. These fights get flagged low confidence — trust that flag.</div>
       </div>
     </div>
     <div class="step-card">
       <div class="step-num" style="background:var(--gray-400)">2</div>
       <div class="step-content">
-        <div class="step-title">New fighters</div>
-        <div class="step-body">Fighters with fewer than 5 UFC fights don't have enough data. The model defaults to neutral assumptions, which makes those picks less reliable.</div>
+        <div class="step-title">New and debut fighters</div>
+        <div class="step-body">Fewer than 5 UFC fights means not enough data to build a reliable profile. The model defaults to Elo-only predictions for these fighters and flags them clearly on the card.</div>
       </div>
     </div>
     <div class="step-card">
       <div class="step-num" style="background:var(--gray-400)">3</div>
       <div class="step-content">
-        <div class="step-title">Things that happen outside the cage</div>
-        <div class="step-body">Injuries, weight cut issues, personal problems, last-minute opponent changes — none of this shows up in historical stats. Always read the fight news before relying on any prediction.</div>
+        <div class="step-title">Fight week news</div>
+        <div class="step-body">Injuries, bad weight cuts, camp drama, last-minute opponent changes — none of this is in historical stats. Always check fight news before acting on any prediction. The model has no idea what happened this week.</div>
       </div>
     </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Section 7: How to read the numbers -->
-  <div class="section-eyebrow">Quick reference</div>
-  <div class="section-title">How to read the numbers</div>
-  <p class="section-body">Every fight card shows a handful of metrics. Here's exactly what each one means in plain English.</p>
-
-  <div class="step-list">
-
     <div class="step-card">
-      <div class="step-num" style="background:var(--green);font-size:10px">SP</div>
+      <div class="step-num" style="background:var(--gray-400)">4</div>
       <div class="step-content">
-        <div class="step-title">Safe pick / Strong lean</div>
-        <div class="step-body">Model gives the winner 75%+. Safe pick means all signals agree. Strong lean means the model is confident but Elo disagrees — still a good pick, just watch for upsets. The signal bars show fight chaos independently.</div>
+        <div class="step-title">Women's divisions</div>
+        <div class="step-body">Less historical data than the men's divisions means less reliable predictions. Take women's division picks with an extra grain of salt, especially for fighters with shorter UFC track records.</div>
       </div>
     </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--amber);font-size:10px">MP</div>
-      <div class="step-content">
-        <div class="step-title">Moderate pick / Risky</div>
-        <div class="step-body">Model gives the winner 60–74%. Moderate pick means a reasonable lean. Risky means 60–74% but Elo also disagrees — consider sizing down or skipping entirely.</div>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--red);font-size:10px">CF</div>
-      <div class="step-content">
-        <div class="step-title">Coin flip / Avoid</div>
-        <div class="step-body">Model gives the winner below 60%. Coin flip means near-even odds. Avoid means below 60% AND Elo clash — maximum uncertainty, both signals are unreliable. Positive EV on these picks should be treated skeptically.</div>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--gray-400);font-size:10px">CH</div>
-      <div class="step-content">
-        <div class="step-title">Chaos score (e.g. chaos 0.42)</div>
-        <div class="step-body">A number from 0 to 1 measuring how unpredictable each fighter's history is — based on how randomly they win by KO vs submission vs decision, and how often they go early vs late rounds. <strong>Lower is more predictable.</strong> Under 0.45 = high confidence zone. Over 0.65 = coin flip territory. Two chaos monsters in one fight = expect the unexpected.</div>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--amber);font-size:10px">⚡</div>
-      <div class="step-content">
-        <div class="step-title">Elo clash detected</div>
-        <div class="step-body">The model's statistical analysis and the Elo ranking system are pointing in opposite directions. For example: Elo says Fighter A is clearly better historically, but the stats say Fighter B should win this specific matchup. When these signals conflict, upset risk goes up. This flag correctly identified the Strickland and Oliveira upsets before they happened.</div>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--blue);font-size:10px">EV</div>
-      <div class="step-content">
-        <div class="step-title">+$42 EV (Expected Value)</div>
-        <div class="step-body">If you bet $100 on this fighter repeatedly in identical situations, you'd make $42 profit on average per bet. Positive EV means Vegas is underpricing the fighter relative to what the model thinks their true win probability is. This is a long-run concept — any single fight can still go wrong.</div>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--blue);font-size:10px">ML</div>
-      <div class="step-content">
-        <div class="step-title">ML +153 / ML -184 (Moneyline odds)</div>
-        <div class="step-body">American betting odds. <strong>Positive (+153)</strong> means underdog — bet $100 to win $153 profit. <strong>Negative (-184)</strong> means favorite — bet $184 to win $100 profit. The bigger the negative number, the more heavily favored Vegas thinks that fighter is.</div>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num" style="background:var(--red);font-size:10px">ELO</div>
-      <div class="step-content">
-        <div class="step-title">Elo 1625 (Fighter rating)</div>
-        <div class="step-body">A career skill rating. Everyone starts at 1500. Beating a higher-rated opponent moves your score up more than beating a weaker one. Jon Jones sits at 1849 — the highest in UFC history in this dataset. A gap of 100+ Elo points is significant. Under 50 points is essentially a toss-up on ratings alone.</div>
-      </div>
-    </div>
-
   </div>
 
   <!-- CTA -->
   <div class="cta-box">
-    <h3>Ready to see the picks?</h3>
-    <p>Check out this week's event predictions with live Vegas odds.</p>
-    <a class="cta-btn" href="index.html">View predictions →</a>
+    <h3>Ready to build your card?</h3>
+    <p>See the full fight breakdown for the next event — fighter intel, model picks, and budget allocator.</p>
+    <a class="cta-btn" href="hot-picks.html">Go to Card Builder →</a>
   </div>
 
 </div>
