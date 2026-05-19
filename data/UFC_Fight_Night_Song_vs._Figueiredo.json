@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Song_vs._Figueiredo",
   "event_date": "May 30, 2026",
   "location": "Macau, China",
-  "generated_at": "2026-05-19T10:42:12.406406",
+  "generated_at": "2026-05-19T11:19:50.555387",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -45,9 +45,9 @@
       "vegas_prob_b": 20.1,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Song Yadong is a versatile fighter who mixes striking with wrestling and grappling. He looks to control fights by using different techniques rather than relying on just one skill.",
-      "fighter_b_bio": "Deiveson Figueiredo is a well-rounded fighter who can strike, wrestle, and submit opponents from various positions. He's known for being dangerous and effective no matter where the fight takes place.",
-      "watch_for": "Figueiredo is heavily favored, so look for whether Song can catch him with strikes early or control the fight on the ground before Figueiredo's experience takes over."
+      "fighter_a_bio": "Song Yadong throws volume from range and hunts the body kick\u2014he'll circle and pressure but can get caught lunging in. His cardio lets him work hard early, but he wilts against relentless pressure in rounds 2-3.",
+      "fighter_b_bio": "Figueiredo is a heavy-handed pocket fighter who explodes with combinations when you're close, with nasty elbows and knees in the clinch. He's the -400 favorite because he's faster, sharper, and proven at this level\u2014Song's a significant step down in competition.",
+      "watch_for": "Whether Song can stay on the outside and land the body kick before Figueiredo closes the distance and turns it into a phone booth war. If Figueiredo gets inside the first two minutes, Song's in trouble."
     },
     {
       "fighter_a": "Zhang Mingyang",
@@ -75,9 +75,9 @@
       "vegas_prob_b": 34.7,
       "weight_class": "Light Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Zhang Mingyang is a striker who relies on speed and precision with his hands and feet. He's comfortable staying at distance and using angles to pick apart opponents.",
-      "fighter_b_bio": "Alonzo Menifield is a well-rounded fighter who can strike and wrestle. He likes to pressure opponents and isn't afraid to take the fight to the ground if it helps him win.",
-      "watch_for": "Zhang's ability to keep Menifield at range with strikes will be critical\u2014if Menifield gets inside and closes the distance, he can make this fight much more competitive."
+      "fighter_a_bio": "Zhang Mingyang is a pure striker who wins by outlanding opponents\u2014fast hands, high volume, and the footwork to stay out of trouble. His weakness is the ground: he'll fold if taken down by someone who knows how to work.",
+      "fighter_b_bio": "Menifield hits hard and his wrestling is credible, but he's fighting a much sharper striker here\u2014his Elo tells the story of someone who hasn't faced this level of precision. The big gap in Zhang's record against serious hands makes this a live underdog line.",
+      "watch_for": "Whether Menifield can close the distance and secure a takedown in rounds 2\u20133 before Zhang's cardio advantage turns the fight into a jab-and-move clinic."
     },
     {
       "fighter_a": "Sergei Pavlovich",
@@ -105,9 +105,9 @@
       "vegas_prob_b": 21.2,
       "weight_class": "Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Sergei Pavlovich is a well-rounded fighter who mixes striking with wrestling and grappling. He uses multiple tools to control opponents and has a strong record against tough competition.",
-      "fighter_b_bio": "Tallison Teixeira is a striker who relies on powerful punches and kicks to finish opponents. He looks to keep fights standing and use his striking speed to create openings.",
-      "watch_for": "This fight comes down to whether Teixeira can keep the fight on the feet where he's dangerous, or if Pavlovich can use his wrestling to control the pace."
+      "fighter_a_bio": "Pavlovich is a 65% favorite because he bullies opponents with heavy hands and suffocating wrestling\u2014he doesn't need to be perfect everywhere, just relentless in the clinch and on top. His Elo rating (1586) reflects real wins against ranked competition, though his 0.547 chaos index means his aggressive style can sometimes backfire.",
+      "fighter_b_bio": "Teixeira survives on sharp striking and footwork, but he's facing a wrestler who hunts takedowns constantly and has the size to pin him. At 1504 Elo, he's proven enough to land shots, but that's his only path\u2014if Pavlovich gets him down, it's a grind.",
+      "watch_for": "Does Teixeira land clean on the feet in round 1 before Pavlovich closes the distance? If Pavlovich gets the fight to the mat or clinch, Teixeira's striking advantage disappears and the favorite takes over."
     },
     {
       "fighter_a": "Kai Asakura",
@@ -135,9 +135,9 @@
       "vegas_prob_b": 28.9,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Kai Asakura is a well-rounded fighter who combines striking and wrestling. He adapts his approach based on his opponent, making him unpredictable in the cage.",
-      "fighter_b_bio": "Cameron Smotherman is a versatile fighter who mixes different fighting styles to control his opponents. He's willing to fight anywhere\u2014standing up or on the ground.",
-      "watch_for": "Asakura's ability to execute his game plan will likely decide this fight, as his well-rounded approach gives him the edge in adapting to Smotherman's tactics."
+      "fighter_a_bio": "Asakura is the heavy favorite here despite lower credentials\u2014he lands strikes with precision and uses footwork to control distance, then drops levels for takedowns when opponents respect his hands. His chaos index matches Smotherman's, so expect a technical fight where Asakura's cleaner striking and grappling chain wins rounds.",
+      "fighter_b_bio": "Smotherman has a better resume (higher Elo), but the odds heavily favor Asakura, likely because Smotherman relies on reactive wrestling and doesn't generate consistent offense from neutral position. He'll need to force grappling exchanges early before Asakura's footwork lets him dictate the pace.",
+      "watch_for": "Does Smotherman land a early takedown and control top position, or does Asakura keep the fight standing long enough to land volume and frustrate him into desperation?"
     },
     {
       "fighter_a": "Muslim Salikhov",
@@ -165,9 +165,9 @@
       "vegas_prob_b": 50.0,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Muslim Salikhov uses a balanced mix of striking and grappling, adapting his approach based on his opponent. He's comfortable fighting on his feet or on the ground, making him unpredictable and hard to gameplan against.",
-      "fighter_b_bio": "Jake Matthews also blends striking with wrestling and submissions, using versatility to stay competitive across different fight situations. He's a well-rounded fighter who can adjust his strategy mid-fight.",
-      "watch_for": "Salikhov's experience edge should show in how well he controls the fight's pace and transitions between striking and grappling exchanges."
+      "fighter_a_bio": "Salikhov is a heavy-handed striker who works the body and head with precise combinations, then switches to grappling when opponents crack under pressure. He's the 68% favorite because his cardio lets him impose his pace for three rounds.",
+      "fighter_b_bio": "Matthews leans on wrestling to neutralize strikers, using top control and ground-and-pound to grind out wins on the scorecards. His problem here: Salikhov won't panic when taken down and has the footwork to reset the fight standing.",
+      "watch_for": "Whether Matthews can secure multiple takedowns before Salikhov's output in rounds 2\u20133 becomes too much to overcome on the cards."
     },
     {
       "fighter_a": "Alex Perez",
@@ -195,9 +195,9 @@
       "vegas_prob_b": 46.1,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Alex Perez is a well-rounded fighter who mixes striking and wrestling to control opponents. He adapts his approach based on what his opponent gives him in the cage.",
-      "fighter_b_bio": "Sumudaerji is also a versatile fighter who can strike and grapple effectively. He looks to stay balanced and use both skills to keep opponents guessing.",
-      "watch_for": "Since both fighters use similar all-around approaches, whoever executes their gameplan more cleanly and lands cleaner strikes will likely take this one."
+      "fighter_a_bio": "Perez uses footwork and distance control to set up strikes, then dives into clinch work when openings appear. Slight edge in fight IQ and consistency (Elo +17) makes him the modest favorite here.",
+      "fighter_b_bio": "Sumudaerji hunts for takedowns and works heavy top pressure once grounded, but can get caught lunging in. Relies on scramble and submission opportunities to steal rounds.",
+      "watch_for": "Whether Perez can stay off his back in the first two rounds\u2014if Sumudaerji gets top control early, he'll rack up damage and position; if Perez keeps it standing, his footwork and output take over."
     },
     {
       "fighter_a": "Yi Sak Lee",
@@ -226,9 +226,9 @@
       "vegas_prob_b": 62.4,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Yi Sak Lee is an evenly matched fighter with balanced overall skills. Both fighters and bettors view this as a genuine 50-50 matchup.",
-      "fighter_b_bio": "Luis Felipe Dias is an evenly matched fighter with balanced overall skills. Both fighters and bettors view this as a genuine 50-50 matchup.",
-      "watch_for": "This is a true toss-up fight, so watch for who executes their game plan better and avoids mistakes in the early rounds."
+      "fighter_a_bio": "Yi Sak Lee is evenly matched on paper, but we have limited tape on his actual fight patterns. Until we see him in the cage, treat this as a coin flip with unknown variables.",
+      "fighter_b_bio": "Luis Felipe Dias sits at dead even odds with identical metrics to Lee, making this a genuine toss-up. Both fighters are question marks in terms of proven tendencies.",
+      "watch_for": "Whoever controls the clinch and dictates positioning in the first round\u2014this will likely reveal which fighter's gameplan is sharper, since we don't have clear stylistic data on either one."
     },
     {
       "fighter_a": "Ding Meng",
@@ -257,9 +257,9 @@
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Ding Meng is an evenly matched competitor with balanced skills across all areas of fighting. Both strikers and grapplers should expect a competitive bout.",
-      "fighter_b_bio": "Jose Henrique comes in as an equally skilled fighter with no clear weaknesses in his game. Expect a well-rounded performance from this opponent.",
-      "watch_for": "This is a coin-flip matchup, so look for who controls the pace early and avoids making mistakes."
+      "fighter_a_bio": "Ding Meng is a relative unknown at 1500 Elo\u2014same tier as his opponent. With a chaos index of 0.5, this fight should follow a predictable script rather than devolve into chaos.",
+      "fighter_b_bio": "Jose Henrique matches Ding's exact rating and unpredictability level, suggesting they're evenly matched on paper with no clear stylistic edge either direction.",
+      "watch_for": "Whoever controls the center and dictates distance in the first round\u2014both fighters are unproven, so early aggression and composure will separate the more dangerous fighter."
     },
     {
       "fighter_a": "Aoriqileng",
@@ -287,9 +287,9 @@
       "vegas_prob_b": 78.2,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Aoriqileng is a well-rounded fighter who can strike and grapple effectively. He's the heavy favorite here and tends to control fights by mixing up his attacks.",
-      "fighter_b_bio": "Cody Haddon is also a versatile fighter with skills both standing and on the ground. He'll need to land something clean or catch Aoriqileng in a mistake to pull off the upset.",
-      "watch_for": "Whether Haddon can stay composed early and avoid getting overwhelmed by Aoriqileng's pressure."
+      "fighter_a_bio": "Aoriqileng is a heavy pressure wrestler who forces opponents into the cage and grinds out rounds on top. He's the 92% favorite here because his relentless takedown pace and positional control neutralize strikers.",
+      "fighter_b_bio": "Haddon has the higher Elo rating but faces a stylistic nightmare\u2014he relies on striking exchanges, which Aoriqileng shuts down immediately with clinch work and leg kicks. He needs early knockout power to matter before getting pinned.",
+      "watch_for": "Can Haddon create distance and land clean combinations in the first two minutes, or does Aoriqileng lock him against the cage and ride him for 15 minutes?"
     },
     {
       "fighter_a": "Rei Tsuruya",
@@ -317,9 +317,9 @@
       "vegas_prob_b": 27.2,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Rei Tsuruya is a grappler who relies on takedowns and ground control to wear down opponents. He wins fights by getting you on your back and keeping you there.",
-      "fighter_b_bio": "Jesus Aguilar is a well-rounded hybrid fighter who can strike and grapple. He's comfortable fighting in any position and adapts his approach based on what his opponent does.",
-      "watch_for": "Watch if Tsuruya can get Aguilar to the ground early\u2014if Aguilar stays on his feet and uses his striking, he'll have the edge."
+      "fighter_a_bio": "Rei Tsuruya is a control grappler who hunts takedowns early and uses top pressure to wear opponents down\u2014he's not looking for flashy submissions, just suffocating positional dominance. His weakness is getting caught on the feet before he closes the distance, where his striking defense gets exposed.",
+      "fighter_b_bio": "Jesus Aguilar throws heavy hands and kicks from distance, then pivots into clinch work and knees when opponents close in. He'll get pulled into grappling exchanges he doesn't want, especially on his back, where his submission defense isn't tight.",
+      "watch_for": "Whether Aguilar can stay upright and create space with kicks in the first round\u2014if Tsuruya drags him down early, the grappler's top control will grind out the decision."
     },
     {
       "fighter_a": "Angela Hill",
@@ -348,9 +348,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
       "not_found": false,
-      "fighter_a_bio": "Angela Hill is a well-rounded striker who uses her speed and footwork to outpoint opponents over the course of a fight. She's known for her high work rate and ability to stay active from the opening bell.",
-      "fighter_b_bio": "Xiong Jingnan is a dominant wrestler with excellent takedown ability and top control. She uses her strength to grind out wins by controlling the fight on the ground.",
-      "watch_for": "This fight comes down to whether Hill can avoid the takedown and make Xiong fight standing up where Hill's speed gives her an advantage."
+      "fighter_a_bio": "Angela Hill throws volume on the feet with snappy combinations and footwork that keeps her moving forward\u2014she's looking to pile up points and frustrate opponents with activity. She'll eat shots to close distance, so if she can't establish her pace early, she gets picked apart by patient strikers.",
+      "fighter_b_bio": "Xiong Jingnan is a pressure fighter who uses her wrestling base to control the clinch and dictate positioning, wearing down opponents over five rounds. Her striking is basic and she's vulnerable to distance management, but she suffocates opponents who stand flat-footed.",
+      "watch_for": "Whether Hill can create space and circle out, or if Xiong corners her against the cage and uses the clinch to neutralize her combinations."
     },
     {
       "fighter_a": "Zhu Kangjie",
@@ -379,9 +379,9 @@
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Zhu Kangjie is a well-rounded fighter with balanced skills across all areas of combat. He doesn't have a dominant specialty, making him unpredictable and adaptable to different opponents.",
-      "fighter_b_bio": "Ramon Taveras is similarly versatile, bringing a balanced approach to his fights without relying heavily on any one technique. Both fighters are comfortable whether the fight stays standing or goes to the ground.",
-      "watch_for": "This is essentially a coin flip matchup, so look for who can control the pace early and impose their will before the fight becomes chaotic."
+      "fighter_a_bio": "Zhu Kangjie is a technical striker who works behind a high guard and picks shots from distance rather than brawling. His patience can frustrate opponents, but it leaves him vulnerable to pressure fighters who close the gap and force exchanges.",
+      "fighter_b_bio": "Ramon Taveras favors aggressive forward movement and looks to build combinations once he's inside. He can get caught lunging in, which makes him susceptible to counters from someone willing to stay composed.",
+      "watch_for": "Whether Taveras can cut off the cage and trap Zhu against the fence, or if Zhu maintains range and picks him apart with counters as Taveras charges in."
     },
     {
       "fighter_a": "Loma Lookboonmee",
@@ -409,9 +409,9 @@
       "vegas_prob_b": 46.7,
       "weight_class": "Women's Strawweight",
       "not_found": false,
-      "fighter_a_bio": "Loma Lookboonmee uses a mix of striking and grappling, staying flexible and ready to adapt during fights. However, this fighter tends to struggle against top-level competition.",
-      "fighter_b_bio": "Jaqueline Amorim is a skilled hybrid fighter who can strike and grapple effectively, giving her multiple ways to win. She's significantly more experienced and proven at this level.",
-      "watch_for": "Watch whether Lookboonmee can land early strikes and stay aggressive, as Amorim is the heavy favorite and will control the pace if given the chance."
+      "fighter_a_bio": "Lookboonmee throws heavy hands and mixing in clinch work, but fights reactively and can get caught lunging in. She's dangerous when she's patient, sloppy when she's not.",
+      "fighter_b_bio": "Amorim is a massive -1200 favorite because she controls pace with constant pressure and transitions cleanly between striking and grappling. She doesn't have a glaring weakness, which is why Lookboonmee has only a 7.7% path to victory.",
+      "watch_for": "Whether Lookboonmee can land clean hooks before Amorim closes the distance and clinches her up\u2014Amorim suffocates strikers who can't keep her at range."
     }
   ],
   "ev_plays": [
