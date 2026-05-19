@@ -19,6 +19,25 @@
 
   body { font-family: var(--font); background: #111110; color: #E8E6DF; min-height: 100vh; }
 
+  /* ── Octagon background ── */
+  .octagon-bg {
+    position: fixed; inset: 0;
+    display: grid; place-items: center;
+    pointer-events: none; z-index: 0; overflow: hidden;
+  }
+  .octagon-bg svg {
+    width: 92vmin; height: 92vmin;
+    max-width: 1000px; max-height: 1000px;
+    --max-rotation: 90deg;
+    transform: rotate(calc(var(--scroll, 0) * var(--max-rotation)));
+    transition: transform 0.12s linear;
+  }
+  .octagon-bg .stroke-main  { stroke: rgba(232,230,223,0.06); stroke-width: 2; fill: none; }
+  .octagon-bg .stroke-inner { stroke: rgba(232,230,223,0.04); stroke-width: 1; fill: none; }
+  .octagon-bg .stroke-tick  { stroke: rgba(226,75,74,0.30);   stroke-width: 3; fill: none; }
+  .octagon-bg .post         { fill: rgba(232,230,223,0.08); }
+  .octagon-bg .center-dot   { fill: rgba(226,75,74,0.55); }
+
   /* NAV */
   header {
     background: rgba(17,17,16,0.96);
@@ -52,6 +71,7 @@
     text-align: center;
     padding: 5rem 1.5rem 4rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative; z-index: 1;
   }
   .live-pill {
     display: inline-flex; align-items: center; gap: 6px;
@@ -75,7 +95,7 @@
   @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
 
   /* SECTIONS */
-  .section { padding: 4.5rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .section { padding: 4.5rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; }
   .section-inner { max-width: 600px; margin: 0 auto; }
   .eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--red); margin-bottom: 8px; }
   .sec-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: #E8E6DF; margin-bottom: 6px; line-height: 1.18; }
@@ -175,8 +195,8 @@
   .honest-text strong { color: var(--gray-400); font-weight: 500; }
 
   /* DISCLAIMER + FOOTER */
-  .disclaimer { background: rgba(186,117,23,0.07); border-top: 1px solid rgba(186,117,23,0.15); padding: 14px 1.5rem; text-align: center; font-size: 12px; color: #854F0B; line-height: 1.65; }
-  footer { text-align: center; padding: 2rem 1.5rem; color: #444441; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .disclaimer { background: rgba(186,117,23,0.07); border-top: 1px solid rgba(186,117,23,0.15); padding: 14px 1.5rem; text-align: center; font-size: 12px; color: #854F0B; line-height: 1.65; position: relative; z-index: 1; }
+  footer { text-align: center; padding: 2rem 1.5rem; color: #444441; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; }
 
   /* MOBILE */
   @media (max-width: 600px) {
@@ -223,6 +243,33 @@
 </head>
 <body>
 
+<!-- ── Rotating octagon background — fixed layer behind everything ── -->
+<div class="octagon-bg" aria-hidden="true">
+  <svg viewBox="0 0 1000 1000">
+    <!-- Outer octagon -->
+    <polygon class="stroke-main"  points="944,684 684,944 316,944 56,684 56,316 316,56 684,56 944,316"/>
+    <!-- Mid ring -->
+    <polygon class="stroke-inner" points="884,654 654,884 346,884 116,654 116,346 346,116 654,116 884,346"/>
+    <!-- Inner mat ring -->
+    <polygon class="stroke-inner" points="804,612 612,804 388,804 196,612 196,388 388,196 612,196 804,388"/>
+    <!-- Vertex posts -->
+    <circle class="post" cx="944" cy="684" r="6"/><circle class="post" cx="684" cy="944" r="6"/>
+    <circle class="post" cx="316" cy="944" r="6"/><circle class="post" cx="56"  cy="684" r="6"/>
+    <circle class="post" cx="56"  cy="316" r="6"/><circle class="post" cx="316" cy="56"  r="6"/>
+    <circle class="post" cx="684" cy="56"  r="6"/><circle class="post" cx="944" cy="316" r="6"/>
+    <!-- Red corner tick (top) / blue corner tick (bottom) -->
+    <line class="stroke-tick" x1="500" y1="56"  x2="500" y2="116"/>
+    <line class="stroke-tick" x1="500" y1="884" x2="500" y2="944" style="stroke:rgba(80,130,255,0.35)"/>
+    <!-- Center crosshair -->
+    <line class="stroke-inner" x1="500" y1="196" x2="500" y2="804"/>
+    <line class="stroke-inner" x1="196" y1="500" x2="804" y2="500"/>
+    <!-- Center compass rings -->
+    <circle class="stroke-inner" cx="500" cy="500" r="60"/>
+    <circle class="stroke-inner" cx="500" cy="500" r="32"/>
+    <circle class="center-dot"   cx="500" cy="500" r="6"/>
+  </svg>
+</div>
+
 <header>
   <a class="logo" href="home.html">
     <div class="logo-icon">O</div>
@@ -242,8 +289,12 @@
 </header>
 
 <!-- HERO -->
-<div class="hero" style="position:relative;overflow:hidden;">
-<svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.03;pointer-events:none;flex-shrink:0;" width="520" height="520" viewBox="0 0 100 100"><polygon points="35,5 65,5 95,35 95,65 65,95 35,95 5,65 5,35" fill="none" stroke="#E8E6DF" stroke-width="1.5"/><polygon points="38,10 62,10 90,38 90,62 62,90 38,90 10,62 10,38" fill="none" stroke="#E8E6DF" stroke-width="0.5"/></svg>
+<div class="hero">
+  <!-- Static decorative mini-octagon behind hero text only -->
+  <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.03;pointer-events:none;flex-shrink:0;" width="520" height="520" viewBox="0 0 100 100">
+    <polygon points="35,5 65,5 95,35 95,65 65,95 35,95 5,65 5,35" fill="none" stroke="#E8E6DF" stroke-width="1.5"/>
+    <polygon points="38,10 62,10 90,38 90,62 62,90 38,90 10,62 10,38" fill="none" stroke="#E8E6DF" stroke-width="0.5"/>
+  </svg>
   <div class="live-pill fade fd1"><div class="live-dot"></div>UFC fight night</div>
   <h1 class="hero-title fade fd2">Know the card.<br>Bet with <em>confidence.</em></h1>
   <p class="hero-sub fade fd3">Fighter breakdowns, model picks, and a budget allocator for every UFC event. Built for fans who want more than a gut feeling.</p>
@@ -484,17 +535,36 @@ async function loadBestBet() {
 
 loadBestBet();
 
+// ── Fade-in on scroll ──
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
+// ── Mobile nav toggle ──
 function toggleNav() {
   document.getElementById('header-nav').classList.toggle('open');
 }
 window.addEventListener('resize', () => {
   if (window.innerWidth > 600) document.getElementById('header-nav').classList.remove('open');
 });
+
+// ── Octagon scroll rotation ──
+// Tracks page scroll 0→1 and writes --scroll to <html>.
+// CSS uses it to rotate the fixed octagon background.
+// No collision with IntersectionObserver or resize listener above.
+(function () {
+  const root = document.documentElement;
+  let rafId = null;
+  function update() {
+    rafId = null;
+    const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+    root.style.setProperty('--scroll', Math.min(Math.max(window.scrollY / max, 0), 1).toFixed(4));
+  }
+  window.addEventListener('scroll', () => { if (!rafId) rafId = requestAnimationFrame(update); }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
 </script>
 </body>
 </html>
