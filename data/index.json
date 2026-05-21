@@ -1,25 +1,10 @@
 [
   {
-    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
-    "name": "UFC Fight Night: Song vs. Figueiredo",
-    "date": "May 30, 2026",
-    "location": "Macau, China",
-    "generated_at": "2026-05-19T11:28:17.940020",
-    "summary": {
-      "total_fights": 13,
-      "high_conf": 7,
-      "medium_conf": 0,
-      "low_conf": 6,
-      "not_found": 0,
-      "ev_plays": 10
-    }
-  },
-  {
     "slug": "UFC_Fight_Night_Fiziev_vs._Torres",
     "name": "UFC Fight Night: Fiziev vs. Torres",
     "date": "June 27, 2026",
     "location": "Baku, Azerbaijan",
-    "generated_at": "2026-05-19T10:45:43.847021",
+    "generated_at": "2026-05-21T09:50:23.128587",
     "summary": {
       "total_fights": 12,
       "high_conf": 8,
@@ -34,12 +19,12 @@
     "name": "UFC Fight Night: Kape vs. Horiguchi",
     "date": "June 20, 2026",
     "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-19T10:45:00.029382",
+    "generated_at": "2026-05-21T09:49:44.013699",
     "summary": {
-      "total_fights": 6,
-      "high_conf": 5,
-      "medium_conf": 0,
-      "low_conf": 1,
+      "total_fights": 11,
+      "high_conf": 6,
+      "medium_conf": 1,
+      "low_conf": 4,
       "not_found": 0,
       "ev_plays": 0
     }
@@ -49,7 +34,7 @@
     "name": "UFC Freedom 250",
     "date": "June 14, 2026",
     "location": "Washington, DC, USA",
-    "generated_at": "2026-05-19T10:44:33.404655",
+    "generated_at": "2026-05-21T09:49:09.634530",
     "summary": {
       "total_fights": 7,
       "high_conf": 6,
@@ -64,7 +49,7 @@
     "name": "UFC Fight Night: Muhammad vs. Bonfim",
     "date": "June 06, 2026",
     "location": "Las Vegas, Nevada, USA",
-    "generated_at": "2026-05-19T10:44:02.571782",
+    "generated_at": "2026-05-21T09:48:45.637482",
     "summary": {
       "total_fights": 12,
       "high_conf": 7,
@@ -72,6 +57,21 @@
       "low_conf": 5,
       "not_found": 0,
       "ev_plays": 0
+    }
+  },
+  {
+    "slug": "UFC_Fight_Night_Song_vs._Figueiredo",
+    "name": "UFC Fight Night: Song vs. Figueiredo",
+    "date": "May 30, 2026",
+    "location": "Macau, China",
+    "generated_at": "2026-05-21T09:48:06.803538",
+    "summary": {
+      "total_fights": 13,
+      "high_conf": 7,
+      "medium_conf": 0,
+      "low_conf": 6,
+      "not_found": 0,
+      "ev_plays": 8
     }
   },
   {
