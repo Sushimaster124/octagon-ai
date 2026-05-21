@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Muhammad_vs._Bonfim",
   "event_date": "June 06, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-21T09:48:45.637482",
+  "generated_at": "2026-05-21T09:55:37.606310",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -45,9 +45,9 @@
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Belal Muhammad picks opponents apart with footwork and distance control, using jabs and leg kicks to set up combinations without taking big risks. He's proven at the highest level (Elo 1681), but our model gives him just a 26% edge here\u2014he'll need to stay patient and avoid getting dragged into Bonfim's preferred range.",
-      "fighter_b_bio": "Gabriel Bonfim hunts takedowns aggressively and finishes from top position with ground-and-pound; he's a heavy pressure grappler who controls fights on the mat. Our model favors him at 74%\u2014he's the clear betting pick because his wrestling typically shuts down strikers who can't defend the initial shot.",
-      "watch_for": "Whether Belal can use his footwork to stay at kicking range and avoid Bonfim's level-change attempts early. If Bonfim gets him down in rounds 1\u20132, it's likely over; if Belal keeps it standing past round 2, his Elo and experience give him a real path back."
+      "fighter_a_bio": "Belal Muhammad pressures with volume striking and clinch work, grinding opponents down over three rounds. His striking defense is his weakness\u2014he eats clean shots trying to close distance, which leaves him vulnerable to precise counters.",
+      "fighter_b_bio": "Gabriel Bonfim is a heavy grappler who hunts takedowns early and controls with top pressure; he's a major favorite here with a 74% win probability according to our model. His submission game is dangerous, but he can get caught in scrambles if opponents explode out of his control.",
+      "watch_for": "Whether Belal can keep the fight standing and make Bonfim miss on the way in\u2014if Bonfim gets him down, it's a mismatch on the mat."
     },
     {
       "fighter_a": "Iwo Baraniewski",
@@ -76,9 +76,9 @@
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Baraniewski enters with minimal recorded fight data, making his actual strengths and weaknesses a mystery. At Elo 1500, he's unproven at this level\u2014our model gives him a 49.7% edge, suggesting a true toss-up.",
-      "fighter_b_bio": "Elekana sits nearly identical in credentials (Elo 1502), with our model giving him a razor-thin 50.3% edge. Like Baraniewski, limited fight film means this is a genuine coin flip based on what we can't see.",
-      "watch_for": "Watch for who dictates the pace early\u2014whichever fighter controls center and lands first will likely carry momentum into deeper rounds since neither has a clear tactical blueprint."
+      "fighter_a_bio": "Baraniewski is relatively unproven at this level with a 1500 Elo rating matching a blank slate. Without clear fight film, expect to learn his tendencies live\u2014he's a coin flip on paper.",
+      "fighter_b_bio": "Elekana has a razor-thin edge in our model (50.3%) with a marginally higher 1502 Elo, suggesting slightly more proven fight experience. The model likes him, but this is essentially a pick-em matchup.",
+      "watch_for": "Whoever controls the center of the octagon in round one will likely dictate pace\u2014both fighters are so evenly matched that early aggression and ring generalship become the deciding factor."
     },
     {
       "fighter_a": "Imanol Rodriguez",
@@ -107,9 +107,9 @@
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Imanol Rodriguez is a slight favorite in our model (51%), operating from a near-identical experience baseline as Schnell. Without detailed fight film, he's the pick here, but this is essentially a coin flip.",
-      "fighter_b_bio": "Matt Schnell sits at 49% in our model\u2014a statistical dead heat with Rodriguez. Both fighters have comparable Elo ratings, suggesting they're evenly matched on proven output.",
-      "watch_for": "Whoever controls the clinch and lands knees will likely win this tight matchup, as both fighters appear to have similar striking and grappling experience."
+      "fighter_a_bio": "Imanol Rodriguez is a striker who leans on volume and forward pressure to overwhelm opponents, mixing hands and kicks to keep defenses honest. Our model gives him a slight edge at 51%, but his Elo rating shows he's barely ahead\u2014this is a coin flip fight.",
+      "fighter_b_bio": "Matt Schnell operates in the clinch and off the back foot, looking to counter and create angles rather than initiate from distance. He's ranked almost identically to Rodriguez on proven experience, making this a true toss-up.",
+      "watch_for": "Rodriguez's ability to cut the cage and land clean combinations in the first round\u2014if Schnell survives the early pressure and gets comfortable in the clinch by round two, he'll have the timing to pick Rodriguez apart on the counter."
     },
     {
       "fighter_a": "Bruno Silva",
@@ -137,9 +137,9 @@
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Bruno Silva lands hard and stays composed\u2014his striking is technical enough to pick apart opponents at range, but he'll happily drag you into exchanges where his power shows up. The model favors him 66% because he's proven he can control the pace and grind out wins when things get messy.",
-      "fighter_b_bio": "Edgar Chairez hunts takedowns early and leans on pressure wrestling to neutralize opponents' advantages. He's got a real Elo rating edge here (1486 vs 1468), suggesting he's actually faced stiffer competition, but he'll need to execute his gameplan crisply or risk eating shots standing up.",
-      "watch_for": "Does Chairez secure takedowns in the first round? If he lands one clean, he controls the tempo and limits Silva's power. If Silva sprawls and stays patient on the feet, his striking advantage compounds over time."
+      "fighter_a_bio": "Bruno Silva lands hard jabs and crosses from distance, then chains takedowns when opponents drop their hands. Our model gives him a 66% edge\u2014he's proven at this level with a 1468 Elo rating and uses his reach to set up entries cleanly.",
+      "fighter_b_bio": "Edgar Chairez presses forward aggressively and hunts submissions off his back, but he's less tested than Silva (1486 Elo masks a thinner resume). He thrives when scrambles get messy, but Silva's range control could keep this from turning into a brawl.",
+      "watch_for": "Whether Chairez can close the distance and force Silva into scrambles before getting caught by a clean counter. Silva staying patient at range = his fight to lose."
     },
     {
       "fighter_a": "Jeisla Chaves",
@@ -168,9 +168,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Jeisla Chaves comes in with a slight edge in our model at 52.4%, suggesting she has the experience advantage despite similar ratings. She'll need to control the pace and avoid getting into a slugfest where Duben's power could take over.",
-      "fighter_b_bio": "Yuneisy Duben sits at 47.6% in our projection, making this a coin flip with marginal separation. She's the type to explode when she sees an opening, so timing and distance management will determine if she can land her shots clean.",
-      "watch_for": "Whether Chaves can establish a clinch game or takedown threat early\u2014if Duben gets to trade in the pocket with space, her power advantage takes over."
+      "fighter_a_bio": "Jeisla Chaves relies on pressure and forward movement to dictate exchanges, forcing opponents into uncomfortable positions where her timing matters most. Our model gives her a slight edge at 52.4%, suggesting her approach edges out Duben's game.",
+      "fighter_b_bio": "Yuneisy Duben's fight record is thin on publicly available detail, but she'll need to disrupt Chaves' rhythm and avoid getting backed into the fence where pressure fighters thrive. At 47.6% in our model's math, she's the slight underdog here.",
+      "watch_for": "Whether Duben can create distance and counter when Chaves pushes forward\u2014if she gets trapped against the cage, Chaves' pressure tactics will likely control the round."
     },
     {
       "fighter_a": "Brendan Allen",
@@ -198,9 +198,9 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Brendan Allen grinds opponents down with relentless wrestling and top control, using his strength to pin limbs and neutralize counters. He's comfortable everywhere but lethal when he dictates where the fight happens\u2014our model gives him the edge here at 52.4%.",
-      "fighter_b_bio": "Edmen Shahbazyan hunts with combinations and looks to crack opponents early, mixing hands with takedown attempts to keep them honest. He's dangerous in scrambles but can get caught chasing finishes against someone willing to sit in the pocket.",
-      "watch_for": "Whether Allen can establish top position and hold it. If Shahbazyan keeps the fight standing and forces exchanges, his speed and power give him real chances\u2014but Allen's wrestling control and higher Elo rating (1621 vs 1546) suggest he'll find a way to slow the pace."
+      "fighter_a_bio": "Allen hunts the clinch to drag opponents down and control them on the mat, where he's methodical with ground-and-pound and submissions. He's patient enough to grind out decisions but explosive enough to finish if you leave openings.",
+      "fighter_b_bio": "Shahbazyan relies on heavy hands and forward pressure to overwhelm opponents early, mixing striking combos with sudden wrestling when he senses an opening. He can implode if he eats clean counters or gets stuck in a grappling battle he didn't initiate.",
+      "watch_for": "Whether Allen can establish his clinch game before Shahbazyan's power shots force him to backpedal\u2014if Shahbazyan dictates the range, he wins; if Allen locks him up, he controls the fight."
     },
     {
       "fighter_a": "Bryce Mitchell",
@@ -228,9 +228,9 @@
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Bryce Mitchell is a suffocating grappler who lives in your guard and uses top control to wear you down over 15 minutes. He's not flashy\u2014he's patient, methodical, and built for grinding out decisions.",
-      "fighter_b_bio": "Victor Henry is a heavy favorite here (92% by our model) because he attacks from everywhere: he'll strike into clinch work, then drop levels for takedowns without telegraphing. He's hard to predict because he doesn't stick to one range.",
-      "watch_for": "Whether Henry can keep the fight standing and impose his pace, or if Mitchell successfully drags him into deep water where top control becomes Henry's problem for three rounds."
+      "fighter_a_bio": "Bryce Mitchell is a suffocating top-control grappler who uses his frame and positioning to grind opponents into submission\u2014he's at his best when he can drag fights to the mat and work from north-south or side control. His weakness: if he can't get the takedown or gets caught standing, he lacks the striking arsenal to create openings.",
+      "fighter_b_bio": "Victor Henry is a heavy favorite with a higher Elo rating, suggesting he's proven against tougher competition and can neutralize Mitchell's grappling through either striking distance management or scramble defense. Our model gives him an 91.8% win probability, primarily because his ability to avoid the mat or escape bottom position makes Mitchell's signature style much harder to execute.",
+      "watch_for": "Whether Mitchell can secure a takedown in the first two minutes\u2014if he does, he controls the pace; if he stays on his feet past round two, Henry's striking advantage and cardio will likely run him down."
     },
     {
       "fighter_a": "Marcus McGhee",
@@ -259,9 +259,9 @@
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "McGhee is the slight favorite here with a 56.9% model edge, backed by a higher Elo rating (1547.9) that suggests more consistent performances. He'll need to impose whatever his primary strengths are early\u2014the chaos index of 0.5 means this fight has room to surprise.",
-      "fighter_b_bio": "Wiklacz comes in as the underdog at 43.1% by our model despite sitting at a respectable 1500 Elo. He's fighting an uphill battle, but equal chaos means there's a realistic path to disruption if he can exploit McGhee's tendencies.",
-      "watch_for": "Whether McGhee can control the fight's pace in the first two rounds\u2014if Wiklacz survives that window without getting badly hurt, his upside improves dramatically."
+      "fighter_a_bio": "Marcus McGhee is a slight favorite here with a 56.9% win probability according to our model, backed by a 1547.9 Elo rating that reflects more proven performances. His edge suggests he either lands cleaner strikes, controls the clinch better, or dictates pace\u2014but the even chaos index means this fight could flip fast.",
+      "fighter_b_bio": "Jakub Wiklacz sits at 43.1% win probability with a 1500.0 Elo, meaning he's proven but slightly behind McGhee in our model's assessment. Equal chaos suggests he has a real path to victory if he forces his A-game and exploits any opening.",
+      "watch_for": "Whether Wiklacz can create scrambles and stay active early\u2014if he lets McGhee settle into a rhythm and control the clinch or distance, the model's pick becomes heavy favorite territory fast."
     },
     {
       "fighter_a": "Jordan Leavitt",
@@ -289,9 +289,9 @@
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Leavitt lives in the clinch and on the mat\u2014he's always hunting takedowns and uses upper-body control to wear opponents down in tight quarters. His problem: he can get caught trading hands on the feet, and his Elo (1526.9) shows he hasn't beaten top-tier competition yet.",
-      "fighter_b_bio": "Brito can strike from distance, mix in takedown threats, and stay composed under pressure\u2014our model gives him 67.6% to win because he has more tools to counter Leavitt's wrestling attack. He's slightly ahead in proven track record (Elo 1534.0) and can dictate where the fight happens.",
-      "watch_for": "Whether Leavitt can secure a takedown in the first two minutes and control Brito on the mat, or if Brito keeps him at range and uses footwork to stay out of clinch range long enough to land clean strikes."
+      "fighter_a_bio": "Leavitt hunts takedowns early and often, using wrestling to drag opponents into his world where he can control and grind. He's most dangerous when he gets on top, but struggles if you keep him at distance and make him chase.",
+      "fighter_b_bio": "Brito mixes striking exchanges with takedown threats\u2014he'll throw hands to set up the shot, then switch to grappling if it opens up. Our model favors him heavily (67.6%) because he can hurt you standing or chain submissions on the mat.",
+      "watch_for": "If Leavitt shoots within the first two minutes and gets the takedown, he can control rounds; if Brito keeps the fight standing and lands clean shots early, Leavitt will be too hurt to explode into his usual wrestling."
     },
     {
       "fighter_a": "Fares Ziam",
@@ -319,9 +319,9 @@
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
       "not_found": false,
-      "fighter_a_bio": "Ziam mixes wrestling takedowns with clinch control to grind opponents down\u2014he's patient and methodical, happy to work in tight and drain energy. Our model makes him a heavy 75.9% favorite because his grappling gives him multiple paths to victory.",
-      "fighter_b_bio": "Nolan hunts knockouts with straight hands and leg kicks from range, relying on timing and speed to land clean. He'll need to keep distance and stay sharp, but faces a 24.1% win probability against Ziam's closing style.",
-      "watch_for": "If Nolan lands early and keeps Ziam at distance for the first round, he can build confidence and control the pace. If Ziam closes the gap and drags him into the clinch in round one, expect Ziam to control from there and cruise to a decision."
+      "fighter_a_bio": "Ziam mixes wrestling entries with sharp striking combinations\u2014he hunts takedowns early to tire opponents, then picks them apart on the feet once they're gassed. Our model favors him heavily (76%) because his Elo rating shows he's beaten tougher competition and his wrestling gives him multiple paths to win.",
+      "fighter_b_bio": "Nolan is a pure striker who relies on footwork and timing to land clean shots without eating return fire. He's the underdog here because Ziam's wrestling poses problems Nolan hasn't solved at this level\u2014our model gives him just a 24% chance.",
+      "watch_for": "Whether Nolan can keep the fight standing and land early before Ziam establishes his wrestling. If Ziam gets even one successful takedown in the first round, Nolan's cardio advantage disappears and the fight trends heavily in Ziam's favor."
     },
     {
       "fighter_a": "Ketlen Souza",
@@ -349,9 +349,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
       "not_found": false,
-      "fighter_a_bio": "Ketlen Souza pressures opponents with wrestling and clinch control, grinding out decisions on the scorecards. The model has her as a 73% favorite\u2014she's the more proven fighter here with a higher Elo rating despite Carnelossi's pedigree.",
-      "fighter_b_bio": "Ariane Carnelossi owns a higher Elo rating and likely relies on striking volume and footwork to stay off her back. She'll need clean combinations and distance management to avoid getting dragged into Souza's grappling exchanges.",
-      "watch_for": "Whether Souza can land takedowns early\u2014if she gets Carnelossi down in rounds 1\u20132, the wrestling control should run the clock. If Carnelossi stuffs shots and keeps it standing past round 2, her volume striking gives her a real path back into it."
+      "fighter_a_bio": "Ketlen Souza is a big favorite here (73% win probability per our model) and has the record to back it up\u2014her Elo sits at 1485.8, meaning she's proven in close spots. She controls fights with pressure wrestling and ground-and-pound from top position, forcing opponents into survival mode.",
+      "fighter_b_bio": "Ariane Carnelossi is the underdog despite a higher Elo rating (1515.1), likely because she hasn't faced comp at Souza's level recently. She'll look to stay on the outside with kicks and straight shots, but she struggles when pinned against the fence.",
+      "watch_for": "If Souza closes the distance and lands a takedown in the first round, she'll likely ride Carnelossi on her back for two rounds\u2014but if Carnelossi keeps range with leg kicks and avoids clinch work, she can frustrate Souza into a decision."
     },
     {
       "fighter_a": "Priscila Cachoeira",
@@ -379,9 +379,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Cachoeira lands hard strikes from distance and hunts takedowns when opponents back up\u2014she's dangerous because she doesn't need to pick one approach. The model heavily favors her at 94.3%, suggesting her technical advantages are too much for this matchup.",
-      "fighter_b_bio": "Chandler mixes strikes with grappling attempts but hasn't shown the same precision or timing as Cachoeira at this level. She's the significant underdog (5.7% by the model) and will need perfect timing to exploit openings.",
-      "watch_for": "Whether Chandler can close distance and smother Cachoeira's striking before eating too many hard shots\u2014if Cachoeira keeps range and picks Chandler apart early, this ends decisively."
+      "fighter_a_bio": "Cachoeira pressures opponents with heavy hands and aggressive clinch work, forcing scrambles where her grappling dominates. She's a massive favorite here\u2014the model gives her 94.3% to win\u2014because Chandler hasn't shown the footwork or timing to keep her at distance.",
+      "fighter_b_bio": "Chandler relies on precision striking and lateral movement to stay away from power strikers, but she's undersized and tends to fold under sustained pressure. At just 5.7% win probability, she needs a perfect technical performance that her record doesn't suggest she can deliver.",
+      "watch_for": "Whether Chandler can use her footwork to escape Cachoeira's clinch attempts in the first two minutes\u2014if she gets dragged inside, Cachoeira's wrestling advantage becomes impossible to overcome."
     }
   ],
   "ev_plays": [],

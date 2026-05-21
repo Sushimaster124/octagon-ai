@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Kape_vs._Horiguchi",
   "event_date": "June 20, 2026",
   "location": "Las Vegas, Nevada, USA",
-  "generated_at": "2026-05-21T09:49:44.013699",
+  "generated_at": "2026-05-21T09:56:35.568601",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -45,9 +45,9 @@
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Kape is a volume striker who overwhelms opponents with speed and output, throwing in bunches from distance and closing gaps aggressively. Problem: he can get caught lunging in and his durability hasn't always held up against harder hitters.",
-      "fighter_b_bio": "Horiguchi is a submission specialist with lethal footwork\u2014he sets up takedowns by breaking your posture with kicks and hand placement, then finishes on the canvas where he's dangerous. He's the model's heavy pick here (83.4%) because his grappling dominance neutralizes strikers.",
-      "watch_for": "If Kape stays in the pocket and trades volume with Horiguchi, he loses\u2014but if he keeps moving sideways and avoids the clinch for two full rounds, the pressure might accumulate enough to keep it standing."
+      "fighter_a_bio": "Kape hunts with lightning-fast combos and relies on his hand speed to overwhelm opponents early. Problem: he gasses if he can't finish quick and gets picked apart by patient wrestlers who smother his offense.",
+      "fighter_b_bio": "Horiguchi mixes slick footwork with sudden takedowns\u2014he'll strike you, then drag you down when you bite on fakes. He's the clear favorite here (83.4% by our model) because he controls pace and has answers for Kape's speed bursts.",
+      "watch_for": "Can Kape land clean and back Horiguchi up in round one, or does Horiguchi lock down the clinch early and establish wrestling control?"
     },
     {
       "fighter_a": "Allan Nascimento",
@@ -75,9 +75,9 @@
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Nascimento mixes striking with clinch work and can hurt you standing before dragging you down. Our model gives him a heavy 90% edge\u2014he's proven (Elo 1534) and should control pace either on the feet or against the cage.",
-      "fighter_b_bio": "Raposo hunts takedowns and wants to grind you out on the mat, where he's most dangerous. He's the clear underdog here (Elo 1468) against someone who won't panic if taken down.",
-      "watch_for": "Whether Raposo can land his first takedown early and survive Nascimento's top pressure long enough to tire him out\u2014if he eats strikes for two rounds without establishing control, the cardio advantage disappears."
+      "fighter_a_bio": "Nascimento is a heavy pressure fighter who mixes striking combinations with opportunistic takedowns\u2014he doesn't commit to one game plan, which keeps opponents guessing. Our model has him as a 90% favorite, and his 1534 Elo rating reflects consistent execution against varied opponents.",
+      "fighter_b_bio": "Raposo is a grind-it-out wrestler who hunts leg kicks and uses clinch work to set up takedowns from range. He's the clear underdog here (10% per our model) with a 1468 Elo, suggesting he struggles against strikers who keep distance.",
+      "watch_for": "Can Raposo land early leg kicks and clinch control to slow Nascimento's pace, or will Nascimento's striking volume keep him out of grab range long enough to coast to a decision?"
     },
     {
       "fighter_a": "Ion Cutelaba",
@@ -105,9 +105,9 @@
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Cutelaba hunts takedowns relentlessly and uses top control to grind out wins, but he's prone to eating strikes on the way in and can get caught in scrambles. At 29.6% odds, he's a significant underdog who needs to dictate the pace on the mat to have a shot.",
-      "fighter_b_bio": "Stirling mixes striking combinations with timely takedown attempts, making him hard to read and harder to game-plan against. Our model favors him at 70.4% because he can win exchanges standing or force grappling exchanges on his terms.",
-      "watch_for": "Whether Cutelaba can close distance and secure a clinch before Stirling's striking finds range\u2014if the fight stays on the feet beyond the first two minutes, Stirling's precision striking will likely take over."
+      "fighter_a_bio": "Cutelaba hunts takedowns early and often, using his wrestling to control pace and drain energy from opponents on the mat. He's prone to eating strikes on the way in and gets caught in scrambles\u2014his chain wrestling doesn't always connect cleanly against slick opponents.",
+      "fighter_b_bio": "Stirling mixes striking combinations with timing takedowns, using footwork to stay outside before closing distance on his terms. He's the model's heavy pick (70%) because he controls distance better than Cutelaba and doesn't get desperate with his shot selection.",
+      "watch_for": "Whether Cutelaba can land his first takedown before Stirling settles into his striking range\u2014if Stirling plants his feet and starts throwing, Cutelaba gets picked apart."
     },
     {
       "fighter_a": "Andre Lima",
@@ -135,9 +135,9 @@
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Andre Lima pressures forward with heavy hands and uses clinch control to grind opponents against the cage. His Elo rating of 1559.8 shows a track record of beating quality competition, and our model gives him a dominant 98.4% win probability.",
-      "fighter_b_bio": "Kevin Borjas mixes striking with takedown attempts but hasn't consistently finished either approach at this level. His 1471.9 Elo rating reflects gaps in execution that Lima is built to exploit.",
-      "watch_for": "Whether Borjas can land clean early strikes and create distance before Lima closes in and plants him on the fence\u2014if Lima gets his clinch control, the fight likely doesn't escape his weight and stamina advantage."
+      "fighter_a_bio": "Andre Lima pressures with heavy hands and uses footwork to cut off the cage\u2014he's a proven finisher who accumulates damage round after round. His Elo rating (1559.8) reflects consistent wins against legitimate competition, and our model gives him a dominant 98.4% edge here.",
+      "fighter_b_bio": "Kevin Borjas mixes strikes and takedown attempts but hasn't shown the finishing power or submission rate needed to trouble Lima's defense. His lower Elo (1471.9) signals he's facing a significant step up in competition.",
+      "watch_for": "If Borjas lands an early takedown and keeps Lima on his back for 5+ minutes, he buys time to avoid the stand-up war\u2014but Lima's cardio and scrambling ability make this a long shot."
     },
     {
       "fighter_a": "Hyder Amil",
@@ -165,9 +165,9 @@
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Hyder Amil relies on pure hand speed and volume\u2014he throws combinations early and often, hunting for openings with straight shots and hooks. His weakness is footwork; he can get caught flat-footed against opponents who use distance control and lateral movement.",
-      "fighter_b_bio": "Christian Rodriguez mixes takedowns with clinch work to grind opponents down, then fires strikes when they're tired or scrambling back to their feet. Our model makes him a heavy favorite (82.7%) because his grappling game neutralizes strikers who fight backwards.",
-      "watch_for": "Does Amil's hand speed keep Rodriguez honest at distance, or does Rodriguez shoot early and drag this to the mat where Amil has no answer?"
+      "fighter_a_bio": "Hyder Amil lands hard but narrow\u2014he's a pure striker who lives and dies by his hands and footwork. He'll struggle if Rodriguez closes the distance and grinds him on the cage or takes him down.",
+      "fighter_b_bio": "Christian Rodriguez is the heavy favorite here (82.7%) because he can dictate where the fight happens\u2014he'll pressure Amil, mix in takedowns, and smother his striking. His Elo edge and fight IQ give him control.",
+      "watch_for": "If Amil catches Rodriguez coming in with a clean combo in the first round, he can steal momentum. Otherwise, Rodriguez's ability to close the gap and work inside will steadily break down Amil's striking game."
     },
     {
       "fighter_a": "Bia Mesquita",
@@ -196,9 +196,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Bia Mesquita is a fresh face in the UFC with limited fight history, making her a true wildcard at 1500 Elo. She'll need to land early and often to establish control before the fight becomes a chess match.",
-      "fighter_b_bio": "Melissa Mullins sits at virtually identical credentials (1500.1 Elo), giving her the slimmest of edges in our model at 50% win probability. Expect a tight, competitive fight between two fighters still proving themselves.",
-      "watch_for": "Whoever controls the clinch in rounds 2\u20133 likely wins this one\u2014both fighters will test each other's grappling position and cardio before a potential late finish."
+      "fighter_a_bio": "Bia Mesquita is operating at the same skill level as her opponent according to our model, with an Elo rating essentially tied at 1500.0. Limited fight history makes her a true wildcard\u2014expect this to come down to execution on the night.",
+      "fighter_b_bio": "Melissa Mullins sits at a marginally higher Elo (1500.1) and edges our model's prediction at 50%, suggesting slightly more proven results in her record. She and Mesquita are nearly identical in terms of predictability, making this a genuine toss-up.",
+      "watch_for": "Whether either fighter can establish their primary offense early\u2014the fighter who lands their best weapon first (striking volume, clinch control, or takedown timing) will likely dictate pace and pull ahead on the scorecards."
     },
     {
       "fighter_a": "Jhonata Diniz",
@@ -227,9 +227,9 @@
       "vegas_prob_b": null,
       "weight_class": "Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Diniz has a slight edge in proven track record (Elo: 1533 vs 1500), giving him the model's nod at 54.7%. Both fighters are evenly matched in unpredictability, so expect a competitive scrap with few guarantees.",
-      "fighter_b_bio": "Montanha sits just behind on the model's radar at 45.3% win probability, suggesting Diniz has shown marginally more consistency in past performances. This is a toss-up fight with near-even chaos levels on both sides.",
-      "watch_for": "Whether Diniz can establish control early and convert his slight experience advantage into round dominance, or if Montanha stays tight and forces a scramble-heavy fight where his unpredictability becomes an asset."
+      "fighter_a_bio": "Jhonata Diniz is a slight favorite here with a 54.7% edge according to our model, backed by a higher Elo rating (1532.7) that suggests more proven fight results. Our data leans toward him, but this matchup has moderate unpredictability (0.5 chaos index), so expect some surprises.",
+      "fighter_b_bio": "Jose Montanha sits at 1500.0 Elo with a 45.3% win probability in our model's eyes\u2014a statistical underdog but close enough that the right gameplan could flip this. Like Diniz, he brings mid-range unpredictability to this bout.",
+      "watch_for": "Early clinch control and who lands first with volume\u2014both fighters have similar baseline records, so whoever dictates the pace in rounds 1-2 likely takes the decision."
     },
     {
       "fighter_a": "Karol Rosa",
@@ -257,9 +257,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Rosa pressures forward with heavy hands and looks to close distance, but her gas tank can fade late when opponents circle and counter. She's dangerous in the first two rounds but vulnerable to fighters who survive her pace and punish her aggressive entries.",
-      "fighter_b_bio": "Santos uses footwork and range management to pick opponents apart, mixing leg kicks with straight punches to control distance. Her model-favored 59.5% edge comes from her ability to stay composed and grind out decisions when the pace slows.",
-      "watch_for": "Whether Rosa can catch Santos early with a combination before Santos establishes her distance game\u2014if the first round stays inside, Rosa's in the fight; if Santos gets space and rhythm by round two, the model's pick likely pulls away."
+      "fighter_a_bio": "Rosa pressures forward with heavy hands and looks to crack opponents on the way in, but her wrestling defense can break down against sustained takedown attempts. She's most dangerous in the first two rounds before cardio becomes a factor.",
+      "fighter_b_bio": "Santos uses footwork to stay just outside Rosa's power range, then counters with precise striking or shoots for takedowns when Rosa lunges. Our model gives her a 59.5% edge\u2014she's the slightly more proven fighter and controls the pace better.",
+      "watch_for": "Whether Rosa can close distance and land clean before Santos establishes her range and starts picking her apart with counters. If Santos gets Rosa to the mat in round 2, she likely coasts to a decision."
     },
     {
       "fighter_a": "Gaston Bolanos",
@@ -287,9 +287,9 @@
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Bolanos mixes striking with wrestling, willing to grind out fights on the mat when the stand-up isn't working. He's less predictable than Aswell but also less proven at this level\u2014his Elo rating shows he hasn't faced top competition consistently.",
-      "fighter_b_bio": "Aswell hunts you down with kicks and combinations, staying aggressive in the pocket to accumulate damage. The model favors him at 67% because he's sharper on the feet and more proven against solid opponents.",
-      "watch_for": "If Bolanos can drag Aswell into the clinch or takedown early, he buys time to adjust; if Aswell gets space and chains combos from distance for 2\u20133 rounds, it's his fight to lose."
+      "fighter_a_bio": "Bolanos mixes his striking with takedown attempts, but he's not overly proven at this level\u2014his Elo rating sits below 1500. He'll need to land early and control the pace, otherwise he could get picked apart on the feet.",
+      "fighter_b_bio": "Aswell is a pure striker who lives at distance, using footwork and timing to land clean shots without trading. Our model gives him a 2-to-1 edge, and his higher Elo suggests he's fought better competition and done it well.",
+      "watch_for": "Whether Bolanos can close the distance and drag Aswell into the clinch early\u2014if Aswell keeps the fight at range past round 2, Bolanos' cardio and wrestling become less relevant."
     },
     {
       "fighter_a": "Melsik Baghdasaryan",
@@ -318,9 +318,9 @@
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Baghdasaryan relies on pressure and forward movement to control fights, using his physicality to wear opponents down in the middle rounds. Our model gives him a slight edge (52.1%) based on a proven track record against similar competition.",
-      "fighter_b_bio": "Magomedov hunts for openings with precision strikes and looks to capitalize on mistakes rather than force the action. He's nearly even with Baghdasaryan in our ratings, sitting just below in Elo (1500 vs 1514.7).",
-      "watch_for": "Whether Baghdasaryan can close the distance and smother Magomedov's striking in the clinch\u2014if Magomedov stays at range and picks him apart, the slight odds swing his way."
+      "fighter_a_bio": "Baghdasaryan operates with a slight edge in proven track record (Elo: 1514.7), giving him the model's slight nod at 52.1%. He'll need to dictate pace and positioning to convert that advantage into a decision.",
+      "fighter_b_bio": "Magomedov sits just behind on paper (Elo: 1500.0), and this matchup has roughly even chaos\u2014meaning either fighter can break the script. He thrives when fights get messy and unpredictable.",
+      "watch_for": "Whether Baghdasaryan can control the clinch and cage work early. If Magomedov survives the first two rounds and drags this into deep water, the unpredictability (0.5 chaos on both sides) favors the underdog."
     },
     {
       "fighter_a": "Farid Basharat",
@@ -349,9 +349,9 @@
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Basharat is the model's pick here (59%), with a higher Elo rating suggesting he's faced stiffer competition and proven more often. He'll need to impose his gameplan early\u2014both fighters have similar unpredictability, so consistency matters.",
-      "fighter_b_bio": "Ewing comes in as the underdog at 41% according to the model, facing an opponent with more recorded success. He'll need to catch Basharat off-timing or exploit early mistakes, as extended exchanges tend to favor the higher-ranked fighter.",
-      "watch_for": "Whether Ewing can stay composed and land cleanly in the first round\u2014if Basharat establishes control and rhythm early, the model's edge will likely hold."
+      "fighter_a_bio": "Basharat is the model's pick at 59%, riding a higher Elo rating (1563) that suggests he's proven himself against stiffer competition. He'll likely control this fight through pressure and positioning, but the chaos index of 0.5 means Ewing has room to land something unexpected.",
+      "fighter_b_bio": "Ewing comes in as the underdog at 41% win probability with a lower Elo (1500), indicating less consistent results against quality opponents. He'll need to create angles and capitalize on mistakes rather than trade in the middle\u2014that's his path to an upset.",
+      "watch_for": "Whether Basharat can maintain forward pressure and dictate range, or if Ewing stays loose enough to slip shots and counter. If this turns into a scramble, the fight gets volatile\u2014exactly where Ewing's chances improve."
     }
   ],
   "ev_plays": [],

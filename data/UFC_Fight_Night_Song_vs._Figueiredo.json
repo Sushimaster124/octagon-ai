@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Song_vs._Figueiredo",
   "event_date": "May 30, 2026",
   "location": "Macau, China",
-  "generated_at": "2026-05-21T09:48:06.803538",
+  "generated_at": "2026-05-21T09:54:57.362764",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -45,9 +45,9 @@
       "vegas_prob_b": 19.6,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Song Yadong pressures forward with heavy hands and leg kicks, hunting knockdowns from the opening bell. He's chinny when backing up and eats counters on the way in\u2014a big reason he's landed on his back in losses.",
-      "fighter_b_bio": "Figueiredo is a slick grappler who chains takedowns into ground control, then lands elbows from top position to slow his opponents down. The model heavily favors him (80.2%) because Song tends to get overwhelmed when dragged into scrambles.",
-      "watch_for": "Can Song stay composed in the clinch and avoid getting dumped? If Figueiredo locks a Thai plumb and yanks him down, it's over\u2014Song's wrestling defense falls apart under pressure. Song needs to keep it at range and land early, before getting trapped."
+      "fighter_a_bio": "Song Yadong throws heavy hands in bursts and hunts takedowns when opponents back up, but he gasses in the third round and eats clean counters when he gets too aggressive. He's the Vegas pick here, but that's likely because oddsmakers respect his name\u2014not his actual path to victory.",
+      "fighter_b_bio": "Figueiredo is a relentless leg-kicker who sets up submissions with pressure wrestling and chains his combos to drag opponents into deep water. Our model favors him heavily (80.2%) because he controls pace and doesn't blow energy\u2014he's fought this exact style before and picked it apart.",
+      "watch_for": "If Song can land a clean hook or takedown in rounds 1\u20132 before Figueiredo's kicks break down his lead leg, he has a puncher's chance. After that, Figueiredo's cardio advantage takes over and Song will be fighting backwards."
     },
     {
       "fighter_a": "Zhang Mingyang",
@@ -75,9 +75,9 @@
       "vegas_prob_b": 34.7,
       "weight_class": "Light Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Zhang Mingyang is a heavy-handed striker who hunts for clean shots and relies on precision over volume\u2014his Elo rating of 1531.5 lags behind Menifield's, suggesting he hasn't faced top-tier opposition yet. Our model gives him a 92.6% win probability, mainly banking on his striking advantage against an opponent who hasn't proven elite hands.",
-      "fighter_b_bio": "Alonzo Menifield has a higher Elo (1582.8) because he's fought proven guys and has the grappling chops to drag strikers into ugly positions. At +188, he's the underdog, but he can neutralize Zhang's stand-up game if he commits to closing distance and controlling the clinch early.",
-      "watch_for": "Whether Menifield can survive Zhang's first two rounds of accurate striking long enough to wear him down and force a clinch\u2014if Zhang lands clean and stays patient on the feet, Menifield's path to victory gets much smaller."
+      "fighter_a_bio": "Zhang Mingyang lands heavy hands and kicks from distance, using his reach to control the fight's pace from the outside. He's a massive favorite here\u2014our model gives him 92.6% to win\u2014because Menifield hasn't shown the footwork or timing to close the gap cleanly.",
+      "fighter_b_bio": "Menifield hunts takedowns and works dirty boxing in the clinch, looking to smother strikers and drag them into grappling exchanges. He's got a legit grappling advantage on paper, but he'll need to eat strikes getting inside against a rangy kicker.",
+      "watch_for": "Whether Menifield can chain takedown attempts without eating flush leg kicks or straight hands on the way in\u2014if Zhang keeps distance and lands clean, it's a blowout; if Menifield closes the gap and gets him down, chaos takes over."
     },
     {
       "fighter_a": "Sergei Pavlovich",
@@ -105,9 +105,9 @@
       "vegas_prob_b": 20.8,
       "weight_class": "Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Pavlovich is a heavyweight anvil who absorbs punishment and counters with brutal knees and elbows in the clinch\u2014he doesn't need perfect technique, just suffocating pressure and timing. Vegas and our model both see him as a heavy favorite (65%) because his 1586 Elo rating reflects a fighter who's beaten better opposition.",
-      "fighter_b_bio": "Teixeira hunts with kicks and combinations from distance, trying to pick apart opponents before they close the gap. At 1504 Elo, he's the cleaner striker here, but our model gives him only 35% odds\u2014he'll need to stay mobile or risk getting dragged into Pavlovich's grind.",
-      "watch_for": "Can Teixeira keep the fight at range and pick Pavlovich apart with leg kicks and footwork, or does Pavlovich close the distance and chain takedowns into short elbows?"
+      "fighter_a_bio": "Pavlovich is a heavyweight anvil who wins by suffocating pressure\u2014he walks opponents down, clinches relentlessly, and batters them against the cage before unloading ground-and-pound. Vegas and our model both see him as a heavy favorite (65%) because his raw power and wrestling translate across all fight distances.",
+      "fighter_b_bio": "Teixeira is a pure striker who relies on footwork and timing to land clean shots from range, but he has no reliable answer when forced into close quarters. At +380 odds, he's the underdog precisely because Pavlovich's clinch game and size will smother his ability to stay at distance.",
+      "watch_for": "Does Teixeira keep Pavlovich at arm's length in the first two rounds, or does Pavlovich close the gap and trap him against the cage? If Pavlovich gets inside, it's over\u2014if Teixeira stays loose and piecing him up, upset odds tighten fast."
     },
     {
       "fighter_a": "Kai Asakura",
@@ -135,9 +135,9 @@
       "vegas_prob_b": 28.9,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Kai Asakura pressures hard and mixes striking with clinch work to wear opponents down, with solid wrestling when he needs to reset. Vegas and our model both favor him heavily (-307, 65.7%), largely because his constant forward pressure and ability to land in combinations have proven effective at this level.",
-      "fighter_b_bio": "Smotherman has the wrestling pedigree to control exchanges and land ground-and-pound, but he doesn't force the action the way Asakura does. His defensive wrestling is solid, but he'll need to create openings rather than dictate\u2014a tougher ask as a +246 underdog.",
-      "watch_for": "If Smotherman can get Asakura down early and keep him there, he buys time to impose his pace. If Asakura survives the first two rounds staying on his feet, his pressure advantage compounds and the fight tilts decisively in his favor."
+      "fighter_a_bio": "Kai Asakura pressures relentlessly with kicks and hand combinations, forcing opponents into the fence where his wrestling becomes a problem. Vegas and our model both like him at -307 because he's proven he can control fights from start to finish.",
+      "fighter_b_bio": "Smotherman lands hard counters when opponents overcommit, but he's reactive rather than aggressive\u2014he needs Asakura to come forward recklessly to create openings. His Elo is actually slightly higher, but that hasn't translated to fight results our model trusts.",
+      "watch_for": "If Asakura eats a clean counter in round 1 and respects Smotherman's power, he'll slow down and become vulnerable to a scramble or reversal. If he keeps the pressure steady, Smotherman will get backed up and submitted."
     },
     {
       "fighter_a": "Muslim Salikhov",
@@ -165,9 +165,9 @@
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Salikhov is a slick striker who lives in the pocket with combos and footwork, constantly angling in and out to land clean shots before backing off. He's dangerous when he can control distance and frustrate opponents with his movement, but gets beatable when forced into exchanges where grappling threat matters.",
-      "fighter_b_bio": "Matthews uses his frame and clinch game to smother opponents against the cage, grinding out control and looking for takedowns or short knees rather than trading in open space. He relies on suffocation tactics and positioning, which means he struggles badly when opponents keep him honest with kicks and distance management.",
-      "watch_for": "Can Matthews drag this into the clinch and cage time early, or will Salikhov's footwork and distance control keep the fight at range where his striking toolbox wins?"
+      "fighter_a_bio": "Salikhov uses his length to land sharp strikes from distance, then dives into clinch work to tire opponents and land knees. The model gives him a decisive edge (68.7%) because his offense keeps pressure on throughout\u2014he's harder to time than he looks.",
+      "fighter_b_bio": "Matthews counters with wrestling entries and ground control; he's comfortable eating strikes to close distance and drag fights into scrambles. His Elo rating is actually slightly higher than Salikhov's, but the model still sees him as the underdog due to Salikhov's cleaner striking offense.",
+      "watch_for": "Can Matthews get his wrestling engaged early, or does Salikhov's jab-and-clinch chain keep him at range long enough to accumulate damage?"
     },
     {
       "fighter_a": "Alex Perez",
@@ -195,9 +195,9 @@
       "vegas_prob_b": 46.7,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Perez pressures with volume striking while hunting takedowns\u2014he doesn't let opponents set pace. Vegas and our model both favor him (53.6%) because his Elo rating shows he's faced and beaten tougher competition than Sumudaerji.",
-      "fighter_b_bio": "Sumudaerji counters best when he can create space and land heavy shots on the feet; he struggles when pinned against the cage. At +114, he's the underdog despite similar unpredictability, suggesting Vegas sees his grappling defense as the real vulnerability here.",
-      "watch_for": "Whether Perez can land takedowns early and control positioning\u2014if Sumudaerji survives the first two rounds upright and trading, his counter-striking gives him a real path to the upset."
+      "fighter_a_bio": "Perez mixes striking combinations with timely takedowns to control pace\u2014he's comfortable dictating range and wearing opponents down over three rounds. Vegas and our model both favor him (53.6%), banking on his ability to stay composed when fights get messy.",
+      "fighter_b_bio": "Sumudaerji has the tools to keep this competitive but sits as a slight underdog at +114 odds. He'll need to either catch Perez early with something clean or force exchanges where his timing and reflexes override Perez's game plan.",
+      "watch_for": "Whether Perez can establish his takedown threat early\u2014if Sumudaerji respects it and backs up, Perez's striking combos will pile up points; if Sumudaerji calls the bluff and trades standing, the fight opens up unpredictably."
     },
     {
       "fighter_a": "Yi Sak Lee",
@@ -226,9 +226,9 @@
       "vegas_prob_b": 63.2,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Yi Sak Lee enters with equal odds despite Vegas slightly backing Dias\u2014our model gives him the edge here. Without detailed fight footage available, he's a true unknown quantity, which can mean opportunity if he's been developing weapons his record doesn't fully show.",
-      "fighter_b_bio": "Luis Felipe Dias is Vegas's pick (\u2212172 favorite), suggesting consistent performances that betting markets trust more than our model does. He'll need to execute whatever his primary gameplan is cleanly, since the model sees real vulnerability in this matchup.",
-      "watch_for": "Whether Yi Sak Lee can disrupt Dias's rhythm early\u2014if he lands something forcing Dias to adjust or respect a specific weapon in rounds 1\u20132, the underdog chaos index of 0.5 suggests this becomes a genuinely competitive fight."
+      "fighter_a_bio": "Yi Sak Lee comes in as the model's pick despite being a slight underdog on the Vegas board. With equal Elo credentials to his opponent, he'll need to impose his game early to build momentum.",
+      "fighter_b_bio": "Luis Felipe Dias is Vegas's favorite here, but only by a modest margin\u2014the market sees this as a genuine toss-up. Both fighters are unproven at this level with identical chaos indexes, meaning anything can happen.",
+      "watch_for": "Whether Lee can control the pace in rounds 1-2; if Dias survives early pressure and finds his rhythm in round 3, his Vegas backing suggests he's the safer longer play."
     },
     {
       "fighter_a": "Ding Meng",
@@ -257,9 +257,9 @@
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Ding Meng is operating at an even skill baseline with no established fight tape to predict tendencies. Our model gives him a 50-50 shot, meaning this fight hinges entirely on execution and adjustments mid-fight.",
-      "fighter_b_bio": "Jose Henrique is similarly unproven at this level with identical win odds and Elo rating. Expect a true coin flip where fresh legs and early aggression could swing momentum either way.",
-      "watch_for": "Whoever controls the clinch and dictates pace in rounds 1-2 will likely steal the decision\u2014both fighters are evenly matched, so ring generalship early becomes the tiebreaker."
+      "fighter_a_bio": "Ding Meng is operating at an even skill level with no clear style advantage\u2014our model gives him a coin-flip matchup. He'll need to execute his game plan cleanly since both fighters are equally proven at 1500 Elo.",
+      "fighter_b_bio": "Jose Henrique matches Ding Meng in experience and unpredictability, making this a true toss-up. With identical win probability and chaos ratings, this fight hinges entirely on who implements their strategy first.",
+      "watch_for": "Who controls the pace early. With neither fighter showing a clear style edge and both equally prone to variance, the first fighter to impose their game plan and stay composed will likely steal the momentum."
     },
     {
       "fighter_a": "Aoriqileng",
@@ -287,9 +287,9 @@
       "vegas_prob_b": 78.2,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Aoriqileng pressures forward with leg kicks and clinch work, grinding opponents into the fence rather than hunting finishes. Our model likes his heavy top control and pace\u2014giving him a 93% edge\u2014but his lower Elo (1503.9) suggests he's less proven than his competition record looks.",
-      "fighter_b_bio": "Haddon fights off his back foot, using distance and timing to land counters rather than initiating exchanges. Vegas has him favored at -359, but that conflicts with the Elo ratings and our model's assessment\u2014a sharp split that says the oddsmakers may be betting name value over fight film.",
-      "watch_for": "If Haddon lets Aoriqileng pin him against the fence for three rounds, it's a wrestling-based decision win. If Haddon stays mobile and lands clean counters early, he punches above his odds."
+      "fighter_a_bio": "Aoriqileng pressures forward with heavy hands and looks to close distance\u2014he's at his best when he can dictate pace and land clean power shots. Our model gives him a dominant 92.8% edge, though Vegas respects Haddon's credentials enough to make this closer than the data suggests.",
+      "fighter_b_bio": "Haddon's the betting favorite at -359 despite our model only giving him 7.2% odds, indicating Vegas sees something in his ability to counter or disrupt rhythm. He'll need to stay sharp on the outside and make Aoriqileng miss early, because getting drawn into a phone booth fight plays directly into his opponent's strengths.",
+      "watch_for": "Whether Aoriqileng can establish his jab and cut off the cage in round one\u2014if he does, Haddon's in for a long night; if Haddon can stay elusive and land counters, he keeps the door open for an upset."
     },
     {
       "fighter_a": "Rei Tsuruya",
@@ -317,9 +317,9 @@
       "vegas_prob_b": 27.2,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Rei Tsuruya is a heavy grappler who drags opponents to the mat and controls them from top position\u2014he's hardest to beat when the fight stays on the ground. Vegas and our model both like him here (52.6%), mainly because Aguilar will have to stuff takedowns and stay upright to win.",
-      "fighter_b_bio": "Jesus Aguilar mixes striking with takedown defense, but his Elo rating (1514.5) is actually higher than Tsuruya's despite being the underdog\u2014Vegas is betting on Tsuruya's grappling advantage, not overall skill. He needs to land clean and avoid the clinch where Tsuruya hunts the takedown.",
-      "watch_for": "Does Aguilar keep the fight standing and make Tsuruya miss in the first two rounds, or does Tsuruya get him down early and smother him from top control? That's the whole fight."
+      "fighter_a_bio": "Rei Tsuruya hunts takedowns relentlessly and controls opponents on the mat\u2014his grappling is the foundation of everything he does. Vegas backs him as a clear favorite (-342), and our model agrees at 52.6%, respecting how hard he makes it for strikers to stay on their feet.",
+      "fighter_b_bio": "Jesus Aguilar mixes striking with submission threats and can adjust mid-fight depending on what's working. He's the underdog here (+268), but his willingness to trade standing gives him paths to win if he avoids getting dragged down early.",
+      "watch_for": "Whether Aguilar can keep the fight standing and land volume on the feet before Tsuruya closes the distance and secures a clinch\u2014if Tsuruya gets him down, it's his fight to lose."
     },
     {
       "fighter_a": "Angela Hill",
@@ -348,9 +348,9 @@
       "vegas_prob_b": null,
       "weight_class": "Women's Strawweight",
       "not_found": false,
-      "fighter_a_bio": "Angela Hill pressures constantly with volume striking\u2014she throws in bunches and forces opponents to react rather than lead. She's vulnerable to clinch work and takedowns if opponents can close distance without eating shots.",
-      "fighter_b_bio": "Xiong Jingnan is a submission threat with dominant grappling who controls fights from top position once she gets you down. She struggles when opponents keep the fight at range and avoid the clinch.",
-      "watch_for": "Whether Hill can maintain distance and land her striking combinations before Xiong closes the gap and drags her into the clinch where grappling becomes the game."
+      "fighter_a_bio": "Angela Hill pressures constantly with high-volume striking and leg kicks, wearing opponents down over three rounds rather than hunting for knockouts. She relies on footwork and activity to rack up points, but can get caught by patient counters when she's loading up combinations.",
+      "fighter_b_bio": "Xiong Jingnan is a heavy hands striker who sits down on her shots and walks opponents down, mixing devastating hooks and crosses with clinch work. She's most dangerous when she controls the pace early\u2014if she can't impose her power, she can fade as the fight goes longer.",
+      "watch_for": "Whether Hill's non-stop lateral movement and leg kicks disrupt Xiong's rhythm enough to survive the pocket exchanges, or if Xiong plants her feet and catches Hill coming in with a clean counter shot that forces respect."
     },
     {
       "fighter_a": "Zhu Kangjie",
@@ -379,9 +379,9 @@
       "vegas_prob_b": null,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Zhu Kangjie comes in as a relative unknown with limited fight history, sitting at an even 1500 Elo rating that puts him on par with his opponent. Our model gives him a razor-thin 50.1% edge, suggesting this is a true toss-up with no clear technical advantage.",
-      "fighter_b_bio": "Ramon Taveras is equally unproven at 1499.5 Elo, making this a matchup between two fighters without much tape to separate them. The 0.1% difference in win probability shows this fight could realistically go either way.",
-      "watch_for": "Whoever controls the center of the octagon in rounds 1\u20132 will likely dictate the pace; expect the fighter who lands first and forces their opponent to react to win this unpredictable 50-50 fight."
+      "fighter_a_bio": "Zhu Kangjie is virtually unknown at this level, with an Elo rating that puts him dead even with his opponent. Our model gives him a razor-thin 50.1% edge, suggesting this is a true coin flip.",
+      "fighter_b_bio": "Ramon Taveras sits at nearly identical credentials to Zhu\u2014same Elo, same unpredictability rating, same lack of clear tendencies. This is as close to a statistical dead heat as UFC matchmaking gets.",
+      "watch_for": "Whoever controls the pace in round one likely wins this. With both fighters unproven at this stage, early aggression and establishing a rhythm matters more than refined technique."
     },
     {
       "fighter_a": "Loma Lookboonmee",
@@ -409,9 +409,9 @@
       "vegas_prob_b": 53.7,
       "weight_class": "Women's Strawweight",
       "not_found": false,
-      "fighter_a_bio": "Lookboonmee lands hard kicks and knees from the clinch, but relies heavily on that attack\u2014when opponents stuff the clinch or keep distance, she doesn't have a reliable Plan B. She's the Vegas favorite here, but her limited striking volume and submission threat leave her vulnerable to someone who can control the pace.",
-      "fighter_b_bio": "Amorim pressures with body shots and leg kicks, then hunts takedowns when openings appear\u2014she wins by accumulation and dictating where the fight happens. Our model gives her 92.3% to win, and Vegas roughly agrees; she's the far more complete striker with better cardio to maintain that pressure.",
-      "watch_for": "If Amorim lets Lookboonmee establish the clinch and trade knees early, that's Loma's best window\u2014but if Amorim uses footwork to circle out and reset on the feet, she'll rack up damage and eventually take over the fight."
+      "fighter_a_bio": "Loma Lookboonmee is a heavy-handed striker who hunts knockouts and leans on Muay Thai clinch work to grind opponents down. Vegas likes her as a slight favorite, but she's unpredictable\u2014fights can swing on a single exchange.",
+      "fighter_b_bio": "Jaqueline Amorim controls fights through relentless pressure, strong wrestling entries, and top-position dominance. Our model gives her 92% odds to win because she's proven against tougher competition (Elo 1548 vs 1567).",
+      "watch_for": "Whether Amorim can close distance and get the fight to the mat before Lookboonmee's clinch elbows and knees pile up damage in the pocket."
     }
   ],
   "ev_plays": [

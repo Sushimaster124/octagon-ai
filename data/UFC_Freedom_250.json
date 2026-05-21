@@ -3,7 +3,7 @@
   "event_slug": "UFC_Freedom_250",
   "event_date": "June 14, 2026",
   "location": "Washington, DC, USA",
-  "generated_at": "2026-05-21T09:49:09.634530",
+  "generated_at": "2026-05-21T09:55:59.622348",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -45,9 +45,9 @@
       "vegas_prob_b": 16.1,
       "weight_class": "Lightweight",
       "not_found": false,
-      "fighter_a_bio": "Topuria hunts the chin with volume striking while staying defensive\u2014he throws 6+ strikes per minute but doesn't overcommit. His wrestling is active (lands takedowns to control rounds), and he's proven he can survive and counter heavy strikers, making him a clear Vegas and model favorite at -518.",
-      "fighter_b_bio": "Gaethje is a heavy front-foot striker who relies on leg kicks, body shots, and high-volume combos to wear opponents down. He struggles against pressure and gets caught countering when he lunges\u2014our model gives him just 19.1% here despite his knockout power.",
-      "watch_for": "If Gaethje plants and trades with Topuria early, he risks getting countered into combinations. If Topuria clinches and lands knees, Gaethje will gas trying to escape\u2014that's how Ilia wins decisively."
+      "fighter_a_bio": "Topuria hunts with body kicks and counter-punches, closing distance fast to clinch or drag opponents down. He's a massive -518 favorite because his pressure wrestling and submission skills have proven lethal against strikers.",
+      "fighter_b_bio": "Gaethje throws hard, violent combinations with zero filter\u2014he swings for the fences and bleeds doing it. He's a 19.1% underdog here because Topuria's clinch work and ground control neutralize wild strikers.",
+      "watch_for": "Whether Gaethje can land clean before Topuria closes the distance and forces him into the clinch\u2014if he gets there, Gaethje's done."
     },
     {
       "fighter_a": "Alex Pereira",
@@ -75,9 +75,9 @@
       "vegas_prob_b": 85.5,
       "weight_class": "Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Pereira is a precision striker who hunts the counter\u2014he waits for openings, then explodes with devastating knees and crosses. He's dangerous at range but vulnerable to pressure fighters who cut the cage and force him into exchanges where his timing breaks down.",
-      "fighter_b_bio": "Gane is a 6'5\" heavyweight who uses his length and footwork to control space, peppering opponents with kicks and jabs while staying just outside their reach. He's a massive favorite here: his model prediction is 94.7% because he can dictate distance all night, and Pereira's counter-striking game falls apart when he can't set his feet.",
-      "watch_for": "Can Pereira close the distance without eating a Gane leg kick or straight? If Gane maintains the perimeter and makes Pereira chase, it's a long night for the underdog."
+      "fighter_a_bio": "Pereira hunts with high-volume striking and explosive clinch knees\u2014he's dangerous when he can dictate range and smother opponents against the cage. But he gets caught clean often and relies heavily on his hands staying sharp; when opponents make him miss, he wilts.",
+      "fighter_b_bio": "Gane is a precision striker who uses his length to poke and counter from distance, then slips away before you can capitalize. He's methodical rather than flashy\u2014the kind of fighter who wins by never being where your shots land.",
+      "watch_for": "Whether Pereira can cut Gane off and force him into phone-booth exchanges. If Gane gets to operate at range and control the distance for 3+ rounds, Pereira will be in serious trouble."
     },
     {
       "fighter_a": "Sean O'Malley",
@@ -105,9 +105,9 @@
       "vegas_prob_b": 24.3,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "O'Malley picks you apart with precision striking\u2014sharp hands, creative footwork, and the range to land clean while staying out of danger. He's a massive favorite here because his striking defense and distance control consistently frustrate opponents who can't close the gap cleanly.",
-      "fighter_b_bio": "Zahabi relies on clinch work and top control when he can get inside, but he's eating significant strikes on the way in. His wrestling can turn the fight, but O'Malley's footwork makes it hard for him to create those opportunities.",
-      "watch_for": "Can Zahabi close the distance and lock up O'Malley in the clinch, or will O'Malley's footwork and range keep Zahabi at striking distance where he's outgunned?"
+      "fighter_a_bio": "Sean O'Malley picks opponents apart with precise striking from distance\u2014he's got sharp footwork, accurate hand speed, and isn't afraid to counter. He's a heavy favorite here (78% by our model, -411 on the board) because he controls range better than almost anyone at his weight.",
+      "fighter_b_bio": "Aiemann Zahabi has solid wrestling and isn't a pushover, but he lacks the striking precision O'Malley brings and tends to get outpaced early in fights. At 22% to win in our model, he's the underdog facing a striker who doesn't get reckless.",
+      "watch_for": "Whether Zahabi can land a takedown in the first two rounds before O'Malley's footwork creates too much distance\u2014if this stays standing past round two, O'Malley's accuracy likely takes over."
     },
     {
       "fighter_a": "Josh Hokit",
@@ -136,9 +136,9 @@
       "vegas_prob_b": 27.7,
       "weight_class": "Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Josh Hokit is Vegas's pick here, but the betting odds don't match what the model sees. He'll need to dictate this fight early and avoid getting drawn into Derrick Lewis's power range.",
-      "fighter_b_bio": "Derrick Lewis is the model's pick at 64.2% \u2014 a significant edge. He hunts for the knockout with explosive striking, and his Elo rating reflects a fighter who's proven against better competition.",
-      "watch_for": "Whether Hokit can stay composed and keep distance early, or if Lewis lands clean and forces him to panic into the pocket where Lewis's raw power becomes the deciding factor."
+      "fighter_a_bio": "Josh Hokit is a big favorite on the Vegas board (-335), but our model sees significant doubt here. He'll need to impose his game early and avoid getting pulled into a firefight.",
+      "fighter_b_bio": "Derrick Lewis is our model's pick at 64.2% to win, with a higher Elo rating suggesting proven results against this level of competition. He has the wrestling or submission chops to disrupt Hokit's gameplan.",
+      "watch_for": "Whether Hokit can control the fight's location and pace in the first round\u2014if Lewis survives the opening and brings the fight to deep water, the model's edge widens."
     },
     {
       "fighter_a": "Mauricio Ruffy",
@@ -166,9 +166,9 @@
       "vegas_prob_b": 18.5,
       "weight_class": "Lightweight",
       "not_found": false,
-      "fighter_a_bio": "Ruffy's a submission threat who hunts the takedown early and finishes on the ground\u2014he's won 5 of his last 6 by tap-out or ref stoppage. Vegas and our model heavily favor him here, seeing a fighter riding momentum against someone he should control.",
-      "fighter_b_bio": "Chandler throws heat from the jump with heavy hands and explosive takedowns, but he's dropped recent decisions and struggles when opponents keep him at distance. He needs early chaos and forward pressure to avoid getting outwrestled.",
-      "watch_for": "Can Chandler land something devastating in the first 90 seconds before Ruffy clinches and drags him down? If the fight hits round 2, Ruffy's grappling control usually takes over."
+      "fighter_a_bio": "Ruffy suffocates opponents with relentless wrestling and top control, grinding out decisions while staying defensively sound. Our model gives him 94.5% to win\u2014he's the heavy favorite because he neutralizes strikers on the mat where they can't hurt him.",
+      "fighter_b_bio": "Chandler is a volume striker who thrives in chaotic exchanges, loading up on hooks and crosses to create openings. He's a 440 underdog here because Ruffy's takedowns will repeatedly dump him on his back before he can land anything meaningful.",
+      "watch_for": "If Chandler eats a takedown in round one and spends 5+ minutes underneath, it's over\u2014Ruffy will repeat that formula. Chandler's only path is staying off his back early and finishing before Ruffy gets comfortable grinding."
     },
     {
       "fighter_a": "Bo Nickal",
@@ -196,9 +196,9 @@
       "vegas_prob_b": 28.2,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Bo Nickal is a wrestling machine who suffocates opponents with top control and ground-and-pound, but his striking is a massive liability and he hasn't faced elite competition yet. Vegas loves him here, but he's surprisingly vulnerable to anyone who can keep the fight standing or stuff his takedowns early.",
-      "fighter_b_bio": "Kyle Daukaus hunts for submissions constantly\u2014he's a guillotine and rear-naked choke specialist who stays dangerous even when losing on his back. Our model heavily favors him (78.1%) because his submission threats create openings everywhere, and he's proven at this level.",
-      "watch_for": "If Nickal secures a takedown in round one and holds top position for 5+ minutes, he can control the fight. If Daukaus stuffs even two takedown attempts and drags Nickal into the second round where wrestling fatigue sets in, his submission game takes over."
+      "fighter_a_bio": "Bo Nickal is a relentless wrestler who lives in your guard\u2014he'll shoot takedowns early and often, then control you from top position with suffocating pressure. Vegas loves him as the favorite, but his cardio can fade against someone who survives the initial onslaught.",
+      "fighter_b_bio": "Kyle Daukaus hunts for submissions off his back and uses strikes to set up clinch work and throws. Our model gives him 78% to win because he's dangerous when scrambling and doesn't panic when taken down\u2014he'll catch you in something nasty.",
+      "watch_for": "Whether Nickal can maintain wrestling dominance past round 2. If Daukaus survives the grappling pressure and gets to the later rounds, his submission defense and back-control escapes give him the edge."
     },
     {
       "fighter_a": "Diego Lopes",
@@ -226,9 +226,9 @@
       "vegas_prob_b": 39.1,
       "weight_class": "Featherweight",
       "not_found": false,
-      "fighter_a_bio": "Diego Lopes hunts with volume striking and feints to set up takedowns\u2014he's comfortable pressuring opponents both standing and on the mat. Vegas and our model heavily favor him (93.8% win probability), largely because his Elo rating lags behind Garcia's despite being the sharper, more proven finisher.",
-      "fighter_b_bio": "Steve Garcia is a pure striker who relies on timing and precision rather than output\u2014he needs clean looks to be effective. His higher Elo suggests past success, but he's a massive underdog here (6.2% win probability) because Lopes' ability to mix levels exploits strikers who can't defend the clinch and takedown threat.",
-      "watch_for": "Whether Garcia can stay vertical and land counters before Lopes closes distance and forces the fight into his comfort zone on the mat or against the cage."
+      "fighter_a_bio": "Diego Lopes pressures relentlessly with volume combinations, mixing heavy hands with leg kicks to break down opponents over time. He'll clinch, drag you down, and control the pace\u2014our model gives him 93.8% to win because Steve Garcia has almost no path to survive the grind.",
+      "fighter_b_bio": "Steve Garcia wants to stay at distance and land clean power shots, relying on timing and accuracy rather than output. He's a heavy hitter when the fight stays standing, but slows down if pushed into a brawl or taken down.",
+      "watch_for": "Whether Garcia can keep Lopes at arm's length for 5+ minutes. If Lopes closes the gap and forces exchanges, Garcia gasses and gets picked apart."
     }
   ],
   "ev_plays": [

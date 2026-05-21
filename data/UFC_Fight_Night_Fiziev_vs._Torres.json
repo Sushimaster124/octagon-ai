@@ -3,7 +3,7 @@
   "event_slug": "UFC_Fight_Night_Fiziev_vs._Torres",
   "event_date": "June 27, 2026",
   "location": "Baku, Azerbaijan",
-  "generated_at": "2026-05-21T09:50:23.128587",
+  "generated_at": "2026-05-21T09:57:20.826440",
   "model_stats": {
     "accuracy": 82.6,
     "roc_auc": 0.9229,
@@ -45,9 +45,9 @@
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
       "not_found": false,
-      "fighter_a_bio": "Fiziev leans on speed and volume striking to rack up points, but his gas tank and chin aren't his strongest assets in longer fights. He'll need to land cleaner shots and control the pace early\u2014otherwise he gets picked apart.",
-      "fighter_b_bio": "Torres is a massive favorite here (95% by our model) because he consistently pressures opponents, lands heavy, and doesn't fade late. He's proven more durable and effective than Fiziev across the board.",
-      "watch_for": "Whether Fiziev can survive the first two rounds without absorbing too much damage; if Torres gets rolling with sustained pressure and lands his power shots clean, the fight is effectively over."
+      "fighter_a_bio": "Fiziev relies on volume striking and footwork to control range, but struggles when opponents close the distance and drag him into tight exchanges. His defensive gaps compound when he's forced to wrestle\u2014that's where opponents have found the clearest path to beating him.",
+      "fighter_b_bio": "Torres is a heavy favorite here because he dictates pace through aggressive pressure and clinch work, breaking opponents down over three rounds rather than seeking quick finishes. The model gives him 95% to win because Fiziev's footwork typically fails against stalking, relentless forward pressure.",
+      "watch_for": "Can Fiziev create space and land clean combinations before Torres locks him against the cage? If Torres establishes the clinch and controls rounds early, Fiziev's chances evaporate fast."
     },
     {
       "fighter_a": "Shara Magomedov",
@@ -75,9 +75,9 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Magomedov is a heavy-handed striker who uses footwork and distance control to land clean shots while staying out of range. Our model makes him a strong 83% favorite\u2014he's proven (1557.6 Elo) at picking his spots and finishing strikers who trade with him.",
-      "fighter_b_bio": "Pereira mixes kicks, hand speed, and occasional wrestling entries to create chaos, but his offense often lacks precision and he abandons game plans mid-fight. He's facing a striker who punishes wild combinations, which is exactly where his unpredictability (0.558 chaos index) becomes a liability rather than an asset.",
-      "watch_for": "Does Pereira rush in throwing volume early, or does he stay methodical? Magomedov picks apart sloppy approach patterns\u2014if Pereira commits to combinations without setup, he eats clean counters."
+      "fighter_a_bio": "Shara Magomedov is a heavy-handed striker who walks opponents down with straight shots and body work, rarely getting fancy. He's rated an 83% favorite because he's proven in the cage (1557 Elo) and dictates distance on his terms.",
+      "fighter_b_bio": "Michel Pereira throws creative striking combos and hunts submissions, but his offense is streaky and he can get caught chasing instead of defending. He's the 17% underdog here because Magomedov's directness typically punishes fighters who improvise.",
+      "watch_for": "If Pereira can stay off the fence and make Magomedov miss early, he buys time to land a takedown or scramble for a submission\u2014his only realistic path. If he eats jabs trying to load up flashy counters, Magomedov walks through and finishes him."
     },
     {
       "fighter_a": "Nazim Sadykhov",
@@ -105,9 +105,9 @@
       "vegas_prob_b": null,
       "weight_class": "Lightweight",
       "not_found": false,
-      "fighter_a_bio": "Sadykhov throws heavy hands and mixes in takedowns to keep opponents honest\u2014he's not locked into one mode. His Elo (1546) and our model's 69% edge suggest he's proven at executing this balance under pressure.",
-      "fighter_b_bio": "Camilo hunts submissions and top control; he's most dangerous when he gets you down. At Elo 1483, he's capable but less tested than Sadykhov, and our model gives him only a 31% path to victory.",
-      "watch_for": "Can Camilo secure a takedown early and threaten a submission before Sadykhov's striking volume forces him to engage on the feet?"
+      "fighter_a_bio": "Sadykhov mixes strikes and takedowns effectively, using footwork to set up combinations while staying ready to shoot. His 1546 Elo shows proven success at this level, and our model favors him 69% to impose his pace and control.",
+      "fighter_b_bio": "Camilo hunts for wrestling exchanges and looks to drag opponents down early. He's competitive but faces a significant gap in proven output\u2014our model gives him just 31% to get inside on someone who can pace and defend the shot.",
+      "watch_for": "Can Camilo land a takedown in the first round before Sadykhov's footwork and distance control take over the fight?"
     },
     {
       "fighter_a": "Asu Almabayev",
@@ -135,9 +135,9 @@
       "vegas_prob_b": null,
       "weight_class": "Flyweight",
       "not_found": false,
-      "fighter_a_bio": "Almabayev is a mat technician who hunts takedowns early and controls opponents on the ground with heavy top pressure. His weakness is getting there\u2014if you stuff his shot and keep him standing, his limited striking makes him a sitting duck.",
-      "fighter_b_bio": "Johnson mixes strikes and grappling to keep opponents guessing, but our model gives him a slight edge (52.5%) because he's proven more effective at adapting mid-fight. He's the one with more ways to finish if Almabayev's gameplan falls apart.",
-      "watch_for": "Can Almabayev land his first takedown in round 1? If he does, he grinds out control points. If Johnson sprawls and keeps it standing past round 2, Almabayev gasses and loses the striking exchanges."
+      "fighter_a_bio": "Almabayev hunts takedowns relentlessly and controls opponents on the mat with top pressure\u2014he's at his best grinding out rounds from inside position. His weakness is getting there: his striking is basic, and he can be caught lunging for legs against fighters who time their counters.",
+      "fighter_b_bio": "Johnson mixes striking with clinch work and isn't afraid to go to the ground, but he's not a submission specialist\u2014he uses grappling to reset and create openings. Our model gives him a slight edge at 52.5%, likely because his ability to operate in multiple phases gives him more ways to win.",
+      "watch_for": "Can Almabayev land a takedown in the first two rounds before Johnson's footwork and spacing keep him at distance? If the fight stays standing past round 2, Johnson's ability to strike and retreat usually decides it."
     },
     {
       "fighter_a": "Ikram Aliskerov",
@@ -165,9 +165,9 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Aliskerov lands heavy hands from the clinch and uses wrestling to grind opponents against the cage\u2014he's a big favorite here at 79% win probability because he controls pace and limits space. His chain wrestling and upper-body strength make him a nightmare in tight quarters.",
-      "fighter_b_bio": "Ferreira mixes submissions with striking but hasn't faced pressure like this before\u2014he'll need to stay loose and create angles to avoid getting pinned. His Elo rating suggests he's fought top names, but the model sees Aliskerov's wrestling as a hard counter.",
-      "watch_for": "Whether Ferreira can stay off the cage in the first round. If Aliskerov gets him clinched early, he'll dictate the fight; if Ferreira circles and makes space, his submission threat becomes real."
+      "fighter_a_bio": "Aliskerov hunts the takedown early and leans on top control to wear opponents down\u2014he's a grinder who uses size and wrestling to dictate the pace. His Elo rating (1540.8) reflects proven wins at this level, and our model favors him heavily (78.9%) because his grappling advantage is significant here.",
+      "fighter_b_bio": "Ferreira relies on striking exchanges and lateral movement to stay dangerous, but he's vulnerable to wrestlers who can close the distance and smother his offense. Despite a solid Elo (1544.7), he's a significant underdog because Aliskerov's wrestling gameplan directly counters his style.",
+      "watch_for": "First 5 minutes: if Aliskerov successfully lands a takedown and holds position, Ferreira's chances collapse. If Ferreira keeps the fight standing and lands clean strikes early, he can build momentum\u2014but he'll need to stay mobile and avoid the clinch."
     },
     {
       "fighter_a": "Abus Magomedov",
@@ -195,9 +195,9 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Magomedov is a heavy-pressure wrestler who drags opponents into the clinch and grinds them against the cage\u2014he controls pace entirely through top position and suffocating grappling. The model heavily favors him (92.7%) because his wrestling is extremely difficult to escape once locked in.",
-      "fighter_b_bio": "Oleksiejczuk mixes striking with submission attempts off his back, but he'll be facing a relentless takedown threat that neutralizes his ability to land strikes cleanly. At 7.3% odds, he'd need to stuff takedowns early and land something clean\u2014a tough ask against Magomedov's relentless forward pressure.",
-      "watch_for": "Whether Oleksiejczuk can defend the initial clinch entries in rounds 1\u20132; if Magomedov gets him to the mat and holds position, the fight is essentially over."
+      "fighter_a_bio": "Magomedov is a heavy-handed wrestler who hunts takedowns relentlessly and punishes opponents on the mat with ground-and-pound. His cardio lets him maintain pressure for three rounds, and our model gives him a dominant 92.7% edge here.",
+      "fighter_b_bio": "Oleksiejczuk throws volume striking from range but struggles to stop committed takedown attempts. He's most dangerous when he can keep the fight standing and land combinations, but that's a tough ask against a wrestler of Magomedov's caliber.",
+      "watch_for": "Whether Oleksiejczuk can stuff the initial takedown attempts and make Magomedov respect his striking enough to keep distance\u2014if he gets dragged down early, the ground control likely decides the fight."
     },
     {
       "fighter_a": "Farman Hasanov",
@@ -226,9 +226,9 @@
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Farman Hasanov comes in as the model's slight pick (52.3%), though neither fighter has much proven track record at this level. His Elo sits just above Nolan's, suggesting this is a toss-up between two unknowns.",
-      "fighter_b_bio": "Eric Nolan's 47.7% win probability reflects a marginal gap\u2014he's operating at nearly the same proven level as Hasanov. Expect a competitive fight with real uncertainty baked in.",
-      "watch_for": "Whoever controls the clinch and dictates positioning early will likely steal rounds; both fighters are unpredictable enough (0.5 chaos index) that a single mistake or submission opportunity could flip the result."
+      "fighter_a_bio": "Farman Hasanov is a slight favorite according to our model (52.3%), though Vegas hasn't priced this fight yet. Limited fight tape makes him hard to read, but his Elo rating suggests he's faced stiffer competition than Nolan.",
+      "fighter_b_bio": "Eric Nolan sits just behind Hasanov in our projection at 47.7%, with a nearly identical Elo rating that signals this is genuinely close to a coin flip. The lack of Vegas odds confirms both fighters are relative unknowns at this level.",
+      "watch_for": "Watch whether either fighter can establish their jab early and control the center\u2014with both fighters unpredictable (chaos index 0.5 each), whoever lands cleaner volume in round one likely dictates the pace of this toss-up."
     },
     {
       "fighter_a": "Abdul Rakhman Yakhyaev",
@@ -257,9 +257,9 @@
       "vegas_prob_b": null,
       "weight_class": "Light Heavyweight",
       "not_found": false,
-      "fighter_a_bio": "Yakhyaev is a relative unknown stepping into unfamiliar territory\u2014his fight style isn't established, which makes predicting his approach difficult. At an even Elo rating with Walker, he'll need to impose whatever his strongest asset is early before the fight gets away from him.",
-      "fighter_b_bio": "Walker sits virtually tied with Yakhyaev on paper, but our model gives him a slight 50.2% edge, suggesting something in his fight profile matches up favorably here. Without knowing his specific weapons, he's the marginal pick to execute whatever his gameplan is more effectively.",
-      "watch_for": "Who controls the pace in rounds 2\u20133: if Yakhyaev can dictate tempo and force Walker into his world, he wins; if Walker absorbs pressure and imposes his rhythm, the model's pick likely closes out the decision."
+      "fighter_a_bio": "Yakhyaev is a relatively unproven fighter sitting right at the middle of the pack in terms of track record. Our model gives him nearly even odds, suggesting he'll either need to land his key weapons early or survive a full fight to grind out a decision.",
+      "fighter_b_bio": "Walker has a razor-thin edge in our model's eyes (50.2%) and holds a marginally stronger resume based on his Elo rating. He's positioned as the slight favorite, but this is essentially a coin flip\u2014execution matters more than pre-fight hype.",
+      "watch_for": "Whether Walker can control the pace and impose his game plan for 15 minutes, or whether Yakhyaev catches him with something explosive in round one or two when both fighters are still fresh and hunting."
     },
     {
       "fighter_a": "Ismail Naurdiev",
@@ -287,9 +287,9 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Naurdiev pressures with heavy hands and rides a wrestling base to control the center\u2014he's not flashy but accumulates damage through relentless forward movement. Our model heavily favors him (82%) because he's proven at this level and dictates pace rather than chasing",
-      "fighter_b_bio": "Vettori's a volume striker who banks on cardio and ring IQ to outwork opponents over 15 minutes, but he struggles against pressure fighters who don't respect his output. His 1530 Elo (slightly higher than Naurdiev's) masks the stylistic mismatch here",
-      "watch_for": "Whether Vettori can circle away and make space for his combinations, or if Naurdiev's pressure forces him to the fence where wrestling becomes an option\u2014if Naurdiev gets his hands on him early, it's a long night for Vettori"
+      "fighter_a_bio": "Naurdiev lands heavy hands early and often\u2014he's at his most dangerous in the first two rounds when he's fresh and aggressive. The model heavily favors him (82.3%) because he controls the pace with constant pressure and doesn't let opponents settle into their game.",
+      "fighter_b_bio": "Vettori is a grinder who wears opponents down over three rounds with relentless wrestling and clinch work. He's the slight underdog here despite a higher Elo rating, suggesting the model thinks Naurdiev's early aggression will be too much before Vettori's cardio advantage kicks in.",
+      "watch_for": "Whether Vettori can survive Naurdiev's first-round onslaught and get the fight to the mat\u2014if he does, Vettori's wrestling control and volume punching from top position could flip this fight despite the odds."
     },
     {
       "fighter_a": "Nursulton Ruziboev",
@@ -317,9 +317,9 @@
       "vegas_prob_b": null,
       "weight_class": "Middleweight",
       "not_found": false,
-      "fighter_a_bio": "Ruziboev is a heavy pressure fighter who stalks opponents into the cage and lands volume strikes from distance before closing. His Elo rating (1547) signals proven success against better competition, and our model gives him a decisive 79.5% edge.",
-      "fighter_b_bio": "Pulyaev mixes striking and grappling but lacks the output or finishing urgency to match Ruziboev's relentless pace. He'll need to land a clean counter or drag this to the mat to steal rounds.",
-      "watch_for": "Whether Pulyaev can reverse Ruziboev's forward momentum with takedowns or get comfortable enough to land his own combos\u2014if Ruziboev dictates the entire fight at range, it's a blowout."
+      "fighter_a_bio": "Ruziboev is a heavy pressure fighter who drives forward with strikes and clinch work, forcing opponents into corners where he controls with knees and short elbows. His Elo of 1547 shows consistent wins against real competition, and our model gives him 79.5% to finish this fight as the clear favorite.",
+      "fighter_b_bio": "Pulyaev mixes takedown attempts with stand-up exchanges but lacks the consistent output to hold dominance\u2014he tends to get outpaced when opponents match his pace for three rounds. At 1501 Elo and 20.5% win odds, he needs to land something clean early or he'll lose a scrambling fight.",
+      "watch_for": "Whether Pulyaev can create space with leg kicks or clinch breaks in round one; if Ruziboev locks him against the cage and lands sustained elbows from top position, Pulyaev's cardio usually fades and the fight's over."
     },
     {
       "fighter_a": "Daniil Donchenko",
@@ -348,9 +348,9 @@
       "vegas_prob_b": null,
       "weight_class": "Welterweight",
       "not_found": false,
-      "fighter_a_bio": "Donchenko is a heavy hitter who relies on volume and aggression to overwhelm opponents\u2014he throws a lot of strikes early and forces the pace. He's got limited track record at this level, making him a relative unknown with unpredictable tendencies.",
-      "fighter_b_bio": "Gustafsson is slightly more proven on paper with a marginally higher Elo rating, suggesting steadier performances over time. Our model gives him a razor-thin 50.6% edge, meaning this is essentially a coin flip.",
-      "watch_for": "Whether Donchenko's early aggression and striking volume can catch Gustafsson before Gustafsson finds his distance and settles into a more measured, technical approach."
+      "fighter_a_bio": "Donchenko is a heavy hitter who lives in the pocket and trades power for volume\u2014he'll walk through jabs to land his own shots but can be drawn into messy exchanges where his defense lapses. His wrestling is functional but not a primary threat, so he needs to stay aggressive and in his range to impose his will.",
+      "fighter_b_bio": "Gustafsson operates with better footwork and distance control, using lateral movement to create angles while staying just outside of Donchenko's power range. He mixes in takedown attempts to disrupt rhythm, and our model gives him a slight edge (50.6%) because that layered approach frustrates pure strikers.",
+      "watch_for": "Whether Donchenko can cut off the cage and trap Gustafsson into a phone booth brawl\u2014if Gustafsson controls the distance and keeps circling, Donchenko's gas tank becomes the problem."
     },
     {
       "fighter_a": "Bekzat Almakhan",
@@ -378,9 +378,9 @@
       "vegas_prob_b": null,
       "weight_class": "Bantamweight",
       "not_found": false,
-      "fighter_a_bio": "Almakhan is a big favorite here (84% win probability by the model) because he pressures relentlessly\u2014closing distance, firing leg kicks, and grinding opponents down with clinch work and top control. He's proven at this level (1503.6 Elo) and doesn't leave much to chance.",
-      "fighter_b_bio": "Matsumoto has a higher Elo rating (1534.1) suggesting past success, but the model gives him only 16% to win this one. He'll need to stay at range and use speed; if Almakhan gets inside, it's over.",
-      "watch_for": "Whether Matsumoto can maintain distance and land clean shots before Almakhan closes the gap and locks him down\u2014if Almakhan gets the clinch or top position, Matsumoto's chances collapse."
+      "fighter_a_bio": "Almakhan is a heavy striker who hunts knockouts with leg kicks and hard hands, then pivots to wrestling when opponents crumble or get desperate. Our model gives him 84% to win because he controls pace and punishes hesitation\u2014he's the clear favorite here.",
+      "fighter_b_bio": "Matsumoto has a higher Elo rating but comes in as a big underdog, likely because he relies on counters and timing rather than forcing the action. He needs clean openings to work; against someone as aggressive as Almakhan, he'll be backpedaling.",
+      "watch_for": "Does Matsumoto's counter-striking find Almakhan's chin early, or does Almakhan's leg kicks and forward pressure lock down the fight by round 2?"
     }
   ],
   "ev_plays": [],

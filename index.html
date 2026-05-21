@@ -847,6 +847,7 @@ function renderEventsSection(containerId, events) {
     const s     = event.summary || {};
     const high  = s.high_conf || 0;
     const med   = s.medium_conf || 0;
+    const low   = s.low_conf || 0;
     const ev    = s.ev_plays || 0;
     const total = s.total_fights || 0;
     const dateStr = event.date ? (() => {
